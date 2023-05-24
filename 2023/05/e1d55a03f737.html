@@ -16,12 +16,12 @@
   <meta name="author" content="i3eg1nner">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Billu_b0x 靶机信息收集nmap 扫描 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748┌──(kali㉿kali)-[~]└─$ sudo nmap -sT -sV -sC -p22,80 10.10.10.161 Starting Nmap 7.92 ( htt">
+    <meta name="description" content="这台靶机包含的内容比较多，信息收集、本地文件读取、代码审计、SQL 注入等，需要具有比较全面的安全知识，并且要对网站的目录结构和逻辑有较为清晰的认识，才能在打靶机的过程中游刃有余，从而形成自己的渗透思路。 Billu_b0x 靶机信息收集nmap 扫描 1234567891011121314151617181920212223242526272829303132333435363738394041">
 <meta property="og:type" content="article">
-<meta property="og:title" content="i3eg1nner&#39;s blog">
+<meta property="og:title" content="Billu_b0x靶机">
 <meta property="og:url" content="http://example.com/2023/05/e1d55a03f737.html">
 <meta property="og:site_name" content="i3eg1nner&#39;s blog">
-<meta property="og:description" content="Billu_b0x 靶机信息收集nmap 扫描 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748┌──(kali㉿kali)-[~]└─$ sudo nmap -sT -sV -sC -p22,80 10.10.10.161 Starting Nmap 7.92 ( htt">
+<meta property="og:description" content="这台靶机包含的内容比较多，信息收集、本地文件读取、代码审计、SQL 注入等，需要具有比较全面的安全知识，并且要对网站的目录结构和逻辑有较为清晰的认识，才能在打靶机的过程中游刃有余，从而形成自己的渗透思路。 Billu_b0x 靶机信息收集nmap 扫描 1234567891011121314151617181920212223242526272829303132333435363738394041">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/pic/cbef8013431f8f2800f8b83e9c1e628b_MD5.png">
 <meta property="og:image" content="http://example.com/pic/e95e3608674cd1bdda207590df01467b_MD5.png">
@@ -36,14 +36,14 @@
 <meta property="og:image" content="http://example.com/pic/c43222af837821f839b45bb01145dc13_MD5.png">
 <meta property="og:image" content="http://example.com/pic/10a98a23d0441df79c025565fafa5970_MD5.png">
 <meta property="article:published_time" content="2023-05-24T15:20:11.543Z">
-<meta property="article:modified_time" content="2023-05-24T17:12:35.696Z">
+<meta property="article:modified_time" content="2023-05-24T17:53:38.556Z">
 <meta property="article:author" content="i3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/pic/cbef8013431f8f2800f8b83e9c1e628b_MD5.png">
   
   
   
-  <title>i3eg1nner&#39;s blog</title>
+  <title>Billu_b0x靶机 - i3eg1nner&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="Billu_b0x靶机"></span>
           
         </div>
 
@@ -243,7 +243,7 @@
         
         
         
-          211 分钟
+          212 分钟
         
       </span>
     
@@ -281,12 +281,13 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">Billu_b0x靶机</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Billu-b0x-靶机"><a href="#Billu-b0x-靶机" class="headerlink" title="Billu_b0x 靶机"></a>Billu_b0x 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>nmap 扫描</p>
+                <p>这台靶机包含的内容比较多，信息收集、本地文件读取、代码审计、SQL 注入等，需要具有比较全面的安全知识，并且要对网站的目录结构和逻辑有较为清晰的认识，才能在打靶机的过程中游刃有余，从而形成自己的渗透思路。</p>
+<h1 id="Billu-b0x-靶机"><a href="#Billu-b0x-靶机" class="headerlink" title="Billu_b0x 靶机"></a>Billu_b0x 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>nmap 扫描</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs powershell">┌──(kali㉿kali)-[~]<br>└─<span class="hljs-variable">$</span> sudo nmap <span class="hljs-literal">-sT</span> <span class="hljs-literal">-sV</span> <span class="hljs-literal">-sC</span> <span class="hljs-literal">-p22</span>,<span class="hljs-number">80</span> <span class="hljs-number">10.10</span>.<span class="hljs-number">10.161</span> <br>Starting Nmap <span class="hljs-number">7.92</span> ( https://nmap.org ) at <span class="hljs-number">2023</span><span class="hljs-literal">-05-24</span> <span class="hljs-number">04</span>:<span class="hljs-number">30</span> EDT<br>Nmap scan report <span class="hljs-keyword">for</span> <span class="hljs-number">10.10</span>.<span class="hljs-number">10.161</span><br>Host is up (<span class="hljs-number">0.00024</span>s latency).<br><br>PORT   STATE SERVICE VERSION<br><span class="hljs-number">22</span>/tcp open  ssh     OpenSSH <span class="hljs-number">5.9</span>p1 Debian <span class="hljs-number">5</span>ubuntu1.<span class="hljs-number">4</span> (Ubuntu Linux; protocol <span class="hljs-number">2.0</span>)<br>| ssh<span class="hljs-literal">-hostkey</span>: <br>|   <span class="hljs-number">1024</span> fa:cf:a2:<span class="hljs-number">52</span>:c4:fa:f5:<span class="hljs-number">75</span>:a7:e2:bd:<span class="hljs-number">60</span>:<span class="hljs-number">83</span>:<span class="hljs-number">3</span>e:<span class="hljs-number">7</span>b:de (DSA)<br>|   <span class="hljs-number">2048</span> <span class="hljs-number">88</span>:<span class="hljs-number">31</span>:<span class="hljs-number">0</span>c:<span class="hljs-number">78</span>:<span class="hljs-number">98</span>:<span class="hljs-number">80</span>:ef:<span class="hljs-number">33</span>:fa:<span class="hljs-number">26</span>:<span class="hljs-number">22</span>:ed:d0:<span class="hljs-number">9</span>b:ba:f8 (RSA)<br>|_  <span class="hljs-number">256</span> <span class="hljs-number">0</span>e:<span class="hljs-number">5</span>e:<span class="hljs-number">33</span>:<span class="hljs-number">03</span>:<span class="hljs-number">50</span>:c9:<span class="hljs-number">1</span>e:b3:e7:<span class="hljs-number">51</span>:<span class="hljs-number">39</span>:a4:<span class="hljs-number">4</span>a:<span class="hljs-number">10</span>:<span class="hljs-number">64</span>:ca (ECDSA)<br><span class="hljs-number">80</span>/tcp open  http    Apache httpd <span class="hljs-number">2.2</span>.<span class="hljs-number">22</span> ((Ubuntu))<br>| http<span class="hljs-literal">-cookie-flags</span>: <br>|   /: <br>|     PHPSESSID: <br>|_      httponly flag not <span class="hljs-built_in">set</span><br>|_http<span class="hljs-literal">-title</span>: <span class="hljs-literal">--</span>==[[<span class="hljs-type">Indipowershell</span> <span class="hljs-type">Lab</span>]]==<span class="hljs-literal">--</span><br>|_http<span class="hljs-literal">-server-header</span>: Apache/<span class="hljs-number">2.2</span>.<span class="hljs-number">22</span> (Ubuntu)<br>MAC Address: <span class="hljs-number">00</span>:<span class="hljs-number">0</span>C:<span class="hljs-number">29</span>:A9:A2:<span class="hljs-number">24</span> (VMware)<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: <span class="hljs-number">1</span> IP address (<span class="hljs-number">1</span> host up) scanned <span class="hljs-keyword">in</span> <span class="hljs-number">6.88</span> seconds<br><br>┌──(kali㉿kali)-[~]<br>└─<span class="hljs-variable">$</span> sudo nmap <span class="hljs-literal">--script</span>=vuln <span class="hljs-literal">-p22</span>,<span class="hljs-number">80</span> <span class="hljs-number">10.10</span>.<span class="hljs-number">10.161</span><br>Starting Nmap <span class="hljs-number">7.92</span> ( https://nmap.org ) at <span class="hljs-number">2023</span><span class="hljs-literal">-05-24</span> <span class="hljs-number">04</span>:<span class="hljs-number">32</span> EDT<br>Nmap scan report <span class="hljs-keyword">for</span> <span class="hljs-number">10.10</span>.<span class="hljs-number">10.161</span><br>Host is up (<span class="hljs-number">0.00028</span>s latency).<br><br>PORT   STATE SERVICE<br><span class="hljs-number">22</span>/tcp open  ssh<br><span class="hljs-number">80</span>/tcp open  http<br>|_http<span class="hljs-literal">-dombased-xss</span>: Couldn<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-csrf: Couldn&#x27;</span>t find any CSRF vulnerabilities.<br>| http<span class="hljs-literal">-cookie-flags</span>: <br>|   /: <br>|     PHPSESSID: <br>|_      httponly flag not <span class="hljs-built_in">set</span><br>| http<span class="hljs-literal">-enum</span>: <br>|   /test.php: Test page<br>|_  /images/: Potentially interesting directory w/ listing on <span class="hljs-string">&#x27;apache/2.2.22 (ubuntu)&#x27;</span><br>| http<span class="hljs-literal">-internal-ip-disclosure</span>: <br>|_  Internal IP Leaked: <span class="hljs-number">127.0</span>.<span class="hljs-number">1.1</span><br>|_http<span class="hljs-literal">-stored-xss</span>: Couldn<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">MAC Address: 00:0C:29:A9:A2:24 (VMware)</span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 32.03 seconds</span><br></code></pre></td></tr></table></figure>
 <p>似乎没有得到特别有效的信息，倒是有个特殊的文件 test.php 那就进入 web 查看环节吧</p>
 <h2 id="Web-服务查看"><a href="#Web-服务查看" class="headerlink" title="Web 服务查看"></a>Web 服务查看</h2><p>首先看看 80 端口，是一个登录界面，感觉可能存在 sql 注入，尝试使用’符号来注入，失败。接下来分别使用了常用的”,},)进行闭合，似乎简单的注入并没有用，可能是存在过滤或者替换吧，目录爆破看看吧 </p>
@@ -370,7 +371,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>Billu_b0x靶机</div>
       <div>http://example.com/2023/05/e1d55a03f737.html</div>
     </div>
     <div class="license-meta">
@@ -415,9 +416,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/1171bf75474d.html" title="">
+                      <a href="/2023/05/1171bf75474d.html" title="Kioptrix1.2靶机">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">Kioptrix1.2靶机</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
