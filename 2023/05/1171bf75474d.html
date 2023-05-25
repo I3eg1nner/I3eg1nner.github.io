@@ -13,42 +13,42 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="i3eg1nner">
+  <meta name="author" content="I3eg1nner">
   <meta name="keywords" content="">
   
     <meta name="description" content="这台靶机主要涉及信息收集能力，漏洞利用 getshell 较为简单，提权也并不复杂，最花时间的是从最低权限的 shell 中收集有效信息的过程，其中有些是有效信息有些是无效信息，需要仔细鉴别，防止陷入兔子洞。 Kioptrix1.2靶机信息收集  web查看这里先按照vulhub上界面的提示，在hosts文件中加入了相应域名和ip的对应查看主页面这个界面中有三处可以跳转的地方，分别对应了blog、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kioptrix1.2靶机">
-<meta property="og:url" content="http://example.com/2023/05/1171bf75474d.html">
-<meta property="og:site_name" content="i3eg1nner&#39;s blog">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/05/1171bf75474d.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
 <meta property="og:description" content="这台靶机主要涉及信息收集能力，漏洞利用 getshell 较为简单，提权也并不复杂，最花时间的是从最低权限的 shell 中收集有效信息的过程，其中有些是有效信息有些是无效信息，需要仔细鉴别，防止陷入兔子洞。 Kioptrix1.2靶机信息收集  web查看这里先按照vulhub上界面的提示，在hosts文件中加入了相应域名和ip的对应查看主页面这个界面中有三处可以跳转的地方，分别对应了blog、">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/pic/b3da79520ae9ff6de6695923aa6dcf23_MD5.png">
-<meta property="og:image" content="http://example.com/pic/4e9ce50884fb44ac035464d0f4d34982_MD5.png">
-<meta property="og:image" content="http://example.com/pic/d1fa79d0ba30328788178518b55aafa4_MD5.png">
-<meta property="og:image" content="http://example.com/pic/cf5b86be25aaf5b3fcce85198fb3d76d_MD5.png">
-<meta property="og:image" content="http://example.com/pic/772c6cc93937c1da1f82cfa6e30f6767_MD5.png">
-<meta property="og:image" content="http://example.com/pic/ee81adf03081302459d0556f183bb7f0_MD5.png">
-<meta property="og:image" content="http://example.com/pic/5b1d5be81d07e1cfc65a7071c31ef53c_MD5.png">
-<meta property="og:image" content="http://example.com/pic/bf3eff94044b1731be09aaa7ea8a4d11_MD5.png">
-<meta property="og:image" content="http://example.com/pic/d5418d317d6c37762ee28c7d52951a4a_MD5.png">
-<meta property="og:image" content="http://example.com/pic/3d46125818ee5890708186bcff5628ca_MD5.png">
-<meta property="og:image" content="http://example.com/pic/90dff3701f24f0c24f8478494eeb2107_MD5.png">
-<meta property="og:image" content="http://example.com/pic/0e80c0cf7586e1e96be9943229b616fc_MD5.png">
-<meta property="og:image" content="http://example.com/pic/935cd37da07c7bb5d1552029814721dc_MD5.png">
-<meta property="og:image" content="http://example.com/pic/6b771d75ba14de2d6b773bf8c24bbee9_MD5.png">
-<meta property="og:image" content="http://example.com/pic/2c5bf1a78c429071308d154963ba5294_MD5.png">
-<meta property="og:image" content="http://example.com/pic/a2722597f306cadc9d82853b5cec799c_MD5.png">
-<meta property="og:image" content="http://example.com/pic/48a30c7cc9392cf98cd5c623dd35b833_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b3da79520ae9ff6de6695923aa6dcf23_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4e9ce50884fb44ac035464d0f4d34982_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d1fa79d0ba30328788178518b55aafa4_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cf5b86be25aaf5b3fcce85198fb3d76d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/772c6cc93937c1da1f82cfa6e30f6767_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ee81adf03081302459d0556f183bb7f0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5b1d5be81d07e1cfc65a7071c31ef53c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/bf3eff94044b1731be09aaa7ea8a4d11_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d5418d317d6c37762ee28c7d52951a4a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3d46125818ee5890708186bcff5628ca_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/90dff3701f24f0c24f8478494eeb2107_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0e80c0cf7586e1e96be9943229b616fc_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/935cd37da07c7bb5d1552029814721dc_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/6b771d75ba14de2d6b773bf8c24bbee9_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2c5bf1a78c429071308d154963ba5294_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a2722597f306cadc9d82853b5cec799c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/48a30c7cc9392cf98cd5c623dd35b833_MD5.png">
 <meta property="article:published_time" content="2023-05-24T15:20:11.549Z">
 <meta property="article:modified_time" content="2023-05-24T17:50:06.865Z">
-<meta property="article:author" content="i3eg1nner">
+<meta property="article:author" content="I3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/pic/b3da79520ae9ff6de6695923aa6dcf23_MD5.png">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/b3da79520ae9ff6de6695923aa6dcf23_MD5.png">
   
   
   
-  <title>Kioptrix1.2靶机 - i3eg1nner&#39;s blog</title>
+  <title>Kioptrix1.2靶机 - I3eg1nner&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -86,7 +86,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -364,13 +364,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Kioptrix1.2靶机</div>
-      <div>http://example.com/2023/05/1171bf75474d.html</div>
+      <div>https://i3eg1nner.github.io/2023/05/1171bf75474d.html</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>i3eg1nner</div>
+          <div>I3eg1nner</div>
         </div>
       
       
