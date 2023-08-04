@@ -1,0 +1,805 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="安全实战培训第一课在合规情况下，给出一个测试目标（单位：北邮，靶标：运维系统），请给出渗透思路。 首先是做信息收集：  从北邮的校园网站开始，获取学校的基本信息，建立起对目标的基本认识 借助于多个在线工具，获取 WHOIS 信息、DNS 历史解析信息、相关 IP 段等信息，多渠道对比验证，确定目标的真实 IP 对子域名信息进行采集 敏感信息收集。通过 FOFA、SHADON 等搜索引擎搜索北邮的网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I3eg1nner&#39;s blog">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/9dfa91b67af1.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="安全实战培训第一课在合规情况下，给出一个测试目标（单位：北邮，靶标：运维系统），请给出渗透思路。 首先是做信息收集：  从北邮的校园网站开始，获取学校的基本信息，建立起对目标的基本认识 借助于多个在线工具，获取 WHOIS 信息、DNS 历史解析信息、相关 IP 段等信息，多渠道对比验证，确定目标的真实 IP 对子域名信息进行采集 敏感信息收集。通过 FOFA、SHADON 等搜索引擎搜索北邮的网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/fb0a363df16107f538e6349216ceebe7_MD5.png">
+<meta property="article:published_time" content="2023-06-13T10:47:07.753Z">
+<meta property="article:modified_time" content="2023-06-20T11:18:55.952Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/fb0a363df16107f538e6349216ceebe7_MD5.png">
+  
+  
+  
+  <title>I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-13 18:47" pubdate>
+          2023年6月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          64 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="安全实战培训"><a href="#安全实战培训" class="headerlink" title="安全实战培训"></a>安全实战培训</h1><h2 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h2><p>在合规情况下，给出一个测试目标（单位：北邮，靶标：运维系统），请给出渗透思路。</p>
+<p>首先是做信息收集：</p>
+<ul>
+<li>从北邮的校园网站开始，获取学校的基本信息，建立起对目标的基本认识</li>
+<li>借助于多个在线工具，获取 WHOIS 信息、DNS 历史解析信息、相关 IP 段等信息，多渠道对比验证，确定目标的真实 IP</li>
+<li>对子域名信息进行采集</li>
+<li>敏感信息收集。通过 FOFA、SHADON 等搜索引擎搜索北邮的网络资产、后台管理界面等等，借助于 Google 搜索北邮的学号、系统、VPN、后台、文件等等资产信息</li>
+<li>确定目标后，根据已有的信息可以尝试钓鱼、弱密码等。充分北邮的学号信息、默认密码信息等信息</li>
+<li>对各个子域名和后台登录界面进行渗透测试，使用内部虚拟机和梯子，连接国外的 VPS 进行操作，防止被 WAF 拦截可以使用代理池</li>
+<li>登录成功后收集一波信息，然后考虑如何 getshell，看是否有登录平台存在解析和反序列化漏洞或者常见其他的漏洞</li>
+<li>getshell 后使用 fscan 进行内网的信息收集，确定网络的拓扑结构，进一步寻找运维系统所在。之后进行内网的横向移动和提权等操作。</li>
+</ul>
+<h2 id="第二课"><a href="#第二课" class="headerlink" title="第二课"></a>第二课</h2><p>本次任务：</p>
+<p>1、搭建burpsuit;java</p>
+<p>2、观察分析 http 请求，http 状态码</p>
+<p>分别代表什么；</p>
+<p>3、nmap、fscan 的使用（内网对自己的目标使用）</p>
+<p>一、</p>
+<p><img src="/pic/fb0a363df16107f538e6349216ceebe7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>二、</p>
+<p>http 请求</p>
+<ol>
+<li><p>请求行：<br>请求行包含了请求的方法、目标URL和所使用的HTTP协议版本。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/api/users</span> <span class="hljs-meta">HTTP/1.1</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li>GET: 请求方法，指示客户端要获取指定URL的资源。</li>
+<li>&#x2F;api&#x2F;users: 请求的路径和资源。在此示例中，请求的是 <code>/api/users</code> 路径下的资源。</li>
+<li>HTTP&#x2F;1.1: 所使用的HTTP协议版本。</li>
+</ul>
+</li>
+<li><p>请求头：<br>请求头包含了额外的信息和元数据，用于描述请求的细节和要求。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Host</span>: example.com<br><span class="hljs-attribute">User</span>-Agent: Mozilla/<span class="hljs-number">5</span>.<span class="hljs-number">0</span> (Windows NT <span class="hljs-number">10</span>.<span class="hljs-number">0</span>; Win64; x64) AppleWebKit/<span class="hljs-number">537</span>.<span class="hljs-number">36</span> (KHTML, like Gecko) Chrome/<span class="hljs-number">93</span>.<span class="hljs-number">0</span>.<span class="hljs-number">4577</span>.<span class="hljs-number">82</span> Safari/<span class="hljs-number">537</span>.<span class="hljs-number">36</span><br><span class="hljs-attribute">Accept</span>: application/json<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Host: 指定服务器的主机名或IP地址，用于告知服务器请求的目标主机。</li>
+<li>User-Agent: 标识发送请求的用户代理（浏览器或其他客户端应用程序）的信息。</li>
+<li>Accept: 告知服务器客户端所能够接受的响应内容类型。在此示例中，客户端可以接受JSON格式的响应。</li>
+</ul>
+</li>
+<li><p>请求体（Body）：<br>请求体包含了实际的请求数据，通常用于POST、PUT等请求方法。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">Content</span>-Type: application/json<br>Content-Length: <span class="hljs-number">35</span><br><br>&#123;&quot;name&quot;: <span class="hljs-string">&quot;John Doe&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">30</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Content-Type: 指定请求体中的数据类型。在此示例中，数据以JSON格式编码。</li>
+<li>Content-Length: 请求体的长度，以字节为单位。</li>
+<li>请求体内容：包含了实际的请求数据。在此示例中，请求体包含了一个JSON对象，包含了名为”name”的字段和名为”age”的字段。</li>
+</ul>
+</li>
+</ol>
+<p>这些字段共同构成了一个完整的HTTP请求，通过它们，客户端向服务器发送请求，并传递所需的信息、参数和数据。服务器根据这些字段来理解和处理请求，然后返回相应的响应给客户端。</p>
+<p>http 状态码：</p>
+<ol>
+<li>200 OK： 表示请求成功。服务器成功处理了客户端的请求，并返回了请求的资源。</li>
+<li>201 Created： 表示请求已成功处理，并在服务器上创建了新的资源。</li>
+<li>204 No Content： 表示请求已成功处理，但服务器没有返回任何内容。一般在不需要返回响应主体的情况下使用，例如删除操作。  </li>
+<li>400 Bad Request： 表示服务器无法理解客户端发送的请求。可能是请求语法错误、参数错误等。</li>
+<li>401 Unauthorized： 表示请求要求身份验证。客户端必须提供有效的身份验证凭据才能访问受保护的资源。</li>
+<li>403 Forbidden： 表示服务器理解请求，但拒绝执行。客户端没有访问请求的资源的权限。</li>
+<li>404 Not Found： 表示请求的资源不存在。服务器无法找到请求的资源。</li>
+<li>500 Internal Server Error： 表示服务器遇到了意外的错误，导致无法完成请求。</li>
+<li>503 Service Unavailable： 表示服务器暂时无法处理请求，通常是由于服务器过载或维护。</li>
+</ol>
+<p>三、</p>
+<p>nmap cheatsheet</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">nmap –min-rate 5000 -p- 192.168.1.1</td>
+<td align="left">扫描存活的TCP端口</td>
+</tr>
+<tr>
+<td align="left">nmap -iL target.txt</td>
+<td align="left">扫描文件中的目标</td>
+</tr>
+<tr>
+<td align="left">nmap –exclude 192.168.1.1</td>
+<td align="left">排除列出的主机</td>
+</tr>
+<tr>
+<td align="left">nmap -sT 192.168.1.1</td>
+<td align="left">TCP 连接端口扫描</td>
+</tr>
+<tr>
+<td align="left">nmap -sU 192.168.1.1</td>
+<td align="left">UDP 端口扫描</td>
+</tr>
+<tr>
+<td align="left">nmap 192.168.1.1 –top-ports 2000</td>
+<td align="left">扫描前2000个端口</td>
+</tr>
+<tr>
+<td align="left">nmap 192.168.1.1 -sV -p 22</td>
+<td align="left">端口上运行的服务的版本</td>
+</tr>
+<tr>
+<td align="left">nmap 192.168.1.1 -O</td>
+<td align="left">使用 TCP&#x2F;IP 进行远程 OS 指纹识别</td>
+</tr>
+<tr>
+<td align="left">nmap –proxies <a href="http://191.1.1.1:1080,http://192.2.2.2:1080">http://191.1.1.1:1080,http://192.2.2.2:1080</a> 192.168.1.1</td>
+<td align="left">通过HTTP&#x2F;SOCKS4代理中继连接</td>
+</tr>
+<tr>
+<td align="left">nmap -D 10.1.1.1,20.2.2.2 192.168.1.1</td>
+<td align="left">使用-D 选项就可以达到 IP 欺骗的目的</td>
+</tr>
+<tr>
+<td align="left">nmap 192.168.1.1 -sC</td>
+<td align="left">使用默认的 NSE 脚本进行扫描</td>
+</tr>
+<tr>
+<td align="left">nmap 192.168.1.1 –script&#x3D;vuln</td>
+<td align="left">扫描常见漏洞</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.1.1.138<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00020s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 00:0C:29:A7:F7:7B (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.05 seconds<br>                                                                                                                    <br>┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -sC -p22,80 192.1.1.138<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00047s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 <span class="hljs-built_in">fc</span>:8b:87:f4:36:<span class="hljs-built_in">cd</span>:7d:0f:d8:f3:16:15:a9:47:f1:0b (RSA)<br>|   256 b4:5c:08:96:02:c6:a8:0b:01:fd:49:68:<span class="hljs-built_in">dd</span>:aa:fb:3a (ECDSA)<br>|_  256 cb:bf:22:93:69:76:60:a4:7d:c0:19:f3:c7:15:e7:3c (ED25519)<br>80/tcp open  http    Apache httpd 2.4.38 ((Debian))<br>|_http-title: nyx<br>|_http-server-header: Apache/2.4.38 (Debian)<br>MAC Address: 00:0C:29:A7:F7:7B (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.6<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 11.27 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22 和 80 端口，debian 操作系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --top-ports 20 -sU 192.1.1.138<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00027s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    closed        dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    open|filtered tftp<br>123/udp   open|filtered ntp<br>135/udp   closed        msrpc<br>137/udp   open|filtered netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   closed        snmp<br>162/udp   open|filtered snmptrap<br>445/udp   closed        microsoft-ds<br>500/udp   open|filtered isakmp<br>514/udp   closed        syslog<br>520/udp   closed        route<br>631/udp   closed        ipp<br>1434/udp  open|filtered ms-sql-m<br>1900/udp  open|filtered upnp<br>4500/udp  closed        nat-t-ike<br>49152/udp open|filtered unknown<br>MAC Address: 00:0C:29:A7:F7:7B (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 5.84 seconds<br></code></pre></td></tr></table></figure>
+
+<p>udp 的扫描结果仅供参考</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,80 192.1.1.138          <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:29 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00023s latency).<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>| http-enum: <br>|_  /d41d8cd98f00b204e9800998ecf8427e.php: Seagate BlackArmorNAS 110/220/440 Administrator Password Reset Vulnerability<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">MAC Address: 00:0C:29:A7:F7:7B (VMware)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 31.85 seconds</span><br></code></pre></td></tr></table></figure>
+
+<p>Kali Linux 上 fscan 安装</p>
+<ul>
+<li>go 环境安装<ul>
+<li><code>rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz</code> 可能需要 sudo 权限</li>
+<li>将 <code>export PATH=$PATH:/usr/local/go/bin</code> 写入用户目录下的 <code>.zshrc</code> 文件</li>
+</ul>
+</li>
+<li>build<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/fscan]<br>└─$ go build -ldflags=<span class="hljs-string">&quot;-s -w &quot;</span> -trimpath main.go<br></code></pre></td></tr></table></figure></li>
+<li>运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/fscan]<br>└─$ ./main -h<br><br>   ___                              _    <br>  / _ \     ___  ___ _ __ __ _  ___| | __ <br> / /_\/____/ __|/ __| __/ _` |/ __| |/ /<br>/ /_\\_____\__ \ (__| | | (_| | (__|   &lt;    <br>\____/     |___/\___|_|  \__,_|\___|_|\_\   <br>                     fscan version: 1.8.2<br>flag needs an argument: -h<br>Usage of ./main:<br>  -br int<br>        Brute threads (default 1)<br>  -c string<br>        <span class="hljs-built_in">exec</span> <span class="hljs-built_in">command</span> (ssh|wmiexec)<br>  -cookie string<br>        <span class="hljs-built_in">set</span> poc cookie,-cookie rememberMe=login<br>  -debug int<br>        every time to LogErr (default 60)<br>  -dns<br>        using dnslog poc<br>  -domain string<br>        smb domain<br>  -full<br>        poc full scan,as: shiro 100 key<br>  -h string<br>        IP address of the host you want to scan,<span class="hljs-keyword">for</span> example: 192.168.11.11 | 192.168.11.11-255 | 192.168.11.11,192.168.11.12<br>  -<span class="hljs-built_in">hash</span> string<br>        <span class="hljs-built_in">hash</span><br>  -hf string<br>        host file, -hf ip.txt<br>  -hn string<br>        the hosts no scan,as: -hn 192.168.1.1/24<br>  -m string<br>        Select scan <span class="hljs-built_in">type</span> ,as: -m ssh (default <span class="hljs-string">&quot;all&quot;</span>)<br>  -no<br>        not to save output <span class="hljs-built_in">log</span><br>  -nobr<br>        not to Brute password<br>  -nopoc<br>        not to scan web vul<br>  -np<br>        not to ping<br>  -num int<br>        poc rate (default 20)<br>  -o string<br>        Outputfile (default <span class="hljs-string">&quot;result.txt&quot;</span>)<br>  -p string<br>        Select a port,<span class="hljs-keyword">for</span> example: 22 | 1-65535 | 22,80,3306 (default <span class="hljs-string">&quot;21,22,80,81,135,139,443,445,1433,1521,3306,5432,6379,7001,8000,8080,8089,9000,9200,11211,27017&quot;</span>)<br>  -pa string<br>        add port base DefaultPorts,-pa 3389<br>  -path string<br>        fcgi、smb romote file path<br>  -ping<br>        using ping replace icmp<br>  -pn string<br>        the ports no scan,as: -pn 445<br>  -pocname string<br>        use the pocs these contain pocname, -pocname weblogic<br>  -pocpath string<br>        poc file path<br>  -portf string<br>        Port File<br>  -proxy string<br>        <span class="hljs-built_in">set</span> poc proxy, -proxy http://127.0.0.1:8080<br>  -<span class="hljs-built_in">pwd</span> string<br>        password<br>  -pwda string<br>        add a password base DefaultPasses,-pwda password<br>  -pwdf string<br>        password file<br>  -rf string<br>        redis file to write sshkey file (as: -rf id_rsa.pub) <br>  -rs string<br>        redis shell to write cron file (as: -rs 192.168.1.1:6666) <br>  -sc string<br>        ms17 shellcode,as -sc add<br>  -silent<br>        silent scan<br>  -socks5 string<br>        <span class="hljs-built_in">set</span> socks5 proxy, will be used <span class="hljs-keyword">in</span> tcp connection, <span class="hljs-built_in">timeout</span> setting will not work<br>  -sshkey string<br>        sshkey file (id_rsa)<br>  -t int<br>        Thread nums (default 600)<br>  -time int<br>        Set <span class="hljs-built_in">timeout</span> (default 3)<br>  -top int<br>        show live len top (default 10)<br>  -u string<br>        url<br>  -uf string<br>        urlfile<br>  -user string<br>        username<br>  -usera string<br>        add a user base DefaultUsers,-usera user<br>  -userf string<br>        username file<br>  -wmi<br>        start wmi<br>  -wt int<br>        Set web <span class="hljs-built_in">timeout</span> (default 5)<br></code></pre></td></tr></table></figure></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>https://i3eg1nner.github.io/2023/06/9dfa91b67af1.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/b0b39d4ac246.html" title="THE PLANETS MERCURY">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">THE PLANETS MERCURY</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/4719fa4167fd.html" title="Connect The Dots">
+                        <span class="hidden-mobile">Connect The Dots</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '1b46b52c04b1ba2a9e48e272c45dd93a'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

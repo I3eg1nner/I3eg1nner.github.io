@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="HTB 打靶之 vultr 上 kali Linux 搭建之前用别的系统搭过 v2ray ，不过最近有打 htb 的需求，所以希望直接用 kali 系统得了，省时省力，但是关于 vultr 上 kali 搭建 v2ray 的资料比较少，花了挺多时间才达到我满意的效果：平时通过 ssh 登录来打 htb，延迟低速度快，需要界面的操作，利用 v2ray 来流量转发在本地 kali 虚拟机中查看（当然也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTB打靶之 vultr上 kali Linux搭建">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/7f83e81bb133.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="HTB 打靶之 vultr 上 kali Linux 搭建之前用别的系统搭过 v2ray ，不过最近有打 htb 的需求，所以希望直接用 kali 系统得了，省时省力，但是关于 vultr 上 kali 搭建 v2ray 的资料比较少，花了挺多时间才达到我满意的效果：平时通过 ssh 登录来打 htb，延迟低速度快，需要界面的操作，利用 v2ray 来流量转发在本地 kali 虚拟机中查看（当然也">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f13e02d0b3e681ad9aceb97e3330fda1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ecc54772eb327f2c6883be07a4374338_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b2874270db689424a959a1761f8e49a9_MD5.png">
+<meta property="article:published_time" content="2023-07-01T05:57:38.000Z">
+<meta property="article:modified_time" content="2023-07-12T05:54:06.182Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/f13e02d0b3e681ad9aceb97e3330fda1_MD5.png">
+  
+  
+  
+  <title>HTB打靶之 vultr上 kali Linux搭建 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HTB打靶之 vultr上 kali Linux搭建"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-01 13:57" pubdate>
+          2023年7月1日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTB打靶之 vultr上 kali Linux搭建</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="HTB-打靶之-vultr-上-kali-Linux-搭建"><a href="#HTB-打靶之-vultr-上-kali-Linux-搭建" class="headerlink" title="HTB 打靶之 vultr 上 kali Linux 搭建"></a>HTB 打靶之 vultr 上 kali Linux 搭建</h1><p>之前用别的系统搭过 v2ray ，不过最近有打 htb 的需求，所以希望直接用 kali 系统得了，省时省力，但是关于 vultr 上 kali 搭建 v2ray 的资料比较少，花了挺多时间才达到我满意的效果：平时通过 ssh 登录来打 htb，延迟低速度快，需要界面的操作，利用 v2ray 来流量转发在本地 kali 虚拟机中查看（当然也可以通过 ssh 隧道转发来做，不过不稳定）</p>
+<h2 id="vultr-如何安装-kali-Linux"><a href="#vultr-如何安装-kali-Linux" class="headerlink" title="vultr 如何安装 kali Linux"></a>vultr 如何安装 kali Linux</h2><p>主要参考了这些文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cn-sec.com/archives/1663059.html">vultr购置服务器，配置你的随身kali | CN-SEC 中文网</a></li>
+<li><a target="_blank" rel="noopener" href="https://gt4404gb.com/archives/669">如何优雅地在VULTR上运行KALI | gt4404gb</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.vultrcn.com/9.html">一键测试Vultr现有全部机房的Ping延迟和丢包率 - Vultr中文网 (vultrcn.com)</a></li>
+</ul>
+<p>首先是要上传一个 kali 的 iso，如下图中所示。</p>
+<p><img src="/pic/f13e02d0b3e681ad9aceb97e3330fda1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这个过程速度很慢，大概半天才上传成功，使用的是 kali 官网的链接 <code>https://www.kali.org/downloads/</code>。再就是建议使用上面的测延迟脚本，多测几次选个延迟较低的。</p>
+<p>因为不是 vultr 的镜像，所以我们需要进入可视化界面进行系统的安装与配置，这个过程可以去搜一下 kali 的安装教程，基本上没坑。但是记得提示重启的时候，一定要先把系统镜像给删了，要不然又会进入安装流程</p>
+<p><img src="/pic/ecc54772eb327f2c6883be07a4374338_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>等到可视化界面进入系统后，我们通过命令行来安装配置和启动 ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install ssh<br>vi /etc/ssh/sshd_config<br><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将 # PasswordAuthentication no 的注释去掉，并且将 NO 修改为 YES &#x2F;&#x2F;kali 中默认是 yes<br>然后# PermitRootLogin 的注释去掉，其后跟着 yes</p>
+</blockquote>
+<p>启动 ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/ssh start<br>update-rc.d ssh <span class="hljs-built_in">enable</span>  //系统自动启动SSH服务<br></code></pre></td></tr></table></figure>
+
+<p>到这里就可以使用 ssh 登录了，推荐使用 modaxterm，用着比较舒服</p>
+<h2 id="kali-Linux-搭建-v2ray"><a href="#kali-Linux-搭建-v2ray" class="headerlink" title="kali Linux 搭建 v2ray"></a>kali Linux 搭建 v2ray</h2><p>主要参考了 GitHub 上别人的教程，使用的也是第三方安装搭建脚本，担心安全问题的建议使用官方的脚本。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">V2Ray搭建详细图文教程 · 233boy&#x2F;v2ray Wiki (github.com)</a></li>
+</ul>
+<p>使用下方命令前，先使用 <code>sudo su</code> 来切换到 root 用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(wget -qO- -o- https://git.io/v2ray.sh)<br></code></pre></td></tr></table></figure>
+
+<p>脚本安装后会自动创建一个配置，然后可以切换回普通用户 <code>su 用户名</code>，使用下方命令进入管理面板</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo v2ray<br></code></pre></td></tr></table></figure>
+
+<p>根据自己需求在管理面板上进行操作，接下来因为 kali 默认是使用 <code>iptables</code> 的，所以我们要使用下方命令来放行 v2ray 的端口，<code>&lt;port&gt;</code> 替换为 v2ray 配置中的端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo iptables -I INPUT -p tcp --dport &lt;port&gt; -j ACCEPT<br></code></pre></td></tr></table></figure>
+
+<p>我们可以使用 <a target="_blank" rel="noopener" href="https://ping.sx/check-port">https://ping.sx/check-port</a> 来确定自己的端口和服务是正常运行的</p>
+<p><img src="/pic/b2874270db689424a959a1761f8e49a9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>搭建好了之后，本地机器如何连接，如何使用也有个教程 <a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2RayN%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">V2RayN使用教程 · 233boy&#x2F;v2ray Wiki (github.com)</a></p>
+<h2 id="参考链接汇总"><a href="#参考链接汇总" class="headerlink" title="参考链接汇总"></a>参考链接汇总</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://ssrvps.org/archives/3397">V2Ray教程 – 月下博客 (ssrvps.org)</a> iptables 放行端口</li>
+<li><a target="_blank" rel="noopener" href="https://cn-sec.com/archives/1663059.html">vultr购置服务器，配置你的随身kali | CN-SEC 中文网</a></li>
+<li><a target="_blank" rel="noopener" href="https://gt4404gb.com/archives/669">如何优雅地在VULTR上运行KALI | gt4404gb</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">V2Ray搭建详细图文教程 · 233boy&#x2F;v2ray Wiki (github.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2RayN%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">V2RayN使用教程 · 233boy&#x2F;v2ray Wiki (github.com)</a></li>
+</ul>
+<h2 id="Debian-11-转换成-kali-Linux"><a href="#Debian-11-转换成-kali-Linux" class="headerlink" title="Debian 11 转换成 kali Linux"></a>Debian 11 转换成 kali Linux</h2><p>新建用户并赋予 sudo 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">adduser &lt;username&gt;<br>usermod -a -G sudo &lt;username&gt;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HTB打靶之 vultr上 kali Linux搭建</div>
+      <div>https://i3eg1nner.github.io/2023/07/7f83e81bb133.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/3e56f363190c.html" title="TYPHOON_1_02 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">TYPHOON_1_02 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/1a202013a8c5.html" title="Precious 靶机">
+                        <span class="hidden-mobile">Precious 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'afee233fa040e918ed39966c37e318ef'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

