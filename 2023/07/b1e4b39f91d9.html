@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/d6e2fac2cc8e28853e058a13acfe1d96_MD5.png">
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/db88e5516fc4dd9cd8e781ccc0219fe6_MD5.png">
 <meta property="article:published_time" content="2023-07-19T02:27:09.000Z">
-<meta property="article:modified_time" content="2023-07-19T11:41:48.108Z">
+<meta property="article:modified_time" content="2023-08-21T13:26:20.400Z">
 <meta property="article:author" content="I3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i3eg1nner.github.io/pic/f95d4ae467b16efc0da9ef83abc8803c_MD5.png">
@@ -405,7 +405,7 @@
 </li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html">常用 Git 命令清单 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
-<p>![[..&#x2F;..&#x2F;..&#x2F;pic&#x2F;Pasted image 20230719154845.png]]</p>
+<p>![[pic&#x2F;Pasted image 20230719154845.png]]</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用一次新的commit，替代上一次提交</span><br><span class="hljs-comment"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br>$ git commit --amend -m [message]<br><br><span class="hljs-comment"># 列出所有本地分支</span><br>$ git branch<br><br><span class="hljs-comment"># 切换到上一个分支</span><br>$ git checkout -<br><br><span class="hljs-comment"># 合并指定分支到当前分支</span><br>$ git merge [branch]<br><br><span class="hljs-comment"># 新建一个分支，并切换到该分支</span><br>$ git checkout -b [branch]<br><br><span class="hljs-comment"># 删除分支</span><br>$ git branch -d [branch-name]<br><br><span class="hljs-comment"># 显示两次提交之间的差异</span><br>$ git diff [first-branch]...[second-branch]<br><br><span class="hljs-comment"># 取回远程仓库的变化，并与本地分支合并</span><br>$ git pull [remote] [branch]<br><br><span class="hljs-comment"># 强行推送当前分支到远程仓库，即使有冲突</span><br>$ git push [remote] --force<br><br><span class="hljs-comment"># 推送所有分支到远程仓库</span><br>$ git push [remote] --all<br></code></pre></td></tr></table></figure>
 
 <h3 id="Git-泄露利用原理"><a href="#Git-泄露利用原理" class="headerlink" title=".Git 泄露利用原理"></a>.Git 泄露利用原理</h3><h4 id="Git-目录文件结构"><a href="#Git-目录文件结构" class="headerlink" title="Git 目录文件结构"></a>Git 目录文件结构</h4><p>这里仅列出我们 git 还原时需要的重点目录和文件：</p>
@@ -441,6 +441,13 @@
         
   <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/knowledge-database/vulnhub/" class="category-chain-item">vulnhub</a>
+  
+  
+
   
 
       </span>

