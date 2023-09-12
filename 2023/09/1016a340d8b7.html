@@ -1,0 +1,787 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="sahu 靶机信息收集12345678910111213141516┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;sahu]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.139                         [sudo] password for kali: Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sahu 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/09/1016a340d8b7.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="sahu 靶机信息收集12345678910111213141516┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;sahu]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.139                         [sudo] password for kali: Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/8faa9a00ffbb51578cc8129c272a98db_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/416bba4b4b395a7e11573a62c87becf4_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5de82a69e234cfe48b2344e8bb605beb_MD5.png">
+<meta property="article:published_time" content="2023-09-05T09:22:48.000Z">
+<meta property="article:modified_time" content="2023-09-05T16:17:17.464Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/8faa9a00ffbb51578cc8129c272a98db_MD5.png">
+  
+  
+  
+  <title>sahu 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="sahu 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-05 17:22" pubdate>
+          2023年9月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          15k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          124 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">sahu 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="sahu-靶机"><a href="#sahu-靶机" class="headerlink" title="sahu 靶机"></a>sahu 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.139                         <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-05 08:06 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.139<br>Host is up (0.00037s latency).<br>Not shown: 65529 closed tcp ports (reset)<br>PORT      STATE SERVICE<br>21/tcp    open  ftp<br>22/tcp    open  ssh<br>80/tcp    open  http<br>139/tcp   open  netbios-ssn<br>445/tcp   open  microsoft-ds<br>MAC Address: 08:00:27:4D:A7:81 (Oracle VirtualBox virtual NIC)<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 9.41 seconds<br></code></pre></td></tr></table></figure>
+
+<p>开放了 21,22,80,139,445 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ sudo nmap -sT -sV -sC -O -p21,22,80,139,445 192.168.56.139<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-04 23:34 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.139<br>Host is up (0.00049s latency).<br><br>PORT    STATE SERVICE     VERSION<br>21/tcp  open  ftp         vsftpd 3.0.3<br>| ftp-syst: <br>|   STAT: <br>| FTP server status:<br>|      Connected to ::ffff:192.168.56.106<br>|      Logged <span class="hljs-keyword">in</span> as ftp<br>|      TYPE: ASCII<br>|      No session bandwidth <span class="hljs-built_in">limit</span><br>|      Session <span class="hljs-built_in">timeout</span> <span class="hljs-keyword">in</span> seconds is 300<br>|      Control connection is plain text<br>|      Data connections will be plain text<br>|      At session startup, client count was 1<br>|      vsFTPd 3.0.3 - secure, fast, stable<br>|_End of status<br>| ftp-anon: Anonymous FTP login allowed (FTP code 230)<br>|_-rw-r--r--    1 0        0             230 Jan 30  2020 ftp.zip<br>22/tcp  open  ssh         OpenSSH 8.0p1 Ubuntu 6build1 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   3072 e2:78:c5:73:f2:86:cb:cb:02:7f:b6:72:85:61:ac:91 (RSA)<br>|   256 22:1a:ee:1a:98:4f:32:e7:dc:30:43:52:2c:b2:24:06 (ECDSA)<br>|_  256 1a:9b:28:b3:ad:58:32:e9:6c:f3:ea:3b:cf:6b:08:ad (ED25519)<br>80/tcp  open  http        Apache httpd 2.4.41 ((Ubuntu))<br>|_http-server-header: Apache/2.4.41 (Ubuntu)<br>|_http-title: Site doesn\<span class="hljs-string">&#x27;t have a title.</span><br><span class="hljs-string">139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: SAHU)</span><br><span class="hljs-string">445/tcp open  �.,��U      Samba smbd 4.10.7-Ubuntu (workgroup: SAHU)</span><br><span class="hljs-string">MAC Address: 08:00:27:4D:A7:81 (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string">Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port</span><br><span class="hljs-string">Device type: general purpose</span><br><span class="hljs-string">Running: Linux 4.X|5.X</span><br><span class="hljs-string">OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5</span><br><span class="hljs-string">OS details: Linux 4.15 - 5.8</span><br><span class="hljs-string">Network Distance: 1 hop</span><br><span class="hljs-string">Service Info: Host: SAHU-VIRTUALBOX; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel</span><br><span class="hljs-string"></span><br><span class="hljs-string">Host script results:</span><br><span class="hljs-string">| smb-os-discovery: </span><br><span class="hljs-string">|   OS: Windows 6.1 (Samba 4.10.7-Ubuntu)</span><br><span class="hljs-string">|   Computer name: sahu-virtualbox</span><br><span class="hljs-string">|   NetBIOS computer name: SAHU-VIRTUALBOX\x00</span><br><span class="hljs-string">|   Domain name: \x00</span><br><span class="hljs-string">|   FQDN: sahu-virtualbox</span><br><span class="hljs-string">|_  System time: 2023-09-05T09:04:26+05:30</span><br><span class="hljs-string">| smb2-time: </span><br><span class="hljs-string">|   date: 2023-09-05T03:34:26</span><br><span class="hljs-string">|_  start_date: N/A</span><br><span class="hljs-string">| smb-security-mode: </span><br><span class="hljs-string">|   account_used: guest</span><br><span class="hljs-string">|   authentication_level: user</span><br><span class="hljs-string">|   challenge_response: supported</span><br><span class="hljs-string">|_  message_signing: disabled (dangerous, but default)</span><br><span class="hljs-string">| smb2-security-mode: </span><br><span class="hljs-string">|   3:1:1: </span><br><span class="hljs-string">|_    Message signing enabled but not required</span><br><span class="hljs-string">|_nbstat: NetBIOS name: SAHU-VIRTUALBOX, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)</span><br><span class="hljs-string">|_clock-skew: mean: -1h50m02s, deviation: 3h10m31s, median: -2s</span><br><span class="hljs-string"></span><br><span class="hljs-string">OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br><span class="hljs-string">Nmap done: 1 IP address (1 host up) scanned in 19.55 seconds</span><br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统，ftp 存在匿名登录。</p>
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>目录爆破一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ sudo dirsearch -u http://192.168.56.139/                  <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br>  _|. _ _  _  _  _ _|_    v0.4.2                                                                                     <br> (_||| _) (/_(_|| (_| )                                                                                              <br>                                                                                                                     <br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Output File: /root/.dirsearch/reports/192.168.56.139/-_23-09-04_23-57-31.txt<br><br>Error Log: /root/.dirsearch/logs/errors-23-09-04_23-57-31.<span class="hljs-built_in">log</span><br><br>Target: http://192.168.56.139/<br><br>[23:57:31] Starting: <br>[23:57:33] 403 -  279B  - /.ht_wsr.txt                                     <br>[23:57:33] 403 -  279B  - /.htaccess.orig<br>[23:57:33] 403 -  279B  - /.htaccess_sc<br>[23:57:33] 403 -  279B  - /.htaccess.sample<br>[23:57:33] 403 -  279B  - /.htaccess.save<br>[23:57:33] 403 -  279B  - /.htaccess.bak1<br>[23:57:33] 403 -  279B  - /.htaccess_orig<br>[23:57:33] 403 -  279B  - /.htaccess_extra<br>[23:57:33] 403 -  279B  - /.htaccessBAK<br>[23:57:33] 403 -  279B  - /.htaccessOLD<br>[23:57:33] 403 -  279B  - /.html<br>[23:57:33] 403 -  279B  - /.htaccessOLD2                                   <br>[23:57:33] 403 -  279B  - /.htm<br>[23:57:33] 403 -  279B  - /.htpasswd_test<br>[23:57:33] 403 -  279B  - /.htpasswds<br>[23:57:33] 403 -  279B  - /.httr-oauth                                     <br>[23:57:50] 200 -  194B  - /index.php                                        <br>[23:57:59] 403 -  279B  - /server-status                                    <br>[23:57:59] 403 -  279B  - /server-status/<br></code></pre></td></tr></table></figure>
+
+<p>没什么有价值的信息，换一个目录爆破工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.139 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -x php,txt,rar,zip,sql<br>===============================================================<br>Gobuster v3.5<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.139<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Extensions:              php,txt,rar,zip,sql<br>[+] Timeout:                 10s<br>===============================================================<br>2023/09/04 23:58:47 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/index.php            (Status: 200) [Size: 194]<br>/H                    (Status: 301) [Size: 312] [--&gt; http://192.168.56.139/H/]<br>/server-status        (Status: 403) [Size: 279]<br>Progress: 1323243 / 1323366 (99.99%)<br>===============================================================<br>2023/09/05 00:02:02 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<p>只有一个 <code>/H</code> ，再换一个工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ sudo feroxbuster -u http://192.168.56.139 -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br><br> ___  ___  __   __     __      __         __   ___<br>|__  |__  |__) |__) | /  `    /  \ \_/ | |  \ |__<br>|    |___ |  \ |  \ | \__,    \__/ / \ | |__/ |___<br>by Ben <span class="hljs-string">&quot;epi&quot;</span> Risher 🤓                 ver: 2.10.0<br>───────────────────────────┬──────────────────────<br> 🎯  Target Url            │ http://192.168.56.139<br> 🚀  Threads               │ 50<br> 📖  Wordlist              │ /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt<br> 👌  Status Codes          │ All Status Codes!<br> 💥  Timeout (secs)        │ 7<br> 🦡  User-Agent            │ feroxbuster/2.10.0<br> 💉  Config File           │ /etc/feroxbuster/ferox-config.toml<br> 🔎  Extract Links         │ <span class="hljs-literal">true</span><br> 🏁  HTTP methods          │ [GET]<br> 🔃  Recursion Depth       │ 4<br>───────────────────────────┴──────────────────────<br> 🏁  Press [ENTER] to use the Scan Management Menu™<br>──────────────────────────────────────────────────<br>404      GET        9l       31w      276c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter<br>403      GET        9l       28w      279c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter<br>200      GET      494l     1388w   129302c http://192.168.56.139/Haryana-1-1.jpg<br>200      GET       10l       14w      194c http://192.168.56.139/<br>301      GET        9l       28w      312c http://192.168.56.139/H =&gt; http://192.168.56.139/H/<br>301      GET        9l       28w      314c http://192.168.56.139/H/A =&gt; http://192.168.56.139/H/A/<br>301      GET        9l       28w      316c http://192.168.56.139/H/A/R =&gt; http://192.168.56.139/H/A/R/<br>[<span class="hljs-comment">####################] - 4m    882197/882197  0s      found:5       errors:9660   </span><br>[<span class="hljs-comment">####################] - 4m    220546/220546  859/s   http://192.168.56.139/ </span><br>[<span class="hljs-comment">####################] - 4m    220546/220546  858/s   http://192.168.56.139/H/ </span><br>[<span class="hljs-comment">####################] - 4m    220546/220546  858/s   http://192.168.56.139/H/A/ </span><br>[<span class="hljs-comment">####################] - 4m    220546/220546  858/s   http://192.168.56.139/H/A/R/ </span><br></code></pre></td></tr></table></figure>
+
+<h2 id="隐藏目录"><a href="#隐藏目录" class="headerlink" title="隐藏目录"></a>隐藏目录</h2><p><code>http://192.168.56.139/H/A/R/</code> 这个目录看起来有意思，看一眼 Web 界面</p>
+<p><img src="/pic/8faa9a00ffbb51578cc8129c272a98db_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这个标题有意思，尝试 <code>http://192.168.56.139/H/A/R/Y/A/N/A</code> </p>
+<p><img src="/pic/416bba4b4b395a7e11573a62c87becf4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>看到了一个暗示</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs delphi"># <span class="hljs-keyword">try</span> <span class="hljs-keyword">to</span> extract <span class="hljs-keyword">with</span> hurrry<br></code></pre></td></tr></table></figure>
+
+<h2 id="FTP-匿名登录"><a href="#FTP-匿名登录" class="headerlink" title="FTP 匿名登录"></a>FTP 匿名登录</h2><p>FTP 匿名登录看一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ ftp 192.168.56.139<br>Connected to 192.168.56.139.<br>220 (vsFTPd 3.0.3)<br>Name (192.168.56.139:kali): anonymous<br>331 Please specify the password.<br>Password: <br>230 Login successful.<br>Remote system <span class="hljs-built_in">type</span> is UNIX.<br>Using binary mode to transfer files.<br>ftp&gt; binary<br>200 Switching to Binary mode.<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering Extended Passive Mode (|||15856|)<br>150 Here comes the directory listing.<br>-rw-r--r--    1 0        0             230 Jan 30  2020 ftp.zip<br>226 Directory send OK.<br>ftp&gt; get ftp.zip<br><span class="hljs-built_in">local</span>: ftp.zip remote: ftp.zip<br>229 Entering Extended Passive Mode (|||12832|)<br>150 Opening BINARY mode data connection <span class="hljs-keyword">for</span> ftp.zip (230 bytes).<br>100% |***********************************************************************|   230        4.66 MiB/s    00:00 ETA<br>226 Transfer complete.<br>230 bytes received <span class="hljs-keyword">in</span> 00:00 (452.84 KiB/s)<br>ftp&gt; <span class="hljs-built_in">pwd</span><br>Remote directory: /<br></code></pre></td></tr></table></figure>
+
+<p>试一试拿到的提权的口令，提取不出来。在这里卡了许久，尝试对 Web 界面中的图片进行查看，<code>exiftool</code>, <code>strings</code>, <code>binwalk</code>, <code>file</code> 都没有收获。使用 zip2john 转换后再爆破，依然无结果。尝试使用这个口令登录 ssh 和 smb，依然不成功。</p>
+<h2 id="图片隐写信息提取"><a href="#图片隐写信息提取" class="headerlink" title="图片隐写信息提取"></a>图片隐写信息提取</h2><p>这个过程中发现自己对于隐写方面还是不够熟悉，这个靶机最后会增加一个隐写方法和如何识别的概括。这里提示中的提取，也可以是使用隐写工具提取信息的口令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ steghide extract -sf Haryana-1-1.jpg <br>Enter passphrase: <br>wrote extracted data to <span class="hljs-string">&quot;file.txt&quot;</span>.<br><br><br>┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ <span class="hljs-built_in">cat</span> file.txt <br>      I have found the password <span class="hljs-keyword">for</span> a zip file but i have forgote the last part of it, can you find out<br>     <br>       5AHU**<br></code></pre></td></tr></table></figure>
+
+<p>发现了解压密码的前四位，看样子接下来是需要我们想办法生成字典再爆破了</p>
+<h2 id="字典生成"><a href="#字典生成" class="headerlink" title="字典生成"></a>字典生成</h2><p>这里可以使用的生成字典的工具有很多，我尝试过的有：<code>crunch</code>, <code>pydictor.py</code></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/LandGrey/pydictor">LandGrey&#x2F;pydictor: A powerful and useful hacker dictionary builder for a brute-force attack (github.com)</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu/pydictor]<br>└─$ python pydictor.py -char <span class="hljs-string">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\!@#$%^&amp;*&quot;</span> --len 2 2 --<span class="hljs-built_in">head</span> 5AHU --output ../dict_py<br>                              _ _      _<br>              _ __  _   _  __| (_) ___| |_ ___  _ __                                                                <br>             | <span class="hljs-string">&#x27;_ \| | | |/ _` | |/ __| __/ _ \| &#x27;</span>__|                                                               <br>             | |_) | |_| | (_| | | (__| || (_) | |                                                                  <br>             | .__/ \__, |\__,_|_|\___|\__\___/|_|                                                                  <br>             |_|    |___/                            2.1.7.3<span class="hljs-comment">#dev                                                    </span><br><br>[+] A total of :4900 lines<br>[+] Store <span class="hljs-keyword">in</span>   :/home/kali/Downloads/sahu/dict_py/char_050009.txt <br>[+] Cost       :0.0417 seconds<br><br></code></pre></td></tr></table></figure>
+
+<p>其实生成密码也是有一定技巧的，一开始我想找个可以直接指定前缀的密码工具，但是仔细一想，我可以通过 sed 或者 awk 工具将前缀加上去，这样不久把问题简化为生成两位的随机字符或数字</p>
+<h2 id="zip-密码爆破"><a href="#zip-密码爆破" class="headerlink" title="zip 密码爆破"></a>zip 密码爆破</h2><p>使用 fcrackzip 工具来爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ fcrackzip  -D -p dict_py/char_050009.txt -u ftp.zip <br><br><br>PASSWORD FOUND!!!!: pw == 5AHU<span class="hljs-comment">#5</span><br></code></pre></td></tr></table></figure>
+
+<p>得到了密码。实际上在这里花了很多时间，有一部分原因是我想一劳永逸，找一个最好用最常用的工具用熟练，但事实是每个工具都各有优缺点，与其花时间去找工具，不如去弄清楚自己到底想拿到什么样的一个字典（这里生成的字典的目标很简单，只需要固定前四个字符，然后生成包含大写、字符，小写也可以纳入考虑）</p>
+<p>使用密码 <code>5AHU#5</code> 来解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ <span class="hljs-built_in">cat</span> ftp.txt        <br><br>      USERNAME = sahu<br>      PASSWORD = sahu14216<br></code></pre></td></tr></table></figure>
+
+<p>使用上述用户名和密码登录 ssh，失败。尝试登录 smb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ smbclient //192.168.56.139/sambashare -U sahu%sahu14216 <br>Try <span class="hljs-string">&quot;help&quot;</span> to get a list of possible commands.<br>smb: \&gt; <span class="hljs-built_in">ls</span><br>  .                                   D        0  Thu Jan 30 03:50:23 2020<br>  ..                                  D        0  Thu Jan 30 02:57:06 2020<br>  ssh.txt                             N       64  Thu Jan 30 03:50:02 2020<br><br>                10253588 blocks of size 1024. 4282444 blocks available<br>smb: \&gt; get ssh.txt <br>getting file \ssh.txt of size 64 as ssh.txt (8.9 KiloBytes/sec) (average 8.9 KiloBytes/sec)<br>smb: \&gt;<br></code></pre></td></tr></table></figure>
+
+<p>拿到了一个 ssh.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ <span class="hljs-built_in">cat</span> ssh.txt <br>   ssh <span class="hljs-built_in">users</span> list<br>   USERNAME = haryana<br>   PASSWORD = hralltime<br></code></pre></td></tr></table></figure>
+
+<p>尝试使用此用户名和密码登录 ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ ssh haryana@192.168.56.139<br>haryana@192.168.56.139\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Welcome to Ubuntu 19.10 (GNU/Linux 5.3.0-18-generic x86_64)</span><br><span class="hljs-string"></span><br><span class="hljs-string"> * Documentation:  https://help.ubuntu.com</span><br><span class="hljs-string"> * Management:     https://landscape.canonical.com</span><br><span class="hljs-string"> * Support:        https://ubuntu.com/advantage</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">156 updates can be installed immediately.</span><br><span class="hljs-string">77 of these updates are security updates.</span><br><span class="hljs-string">To see these additional updates run: apt list --upgradable</span><br><span class="hljs-string"></span><br><span class="hljs-string">Failed to connect to https://changelogs.ubuntu.com/meta-release. Check your Internet connection or proxy settings</span><br><span class="hljs-string"></span><br><span class="hljs-string">Last login: Tue Feb  4 18:05:07 2020 from 192.168.43.111</span><br><span class="hljs-string">haryana@sahu-VirtualBox:~$ whoami</span><br><span class="hljs-string">haryana</span><br><span class="hljs-string">haryana@sahu-VirtualBox:~$ id</span><br><span class="hljs-string">uid=1001(haryana) gid=1001(haryana) groups=1001(haryana)</span><br><span class="hljs-string">haryana@sahu-VirtualBox:~$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:4d:a7:81 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.139/24 brd 192.168.56.255 scope global dynamic noprefixroute enp0s3</span><br><span class="hljs-string">       valid_lft 502sec preferred_lft 502sec</span><br><span class="hljs-string">    inet6 fe80::853d:613f:7377:f9e7/64 scope link noprefixroute </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">haryana@sahu-VirtualBox:~$ sudo -l</span><br><span class="hljs-string">[sudo] password for haryana: </span><br><span class="hljs-string">Sorry, user haryana may not run sudo on sahu-VirtualBox.</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="敏感文件查看"><a href="#敏感文件查看" class="headerlink" title="敏感文件查看"></a>敏感文件查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash">haryana@sahu-VirtualBox:~$ <span class="hljs-built_in">ls</span> -alih<br>total 40K<br>295542 drwxr-xr-x 6 haryana haryana 4.0K Feb  4  2020 .<br>262147 drwxr-xr-x 4 root    root    4.0K Jan 30  2020 ..<br>268530 -rw------- 1 haryana haryana  179 Feb  4  2020 .bash_history<br>268529 -rw-r--r-- 1 haryana haryana  220 Jan 30  2020 .bash_logout<br>268527 -rw-r--r-- 1 haryana haryana 3.7K Jan 30  2020 .bashrc<br>295605 drwxr-x--- 4 haryana haryana 4.0K Feb  4  2020 .cache<br>295602 drwxr-x--- 4 haryana haryana 4.0K Feb  4  2020 .config<br>295600 drwx------ 3 haryana haryana 4.0K Feb  4  2020 .gnupg<br>295584 drwxrwxr-x 3 haryana haryana 4.0K Jan 30  2020 .<span class="hljs-built_in">local</span><br>262309 -rw-r--r-- 1 haryana haryana  807 Jan 30  2020 .profile<br>haryana@sahu-VirtualBox:~$ <span class="hljs-built_in">cat</span> .bash_history<br><span class="hljs-built_in">cd</span> sahu<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">cd</span> sambashare/<br><span class="hljs-built_in">ls</span><br>nano /etc/passwd<br>su sahu<br><span class="hljs-built_in">cd</span> ..<br><span class="hljs-built_in">cd</span> sahu<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">cd</span> ..<br>su sahu<br><span class="hljs-built_in">cd</span><br><span class="hljs-built_in">pwd</span><br><span class="hljs-built_in">cd</span> ../<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">cd</span> sahu/<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">cd</span> ../..<br><span class="hljs-built_in">ls</span><br><span class="hljs-built_in">cd</span> root/<br>sudo <span class="hljs-built_in">cd</span> root<br>su sahu<br><span class="hljs-built_in">cd</span> /etc/<br><span class="hljs-built_in">ls</span> -l<br>su sahu<br></code></pre></td></tr></table></figure>
+
+<h2 id="passwd-写入提权"><a href="#passwd-写入提权" class="headerlink" title="passwd 写入提权"></a>passwd 写入提权</h2><p>查看敏感文件发现用户似乎编辑过 passwd 文件，查看 passwd 文件权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">haryana@sahu-VirtualBox:~$ <span class="hljs-built_in">ls</span> -liah /etc/passwd<br>163753 -rwxrwxrwx 1 root root 2.9K Jan 30  2020 /etc/passwd<br>haryana@sahu-VirtualBox:~$ nano /etc/passwd<br></code></pre></td></tr></table></figure>
+
+<p>写入 passwd 提权尝试，先在本机生成哈希值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/sahu]<br>└─$ openssl passwd passwd123            <br>$1$lz2D4Jlh<span class="hljs-variable">$P827XXbXI15iGa9pxqcf</span>/0<br></code></pre></td></tr></table></figure>
+
+<p>替换掉 passwd 中 root 用户那一行代表密码的 x 字母</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">haryana@sahu-VirtualBox:~$ nano /etc/passwd<br>haryana@sahu-VirtualBox:~$ su root<br>Password: <br>root@sahu-VirtualBox:/home/haryana<span class="hljs-comment"># cd /root</span><br>root@sahu-VirtualBox:~<span class="hljs-comment"># ls -liah</span><br>total 32K<br>524291 drwx------  4 root root 4.0K Jan 30  2020 .<br>     2 drwxr-xr-x 20 root root 4.0K Jan 29  2020 ..<br>524308 -rw-------  1 root root 1.5K Feb  4  2020 .bash_history<br>524306 -rw-r--r--  1 root root 3.1K Aug 28  2019 .bashrc<br>524305 drwx------  2 root root 4.0K Oct 17  2019 .cache<br>557482 drwxr-xr-x  3 root root 4.0K Jan 30  2020 .<span class="hljs-built_in">local</span><br>524307 -rw-r--r--  1 root root  148 Aug 28  2019 .profile<br>524338 -rw-r--r--  1 root root  123 Jan 30  2020 root.txt<br>root@sahu-VirtualBox:~<span class="hljs-comment"># cat root.txt</span><br>   GREATE YOU FINISH THIS TASK<br>                               CONGRATS!!!!!!!!!!!!<br>     TELL ME ON TWITTER  @VivekGautam09<br></code></pre></td></tr></table></figure>
+
+<h2 id="jpg-图片信息隐藏小结"><a href="#jpg-图片信息隐藏小结" class="headerlink" title="jpg 图片信息隐藏小结"></a>jpg 图片信息隐藏小结</h2><p>这里并不对原理做过多解释，而是着重于判断和工具利用</p>
+<h3 id="exif-信息"><a href="#exif-信息" class="headerlink" title="exif 信息"></a>exif 信息</h3><p><code>exiftool</code> 工具主要针对图片信息中的 Exif 数据区，这部分通常保存有拍摄相关信息和 comment 信息，符合 JPEG 标准</p>
+<p>可编辑 Exit 信息的工具：MagicEXIF</p>
+<h3 id="图片隐写方法"><a href="#图片隐写方法" class="headerlink" title="图片隐写方法"></a>图片隐写方法</h3><p>常见的隐写方法包括 DCT 加密、LSB 加密、DCT LSB、Average DCT、High Capacity DCT、High Capacity DCT - Algorithm</p>
+<p>常见的隐写工具包括：JSteg、JPHide、OutGuess、Invisible Secrets、F5、appendX、Camouflage</p>
+<h3 id="图片隐写检测工具"><a href="#图片隐写检测工具" class="headerlink" title="图片隐写检测工具"></a>图片隐写检测工具</h3><p>常用的检测工具：</p>
+<ul>
+<li>stegdetect <ul>
+<li>安装方法：我是通过安装 deb 包再通过 <code>apt --fix-broken install</code> 自动解决了依赖问题，deb 包的网址 <a target="_blank" rel="noopener" href="http://old-releases.ubuntu.com/ubuntu/pool/universe/s/stegdetect/">http://old-releases.ubuntu.com/ubuntu/pool/universe/s/stegdetect/</a></li>
+<li>可能还需要下载配置文件，不过运行似乎还是有问题 <code>wget https://github.com/poizan42/stegdetect/blob/46a09e93320cd63b6731e0bc5b22c11c588a0e81/rules.ini</code></li>
+<li>建议 Windows 上使用得了</li>
+</ul>
+</li>
+</ul>
+<p><img src="/pic/5de82a69e234cfe48b2344e8bb605beb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">-s 修改检测算法的敏感度，该值的默认值为<span class="hljs-number">1</span>。检测结果的匹配度与检测算法的敏感度成正比，算法敏感度的值越大，检测出的可疑文件包含敏感信息的可能性越大<br>t – 设置要检测哪些隐写工具（默认检测<span class="hljs-keyword">jopi），可设置的选项如下：</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">j </span>– 检测图像中的信息是否是用<span class="hljs-keyword">jsteg嵌入的。</span><br><span class="hljs-keyword"></span>o – 检测图像中的信息是否是用outguess嵌入的。<br>p – 检测图像中的信息是否是用<span class="hljs-keyword">jphide嵌入的。</span><br><span class="hljs-keyword"></span>i – 检测图像中的信息是否是用invisible secrets嵌入的。<br></code></pre></td></tr></table></figure>
+<ul>
+<li>steghide 可以设置密码<ul>
+<li>常用的爆破工具 <a target="_blank" rel="noopener" href="https://github.com/Va5c0/Steghide-Brute-Force-Tool">https://github.com/Va5c0/Steghide-Brute-Force-Tool</a><ul>
+<li><code>python steg_brute.py -b -d [字典] -f [jpg_file]</code></li>
+<li>需要安装库 progressbar2，因为是 python2 的工具，需要先为 python2安装 pip，参见 [[..&#x2F;technique&#x2F;zheteng&#x2F;Python2.7 install pip|Python2.7 install pip]]</li>
+<li>StegBrute 的运行必须依赖于 Steghide</li>
+</ul>
+</li>
+<li>stegseek 比 stebrute 的速度更快</li>
+<li><code>steghide info</code></li>
+<li><code>steghide -sf filename</code></li>
+</ul>
+</li>
+<li>F5 隐写 <a target="_blank" rel="noopener" href="https://github.com/matthewgao/F5-steganography">https://github.com/matthewgao/F5-steganography</a><ul>
+<li><code>java Extract 1.jpg -p 123456</code></li>
+</ul>
+</li>
+<li>outguess是一种通用的隐写工具，允许插入隐藏信息到数据源的冗余位中。 <a target="_blank" rel="noopener" href="https://github.com/crorvick/outguess">https://github.com/crorvick/outguess</a><ul>
+<li><code>./configure &amp;&amp; make &amp;&amp; make install</code></li>
+<li><code>outguess -k &quot;my secret key&quot; -d hidden.txt demo.jpg out.jpg</code></li>
+</ul>
+</li>
+<li>stegsolve 逐层看是否有图像隐藏</li>
+<li>binwalk 提取文件</li>
+<li>zsteg 可以作为 binwalk 的补充工具<ul>
+<li>安装需要有 ruby 环境</li>
+</ul>
+</li>
+</ul>
+<p>其实还有些别的技巧，比如调整图片大小等等，以后有机会再填坑</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://byy3.com/1072.html">隐写术之stegdeteck，F5，zsteg，outguess，stregcracker,stregseek,steghide,Beyond Compare，-泓源视野 (byy3.com)</a></p>
+<p>这篇文章不错，可惜图挂了，其中提到的 kali 上安装 stegdetect 方法链接我尝试了没成功，不确定是不是我的问题，有时间的话可以折腾折腾</p>
+<p><a target="_blank" rel="noopener" href="http://old-releases.ubuntu.com/ubuntu/pool/universe/s/stegdetect/">http://old-releases.ubuntu.com/ubuntu/pool/universe/s/stegdetect/</a></p>
+<p>stegdetect 工具 deb 包链接</p>
+<p><a target="_blank" rel="noopener" href="https://3gstudent.github.io/%E9%9A%90%E5%86%99%E6%8A%80%E5%B7%A7-%E5%88%A9%E7%94%A8JPEG%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E9%9A%90%E8%97%8Fpayload">隐写技巧——利用JPEG文件格式隐藏payload (3gstudent.github.io)</a></p>
+<p>给初学者当背景知识补充很不错</p>
+<p><a target="_blank" rel="noopener" href="https://hitcxy.com/2020/misc-tools/">misc_tools | pikachu’s Blog (hitcxy.com)</a></p>
+<p>包含了很多 misc 工具，不只有图片隐写工具</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ECJTUACM-873284962/p/9387711.html">破解Zip加密文件常用的几种方法 - Angel_Kitty - 博客园 (cnblogs.com)</a></p>
+<p>zip 加密文件的一些处理方法</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>sahu 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/09/1016a340d8b7.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/5c91d82f7083.html" title="PumpkinFestival 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PumpkinFestival 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/ea477c3a54b7.html" title="Python2.7 install pip">
+                        <span class="hidden-mobile">Python2.7 install pip</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '78f53d4e6e91bdce64de5ce57fba7980'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
